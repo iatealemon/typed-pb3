@@ -1,0 +1,98 @@
+import type { ClassIdentityProps } from "./internal/helper";
+export {};
+
+declare global {
+    /** unfinished auto-generated */
+    const pb2Character: ClassIdentityProps<"pb2Character"> & {
+        CreateCharacter(...args: unknown[]): unknown;
+        readonly DROP_ALWAYS: any;
+        readonly DROP_NEVER: any;
+        readonly DROP_WHEN_CAN_NOT_BE_REVIVED: any;
+        readonly DROP_WHEN_INTENDED_ONLY: any;
+        characters: unknown;
+        readonly player_half_width: any;
+        readonly player_height: any;
+        readonly player_sitmax: any;
+        readonly player_step_size: any;
+        readonly player_width: any;
+    };
+    
+    /** unfinished auto-generated */
+    type pb2CharacterInstance = ClassIdentityProps<"pb2Character"> & {
+        readonly classid: unknown;
+        readonly x: unknown;
+        readonly y: unknown;
+        act_x: unknown;
+        act_y: unknown;
+        act_fall: unknown;
+        look_x: unknown;
+        look_y: unknown;
+        act_fire: unknown;
+        act_fire2: unknown;
+        auto_fire: unknown;
+        auto_fire2: unknown;
+        act_single_jump: unknown;
+        act_single_fire: unknown;
+        act_single_fire2: unknown;
+        act_single_fall: unknown;
+        act_grab: unknown;
+        act_kick: unknown;
+        act_reload: unknown;
+        act_sprint: unknown;
+        readonly can_be_revived: unknown;
+        readonly MakeUnrevivable: unknown;
+        readonly tox: unknown;
+        readonly toy: unknown;
+        readonly ang: unknown;
+        hea: unknown;
+        hmax: unknown;
+        start_hea: unknown;
+        readonly ragdoll: unknown;
+        readonly MoveOn: unknown;
+        readonly DealCharacterDamage: unknown;
+        readonly SubstractHealth: unknown;
+        readonly AddGrenades: unknown;
+        readonly SetGrenades: unknown;
+        readonly GetGrenades: unknown;
+        readonly remove: unknown;
+        readonly addEventListener: unknown;
+        readonly removeEventListener: unknown;
+        readonly removeAllListeners: unknown;
+        readonly removeListenersByType: unknown;
+        readonly controller: unknown;
+        readonly hand_holder: unknown;
+        readonly curwea_slot: unknown;
+        readonly curwea_slot_animation: unknown;
+        curwea_backup_slot: unknown;
+        readonly phys_sit: unknown;
+        readonly ChangeGunIfPossible: unknown;
+        readonly ReloadGunsIfPossible: unknown;
+        readonly ChangeGunToBackupIfPossible: unknown;
+        readonly DoGesture: unknown;
+        readonly UseAction: unknown;
+        readonly addImpulse: unknown;
+        readonly AddVel: unknown;
+        readonly SetVel: unknown;
+        readonly DimLights: unknown;
+        readonly UndimLights: unknown;
+        readonly PlayDeathSound: unknown;
+        readonly Kill: unknown;
+        aim_spread: unknown;
+        readonly BodyIsPartOfPlayer: unknown;
+        readonly PickWeapon: unknown;
+        readonly DropWeapon: unknown;
+        readonly DropGunIfPossible: unknown;
+        readonly SetAllGrenadesCount: unknown;
+        readonly GetWeaponGlow: unknown;
+        readonly WeaponIsBeingChanged: unknown;
+        readonly CanShootNow: unknown;
+        readonly GetWeaponAtSlot: unknown;
+        readonly GetCurrentAnimationWeapon: unknown;
+        readonly HasAnyWeapon: unknown;
+        readonly ChangeGunToNonSwords: unknown;
+        readonly GetNonSwordsSlot: unknown;
+        readonly GetRandomNonSwordsSlot: unknown;
+        readonly GetFirstHealGunSlot: unknown;
+        readonly GetBody: unknown;
+    };
+}

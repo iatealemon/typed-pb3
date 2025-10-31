@@ -1,0 +1,13 @@
+{
+  "extends": "../../../tsconfig.json",
+  "include": [
+    "../../../pb3-types/**/*.d.ts",
+    "./**/*.d.ts",
+    "./**/*.js",
+  ],
+  "compilerOptions": {
+    "types": [],
+    "baseUrl": ".",
+    "checkJs": false, // set to true to see type errors
+  }
+}
