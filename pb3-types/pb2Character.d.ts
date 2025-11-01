@@ -2,7 +2,7 @@ import type { ClassIdentityProps } from "./internal/helper";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2Character: ClassIdentityProps<"pb2Character"> & {
         CreateCharacter(...args: unknown[]): unknown;
         readonly DROP_ALWAYS: any;
@@ -17,7 +17,7 @@ declare global {
         readonly player_width: any;
     };
     
-    /** unfinished auto-generated */
+    /** unfinished */
     type pb2CharacterInstance = ClassIdentityProps<"pb2Character"> & {
         readonly classid: unknown;
         readonly x: unknown;
@@ -40,7 +40,7 @@ declare global {
         act_reload: unknown;
         act_sprint: unknown;
         readonly can_be_revived: unknown;
-        readonly MakeUnrevivable: unknown;
+        MakeUnrevivable(...args: unknown[]): unknown;
         readonly tox: unknown;
         readonly toy: unknown;
         readonly ang: unknown;
@@ -48,51 +48,52 @@ declare global {
         hmax: unknown;
         start_hea: unknown;
         readonly ragdoll: unknown;
-        readonly MoveOn: unknown;
-        readonly DealCharacterDamage: unknown;
-        readonly SubstractHealth: unknown;
-        readonly AddGrenades: unknown;
-        readonly SetGrenades: unknown;
-        readonly GetGrenades: unknown;
-        readonly remove: unknown;
-        readonly addEventListener: unknown;
-        readonly removeEventListener: unknown;
-        readonly removeAllListeners: unknown;
-        readonly removeListenersByType: unknown;
+        MoveOn(...args: unknown[]): unknown;
+        DealCharacterDamage(...args: unknown[]): unknown;
+        SubstractHealth(...args: unknown[]): unknown;
+        AddGrenades(...args: unknown[]): unknown;
+        SetGrenades(...args: unknown[]): unknown;
+        GetGrenades(...args: unknown[]): unknown;
+        remove(...args: unknown[]): unknown;
+        addEventListener(...args: unknown[]): unknown;
+        removeEventListener(...args: unknown[]): unknown;
+        removeAllListeners(...args: unknown[]): unknown;
+        removeListenersByType(...args: unknown[]): unknown;
         readonly controller: unknown;
         readonly hand_holder: unknown;
         readonly curwea_slot: unknown;
         readonly curwea_slot_animation: unknown;
         curwea_backup_slot: unknown;
         readonly phys_sit: unknown;
-        readonly ChangeGunIfPossible: unknown;
-        readonly ReloadGunsIfPossible: unknown;
-        readonly ChangeGunToBackupIfPossible: unknown;
-        readonly DoGesture: unknown;
-        readonly UseAction: unknown;
-        readonly addImpulse: unknown;
-        readonly AddVel: unknown;
-        readonly SetVel: unknown;
-        readonly DimLights: unknown;
-        readonly UndimLights: unknown;
-        readonly PlayDeathSound: unknown;
-        readonly Kill: unknown;
+        ChangeGunIfPossible(...args: unknown[]): unknown;
+        ReloadGunsIfPossible(...args: unknown[]): unknown;
+        ChangeGunToBackupIfPossible(...args: unknown[]): unknown;
+        DoGesture(...args: unknown[]): unknown;
+        UseAction(...args: unknown[]): unknown;
+        addImpulse(...args: unknown[]): unknown;
+        AddVel(...args: unknown[]): unknown;
+        SetVel(...args: unknown[]): unknown;
+        DimLights(...args: unknown[]): unknown;
+        UndimLights(...args: unknown[]): unknown;
+        PlayDeathSound(...args: unknown[]): unknown;
+        Kill(...args: unknown[]): unknown;
         aim_spread: unknown;
-        readonly BodyIsPartOfPlayer: unknown;
-        readonly PickWeapon: unknown;
-        readonly DropWeapon: unknown;
-        readonly DropGunIfPossible: unknown;
-        readonly SetAllGrenadesCount: unknown;
-        readonly GetWeaponGlow: unknown;
-        readonly WeaponIsBeingChanged: unknown;
-        readonly CanShootNow: unknown;
-        readonly GetWeaponAtSlot: unknown;
-        readonly GetCurrentAnimationWeapon: unknown;
-        readonly HasAnyWeapon: unknown;
-        readonly ChangeGunToNonSwords: unknown;
-        readonly GetNonSwordsSlot: unknown;
-        readonly GetRandomNonSwordsSlot: unknown;
-        readonly GetFirstHealGunSlot: unknown;
-        readonly GetBody: unknown;
+        BodyIsPartOfPlayer(...args: unknown[]): unknown;
+        PickWeapon(...args: unknown[]): unknown;
+        DropWeapon(...args: unknown[]): unknown;
+        DropGunIfPossible(...args: unknown[]): unknown;
+        SetAllGrenadesCount(...args: unknown[]): unknown;
+        GetWeaponGlow(...args: unknown[]): unknown;
+        WeaponIsBeingChanged(...args: unknown[]): unknown;
+        CanShootNow(...args: unknown[]): unknown;
+        GetWeaponAtSlot(...args: unknown[]): unknown;
+        GetCurrentAnimationWeapon(...args: unknown[]): unknown;
+        HasAnyWeapon(...args: unknown[]): unknown;
+        ChangeGunToNonSwords(...args: unknown[]): unknown;
+        GetNonSwordsSlot(...args: unknown[]): unknown;
+        GetRandomNonSwordsSlot(...args: unknown[]): unknown;
+        GetFirstHealGunSlot(...args: unknown[]): unknown;
+        GetBody(...args: unknown[]): unknown;
+        forceUnHandHold(id: unknown): void;
     };
 }

@@ -2,7 +2,7 @@ import type { ClassIdentityProps } from "./internal/helper";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2StyleRegen: ClassIdentityProps<"pb2StyleRegen"> & {
         readonly ALL_TYPES: any;
         readonly style_delayed_speedup: any;

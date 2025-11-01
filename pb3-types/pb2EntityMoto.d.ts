@@ -3,7 +3,7 @@ import type { pb2EntityInstanceBase } from "./pb2Entity";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2EntityMoto: ClassIdentityProps<"pb2EntityMoto"> & {
         readonly STYLE_ID_MOBILE_C9: any;
         readonly STYLE_ID_MOBILE_CS: any;

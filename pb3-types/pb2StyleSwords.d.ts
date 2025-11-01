@@ -2,7 +2,7 @@ import type { ClassIdentityProps } from "./internal/helper";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2StyleSwords: ClassIdentityProps<"pb2StyleSwords"> & {
         readonly ALL_TYPES: any;
         readonly ARCHWAY: any;

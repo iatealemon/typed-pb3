@@ -2,16 +2,16 @@ import type { ClassIdentityProps } from "./internal/helper";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2TextChannel: ClassIdentityProps<"pb2TextChannel"> & {
         CreateTextChannel(...args: unknown[]): unknown;
     };
     
-    /** unfinished auto-generated */
+    /** unfinished */
     type pb2TextChannelInstance = ClassIdentityProps<"pb2TextChannel"> & {
-        readonly InvitePlayerConnection: unknown;
-        readonly UninvitePlayerConnection: unknown;
-        readonly remove: unknown;
+        InvitePlayerConnection(...args: unknown[]): unknown;
+        UninvitePlayerConnection(...args: unknown[]): unknown;
+        remove(...args: unknown[]): unknown;
         readonly title: unknown;
         readonly color: unknown;
         readonly show_tag: unknown;
@@ -21,6 +21,6 @@ declare global {
         readonly is_being_removed: unknown;
         readonly synced: unknown;
         readonly syncing: unknown;
-        readonly GetInvitedDataConnections: unknown;
+        GetInvitedDataConnections(...args: unknown[]): unknown;
     };
 }

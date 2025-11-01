@@ -2,7 +2,7 @@ import type { ClassIdentityProps } from "./internal/helper";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2ClassID: ClassIdentityProps<"pb2ClassID"> & {
         readonly AI_MODULE: any;
         readonly ATOM: any;

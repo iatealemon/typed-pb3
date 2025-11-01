@@ -2,7 +2,7 @@ import type { ClassIdentityProps } from "./internal/helper";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2Storage: ClassIdentityProps<"pb2Storage"> & {
         ClearPropertyNameToUIDCache(...args: unknown[]): unknown;
         GetCreationProperty(...args: unknown[]): unknown;

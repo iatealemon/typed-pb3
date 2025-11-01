@@ -2,7 +2,7 @@ import type { ClassIdentityProps } from "./internal/helper";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2Sound: ClassIdentityProps<"pb2Sound"> & {
         readonly ALL_TYPES: any;
         readonly PRIORITY_ATMOSHPERICS: any;

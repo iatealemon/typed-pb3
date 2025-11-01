@@ -9,11 +9,11 @@ declare global {
         toString(): string;
         text: unknown;
         colors: unknown;
-        readonly CapitalRedColors: unknown;
-        readonly RandomColors: unknown;
-        readonly WhiteColors: unknown;
-        readonly FromTagged: unknown;
-        readonly GetTagged: unknown;
+        CapitalRedColors(...args: unknown[]): unknown;
+        RandomColors(...args: unknown[]): unknown;
+        WhiteColors(...args: unknown[]): unknown;
+        FromTagged(...args: unknown[]): unknown;
+        GetTagged(...args: unknown[]): unknown;
     }
 }
 

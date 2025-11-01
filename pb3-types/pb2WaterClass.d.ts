@@ -2,7 +2,7 @@ import type { ClassIdentityProps } from "./internal/helper";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2WaterClass: ClassIdentityProps<"pb2WaterClass"> & {
         readonly ALL_TYPES: any;
         DeclareWaterClass(...args: unknown[]): unknown;
@@ -15,7 +15,7 @@ declare global {
         readonly TYPE_ZERO_GRAVITY_NO_MUFFLE: any;
     };
     
-    /** unfinished auto-generated */
+    /** unfinished */
     type pb2WaterClassInstance = ClassIdentityProps<"pb2WaterClass"> & {
         readonly shapes: unknown;
     };

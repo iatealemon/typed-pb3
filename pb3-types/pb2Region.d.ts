@@ -3,14 +3,14 @@ export {};
 
 declare global {
     /**
-     * unfinished auto-generated  
+     * unfinished  
      * the class is actually called zV in the pb3 code but it's renamed here for obvious reasons
      */
     type pb2RegionInstance = ClassIdentityProps<"zV"> & {
         readonly x: unknown;
         readonly y: unknown;
         readonly classid: unknown;
-        readonly remove: unknown;
+        remove(...args: unknown[]): unknown;
         attached_to: unknown;
         readonly p: unknown;
         readonly box2d_body: unknown;
@@ -22,7 +22,7 @@ declare global {
         readonly is_quad: unknown;
         readonly type: unknown;
         readonly _childs: unknown;
-        readonly AddPosition: unknown;
+        AddPosition(...args: unknown[]): unknown;
         readonly collected_entities_counter: unknown;
     };
 }

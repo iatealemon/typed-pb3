@@ -2,18 +2,18 @@ import type { ClassIdentityProps } from "./internal/helper";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2GameplayEffects: ClassIdentityProps<"pb2GameplayEffects"> & {
         types: unknown;
     };
     
-    /** unfinished auto-generated */
+    /** unfinished */
     type pb2GameplayEffectsInstance = ClassIdentityProps<"pb2GameplayEffects"> & {
-        readonly CreateEffect: unknown;
-        readonly GetCharacterLogicSpeed: unknown;
-        readonly GetWeaponLogicSpeed: unknown;
-        readonly GetBulletModifier: unknown;
-        readonly GetInvisible: unknown;
+        CreateEffect(...args: unknown[]): unknown;
+        GetCharacterLogicSpeed(...args: unknown[]): unknown;
+        GetWeaponLogicSpeed(...args: unknown[]): unknown;
+        GetBulletModifier(...args: unknown[]): unknown;
+        GetInvisible(...args: unknown[]): unknown;
         readonly ragdoll: unknown;
     };
     
@@ -24,7 +24,7 @@ declare global {
     type bsWInstance = ClassIdentityProps<"bsW"> & {
         time_to_live: unknown;
         readonly ragdoll: unknown;
-        readonly remove: unknown;
+        remove(...args: unknown[]): unknown;
         readonly cloak_intensity: unknown;
     };
 }

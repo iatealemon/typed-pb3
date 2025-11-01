@@ -2,7 +2,7 @@ import type { ClassIdentityProps } from "./internal/helper";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2Timer: ClassIdentityProps<"pb2Timer"> & {
         CreateTimer(...args: unknown[]): unknown;
         readonly TYPE_FULL_FRAME_TICKS: any;
@@ -11,17 +11,17 @@ declare global {
         readonly TYPE_REAL_WORLD_TIMESCALE: any;
     };
     
-    /** unfinished auto-generated */
+    /** unfinished */
     type pb2TimerInstance = ClassIdentityProps<"pb2Timer"> & {
         calls_left: unknown;
         current_cycle_time_left: unknown;
-        readonly SetCalls: unknown;
-        readonly SetTimeUntilNextCycle: unknown;
-        readonly SetDefaultCycleDuration: unknown;
-        readonly ResetCurrentCycle: unknown;
+        SetCalls(...args: unknown[]): unknown;
+        SetTimeUntilNextCycle(...args: unknown[]): unknown;
+        SetDefaultCycleDuration(...args: unknown[]): unknown;
+        ResetCurrentCycle(...args: unknown[]): unknown;
         enabled: unknown;
-        readonly Start: unknown;
-        readonly Stop: unknown;
+        Start(...args: unknown[]): unknown;
+        Stop(...args: unknown[]): unknown;
         position_container: unknown;
         readonly type: unknown;
     };

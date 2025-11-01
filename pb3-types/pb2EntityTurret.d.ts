@@ -3,7 +3,7 @@ import type { pb2EntityInstanceBase } from "./pb2Entity";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2EntityTurret: ClassIdentityProps<"pb2EntityTurret"> & {
         readonly STYLE_ID_DENIER: any;
         readonly STYLE_ID_FACET: any;

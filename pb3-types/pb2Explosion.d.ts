@@ -2,7 +2,7 @@ import type { ClassIdentityProps } from "./internal/helper";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2Explosion: ClassIdentityProps<"pb2Explosion"> & {
         readonly ALL_TYPES: any;
         readonly EXPLOSION_BASIC: any;
@@ -31,7 +31,7 @@ declare global {
         explosions: unknown;
     };
     
-    /** unfinished auto-generated */
+    /** unfinished */
     type pb2ExplosionInstance = ClassIdentityProps<"pb2Explosion"> & {
         readonly classid: unknown;
         readonly x: unknown;

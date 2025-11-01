@@ -14,7 +14,7 @@ declare global {
          */
         type Object3DInstance = ClassIdentityProps<"Object3D"> & {
             readonly parent: unknown;
-            readonly lookAt: unknown;
+            lookAt(...args: unknown[]): unknown;
             readonly position: unknown;
             readonly rotation: unknown;
             readonly scale: unknown;

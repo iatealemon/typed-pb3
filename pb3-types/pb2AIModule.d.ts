@@ -2,7 +2,7 @@ import type { ClassIdentityProps } from "./internal/helper";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2AIModule: ClassIdentityProps<"pb2AIModule"> & {
         readonly ALL_TYPES: any;
         readonly BEHAVIOR_IDLE: any;
@@ -84,7 +84,7 @@ declare global {
         readonly WAYPOINT_TYPE_WATER: any;
     };
     
-    /** unfinished auto-generated */
+    /** unfinished */
     type pb2AIModuleInstance = ClassIdentityProps<"pb2AIModule"> & {
         readonly skill: unknown;
         readonly controller: unknown;
@@ -92,6 +92,6 @@ declare global {
         readonly allow_hit_reporting: unknown;
         readonly bot_decided_hunt_threat: unknown;
         readonly bot_decided_teammate_heal: unknown;
-        readonly GoTo: unknown;
+        GoTo(...args: unknown[]): unknown;
     };
 }

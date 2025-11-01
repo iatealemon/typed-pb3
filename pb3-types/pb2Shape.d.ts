@@ -2,7 +2,7 @@ import type { ClassIdentityProps } from "./internal/helper";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2Shape: ClassIdentityProps<"pb2Shape"> & {
         readonly ALL_TYPES: any;
         readonly BACKGROUND: any;
@@ -33,13 +33,13 @@ declare global {
         world_shapes_water: unknown;
     };
     
-    /** unfinished auto-generated */
+    /** unfinished */
     type pb2ShapeInstance = ClassIdentityProps<"pb2Shape"> & {
         readonly classid: unknown;
-        readonly SetSpeed: unknown;
-        readonly StartMove: unknown;
-        readonly remove: unknown;
-        readonly DealDamage: unknown;
+        SetSpeed(...args: unknown[]): unknown;
+        StartMove(...args: unknown[]): unknown;
+        remove(...args: unknown[]): unknown;
+        DealDamage(...args: unknown[]): unknown;
         attached_to: unknown;
         readonly p: unknown;
         readonly normal: unknown;
@@ -54,7 +54,8 @@ declare global {
         readonly type: unknown;
         readonly frozen_spots: unknown;
         readonly _childs: unknown;
-        readonly SingleTracePoint: unknown;
+        SingleTracePoint(...args: unknown[]): unknown;
         readonly see_through: unknown;
+        GetMesh(id?: 0): unknown | undefined;
     };
 }

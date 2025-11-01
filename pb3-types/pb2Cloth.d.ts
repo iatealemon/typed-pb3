@@ -2,7 +2,7 @@ import type { ClassIdentityProps } from "./internal/helper";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2Cloth: ClassIdentityProps<"pb2Cloth"> & {
         readonly TYPE_BEARD: any;
         readonly TYPE_CAPE: any;

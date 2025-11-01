@@ -2,7 +2,7 @@ import type { ClassIdentityProps } from "./internal/helper";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2EngineDatabase: ClassIdentityProps<"pb2EngineDatabase"> & {
         DragPoints(...args: unknown[]): unknown;
         FindAllChildren(...args: unknown[]): unknown;

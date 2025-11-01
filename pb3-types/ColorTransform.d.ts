@@ -13,7 +13,7 @@ declare global {
         redOffset: number;
         greenOffset: number;
         blueOffset: number;
-        clone: unknown;
-        multiplyHighRangeColor: unknown;
+        clone(...args: unknown[]): unknown;
+        multiplyHighRangeColor(...args: unknown[]): unknown;
     }
 }

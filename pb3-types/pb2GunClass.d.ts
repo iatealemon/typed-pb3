@@ -2,7 +2,7 @@ import type { ClassIdentityProps } from "./internal/helper";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2GunClass: ClassIdentityProps<"pb2GunClass"> & {
         CachedGunClasses: unknown;
         CreateCustomGunClass(...args: unknown[]): unknown;
@@ -11,7 +11,7 @@ declare global {
         registered_weapons: unknown;
     };
     
-    /** unfinished auto-generated */
+    /** unfinished */
     type pb2GunClassInstance = ClassIdentityProps<"pb2GunClass"> & {
         inventory_slot: unknown;
         forcars: unknown;
@@ -70,11 +70,11 @@ declare global {
         max_life_time_rand: unknown;
         ammo_bullet_price: unknown;
         grenade_density: unknown;
-        readonly model_name: unknown;
+        model_name: unknown;
         reload_length: unknown;
-        readonly GetProjectileMovieClip: unknown;
-        readonly SetProjectileMovieClip: unknown;
-        readonly GetStuckProjectileMovieClip: unknown;
-        readonly SetStuckProjectileMovieClip: unknown;
+        GetProjectileMovieClip(...args: unknown[]): unknown;
+        SetProjectileMovieClip(...args: unknown[]): unknown;
+        GetStuckProjectileMovieClip(...args: unknown[]): unknown;
+        SetStuckProjectileMovieClip(...args: unknown[]): unknown;
     };
 }

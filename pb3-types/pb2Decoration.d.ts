@@ -2,7 +2,7 @@ import type { ClassIdentityProps } from "./internal/helper";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2Decoration: ClassIdentityProps<"pb2Decoration"> & {
         readonly BLENDING_ADDITIVE: any;
         readonly BLENDING_MULTIPLY: any;
@@ -17,11 +17,11 @@ declare global {
         readonly SHADING_INITIAL: any;
     };
     
-    /** unfinished auto-generated */
+    /** unfinished */
     type pb2DecorationInstance = ClassIdentityProps<"pb2Decoration"> & {
         readonly classid: unknown;
-        readonly remove: unknown;
-        readonly SetColor: unknown;
+        remove(...args: unknown[]): unknown;
+        SetColor(...args: unknown[]): unknown;
         blending: unknown;
         shading: unknown;
         relative_to_mesh: unknown;
@@ -33,13 +33,13 @@ declare global {
         readonly rotation: unknown;
         readonly scale: unknown;
         readonly offset: unknown;
-        readonly SetPersonalVisibilityFor: unknown;
-        readonly ResetPersonalVisibilityRules: unknown;
+        SetPersonalVisibilityFor(...args: unknown[]): unknown;
+        ResetPersonalVisibilityRules(...args: unknown[]): unknown;
         default_visibility: unknown;
-        readonly PlayAnimation: unknown;
-        readonly PauseAnimation: unknown;
-        readonly ResumeAnimation: unknown;
+        PlayAnimation(...args: unknown[]): unknown;
+        PauseAnimation(...args: unknown[]): unknown;
+        ResumeAnimation(...args: unknown[]): unknown;
         animation_info: unknown;
-        readonly UpdateAnimationUVs: unknown;
+        UpdateAnimationUVs(...args: unknown[]): unknown;
     };
 }

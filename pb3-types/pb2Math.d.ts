@@ -2,7 +2,7 @@ import type { ClassIdentityProps } from "./internal/helper";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2Math: ClassIdentityProps<"pb2Math"> & {
         Dist2D(...args: unknown[]): unknown;
         Dist2D_Vector(...args: unknown[]): unknown;

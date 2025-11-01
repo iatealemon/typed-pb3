@@ -2,7 +2,7 @@ import type { ClassIdentityProps } from "./internal/helper";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2SurfaceType: ClassIdentityProps<"pb2SurfaceType"> & {
         readonly ALL_TYPES: any;
         readonly APPEARANCE_ADDITIVE: any;
@@ -23,7 +23,7 @@ declare global {
         readonly TYPE_SIMPLE_WALL: any;
     };
     
-    /** unfinished auto-generated */
+    /** unfinished */
     type pb2SurfaceTypeInstance = ClassIdentityProps<"pb2SurfaceType"> & {
         name: unknown;
         is_soft: unknown;

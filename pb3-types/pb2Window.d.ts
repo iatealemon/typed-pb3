@@ -10,23 +10,23 @@ export type pb2WindowInstanceBase<ClassName extends string> = ClassIdentityProps
     h: number;
     tooltip: unknown;
     readonly type: unknown;
-    readonly SetVisibilityFor: unknown;
-    readonly SendChanges: unknown;
+    SetVisibilityFor(...args: unknown[]): unknown;
+    SendChanges(...args: unknown[]): unknown;
     visible: unknown;
     requires_ctrl_key: unknown;
     ignore_mouse_events: unknown;
     click_animation: unknown;
-    readonly SetText: unknown;
-    readonly remove: unknown;
+    SetText(...args: unknown[]): unknown;
+    remove(...args: unknown[]): unknown;
     readonly parent: unknown;
     readonly childs: unknown;
-    readonly GetTypeSpecificStructure: unknown;
-    readonly SetTypeSpecificStructure: unknown;
+    GetTypeSpecificStructure(...args: unknown[]): unknown;
+    SetTypeSpecificStructure(...args: unknown[]): unknown;
     readonly is_being_removed: boolean;
 };
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2Window: ClassIdentityProps<"pb2Window"> & {
         readonly BUTTON: any;
         readonly BUTTON_HOLO: any;

@@ -3,7 +3,7 @@ import type { pb2EntityInstanceBase } from "./pb2Entity";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2EntityFloatingIce: ClassIdentityProps<"pb2EntityFloatingIce"> & {
         readonly STYLE_ID_ICE: any;
         readonly STYLE_ID_ROCK: any;

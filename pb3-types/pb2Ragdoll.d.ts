@@ -2,7 +2,7 @@ import type { ClassIdentityProps } from "./internal/helper";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2Ragdoll: ClassIdentityProps<"pb2Ragdoll"> & {
         CreateRagdoll(...args: unknown[]): unknown;
         CreateRagdollComplete(...args: unknown[]): unknown;
@@ -42,7 +42,7 @@ declare global {
         ragdolls: unknown;
     };
 
-    /** unfinished auto-generated */
+    /** unfinished */
     type pb2RagdollInstance = ClassIdentityProps<"pb2Ragdoll"> & {
         readonly classid: unknown;
         readonly x: unknown;
@@ -51,36 +51,38 @@ declare global {
         readonly toy: unknown;
         dimmed: unknown;
         readonly owner_character: unknown;
-        readonly DealLimbDamage: unknown;
-        readonly HealGunApplied: unknown;
-        readonly CaptureHealGunApplied: unknown;
-        readonly SetName: unknown;
-        readonly GetName: unknown;
-        readonly MeltDown: unknown;
-        readonly ExpireAllHintObjects: unknown;
+        DealLimbDamage(...args: unknown[]): unknown;
+        HealGunApplied(...args: unknown[]): unknown;
+        CaptureHealGunApplied(...args: unknown[]): unknown;
+        SetName(...args: unknown[]): unknown;
+        GetName(...args: unknown[]): unknown;
+        MeltDown(...args: unknown[]): unknown;
+        ExpireAllHintObjects(...args: unknown[]): unknown;
         readonly side: unknown;
-        readonly Flip: unknown;
-        readonly remove: unknown;
+        Flip(...args: unknown[]): unknown;
+        remove(...args: unknown[]): unknown;
         readonly is_being_removed: unknown;
-        readonly SetVision: unknown;
-        readonly GetVision: unknown;
-        readonly GetBlindness: unknown;
-        readonly SetBlindness: unknown;
-        readonly GetDeafness: unknown;
-        readonly SetDeafness: unknown;
+        SetVision(...args: unknown[]): unknown;
+        GetVision(...args: unknown[]): unknown;
+        GetBlindness(...args: unknown[]): unknown;
+        SetBlindness(...args: unknown[]): unknown;
+        GetDeafness(...args: unknown[]): unknown;
+        SetDeafness(...args: unknown[]): unknown;
         hp_head: unknown;
         hp_body: unknown;
         hp_arms: unknown;
         hp_legs: unknown;
-        readonly GetAtomsTotal: unknown;
+        GetAtomsTotal(...args: unknown[]): unknown;
         readonly gameplay_effects: unknown;
-        readonly ClearBulletHoles: unknown;
-        readonly UsesGrapplingHook: unknown;
-        readonly DetachFromRope: unknown;
+        ClearBulletHoles(...args: unknown[]): unknown;
+        UsesGrapplingHook(...args: unknown[]): unknown;
+        DetachFromRope(...args: unknown[]): unknown;
         hud_custom_bars: unknown;
         readonly enforce_skin_limitations: unknown;
         readonly use_skin_properties: unknown;
         readonly mobility: unknown;
         readonly team: unknown;
+        GetAtom(id: unknown): unknown;
+        GetMesh(id?: 0 | unknown): unknown;
     };
 }

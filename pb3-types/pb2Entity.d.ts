@@ -7,28 +7,30 @@ export type pb2EntityInstanceBase<ClassName extends string> = ClassIdentityProps
     readonly y: unknown;
     readonly tox: unknown;
     readonly toy: unknown;
-    readonly InstallGun: unknown;
-    readonly DropGun: unknown;
-    readonly remove: unknown;
-    readonly AddRagdoll: unknown;
-    readonly ExcludeRagdoll: unknown;
-    readonly IgnoreRagdoll: unknown;
-    readonly DealDamage: unknown;
+    InstallGun(...args: unknown[]): unknown;
+    DropGun(...args: unknown[]): unknown;
+    remove(...args: unknown[]): unknown;
+    AddRagdoll(...args: unknown[]): unknown;
+    ExcludeRagdoll(...args: unknown[]): unknown;
+    IgnoreRagdoll(...args: unknown[]): unknown;
+    DealDamage(...args: unknown[]): unknown;
     alpha: unknown;
     readonly is_being_removed: boolean;
     hea: number;
     hmax: number;
     dying_level: unknown;
     team: pb2TeamInstance;
-    readonly SetDriverSeatsAndRadius: unknown;
-    readonly SetSide: unknown;
+    SetDriverSeatsAndRadius(...args: unknown[]): unknown;
+    SetSide(...args: unknown[]): unknown;
     readonly box2d_bodies: unknown;
-    readonly addEventListener: unknown;
-    readonly removeEventListener: unknown;
+    addEventListener(...args: unknown[]): unknown;
+    removeEventListener(...args: unknown[]): unknown;
+    GetLimb(id: unknown): unknown;
+    GetMesh(id?: 0 | unknown): unknown;
 };
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2Entity: ClassIdentityProps<"pb2Entity"> & {
         readonly ALL_TYPES: any;
         CountShapesInRect(...args: unknown[]): unknown;

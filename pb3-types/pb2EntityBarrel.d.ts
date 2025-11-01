@@ -3,7 +3,7 @@ import type { pb2EntityInstanceBase } from "./pb2Entity";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2EntityBarrel: ClassIdentityProps<"pb2EntityBarrel"> & {
         readonly STYLE_ID_BLUE: any;
         readonly STYLE_ID_EMPTY: any;

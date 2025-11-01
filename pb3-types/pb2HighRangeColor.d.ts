@@ -10,18 +10,18 @@ declare global {
         r: unknown;
         g: unknown;
         b: unknown;
-        readonly clone: unknown;
-        readonly addRGB: unknown;
-        readonly from_uint: unknown;
+        clone(...args: unknown[]): unknown;
+        addRGB(...args: unknown[]): unknown;
+        from_uint(...args: unknown[]): unknown;
         _uint: unknown;
-        readonly limit: unknown;
-        readonly multiply: unknown;
-        readonly multiplyColor: unknown;
-        readonly add: unknown;
-        readonly addColor: unknown;
-        readonly average: unknown;
-        readonly GetAverageValue: unknown;
-        readonly rand: unknown;
-        readonly setRGB: unknown;
+        limit(...args: unknown[]): unknown;
+        multiply(...args: unknown[]): unknown;
+        multiplyColor(...args: unknown[]): unknown;
+        add(...args: unknown[]): unknown;
+        addColor(...args: unknown[]): unknown;
+        average(...args: unknown[]): unknown;
+        GetAverageValue(...args: unknown[]): unknown;
+        rand(...args: unknown[]): unknown;
+        setRGB(...args: unknown[]): unknown;
     }
 }

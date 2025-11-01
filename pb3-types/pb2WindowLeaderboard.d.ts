@@ -3,7 +3,7 @@ import type { pb2WindowInstanceBase } from "./pb2Window";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2WindowLeaderboard: ClassIdentityProps<"pb2WindowLeaderboard"> & {
         readonly ALL_TYPES: any;
         readonly FIELD_TEAM_ID_SPECTATORS: any;
@@ -25,6 +25,7 @@ declare global {
         readonly ICON_ID_SPECTATE: any;
     };
     
+    /** unfinished */
     type pb2WindowLeaderboardInstance = pb2WindowInstanceBase<"pb2WindowLeaderboard"> & {
         round_time: unknown;
         round_time_max: unknown;

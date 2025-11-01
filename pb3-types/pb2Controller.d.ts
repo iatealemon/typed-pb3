@@ -2,7 +2,7 @@ import type { ClassIdentityProps } from "./internal/helper";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2Controller: ClassIdentityProps<"pb2Controller"> & {
         CreateController(...args: unknown[]): unknown;
         controllers: unknown;
@@ -12,7 +12,7 @@ declare global {
         readonly vehicle_in_out_param: unknown;
     };
     
-    /** unfinished auto-generated */
+    /** unfinished */
     type pb2ControllerInstance = ClassIdentityProps<"pb2Controller"> & {
         readonly character: unknown;
         readonly player_connection: unknown;
@@ -27,27 +27,27 @@ declare global {
         act_sprint: unknown;
         readonly _is_typing: unknown;
         readonly _is_in_menu: unknown;
-        readonly remove: unknown;
+        remove(...args: unknown[]): unknown;
         readonly zoom: unknown;
-        readonly CopyStateFrom: unknown;
-        readonly StartZoomMorph: unknown;
-        readonly StopZoomMorph: unknown;
-        readonly StartPositionMorph: unknown;
-        readonly StopPositionMorph: unknown;
+        CopyStateFrom(...args: unknown[]): unknown;
+        StartZoomMorph(...args: unknown[]): unknown;
+        StopZoomMorph(...args: unknown[]): unknown;
+        StartPositionMorph(...args: unknown[]): unknown;
+        StopPositionMorph(...args: unknown[]): unknown;
         readonly camera_position_forced: unknown;
         readonly camera_position_target_x: unknown;
         readonly camera_position_target_y: unknown;
         readonly zoom_changing: unknown;
         readonly target_zoom: unknown;
-        readonly ScreenMinX: unknown;
-        readonly ScreenMaxX: unknown;
-        readonly ScreenMinY: unknown;
-        readonly ScreenMaxY: unknown;
+        ScreenMinX(...args: unknown[]): unknown;
+        ScreenMaxX(...args: unknown[]): unknown;
+        ScreenMinY(...args: unknown[]): unknown;
+        ScreenMaxY(...args: unknown[]): unknown;
         ai: unknown;
         allow_damage_report_flash: unknown;
         color_mult: unknown;
         color_add: unknown;
-        readonly UpdateScreenColor: unknown;
+        UpdateScreenColor(...args: unknown[]): unknown;
         damage_report_flash_current: unknown;
         player_controllable: unknown;
     };

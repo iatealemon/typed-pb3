@@ -2,7 +2,7 @@ import type { ClassIdentityProps } from "./internal/helper";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2Multiplayer: ClassIdentityProps<"pb2Multiplayer"> & {
         AddMatchTag(...args: unknown[]): unknown;
         GetAllPlayerConnectionsAndSelf(...args: unknown[]): unknown;

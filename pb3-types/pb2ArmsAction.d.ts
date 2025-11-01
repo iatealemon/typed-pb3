@@ -2,7 +2,7 @@ import type { ClassIdentityProps } from "./internal/helper";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2ArmsAction: ClassIdentityProps<"pb2ArmsAction"> & {
         readonly ACTION_TYPE_DRAG_RIGIDBODY: any;
         readonly ACTION_TYPE_GESTURE_HAPPY: any;

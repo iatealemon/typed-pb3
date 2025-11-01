@@ -2,13 +2,13 @@ import type { ClassIdentityProps } from "./internal/helper";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2Team: ClassIdentityProps<"pb2Team"> & {
         CreateTeam(...args: unknown[]): unknown;
         teams: unknown;
     };
     
-    /** unfinished auto-generated */
+    /** unfinished */
     type pb2TeamInstance = ClassIdentityProps<"pb2Team"> & {
         readonly classid: unknown;
         readonly ai_in_team: unknown;
@@ -19,6 +19,6 @@ declare global {
         normal_damage_to_dead_teammates: unknown;
         readonly teammates_collide: unknown;
         title: unknown;
-        readonly remove: unknown;
+        remove(...args: unknown[]): unknown;
     };
 }

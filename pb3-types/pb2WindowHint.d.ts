@@ -2,7 +2,7 @@ import type { ClassIdentityProps } from "./internal/helper";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2WindowHint: ClassIdentityProps<"pb2WindowHint"> & {
         readonly COLOR_GREEN: any;
         readonly COLOR_RED: any;
@@ -19,7 +19,7 @@ declare global {
         readonly TYPE_WARNING: any;
     };
     
-    /** unfinished auto-generated */
+    /** unfinished */
     type pb2WindowHintInstance = ClassIdentityProps<"pb2WindowHint"> & {
         readonly x: unknown;
         readonly y: unknown;
@@ -30,13 +30,13 @@ declare global {
         readonly attachment_ragdoll: unknown;
         readonly time_current: unknown;
         readonly time_to_live: unknown;
-        readonly SetText: unknown;
-        readonly SetColor: unknown;
-        readonly Expire: unknown;
+        SetText(...args: unknown[]): unknown;
+        SetColor(...args: unknown[]): unknown;
+        Expire(...args: unknown[]): unknown;
         readonly appearance_duration: unknown;
         readonly main_color: unknown;
-        readonly GetOptions: unknown;
-        readonly SetOptions: unknown;
+        GetOptions(...args: unknown[]): unknown;
+        SetOptions(...args: unknown[]): unknown;
         readonly my_vote_id: unknown;
         readonly votes: unknown;
         sync_to_spectators: unknown;

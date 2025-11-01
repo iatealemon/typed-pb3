@@ -2,7 +2,7 @@ import type { ClassIdentityProps } from "./internal/helper";
 export {};
 
 declare global {
-    /** unfinished auto-generated */
+    /** unfinished */
     const pb2TimeWarpZone: ClassIdentityProps<"pb2TimeWarpZone"> & {
         CreateWarpZone(...args: unknown[]): unknown;
         GetSpeedAtPoint(...args: unknown[]): unknown;

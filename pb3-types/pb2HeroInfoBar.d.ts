@@ -5,7 +5,7 @@ declare global {
     class pb2HeroInfoBar {
         constructor(...args: unknown[]);
 
-        _class: "pb2ColoredText";
+        _class: "pb2HeroInfoBar";
         toString(): string;
         readonly classid: unknown;
         title: unknown;

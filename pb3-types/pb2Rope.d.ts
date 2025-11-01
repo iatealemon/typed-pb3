@@ -3,7 +3,7 @@ export {};
 
 declare global {
     /**
-     * unfinished auto-generated  
+     * unfinished  
      * the class is actually called lo in the pb3 code but it's renamed here for obvious reasons
      */
     type pb2RopeInstance = ClassIdentityProps<"lo"> & {
