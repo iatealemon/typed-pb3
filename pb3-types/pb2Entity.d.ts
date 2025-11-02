@@ -26,7 +26,7 @@ export type pb2EntityInstanceBase<ClassName extends string> = ClassIdentityProps
     addEventListener(...args: unknown[]): unknown;
     removeEventListener(...args: unknown[]): unknown;
     GetLimb(id: unknown): unknown;
-    GetMesh(id?: 0 | unknown): unknown;
+    GetMesh(id?: number): THREE.MeshInstance;
 };
 
 declare global {
