@@ -80,7 +80,7 @@ declare global {
         aim_spread: unknown;
         BodyIsPartOfPlayer(...args: unknown[]): unknown;
         PickWeapon(...args: unknown[]): unknown;
-        DropWeapon(...args: unknown[]): unknown;
+        DropWeapon(cqN: pb2GunInstance): void;
         DropGunIfPossible(...args: unknown[]): unknown;
         SetAllGrenadesCount(...args: unknown[]): unknown;
         GetWeaponGlow(...args: unknown[]): unknown;

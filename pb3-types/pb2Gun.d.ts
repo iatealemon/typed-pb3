@@ -16,8 +16,8 @@ declare global {
         y: unknown;
         readonly tox: unknown;
         readonly toy: unknown;
-        readonly owner: unknown;
-        readonly owner_entity: unknown;
+        readonly owner: pb2CharacterInstance | null;
+        readonly owner_entity: pb2EntityInstance | null;
         readonly gun_type: unknown;
         readonly gun_type_string: unknown;
         barrel_spin: unknown;
@@ -39,11 +39,11 @@ declare global {
         deactivate(...args: unknown[]): unknown;
         CarryEnd(...args: unknown[]): unknown;
         remove(...args: unknown[]): unknown;
-        readonly is_being_removed: unknown;
-        readonly box2d_body: unknown;
+        readonly is_being_removed: boolean;
+        readonly box2d_body: b2BodyInstance;
         main_reload_length: unknown;
         readonly is_active: unknown;
-        readonly is_being_carried: unknown;
+        readonly is_being_carried: boolean;
         readonly attachment_atom: unknown;
         readonly clip_out: unknown;
         readonly muzzle_alpha: unknown;

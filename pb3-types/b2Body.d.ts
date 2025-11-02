@@ -14,10 +14,10 @@ declare global {
         SetVelY(...args: unknown[]): unknown;
         GetVelX(...args: unknown[]): unknown;
         GetVelY(...args: unknown[]): unknown;
-        SetAngle(...args: unknown[]): unknown;
+        SetAngle(angle: number): void;
         GetAngle(...args: unknown[]): unknown;
         GetAngularVelocity(...args: unknown[]): unknown;
-        SetAngularVelocity(...args: unknown[]): unknown;
+        SetAngularVelocity(omega: number): void;
         ApplyForce(...args: unknown[]): unknown;
         ApplyForceXY(...args: unknown[]): unknown;
         ApplyTorque(...args: unknown[]): unknown;
