@@ -3,10 +3,10 @@ import type { ClassIdentityProps } from "./internal/helper";
 /** unfinished */
 export type pb2EntityInstanceBase<ClassName extends string> = ClassIdentityProps<ClassName> & {
     readonly classid: unknown;
-    readonly x: unknown;
-    readonly y: unknown;
-    readonly tox: unknown;
-    readonly toy: unknown;
+    readonly x: number;
+    readonly y: number;
+    readonly tox: number;
+    readonly toy: number;
     InstallGun(...args: unknown[]): unknown;
     DropGun(...args: unknown[]): unknown;
     remove(...args: unknown[]): unknown;
@@ -22,7 +22,7 @@ export type pb2EntityInstanceBase<ClassName extends string> = ClassIdentityProps
     team: pb2TeamInstance;
     SetDriverSeatsAndRadius(...args: unknown[]): unknown;
     SetSide(...args: unknown[]): unknown;
-    readonly box2d_bodies: unknown;
+    readonly box2d_bodies: b2BodyInstance[];
     addEventListener(...args: unknown[]): unknown;
     removeEventListener(...args: unknown[]): unknown;
     GetLimb(id: unknown): unknown;

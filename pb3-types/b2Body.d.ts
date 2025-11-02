@@ -4,12 +4,12 @@ export {};
 declare global {
     /** unfinished */
     type b2BodyInstance = ClassIdentityProps<"b2Body"> & {
-        SetPos(...args: unknown[]): unknown;
+        SetPos(x: number, y: number): void;
         SetPosX(...args: unknown[]): unknown;
         SetPosY(...args: unknown[]): unknown;
-        GetPosX(...args: unknown[]): unknown;
-        GetPosY(...args: unknown[]): unknown;
-        SetVel(...args: unknown[]): unknown;
+        GetPosX(): number;
+        GetPosY(): number;
+        SetVel(x: number, y: number): void;
         SetVelX(...args: unknown[]): unknown;
         SetVelY(...args: unknown[]): unknown;
         GetVelX(...args: unknown[]): unknown;

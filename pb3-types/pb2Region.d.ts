@@ -7,17 +7,17 @@ declare global {
      * the class is actually called zV in the pb3 code but it's renamed here for obvious reasons
      */
     type pb2RegionInstance = ClassIdentityProps<"zV"> & {
-        readonly x: unknown;
-        readonly y: unknown;
+        readonly x: number;
+        readonly y: number;
         readonly classid: unknown;
         remove(...args: unknown[]): unknown;
         attached_to: unknown;
         readonly p: unknown;
         readonly box2d_body: unknown;
-        readonly minx: unknown;
-        readonly miny: unknown;
-        readonly maxx: unknown;
-        readonly maxy: unknown;
+        readonly minx: number;
+        readonly miny: number;
+        readonly maxx: number;
+        readonly maxy: number;
         readonly corner: unknown;
         readonly is_quad: unknown;
         readonly type: unknown;

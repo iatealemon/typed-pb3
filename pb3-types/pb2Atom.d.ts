@@ -15,8 +15,8 @@ declare global {
         readonly rad: unknown;
         readonly of: unknown;
         Teleport(...args: unknown[]): unknown;
-        GetBody(...args: unknown[]): unknown;
-        GetPosition(...args: unknown[]): unknown;
+        GetBody(): b2BodyInstance;
+        GetPosition(): b2Vec2;
         DealDamage(...args: unknown[]): unknown;
     };
 }

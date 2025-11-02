@@ -93,7 +93,7 @@ declare global {
         GetNonSwordsSlot(...args: unknown[]): unknown;
         GetRandomNonSwordsSlot(...args: unknown[]): unknown;
         GetFirstHealGunSlot(...args: unknown[]): unknown;
-        GetBody(...args: unknown[]): unknown;
+        GetBody(id: 0 | 1): b2BodyInstance;
         forceUnHandHold(id: unknown): void;
     };
 }
