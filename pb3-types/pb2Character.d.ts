@@ -44,8 +44,8 @@ declare global {
         readonly tox: unknown;
         readonly toy: unknown;
         readonly ang: unknown;
-        hea: unknown;
-        hmax: unknown;
+        hea: number;
+        hmax: number;
         start_hea: unknown;
         readonly ragdoll: unknown;
         MoveOn(...args: unknown[]): unknown;

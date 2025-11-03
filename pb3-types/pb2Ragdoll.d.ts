@@ -50,7 +50,7 @@ declare global {
         readonly tox: unknown;
         readonly toy: unknown;
         dimmed: unknown;
-        readonly owner_character: unknown;
+        readonly owner_character: null | pb2CharacterInstance;
         DealLimbDamage(...args: unknown[]): unknown;
         HealGunApplied(...args: unknown[]): unknown;
         CaptureHealGunApplied(...args: unknown[]): unknown;

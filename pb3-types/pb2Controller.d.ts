@@ -18,8 +18,8 @@ declare global {
         readonly player_connection: unknown;
         act_x: unknown;
         act_y: unknown;
-        look_x: unknown;
-        look_y: unknown;
+        look_x: number;
+        look_y: number;
         act_fall: unknown;
         act_fire: unknown;
         act_fire2: unknown;

@@ -24,13 +24,13 @@ declare global {
         isRayTraceable(...args: unknown[]): unknown;
         isShapesAtPoint(...args: unknown[]): unknown;
         isWaterAtPoint(...args: unknown[]): unknown;
-        world_shapes: unknown;
-        world_shapes_bgs: unknown;
-        world_shapes_collide: unknown;
-        world_shapes_collide_no_water: unknown;
-        world_shapes_nonstatic: unknown;
-        world_shapes_walls: unknown;
-        world_shapes_water: unknown;
+        world_shapes: pb2ShapeInstance[];
+        world_shapes_bgs: (pb2ShapeInstance & {type: typeof pb2Shape.BACKGROUND })[];
+        world_shapes_collide: (pb2ShapeInstance & {type: typeof pb2Shape.WALL | typeof pb2Shape.MOVABLE | typeof pb2Shape.RIGID | typeof pb2Shape.WATER })[];
+        world_shapes_collide_no_water: (pb2ShapeInstance & {type: typeof pb2Shape.WALL | typeof pb2Shape.MOVABLE | typeof pb2Shape.RIGID })[];
+        world_shapes_nonstatic: (pb2ShapeInstance & {type: typeof pb2Shape.MOVABLE | typeof pb2Shape.RIGID })[];
+        world_shapes_walls: (pb2ShapeInstance & {type: typeof pb2Shape.WALL })[];
+        world_shapes_water: (pb2ShapeInstance & {type: typeof pb2Shape.WATER })[];
     };
     
     /** unfinished */

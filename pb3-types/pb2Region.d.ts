@@ -22,7 +22,7 @@ declare global {
         readonly is_quad: unknown;
         readonly type: unknown;
         readonly _childs: unknown;
-        AddPosition(...args: unknown[]): unknown;
+        AddPosition(x: number, y: number): void;
         readonly collected_entities_counter: unknown;
     };
 }

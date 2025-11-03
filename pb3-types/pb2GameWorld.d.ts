@@ -27,7 +27,7 @@ declare global {
         background_snow: unknown;
         background_terrain_random_seed: unknown;
         readonly connected: unknown;
-        readonly controller: unknown;
+        readonly controller: pb2ControllerInstance | null;
         default_lamp_color: unknown;
         fog_intensity: unknown;
         foliage_random_seed: unknown;

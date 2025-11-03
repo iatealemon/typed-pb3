@@ -23,8 +23,8 @@ declare global {
         barrel_spin: unknown;
         heat: unknown;
         main_cooldown: unknown;
-        readonly side: unknown;
-        Flip(...args: unknown[]): unknown;
+        readonly side: 1 | -1;
+        Flip(): void;
         Hide(...args: unknown[]): unknown;
         Show(...args: unknown[]): unknown;
         MoveTo(...args: unknown[]): unknown;
