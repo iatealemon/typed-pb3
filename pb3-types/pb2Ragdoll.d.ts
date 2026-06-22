@@ -44,7 +44,7 @@ declare global {
 
     /** unfinished */
     type pb2RagdollInstance = ClassIdentityProps<"pb2Ragdoll"> & {
-        readonly classid: unknown;
+        readonly classid: typeof pb2ClassID["RAGDOLL"];
         readonly x: unknown;
         readonly y: unknown;
         readonly tox: unknown;

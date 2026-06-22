@@ -4,7 +4,14 @@ export {};
 declare global {
     /** unfinished */
     const pb2AIThreat: ClassIdentityProps<"pb2AIThreat"> & {
-        NewThreat(...args: unknown[]): unknown;
+        /**
+         * @param _dHj hunter team
+         * @param _dHk enemy
+         * @param rk null or pb2AIWayPoint instance
+         * @param dHo no throw
+         * @returns {pb2AIThreatInstance}
+         */
+        NewThreat(_dHj: pb2TeamInstance, _dHk: pb2RagdollInstance, rk: null | unknown, dHo: boolean): pb2AIThreatInstance;
     };
     
     /** unfinished */

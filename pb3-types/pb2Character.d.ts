@@ -9,7 +9,7 @@ declare global {
         readonly DROP_NEVER: any;
         readonly DROP_WHEN_CAN_NOT_BE_REVIVED: any;
         readonly DROP_WHEN_INTENDED_ONLY: any;
-        characters: unknown;
+        characters: pb2CharacterInstance[];
         readonly player_half_width: any;
         readonly player_height: any;
         readonly player_sitmax: any;
@@ -19,9 +19,9 @@ declare global {
     
     /** unfinished */
     type pb2CharacterInstance = ClassIdentityProps<"pb2Character"> & {
-        readonly classid: unknown;
-        readonly x: unknown;
-        readonly y: unknown;
+        readonly classid: typeof pb2ClassID["CHARACTER"];
+        readonly x: number;
+        readonly y: number;
         act_x: unknown;
         act_y: unknown;
         act_fall: unknown;
@@ -47,10 +47,20 @@ declare global {
         hea: number;
         hmax: number;
         start_hea: unknown;
-        readonly ragdoll: unknown;
+        readonly ragdoll: pb2RagdollInstance;
         MoveOn(...args: unknown[]): unknown;
         DealCharacterDamage(...args: unknown[]): unknown;
-        SubstractHealth(...args: unknown[]): unknown;
+        /**
+         * @param damage damage amount
+         * @param cqQ default=true
+         * @param beo default=false
+         * @param fG default=0
+         * @param fE default=0
+         * @param gv mute damage sound. default=false
+         * @param cqP default=false
+         * @returns {boolean}
+         */
+        SubstractHealth(damage: number, cqQ: boolean, beo: boolean, fG: number, fE: number, gv: boolean, cqP: boolean): boolean;
         AddGrenades(...args: unknown[]): unknown;
         SetGrenades(...args: unknown[]): unknown;
         GetGrenades(...args: unknown[]): unknown;

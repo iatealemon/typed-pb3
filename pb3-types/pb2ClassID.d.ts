@@ -8,7 +8,7 @@ declare global {
         readonly ATOM: any;
         readonly BEAM_BULLET_TRAIL: any;
         readonly BULLET: any;
-        readonly CHARACTER: any;
+        readonly CHARACTER: 1;
         readonly COLLISION_IGNORE: any;
         readonly CONTROLLER: any;
         readonly DATA_CONNECTION: any;
@@ -29,7 +29,7 @@ declare global {
         readonly OTHER: any;
         readonly PHYS3D: any;
         readonly RADIOACTIVE_CLOUD: any;
-        readonly RAGDOLL: any;
+        readonly RAGDOLL: 3;
         readonly REGION: any;
         readonly REPLAY_DATA: any;
         readonly ROPE: any;
