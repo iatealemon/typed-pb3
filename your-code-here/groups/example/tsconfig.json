@@ -7,7 +7,6 @@
   ],
   "compilerOptions": {
     "types": [],
-    "baseUrl": ".",
     "checkJs": false, // set to true to see type errors
   }
 }

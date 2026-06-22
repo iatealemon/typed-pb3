@@ -1,0 +1,13 @@
+import { dts } from "rollup-plugin-dts";
+
+export default [
+    {
+        input: "pb3-types/temp-index.d.ts",
+        output: {
+            file: "dist/pb3-scripts.d.ts",
+            format: "es",
+            banner: "export {};",
+        },
+        plugins: [dts()],
+    },
+];

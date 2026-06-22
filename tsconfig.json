@@ -4,6 +4,6 @@
     "checkJs": false,
     "noEmit": true,
     "lib": ["ESNext"],
-    "baseUrl": ".",
   },
+  "exclude": ["dist"]
 }
