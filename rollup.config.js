@@ -4,7 +4,7 @@ export default [
     {
         input: "pb3-types/temp-index.d.ts",
         output: {
-            file: "dist/pb3-scripts.d.ts",
+            file: "dist/pb3-script-env.d.ts",
             format: "es",
             banner: "export {};",
         },
