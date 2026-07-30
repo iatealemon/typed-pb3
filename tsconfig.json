@@ -5,5 +5,5 @@
     "noEmit": true,
     "lib": ["ESNext"],
   },
-  "exclude": ["dist"]
+  "exclude": ["dist", "generation"]
 }

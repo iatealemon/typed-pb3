@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const dir = join(__dirname, "..", "pb3-types");
+const dir = join(__dirname, "..", "pb3-types", "types");
 
 const imports = readdirSync(dir)
     .filter(f => f.endsWith(".d.ts") && f !== "temp-index.d.ts")
