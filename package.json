@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "bundle": "node ./scripts/generate-types-index.js && rollup -c && node ./scripts/delete-types-index.js",
+    "bundle": "node ./scripts/bundle.js",
     "generate-types": "node ./scripts/extraction-to-types.js"
   },
   "keywords": [],
