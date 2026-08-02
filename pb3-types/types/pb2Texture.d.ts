@@ -8,6 +8,6 @@ declare global {
         readonly url: unknown;
     }
     var pb2Texture: ClassIdentityProps<"pb2Texture"> & {
-        GetTextureByName: (name: unknown) => unknown;
+        GetTextureByName: (name: unknown) => pb2Texture;
     }
 }

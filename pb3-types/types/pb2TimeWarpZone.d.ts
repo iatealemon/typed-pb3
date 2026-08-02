@@ -6,28 +6,25 @@ declare global {
     interface pb2TimeWarpZone extends ClassIdentityProps<"pb2TimeWarpZone"> {
         /** Type is unknown. One known value: 22 */
         readonly classid: unknown;
-        readonly x: unknown;
-        readonly y: unknown;
-        MoveTo: (xx: unknown, yy: unknown) => unknown;
-        SetTargetSpeed: (v: unknown) => unknown;
-        readonly target_speed: unknown;
-        decay_speed: unknown;
+        readonly x: number;
+        readonly y: number;
+        MoveTo: (xx: number, yy: number) => unknown;
+        SetTargetSpeed: (v: number) => unknown;
+        readonly target_speed: number;
+        decay_speed: number;
         remove: () => unknown;
     }
     var pb2TimeWarpZone: ClassIdentityProps<"pb2TimeWarpZone"> & {
-        /** Type is unknown. One known value: 150 */
-        base_range: unknown;
-        /** Type is unknown. One known value: 50 */
-        blur_range: unknown;
-        /** Type is unknown. One known value: 0.35 */
-        target_speed: unknown;
+        base_range: number;
+        blur_range: number;
+        target_speed: number;
         /** Type is unknown. One known value: 0 */
         TEXTURE_NONE: unknown;
         /** Type is unknown. One known value: 1 */
         TEXTURE_TIME_NADE_BLACKOUT: unknown;
         /** Type is unknown. One known value: 2 */
         TEXTURE_GRADIENT: unknown;
-        CreateWarpZone: (params: unknown) => unknown;
+        CreateWarpZone: (params: unknown) => pb2TimeWarpZone;
         /**
          * @param x   
          * @param y   
@@ -35,14 +32,13 @@ declare global {
          * @param beL (default=null)   
          * @param efv (default=false)   
          */
-        GetSpeedAtPoint: (x: unknown, y: unknown, eft?: unknown, beL?: unknown, efv?: unknown) => unknown;
+        GetSpeedAtPoint: (x: number, y: number, eft?: unknown, beL?: unknown, efv?: unknown) => number;
         /**
          * @param body   
          * @param eft (default=null)   
          */
         TimeWarpFunction: (body: unknown, eft?: unknown) => unknown;
-        IsBodyChronoFrozen: (body: unknown) => unknown;
-        /** Type is unknown. One known value: [] */
-        zones: unknown;
+        IsBodyChronoFrozen: (body: unknown) => boolean;
+        zones: pb2TimeWarpZone[];
     }
 }

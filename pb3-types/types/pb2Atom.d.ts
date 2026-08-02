@@ -7,18 +7,18 @@ declare global {
     interface pb2Atom extends ClassIdentityProps<"hT"> {
         /** Type is unknown. One known value: 103 */
         readonly classid: unknown;
-        x: unknown;
-        y: unknown;
-        tox: unknown;
-        toy: unknown;
-        readonly rad: unknown;
-        readonly of: unknown;
-        Teleport: (ax: unknown, ay: unknown) => unknown;
+        x: number;
+        y: number;
+        tox: number;
+        toy: number;
+        readonly rad: number;
+        readonly of: pb2Ragdoll | null;
+        Teleport: (ax: number, ay: number) => unknown;
         GetBody: () => b2Body;
         GetPosition: () => b2Vec2;
         DealDamage: (args: unknown) => unknown;
-        health_damage_multiplier: unknown;
-        limb_damage_multiplier: unknown;
+        health_damage_multiplier: number;
+        limb_damage_multiplier: number;
     }
     
 }

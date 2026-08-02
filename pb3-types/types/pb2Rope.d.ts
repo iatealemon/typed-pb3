@@ -8,7 +8,7 @@ declare global {
         /** Type is unknown. One known value: 23 */
         readonly classid: unknown;
         readonly ragdoll: unknown;
-        readonly is_collapsing: unknown;
+        readonly is_collapsing: boolean;
         readonly held_ragdoll: unknown;
         readonly remote_body: unknown;
     }

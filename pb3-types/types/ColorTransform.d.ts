@@ -10,8 +10,8 @@ declare global {
         redOffset: number;
         greenOffset: number;
         blueOffset: number;
-        clone: () => unknown;
-        multiplyHighRangeColor: (v: unknown) => unknown;
+        clone: () => ColorTransform;
+        multiplyHighRangeColor: (v: {r: number, g: number, b: number}) => ColorTransform;
     }
     var ColorTransform: {
         /**

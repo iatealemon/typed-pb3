@@ -6,10 +6,10 @@ declare global {
     interface pb2Ragdoll extends ClassIdentityProps<"pb2Ragdoll"> {
         /** Type is unknown. One known value: 3 */
         readonly classid: unknown;
-        readonly x: unknown;
-        readonly y: unknown;
-        readonly tox: unknown;
-        readonly toy: unknown;
+        readonly x: number;
+        readonly y: number;
+        readonly tox: number;
+        readonly toy: number;
         dimmed: unknown;
         readonly owner_character: pb2Character | null;
         /**
@@ -31,17 +31,17 @@ declare global {
         readonly side: unknown;
         Flip: () => unknown;
         remove: () => unknown;
-        readonly is_being_removed: unknown;
+        readonly is_being_removed: boolean;
         SetVision: (ID: unknown) => unknown;
         GetVision: () => unknown;
         GetBlindness: () => unknown;
         SetBlindness: (v: unknown) => unknown;
         GetDeafness: () => unknown;
         SetDeafness: (v: unknown) => unknown;
-        hp_head: unknown;
-        hp_body: unknown;
-        hp_arms: unknown;
-        hp_legs: unknown;
+        hp_head: number;
+        hp_body: number;
+        hp_arms: number;
+        hp_legs: number;
         GetAtomsTotal: () => unknown;
         readonly gameplay_effects: unknown;
         ClearBulletHoles: () => unknown;
@@ -65,7 +65,7 @@ declare global {
          * @param beF (default=false)   
          * @param ben (default=null)   
          */
-        Teleport: (dx: unknown, dy: unknown, dJP?: unknown, dJQ?: unknown, beD?: unknown, beF?: unknown, ben?: unknown) => unknown;
+        Teleport: (dx: number, dy: number, dJP?: unknown, dJQ?: unknown, beD?: unknown, beF?: unknown, ben?: unknown) => unknown;
         /**
          * @param sound_name   
          * @param eVL (default=false)   
@@ -89,8 +89,8 @@ declare global {
         GetMesh: (id?: number) => unknown;
     }
     var pb2Ragdoll: ClassIdentityProps<"pb2Ragdoll"> & {
-        CreateRagdoll: (params: unknown) => unknown;
-        CreateRagdollComplete: (p: unknown) => unknown;
+        CreateRagdoll: (params: unknown) => pb2Ragdoll;
+        CreateRagdollComplete: (p: unknown) => pb2Ragdoll;
         /** Type is unknown. One known value: 0 */
         b_pelvis: unknown;
         /** Type is unknown. One known value: 1 */
@@ -157,7 +157,6 @@ declare global {
         mc_leg2b_broken: unknown;
         /** Type is unknown. One known value: 21 */
         mc_body_broken: unknown;
-        /** Type is unknown. One known value: [] */
-        ragdolls: unknown;
+        ragdolls: pb2Ragdoll[];
     }
 }

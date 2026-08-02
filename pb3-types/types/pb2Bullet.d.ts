@@ -6,34 +6,34 @@ declare global {
     interface pb2Bullet extends ClassIdentityProps<"pb2Bullet"> {
         /** Type is unknown. One known value: 4 */
         readonly classid: unknown;
-        readonly x: unknown;
-        readonly y: unknown;
+        readonly x: number;
+        readonly y: number;
         readonly owner_ragdoll: unknown;
         readonly owner_gun: unknown;
         readonly initial_grenade_type: unknown;
-        readonly is_punch: unknown;
-        readonly is_sword: unknown;
-        readonly is_bite: unknown;
-        readonly is_railgun: unknown;
-        readonly is_rocket: unknown;
-        readonly is_plasma: unknown;
-        readonly is_grenade: unknown;
-        readonly is_radioactive: unknown;
-        readonly is_beam: unknown;
-        readonly is_blaster: unknown;
-        readonly is_healgun: unknown;
-        readonly is_cloud: unknown;
-        readonly is_lightning: unknown;
-        readonly is_blinding: unknown;
+        readonly is_punch: boolean;
+        readonly is_sword: boolean;
+        readonly is_bite: boolean;
+        readonly is_railgun: boolean;
+        readonly is_rocket: boolean;
+        readonly is_plasma: boolean;
+        readonly is_grenade: boolean;
+        readonly is_radioactive: boolean;
+        readonly is_beam: boolean;
+        readonly is_blaster: boolean;
+        readonly is_healgun: boolean;
+        readonly is_cloud: boolean;
+        readonly is_lightning: boolean;
+        readonly is_blinding: boolean;
         readonly rocket_direct_damage_mode: unknown;
-        readonly is_wall_sticking: unknown;
-        readonly is_nail: unknown;
-        Teleport: (dx: unknown, dy: unknown) => unknown;
-        readonly box2d_body: unknown;
+        readonly is_wall_sticking: boolean;
+        readonly is_nail: boolean;
+        Teleport: (dx: number, dy: number) => unknown;
+        readonly box2d_body: b2Body;
         /** @param dlv (default=false)  */
         remove: (dlv?: unknown) => unknown;
-        readonly is_being_removed: unknown;
-        bullet_hp: unknown;
+        readonly is_being_removed: boolean;
+        bullet_hp: number;
         readonly is_thrown_by: unknown;
         /** @param id (default=0)  */
         GetMesh: (id?: 0 | 1 | 2) => THREE.Mesh | null;
@@ -171,8 +171,7 @@ declare global {
          * @param owner_ragdoll (default=null)   
          * @param PF (default=false)   
          */
-        CreateGadget: (x: unknown, y: unknown, _type: unknown, cfF?: unknown, owner_ragdoll?: unknown, PF?: unknown) => unknown;
-        /** Type is unknown. One known value: [] */
-        bullets: unknown;
+        CreateGadget: (x: number, y: number, _type: unknown, cfF?: unknown, owner_ragdoll?: unknown, PF?: unknown) => unknown;
+        bullets: pb2Bullet[];
     }
 }

@@ -11,19 +11,19 @@ declare global {
             setX: (x: number) => Vector3;
             setY: (y: number) => Vector3;
             setZ: (z: number) => Vector3;
-            setComponent: (index: unknown, value: unknown) => unknown;
-            getComponent: (index: unknown) => unknown;
-            clone: () => unknown;
+            setComponent: (index: number, value: number) => unknown;
+            getComponent: (index: number) => number;
+            clone: () => Vector3;
             copy: (v: unknown) => unknown;
             add: (v: unknown, w: unknown) => unknown;
             addScalar: (s: unknown) => unknown;
             addVectors: (a: unknown, b: unknown) => unknown;
             addScaledVector: (v: unknown, s: unknown) => unknown;
             sub: (v: unknown, w: unknown) => unknown;
-            subScalar: (s: unknown) => unknown;
+            subScalar: (s: number) => unknown;
             subVectors: (a: unknown, b: unknown) => unknown;
             multiply: (v: unknown, w: unknown) => unknown;
-            multiplyScalar: (scalar: unknown) => unknown;
+            multiplyScalar: (scalar: number) => unknown;
             multiplyVectors: (a: unknown, b: unknown) => unknown;
             applyEuler: (euler: unknown) => unknown;
             applyAxisAngle: (axis: unknown, angle: unknown) => unknown;
@@ -34,11 +34,11 @@ declare global {
             unproject: (camera: unknown) => unknown;
             transformDirection: (m: unknown) => unknown;
             divide: (v: unknown) => unknown;
-            divideScalar: (scalar: unknown) => unknown;
+            divideScalar: (scalar: number) => unknown;
             min: (v: unknown) => unknown;
             max: (v: unknown) => unknown;
             clamp: (min: unknown, max: unknown) => unknown;
-            clampScalar: (minVal: unknown, maxVal: unknown) => unknown;
+            clampScalar: (minVal: number, maxVal: number) => unknown;
             clampLength: (min: unknown, max: unknown) => unknown;
             floor: () => unknown;
             ceil: () => unknown;
@@ -83,8 +83,7 @@ declare global {
             z: number;
         }
         interface Matrix4 extends ClassIdentityProps<"Matrix4"> {
-            /** Type is unknown. One known value: true */
-            isMatrix4: unknown;
+            isMatrix4: boolean;
             set: (n11: unknown, n12: unknown, n13: unknown, n14: unknown, n21: unknown, n22: unknown, n23: unknown, n24: unknown, n31: unknown, n32: unknown, n33: unknown, n34: unknown, n41: unknown, n42: unknown, n43: unknown, n44: unknown) => unknown;
             identity: () => unknown;
             clone: () => unknown;
@@ -99,7 +98,7 @@ declare global {
             multiply: (m: unknown, n: unknown) => unknown;
             premultiply: (m: unknown) => unknown;
             multiplyMatrices: (a: unknown, b: unknown) => unknown;
-            multiplyScalar: (s: unknown) => unknown;
+            multiplyScalar: (s: number) => unknown;
             applyToBufferAttribute: (attribute: unknown) => unknown;
             determinant: () => unknown;
             transpose: () => unknown;
@@ -155,13 +154,12 @@ declare global {
             bNj: (v: unknown) => unknown;
         }
         interface Euler extends ClassIdentityProps<"Euler"> {
-            x: unknown;
-            y: unknown;
-            z: unknown;
+            x: number;
+            y: number;
+            z: number;
             order: unknown;
-            /** Type is unknown. One known value: true */
-            isEuler: unknown;
-            set: (x: unknown, y: unknown, z: unknown, order: unknown) => unknown;
+            isEuler: boolean;
+            set: (x: number, y: number, z: number, order: unknown) => unknown;
             clone: () => unknown;
             copy: (euler: unknown) => unknown;
             setFromRotationMatrix: (m: unknown, order: unknown, update: unknown) => unknown;
@@ -178,12 +176,12 @@ declare global {
         interface Object3D extends ClassIdentityProps<"Object3D"> {
             readonly parent: unknown;
             lookAt: (vector: unknown) => unknown;
-            readonly position: unknown;
+            readonly position: Vector3;
             readonly rotation: unknown;
             readonly scale: unknown;
             readonly matrix: unknown;
             readonly matrixWorld: unknown;
-            visible: unknown;
+            visible: boolean;
         }
         // failed to be included in generation (extractor didn't search for Object3D subclasses, intentionally)
         interface Mesh extends ClassIdentityProps<"Mesh"> {
@@ -194,7 +192,7 @@ declare global {
             readonly scale: unknown;
             readonly matrix: unknown;
             readonly matrixWorld: unknown;
-            visible: unknown;
+            visible: boolean;
         }
 
     }

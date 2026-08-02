@@ -4,19 +4,19 @@ import type { ClassIdentityProps } from "./internal/helper";
 
 declare global {
     interface pb2Shape extends ClassIdentityProps<"pb2Shape"> {
-        readonly x: unknown;
-        readonly y: unknown;
-        readonly w: unknown;
-        readonly h: unknown;
+        readonly x: number;
+        readonly y: number;
+        readonly w: number;
+        readonly h: number;
         /** Type is unknown. One known value: 6 */
         readonly classid: unknown;
-        SetSpeed: (v: unknown) => unknown;
+        SetSpeed: (v: number) => unknown;
         /**
          * @param x   
          * @param y   
          * @param yg (default=null)   
          */
-        StartMove: (x: unknown, y: unknown, yg?: unknown) => unknown;
+        StartMove: (x: number, y: number, yg?: unknown) => unknown;
         /** @param recursive (default=true)  */
         remove: (recursive?: unknown) => unknown;
         /**
@@ -33,20 +33,20 @@ declare global {
         readonly p: unknown;
         readonly normal: unknown;
         readonly hea: unknown;
-        readonly box2d_body: unknown;
-        readonly minx: unknown;
-        readonly miny: unknown;
-        readonly maxx: unknown;
-        readonly maxy: unknown;
+        readonly box2d_body: b2Body;
+        readonly minx: number;
+        readonly miny: number;
+        readonly maxx: number;
+        readonly maxy: number;
         readonly corner: unknown;
         readonly is_quad: unknown;
         readonly type: unknown;
         readonly frozen_spots: unknown;
         readonly _childs: unknown;
-        SingleTracePoint: (x: unknown, y: unknown) => unknown;
+        SingleTracePoint: (x: number, y: number) => unknown;
         readonly see_through: unknown;
-        SetAIBreakingAllowed: (v: unknown) => unknown;
-        SetHitpointsIfPossible: (v: unknown) => unknown;
+        SetAIBreakingAllowed: (v: boolean) => void;
+        SetHitpointsIfPossible: (v: number) => unknown;
         /** @param id (default=0)  */
         GetMesh: (id?: 0) => unknown;
     }
@@ -87,8 +87,8 @@ declare global {
          * @param y   
          * @param eLd (default=null)   
          */
-        SnowCanReach: (x: unknown, y: unknown, eLd?: unknown) => unknown;
-        CountShapesInRect: (yJ: unknown, x: unknown, y: unknown, _width: unknown, _height: unknown, world_shapes_collide: unknown) => unknown;
+        SnowCanReach: (x: number, y: number, eLd?: unknown) => boolean;
+        CountShapesInRect: (yJ: unknown, x: number, y: number, _width: number, _height: number, world_shapes_collide: unknown) => number;
         /**
          * @param x   
          * @param y   
@@ -97,22 +97,22 @@ declare global {
          * @param where   
          * @param QI (default=true)   
          */
-        isRayTraceable: (x: unknown, y: unknown, tox: unknown, toy: unknown, where: unknown, QI?: unknown) => unknown;
-        isLineTraceable: (x: unknown, y: unknown, tox: unknown, toy: unknown, where: unknown) => unknown;
-        GetShapeAtPoint: (x: unknown, y: unknown) => unknown;
-        RaycastResult: (x: unknown, y: unknown, tox: unknown, toy: unknown, where: unknown) => unknown;
+        isRayTraceable: (x: number, y: number, tox: number, toy: number, where: unknown, QI?: unknown) => boolean;
+        isLineTraceable: (x: number, y: number, tox: number, toy: number, where: unknown) => boolean;
+        GetShapeAtPoint: (x: number, y: number) => unknown;
+        RaycastResult: (x: number, y: number, tox: number, toy: number, where: unknown) => unknown;
         /**
          * @param x   
          * @param y   
          * @param eLv (default=true)   
          */
-        isWaterAtPoint: (x: unknown, y: unknown, eLv?: unknown) => unknown;
+        isWaterAtPoint: (x: number, y: number, eLv?: unknown) => boolean;
         /**
          * @param x   
          * @param y   
          * @param where (default=null)   
          * @param QI (default=true)   
          */
-        isShapesAtPoint: (x: unknown, y: unknown, where?: unknown, QI?: unknown) => unknown;
+        isShapesAtPoint: (x: number, y: number, where?: unknown, QI?: unknown) => boolean;
     }
 }

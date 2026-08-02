@@ -4,7 +4,7 @@ import type { ClassIdentityProps } from "./internal/helper";
 
 declare global {
     interface pb2PendingJoinRequest extends ClassIdentityProps<"pb2PendingJoinRequest"> {
-        readonly user_uid: unknown;
+        readonly user_uid: number;
         readonly connection_uid: unknown;
         readonly response_sent: unknown;
         accept: () => unknown;

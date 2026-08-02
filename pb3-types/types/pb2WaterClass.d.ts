@@ -23,6 +23,6 @@ declare global {
         TYPE_ZERO_GRAVITY_NO_MUFFLE: unknown;
         /** Type is unknown. One known value: ["pb2WaterClass.TYPE_WATER","pb2WaterClass.TYPE_TOXIC","pb2WaterClass.TYPE_CORROSIVE","pb2WaterClass.TYPE_LAVA","pb2WaterClass.TYPE_FREEZING","pb2WaterClass.TYPE_ZERO_GRAVITY","pb2WaterClass.TYPE_ZERO_GRAVITY_NO_MUFFLE"] */
         ALL_TYPES: unknown;
-        DeclareWaterClass: (params: unknown) => unknown;
+        DeclareWaterClass: (params: unknown) => pb2WaterClass;
     }
 }

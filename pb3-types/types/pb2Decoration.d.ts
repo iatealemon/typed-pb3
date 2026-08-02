@@ -23,11 +23,11 @@ declare global {
         hide_relative_to_mesh: unknown;
         inherit_effects: unknown;
         visible: unknown;
-        readonly is_being_removed: unknown;
+        readonly is_being_removed: boolean;
         readonly position: unknown;
-        x: unknown;
-        y: unknown;
-        z: unknown;
+        x: number;
+        y: number;
+        z: number;
         readonly rotation: unknown;
         readonly scale: unknown;
         /** Type is unknown. One known value: null */
@@ -43,7 +43,7 @@ declare global {
         allow_sync: unknown;
     }
     var pb2Decoration: ClassIdentityProps<"pb2Decoration"> & {
-        CreateDecoration: (params: unknown) => unknown;
+        CreateDecoration: (params: unknown) => pb2Decoration;
         PreloadUserData: (user_data_uid: unknown) => unknown;
         /** Type is unknown. One known value: 0 */
         LAYER_WORLD: unknown;

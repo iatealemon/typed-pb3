@@ -6,10 +6,10 @@ declare global {
     interface pb2Gun extends ClassIdentityProps<"pb2Gun"> {
         /** Type is unknown. One known value: 5 */
         readonly classid: unknown;
-        x: unknown;
-        y: unknown;
-        readonly tox: unknown;
-        readonly toy: unknown;
+        x: number;
+        y: number;
+        readonly tox: number;
+        readonly toy: number;
         readonly owner: pb2Character | null;
         readonly owner_entity: pb2Entity | null;
         readonly gun_type: unknown;
@@ -76,10 +76,9 @@ declare global {
         GetMesh: (id?: number) => unknown;
     }
     var pb2Gun: ClassIdentityProps<"pb2Gun"> & {
-        CreateGun: (params: unknown) => unknown;
+        CreateGun: (params: unknown) => pb2Gun;
+        guns: pb2Gun[];
         /** Type is unknown. One known value: [] */
-        guns: unknown;
-        /** Type is unknown. One known value: [] */
-        pickable_guns: unknown;
+        pickable_guns: unknown[];
     }
 }

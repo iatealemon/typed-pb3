@@ -6,8 +6,8 @@ declare global {
     interface pb2ShieldZone extends ClassIdentityProps<"pb2ShieldZone"> {
         /** Type is unknown. One known value: 21 */
         readonly classid: unknown;
-        readonly x: unknown;
-        readonly y: unknown;
+        readonly x: number;
+        readonly y: number;
         /**
          * @param bN   
          * @param xx   
@@ -17,7 +17,7 @@ declare global {
          */
         DealDamage: (bN: unknown, xx: unknown, yy: unknown, _boD: unknown, Ox?: unknown) => unknown;
         Heal: (bN: unknown) => unknown;
-        MoveTo: (xx: unknown, yy: unknown) => unknown;
+        MoveTo: (xx: number, yy: number) => unknown;
         /** @param gv (default=false)  */
         Destroy: (gv?: unknown) => unknown;
         remove: () => unknown;
@@ -31,7 +31,6 @@ declare global {
         SOUND_PRESET_ID_SPOILER26_SHIELD: unknown;
         /** Type is unknown. One known value: ["pb2ShieldZone.SOUND_PRESET_ID_SILENT","pb2ShieldZone.SOUND_PRESET_ID_SHIELD_GRENADE","pb2ShieldZone.SOUND_PRESET_ID_SPOILER26_SHIELD"] */
         ALL_SOUND_PRESET_IDS: unknown;
-        /** Type is unknown. One known value: [] */
-        shields: unknown;
+        shields: pb2ShieldZone[];
     }
 }

@@ -8,11 +8,11 @@ declare global {
         // Detach is only accessible when this.oh (type b2Joint sometimes) !== undefined, which is true only on pb2EntityAntigravity and pb2EntityTurret
         // failed to be included in generation (depends on value of this.oh which doesn't have a proper value on the fake instances)
         Detach(...args: unknown[]): unknown;
-        range: unknown;
-        strength: unknown;
-        mass_cap_scale: unknown;
-        cooldown_duration_scale: unknown;
-        can_be_damaged: unknown;
+        range: number;
+        strength: number;
+        mass_cap_scale: number;
+        cooldown_duration_scale: number;
+        can_be_damaged: boolean;
         lights_intensity: unknown;
         light_current: unknown;
         light_next_update_in: unknown;

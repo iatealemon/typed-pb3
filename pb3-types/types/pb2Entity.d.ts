@@ -55,7 +55,7 @@ export type pb2EntityBase<ClassName extends string> = ClassIdentityProps<ClassNa
      * @param x   
      * @param dist (default=-123)   
      */
-    SetDriverSeatsAndRadius: (x: unknown, dist?: unknown) => unknown;
+    SetDriverSeatsAndRadius: (x: number, dist?: number) => unknown;
     /**
      * @param x   
      * @param eQr (default=false)   
@@ -72,7 +72,8 @@ export type pb2EntityBase<ClassName extends string> = ClassIdentityProps<ClassNa
 declare global {
     interface pb2Entity extends pb2EntityBase<"pb2Entity"> {}
     var pb2Entity: ClassIdentityProps<"pb2Entity"> & {
-        CreateEntity: (params: unknown) => unknown;
+        /** return type may be different based on the parameters passed in */
+        CreateEntity: (params: unknown) => pb2Entity;
         /** Type is unknown. One known value: 0 */
         TYPE_UNKNOWN: unknown;
         /** Type is unknown. One known value: 1 */
@@ -175,6 +176,6 @@ declare global {
          * @param lw (default=null)   
          * @param eQA (default=null)   
          */
-        CountShapesInRect: (yJ: unknown, x: unknown, y: unknown, _width: unknown, _height: unknown, eQz?: unknown, lw?: unknown, eQA?: unknown) => unknown;
+        CountShapesInRect: (yJ: unknown, x: number, y: number, _width: number, _height: number, eQz?: unknown, lw?: unknown, eQA?: unknown) => unknown;
     }
 }

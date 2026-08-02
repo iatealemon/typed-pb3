@@ -4,19 +4,18 @@ import type { ClassIdentityProps } from "./internal/helper";
 
 declare global {
     interface pb2Light extends ClassIdentityProps<"pb2Light"> {
-        x: unknown;
-        y: unknown;
-        z: unknown;
-        readonly is_static: unknown;
+        x: number;
+        y: number;
+        z: number;
+        readonly is_static: boolean;
         color: unknown;
         color_high_range: unknown;
-        power: unknown;
-        scale: unknown;
-        readonly flare: unknown;
+        power: number;
+        scale: number;
+        readonly flare: boolean;
         remove: () => unknown;
-        /** Type is unknown. One known value: true */
-        readonly is_being_removed: unknown;
-        SetPosition: (x: unknown, y: unknown, z: unknown) => unknown;
+        readonly is_being_removed: boolean;
+        SetPosition: (x: number, y: number, z: number) => unknown;
         UpdateMeshFlareColorAndScale: () => unknown;
         angular_range_from: unknown;
         angular_range_length: unknown;
@@ -27,9 +26,8 @@ declare global {
     }
     var pb2Light: ClassIdentityProps<"pb2Light"> & {
         /** Type is unknown. One known value: [] */
-        lights_dynamic: unknown;
-        /** Type is unknown. One known value: [] */
-        lights: unknown;
-        CreateLight: (params: unknown) => unknown;
+        lights_dynamic: unknown[];
+        lights: pb2Light[];
+        CreateLight: (params: unknown) => pb2Light;
     }
 }

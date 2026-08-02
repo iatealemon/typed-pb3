@@ -2,9 +2,11 @@ export { };
 
 declare global {
     interface Math {
-        sumPrecise: () => unknown;
-        POSITIVE_INFINITY: unknown;
-        NEGATIVE_INFINITY: unknown;
+        sumPrecise: (numbers: Iterable<number>) => number;
+        /** Accessing this throws an error */
+        POSITIVE_INFINITY: number;
+        /** Accessing this throws an error */
+        NEGATIVE_INFINITY: number;
         randomIntegerWithin: (a: number, b: number) => number;
         randomWithin: (a: number, b: number) => number;
     }
@@ -16,12 +18,11 @@ declare global {
     }
     interface Array<T> {
         join_test: () => unknown;
-        /** Type is unknown. One known value: null */
-        any: unknown;
+        /** Getter which returns a random element. Proper usage example: [ 0, 1, 2 ].any */
+        any: T;
     }
     interface ErrorConstructor {
         captureStackTrace: () => unknown;
-        /** Type is unknown. One known value: 10 */
-        stackTraceLimit: unknown;
+        stackTraceLimit: number;
     }
 }

@@ -37,7 +37,7 @@ declare global {
          * @param param (default=0.9)   
          * @param func (default=pb2_mp.FUNCTION_MORPH)   
          */
-        StartPositionMorph: (to_x: unknown, to_y: unknown, param?: unknown, func?: unknown) => unknown;
+        StartPositionMorph: (to_x: number, to_y: number, param?: unknown, func?: unknown) => unknown;
         StopPositionMorph: () => unknown;
         readonly camera_position_forced: unknown;
         readonly camera_position_target_x: unknown;
@@ -73,8 +73,7 @@ declare global {
         vehicle_in_out_param: unknown;
         /** Type is unknown. One known value: 3 */
         vehicle_in_out_func: unknown;
-        CreateController: (params: unknown) => unknown;
-        /** Type is unknown. One known value: [] */
-        controllers: unknown;
+        CreateController: (params: unknown) => pb2Controller;
+        controllers: pb2Controller[];
     }
 }

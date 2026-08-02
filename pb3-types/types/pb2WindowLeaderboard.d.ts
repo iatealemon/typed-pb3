@@ -6,9 +6,9 @@ import type { pb2WindowBase } from "./pb2Window";
 declare global {
     // failed to be included in generation (extractor didn't search for pb2Window subclasses)
     interface pb2WindowLeaderboard extends pb2WindowBase<"pb2WindowLeaderboard"> {
-        round_time: unknown;
-        round_time_max: unknown;
-        players_max: unknown;
+        round_time: number;
+        round_time_max: number;
+        players_max: number;
         fields: unknown;
         players: unknown;
         teams: unknown;

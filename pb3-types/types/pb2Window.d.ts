@@ -41,7 +41,8 @@ export type pb2WindowBase<ClassName extends string> = ClassIdentityProps<ClassNa
 declare global {
     interface pb2Window extends pb2WindowBase<"pb2Window"> {}
     var pb2Window: ClassIdentityProps<"pb2Window"> & {
-        CreateWindow: (params: unknown) => unknown;
+        /** return type may be different based on the parameters passed in */
+        CreateWindow: (params: unknown) => pb2Window;
         /** Type is unknown. One known value: 0 */
         DIALOGBOX: unknown;
         /** Type is unknown. One known value: 1 */

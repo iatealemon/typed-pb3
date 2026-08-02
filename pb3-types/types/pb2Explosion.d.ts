@@ -69,10 +69,10 @@ declare global {
         readonly source_bullet: pb2Bullet | pb2Explosion["owner_ragdoll"];
         readonly owner_ragdoll: pb2Ragdoll | null;
         readonly is_smoke: boolean;
-        readonly radius: unknown;
+        readonly radius: number;
     }
     var pb2Explosion: ClassIdentityProps<"pb2Explosion"> & {
-        MakeExplosion: (params: unknown) => pb2Explosion | undefined;
+        MakeExplosion: (params: unknown) => pb2Explosion;
         /** Type is unknown. One known value: 0 */
         EXPLOSION_NONE: unknown;
         /** Type is unknown. One known value: 1 */

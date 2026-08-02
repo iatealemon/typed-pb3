@@ -25,6 +25,7 @@ declare global {
      * @param _cpp (default=1)   
      */
     var _pb2T: (_coV: (...args: any[]) => any, _cpk?: unknown, _cpn?: unknown, _cpo?: unknown, _cpp?: unknown) => unknown;
+    /** responsible for throwing error if a trigger is called before it's spawned */
     var _pb2TU: (t: string) => never;
     var _pb2ClientSideTrigger: (f: unknown) => unknown;
     /**
@@ -36,7 +37,7 @@ declare global {
      * @param opacity (default=0.5)   
      * @param eIe (default=0) time to display  
      */
-    var DrawDebugPoint: (x: unknown, y: unknown, color?: unknown, size?: unknown, z?: unknown, opacity?: unknown, eIe?: unknown) => unknown;
+    var DrawDebugPoint: (x: number, y: number, color?: unknown, size?: number, z?: number, opacity?: number, eIe?: number) => unknown;
     /**
      * @param ax start x  
      * @param ay start y  
@@ -47,7 +48,7 @@ declare global {
      * @param y (default=-123) depth  
      * @param eIe (default=0) time to display  
      */
-    var DrawDebugLine: (ax: unknown, ay: unknown, bx: unknown, by: unknown, color?: unknown, opacity?: unknown, y?: unknown, eIe?: unknown) => unknown;
+    var DrawDebugLine: (ax: number, ay: number, bx: number, by: number, color?: unknown, opacity?: number, y?: number, eIe?: number) => unknown;
     /**
      * @param ax start x  
      * @param ay start y  
@@ -58,7 +59,7 @@ declare global {
      * @param y (default=-123) depth  
      * @param eIe (default=0) time to display  
      */
-    var DrawDebugArrow: (ax: unknown, ay: unknown, bx: unknown, by: unknown, color?: unknown, opacity?: unknown, y?: unknown, eIe?: unknown) => unknown;
+    var DrawDebugArrow: (ax: number, ay: number, bx: number, by: number, color?: unknown, opacity?: number, y?: number, eIe?: number) => unknown;
     /**
      * @param minx lower x bound  
      * @param miny lower y bound  
@@ -69,7 +70,7 @@ declare global {
      * @param y (default=-123) depth  
      * @param eIe (default=0) time to display  
      */
-    var DrawDebugRect: (minx: unknown, miny: unknown, maxx: unknown, maxy: unknown, color?: unknown, opacity?: unknown, y?: unknown, eIe?: unknown) => unknown;
+    var DrawDebugRect: (minx: number, miny: number, maxx: number, maxy: number, color?: unknown, opacity?: number, y?: number, eIe?: number) => unknown;
     /**
      * @param minx lower x bound  
      * @param miny lower y bound  
@@ -80,7 +81,7 @@ declare global {
      * @param y (default=-123) depth  
      * @param eIe (default=0) time to display  
      */
-    var DrawDebugRectByDimensions: (minx: unknown, miny: unknown, w: unknown, h: unknown, color?: unknown, opacity?: unknown, y?: unknown, eIe?: unknown) => unknown;
+    var DrawDebugRectByDimensions: (minx: number, miny: number, w: number, h: number, color?: unknown, opacity?: number, y?: number, eIe?: number) => unknown;
 
     // cannot be typed because it would conflict with the declaration for javascript's addEventListener. requires a noLib: true setup with custom ts lib declarations
     //var addEventListener: (event_type: unknown, params: unknown, dVQ?: null | unknown) => void;

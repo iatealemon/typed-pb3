@@ -4,13 +4,13 @@ import type { ClassIdentityProps } from "./internal/helper";
 
 declare global {
     interface pb2Timer extends ClassIdentityProps<"pb2Timer"> {
-        calls_left: unknown;
-        current_cycle_time_left: unknown;
-        SetCalls: (v: unknown) => unknown;
-        SetTimeUntilNextCycle: (v: unknown) => unknown;
-        SetDefaultCycleDuration: (v: unknown) => unknown;
+        calls_left: number;
+        current_cycle_time_left: number;
+        SetCalls: (v: number) => unknown;
+        SetTimeUntilNextCycle: (v: number) => unknown;
+        SetDefaultCycleDuration: (v: number) => unknown;
         ResetCurrentCycle: () => unknown;
-        enabled: unknown;
+        enabled: boolean;
         Start: () => unknown;
         Stop: () => unknown;
         position_container: unknown;
@@ -23,7 +23,7 @@ declare global {
          * @param _type (default=0)   
          * @param bql (default=null)   
          */
-        CreateTimer: (func: unknown, tim: unknown, _type?: unknown, bql?: unknown) => unknown;
+        CreateTimer: (func: unknown, tim: unknown, _type?: unknown, bql?: unknown) => pb2Timer;
         /** Type is unknown. One known value: 0 */
         TYPE_GAME_TIMESCALE: unknown;
         /** Type is unknown. One known value: 1 */
@@ -32,9 +32,7 @@ declare global {
         TYPE_REAL_WORLD_TIMESCALE: unknown;
         /** Type is unknown. One known value: 3 */
         TYPE_FULL_FRAME_TICKS: unknown;
-        /** Type is unknown. One known value: [] */
-        timers_active_game: unknown;
-        /** Type is unknown. One known value: [] */
-        timers_active_world: unknown;
+        timers_active_game: pb2Timer[];
+        timers_active_world: pb2Timer[];
     }
 }

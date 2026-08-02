@@ -11,7 +11,6 @@ declare global {
         remove: () => unknown;
     }
     var pb2Fire: ClassIdentityProps<"pb2Fire"> & {
-        /** Type is unknown. One known value: [] */
-        fires: unknown;
+        fires: pb2Fire[];
     }
 }

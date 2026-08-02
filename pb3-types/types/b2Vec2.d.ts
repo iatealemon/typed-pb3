@@ -5,9 +5,9 @@ import type { ClassIdentityProps } from "./internal/helper";
 declare global {
     interface b2Vec2 extends ClassIdentityProps<"b2Vec2"> {
         SetZero: () => unknown;
-        Set: (x_: unknown, y_: unknown) => unknown;
+        Set: (x_: number, y_: number) => unknown;
         SetSelf: (x_: unknown, y_: unknown) => unknown;
-        AddXY: (x_: unknown, y_: unknown) => unknown;
+        AddXY: (x_: number, y_: number) => unknown;
         SetV: (v: unknown) => unknown;
         dot: (v: unknown) => unknown;
         mul: (a: unknown) => unknown;
@@ -35,7 +35,7 @@ declare global {
         Normalized: () => unknown;
         Rotate: (a: unknown) => unknown;
         Rotated: (a: unknown) => unknown;
-        RotatedSinCos: (sin: unknown, cos: unknown) => unknown;
+        RotatedSinCos: (sin: number, cos: number) => unknown;
         GetAngle: () => unknown;
         IsValid: () => unknown;
         MoveToUntilDistanceIs: (to: unknown, di: unknown) => unknown;
@@ -46,7 +46,7 @@ declare global {
          * @param y (default=0)   
          * @param seal (default=true)   
          */
-        new (x?: unknown, y?: unknown, seal?: unknown): b2Vec2;
+        new (x?: number, y?: number, seal?: boolean): b2Vec2;
 
     }
 }

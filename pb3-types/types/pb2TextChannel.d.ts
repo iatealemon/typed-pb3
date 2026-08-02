@@ -19,6 +19,6 @@ declare global {
         GetInvitedDataConnections: () => unknown;
     }
     var pb2TextChannel: ClassIdentityProps<"pb2TextChannel"> & {
-        CreateTextChannel: (params: unknown) => unknown;
+        CreateTextChannel: (params: unknown) => pb2TextChannel;
     }
 }

@@ -4,15 +4,15 @@ import type { ClassIdentityProps } from "./internal/helper";
 
 declare global {
     interface pb2WindowHint extends ClassIdentityProps<"pb2WindowHint"> {
-        readonly x: unknown;
-        readonly y: unknown;
+        readonly x: number;
+        readonly y: number;
         readonly text: unknown;
         readonly text_decorated: unknown;
         readonly type: unknown;
         readonly container: unknown;
         readonly attachment_ragdoll: unknown;
-        readonly time_current: unknown;
-        readonly time_to_live: unknown;
+        readonly time_current: number;
+        readonly time_to_live: number;
         /**
          * @param s   
          * @param cYr (default=false)   
@@ -33,7 +33,7 @@ declare global {
         sync_to_spectators: unknown;
     }
     var pb2WindowHint: ClassIdentityProps<"pb2WindowHint"> & {
-        CreateWindowHint: (params: unknown) => unknown;
+        CreateWindowHint: (params: unknown) => pb2WindowHint;
         /** Type is unknown. One known value: 0 */
         CONTAINER_TOP: unknown;
         /** Type is unknown. One known value: 1 */
@@ -51,36 +51,24 @@ declare global {
         /** Type is unknown. One known value: 4 */
         TYPE_HEALTHBAR: unknown;
         COLOR_RED: {
-            /** Type is unknown. One known value: 1 */
-            r: unknown;
-            /** Type is unknown. One known value: 0.2 */
-            g: unknown;
-            /** Type is unknown. One known value: 0.2 */
-            b: unknown;
+            r: number;
+            g: number;
+            b: number;
         }
         COLOR_YELLOW: {
-            /** Type is unknown. One known value: 1 */
-            r: unknown;
-            /** Type is unknown. One known value: 1 */
-            g: unknown;
-            /** Type is unknown. One known value: 0.4666666666666667 */
-            b: unknown;
+            r: number;
+            g: number;
+            b: number;
         }
         COLOR_GREEN: {
-            /** Type is unknown. One known value: 0.4 */
-            r: unknown;
-            /** Type is unknown. One known value: 1 */
-            g: unknown;
-            /** Type is unknown. One known value: 0.4 */
-            b: unknown;
+            r: number;
+            g: number;
+            b: number;
         }
         COLOR_WHITE: {
-            /** Type is unknown. One known value: 1 */
-            r: unknown;
-            /** Type is unknown. One known value: 1 */
-            g: unknown;
-            /** Type is unknown. One known value: 1 */
-            b: unknown;
+            r: number;
+            g: number;
+            b: number;
         }
     }
 }

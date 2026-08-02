@@ -50,7 +50,7 @@ declare global {
          * @param params   
          * @param slot (default=-1)   
          */
-        CreateSurfaceType: (params: unknown, slot?: unknown) => unknown;
+        CreateSurfaceType: (params: unknown, slot?: unknown) => pb2SurfaceType;
         SpawnPB2SurfaceTypeParams: (ffS: unknown, is_wall: unknown) => unknown;
     }
 }

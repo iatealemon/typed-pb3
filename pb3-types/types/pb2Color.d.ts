@@ -4,24 +4,24 @@ import type { ClassIdentityProps } from "./internal/helper";
 
 declare global {
     interface pb2Color extends ClassIdentityProps<"pb2Color"> {
-        r: unknown;
-        g: unknown;
-        b: unknown;
-        clone: () => unknown;
-        /** Type is unknown. One known value: 0 */
-        _uint: unknown;
-        multiply: (num: unknown) => unknown;
-        average: () => unknown;
-        toColorTransform: () => unknown;
-        /** @param enC (default=1)  */
-        random: (enC?: unknown) => unknown;
-        multUpToMax: (max: unknown) => unknown;
-        setRGB: (r: unknown, g: unknown, b: unknown) => unknown;
-        isEqual: (c: unknown) => unknown;
+        r: number;
+        g: number;
+        b: number;
+        clone: () => pb2Color;
+        _uint: number;
+        multiply: (num: number) => pb2Color;
+        /** sets every color channel value to their average */
+        average: () => pb2Color;
+        toColorTransform: () => ColorTransform;
+        /** @param enC (default=1) proportion (in range 0-1) */
+        random: (enC?: number) => pb2Color;
+        multUpToMax: (max: number) => pb2Color;
+        setRGB: (r: number, g: number, b: number) => pb2Color;
+        isEqual: (c: pb2Color) => boolean;
     }
     var pb2Color: {
         /** @param u (default=0xffffff)  */
-        new (u?: unknown): pb2Color;
+        new (u?: number): pb2Color;
 
     }
 }

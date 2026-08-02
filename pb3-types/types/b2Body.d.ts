@@ -31,7 +31,7 @@ declare global {
          * @param point (default=null)   
          */
         ApplyImpulse: (impulse: unknown, point?: unknown) => unknown;
-        ApplyImpulseXY: (impulse_x: unknown, impulse_y: unknown) => unknown;
+        ApplyImpulseXY: (impulse_x: number, impulse_y: number) => unknown;
         GetMass: () => unknown;
         GetWorldPoint: (localPoint: unknown) => unknown;
         GetWorldVector: (localVector: unknown) => unknown;

@@ -12,9 +12,7 @@ declare global {
         FUNCTION_MORPH: unknown;
         /** Type is unknown. One known value: 3 */
         FUNCTION_INVERSEMORPH: unknown;
-        /** Type is unknown. One known value: 960 */
-        ui_offset_x: unknown;
-        /** Type is unknown. One known value: 540 */
-        ui_offset_y: unknown;
+        ui_offset_x: number;
+        ui_offset_y: number;
     }
 }

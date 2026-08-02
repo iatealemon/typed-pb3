@@ -4,16 +4,13 @@ import type { ClassIdentityProps } from "./internal/helper";
 
 declare global {
     var pb2Multiplayer: ClassIdentityProps<"pb2Multiplayer"> & {
-        /** Type is unknown. One known value: false */
-        enabled: unknown;
+        enabled: boolean;
         /** Type is unknown. One known value: -1 */
         match_uid: unknown;
-        /** Type is unknown. One known value: -1 */
-        match_host_user_uid: unknown;
+        match_host_user_uid: number;
         /** Type is unknown. One known value: "???" */
         match_instance_key: unknown;
-        /** Type is unknown. One known value: -1 */
-        initiator_user_uid: unknown;
+        initiator_user_uid: number;
         SetMatchProperty: (property: unknown, value: unknown) => unknown;
         GetMatchInfoObject: () => unknown;
         AddMatchTag: (tag: unknown) => unknown;

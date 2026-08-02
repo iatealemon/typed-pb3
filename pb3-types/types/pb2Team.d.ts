@@ -7,19 +7,18 @@ declare global {
         /** Type is unknown. One known value: 7 */
         readonly classid: unknown;
         readonly ai_in_team: unknown;
-        allow_private_communication: unknown;
-        friendly_damage_multiplier: unknown;
+        allow_private_communication: boolean;
+        friendly_damage_multiplier: number;
         friendly_fire: unknown;
         hud_color: unknown;
         hud_color_for_enemies: unknown;
         normal_damage_to_dead_teammates: unknown;
-        readonly teammates_collide: unknown;
+        readonly teammates_collide: boolean;
         title: unknown;
         remove: () => unknown;
     }
     var pb2Team: ClassIdentityProps<"pb2Team"> & {
-        CreateTeam: (params: unknown) => unknown;
-        /** Type is unknown. One known value: [] */
-        teams: unknown;
+        CreateTeam: (params: unknown) => pb2Team;
+        teams: pb2Team[];
     }
 }
