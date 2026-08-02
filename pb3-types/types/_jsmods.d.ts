@@ -19,7 +19,7 @@ declare global {
     interface Array<T> {
         join_test: () => unknown;
         /** Getter which returns a random element. Proper usage example: [ 0, 1, 2 ].any */
-        any: T;
+        get any(): T;
     }
     interface ErrorConstructor {
         captureStackTrace: () => unknown;
