@@ -25,7 +25,6 @@ declare global {
         attachment_rotation: unknown;
     }
     var pb2Light: ClassIdentityProps<"pb2Light"> & {
-        /** Type is unknown. One known value: [] */
         lights_dynamic: unknown[];
         lights: pb2Light[];
         CreateLight: (params: unknown) => pb2Light;

@@ -139,7 +139,6 @@ declare global {
         Disconnect: () => unknown;
         hud_visible: boolean;
         hud_show_character_info: boolean;
-        /** Type is unknown. One known value: [] */
         hud_custom_bars: unknown[];
         /**
          * @param text   

@@ -78,7 +78,6 @@ declare global {
     var pb2Gun: ClassIdentityProps<"pb2Gun"> & {
         CreateGun: (params: unknown) => pb2Gun;
         guns: pb2Gun[];
-        /** Type is unknown. One known value: [] */
         pickable_guns: unknown[];
     }
 }
