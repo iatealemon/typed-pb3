@@ -1,6 +1,6 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     interface pb2Region extends ClassIdentityProps<"pb2Region"> {
@@ -9,37 +9,37 @@ declare global {
         readonly w: number;
         readonly h: number;
         /** Type is unknown. One known value: 101 */
-        readonly classid: unknown;
+        readonly classid: TODO;
         /** @param recursive (default=true)  */
-        remove: (recursive?: unknown) => unknown;
-        attached_to: unknown;
-        readonly p: unknown;
+        remove: (recursive?: TODO) => TODO;
+        attached_to: TODO;
+        readonly p: TODO;
         readonly box2d_body: b2Body;
         readonly minx: number;
         readonly miny: number;
         readonly maxx: number;
         readonly maxy: number;
-        readonly corner: unknown;
-        readonly is_quad: unknown;
+        readonly corner: TODO;
+        readonly is_quad: TODO;
         /** Type is unknown. One known value: 5 */
-        readonly type: unknown;
-        readonly _childs: unknown;
+        readonly type: TODO;
+        readonly _childs: TODO;
         AddPosition: (x: number, y: number) => void;
-        SetPosition: (x: number, y: number) => unknown;
+        SetPosition: (x: number, y: number) => TODO;
         /**
          * @param w (default=undefined)   
          * @param h (default=undefined)   
          */
-        SetSize: (w?: number, h?: number) => unknown;
+        SetSize: (w?: number, h?: number) => TODO;
         /**
          * @param x   
          * @param y   
          * @param w (default=undefined)   
          * @param h (default=undefined)   
          */
-        SetPositionAndSize: (x: number, y: number, w?: number, h?: number) => unknown;
-        CopyPositionAndSizeFrom: (cP: unknown) => unknown;
-        readonly collected_entities_counter: unknown;
+        SetPositionAndSize: (x: number, y: number, w?: number, h?: number) => TODO;
+        CopyPositionAndSizeFrom: (cP: TODO) => TODO;
+        readonly collected_entities_counter: TODO;
     }
     var pb2Region: ClassIdentityProps<"pb2Region"> & {
         regions: pb2Region[];

@@ -1,6 +1,6 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     interface pb2Light extends ClassIdentityProps<"pb2Light"> {
@@ -8,25 +8,25 @@ declare global {
         y: number;
         z: number;
         readonly is_static: boolean;
-        color: unknown;
-        color_high_range: unknown;
+        color: TODO;
+        color_high_range: TODO;
         power: number;
         scale: number;
         readonly flare: boolean;
-        remove: () => unknown;
+        remove: () => TODO;
         readonly is_being_removed: boolean;
-        SetPosition: (x: number, y: number, z: number) => unknown;
-        UpdateMeshFlareColorAndScale: () => unknown;
-        angular_range_from: unknown;
-        angular_range_length: unknown;
-        attachment: unknown;
-        attachment_limb_id: unknown;
-        attachment_position: unknown;
-        attachment_rotation: unknown;
+        SetPosition: (x: number, y: number, z: number) => TODO;
+        UpdateMeshFlareColorAndScale: () => TODO;
+        angular_range_from: TODO;
+        angular_range_length: TODO;
+        attachment: TODO;
+        attachment_limb_id: TODO;
+        attachment_position: TODO;
+        attachment_rotation: TODO;
     }
     var pb2Light: ClassIdentityProps<"pb2Light"> & {
-        lights_dynamic: unknown[];
+        lights_dynamic: TODO[];
         lights: pb2Light[];
-        CreateLight: (params: unknown) => pb2Light;
+        CreateLight: (params: TODO) => pb2Light;
     }
 }

@@ -1,26 +1,26 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     interface pb2HeroInfoBar extends ClassIdentityProps<"pb2HeroInfoBar"> {
         /** Type is unknown. One known value: 30 */
-        readonly classid: unknown;
-        title: unknown;
-        value: unknown;
-        value_max: unknown;
-        value_handicap: unknown;
-        color: unknown;
-        color_border: unknown;
-        color_delta: unknown;
-        color_handicap: unknown;
-        color_title: unknown;
+        readonly classid: TODO;
+        title: TODO;
+        value: TODO;
+        value_max: TODO;
+        value_handicap: TODO;
+        color: TODO;
+        color_border: TODO;
+        color_delta: TODO;
+        color_handicap: TODO;
+        color_title: TODO;
     }
     var pb2HeroInfoBar: {
-        new (params: unknown): pb2HeroInfoBar;
+        new (params: TODO): pb2HeroInfoBar;
         /** Type is unknown. One known value: 4 */
-        TYPE_SERVER_VAR: unknown;
+        TYPE_SERVER_VAR: TODO;
         /** Type is unknown. One known value: 0 */
-        TYPE_SPACER: unknown;
+        TYPE_SPACER: TODO;
     }
 }

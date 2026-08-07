@@ -1,26 +1,26 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     interface pb2Gun extends ClassIdentityProps<"pb2Gun"> {
         /** Type is unknown. One known value: 5 */
-        readonly classid: unknown;
+        readonly classid: TODO;
         x: number;
         y: number;
         readonly tox: number;
         readonly toy: number;
         readonly owner: pb2Character | null;
         readonly owner_entity: pb2Entity | null;
-        readonly gun_type: unknown;
-        readonly gun_type_string: unknown;
-        barrel_spin: unknown;
-        heat: unknown;
-        main_cooldown: unknown;
+        readonly gun_type: TODO;
+        readonly gun_type_string: TODO;
+        barrel_spin: TODO;
+        heat: TODO;
+        main_cooldown: TODO;
         readonly side: 1 | -1;
         Flip: () => void;
-        Hide: () => unknown;
-        Show: () => unknown;
+        Hide: () => TODO;
+        Show: () => TODO;
         /**
          * @param a   
          * @param an   
@@ -30,16 +30,16 @@ declare global {
          * @param Xx (default=false)   
          * @param GSPEED (default=Xv)   
          */
-        MoveTo: (a: unknown, an: unknown, offset: unknown, Xv: unknown, dRg: unknown, Xx?: unknown, GSPEED?: unknown) => unknown;
-        GetPhysSpread: (ang: unknown) => unknown;
-        DetachClip: () => unknown;
-        AttachClip: () => unknown;
+        MoveTo: (a: TODO, an: TODO, offset: TODO, Xv: TODO, dRg: TODO, Xx?: TODO, GSPEED?: TODO) => TODO;
+        GetPhysSpread: (ang: TODO) => TODO;
+        DetachClip: () => TODO;
+        AttachClip: () => TODO;
         /**
          * @param dQI (default=false)   
          * @param dQB (default=false)   
          */
-        CanShoot: (dQI?: unknown, dQB?: unknown) => unknown;
-        CanShootUI: () => unknown;
+        CanShoot: (dQI?: TODO, dQB?: TODO) => TODO;
+        CanShootUI: () => TODO;
         /**
          * @param ragdoll   
          * @param dQG   
@@ -51,33 +51,33 @@ declare global {
          * @param dQQ (default=null)   
          * @param Yq (default=0)   
          */
-        Fire: (ragdoll: unknown, dQG: unknown, dQN: unknown, GSPEED: unknown, final: unknown, dQO?: unknown, dQP?: unknown, dQQ?: unknown, Yq?: unknown) => unknown;
-        CarryStart: () => unknown;
-        activate: () => unknown;
-        deactivate: () => unknown;
+        Fire: (ragdoll: TODO, dQG: TODO, dQN: TODO, GSPEED: TODO, final: TODO, dQO?: TODO, dQP?: TODO, dQQ?: TODO, Yq?: TODO) => TODO;
+        CarryStart: () => TODO;
+        activate: () => TODO;
+        deactivate: () => TODO;
         /** @param dPA (default=null)  */
-        CarryEnd: (dPA?: unknown) => unknown;
-        remove: () => unknown;
+        CarryEnd: (dPA?: TODO) => TODO;
+        remove: () => TODO;
         readonly is_being_removed: boolean;
         readonly box2d_body: b2Body;
-        main_reload_length: unknown;
-        readonly is_active: unknown;
+        main_reload_length: TODO;
+        readonly is_active: TODO;
         readonly is_being_carried: boolean;
-        readonly attachment_atom: unknown;
-        readonly clip_out: unknown;
-        readonly muzzle_alpha: unknown;
-        readonly scale: unknown;
-        readonly ammo_style: unknown;
-        readonly ammo_style2: unknown;
-        addEventListener: (event_type: unknown, params: unknown) => unknown;
-        removeEventListener: (event_type: unknown, params: unknown) => unknown;
-        readonly is_thrown_by: unknown;
+        readonly attachment_atom: TODO;
+        readonly clip_out: TODO;
+        readonly muzzle_alpha: TODO;
+        readonly scale: TODO;
+        readonly ammo_style: TODO;
+        readonly ammo_style2: TODO;
+        addEventListener: (event_type: TODO, params: TODO) => TODO;
+        removeEventListener: (event_type: TODO, params: TODO) => TODO;
+        readonly is_thrown_by: TODO;
         /** @param id (default=0)  */
-        GetMesh: (id?: number) => unknown;
+        GetMesh: (id?: number) => TODO;
     }
     var pb2Gun: ClassIdentityProps<"pb2Gun"> & {
-        CreateGun: (params: unknown) => pb2Gun;
+        CreateGun: (params: TODO) => pb2Gun;
         guns: pb2Gun[];
-        pickable_guns: unknown[];
+        pickable_guns: TODO[];
     }
 }

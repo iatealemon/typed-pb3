@@ -1,12 +1,12 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     interface pb2AIThreat extends ClassIdentityProps<"pb2AIThreat"> {
-        readonly knowledge_owner_team: unknown;
-        readonly knowledge_about: unknown;
-        ThreatEliminated: () => unknown;
+        readonly knowledge_owner_team: TODO;
+        readonly knowledge_about: TODO;
+        ThreatEliminated: () => TODO;
     }
     var pb2AIThreat: ClassIdentityProps<"pb2AIThreat"> & {
         /**
@@ -15,6 +15,6 @@ declare global {
          * @param rk   
          * @param dHo (default=false)   
          */
-        NewThreat: (_dHj: unknown, _dHk: unknown, rk: unknown, dHo?: unknown) => unknown;
+        NewThreat: (_dHj: TODO, _dHk: TODO, rk: TODO, dHo?: TODO) => TODO;
     }
 }

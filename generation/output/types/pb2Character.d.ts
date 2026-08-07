@@ -1,41 +1,41 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     interface pb2Character extends ClassIdentityProps<"pb2Character"> {
         /** Type is unknown. One known value: 1 */
-        readonly classid: unknown;
-        readonly x: unknown;
-        readonly y: unknown;
-        act_x: unknown;
-        act_y: unknown;
-        act_fall: unknown;
-        look_x: unknown;
-        look_y: unknown;
-        act_fire: unknown;
-        act_fire2: unknown;
-        auto_fire: unknown;
-        auto_fire2: unknown;
-        act_single_jump: unknown;
-        act_single_fire: unknown;
-        act_single_fire2: unknown;
-        act_single_fall: unknown;
-        act_grab: unknown;
-        act_kick: unknown;
-        act_reload: unknown;
-        act_sprint: unknown;
-        readonly can_be_revived: unknown;
-        MakeUnrevivable: () => unknown;
-        readonly tox: unknown;
-        readonly toy: unknown;
-        readonly ang: unknown;
-        hea: unknown;
-        hmax: unknown;
-        start_hea: unknown;
-        readonly ragdoll: unknown;
-        MoveOn: (nx: unknown, ny: unknown, sx: unknown, sy: unknown) => unknown;
-        DealCharacterDamage: (beh: unknown, beg: unknown, bef: unknown, bed: unknown, beo: unknown) => unknown;
+        readonly classid: TODO;
+        readonly x: TODO;
+        readonly y: TODO;
+        act_x: TODO;
+        act_y: TODO;
+        act_fall: TODO;
+        look_x: TODO;
+        look_y: TODO;
+        act_fire: TODO;
+        act_fire2: TODO;
+        auto_fire: TODO;
+        auto_fire2: TODO;
+        act_single_jump: TODO;
+        act_single_fire: TODO;
+        act_single_fire2: TODO;
+        act_single_fall: TODO;
+        act_grab: TODO;
+        act_kick: TODO;
+        act_reload: TODO;
+        act_sprint: TODO;
+        readonly can_be_revived: TODO;
+        MakeUnrevivable: () => TODO;
+        readonly tox: TODO;
+        readonly toy: TODO;
+        readonly ang: TODO;
+        hea: TODO;
+        hmax: TODO;
+        start_hea: TODO;
+        readonly ragdoll: TODO;
+        MoveOn: (nx: TODO, ny: TODO, sx: TODO, sy: TODO) => TODO;
+        DealCharacterDamage: (beh: TODO, beg: TODO, bef: TODO, bed: TODO, beo: TODO) => TODO;
         /**
          * @param bN   
          * @param cqQ (default=true)   
@@ -45,99 +45,99 @@ declare global {
          * @param gv (default=false)   
          * @param cqP (default=false)   
          */
-        SubstractHealth: (bN: unknown, cqQ?: unknown, beo?: unknown, fG?: unknown, fE?: unknown, gv?: unknown, cqP?: unknown) => unknown;
-        AddGrenades: (cay: unknown, count: unknown) => unknown;
-        SetGrenades: (cay: unknown, count: unknown) => unknown;
-        GetGrenades: (cay: unknown) => unknown;
-        remove: () => unknown;
-        addEventListener: (event_type: unknown, params: unknown) => unknown;
-        removeEventListener: (event_type: unknown, params: unknown) => unknown;
-        removeAllListeners: () => unknown;
-        removeListenersByType: (event_type: unknown) => unknown;
-        readonly controller: unknown;
-        readonly hand_holder: unknown;
-        readonly curwea_slot: unknown;
-        readonly curwea_slot_animation: unknown;
-        curwea_backup_slot: unknown;
-        readonly phys_sit: unknown;
+        SubstractHealth: (bN: TODO, cqQ?: TODO, beo?: TODO, fG?: TODO, fE?: TODO, gv?: TODO, cqP?: TODO) => TODO;
+        AddGrenades: (cay: TODO, count: TODO) => TODO;
+        SetGrenades: (cay: TODO, count: TODO) => TODO;
+        GetGrenades: (cay: TODO) => TODO;
+        remove: () => TODO;
+        addEventListener: (event_type: TODO, params: TODO) => TODO;
+        removeEventListener: (event_type: TODO, params: TODO) => TODO;
+        removeAllListeners: () => TODO;
+        removeListenersByType: (event_type: TODO) => TODO;
+        readonly controller: TODO;
+        readonly hand_holder: TODO;
+        readonly curwea_slot: TODO;
+        readonly curwea_slot_animation: TODO;
+        curwea_backup_slot: TODO;
+        readonly phys_sit: TODO;
         /**
          * @param slot   
          * @param caI (default=true)   
          * @param override_backup_slot_and_dont_ignore_entity_or_freezing_rules (default=true)   
          */
-        ChangeGunIfPossible: (slot: unknown, caI?: unknown, override_backup_slot_and_dont_ignore_entity_or_freezing_rules?: unknown) => unknown;
-        ReloadGunsIfPossible: () => unknown;
-        ChangeGunToBackupIfPossible: () => unknown;
-        DoGesture: (caD: unknown) => unknown;
-        UseAction: () => unknown;
+        ChangeGunIfPossible: (slot: TODO, caI?: TODO, override_backup_slot_and_dont_ignore_entity_or_freezing_rules?: TODO) => TODO;
+        ReloadGunsIfPossible: () => TODO;
+        ChangeGunToBackupIfPossible: () => TODO;
+        DoGesture: (caD: TODO) => TODO;
+        UseAction: () => TODO;
         /**
          * @param _x   
          * @param _y   
          * @param Vk (default=false)   
          */
-        addImpulse: (_x: unknown, _y: unknown, Vk?: unknown) => unknown;
-        AddVel: (_x: unknown, _y: unknown) => unknown;
-        SetVel: (_x: unknown, _y: unknown) => unknown;
-        DimLights: () => unknown;
-        UndimLights: () => unknown;
+        addImpulse: (_x: TODO, _y: TODO, Vk?: TODO) => TODO;
+        AddVel: (_x: TODO, _y: TODO) => TODO;
+        SetVel: (_x: TODO, _y: TODO) => TODO;
+        DimLights: () => TODO;
+        UndimLights: () => TODO;
         /** @param underwater (default=undefined)  */
-        PlayDeathSound: (underwater?: unknown) => unknown;
+        PlayDeathSound: (underwater?: TODO) => TODO;
         /**
          * @param bps (default=false)   
          * @param gv (default=false)   
          */
-        Kill: (bps?: unknown, gv?: unknown) => unknown;
-        aim_spread: unknown;
-        BodyIsPartOfPlayer: (bodyB: unknown, cpD: unknown) => unknown;
-        PickWeapon: (cqN: unknown) => unknown;
-        DropWeapon: (cqN: unknown) => unknown;
-        DropGunIfPossible: () => unknown;
+        Kill: (bps?: TODO, gv?: TODO) => TODO;
+        aim_spread: TODO;
+        BodyIsPartOfPlayer: (bodyB: TODO, cpD: TODO) => TODO;
+        PickWeapon: (cqN: TODO) => TODO;
+        DropWeapon: (cqN: TODO) => TODO;
+        DropGunIfPossible: () => TODO;
         /** @param v (default=0)  */
-        SetAllGrenadesCount: (v?: unknown) => unknown;
-        GetWeaponGlow: () => unknown;
-        WeaponIsBeingChanged: () => unknown;
-        CanShootNow: () => unknown;
+        SetAllGrenadesCount: (v?: TODO) => TODO;
+        GetWeaponGlow: () => TODO;
+        WeaponIsBeingChanged: () => TODO;
+        CanShootNow: () => TODO;
         /**
          * @param slot   
          * @param primary (default=true)   
          */
-        GetWeaponAtSlot: (slot: unknown, primary?: unknown) => unknown;
-        GetCurrentAnimationWeapon: (primary: unknown) => unknown;
-        HasAnyWeapon: () => unknown;
-        ChangeGunToNonSwords: () => unknown;
-        GetNonSwordsSlot: () => unknown;
-        GetRandomNonSwordsSlot: () => unknown;
-        GetFirstHealGunSlot: () => unknown;
-        GetBody: (i: unknown) => unknown;
-        stability: unknown;
-        DoKick: () => unknown;
-        StartGrapplingHookIfPossible: () => unknown;
+        GetWeaponAtSlot: (slot: TODO, primary?: TODO) => TODO;
+        GetCurrentAnimationWeapon: (primary: TODO) => TODO;
+        HasAnyWeapon: () => TODO;
+        ChangeGunToNonSwords: () => TODO;
+        GetNonSwordsSlot: () => TODO;
+        GetRandomNonSwordsSlot: () => TODO;
+        GetFirstHealGunSlot: () => TODO;
+        GetBody: (i: TODO) => TODO;
+        stability: TODO;
+        DoKick: () => TODO;
+        StartGrapplingHookIfPossible: () => TODO;
         /** @param cay (default=-1)  */
-        ThrowGrenadeIfPossible: (cay?: unknown) => unknown;
-        GetHeldBody: () => unknown;
-        forceUnHandHold: (id: unknown) => unknown;
+        ThrowGrenadeIfPossible: (cay?: TODO) => TODO;
+        GetHeldBody: () => TODO;
+        forceUnHandHold: (id: TODO) => TODO;
     }
     var pb2Character: ClassIdentityProps<"pb2Character"> & {
-        CreateCharacter: (params: unknown) => unknown;
+        CreateCharacter: (params: TODO) => TODO;
         /** Type is unknown. One known value: 0 */
-        DROP_NEVER: unknown;
+        DROP_NEVER: TODO;
         /** Type is unknown. One known value: 1 */
-        DROP_WHEN_INTENDED_ONLY: unknown;
+        DROP_WHEN_INTENDED_ONLY: TODO;
         /** Type is unknown. One known value: 2 */
-        DROP_WHEN_CAN_NOT_BE_REVIVED: unknown;
+        DROP_WHEN_CAN_NOT_BE_REVIVED: TODO;
         /** Type is unknown. One known value: 3 */
-        DROP_ALWAYS: unknown;
+        DROP_ALWAYS: TODO;
         /** Type is unknown. One known value: [] */
-        characters: unknown;
+        characters: TODO;
         /** Type is unknown. One known value: 10 */
-        player_half_width: unknown;
+        player_half_width: TODO;
         /** Type is unknown. One known value: 20 */
-        player_width: unknown;
+        player_width: TODO;
         /** Type is unknown. One known value: 70 */
-        player_height: unknown;
+        player_height: TODO;
         /** Type is unknown. One known value: 32 */
-        player_step_size: unknown;
+        player_step_size: TODO;
         /** Type is unknown. One known value: 14 */
-        player_sitmax: unknown;
+        player_sitmax: TODO;
     }
 }

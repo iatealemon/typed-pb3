@@ -1,6 +1,6 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     interface pb2Shape extends ClassIdentityProps<"pb2Shape"> {
@@ -9,16 +9,16 @@ declare global {
         readonly w: number;
         readonly h: number;
         /** Type is unknown. One known value: 6 */
-        readonly classid: unknown;
-        SetSpeed: (v: number) => unknown;
+        readonly classid: TODO;
+        SetSpeed: (v: number) => TODO;
         /**
          * @param x   
          * @param y   
          * @param yg (default=null)   
          */
-        StartMove: (x: number, y: number, yg?: unknown) => unknown;
+        StartMove: (x: number, y: number, yg?: TODO) => TODO;
         /** @param recursive (default=true)  */
-        remove: (recursive?: unknown) => unknown;
+        remove: (recursive?: TODO) => TODO;
         /**
          * @param bN   
          * @param pos (default=null)   
@@ -28,53 +28,53 @@ declare global {
          * @param fE (default=0)   
          * @param lA (default=null)   
          */
-        DealDamage: (bN: unknown, pos?: unknown, bhS?: unknown, Ai?: unknown, fG?: unknown, fE?: unknown, lA?: unknown) => unknown;
-        attached_to: unknown;
-        readonly p: unknown;
-        readonly normal: unknown;
-        readonly hea: unknown;
+        DealDamage: (bN: TODO, pos?: TODO, bhS?: TODO, Ai?: TODO, fG?: TODO, fE?: TODO, lA?: TODO) => TODO;
+        attached_to: TODO;
+        readonly p: TODO;
+        readonly normal: TODO;
+        readonly hea: TODO;
         readonly box2d_body: b2Body;
         readonly minx: number;
         readonly miny: number;
         readonly maxx: number;
         readonly maxy: number;
-        readonly corner: unknown;
-        readonly is_quad: unknown;
-        readonly type: unknown;
-        readonly frozen_spots: unknown;
-        readonly _childs: unknown;
-        SingleTracePoint: (x: number, y: number) => unknown;
-        readonly see_through: unknown;
+        readonly corner: TODO;
+        readonly is_quad: TODO;
+        readonly type: TODO;
+        readonly frozen_spots: TODO;
+        readonly _childs: TODO;
+        SingleTracePoint: (x: number, y: number) => TODO;
+        readonly see_through: TODO;
         SetAIBreakingAllowed: (v: boolean) => void;
-        SetHitpointsIfPossible: (v: number) => unknown;
+        SetHitpointsIfPossible: (v: number) => TODO;
         /** @param id (default=0)  */
-        GetMesh: (id?: 0) => unknown;
+        GetMesh: (id?: 0) => TODO;
     }
     var pb2Shape: ClassIdentityProps<"pb2Shape"> & {
         /** Type is unknown. One known value: 0 */
-        WALL: unknown;
+        WALL: TODO;
         /** Type is unknown. One known value: 2 */
-        MOVABLE: unknown;
+        MOVABLE: TODO;
         /** Type is unknown. One known value: 1 */
-        BACKGROUND: unknown;
+        BACKGROUND: TODO;
         /** Type is unknown. One known value: 4 */
-        WATER: unknown;
+        WATER: TODO;
         /** Type is unknown. One known value: 3 */
-        CORNER_LEFT_BOTTOM: unknown;
+        CORNER_LEFT_BOTTOM: TODO;
         /** Type is unknown. One known value: 1 */
-        CORNER_LEFT_TOP: unknown;
+        CORNER_LEFT_TOP: TODO;
         /** Type is unknown. One known value: 2 */
-        CORNER_RIGHT_TOP: unknown;
+        CORNER_RIGHT_TOP: TODO;
         /** Type is unknown. One known value: 4 */
-        CORNER_RIGHT_BOTTOM: unknown;
+        CORNER_RIGHT_BOTTOM: TODO;
         /** Type is unknown. One known value: 3 */
-        RIGID: unknown;
+        RIGID: TODO;
         /** Type is unknown. One known value: 5 */
-        REGION: unknown;
+        REGION: TODO;
         /** Type is unknown. One known value: 0 */
-        CORNER_NONE: unknown;
+        CORNER_NONE: TODO;
         /** Type is unknown. One known value: ["pb2Shape.WALL","pb2Shape.BACKGROUND","pb2Shape.MOVABLE","pb2Shape.RIGID","pb2Shape.WATER","pb2Shape.REGION","pb2Shape.CORNER_NONE","pb2Shape.CORNER_LEFT_TOP","pb2Shape.CORNER_RIGHT_TOP","pb2Shape.CORNER_LEFT_BOTTOM","pb2Shape.CORNER_RIGHT_BOTTOM"] */
-        ALL_TYPES: unknown;
+        ALL_TYPES: TODO;
         world_shapes: pb2Shape[];
         world_shapes_walls: (pb2Shape & {type: typeof pb2Shape.WALL })[];
         world_shapes_bgs: (pb2Shape & {type: typeof pb2Shape.BACKGROUND })[];
@@ -87,8 +87,8 @@ declare global {
          * @param y   
          * @param eLd (default=null)   
          */
-        SnowCanReach: (x: number, y: number, eLd?: unknown) => boolean;
-        CountShapesInRect: (yJ: unknown, x: number, y: number, _width: number, _height: number, world_shapes_collide: unknown) => number;
+        SnowCanReach: (x: number, y: number, eLd?: TODO) => boolean;
+        CountShapesInRect: (yJ: TODO, x: number, y: number, _width: number, _height: number, world_shapes_collide: TODO) => number;
         /**
          * @param x   
          * @param y   
@@ -97,22 +97,22 @@ declare global {
          * @param where   
          * @param QI (default=true)   
          */
-        isRayTraceable: (x: number, y: number, tox: number, toy: number, where: unknown, QI?: unknown) => boolean;
-        isLineTraceable: (x: number, y: number, tox: number, toy: number, where: unknown) => boolean;
-        GetShapeAtPoint: (x: number, y: number) => unknown;
-        RaycastResult: (x: number, y: number, tox: number, toy: number, where: unknown) => unknown;
+        isRayTraceable: (x: number, y: number, tox: number, toy: number, where: TODO, QI?: TODO) => boolean;
+        isLineTraceable: (x: number, y: number, tox: number, toy: number, where: TODO) => boolean;
+        GetShapeAtPoint: (x: number, y: number) => TODO;
+        RaycastResult: (x: number, y: number, tox: number, toy: number, where: TODO) => TODO;
         /**
          * @param x   
          * @param y   
          * @param eLv (default=true)   
          */
-        isWaterAtPoint: (x: number, y: number, eLv?: unknown) => boolean;
+        isWaterAtPoint: (x: number, y: number, eLv?: TODO) => boolean;
         /**
          * @param x   
          * @param y   
          * @param where (default=null)   
          * @param QI (default=true)   
          */
-        isShapesAtPoint: (x: number, y: number, where?: unknown, QI?: unknown) => boolean;
+        isShapesAtPoint: (x: number, y: number, where?: TODO, QI?: TODO) => boolean;
     }
 }

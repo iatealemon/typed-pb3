@@ -1,20 +1,20 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     interface pb2Timer extends ClassIdentityProps<"pb2Timer"> {
         calls_left: number;
         current_cycle_time_left: number;
-        SetCalls: (v: number) => unknown;
-        SetTimeUntilNextCycle: (v: number) => unknown;
-        SetDefaultCycleDuration: (v: number) => unknown;
-        ResetCurrentCycle: () => unknown;
+        SetCalls: (v: number) => TODO;
+        SetTimeUntilNextCycle: (v: number) => TODO;
+        SetDefaultCycleDuration: (v: number) => TODO;
+        ResetCurrentCycle: () => TODO;
         enabled: boolean;
-        Start: () => unknown;
-        Stop: () => unknown;
-        position_container: unknown;
-        readonly type: unknown;
+        Start: () => TODO;
+        Stop: () => TODO;
+        position_container: TODO;
+        readonly type: TODO;
     }
     var pb2Timer: ClassIdentityProps<"pb2Timer"> & {
         /**
@@ -23,15 +23,15 @@ declare global {
          * @param _type (default=0)   
          * @param bql (default=null)   
          */
-        CreateTimer: (func: unknown, tim: unknown, _type?: unknown, bql?: unknown) => pb2Timer;
+        CreateTimer: (func: TODO, tim: TODO, _type?: TODO, bql?: TODO) => pb2Timer;
         /** Type is unknown. One known value: 0 */
-        TYPE_GAME_TIMESCALE: unknown;
+        TYPE_GAME_TIMESCALE: TODO;
         /** Type is unknown. One known value: 1 */
-        TYPE_GAME_TIMESCALE_WARPED: unknown;
+        TYPE_GAME_TIMESCALE_WARPED: TODO;
         /** Type is unknown. One known value: 2 */
-        TYPE_REAL_WORLD_TIMESCALE: unknown;
+        TYPE_REAL_WORLD_TIMESCALE: TODO;
         /** Type is unknown. One known value: 3 */
-        TYPE_FULL_FRAME_TICKS: unknown;
+        TYPE_FULL_FRAME_TICKS: TODO;
         timers_active_game: pb2Timer[];
         timers_active_world: pb2Timer[];
     }

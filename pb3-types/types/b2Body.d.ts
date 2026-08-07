@@ -1,6 +1,6 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     interface b2Body extends ClassIdentityProps<"b2Body"> {
@@ -12,7 +12,7 @@ declare global {
         AddPos: (x: number, y: number) => void;
         SetVel: (x: number, y: number) => void;
         SetVelX: (x: number) => void;
-        SetVelY: (y: number) => unknown;
+        SetVelY: (y: number) => TODO;
         GetVelX: () => number;
         GetVelY: () => number;
         SetAngle: (angle: number) => void;
@@ -25,37 +25,37 @@ declare global {
          */
         ApplyForce: (force: {x: number, y: number}, point?: {x: number, y: number} | null) => void;
         ApplyForceXY: (x: number, y: number) => void;
-        ApplyTorque: (torque: unknown) => unknown;
+        ApplyTorque: (torque: TODO) => TODO;
         /**
          * @param impulse   
          * @param point (default=null)   
          */
-        ApplyImpulse: (impulse: unknown, point?: unknown) => unknown;
-        ApplyImpulseXY: (impulse_x: number, impulse_y: number) => unknown;
-        GetMass: () => unknown;
-        GetWorldPoint: (localPoint: unknown) => unknown;
-        GetWorldVector: (localVector: unknown) => unknown;
-        GetLocalPoint: (worldPoint: unknown) => unknown;
-        GetLocalVector: (worldVector: unknown) => unknown;
-        GetLinearVelocityFromWorldPoint: (worldPoint: unknown) => unknown;
-        GetLinearVelocityFromLocalPoint: (localPoint: unknown) => unknown;
-        SetSleepingAllowed: (flag: unknown) => unknown;
-        SetAwake: (flag: unknown) => unknown;
-        IsAwake: () => unknown;
-        SetFixedRotation: (fixed: unknown) => unknown;
-        IsFixedRotation: () => unknown;
-        IsActive: () => unknown;
-        SetBullet: (flag: unknown) => unknown;
-        GetWorldCenter: () => unknown;
-        SetGravityScale: (v: unknown) => unknown;
-        SetAngularDamping: (angularDamping: unknown) => unknown;
-        GetAngularDamping: () => unknown;
-        SetLinearDamping: (linearDamping: unknown) => unknown;
-        GetLinearDamping: () => unknown;
-        SetType: (type: unknown) => unknown;
-        GetOwner: () => unknown;
-        GetOwnerLimbID: () => unknown;
-        GetUserData: () => unknown;
+        ApplyImpulse: (impulse: TODO, point?: TODO) => TODO;
+        ApplyImpulseXY: (impulse_x: number, impulse_y: number) => TODO;
+        GetMass: () => TODO;
+        GetWorldPoint: (localPoint: TODO) => TODO;
+        GetWorldVector: (localVector: TODO) => TODO;
+        GetLocalPoint: (worldPoint: TODO) => TODO;
+        GetLocalVector: (worldVector: TODO) => TODO;
+        GetLinearVelocityFromWorldPoint: (worldPoint: TODO) => TODO;
+        GetLinearVelocityFromLocalPoint: (localPoint: TODO) => TODO;
+        SetSleepingAllowed: (flag: TODO) => TODO;
+        SetAwake: (flag: TODO) => TODO;
+        IsAwake: () => TODO;
+        SetFixedRotation: (fixed: TODO) => TODO;
+        IsFixedRotation: () => TODO;
+        IsActive: () => TODO;
+        SetBullet: (flag: TODO) => TODO;
+        GetWorldCenter: () => TODO;
+        SetGravityScale: (v: TODO) => TODO;
+        SetAngularDamping: (angularDamping: TODO) => TODO;
+        GetAngularDamping: () => TODO;
+        SetLinearDamping: (linearDamping: TODO) => TODO;
+        GetLinearDamping: () => TODO;
+        SetType: (type: TODO) => TODO;
+        GetOwner: () => TODO;
+        GetOwnerLimbID: () => TODO;
+        GetUserData: () => TODO;
     }
     
 }

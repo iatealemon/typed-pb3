@@ -1,11 +1,11 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     var pb2BulletDisposer: ClassIdentityProps<"pb2BulletDisposer"> & {
-        AllowDispose: (b: unknown) => unknown;
+        AllowDispose: (b: TODO) => TODO;
         normal_time_to_live: number;
-        disposers: unknown[];
+        disposers: TODO[];
     }
 }

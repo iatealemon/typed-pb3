@@ -1,9 +1,9 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     var pb2GunDefinitions: ClassIdentityProps<"pb2GunDefinitions"> & {
-        GetDefinitionFor: (s: unknown) => unknown;
+        GetDefinitionFor: (s: TODO) => TODO;
     }
 }

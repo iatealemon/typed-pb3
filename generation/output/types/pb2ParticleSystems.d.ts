@@ -1,6 +1,6 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     var pb2ParticleSystems: ClassIdentityProps<"pb2ParticleSystems"> & {
@@ -8,10 +8,10 @@ declare global {
          * @param params   
          * @param fbl (default=false)   
          */
-        CreateParticleSystem: (params: unknown, fbl?: unknown) => unknown;
+        CreateParticleSystem: (params: TODO, fbl?: TODO) => TODO;
         /** Type is unknown. One known value: 0 */
-        TYPE_TELEPORT: unknown;
+        TYPE_TELEPORT: TODO;
         /** Type is unknown. One known value: 1 */
-        TYPE_TACTICAL_PING: unknown;
+        TYPE_TACTICAL_PING: TODO;
     }
 }

@@ -1,35 +1,35 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     interface pb2Light extends ClassIdentityProps<"pb2Light"> {
-        x: unknown;
-        y: unknown;
-        z: unknown;
-        readonly is_static: unknown;
-        color: unknown;
-        color_high_range: unknown;
-        power: unknown;
-        scale: unknown;
-        readonly flare: unknown;
-        remove: () => unknown;
+        x: TODO;
+        y: TODO;
+        z: TODO;
+        readonly is_static: TODO;
+        color: TODO;
+        color_high_range: TODO;
+        power: TODO;
+        scale: TODO;
+        readonly flare: TODO;
+        remove: () => TODO;
         /** Type is unknown. One known value: true */
-        readonly is_being_removed: unknown;
-        SetPosition: (x: unknown, y: unknown, z: unknown) => unknown;
-        UpdateMeshFlareColorAndScale: () => unknown;
-        angular_range_from: unknown;
-        angular_range_length: unknown;
-        attachment: unknown;
-        attachment_limb_id: unknown;
-        attachment_position: unknown;
-        attachment_rotation: unknown;
+        readonly is_being_removed: TODO;
+        SetPosition: (x: TODO, y: TODO, z: TODO) => TODO;
+        UpdateMeshFlareColorAndScale: () => TODO;
+        angular_range_from: TODO;
+        angular_range_length: TODO;
+        attachment: TODO;
+        attachment_limb_id: TODO;
+        attachment_position: TODO;
+        attachment_rotation: TODO;
     }
     var pb2Light: ClassIdentityProps<"pb2Light"> & {
         /** Type is unknown. One known value: [] */
-        lights_dynamic: unknown;
+        lights_dynamic: TODO;
         /** Type is unknown. One known value: [] */
-        lights: unknown;
-        CreateLight: (params: unknown) => unknown;
+        lights: TODO;
+        CreateLight: (params: TODO) => TODO;
     }
 }

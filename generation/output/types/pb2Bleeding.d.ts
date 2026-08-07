@@ -1,9 +1,9 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     var pb2Bleeding: ClassIdentityProps<"pb2Bleeding"> & {
-        BleedAt: (mesh: unknown, dXy: unknown, duration: unknown, lD: unknown, dXG: unknown, is_glowing: unknown, dXr: unknown) => unknown;
+        BleedAt: (mesh: TODO, dXy: TODO, duration: TODO, lD: TODO, dXG: TODO, is_glowing: TODO, dXr: TODO) => TODO;
     }
 }

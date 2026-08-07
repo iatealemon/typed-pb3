@@ -1,17 +1,17 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     interface ColorTransform extends ClassIdentityProps<"ColorTransform"> {
-        redMultiplier: unknown;
-        greenMultiplier: unknown;
-        blueMultiplier: unknown;
-        redOffset: unknown;
-        greenOffset: unknown;
-        blueOffset: unknown;
-        clone: () => unknown;
-        multiplyHighRangeColor: (v: unknown) => unknown;
+        redMultiplier: TODO;
+        greenMultiplier: TODO;
+        blueMultiplier: TODO;
+        redOffset: TODO;
+        greenOffset: TODO;
+        blueOffset: TODO;
+        clone: () => TODO;
+        multiplyHighRangeColor: (v: TODO) => TODO;
     }
     var ColorTransform: {
         /**
@@ -23,7 +23,7 @@ declare global {
          * @param greenOffset (default=0)   
          * @param blueOffset (default=0)   
          */
-        new (r?: unknown, g?: unknown, b?: unknown, alphaMultiplier?: unknown, redOffset?: unknown, greenOffset?: unknown, blueOffset?: unknown): ColorTransform;
+        new (r?: TODO, g?: TODO, b?: TODO, alphaMultiplier?: TODO, redOffset?: TODO, greenOffset?: TODO, blueOffset?: TODO): ColorTransform;
 
     }
 }

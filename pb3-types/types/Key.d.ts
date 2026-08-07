@@ -1,145 +1,147 @@
 export { };
 
+import type { TODO } from "./internal/helper";
+
 declare global {
     interface Key {
 
     }
     var Key: {
         new (): Key;
-        init_class: () => unknown;
+        init_class: () => TODO;
         /** Type is unknown. One known value: [0,32] */
-        SPACE: unknown;
+        SPACE: TODO;
         /** Type is unknown. One known value: [0,9] */
-        TAB: unknown;
+        TAB: TODO;
         /** Type is unknown. One known value: [0,8] */
-        BACKSPACE: unknown;
+        BACKSPACE: TODO;
         /** Type is unknown. One known value: [0,27] */
-        ESCAPE: unknown;
+        ESCAPE: TODO;
         /** Type is unknown. One known value: [0,13] */
-        ENTER: unknown;
+        ENTER: TODO;
         /** Type is unknown. One known value: [0,37] */
-        LEFT: unknown;
+        LEFT: TODO;
         /** Type is unknown. One known value: [0,38] */
-        UP: unknown;
+        UP: TODO;
         /** Type is unknown. One known value: [0,39] */
-        RIGHT: unknown;
+        RIGHT: TODO;
         /** Type is unknown. One known value: [0,40] */
-        DOWN: unknown;
+        DOWN: TODO;
         /** Type is unknown. One known value: [1,17] */
-        CONTROL: unknown;
+        CONTROL: TODO;
         /** Type is unknown. One known value: [1,16] */
-        SHIFT: unknown;
+        SHIFT: TODO;
         /** Type is unknown. One known value: [1,18] */
-        ALT: unknown;
+        ALT: TODO;
         /** Type is unknown. One known value: [4,1] */
-        MOUSE_LEFT: unknown;
+        MOUSE_LEFT: TODO;
         /** Type is unknown. One known value: [4,3] */
-        MOUSE_RIGHT: unknown;
+        MOUSE_RIGHT: TODO;
         /** Type is unknown. One known value: [4,3] */
-        MOUSE_WHEEL_CLICK: unknown;
+        MOUSE_WHEEL_CLICK: TODO;
         /** Type is unknown. One known value: [5,0] */
-        MOUSE_WHEEL_UP: unknown;
+        MOUSE_WHEEL_UP: TODO;
         /** Type is unknown. One known value: [5,1] */
-        MOUSE_WHEEL_DOWN: unknown;
+        MOUSE_WHEEL_DOWN: TODO;
         /** Type is unknown. One known value: [0,167] */
-        HISTORY_FORWARD: unknown;
+        HISTORY_FORWARD: TODO;
         /** Type is unknown. One known value: [0,166] */
-        HISTORY_BACK: unknown;
+        HISTORY_BACK: TODO;
         /** Type is unknown. One known value: [0,219] */
-        SQUARE_BRACKET_OPEN: unknown;
+        SQUARE_BRACKET_OPEN: TODO;
         /** Type is unknown. One known value: [0,221] */
-        SQUARE_BRACKET_CLOSE: unknown;
+        SQUARE_BRACKET_CLOSE: TODO;
         /** Type is unknown. One known value: [0,188] */
-        COMMA: unknown;
+        COMMA: TODO;
         /** Type is unknown. One known value: [0,190] */
-        PERIOD: unknown;
+        PERIOD: TODO;
         /** Type is unknown. One known value: [2,16] */
-        SLASH: unknown;
+        SLASH: TODO;
         /** Type is unknown. One known value: [0,189] */
-        MINUS: unknown;
+        MINUS: TODO;
         /** Type is unknown. One known value: [0,187] */
-        PLUS: unknown;
+        PLUS: TODO;
         /** Type is unknown. One known value: [0,220] */
-        BACKSLASH: unknown;
+        BACKSLASH: TODO;
         /** Type is unknown. One known value: [0,46] */
-        DELETE: unknown;
+        DELETE: TODO;
         /** Type is unknown. One known value: [0,192] */
-        TILDE: unknown;
+        TILDE: TODO;
         /** Type is unknown. One known value: [0,96] */
-        TILDE_ALT: unknown;
+        TILDE_ALT: TODO;
         /** Type is unknown. One known value: [0,126] */
-        TILDE_ALT2: unknown;
+        TILDE_ALT2: TODO;
         /** Type is unknown. One known value: [0,48] */
-        DIGIT0: unknown;
+        DIGIT0: TODO;
         /** Type is unknown. One known value: [0,49] */
-        DIGIT1: unknown;
+        DIGIT1: TODO;
         /** Type is unknown. One known value: [0,50] */
-        DIGIT2: unknown;
+        DIGIT2: TODO;
         /** Type is unknown. One known value: [0,51] */
-        DIGIT3: unknown;
+        DIGIT3: TODO;
         /** Type is unknown. One known value: [0,52] */
-        DIGIT4: unknown;
+        DIGIT4: TODO;
         /** Type is unknown. One known value: [0,53] */
-        DIGIT5: unknown;
+        DIGIT5: TODO;
         /** Type is unknown. One known value: [0,54] */
-        DIGIT6: unknown;
+        DIGIT6: TODO;
         /** Type is unknown. One known value: [0,55] */
-        DIGIT7: unknown;
+        DIGIT7: TODO;
         /** Type is unknown. One known value: [0,56] */
-        DIGIT8: unknown;
+        DIGIT8: TODO;
         /** Type is unknown. One known value: [0,57] */
-        DIGIT9: unknown;
+        DIGIT9: TODO;
         /** Type is unknown. One known value: [0,65] */
-        A: unknown;
+        A: TODO;
         /** Type is unknown. One known value: [0,66] */
-        B: unknown;
+        B: TODO;
         /** Type is unknown. One known value: [0,67] */
-        C: unknown;
+        C: TODO;
         /** Type is unknown. One known value: [0,68] */
-        D: unknown;
+        D: TODO;
         /** Type is unknown. One known value: [0,69] */
-        E: unknown;
+        E: TODO;
         /** Type is unknown. One known value: [0,70] */
-        F: unknown;
+        F: TODO;
         /** Type is unknown. One known value: [0,71] */
-        G: unknown;
+        G: TODO;
         /** Type is unknown. One known value: [0,72] */
-        H: unknown;
+        H: TODO;
         /** Type is unknown. One known value: [0,73] */
-        I: unknown;
+        I: TODO;
         /** Type is unknown. One known value: [0,74] */
-        J: unknown;
+        J: TODO;
         /** Type is unknown. One known value: [0,75] */
-        K: unknown;
+        K: TODO;
         /** Type is unknown. One known value: [0,76] */
-        L: unknown;
+        L: TODO;
         /** Type is unknown. One known value: [0,77] */
-        M: unknown;
+        M: TODO;
         /** Type is unknown. One known value: [0,78] */
-        N: unknown;
+        N: TODO;
         /** Type is unknown. One known value: [0,79] */
-        O: unknown;
+        O: TODO;
         /** Type is unknown. One known value: [0,80] */
-        P: unknown;
+        P: TODO;
         /** Type is unknown. One known value: [0,81] */
-        Q: unknown;
+        Q: TODO;
         /** Type is unknown. One known value: [0,82] */
-        R: unknown;
+        R: TODO;
         /** Type is unknown. One known value: [0,83] */
-        S: unknown;
+        S: TODO;
         /** Type is unknown. One known value: [0,84] */
-        T: unknown;
+        T: TODO;
         /** Type is unknown. One known value: [0,85] */
-        U: unknown;
+        U: TODO;
         /** Type is unknown. One known value: [0,86] */
-        V: unknown;
+        V: TODO;
         /** Type is unknown. One known value: [0,87] */
-        W: unknown;
+        W: TODO;
         /** Type is unknown. One known value: [0,88] */
-        X: unknown;
+        X: TODO;
         /** Type is unknown. One known value: [0,89] */
-        Y: unknown;
+        Y: TODO;
         /** Type is unknown. One known value: [0,90] */
-        Z: unknown;
+        Z: TODO;
     }
 }

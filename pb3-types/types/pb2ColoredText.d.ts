@@ -1,24 +1,24 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     interface pb2ColoredText extends ClassIdentityProps<"pb2ColoredText"> {
-        text: unknown;
-        colors: unknown;
-        CapitalRedColors: () => unknown;
-        RandomColors: () => unknown;
-        WhiteColors: () => unknown;
+        text: TODO;
+        colors: TODO;
+        CapitalRedColors: () => TODO;
+        RandomColors: () => TODO;
+        WhiteColors: () => TODO;
         /**
          * @param nickname_tagged   
          * @param main_color (default=undefined)   
          */
-        FromTagged: (nickname_tagged: unknown, main_color?: unknown) => unknown;
-        GetTagged: () => unknown;
+        FromTagged: (nickname_tagged: TODO, main_color?: TODO) => TODO;
+        GetTagged: () => TODO;
     }
     var pb2ColoredText: {
         /** @param txt (default='')  */
-        new (txt?: unknown): pb2ColoredText;
+        new (txt?: TODO): pb2ColoredText;
 
     }
 }

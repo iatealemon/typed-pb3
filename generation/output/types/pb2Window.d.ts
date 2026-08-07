@@ -1,254 +1,254 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     interface pb2Window extends ClassIdentityProps<"pb2Window"> {
-        x: unknown;
-        y: unknown;
-        x2: unknown;
-        y2: unknown;
-        w: unknown;
-        h: unknown;
-        tooltip: unknown;
-        readonly type: unknown;
+        x: TODO;
+        y: TODO;
+        x2: TODO;
+        y2: TODO;
+        w: TODO;
+        h: TODO;
+        tooltip: TODO;
+        readonly type: TODO;
         /**
          * @param cWC   
          * @param cWE (default=true)   
          * @param Hi (default=true)   
          */
-        SetVisibilityFor: (cWC: unknown, cWE?: unknown, Hi?: unknown) => unknown;
-        SendChanges: () => unknown;
-        visible: unknown;
-        requires_ctrl_key: unknown;
-        ignore_mouse_events: unknown;
-        click_animation: unknown;
+        SetVisibilityFor: (cWC: TODO, cWE?: TODO, Hi?: TODO) => TODO;
+        SendChanges: () => TODO;
+        visible: TODO;
+        requires_ctrl_key: TODO;
+        ignore_mouse_events: TODO;
+        click_animation: TODO;
         /**
          * @param txt   
          * @param size (default=12)   
          * @param cMI (default=false)   
          * @param nu (default=false)   
          */
-        SetText: (txt: unknown, size?: unknown, cMI?: unknown, nu?: unknown) => unknown;
+        SetText: (txt: TODO, size?: TODO, cMI?: TODO, nu?: TODO) => TODO;
         /** @param c (default=null)  */
-        remove: (c?: unknown) => unknown;
-        readonly parent: unknown;
-        readonly childs: unknown;
-        GetTypeSpecificStructure: () => unknown;
-        SetTypeSpecificStructure: (Ap: unknown) => unknown;
-        readonly is_being_removed: unknown;
+        remove: (c?: TODO) => TODO;
+        readonly parent: TODO;
+        readonly childs: TODO;
+        GetTypeSpecificStructure: () => TODO;
+        SetTypeSpecificStructure: (Ap: TODO) => TODO;
+        readonly is_being_removed: TODO;
     }
     var pb2Window: ClassIdentityProps<"pb2Window"> & {
-        CreateWindow: (params: unknown) => unknown;
+        CreateWindow: (params: TODO) => TODO;
         /** Type is unknown. One known value: 0 */
-        DIALOGBOX: unknown;
+        DIALOGBOX: TODO;
         /** Type is unknown. One known value: 1 */
-        BUTTON: unknown;
+        BUTTON: TODO;
         /** Type is unknown. One known value: 2 */
-        SCREEN_BLOCKING_BOX: unknown;
+        SCREEN_BLOCKING_BOX: TODO;
         /** Type is unknown. One known value: 3 */
-        SCROLL_LIST: unknown;
+        SCROLL_LIST: TODO;
         /** Type is unknown. One known value: 4 */
-        SCROLLBAR_PAD: unknown;
+        SCROLLBAR_PAD: TODO;
         /** Type is unknown. One known value: 5 */
-        SCROLLBAR_CARET: unknown;
+        SCROLLBAR_CARET: TODO;
         /** Type is unknown. One known value: 6 */
-        CAPTION_IMPORTANT: unknown;
+        CAPTION_IMPORTANT: TODO;
         /** Type is unknown. One known value: 7 */
-        CAPTION: unknown;
+        CAPTION: TODO;
         /** Type is unknown. One known value: 8 */
-        PARAM_PANEL: unknown;
+        PARAM_PANEL: TODO;
         /** Type is unknown. One known value: 9 */
-        DRAG_PARENT: unknown;
+        DRAG_PARENT: TODO;
         /** Type is unknown. One known value: 10 */
-        COLOR_PICKER: unknown;
+        COLOR_PICKER: TODO;
         /** Type is unknown. One known value: 11 */
-        COLOR_PALETTE: unknown;
+        COLOR_PALETTE: TODO;
         /** Type is unknown. One known value: 12 */
-        CONTAINER: unknown;
+        CONTAINER: TODO;
         /** Type is unknown. One known value: 13 */
-        HUD_RECT: unknown;
+        HUD_RECT: TODO;
         /** Type is unknown. One known value: 14 */
-        SAYBOX: unknown;
+        SAYBOX: TODO;
         /** Type is unknown. One known value: 15 */
-        ICON_BUTTON: unknown;
+        ICON_BUTTON: TODO;
         /** Type is unknown. One known value: 16 */
-        PROGRESS_BAR_SEGMENT: unknown;
+        PROGRESS_BAR_SEGMENT: TODO;
         /** Type is unknown. One known value: 17 */
-        STRETCH_PARENT: unknown;
+        STRETCH_PARENT: TODO;
         /** Type is unknown. One known value: 18 */
-        LEADERBOARD: unknown;
+        LEADERBOARD: TODO;
         /** Type is unknown. One known value: 19 */
-        LEADERBOARD_PLAYERS_LIST: unknown;
+        LEADERBOARD_PLAYERS_LIST: TODO;
         /** Type is unknown. One known value: 20 */
-        CAPTION_CENTERED: unknown;
+        CAPTION_CENTERED: TODO;
         /** Type is unknown. One known value: 21 */
-        PERFORMANCE_GRAPH: unknown;
+        PERFORMANCE_GRAPH: TODO;
         /** Type is unknown. One known value: 22 */
-        CLOCK: unknown;
+        CLOCK: TODO;
         /** Type is unknown. One known value: 23 */
-        BUTTON_HOLO: unknown;
+        BUTTON_HOLO: TODO;
         /** Type is unknown. One known value: 24 */
-        HUD_RECT_SOLID: unknown;
+        HUD_RECT_SOLID: TODO;
         /** Type is unknown. One known value: ["freeedit","wall","movable","region","pusher","bg","water","compound_character","entity","decoration","gun","usable_switch","lamp","barrel","trigger","timer","info","song","image","scale","surface","group","group_expanded","group_item","group_last","team","area","point","vector","circle","fire","window","set","text","bleeding","frozen","water_class","execute","bullet","usercode","comment","code","instance","boolean","camera","bar","nothing","group_non_item","ragdoll","character","controller","ai_preset","skin","skin_userdata","group_tool","surface_old","crate","lamp_dynamic","visible_1","visible_0","locked_0","locked_1","timer_inline","module","animated_point","cross","sound","sound_preloader","movable_sounds_preset","ai_hint","blue_question","window_hint","var","transform_selection","disabled_0","disabled_1","model_preloader","model"] */
-        icons16_names: unknown;
+        icons16_names: TODO;
         icons16_names_to_id: {
             /** Type is unknown. One known value: 0 */
-            freeedit: unknown;
+            freeedit: TODO;
             /** Type is unknown. One known value: 1 */
-            wall: unknown;
+            wall: TODO;
             /** Type is unknown. One known value: 2 */
-            movable: unknown;
+            movable: TODO;
             /** Type is unknown. One known value: 3 */
-            region: unknown;
+            region: TODO;
             /** Type is unknown. One known value: 4 */
-            pusher: unknown;
+            pusher: TODO;
             /** Type is unknown. One known value: 5 */
-            bg: unknown;
+            bg: TODO;
             /** Type is unknown. One known value: 6 */
-            water: unknown;
+            water: TODO;
             /** Type is unknown. One known value: 7 */
-            compound_character: unknown;
+            compound_character: TODO;
             /** Type is unknown. One known value: 8 */
-            entity: unknown;
+            entity: TODO;
             /** Type is unknown. One known value: 9 */
-            decoration: unknown;
+            decoration: TODO;
             /** Type is unknown. One known value: 10 */
-            gun: unknown;
+            gun: TODO;
             /** Type is unknown. One known value: 11 */
-            usable_switch: unknown;
+            usable_switch: TODO;
             /** Type is unknown. One known value: 12 */
-            lamp: unknown;
+            lamp: TODO;
             /** Type is unknown. One known value: 13 */
-            barrel: unknown;
+            barrel: TODO;
             /** Type is unknown. One known value: 14 */
-            trigger: unknown;
+            trigger: TODO;
             /** Type is unknown. One known value: 15 */
-            timer: unknown;
+            timer: TODO;
             /** Type is unknown. One known value: 16 */
-            info: unknown;
+            info: TODO;
             /** Type is unknown. One known value: 17 */
-            song: unknown;
+            song: TODO;
             /** Type is unknown. One known value: 18 */
-            image: unknown;
+            image: TODO;
             /** Type is unknown. One known value: 19 */
-            scale: unknown;
+            scale: TODO;
             /** Type is unknown. One known value: 20 */
-            surface: unknown;
+            surface: TODO;
             /** Type is unknown. One known value: 21 */
-            group: unknown;
+            group: TODO;
             /** Type is unknown. One known value: 22 */
-            group_expanded: unknown;
+            group_expanded: TODO;
             /** Type is unknown. One known value: 23 */
-            group_item: unknown;
+            group_item: TODO;
             /** Type is unknown. One known value: 24 */
-            group_last: unknown;
+            group_last: TODO;
             /** Type is unknown. One known value: 25 */
-            team: unknown;
+            team: TODO;
             /** Type is unknown. One known value: 26 */
-            area: unknown;
+            area: TODO;
             /** Type is unknown. One known value: 27 */
-            point: unknown;
+            point: TODO;
             /** Type is unknown. One known value: 28 */
-            vector: unknown;
+            vector: TODO;
             /** Type is unknown. One known value: 29 */
-            circle: unknown;
+            circle: TODO;
             /** Type is unknown. One known value: 30 */
-            fire: unknown;
+            fire: TODO;
             /** Type is unknown. One known value: 31 */
-            window: unknown;
+            window: TODO;
             /** Type is unknown. One known value: 32 */
-            set: unknown;
+            set: TODO;
             /** Type is unknown. One known value: 33 */
-            text: unknown;
+            text: TODO;
             /** Type is unknown. One known value: 34 */
-            bleeding: unknown;
+            bleeding: TODO;
             /** Type is unknown. One known value: 35 */
-            frozen: unknown;
+            frozen: TODO;
             /** Type is unknown. One known value: 36 */
-            water_class: unknown;
+            water_class: TODO;
             /** Type is unknown. One known value: 37 */
-            execute: unknown;
+            execute: TODO;
             /** Type is unknown. One known value: 38 */
-            bullet: unknown;
+            bullet: TODO;
             /** Type is unknown. One known value: 39 */
-            usercode: unknown;
+            usercode: TODO;
             /** Type is unknown. One known value: 40 */
-            comment: unknown;
+            comment: TODO;
             /** Type is unknown. One known value: 41 */
-            code: unknown;
+            code: TODO;
             /** Type is unknown. One known value: 42 */
-            instance: unknown;
+            instance: TODO;
             /** Type is unknown. One known value: 43 */
-            boolean: unknown;
+            boolean: TODO;
             /** Type is unknown. One known value: 44 */
-            camera: unknown;
+            camera: TODO;
             /** Type is unknown. One known value: 45 */
-            bar: unknown;
+            bar: TODO;
             /** Type is unknown. One known value: 46 */
-            nothing: unknown;
+            nothing: TODO;
             /** Type is unknown. One known value: 47 */
-            group_non_item: unknown;
+            group_non_item: TODO;
             /** Type is unknown. One known value: 48 */
-            ragdoll: unknown;
+            ragdoll: TODO;
             /** Type is unknown. One known value: 49 */
-            character: unknown;
+            character: TODO;
             /** Type is unknown. One known value: 50 */
-            controller: unknown;
+            controller: TODO;
             /** Type is unknown. One known value: 51 */
-            ai_preset: unknown;
+            ai_preset: TODO;
             /** Type is unknown. One known value: 52 */
-            skin: unknown;
+            skin: TODO;
             /** Type is unknown. One known value: 53 */
-            skin_userdata: unknown;
+            skin_userdata: TODO;
             /** Type is unknown. One known value: 54 */
-            group_tool: unknown;
+            group_tool: TODO;
             /** Type is unknown. One known value: 55 */
-            surface_old: unknown;
+            surface_old: TODO;
             /** Type is unknown. One known value: 56 */
-            crate: unknown;
+            crate: TODO;
             /** Type is unknown. One known value: 57 */
-            lamp_dynamic: unknown;
+            lamp_dynamic: TODO;
             /** Type is unknown. One known value: 58 */
-            visible_1: unknown;
+            visible_1: TODO;
             /** Type is unknown. One known value: 59 */
-            visible_0: unknown;
+            visible_0: TODO;
             /** Type is unknown. One known value: 60 */
-            locked_0: unknown;
+            locked_0: TODO;
             /** Type is unknown. One known value: 61 */
-            locked_1: unknown;
+            locked_1: TODO;
             /** Type is unknown. One known value: 62 */
-            timer_inline: unknown;
+            timer_inline: TODO;
             /** Type is unknown. One known value: 63 */
-            module: unknown;
+            module: TODO;
             /** Type is unknown. One known value: 64 */
-            animated_point: unknown;
+            animated_point: TODO;
             /** Type is unknown. One known value: 65 */
-            cross: unknown;
+            cross: TODO;
             /** Type is unknown. One known value: 66 */
-            sound: unknown;
+            sound: TODO;
             /** Type is unknown. One known value: 67 */
-            sound_preloader: unknown;
+            sound_preloader: TODO;
             /** Type is unknown. One known value: 68 */
-            movable_sounds_preset: unknown;
+            movable_sounds_preset: TODO;
             /** Type is unknown. One known value: 69 */
-            ai_hint: unknown;
+            ai_hint: TODO;
             /** Type is unknown. One known value: 70 */
-            blue_question: unknown;
+            blue_question: TODO;
             /** Type is unknown. One known value: 71 */
-            window_hint: unknown;
+            window_hint: TODO;
             /** Type is unknown. One known value: 72 */
-            var: unknown;
+            var: TODO;
             /** Type is unknown. One known value: 73 */
-            transform_selection: unknown;
+            transform_selection: TODO;
             /** Type is unknown. One known value: 74 */
-            disabled_0: unknown;
+            disabled_0: TODO;
             /** Type is unknown. One known value: 75 */
-            disabled_1: unknown;
+            disabled_1: TODO;
             /** Type is unknown. One known value: 76 */
-            model_preloader: unknown;
+            model_preloader: TODO;
             /** Type is unknown. One known value: 77 */
-            model: unknown;
+            model: TODO;
         }
     }
 }

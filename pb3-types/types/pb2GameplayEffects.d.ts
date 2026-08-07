@@ -1,21 +1,21 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     interface pb2GameplayEffects extends ClassIdentityProps<"pb2GameplayEffects"> {
-        CreateEffect: (params: unknown) => unknown;
-        GetCharacterLogicSpeed: () => unknown;
-        GetWeaponLogicSpeed: () => unknown;
-        GetBulletModifier: (v: unknown, bfz: unknown) => unknown;
-        GetInvisible: () => unknown;
-        readonly ragdoll: unknown;
+        CreateEffect: (params: TODO) => TODO;
+        GetCharacterLogicSpeed: () => TODO;
+        GetWeaponLogicSpeed: () => TODO;
+        GetBulletModifier: (v: TODO, bfz: TODO) => TODO;
+        GetInvisible: () => TODO;
+        readonly ragdoll: TODO;
     }
     interface bsW extends ClassIdentityProps<"bsW"> {
-        time_to_live: unknown;
-        readonly ragdoll: unknown;
-        remove: () => unknown;
-        readonly cloak_intensity: unknown;
+        time_to_live: TODO;
+        readonly ragdoll: TODO;
+        remove: () => TODO;
+        readonly cloak_intensity: TODO;
     }
     var pb2GameplayEffects: ClassIdentityProps<"pb2GameplayEffects"> & {
         types: {

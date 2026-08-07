@@ -1,30 +1,30 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     interface pb2StyleAmmo extends ClassIdentityProps<"pb2StyleAmmo"> {
-        readonly style_id: unknown;
-        readonly owner_gun: unknown;
-        rounds_total: unknown;
-        infinite_ammo: unknown;
-        magazine_capacity: unknown;
-        rounds_in_magazine: unknown;
-        burst_shots: unknown;
-        burst_timeout: unknown;
-        regen_time: unknown;
-        regen_timeout: unknown;
-        reload_speed: unknown;
-        waste_remain_part: unknown;
-        recharge_speed: unknown;
-        min_charge: unknown;
-        charge_speed: unknown;
-        zero_energy_value: unknown;
-        energy: unknown;
-        speed_up_factor: unknown;
-        speed_up_max: unknown;
-        charge_to_distance: unknown;
-        readonly last_error_reason: unknown;
+        readonly style_id: TODO;
+        readonly owner_gun: TODO;
+        rounds_total: TODO;
+        infinite_ammo: TODO;
+        magazine_capacity: TODO;
+        rounds_in_magazine: TODO;
+        burst_shots: TODO;
+        burst_timeout: TODO;
+        regen_time: TODO;
+        regen_timeout: TODO;
+        reload_speed: TODO;
+        waste_remain_part: TODO;
+        recharge_speed: TODO;
+        min_charge: TODO;
+        charge_speed: TODO;
+        zero_energy_value: TODO;
+        energy: TODO;
+        speed_up_factor: TODO;
+        speed_up_max: TODO;
+        charge_to_distance: TODO;
+        readonly last_error_reason: TODO;
     }
     
 }

@@ -1,5 +1,7 @@
 export { };
 
+import type { TODO } from "./internal/helper";
+
 declare global {
     interface Math {
         sumPrecise: (numbers: Iterable<number>) => number;
@@ -11,18 +13,18 @@ declare global {
         randomWithin: (a: number, b: number) => number;
     }
     interface StringConstructor {
-        eoX: (a: unknown, b: unknown) => unknown;
+        eoX: (a: TODO, b: TODO) => TODO;
     }
     interface String {
-        split_test: (d: unknown) => unknown;
+        split_test: (d: TODO) => TODO;
     }
     interface Array<T> {
-        join_test: () => unknown;
+        join_test: () => TODO;
         /** Getter which returns a random element. Proper usage example: [ 0, 1, 2 ].any */
         get any(): T;
     }
     interface ErrorConstructor {
-        captureStackTrace: () => unknown;
+        captureStackTrace: () => TODO;
         stackTraceLimit: number;
     }
 }

@@ -1,15 +1,15 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     interface pb2Disposer extends ClassIdentityProps<"pb2Disposer"> {
         time_to_live: number;
-        readonly Pause: unknown;
-        readonly Resume: unknown;
-        readonly paused: unknown;
+        readonly Pause: TODO;
+        readonly Resume: TODO;
+        readonly paused: TODO;
     }
     var pb2Disposer: ClassIdentityProps<"pb2Disposer"> & {
-        GetDisposer: (obj: unknown) => unknown;
+        GetDisposer: (obj: TODO) => TODO;
     }
 }

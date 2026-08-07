@@ -1,61 +1,61 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     interface pb2Ragdoll extends ClassIdentityProps<"pb2Ragdoll"> {
         /** Type is unknown. One known value: 3 */
-        readonly classid: unknown;
+        readonly classid: TODO;
         readonly x: number;
         readonly y: number;
         readonly tox: number;
         readonly toy: number;
-        dimmed: unknown;
+        dimmed: TODO;
         readonly owner_character: pb2Character | null;
         /**
          * @param eVZ   
          * @param beh   
          * @param eWu (default=eVZ.GetPosition()   
          */
-        DealLimbDamage: (eVZ: unknown, beh: unknown, eWu?: unknown) => unknown;
-        HealGunApplied: (self: unknown) => unknown;
-        CaptureHealGunApplied: (by: unknown) => unknown;
-        SetName: (eUZ: unknown) => unknown;
-        GetName: () => unknown;
+        DealLimbDamage: (eVZ: TODO, beh: TODO, eWu?: TODO) => TODO;
+        HealGunApplied: (self: TODO) => TODO;
+        CaptureHealGunApplied: (by: TODO) => TODO;
+        SetName: (eUZ: TODO) => TODO;
+        GetName: () => TODO;
         /**
          * @param fj   
          * @param eFv (default=-1)   
          */
-        MeltDown: (fj: unknown, eFv?: unknown) => unknown;
-        ExpireAllHintObjects: () => unknown;
-        readonly side: unknown;
-        Flip: () => unknown;
-        remove: () => unknown;
+        MeltDown: (fj: TODO, eFv?: TODO) => TODO;
+        ExpireAllHintObjects: () => TODO;
+        readonly side: TODO;
+        Flip: () => TODO;
+        remove: () => TODO;
         readonly is_being_removed: boolean;
-        SetVision: (ID: unknown) => unknown;
-        GetVision: () => unknown;
-        GetBlindness: () => unknown;
-        SetBlindness: (v: unknown) => unknown;
-        GetDeafness: () => unknown;
-        SetDeafness: (v: unknown) => unknown;
+        SetVision: (ID: TODO) => TODO;
+        GetVision: () => TODO;
+        GetBlindness: () => TODO;
+        SetBlindness: (v: TODO) => TODO;
+        GetDeafness: () => TODO;
+        SetDeafness: (v: TODO) => TODO;
         hp_head: number;
         hp_body: number;
         hp_arms: number;
         hp_legs: number;
-        GetAtomsTotal: () => unknown;
-        readonly gameplay_effects: unknown;
-        ClearBulletHoles: () => unknown;
-        UsesGrapplingHook: () => unknown;
-        readonly active_grappling_hook: unknown;
-        DetachFromRope: (collapse: unknown) => unknown;
-        hud_custom_bars: unknown;
-        readonly enforce_skin_limitations: unknown;
-        readonly use_skin_properties: unknown;
-        readonly team: unknown;
-        SetBoostStyle: (v: unknown) => unknown;
-        SetSwordsStyle: (v: unknown) => unknown;
-        readonly style_boost: unknown;
-        GetSwordsStyleID: () => unknown;
+        GetAtomsTotal: () => TODO;
+        readonly gameplay_effects: TODO;
+        ClearBulletHoles: () => TODO;
+        UsesGrapplingHook: () => TODO;
+        readonly active_grappling_hook: TODO;
+        DetachFromRope: (collapse: TODO) => TODO;
+        hud_custom_bars: TODO;
+        readonly enforce_skin_limitations: TODO;
+        readonly use_skin_properties: TODO;
+        readonly team: TODO;
+        SetBoostStyle: (v: TODO) => TODO;
+        SetSwordsStyle: (v: TODO) => TODO;
+        readonly style_boost: TODO;
+        GetSwordsStyleID: () => TODO;
         /**
          * @param dx   
          * @param dy   
@@ -65,98 +65,98 @@ declare global {
          * @param beF (default=false)   
          * @param ben (default=null)   
          */
-        Teleport: (dx: number, dy: number, dJP?: unknown, dJQ?: unknown, beD?: unknown, beF?: unknown, ben?: unknown) => unknown;
+        Teleport: (dx: number, dy: number, dJP?: TODO, dJQ?: TODO, beD?: TODO, beF?: TODO, ben?: TODO) => TODO;
         /**
          * @param sound_name   
          * @param eVL (default=false)   
          * @param cAr (default=false)   
          */
-        Speak: (sound_name: unknown, eVL?: unknown, cAr?: unknown) => unknown;
-        damage_projectiles: unknown;
-        damage_explosions: unknown;
-        damage_impacts: unknown;
-        damage_radiation: unknown;
-        damage_liquids: unknown;
-        mobility: unknown;
-        readonly scale: unknown;
-        readonly voice_preset_pitch: unknown;
-        voice_pitch: unknown;
-        readonly normalize_all_voice_lines_volume: unknown;
-        readonly normalize_custom_voice_lines_volume: unknown;
+        Speak: (sound_name: TODO, eVL?: TODO, cAr?: TODO) => TODO;
+        damage_projectiles: TODO;
+        damage_explosions: TODO;
+        damage_impacts: TODO;
+        damage_radiation: TODO;
+        damage_liquids: TODO;
+        mobility: TODO;
+        readonly scale: TODO;
+        readonly voice_preset_pitch: TODO;
+        voice_pitch: TODO;
+        readonly normalize_all_voice_lines_volume: TODO;
+        readonly normalize_custom_voice_lines_volume: TODO;
         /** id is one of the atom id static consts defined on pb2Ragdoll */
         GetAtom: (id: number) => pb2Atom | null;
         /** @param id (default=0)  */
-        GetMesh: (id?: number) => unknown;
+        GetMesh: (id?: number) => TODO;
     }
     var pb2Ragdoll: ClassIdentityProps<"pb2Ragdoll"> & {
-        CreateRagdoll: (params: unknown) => pb2Ragdoll;
-        CreateRagdollComplete: (p: unknown) => pb2Ragdoll;
+        CreateRagdoll: (params: TODO) => pb2Ragdoll;
+        CreateRagdollComplete: (p: TODO) => pb2Ragdoll;
         /** Type is unknown. One known value: 0 */
-        b_pelvis: unknown;
+        b_pelvis: TODO;
         /** Type is unknown. One known value: 1 */
-        b_leg1: unknown;
+        b_leg1: TODO;
         /** Type is unknown. One known value: 2 */
-        b_leg2: unknown;
+        b_leg2: TODO;
         /** Type is unknown. One known value: 3 */
-        b_arm1: unknown;
+        b_arm1: TODO;
         /** Type is unknown. One known value: 4 */
-        b_arm2: unknown;
+        b_arm2: TODO;
         /** Type is unknown. One known value: 5 */
-        b_body: unknown;
+        b_body: TODO;
         /** Type is unknown. One known value: 6 */
-        b_head_start: unknown;
+        b_head_start: TODO;
         /** Type is unknown. One known value: 7 */
-        b_head_end: unknown;
+        b_head_end: TODO;
         /** Type is unknown. One known value: 8 */
-        b_body_brk1: unknown;
+        b_body_brk1: TODO;
         /** Type is unknown. One known value: 9 */
-        b_body_brk2: unknown;
+        b_body_brk2: TODO;
         /** Type is unknown. One known value: [true,true,false,false,true,true,true,true,true,true,true,true,true,false,false,false,false,false,false,false,false,true] */
-        mc_body_top_pattern: unknown;
+        mc_body_top_pattern: TODO;
         /** Type is unknown. One known value: 0 */
-        mc_head: unknown;
+        mc_head: TODO;
         /** Type is unknown. One known value: 1 */
-        mc_head_broken: unknown;
+        mc_head_broken: TODO;
         /** Type is unknown. One known value: 2 */
-        mc_pelvis: unknown;
+        mc_pelvis: TODO;
         /** Type is unknown. One known value: 3 */
-        mc_pelvis_broken: unknown;
+        mc_pelvis_broken: TODO;
         /** Type is unknown. One known value: 4 */
-        mc_body: unknown;
+        mc_body: TODO;
         /** Type is unknown. One known value: 5 */
-        mc_arm1a: unknown;
+        mc_arm1a: TODO;
         /** Type is unknown. One known value: 6 */
-        mc_arm1b: unknown;
+        mc_arm1b: TODO;
         /** Type is unknown. One known value: 7 */
-        mc_arm1b_broken: unknown;
+        mc_arm1b_broken: TODO;
         /** Type is unknown. One known value: 8 */
-        mc_arm1b_sword: unknown;
+        mc_arm1b_sword: TODO;
         /** Type is unknown. One known value: 9 */
-        mc_arm2a: unknown;
+        mc_arm2a: TODO;
         /** Type is unknown. One known value: 10 */
-        mc_arm2b: unknown;
+        mc_arm2b: TODO;
         /** Type is unknown. One known value: 11 */
-        mc_arm2b_broken: unknown;
+        mc_arm2b_broken: TODO;
         /** Type is unknown. One known value: 12 */
-        mc_arm2b_sword: unknown;
+        mc_arm2b_sword: TODO;
         /** Type is unknown. One known value: 13 */
-        mc_leg1a: unknown;
+        mc_leg1a: TODO;
         /** Type is unknown. One known value: 14 */
-        mc_leg1b: unknown;
+        mc_leg1b: TODO;
         /** Type is unknown. One known value: 15 */
-        mc_leg1c: unknown;
+        mc_leg1c: TODO;
         /** Type is unknown. One known value: 16 */
-        mc_leg1b_broken: unknown;
+        mc_leg1b_broken: TODO;
         /** Type is unknown. One known value: 17 */
-        mc_leg2a: unknown;
+        mc_leg2a: TODO;
         /** Type is unknown. One known value: 18 */
-        mc_leg2b: unknown;
+        mc_leg2b: TODO;
         /** Type is unknown. One known value: 19 */
-        mc_leg2c: unknown;
+        mc_leg2c: TODO;
         /** Type is unknown. One known value: 20 */
-        mc_leg2b_broken: unknown;
+        mc_leg2b_broken: TODO;
         /** Type is unknown. One known value: 21 */
-        mc_body_broken: unknown;
+        mc_body_broken: TODO;
         ragdolls: pb2Ragdoll[];
     }
 }

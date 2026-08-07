@@ -1,24 +1,24 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     interface pb2Shape extends ClassIdentityProps<"pb2Shape"> {
-        readonly x: unknown;
-        readonly y: unknown;
-        readonly w: unknown;
-        readonly h: unknown;
+        readonly x: TODO;
+        readonly y: TODO;
+        readonly w: TODO;
+        readonly h: TODO;
         /** Type is unknown. One known value: 6 */
-        readonly classid: unknown;
-        SetSpeed: (v: unknown) => unknown;
+        readonly classid: TODO;
+        SetSpeed: (v: TODO) => TODO;
         /**
          * @param x   
          * @param y   
          * @param yg (default=null)   
          */
-        StartMove: (x: unknown, y: unknown, yg?: unknown) => unknown;
+        StartMove: (x: TODO, y: TODO, yg?: TODO) => TODO;
         /** @param recursive (default=true)  */
-        remove: (recursive?: unknown) => unknown;
+        remove: (recursive?: TODO) => TODO;
         /**
          * @param bN   
          * @param pos (default=null)   
@@ -28,74 +28,74 @@ declare global {
          * @param fE (default=0)   
          * @param lA (default=null)   
          */
-        DealDamage: (bN: unknown, pos?: unknown, bhS?: unknown, Ai?: unknown, fG?: unknown, fE?: unknown, lA?: unknown) => unknown;
-        attached_to: unknown;
-        readonly p: unknown;
-        readonly normal: unknown;
-        readonly hea: unknown;
-        readonly box2d_body: unknown;
-        readonly minx: unknown;
-        readonly miny: unknown;
-        readonly maxx: unknown;
-        readonly maxy: unknown;
-        readonly corner: unknown;
-        readonly is_quad: unknown;
-        readonly type: unknown;
-        readonly frozen_spots: unknown;
-        readonly _childs: unknown;
-        SingleTracePoint: (x: unknown, y: unknown) => unknown;
-        readonly see_through: unknown;
-        SetAIBreakingAllowed: (v: unknown) => unknown;
-        SetHitpointsIfPossible: (v: unknown) => unknown;
+        DealDamage: (bN: TODO, pos?: TODO, bhS?: TODO, Ai?: TODO, fG?: TODO, fE?: TODO, lA?: TODO) => TODO;
+        attached_to: TODO;
+        readonly p: TODO;
+        readonly normal: TODO;
+        readonly hea: TODO;
+        readonly box2d_body: TODO;
+        readonly minx: TODO;
+        readonly miny: TODO;
+        readonly maxx: TODO;
+        readonly maxy: TODO;
+        readonly corner: TODO;
+        readonly is_quad: TODO;
+        readonly type: TODO;
+        readonly frozen_spots: TODO;
+        readonly _childs: TODO;
+        SingleTracePoint: (x: TODO, y: TODO) => TODO;
+        readonly see_through: TODO;
+        SetAIBreakingAllowed: (v: TODO) => TODO;
+        SetHitpointsIfPossible: (v: TODO) => TODO;
         /** @param id (default=0)  */
-        GetMesh: (id?: unknown) => unknown;
+        GetMesh: (id?: TODO) => TODO;
     }
     var pb2Shape: ClassIdentityProps<"pb2Shape"> & {
         /** Type is unknown. One known value: 0 */
-        WALL: unknown;
+        WALL: TODO;
         /** Type is unknown. One known value: 2 */
-        MOVABLE: unknown;
+        MOVABLE: TODO;
         /** Type is unknown. One known value: 1 */
-        BACKGROUND: unknown;
+        BACKGROUND: TODO;
         /** Type is unknown. One known value: 4 */
-        WATER: unknown;
+        WATER: TODO;
         /** Type is unknown. One known value: 3 */
-        CORNER_LEFT_BOTTOM: unknown;
+        CORNER_LEFT_BOTTOM: TODO;
         /** Type is unknown. One known value: 1 */
-        CORNER_LEFT_TOP: unknown;
+        CORNER_LEFT_TOP: TODO;
         /** Type is unknown. One known value: 2 */
-        CORNER_RIGHT_TOP: unknown;
+        CORNER_RIGHT_TOP: TODO;
         /** Type is unknown. One known value: 4 */
-        CORNER_RIGHT_BOTTOM: unknown;
+        CORNER_RIGHT_BOTTOM: TODO;
         /** Type is unknown. One known value: 3 */
-        RIGID: unknown;
+        RIGID: TODO;
         /** Type is unknown. One known value: 5 */
-        REGION: unknown;
+        REGION: TODO;
         /** Type is unknown. One known value: 0 */
-        CORNER_NONE: unknown;
+        CORNER_NONE: TODO;
         /** Type is unknown. One known value: ["pb2Shape.WALL","pb2Shape.BACKGROUND","pb2Shape.MOVABLE","pb2Shape.RIGID","pb2Shape.WATER","pb2Shape.REGION","pb2Shape.CORNER_NONE","pb2Shape.CORNER_LEFT_TOP","pb2Shape.CORNER_RIGHT_TOP","pb2Shape.CORNER_LEFT_BOTTOM","pb2Shape.CORNER_RIGHT_BOTTOM"] */
-        ALL_TYPES: unknown;
+        ALL_TYPES: TODO;
         /** Type is unknown. One known value: [] */
-        world_shapes: unknown;
+        world_shapes: TODO;
         /** Type is unknown. One known value: [] */
-        world_shapes_walls: unknown;
+        world_shapes_walls: TODO;
         /** Type is unknown. One known value: [] */
-        world_shapes_bgs: unknown;
+        world_shapes_bgs: TODO;
         /** Type is unknown. One known value: [] */
-        world_shapes_collide: unknown;
+        world_shapes_collide: TODO;
         /** Type is unknown. One known value: [] */
-        world_shapes_collide_no_water: unknown;
+        world_shapes_collide_no_water: TODO;
         /** Type is unknown. One known value: [] */
-        world_shapes_nonstatic: unknown;
+        world_shapes_nonstatic: TODO;
         /** Type is unknown. One known value: [] */
-        world_shapes_water: unknown;
+        world_shapes_water: TODO;
         /**
          * @param x   
          * @param y   
          * @param eLd (default=null)   
          */
-        SnowCanReach: (x: unknown, y: unknown, eLd?: unknown) => unknown;
-        CountShapesInRect: (yJ: unknown, x: unknown, y: unknown, _width: unknown, _height: unknown, world_shapes_collide: unknown) => unknown;
+        SnowCanReach: (x: TODO, y: TODO, eLd?: TODO) => TODO;
+        CountShapesInRect: (yJ: TODO, x: TODO, y: TODO, _width: TODO, _height: TODO, world_shapes_collide: TODO) => TODO;
         /**
          * @param x   
          * @param y   
@@ -104,22 +104,22 @@ declare global {
          * @param where   
          * @param QI (default=true)   
          */
-        isRayTraceable: (x: unknown, y: unknown, tox: unknown, toy: unknown, where: unknown, QI?: unknown) => unknown;
-        isLineTraceable: (x: unknown, y: unknown, tox: unknown, toy: unknown, where: unknown) => unknown;
-        GetShapeAtPoint: (x: unknown, y: unknown) => unknown;
-        RaycastResult: (x: unknown, y: unknown, tox: unknown, toy: unknown, where: unknown) => unknown;
+        isRayTraceable: (x: TODO, y: TODO, tox: TODO, toy: TODO, where: TODO, QI?: TODO) => TODO;
+        isLineTraceable: (x: TODO, y: TODO, tox: TODO, toy: TODO, where: TODO) => TODO;
+        GetShapeAtPoint: (x: TODO, y: TODO) => TODO;
+        RaycastResult: (x: TODO, y: TODO, tox: TODO, toy: TODO, where: TODO) => TODO;
         /**
          * @param x   
          * @param y   
          * @param eLv (default=true)   
          */
-        isWaterAtPoint: (x: unknown, y: unknown, eLv?: unknown) => unknown;
+        isWaterAtPoint: (x: TODO, y: TODO, eLv?: TODO) => TODO;
         /**
          * @param x   
          * @param y   
          * @param where (default=null)   
          * @param QI (default=true)   
          */
-        isShapesAtPoint: (x: unknown, y: unknown, where?: unknown, QI?: unknown) => unknown;
+        isShapesAtPoint: (x: TODO, y: TODO, where?: TODO, QI?: TODO) => TODO;
     }
 }

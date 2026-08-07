@@ -1,36 +1,36 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     interface pb2StyleBoost extends ClassIdentityProps<"pb2StyleBoost"> {
-        readonly ragdoll: unknown;
-        readonly style_id: unknown;
-        readonly noping_out_boost: unknown;
-        readonly noping_out_current_boost: unknown;
-        readonly noping_out_boost_ignition: unknown;
-        boost: unknown;
-        readonly activated: unknown;
-        max_fuel: unknown;
-        fuel: unknown;
-        readonly raycast_less_activation_allowed_timer: unknown;
-        readonly reactivation_anti_flood_timer: unknown;
-        readonly denied_repeat_cooldown: unknown;
+        readonly ragdoll: TODO;
+        readonly style_id: TODO;
+        readonly noping_out_boost: TODO;
+        readonly noping_out_current_boost: TODO;
+        readonly noping_out_boost_ignition: TODO;
+        boost: TODO;
+        readonly activated: TODO;
+        max_fuel: TODO;
+        fuel: TODO;
+        readonly raycast_less_activation_allowed_timer: TODO;
+        readonly reactivation_anti_flood_timer: TODO;
+        readonly denied_repeat_cooldown: TODO;
         doublejumps_left: number;
         doublejumps_max: number;
-        readonly current_boost: unknown;
+        readonly current_boost: TODO;
     }
     var pb2StyleBoost: ClassIdentityProps<"pb2StyleBoost"> & {
         /** Type is unknown. One known value: 0 */
-        NONE: unknown;
+        NONE: TODO;
         /** Type is unknown. One known value: 1 */
-        SELFBOOST: unknown;
+        SELFBOOST: TODO;
         /** Type is unknown. One known value: 2 */
-        JETPACK: unknown;
+        JETPACK: TODO;
         /** Type is unknown. One known value: 3 */
-        DOUBLEJUMP: unknown;
+        DOUBLEJUMP: TODO;
         /** Type is unknown. One known value: ["pb2StyleBoost.NONE","pb2StyleBoost.SELFBOOST","pb2StyleBoost.JETPACK","pb2StyleBoost.DOUBLEJUMP"] */
-        ALL_TYPES: unknown;
+        ALL_TYPES: TODO;
         noping_out_boost_max: number;
         noping_out_boost_regen_speed: number;
         noping_out_boost_regen_speed_midair: number;

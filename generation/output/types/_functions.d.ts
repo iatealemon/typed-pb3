@@ -1,21 +1,23 @@
 export { };
 
+import type { TODO } from "./internal/helper";
+
 declare global {
-    var trace: () => unknown;
-    var warn: (...args: unknown[]) => unknown;
-    var error: (...args: unknown[]) => unknown;
-    var pb2DebugPermissionVerify: () => unknown;
+    var trace: () => TODO;
+    var warn: (...args: TODO[]) => TODO;
+    var error: (...args: TODO[]) => TODO;
+    var pb2DebugPermissionVerify: () => TODO;
     /** @param bV (default=false)  */
-    var GetMilliseconds: (bV?: unknown) => unknown;
+    var GetMilliseconds: (bV?: TODO) => TODO;
     /** @param bV (default=false)  */
-    var GetTime30: (bV?: unknown) => unknown;
-    var GetIngameTime: () => unknown;
-    var _pb2ExecTimeTest: () => unknown;
-    var _pb2DebugHook: (coK: unknown, coL: unknown) => unknown;
-    var _pb2DebugLastPtr: (i: unknown) => unknown;
-    var _pb2DebugReturn: (value: unknown) => unknown;
-    var _pb2DebugPopUp: (...args: unknown[]) => unknown;
-    var _pb2DebugPopUpOnce: (arg: unknown) => unknown;
+    var GetTime30: (bV?: TODO) => TODO;
+    var GetIngameTime: () => TODO;
+    var _pb2ExecTimeTest: () => TODO;
+    var _pb2DebugHook: (coK: TODO, coL: TODO) => TODO;
+    var _pb2DebugLastPtr: (i: TODO) => TODO;
+    var _pb2DebugReturn: (value: TODO) => TODO;
+    var _pb2DebugPopUp: (...args: TODO[]) => TODO;
+    var _pb2DebugPopUpOnce: (arg: TODO) => TODO;
     /**
      * @param _coV   
      * @param _cpk (default=1)   
@@ -23,9 +25,9 @@ declare global {
      * @param _cpo (default=null)   
      * @param _cpp (default=1)   
      */
-    var _pb2T: (_coV: unknown, _cpk?: unknown, _cpn?: unknown, _cpo?: unknown, _cpp?: unknown) => unknown;
-    var _pb2TU: (t: unknown) => unknown;
-    var _pb2ClientSideTrigger: (f: unknown) => unknown;
+    var _pb2T: (_coV: TODO, _cpk?: TODO, _cpn?: TODO, _cpo?: TODO, _cpp?: TODO) => TODO;
+    var _pb2TU: (t: TODO) => TODO;
+    var _pb2ClientSideTrigger: (f: TODO) => TODO;
     /**
      * @param x   
      * @param y   
@@ -35,7 +37,7 @@ declare global {
      * @param opacity (default=0.5)   
      * @param eIe (default=0)   
      */
-    var DrawDebugPoint: (x: unknown, y: unknown, color?: unknown, size?: unknown, z?: unknown, opacity?: unknown, eIe?: unknown) => unknown;
+    var DrawDebugPoint: (x: TODO, y: TODO, color?: TODO, size?: TODO, z?: TODO, opacity?: TODO, eIe?: TODO) => TODO;
     /**
      * @param ax   
      * @param ay   
@@ -46,7 +48,7 @@ declare global {
      * @param y (default=-123)   
      * @param eIe (default=0)   
      */
-    var DrawDebugLine: (ax: unknown, ay: unknown, bx: unknown, by: unknown, color?: unknown, opacity?: unknown, y?: unknown, eIe?: unknown) => unknown;
+    var DrawDebugLine: (ax: TODO, ay: TODO, bx: TODO, by: TODO, color?: TODO, opacity?: TODO, y?: TODO, eIe?: TODO) => TODO;
     /**
      * @param ax   
      * @param ay   
@@ -57,7 +59,7 @@ declare global {
      * @param y (default=-123)   
      * @param eIe (default=0)   
      */
-    var DrawDebugArrow: (ax: unknown, ay: unknown, bx: unknown, by: unknown, color?: unknown, opacity?: unknown, y?: unknown, eIe?: unknown) => unknown;
+    var DrawDebugArrow: (ax: TODO, ay: TODO, bx: TODO, by: TODO, color?: TODO, opacity?: TODO, y?: TODO, eIe?: TODO) => TODO;
     /**
      * @param minx   
      * @param miny   
@@ -68,7 +70,7 @@ declare global {
      * @param y (default=-123)   
      * @param eIe (default=0)   
      */
-    var DrawDebugRect: (minx: unknown, miny: unknown, maxx: unknown, maxy: unknown, color?: unknown, opacity?: unknown, y?: unknown, eIe?: unknown) => unknown;
+    var DrawDebugRect: (minx: TODO, miny: TODO, maxx: TODO, maxy: TODO, color?: TODO, opacity?: TODO, y?: TODO, eIe?: TODO) => TODO;
     /**
      * @param minx   
      * @param miny   
@@ -79,5 +81,5 @@ declare global {
      * @param y (default=-123)   
      * @param eIe (default=0)   
      */
-    var DrawDebugRectByDimensions: (minx: unknown, miny: unknown, w: unknown, h: unknown, color?: unknown, opacity?: unknown, y?: unknown, eIe?: unknown) => unknown;
+    var DrawDebugRectByDimensions: (minx: TODO, miny: TODO, w: TODO, h: TODO, color?: TODO, opacity?: TODO, y?: TODO, eIe?: TODO) => TODO;
 }

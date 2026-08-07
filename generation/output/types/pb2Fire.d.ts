@@ -1,17 +1,17 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     interface pb2Fire extends ClassIdentityProps<"pb2Fire"> {
         /** Type is unknown. One known value: 17 */
-        readonly classid: unknown;
-        UpdateAndGetWorldPoint: () => unknown;
-        readonly size: unknown;
-        remove: () => unknown;
+        readonly classid: TODO;
+        UpdateAndGetWorldPoint: () => TODO;
+        readonly size: TODO;
+        remove: () => TODO;
     }
     var pb2Fire: ClassIdentityProps<"pb2Fire"> & {
         /** Type is unknown. One known value: [] */
-        fires: unknown;
+        fires: TODO;
     }
 }

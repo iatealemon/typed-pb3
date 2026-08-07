@@ -1,48 +1,48 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     interface pb2EditorObject extends ClassIdentityProps<"pb2EditorObject"> {
-        readonly attributes: unknown;
-        readonly children: unknown;
-        Recreate: (params: unknown) => unknown;
-        GetDeepCopy: () => unknown;
-        SetUnsetDefaultAttributes: () => unknown;
-        push: (obj: unknown) => unknown;
-        unshift: (obj: unknown) => unknown;
-        RemoveChild: (rem: unknown) => unknown;
+        readonly attributes: TODO;
+        readonly children: TODO;
+        Recreate: (params: TODO) => TODO;
+        GetDeepCopy: () => TODO;
+        SetUnsetDefaultAttributes: () => TODO;
+        push: (obj: TODO) => TODO;
+        unshift: (obj: TODO) => TODO;
+        RemoveChild: (rem: TODO) => TODO;
         /**
          * @param where   
          * @param selected (default=null)   
          */
-        ListChildren: (where: unknown, selected?: unknown) => unknown;
+        ListChildren: (where: TODO, selected?: TODO) => TODO;
         /**
          * @param exA (default='Accessory ')   
          * @param exq (default='name')   
          */
-        GetUniqueName: (exA?: unknown, exq?: unknown) => unknown;
+        GetUniqueName: (exA?: TODO, exq?: TODO) => TODO;
         /**
          * @param class_name   
          * @param exi (default='*')   
          * @param exq (default='id')   
          */
-        FindChild: (class_name: unknown, exi?: unknown, exq?: unknown) => unknown;
+        FindChild: (class_name: TODO, exi?: TODO, exq?: TODO) => TODO;
         /**
          * @param class_name   
          * @param lW (default=false)   
          */
-        FindAllChildren: (class_name: unknown, lW?: unknown) => unknown;
-        DragPoints: (wx: unknown, wy: unknown) => unknown;
-        fromString: (xml_str: unknown) => unknown;
+        FindAllChildren: (class_name: TODO, lW?: TODO) => TODO;
+        DragPoints: (wx: TODO, wy: TODO) => TODO;
+        fromString: (xml_str: TODO) => TODO;
         /**
          * @param bdI   
          * @param exn (default=false)   
          */
-        fromXMLNode: (bdI: unknown, exn?: unknown) => unknown;
+        fromXMLNode: (bdI: TODO, exn?: TODO) => TODO;
     }
     var pb2EditorObject: {
-        new (params: unknown): pb2EditorObject;
-        GetModificationWorldCopy: () => unknown;
+        new (params: TODO): pb2EditorObject;
+        GetModificationWorldCopy: () => TODO;
     }
 }

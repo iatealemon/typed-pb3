@@ -1,6 +1,6 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     var pb2GameWorld: ClassIdentityProps<"pb2GameWorld"> & {
@@ -14,77 +14,77 @@ declare global {
         settings: {
             graphics: {
                 /** Type is unknown. One known value: 2 */
-                build_3d_environment: unknown;
+                build_3d_environment: TODO;
                 /** Type is unknown. One known value: 50 */
-                water_reflections: unknown;
+                water_reflections: TODO;
                 /** Type is unknown. One known value: 2 */
-                spawn_3d_debris: unknown;
+                spawn_3d_debris: TODO;
                 /** Type is unknown. One known value: 1 */
-                ui_scale: unknown;
+                ui_scale: TODO;
             }
             gameplay: {
                 /** Type is unknown. One known value: 3 */
-                gore_and_violence: unknown;
+                gore_and_violence: TODO;
                 /** Type is unknown. One known value: 1 */
-                show_damage_numbers: unknown;
+                show_damage_numbers: TODO;
                 /** Type is unknown. One known value: 2 */
-                replay_my_deaths: unknown;
+                replay_my_deaths: TODO;
                 /** Type is unknown. One known value: 3 */
-                camera: unknown;
+                camera: TODO;
             }
             input: {
                 /** Type is unknown. One known value: 0.125 */
-                screen_cursor_follow_speed: unknown;
+                screen_cursor_follow_speed: TODO;
                 /** Type is unknown. One known value: 0.75 */
-                screen_character_follow_softness: unknown;
+                screen_character_follow_softness: TODO;
             }
             network: {
                 /** Type is unknown. One known value: 61 */
-                world_state_receive_rate: unknown;
+                world_state_receive_rate: TODO;
             }
             __limits_obj: {
                 /** Type is unknown. One known value: undefined */
-                graphics: unknown;
+                graphics: TODO;
                 /** Type is unknown. One known value: undefined */
-                gameplay: unknown;
+                gameplay: TODO;
                 /** Type is unknown. One known value: undefined */
-                input: unknown;
+                input: TODO;
                 /** Type is unknown. One known value: undefined */
-                network: unknown;
+                network: TODO;
             }
         }
-        GetPing: () => unknown;
-        ClearAllKeyActionsAndStates: () => unknown;
+        GetPing: () => TODO;
+        ClearAllKeyActionsAndStates: () => TODO;
         /** @param mode (default=1)  */
-        DebugTraceAnyPressedKeys: (mode?: unknown) => unknown;
+        DebugTraceAnyPressedKeys: (mode?: TODO) => TODO;
         /**
          * @param location_keycode_pair   
          * @param onKeyDown (default=null)   
          * @param onKeyUp (default=null)   
          */
-        SetKeyActions: (location_keycode_pair: unknown, onKeyDown?: unknown, onKeyUp?: unknown) => unknown;
-        GetKeyState: (location_keycode_pair: unknown) => unknown;
-        PauseTrustedControlsTemporarily: () => unknown;
-        FinalizeWorld: () => unknown;
-        FinalizeNewMovables: () => unknown;
+        SetKeyActions: (location_keycode_pair: TODO, onKeyDown?: TODO, onKeyUp?: TODO) => TODO;
+        GetKeyState: (location_keycode_pair: TODO) => TODO;
+        PauseTrustedControlsTemporarily: () => TODO;
+        FinalizeWorld: () => TODO;
+        FinalizeNewMovables: () => TODO;
         /** @param v (default=true)  */
-        EnableSimplePlayerAssignmentLogic: (v?: unknown) => unknown;
+        EnableSimplePlayerAssignmentLogic: (v?: TODO) => TODO;
         /**
          * @param params   
          * @param mode (default='modules')   
          */
-        DownloadModules: (params: unknown, mode?: unknown) => unknown;
-        DownloadTextures: (params: unknown) => unknown;
-        DownloadSounds: (params: unknown) => unknown;
-        DownloadModels: (params: unknown) => unknown;
+        DownloadModules: (params: TODO, mode?: TODO) => TODO;
+        DownloadTextures: (params: TODO) => TODO;
+        DownloadSounds: (params: TODO) => TODO;
+        DownloadModels: (params: TODO) => TODO;
         /** @param dVG (default=true)  */
-        GetAllModules: (dVG?: unknown) => unknown;
-        GetInitialModules: () => unknown;
+        GetAllModules: (dVG?: TODO) => TODO;
+        GetInitialModules: () => TODO;
         /**
          * @param params   
          * @param type (default=undefined)   
          */
-        CreateBoxShape: (params: unknown, type?: unknown) => unknown;
+        CreateBoxShape: (params: TODO, type?: TODO) => TODO;
         sun_color: number;
         sky_color: number;
         default_lamp_color: number;
@@ -126,20 +126,20 @@ declare global {
          * @param controller   
          * @param soft (default=true)   
          */
-        SetToController: (controller: unknown, soft?: unknown) => unknown;
-        SetToSpectateRagdoll: (ragdoll: unknown) => unknown;
-        SetToFreeCamera: () => unknown;
-        SetDisconnectActionDescriptionStructure: () => unknown;
-        IsHostSpectating: () => unknown;
-        IsWatchingReplay: () => unknown;
-        StartPointOfViewReplay: () => unknown;
-        SetReplayTimeScale: () => unknown;
-        CancelPointOfViewReplay: () => unknown;
+        SetToController: (controller: TODO, soft?: TODO) => TODO;
+        SetToSpectateRagdoll: (ragdoll: TODO) => TODO;
+        SetToFreeCamera: () => TODO;
+        SetDisconnectActionDescriptionStructure: () => TODO;
+        IsHostSpectating: () => TODO;
+        IsWatchingReplay: () => TODO;
+        StartPointOfViewReplay: () => TODO;
+        SetReplayTimeScale: () => TODO;
+        CancelPointOfViewReplay: () => TODO;
         connected: boolean;
-        Disconnect: () => unknown;
+        Disconnect: () => TODO;
         hud_visible: boolean;
         hud_show_character_info: boolean;
-        hud_custom_bars: unknown[];
+        hud_custom_bars: TODO[];
         /**
          * @param text   
          * @param user_uid (default=-2)   
@@ -147,10 +147,10 @@ declare global {
          * @param auto_channel_id (default=-1)   
          * @param message_counter (default=-1)   
          */
-        ShowChatMessage: (text: string, user_uid?: unknown, channel_id?: unknown, auto_channel_id?: unknown, message_counter?: unknown) => unknown;
-        ShakeScreen: (amount: number, from_gun: unknown, ignore_when_speculative_player_enabled: unknown) => unknown;
+        ShowChatMessage: (text: string, user_uid?: TODO, channel_id?: TODO, auto_channel_id?: TODO, message_counter?: TODO) => TODO;
+        ShakeScreen: (amount: number, from_gun: TODO, ignore_when_speculative_player_enabled: TODO) => TODO;
         /** @param amount (default=75)  */
-        FlashScreen: (amount?: number) => unknown;
-        GetBounds: () => unknown;
+        FlashScreen: (amount?: number) => TODO;
+        GetBounds: () => TODO;
     }
 }

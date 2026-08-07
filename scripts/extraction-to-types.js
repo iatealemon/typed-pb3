@@ -314,7 +314,8 @@ function writePB3Types(sandboxData, outputDir, libAnalysis) {
                 "export interface ClassIdentityProps<ClassName extends string> {\n" +
                 "    readonly _class: ClassName;\n" + 
                 "    toString(): \`[object \${ClassName}]\`;\n" +
-                "}"
+                "}\n\n" +
+                "export type TODO = any;"
             );
 
             const skipPaths = new Set(libAnalysis.shared.map(st => st.slice(st.indexOf("|") + 1)));
@@ -503,23 +504,27 @@ function writePB3Types(sandboxData, outputDir, libAnalysis) {
         }
 
         writeParamsSignature(params) {
+            this.ensureImport("TODO", "./internal/helper");
             return params.map(p => {
-                const returnType = p.name.startsWith("...") ? "unknown[]" : "unknown";
+                const returnType = p.name.startsWith("...") ? "TODO[]" : "TODO";
                 const hasDefault = p.default !== null;
                 return `${p.name}${hasDefault ? "?" : ""}: ${returnType}`;
             }).join(", ");
         }
 
         writeFunction(loc) {
+            this.ensureImport("TODO", "./internal/helper");
             const params = parseParamList(this.description[loc.path]?.params ?? "");
             const doc = this.writeParamsDocs(params);
             const modifier = this._getModifier(loc);
             const paramsSignature = this.writeParamsSignature(params);
-            return `${doc}${modifier}${loc.name}: (${paramsSignature}) => unknown;`;
+            return `${doc}${modifier}${loc.name}: (${paramsSignature}) => TODO;`;
         }
 
         writeLiteral(loc) {
             const knownValue = this.description[loc.path]?.value;
+
+            this.ensureImport("TODO", "./internal/helper");
 
             let doc = "";
             if ((!loc.isChildOfPrototype() || String(knownValue) !== "undefined") && knownValue !== VALUE_TOO_LONG && knownValue !== NO_KNOWN_VALUE) {
@@ -529,7 +534,7 @@ function writePB3Types(sandboxData, outputDir, libAnalysis) {
             }
 
             const modifier = this._getModifier(loc);
-            return `${doc}${modifier}${loc.name}: unknown;`;
+            return `${doc}${modifier}${loc.name}: TODO;`;
         }
 
         _getModifier(loc) {

@@ -1,9 +1,9 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     var b2World: ClassIdentityProps<"b2World"> & {
-        GetAllBodies: () => unknown;
+        GetAllBodies: () => TODO;
     }
 }

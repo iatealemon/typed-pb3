@@ -1,22 +1,22 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     var pb2Multiplayer: ClassIdentityProps<"pb2Multiplayer"> & {
         /** Type is unknown. One known value: false */
-        enabled: unknown;
+        enabled: TODO;
         /** Type is unknown. One known value: -1 */
-        match_uid: unknown;
+        match_uid: TODO;
         /** Type is unknown. One known value: -1 */
-        match_host_user_uid: unknown;
+        match_host_user_uid: TODO;
         /** Type is unknown. One known value: "???" */
-        match_instance_key: unknown;
+        match_instance_key: TODO;
         /** Type is unknown. One known value: -1 */
-        initiator_user_uid: unknown;
-        SetMatchProperty: (property: unknown, value: unknown) => unknown;
-        GetMatchInfoObject: () => unknown;
-        AddMatchTag: (tag: unknown) => unknown;
-        GetAllPlayerConnectionsAndSelf: () => unknown;
+        initiator_user_uid: TODO;
+        SetMatchProperty: (property: TODO, value: TODO) => TODO;
+        GetMatchInfoObject: () => TODO;
+        AddMatchTag: (tag: TODO) => TODO;
+        GetAllPlayerConnectionsAndSelf: () => TODO;
     }
 }

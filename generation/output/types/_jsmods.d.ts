@@ -1,27 +1,29 @@
 export { };
 
+import type { TODO } from "./internal/helper";
+
 declare global {
     interface Math {
-        sumPrecise: () => unknown;
-        POSITIVE_INFINITY: unknown;
-        NEGATIVE_INFINITY: unknown;
-        randomIntegerWithin: (a: unknown, b: unknown) => unknown;
-        randomWithin: (a: unknown, b: unknown) => unknown;
+        sumPrecise: () => TODO;
+        POSITIVE_INFINITY: TODO;
+        NEGATIVE_INFINITY: TODO;
+        randomIntegerWithin: (a: TODO, b: TODO) => TODO;
+        randomWithin: (a: TODO, b: TODO) => TODO;
     }
     interface StringConstructor {
-        eoX: (a: unknown, b: unknown) => unknown;
+        eoX: (a: TODO, b: TODO) => TODO;
     }
     interface String {
-        split_test: (d: unknown) => unknown;
+        split_test: (d: TODO) => TODO;
     }
     interface Array<T> {
-        join_test: () => unknown;
+        join_test: () => TODO;
         /** Type is unknown. One known value: null */
-        any: unknown;
+        any: TODO;
     }
     interface ErrorConstructor {
-        captureStackTrace: () => unknown;
+        captureStackTrace: () => TODO;
         /** Type is unknown. One known value: 10 */
-        stackTraceLimit: unknown;
+        stackTraceLimit: TODO;
     }
 }

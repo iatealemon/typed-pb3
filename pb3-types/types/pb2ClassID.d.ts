@@ -1,88 +1,88 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     var pb2ClassID: ClassIdentityProps<"pb2ClassID"> & {
         /** Type is unknown. One known value: 0 */
-        OTHER: unknown;
+        OTHER: TODO;
         /** Type is unknown. One known value: 1 */
-        CHARACTER: unknown;
+        CHARACTER: TODO;
         /** Type is unknown. One known value: 2 */
-        ENTITY: unknown;
+        ENTITY: TODO;
         /** Type is unknown. One known value: 3 */
-        RAGDOLL: unknown;
+        RAGDOLL: TODO;
         /** Type is unknown. One known value: 4 */
-        BULLET: unknown;
+        BULLET: TODO;
         /** Type is unknown. One known value: 5 */
-        GUN: unknown;
+        GUN: TODO;
         /** Type is unknown. One known value: 6 */
-        SHAPE: unknown;
+        SHAPE: TODO;
         /** Type is unknown. One known value: 7 */
-        TEAM: unknown;
+        TEAM: TODO;
         /** Type is unknown. One known value: 8 */
-        FLOATING_TEXT: unknown;
+        FLOATING_TEXT: TODO;
         /** Type is unknown. One known value: 9 */
-        COLLISION_IGNORE: unknown;
+        COLLISION_IGNORE: TODO;
         /** Type is unknown. One known value: 10 */
-        PHYS3D: unknown;
+        PHYS3D: TODO;
         /** Type is unknown. One known value: 11 */
-        LASER_SIGHT: unknown;
+        LASER_SIGHT: TODO;
         /** Type is unknown. One known value: 12 */
-        BEAM_BULLET_TRAIL: unknown;
+        BEAM_BULLET_TRAIL: TODO;
         /** Type is unknown. One known value: 13 */
-        CONTROLLER: unknown;
+        CONTROLLER: TODO;
         /** Type is unknown. One known value: 14 */
-        DATA_CONNECTION: unknown;
+        DATA_CONNECTION: TODO;
         /** Type is unknown. One known value: 15 */
-        HAND_HOLDER: unknown;
+        HAND_HOLDER: TODO;
         /** Type is unknown. One known value: 16 */
-        WATER_CLASS: unknown;
+        WATER_CLASS: TODO;
         /** Type is unknown. One known value: 17 */
-        FIRE: unknown;
+        FIRE: TODO;
         /** Type is unknown. One known value: 18 */
-        FIRE_TYPE: unknown;
+        FIRE_TYPE: TODO;
         /** Type is unknown. One known value: 19 */
-        FROZEN_SPOT: unknown;
+        FROZEN_SPOT: TODO;
         /** Type is unknown. One known value: 20 */
-        EXPLOSION: unknown;
+        EXPLOSION: TODO;
         /** Type is unknown. One known value: 21 */
-        SHIELD: unknown;
+        SHIELD: TODO;
         /** Type is unknown. One known value: 22 */
-        TIME_WARP_ZONE: unknown;
+        TIME_WARP_ZONE: TODO;
         /** Type is unknown. One known value: 23 */
-        ROPE: unknown;
+        ROPE: TODO;
         /** Type is unknown. One known value: 24 */
-        TEMP_HURT_FORCE: unknown;
+        TEMP_HURT_FORCE: TODO;
         /** Type is unknown. One known value: 25 */
-        RADIOACTIVE_CLOUD: unknown;
+        RADIOACTIVE_CLOUD: TODO;
         /** Type is unknown. One known value: 26 */
-        MERGED_SOUND_ADD_SOURCE_CALL: unknown;
+        MERGED_SOUND_ADD_SOURCE_CALL: TODO;
         /** Type is unknown. One known value: 27 */
-        REPLAY_DATA: unknown;
+        REPLAY_DATA: TODO;
         /** Type is unknown. One known value: 28 */
-        SOUND: unknown;
+        SOUND: TODO;
         /** Type is unknown. One known value: 29 */
-        HERO_INFO: unknown;
+        HERO_INFO: TODO;
         /** Type is unknown. One known value: 30 */
-        HERO_INFO_BAR: unknown;
+        HERO_INFO_BAR: TODO;
         /** Type is unknown. One known value: 31 */
-        AI_MODULE: unknown;
+        AI_MODULE: TODO;
         /** Type is unknown. One known value: 32 */
-        DECORATION: unknown;
+        DECORATION: TODO;
         /** Type is unknown. One known value: 33 */
-        WINDOW_HINT: unknown;
+        WINDOW_HINT: TODO;
         /** Type is unknown. One known value: 34 */
-        SWITCH: unknown;
+        SWITCH: TODO;
         /** Type is unknown. One known value: 35 */
-        LIGHT: unknown;
+        LIGHT: TODO;
         /** Type is unknown. One known value: 100 */
-        WINDOW: unknown;
+        WINDOW: TODO;
         /** Type is unknown. One known value: 101 */
-        REGION: unknown;
+        REGION: TODO;
         /** Type is unknown. One known value: 102 */
-        VOID: unknown;
+        VOID: TODO;
         /** Type is unknown. One known value: 103 */
-        ATOM: unknown;
+        ATOM: TODO;
     }
 }
