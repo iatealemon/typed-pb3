@@ -1,49 +1,71 @@
 export {};
+declare global {
+    interface AIPreset {
+        allow_hit_reporting: boolean;
+        allow_penetrating_shots: boolean;
+        allow_revenge_teamkilling: boolean;
+        allow_ricochet_shots: boolean;
+        allow_trace_shots: boolean;
+        behavior: number;
+        factor_for_team_damage_paths_avoidance: number;
+        heal_teammates: boolean;
+        hear_range: number;
+        hunt_attacker: boolean;
+        hunt_random_known_threats_range: number;
+        hunt_seen_threats: boolean;
+        rejection_point_for_team_damage_paths: number | null;
+        sequence_behavior: number;
+        skill: number;
+    }
+}
+
 interface ClassIdentityProps<ClassName extends string> {
     readonly _class: ClassName;
     toString(): `[object ${ClassName}]`;
 }
 
+type TODO = any;
+
 declare global {
     interface Circle extends ClassIdentityProps<"Circle"> {
-        SetZero: () => unknown;
-        Set: (x_: unknown, y_: unknown) => unknown;
-        SetSelf: (x_: unknown, y_: unknown) => unknown;
-        AddXY: (x_: unknown, y_: unknown) => unknown;
-        SetV: (v: unknown) => unknown;
-        dot: (v: unknown) => unknown;
-        mul: (a: unknown) => unknown;
-        GetNegative: () => unknown;
-        GetNegativeTo: (v: unknown) => unknown;
-        GetSetFromNegative: (a: unknown) => unknown;
-        NegativeSelf: () => unknown;
-        GetNegativedSelf: () => unknown;
-        Copy: () => unknown;
-        Add: (v: unknown) => unknown;
-        AddSelf: (v: unknown) => unknown;
-        Subtract: (v: unknown) => unknown;
-        Multiply: (a: unknown) => unknown;
-        MultiplySelf: (a: unknown) => unknown;
-        MulM: (A: unknown) => unknown;
-        MulTM: (A: unknown) => unknown;
-        CrossVF: (s: unknown) => unknown;
-        CrossFV: (s: unknown) => unknown;
-        MinV: (b: unknown) => unknown;
-        MaxV: (b: unknown) => unknown;
-        Abs: () => unknown;
-        Length: () => unknown;
-        LengthSquared: () => unknown;
-        Normalize: () => unknown;
-        Normalized: () => unknown;
-        Rotate: (a: unknown) => unknown;
-        Rotated: (a: unknown) => unknown;
-        RotatedSinCos: (sin: unknown, cos: unknown) => unknown;
-        GetAngle: () => unknown;
-        IsValid: () => unknown;
-        MoveToUntilDistanceIs: (to: unknown, di: unknown) => unknown;
+        SetZero: () => TODO;
+        Set: (x_: number, y_: number) => TODO;
+        SetSelf: (x_: TODO, y_: TODO) => TODO;
+        AddXY: (x_: number, y_: number) => TODO;
+        SetV: (v: TODO) => TODO;
+        dot: (v: TODO) => TODO;
+        mul: (a: TODO) => TODO;
+        GetNegative: () => TODO;
+        GetNegativeTo: (v: TODO) => TODO;
+        GetSetFromNegative: (a: TODO) => TODO;
+        NegativeSelf: () => TODO;
+        GetNegativedSelf: () => TODO;
+        Copy: () => TODO;
+        Add: (v: TODO) => TODO;
+        AddSelf: (v: TODO) => TODO;
+        Subtract: (v: TODO) => TODO;
+        Multiply: (a: TODO) => TODO;
+        MultiplySelf: (a: TODO) => TODO;
+        MulM: (A: TODO) => TODO;
+        MulTM: (A: TODO) => TODO;
+        CrossVF: (s: TODO) => TODO;
+        CrossFV: (s: TODO) => TODO;
+        MinV: (b: TODO) => TODO;
+        MaxV: (b: TODO) => TODO;
+        Abs: () => TODO;
+        Length: () => TODO;
+        LengthSquared: () => TODO;
+        Normalize: () => TODO;
+        Normalized: () => TODO;
+        Rotate: (a: TODO) => TODO;
+        Rotated: (a: TODO) => TODO;
+        RotatedSinCos: (sin: number, cos: number) => TODO;
+        GetAngle: () => TODO;
+        IsValid: () => TODO;
+        MoveToUntilDistanceIs: (to: TODO, di: TODO) => TODO;
     }
     var Circle: {
-        new (params: unknown): Circle;
+        new (params: TODO): Circle;
 
     }
 }
@@ -56,8 +78,8 @@ declare global {
         redOffset: number;
         greenOffset: number;
         blueOffset: number;
-        clone: () => unknown;
-        multiplyHighRangeColor: (v: unknown) => unknown;
+        clone: () => ColorTransform;
+        multiplyHighRangeColor: (v: {r: number, g: number, b: number}) => ColorTransform;
     }
     var ColorTransform: {
         /**
@@ -80,184 +102,208 @@ declare global {
     }
     var Key: {
         new (): Key;
-        init_class: () => unknown;
+        init_class: () => TODO;
         /** Type is unknown. One known value: [0,32] */
-        SPACE: unknown;
+        SPACE: TODO;
         /** Type is unknown. One known value: [0,9] */
-        TAB: unknown;
+        TAB: TODO;
         /** Type is unknown. One known value: [0,8] */
-        BACKSPACE: unknown;
+        BACKSPACE: TODO;
         /** Type is unknown. One known value: [0,27] */
-        ESCAPE: unknown;
+        ESCAPE: TODO;
         /** Type is unknown. One known value: [0,13] */
-        ENTER: unknown;
+        ENTER: TODO;
         /** Type is unknown. One known value: [0,37] */
-        LEFT: unknown;
+        LEFT: TODO;
         /** Type is unknown. One known value: [0,38] */
-        UP: unknown;
+        UP: TODO;
         /** Type is unknown. One known value: [0,39] */
-        RIGHT: unknown;
+        RIGHT: TODO;
         /** Type is unknown. One known value: [0,40] */
-        DOWN: unknown;
+        DOWN: TODO;
         /** Type is unknown. One known value: [1,17] */
-        CONTROL: unknown;
+        CONTROL: TODO;
         /** Type is unknown. One known value: [1,16] */
-        SHIFT: unknown;
+        SHIFT: TODO;
         /** Type is unknown. One known value: [1,18] */
-        ALT: unknown;
+        ALT: TODO;
         /** Type is unknown. One known value: [4,1] */
-        MOUSE_LEFT: unknown;
+        MOUSE_LEFT: TODO;
         /** Type is unknown. One known value: [4,3] */
-        MOUSE_RIGHT: unknown;
+        MOUSE_RIGHT: TODO;
         /** Type is unknown. One known value: [4,3] */
-        MOUSE_WHEEL_CLICK: unknown;
+        MOUSE_WHEEL_CLICK: TODO;
         /** Type is unknown. One known value: [5,0] */
-        MOUSE_WHEEL_UP: unknown;
+        MOUSE_WHEEL_UP: TODO;
         /** Type is unknown. One known value: [5,1] */
-        MOUSE_WHEEL_DOWN: unknown;
+        MOUSE_WHEEL_DOWN: TODO;
         /** Type is unknown. One known value: [0,167] */
-        HISTORY_FORWARD: unknown;
+        HISTORY_FORWARD: TODO;
         /** Type is unknown. One known value: [0,166] */
-        HISTORY_BACK: unknown;
+        HISTORY_BACK: TODO;
         /** Type is unknown. One known value: [0,219] */
-        SQUARE_BRACKET_OPEN: unknown;
+        SQUARE_BRACKET_OPEN: TODO;
         /** Type is unknown. One known value: [0,221] */
-        SQUARE_BRACKET_CLOSE: unknown;
+        SQUARE_BRACKET_CLOSE: TODO;
         /** Type is unknown. One known value: [0,188] */
-        COMMA: unknown;
+        COMMA: TODO;
         /** Type is unknown. One known value: [0,190] */
-        PERIOD: unknown;
+        PERIOD: TODO;
         /** Type is unknown. One known value: [2,16] */
-        SLASH: unknown;
+        SLASH: TODO;
         /** Type is unknown. One known value: [0,189] */
-        MINUS: unknown;
+        MINUS: TODO;
         /** Type is unknown. One known value: [0,187] */
-        PLUS: unknown;
+        PLUS: TODO;
         /** Type is unknown. One known value: [0,220] */
-        BACKSLASH: unknown;
+        BACKSLASH: TODO;
         /** Type is unknown. One known value: [0,46] */
-        DELETE: unknown;
+        DELETE: TODO;
         /** Type is unknown. One known value: [0,192] */
-        TILDE: unknown;
+        TILDE: TODO;
         /** Type is unknown. One known value: [0,96] */
-        TILDE_ALT: unknown;
+        TILDE_ALT: TODO;
         /** Type is unknown. One known value: [0,126] */
-        TILDE_ALT2: unknown;
+        TILDE_ALT2: TODO;
         /** Type is unknown. One known value: [0,48] */
-        DIGIT0: unknown;
+        DIGIT0: TODO;
         /** Type is unknown. One known value: [0,49] */
-        DIGIT1: unknown;
+        DIGIT1: TODO;
         /** Type is unknown. One known value: [0,50] */
-        DIGIT2: unknown;
+        DIGIT2: TODO;
         /** Type is unknown. One known value: [0,51] */
-        DIGIT3: unknown;
+        DIGIT3: TODO;
         /** Type is unknown. One known value: [0,52] */
-        DIGIT4: unknown;
+        DIGIT4: TODO;
         /** Type is unknown. One known value: [0,53] */
-        DIGIT5: unknown;
+        DIGIT5: TODO;
         /** Type is unknown. One known value: [0,54] */
-        DIGIT6: unknown;
+        DIGIT6: TODO;
         /** Type is unknown. One known value: [0,55] */
-        DIGIT7: unknown;
+        DIGIT7: TODO;
         /** Type is unknown. One known value: [0,56] */
-        DIGIT8: unknown;
+        DIGIT8: TODO;
         /** Type is unknown. One known value: [0,57] */
-        DIGIT9: unknown;
+        DIGIT9: TODO;
         /** Type is unknown. One known value: [0,65] */
-        A: unknown;
+        A: TODO;
         /** Type is unknown. One known value: [0,66] */
-        B: unknown;
+        B: TODO;
         /** Type is unknown. One known value: [0,67] */
-        C: unknown;
+        C: TODO;
         /** Type is unknown. One known value: [0,68] */
-        D: unknown;
+        D: TODO;
         /** Type is unknown. One known value: [0,69] */
-        E: unknown;
+        E: TODO;
         /** Type is unknown. One known value: [0,70] */
-        F: unknown;
+        F: TODO;
         /** Type is unknown. One known value: [0,71] */
-        G: unknown;
+        G: TODO;
         /** Type is unknown. One known value: [0,72] */
-        H: unknown;
+        H: TODO;
         /** Type is unknown. One known value: [0,73] */
-        I: unknown;
+        I: TODO;
         /** Type is unknown. One known value: [0,74] */
-        J: unknown;
+        J: TODO;
         /** Type is unknown. One known value: [0,75] */
-        K: unknown;
+        K: TODO;
         /** Type is unknown. One known value: [0,76] */
-        L: unknown;
+        L: TODO;
         /** Type is unknown. One known value: [0,77] */
-        M: unknown;
+        M: TODO;
         /** Type is unknown. One known value: [0,78] */
-        N: unknown;
+        N: TODO;
         /** Type is unknown. One known value: [0,79] */
-        O: unknown;
+        O: TODO;
         /** Type is unknown. One known value: [0,80] */
-        P: unknown;
+        P: TODO;
         /** Type is unknown. One known value: [0,81] */
-        Q: unknown;
+        Q: TODO;
         /** Type is unknown. One known value: [0,82] */
-        R: unknown;
+        R: TODO;
         /** Type is unknown. One known value: [0,83] */
-        S: unknown;
+        S: TODO;
         /** Type is unknown. One known value: [0,84] */
-        T: unknown;
+        T: TODO;
         /** Type is unknown. One known value: [0,85] */
-        U: unknown;
+        U: TODO;
         /** Type is unknown. One known value: [0,86] */
-        V: unknown;
+        V: TODO;
         /** Type is unknown. One known value: [0,87] */
-        W: unknown;
+        W: TODO;
         /** Type is unknown. One known value: [0,88] */
-        X: unknown;
+        X: TODO;
         /** Type is unknown. One known value: [0,89] */
-        Y: unknown;
+        Y: TODO;
         /** Type is unknown. One known value: [0,90] */
-        Z: unknown;
+        Z: TODO;
+    }
+}
+
+declare global {
+    interface MovableSoundsPreset {
+        sound_break: string | null;
+        sound_break_pitch: number;
+        sound_break_volume: number;
+        sound_damage: string | null;
+        sound_damage_pitch: number;
+        sound_damage_volume: number;
+        sound_damage_base_volume: number;
+        sound_damage_volume_scale_with_damage_factor: number;
+        sound_loop: string | null;
+        sound_loop_pitch: number;
+        sound_loop_volume: number;
+        sound_loop_base_speed: number;
+        sound_loop_speed_to_pitch_factor: number;
+        sound_start: string | null;
+        sound_start_pitch: number;
+        sound_start_volume: number;
+        sound_stop: string | null;
+        sound_stop_pitch: number;
+        sound_stop_volume: number;
     }
 }
 
 declare global {
     interface Point extends ClassIdentityProps<"Point"> {
-        SetZero: () => unknown;
-        Set: (x_: unknown, y_: unknown) => unknown;
-        SetSelf: (x_: unknown, y_: unknown) => unknown;
-        AddXY: (x_: unknown, y_: unknown) => unknown;
-        SetV: (v: unknown) => unknown;
-        dot: (v: unknown) => unknown;
-        mul: (a: unknown) => unknown;
-        GetNegative: () => unknown;
-        GetNegativeTo: (v: unknown) => unknown;
-        GetSetFromNegative: (a: unknown) => unknown;
-        NegativeSelf: () => unknown;
-        GetNegativedSelf: () => unknown;
-        Copy: () => unknown;
-        Add: (v: unknown) => unknown;
-        AddSelf: (v: unknown) => unknown;
-        Subtract: (v: unknown) => unknown;
-        Multiply: (a: unknown) => unknown;
-        MultiplySelf: (a: unknown) => unknown;
-        MulM: (A: unknown) => unknown;
-        MulTM: (A: unknown) => unknown;
-        CrossVF: (s: unknown) => unknown;
-        CrossFV: (s: unknown) => unknown;
-        MinV: (b: unknown) => unknown;
-        MaxV: (b: unknown) => unknown;
-        Abs: () => unknown;
-        Length: () => unknown;
-        LengthSquared: () => unknown;
-        Normalize: () => unknown;
-        Normalized: () => unknown;
-        Rotate: (a: unknown) => unknown;
-        Rotated: (a: unknown) => unknown;
-        RotatedSinCos: (sin: unknown, cos: unknown) => unknown;
-        GetAngle: () => unknown;
-        IsValid: () => unknown;
-        MoveToUntilDistanceIs: (to: unknown, di: unknown) => unknown;
+        SetZero: () => TODO;
+        Set: (x_: TODO, y_: TODO) => TODO;
+        SetSelf: (x_: TODO, y_: TODO) => TODO;
+        AddXY: (x_: TODO, y_: TODO) => TODO;
+        SetV: (v: TODO) => TODO;
+        dot: (v: TODO) => TODO;
+        mul: (a: TODO) => TODO;
+        GetNegative: () => TODO;
+        GetNegativeTo: (v: TODO) => TODO;
+        GetSetFromNegative: (a: TODO) => TODO;
+        NegativeSelf: () => TODO;
+        GetNegativedSelf: () => TODO;
+        Copy: () => TODO;
+        Add: (v: TODO) => TODO;
+        AddSelf: (v: TODO) => TODO;
+        Subtract: (v: TODO) => TODO;
+        Multiply: (a: TODO) => TODO;
+        MultiplySelf: (a: TODO) => TODO;
+        MulM: (A: TODO) => TODO;
+        MulTM: (A: TODO) => TODO;
+        CrossVF: (s: TODO) => TODO;
+        CrossFV: (s: TODO) => TODO;
+        MinV: (b: TODO) => TODO;
+        MaxV: (b: TODO) => TODO;
+        Abs: () => TODO;
+        Length: () => TODO;
+        LengthSquared: () => TODO;
+        Normalize: () => TODO;
+        Normalized: () => TODO;
+        Rotate: (a: TODO) => TODO;
+        Rotated: (a: TODO) => TODO;
+        RotatedSinCos: (sin: TODO, cos: TODO) => TODO;
+        GetAngle: () => TODO;
+        IsValid: () => TODO;
+        MoveToUntilDistanceIs: (to: TODO, di: TODO) => TODO;
     }
     var Point: {
-        new (params: unknown): Point;
+        new (params: TODO): Point;
 
     }
 }
@@ -271,190 +317,188 @@ declare global {
             setX: (x: number) => Vector3;
             setY: (y: number) => Vector3;
             setZ: (z: number) => Vector3;
-            setComponent: (index: unknown, value: unknown) => unknown;
-            getComponent: (index: unknown) => unknown;
-            clone: () => unknown;
-            copy: (v: unknown) => unknown;
-            add: (v: unknown, w: unknown) => unknown;
-            addScalar: (s: unknown) => unknown;
-            addVectors: (a: unknown, b: unknown) => unknown;
-            addScaledVector: (v: unknown, s: unknown) => unknown;
-            sub: (v: unknown, w: unknown) => unknown;
-            subScalar: (s: unknown) => unknown;
-            subVectors: (a: unknown, b: unknown) => unknown;
-            multiply: (v: unknown, w: unknown) => unknown;
-            multiplyScalar: (scalar: unknown) => unknown;
-            multiplyVectors: (a: unknown, b: unknown) => unknown;
-            applyEuler: (euler: unknown) => unknown;
-            applyAxisAngle: (axis: unknown, angle: unknown) => unknown;
-            applyMatrix3: (m: unknown) => unknown;
-            applyMatrix4: (m: unknown) => unknown;
-            applyQuaternion: (q: unknown) => unknown;
-            project: (camera: unknown) => unknown;
-            unproject: (camera: unknown) => unknown;
-            transformDirection: (m: unknown) => unknown;
-            divide: (v: unknown) => unknown;
-            divideScalar: (scalar: unknown) => unknown;
-            min: (v: unknown) => unknown;
-            max: (v: unknown) => unknown;
-            clamp: (min: unknown, max: unknown) => unknown;
-            clampScalar: (minVal: unknown, maxVal: unknown) => unknown;
-            clampLength: (min: unknown, max: unknown) => unknown;
-            floor: () => unknown;
-            ceil: () => unknown;
-            round: () => unknown;
-            roundToZero: () => unknown;
-            negate: () => unknown;
-            dot: (v: unknown) => unknown;
-            lengthSq: () => unknown;
-            lengthManhattan: () => unknown;
-            normalize: () => unknown;
-            setLength: (length: unknown) => unknown;
-            lerp: (v: unknown, alpha: unknown) => unknown;
-            lerpVectors: (v1: unknown, v2: unknown, alpha: unknown) => unknown;
-            cross: (v: unknown, w: unknown) => unknown;
-            crossVectors: (a: unknown, b: unknown) => unknown;
-            projectOnVector: (vector: unknown) => unknown;
-            projectOnPlane: (planeNormal: unknown) => unknown;
-            reflect: (normal: unknown) => unknown;
-            angleTo: (v: unknown) => unknown;
-            distanceTo: (v: unknown) => unknown;
-            distanceToSquared: (v: unknown) => unknown;
-            distanceToManhattan: (v: unknown) => unknown;
-            setFromSpherical: (s: unknown) => unknown;
-            setFromCylindrical: (c: unknown) => unknown;
-            setFromMatrixPosition: (m: unknown) => unknown;
-            setFromMatrixScale: (m: unknown) => unknown;
-            setFromMatrixColumn: (m: unknown, index: unknown) => unknown;
-            equals: (v: unknown) => unknown;
-            fromArray: (array: unknown, offset: unknown) => unknown;
-            toArray: (array: unknown, offset: unknown) => unknown;
-            fromBufferAttribute: (attribute: unknown, index: unknown, offset: unknown) => unknown;
-            setEulerFromRotationMatrix: () => unknown;
-            setEulerFromQuaternion: () => unknown;
-            getPositionFromMatrix: (m: unknown) => unknown;
-            getScaleFromMatrix: (m: unknown) => unknown;
-            getColumnFromMatrix: (index: unknown, matrix: unknown) => unknown;
-            applyProjection: (m: unknown) => unknown;
-            fromAttribute: (attribute: unknown, index: unknown, offset: unknown) => unknown;
+            setComponent: (index: number, value: number) => TODO;
+            getComponent: (index: number) => number;
+            clone: () => Vector3;
+            copy: (v: TODO) => TODO;
+            add: (v: TODO, w: TODO) => TODO;
+            addScalar: (s: TODO) => TODO;
+            addVectors: (a: TODO, b: TODO) => TODO;
+            addScaledVector: (v: TODO, s: TODO) => TODO;
+            sub: (v: TODO, w: TODO) => TODO;
+            subScalar: (s: number) => TODO;
+            subVectors: (a: TODO, b: TODO) => TODO;
+            multiply: (v: TODO, w: TODO) => TODO;
+            multiplyScalar: (scalar: number) => TODO;
+            multiplyVectors: (a: TODO, b: TODO) => TODO;
+            applyEuler: (euler: TODO) => TODO;
+            applyAxisAngle: (axis: TODO, angle: TODO) => TODO;
+            applyMatrix3: (m: TODO) => TODO;
+            applyMatrix4: (m: TODO) => TODO;
+            applyQuaternion: (q: TODO) => TODO;
+            project: (camera: TODO) => TODO;
+            unproject: (camera: TODO) => TODO;
+            transformDirection: (m: TODO) => TODO;
+            divide: (v: TODO) => TODO;
+            divideScalar: (scalar: number) => TODO;
+            min: (v: TODO) => TODO;
+            max: (v: TODO) => TODO;
+            clamp: (min: TODO, max: TODO) => TODO;
+            clampScalar: (minVal: number, maxVal: number) => TODO;
+            clampLength: (min: TODO, max: TODO) => TODO;
+            floor: () => TODO;
+            ceil: () => TODO;
+            round: () => TODO;
+            roundToZero: () => TODO;
+            negate: () => TODO;
+            dot: (v: TODO) => TODO;
+            lengthSq: () => TODO;
+            lengthManhattan: () => TODO;
+            normalize: () => TODO;
+            setLength: (length: TODO) => TODO;
+            lerp: (v: TODO, alpha: TODO) => TODO;
+            lerpVectors: (v1: TODO, v2: TODO, alpha: TODO) => TODO;
+            cross: (v: TODO, w: TODO) => TODO;
+            crossVectors: (a: TODO, b: TODO) => TODO;
+            projectOnVector: (vector: TODO) => TODO;
+            projectOnPlane: (planeNormal: TODO) => TODO;
+            reflect: (normal: TODO) => TODO;
+            angleTo: (v: TODO) => TODO;
+            distanceTo: (v: TODO) => TODO;
+            distanceToSquared: (v: TODO) => TODO;
+            distanceToManhattan: (v: TODO) => TODO;
+            setFromSpherical: (s: TODO) => TODO;
+            setFromCylindrical: (c: TODO) => TODO;
+            setFromMatrixPosition: (m: TODO) => TODO;
+            setFromMatrixScale: (m: TODO) => TODO;
+            setFromMatrixColumn: (m: TODO, index: TODO) => TODO;
+            equals: (v: TODO) => TODO;
+            fromArray: (array: TODO, offset: TODO) => TODO;
+            toArray: (array: TODO, offset: TODO) => TODO;
+            fromBufferAttribute: (attribute: TODO, index: TODO, offset: TODO) => TODO;
+            setEulerFromRotationMatrix: () => TODO;
+            setEulerFromQuaternion: () => TODO;
+            getPositionFromMatrix: (m: TODO) => TODO;
+            getScaleFromMatrix: (m: TODO) => TODO;
+            getColumnFromMatrix: (index: TODO, matrix: TODO) => TODO;
+            applyProjection: (m: TODO) => TODO;
+            fromAttribute: (attribute: TODO, index: TODO, offset: TODO) => TODO;
             // x,y,z failed to be included in generation
             x: number;
             y: number;
             z: number;
         }
         interface Matrix4 extends ClassIdentityProps<"Matrix4"> {
-            /** Type is unknown. One known value: true */
-            isMatrix4: unknown;
-            set: (n11: unknown, n12: unknown, n13: unknown, n14: unknown, n21: unknown, n22: unknown, n23: unknown, n24: unknown, n31: unknown, n32: unknown, n33: unknown, n34: unknown, n41: unknown, n42: unknown, n43: unknown, n44: unknown) => unknown;
-            identity: () => unknown;
-            clone: () => unknown;
-            copy: (m: unknown) => unknown;
-            copyPosition: (m: unknown) => unknown;
-            extractBasis: (xAxis: unknown, yAxis: unknown, zAxis: unknown) => unknown;
-            makeBasis: (xAxis: unknown, yAxis: unknown, zAxis: unknown) => unknown;
-            extractRotation: (m: unknown) => unknown;
-            makeRotationFromEuler: (euler: unknown) => unknown;
-            makeRotationFromQuaternion: (q: unknown) => unknown;
-            lookAt: (eye: unknown, target: unknown, up: unknown) => unknown;
-            multiply: (m: unknown, n: unknown) => unknown;
-            premultiply: (m: unknown) => unknown;
-            multiplyMatrices: (a: unknown, b: unknown) => unknown;
-            multiplyScalar: (s: unknown) => unknown;
-            applyToBufferAttribute: (attribute: unknown) => unknown;
-            determinant: () => unknown;
-            transpose: () => unknown;
-            setPosition: (v: unknown) => unknown;
-            getInverse: (m: unknown, throwOnDegenerate: unknown) => unknown;
-            scale: (v: unknown) => unknown;
-            getMaxScaleOnAxis: () => unknown;
-            makeTranslation: (x: unknown, y: unknown, z: unknown) => unknown;
-            makeRotationX: (theta: unknown) => unknown;
-            makeRotationY: (theta: unknown) => unknown;
-            makeRotationZ: (theta: unknown) => unknown;
-            makeRotationAxis: (axis: unknown, angle: unknown) => unknown;
-            makeScale: (x: unknown, y: unknown, z: unknown) => unknown;
-            makeShear: (x: unknown, y: unknown, z: unknown) => unknown;
+            isMatrix4: boolean;
+            set: (n11: TODO, n12: TODO, n13: TODO, n14: TODO, n21: TODO, n22: TODO, n23: TODO, n24: TODO, n31: TODO, n32: TODO, n33: TODO, n34: TODO, n41: TODO, n42: TODO, n43: TODO, n44: TODO) => TODO;
+            identity: () => TODO;
+            clone: () => TODO;
+            copy: (m: TODO) => TODO;
+            copyPosition: (m: TODO) => TODO;
+            extractBasis: (xAxis: TODO, yAxis: TODO, zAxis: TODO) => TODO;
+            makeBasis: (xAxis: TODO, yAxis: TODO, zAxis: TODO) => TODO;
+            extractRotation: (m: TODO) => TODO;
+            makeRotationFromEuler: (euler: TODO) => TODO;
+            makeRotationFromQuaternion: (q: TODO) => TODO;
+            lookAt: (eye: TODO, target: TODO, up: TODO) => TODO;
+            multiply: (m: TODO, n: TODO) => TODO;
+            premultiply: (m: TODO) => TODO;
+            multiplyMatrices: (a: TODO, b: TODO) => TODO;
+            multiplyScalar: (s: number) => TODO;
+            applyToBufferAttribute: (attribute: TODO) => TODO;
+            determinant: () => TODO;
+            transpose: () => TODO;
+            setPosition: (v: TODO) => TODO;
+            getInverse: (m: TODO, throwOnDegenerate: TODO) => TODO;
+            scale: (v: TODO) => TODO;
+            getMaxScaleOnAxis: () => TODO;
+            makeTranslation: (x: TODO, y: TODO, z: TODO) => TODO;
+            makeRotationX: (theta: TODO) => TODO;
+            makeRotationY: (theta: TODO) => TODO;
+            makeRotationZ: (theta: TODO) => TODO;
+            makeRotationAxis: (axis: TODO, angle: TODO) => TODO;
+            makeScale: (x: TODO, y: TODO, z: TODO) => TODO;
+            makeShear: (x: TODO, y: TODO, z: TODO) => TODO;
             /** Type is unknown. One known value: 0 */
-            last_transform_hash: unknown;
+            last_transform_hash: TODO;
             /** Type is unknown. One known value: 0 */
-            last_transform_hash2: unknown;
-            compose: (position: unknown, quaternion: unknown, scale: unknown) => unknown;
-            decompose: (position: unknown, quaternion: unknown, scale: unknown) => unknown;
-            makePerspective: (left: unknown, right: unknown, top: unknown, bottom: unknown, near: unknown, far: unknown) => unknown;
-            makeOrthographic: (left: unknown, right: unknown, top: unknown, bottom: unknown, near: unknown, far: unknown) => unknown;
-            equals: (matrix: unknown) => unknown;
-            fromArray: (array: unknown, offset: unknown) => unknown;
-            toArray: (array: unknown, offset: unknown) => unknown;
-            extractPosition: (m: unknown) => unknown;
-            flattenToArrayOffset: (array: unknown, offset: unknown) => unknown;
-            getPosition: () => unknown;
-            setRotationFromQuaternion: (q: unknown) => unknown;
-            multiplyToArray: () => unknown;
-            multiplyVector3: (vector: unknown) => unknown;
-            multiplyVector4: (vector: unknown) => unknown;
-            multiplyVector3Array: (a: unknown) => unknown;
-            rotateAxis: (v: unknown) => unknown;
-            crossVector: (vector: unknown) => unknown;
-            translate: () => unknown;
-            rotateX: () => unknown;
-            rotateY: () => unknown;
-            rotateZ: () => unknown;
-            rotateByAxis: () => unknown;
-            applyToBuffer: (buffer: unknown, offset: unknown, length: unknown) => unknown;
-            applyToVector3Array: (array: unknown, offset: unknown, length: unknown) => unknown;
-            makeFrustum: (left: unknown, right: unknown, bottom: unknown, top: unknown, near: unknown, far: unknown) => unknown;
-            appendTranslation: (x: unknown, y: unknown, z: unknown) => unknown;
+            last_transform_hash2: TODO;
+            compose: (position: TODO, quaternion: TODO, scale: TODO) => TODO;
+            decompose: (position: TODO, quaternion: TODO, scale: TODO) => TODO;
+            makePerspective: (left: TODO, right: TODO, top: TODO, bottom: TODO, near: TODO, far: TODO) => TODO;
+            makeOrthographic: (left: TODO, right: TODO, top: TODO, bottom: TODO, near: TODO, far: TODO) => TODO;
+            equals: (matrix: TODO) => TODO;
+            fromArray: (array: TODO, offset: TODO) => TODO;
+            toArray: (array: TODO, offset: TODO) => TODO;
+            extractPosition: (m: TODO) => TODO;
+            flattenToArrayOffset: (array: TODO, offset: TODO) => TODO;
+            getPosition: () => TODO;
+            setRotationFromQuaternion: (q: TODO) => TODO;
+            multiplyToArray: () => TODO;
+            multiplyVector3: (vector: TODO) => TODO;
+            multiplyVector4: (vector: TODO) => TODO;
+            multiplyVector3Array: (a: TODO) => TODO;
+            rotateAxis: (v: TODO) => TODO;
+            crossVector: (vector: TODO) => TODO;
+            translate: () => TODO;
+            rotateX: () => TODO;
+            rotateY: () => TODO;
+            rotateZ: () => TODO;
+            rotateByAxis: () => TODO;
+            applyToBuffer: (buffer: TODO, offset: TODO, length: TODO) => TODO;
+            applyToVector3Array: (array: TODO, offset: TODO, length: TODO) => TODO;
+            makeFrustum: (left: TODO, right: TODO, bottom: TODO, top: TODO, near: TODO, far: TODO) => TODO;
+            appendTranslation: (x: TODO, y: TODO, z: TODO) => TODO;
             /**
              * @param ang   
              * @param up   
              * @param eoP (default=null)   
              */
-            appendRotation: (ang: unknown, up: unknown, eoP?: unknown) => unknown;
-            invert: () => unknown;
-            eoQ: (v: unknown) => unknown;
-            bNj: (v: unknown) => unknown;
+            appendRotation: (ang: TODO, up: TODO, eoP?: TODO) => TODO;
+            invert: () => TODO;
+            eoQ: (v: TODO) => TODO;
+            bNj: (v: TODO) => TODO;
         }
         interface Euler extends ClassIdentityProps<"Euler"> {
-            x: unknown;
-            y: unknown;
-            z: unknown;
-            order: unknown;
-            /** Type is unknown. One known value: true */
-            isEuler: unknown;
-            set: (x: unknown, y: unknown, z: unknown, order: unknown) => unknown;
-            clone: () => unknown;
-            copy: (euler: unknown) => unknown;
-            setFromRotationMatrix: (m: unknown, order: unknown, update: unknown) => unknown;
-            setFromQuaternion: (q: unknown, order: unknown, update: unknown) => unknown;
-            setFromVector3: (v: unknown, order: unknown) => unknown;
-            reorder: (newOrder: unknown) => unknown;
-            equals: (euler: unknown) => unknown;
-            fromArray: (array: unknown) => unknown;
-            toArray: (array: unknown, offset: unknown) => unknown;
-            toVector3: (optionalResult: unknown) => unknown;
-            onChange: (callback: unknown) => unknown;
-            onChangeCallback: () => unknown;
+            x: number;
+            y: number;
+            z: number;
+            order: TODO;
+            isEuler: boolean;
+            set: (x: number, y: number, z: number, order: TODO) => TODO;
+            clone: () => TODO;
+            copy: (euler: TODO) => TODO;
+            setFromRotationMatrix: (m: TODO, order: TODO, update: TODO) => TODO;
+            setFromQuaternion: (q: TODO, order: TODO, update: TODO) => TODO;
+            setFromVector3: (v: TODO, order: TODO) => TODO;
+            reorder: (newOrder: TODO) => TODO;
+            equals: (euler: TODO) => TODO;
+            fromArray: (array: TODO) => TODO;
+            toArray: (array: TODO, offset: TODO) => TODO;
+            toVector3: (optionalResult: TODO) => TODO;
+            onChange: (callback: TODO) => TODO;
+            onChangeCallback: () => TODO;
         }
         interface Object3D extends ClassIdentityProps<"Object3D"> {
-            readonly parent: unknown;
-            lookAt: (vector: unknown) => unknown;
-            readonly position: unknown;
-            readonly rotation: unknown;
-            readonly scale: unknown;
-            readonly matrix: unknown;
-            readonly matrixWorld: unknown;
-            visible: unknown;
+            readonly parent: TODO;
+            lookAt: (vector: TODO) => TODO;
+            readonly position: Vector3;
+            readonly rotation: TODO;
+            readonly scale: TODO;
+            readonly matrix: TODO;
+            readonly matrixWorld: TODO;
+            visible: boolean;
         }
         // failed to be included in generation (extractor didn't search for Object3D subclasses, intentionally)
         interface Mesh extends ClassIdentityProps<"Mesh"> {
-            readonly parent: unknown;
-            lookAt: (vector: unknown) => unknown;
+            readonly parent: TODO;
+            lookAt: (vector: TODO) => TODO;
             readonly position: Vector3;
-            readonly rotation: unknown;
-            readonly scale: unknown;
-            readonly matrix: unknown;
-            readonly matrixWorld: unknown;
-            visible: unknown;
+            readonly rotation: TODO;
+            readonly scale: TODO;
+            readonly matrix: TODO;
+            readonly matrixWorld: TODO;
+            visible: boolean;
         }
 
     }
@@ -477,44 +521,44 @@ declare global {
 
 declare global {
     interface Vector extends ClassIdentityProps<"Vector"> {
-        SetZero: () => unknown;
-        Set: (x_: unknown, y_: unknown) => unknown;
-        SetSelf: (x_: unknown, y_: unknown) => unknown;
-        AddXY: (x_: unknown, y_: unknown) => unknown;
-        SetV: (v: unknown) => unknown;
-        dot: (v: unknown) => unknown;
-        mul: (a: unknown) => unknown;
-        GetNegative: () => unknown;
-        GetNegativeTo: (v: unknown) => unknown;
-        GetSetFromNegative: (a: unknown) => unknown;
-        NegativeSelf: () => unknown;
-        GetNegativedSelf: () => unknown;
-        Copy: () => unknown;
-        Add: (v: unknown) => unknown;
-        AddSelf: (v: unknown) => unknown;
-        Subtract: (v: unknown) => unknown;
-        Multiply: (a: unknown) => unknown;
-        MultiplySelf: (a: unknown) => unknown;
-        MulM: (A: unknown) => unknown;
-        MulTM: (A: unknown) => unknown;
-        CrossVF: (s: unknown) => unknown;
-        CrossFV: (s: unknown) => unknown;
-        MinV: (b: unknown) => unknown;
-        MaxV: (b: unknown) => unknown;
-        Abs: () => unknown;
-        Length: () => unknown;
-        LengthSquared: () => unknown;
-        Normalize: () => unknown;
-        Normalized: () => unknown;
-        Rotate: (a: unknown) => unknown;
-        Rotated: (a: unknown) => unknown;
-        RotatedSinCos: (sin: unknown, cos: unknown) => unknown;
-        GetAngle: () => unknown;
-        IsValid: () => unknown;
-        MoveToUntilDistanceIs: (to: unknown, di: unknown) => unknown;
+        SetZero: () => TODO;
+        Set: (x_: TODO, y_: TODO) => TODO;
+        SetSelf: (x_: TODO, y_: TODO) => TODO;
+        AddXY: (x_: TODO, y_: TODO) => TODO;
+        SetV: (v: TODO) => TODO;
+        dot: (v: TODO) => TODO;
+        mul: (a: TODO) => TODO;
+        GetNegative: () => TODO;
+        GetNegativeTo: (v: TODO) => TODO;
+        GetSetFromNegative: (a: TODO) => TODO;
+        NegativeSelf: () => TODO;
+        GetNegativedSelf: () => TODO;
+        Copy: () => TODO;
+        Add: (v: TODO) => TODO;
+        AddSelf: (v: TODO) => TODO;
+        Subtract: (v: TODO) => TODO;
+        Multiply: (a: TODO) => TODO;
+        MultiplySelf: (a: TODO) => TODO;
+        MulM: (A: TODO) => TODO;
+        MulTM: (A: TODO) => TODO;
+        CrossVF: (s: TODO) => TODO;
+        CrossFV: (s: TODO) => TODO;
+        MinV: (b: TODO) => TODO;
+        MaxV: (b: TODO) => TODO;
+        Abs: () => TODO;
+        Length: () => TODO;
+        LengthSquared: () => TODO;
+        Normalize: () => TODO;
+        Normalized: () => TODO;
+        Rotate: (a: TODO) => TODO;
+        Rotated: (a: TODO) => TODO;
+        RotatedSinCos: (sin: TODO, cos: TODO) => TODO;
+        GetAngle: () => TODO;
+        IsValid: () => TODO;
+        MoveToUntilDistanceIs: (to: TODO, di: TODO) => TODO;
     }
     var Vector: {
-        new (params: unknown): Vector;
+        new (params: TODO): Vector;
 
     }
 }
@@ -523,19 +567,19 @@ declare global {
     /** equals console.log */
     var trace: (...args: any[]) => void;
     var warn: (...args: any[]) => void;
-    var error: (...args: unknown[]) => unknown;
-    var pb2DebugPermissionVerify: () => unknown;
+    var error: (...args: TODO[]) => TODO;
+    var pb2DebugPermissionVerify: () => TODO;
     /** @param bV (default=false)  */
-    var GetMilliseconds: (bV?: boolean) => unknown;
+    var GetMilliseconds: (bV?: boolean) => TODO;
     /** @param bV (default=false)  */
-    var GetTime30: (bV?: boolean) => unknown;
+    var GetTime30: (bV?: boolean) => TODO;
     var GetIngameTime: () => number;
     var _pb2ExecTimeTest: () => true;
-    var _pb2DebugHook: (coK: unknown, coL: unknown) => void;
+    var _pb2DebugHook: (coK: TODO, coL: TODO) => void;
     var _pb2DebugLastPtr: (i: number) => void;
-    var _pb2DebugReturn: (value: unknown) => void;
-    var _pb2DebugPopUp: (...args: unknown[]) => void;
-    var _pb2DebugPopUpOnce: (arg: unknown) => void;
+    var _pb2DebugReturn: (value: TODO) => void;
+    var _pb2DebugPopUp: (...args: TODO[]) => void;
+    var _pb2DebugPopUpOnce: (arg: TODO) => void;
     /**
      * @param _coV   
      * @param _cpk (default=1)   
@@ -543,9 +587,10 @@ declare global {
      * @param _cpo (default=null)   
      * @param _cpp (default=1)   
      */
-    var _pb2T: (_coV: (...args: any[]) => any, _cpk?: unknown, _cpn?: unknown, _cpo?: unknown, _cpp?: unknown) => unknown;
+    var _pb2T: (_coV: (...args: any[]) => any, _cpk?: TODO, _cpn?: TODO, _cpo?: TODO, _cpp?: TODO) => TODO;
+    /** responsible for throwing error if a trigger is called before it's spawned */
     var _pb2TU: (t: string) => never;
-    var _pb2ClientSideTrigger: (f: unknown) => unknown;
+    var _pb2ClientSideTrigger: (f: TODO) => TODO;
     /**
      * @param x   
      * @param y   
@@ -555,7 +600,7 @@ declare global {
      * @param opacity (default=0.5)   
      * @param eIe (default=0) time to display  
      */
-    var DrawDebugPoint: (x: unknown, y: unknown, color?: unknown, size?: unknown, z?: unknown, opacity?: unknown, eIe?: unknown) => unknown;
+    var DrawDebugPoint: (x: number, y: number, color?: TODO, size?: number, z?: number, opacity?: number, eIe?: number) => TODO;
     /**
      * @param ax start x  
      * @param ay start y  
@@ -566,7 +611,7 @@ declare global {
      * @param y (default=-123) depth  
      * @param eIe (default=0) time to display  
      */
-    var DrawDebugLine: (ax: unknown, ay: unknown, bx: unknown, by: unknown, color?: unknown, opacity?: unknown, y?: unknown, eIe?: unknown) => unknown;
+    var DrawDebugLine: (ax: number, ay: number, bx: number, by: number, color?: TODO, opacity?: number, y?: number, eIe?: number) => TODO;
     /**
      * @param ax start x  
      * @param ay start y  
@@ -577,7 +622,7 @@ declare global {
      * @param y (default=-123) depth  
      * @param eIe (default=0) time to display  
      */
-    var DrawDebugArrow: (ax: unknown, ay: unknown, bx: unknown, by: unknown, color?: unknown, opacity?: unknown, y?: unknown, eIe?: unknown) => unknown;
+    var DrawDebugArrow: (ax: number, ay: number, bx: number, by: number, color?: TODO, opacity?: number, y?: number, eIe?: number) => TODO;
     /**
      * @param minx lower x bound  
      * @param miny lower y bound  
@@ -588,7 +633,7 @@ declare global {
      * @param y (default=-123) depth  
      * @param eIe (default=0) time to display  
      */
-    var DrawDebugRect: (minx: unknown, miny: unknown, maxx: unknown, maxy: unknown, color?: unknown, opacity?: unknown, y?: unknown, eIe?: unknown) => unknown;
+    var DrawDebugRect: (minx: number, miny: number, maxx: number, maxy: number, color?: TODO, opacity?: number, y?: number, eIe?: number) => TODO;
     /**
      * @param minx lower x bound  
      * @param miny lower y bound  
@@ -599,36 +644,37 @@ declare global {
      * @param y (default=-123) depth  
      * @param eIe (default=0) time to display  
      */
-    var DrawDebugRectByDimensions: (minx: unknown, miny: unknown, w: unknown, h: unknown, color?: unknown, opacity?: unknown, y?: unknown, eIe?: unknown) => unknown;
+    var DrawDebugRectByDimensions: (minx: number, miny: number, w: number, h: number, color?: TODO, opacity?: number, y?: number, eIe?: number) => TODO;
 
     // cannot be typed because it would conflict with the declaration for javascript's addEventListener. requires a noLib: true setup with custom ts lib declarations
-    //var addEventListener: (event_type: unknown, params: unknown, dVQ?: null | unknown) => void;
-    //var removeEventListener: (event_type: unknown, params: unknown, dVQ?: null | unknown) => void;
+    //var addEventListener: (event_type: TODO, params: TODO, dVQ?: null | TODO) => void;
+    //var removeEventListener: (event_type: TODO, params: TODO, dVQ?: null | TODO) => void;
 }
 
 declare global {
     interface Math {
-        sumPrecise: () => unknown;
-        POSITIVE_INFINITY: unknown;
-        NEGATIVE_INFINITY: unknown;
+        sumPrecise: (numbers: Iterable<number>) => number;
+        /** Accessing this throws an error */
+        POSITIVE_INFINITY: number;
+        /** Accessing this throws an error */
+        NEGATIVE_INFINITY: number;
         randomIntegerWithin: (a: number, b: number) => number;
         randomWithin: (a: number, b: number) => number;
     }
     interface StringConstructor {
-        eoX: (a: unknown, b: unknown) => unknown;
+        eoX: (a: TODO, b: TODO) => TODO;
     }
     interface String {
-        split_test: (d: unknown) => unknown;
+        split_test: (d: TODO) => TODO;
     }
     interface Array<T> {
-        join_test: () => unknown;
-        /** Type is unknown. One known value: null */
-        any: unknown;
+        join_test: () => TODO;
+        /** Getter which returns a random element. Proper usage example: [ 0, 1, 2 ].any */
+        get any(): T;
     }
     interface ErrorConstructor {
-        captureStackTrace: () => unknown;
-        /** Type is unknown. One known value: 10 */
-        stackTraceLimit: unknown;
+        captureStackTrace: () => TODO;
+        stackTraceLimit: number;
     }
 }
 
@@ -642,7 +688,7 @@ declare global {
         AddPos: (x: number, y: number) => void;
         SetVel: (x: number, y: number) => void;
         SetVelX: (x: number) => void;
-        SetVelY: (y: number) => unknown;
+        SetVelY: (y: number) => TODO;
         GetVelX: () => number;
         GetVelY: () => number;
         SetAngle: (angle: number) => void;
@@ -655,78 +701,78 @@ declare global {
          */
         ApplyForce: (force: {x: number, y: number}, point?: {x: number, y: number} | null) => void;
         ApplyForceXY: (x: number, y: number) => void;
-        ApplyTorque: (torque: unknown) => unknown;
+        ApplyTorque: (torque: TODO) => TODO;
         /**
          * @param impulse   
          * @param point (default=null)   
          */
-        ApplyImpulse: (impulse: unknown, point?: unknown) => unknown;
-        ApplyImpulseXY: (impulse_x: unknown, impulse_y: unknown) => unknown;
-        GetMass: () => unknown;
-        GetWorldPoint: (localPoint: unknown) => unknown;
-        GetWorldVector: (localVector: unknown) => unknown;
-        GetLocalPoint: (worldPoint: unknown) => unknown;
-        GetLocalVector: (worldVector: unknown) => unknown;
-        GetLinearVelocityFromWorldPoint: (worldPoint: unknown) => unknown;
-        GetLinearVelocityFromLocalPoint: (localPoint: unknown) => unknown;
-        SetSleepingAllowed: (flag: unknown) => unknown;
-        SetAwake: (flag: unknown) => unknown;
-        IsAwake: () => unknown;
-        SetFixedRotation: (fixed: unknown) => unknown;
-        IsFixedRotation: () => unknown;
-        IsActive: () => unknown;
-        SetBullet: (flag: unknown) => unknown;
-        GetWorldCenter: () => unknown;
-        SetGravityScale: (v: unknown) => unknown;
-        SetAngularDamping: (angularDamping: unknown) => unknown;
-        GetAngularDamping: () => unknown;
-        SetLinearDamping: (linearDamping: unknown) => unknown;
-        GetLinearDamping: () => unknown;
-        SetType: (type: unknown) => unknown;
-        GetOwner: () => unknown;
-        GetOwnerLimbID: () => unknown;
-        GetUserData: () => unknown;
+        ApplyImpulse: (impulse: TODO, point?: TODO) => TODO;
+        ApplyImpulseXY: (impulse_x: number, impulse_y: number) => TODO;
+        GetMass: () => TODO;
+        GetWorldPoint: (localPoint: TODO) => TODO;
+        GetWorldVector: (localVector: TODO) => TODO;
+        GetLocalPoint: (worldPoint: TODO) => TODO;
+        GetLocalVector: (worldVector: TODO) => TODO;
+        GetLinearVelocityFromWorldPoint: (worldPoint: TODO) => TODO;
+        GetLinearVelocityFromLocalPoint: (localPoint: TODO) => TODO;
+        SetSleepingAllowed: (flag: TODO) => TODO;
+        SetAwake: (flag: TODO) => TODO;
+        IsAwake: () => TODO;
+        SetFixedRotation: (fixed: TODO) => TODO;
+        IsFixedRotation: () => TODO;
+        IsActive: () => TODO;
+        SetBullet: (flag: TODO) => TODO;
+        GetWorldCenter: () => TODO;
+        SetGravityScale: (v: TODO) => TODO;
+        SetAngularDamping: (angularDamping: TODO) => TODO;
+        GetAngularDamping: () => TODO;
+        SetLinearDamping: (linearDamping: TODO) => TODO;
+        GetLinearDamping: () => TODO;
+        SetType: (type: TODO) => TODO;
+        GetOwner: () => TODO;
+        GetOwnerLimbID: () => TODO;
+        GetUserData: () => TODO;
     }
     
 }
 
 declare global {
     interface b2Vec2 extends ClassIdentityProps<"b2Vec2"> {
-        SetZero: () => unknown;
-        Set: (x_: unknown, y_: unknown) => unknown;
-        SetSelf: (x_: unknown, y_: unknown) => unknown;
-        AddXY: (x_: unknown, y_: unknown) => unknown;
-        SetV: (v: unknown) => unknown;
-        dot: (v: unknown) => unknown;
-        mul: (a: unknown) => unknown;
-        GetNegative: () => unknown;
-        GetNegativeTo: (v: unknown) => unknown;
-        GetSetFromNegative: (a: unknown) => unknown;
-        NegativeSelf: () => unknown;
-        GetNegativedSelf: () => unknown;
-        Copy: () => unknown;
-        Add: (v: unknown) => unknown;
-        AddSelf: (v: unknown) => unknown;
-        Subtract: (v: unknown) => unknown;
-        Multiply: (a: unknown) => unknown;
-        MultiplySelf: (a: unknown) => unknown;
-        MulM: (A: unknown) => unknown;
-        MulTM: (A: unknown) => unknown;
-        CrossVF: (s: unknown) => unknown;
-        CrossFV: (s: unknown) => unknown;
-        MinV: (b: unknown) => unknown;
-        MaxV: (b: unknown) => unknown;
-        Abs: () => unknown;
-        Length: () => unknown;
-        LengthSquared: () => unknown;
-        Normalize: () => unknown;
-        Normalized: () => unknown;
-        Rotate: (a: unknown) => unknown;
-        Rotated: (a: unknown) => unknown;
-        RotatedSinCos: (sin: unknown, cos: unknown) => unknown;
-        GetAngle: () => unknown;
-        IsValid: () => unknown;
-        MoveToUntilDistanceIs: (to: unknown, di: unknown) => unknown;
+        SetZero: () => TODO;
+        Set: (x_: number, y_: number) => TODO;
+        SetSelf: (x_: TODO, y_: TODO) => TODO;
+        AddXY: (x_: number, y_: number) => TODO;
+        SetV: (v: TODO) => TODO;
+        dot: (v: TODO) => TODO;
+        mul: (a: TODO) => TODO;
+        GetNegative: () => TODO;
+        GetNegativeTo: (v: TODO) => TODO;
+        GetSetFromNegative: (a: TODO) => TODO;
+        NegativeSelf: () => TODO;
+        GetNegativedSelf: () => TODO;
+        Copy: () => TODO;
+        Add: (v: TODO) => TODO;
+        AddSelf: (v: TODO) => TODO;
+        Subtract: (v: TODO) => TODO;
+        Multiply: (a: TODO) => TODO;
+        MultiplySelf: (a: TODO) => TODO;
+        MulM: (A: TODO) => TODO;
+        MulTM: (A: TODO) => TODO;
+        CrossVF: (s: TODO) => TODO;
+        CrossFV: (s: TODO) => TODO;
+        MinV: (b: TODO) => TODO;
+        MaxV: (b: TODO) => TODO;
+        Abs: () => TODO;
+        Length: () => TODO;
+        LengthSquared: () => TODO;
+        Normalize: () => TODO;
+        Normalized: () => TODO;
+        Rotate: (a: TODO) => TODO;
+        Rotated: (a: TODO) => TODO;
+        RotatedSinCos: (sin: number, cos: number) => TODO;
+        GetAngle: () => TODO;
+        IsValid: () => TODO;
+        MoveToUntilDistanceIs: (to: TODO, di: TODO) => TODO;
     }
     var b2Vec2: {
         /**
@@ -734,417 +780,233 @@ declare global {
          * @param y (default=0)   
          * @param seal (default=true)   
          */
-        new (x?: unknown, y?: unknown, seal?: unknown): b2Vec2;
+        new (x?: number, y?: number, seal?: boolean): b2Vec2;
 
     }
 }
 
 declare global {
     var b2World: ClassIdentityProps<"b2World"> & {
-        GetAllBodies: () => unknown;
+        GetAllBodies: () => b2Body[];
     }
 }
 
 declare global {
     interface ep extends ClassIdentityProps<"ep"> {
-        /** Type is unknown. One known value: 0 */
-        volume: unknown;
-        pitch: unknown;
-        stop: () => unknown;
-        readonly isPlaying: unknown;
+        volume: number;
+        pitch: number;
+        stop: () => TODO;
+        readonly isPlaying: boolean;
         /** Type is unknown. One known value: "" */
-        readonly sound_name: unknown;
+        readonly sound_name: TODO;
     }
-    
-}
-
-type pb2EntityBase<ClassName extends string> = ClassIdentityProps<ClassName> & {
-    /** Type is unknown. One known value: 2 */
-    readonly classid: unknown;
-    readonly x: number;
-    readonly y: number;
-    readonly tox: number;
-    readonly toy: number;
-    InstallGun: (_tQ: unknown) => unknown;
-    DropGun: () => unknown;
-    remove: () => unknown;
-    /**
-     * @param r   
-     * @param eQf (default=-1)   
-     */
-    AddRagdoll: (r: unknown, eQf?: unknown) => unknown;
-    /**
-     * @param r   
-     * @param hv (default=false)   
-     */
-    ExcludeRagdoll: (r: unknown, hv?: unknown) => unknown;
-    /**
-     * @param r   
-     * @param time (default=-100)   
-     * @param eQa (default=false)   
-     * @param eQh (default=null)   
-     */
-    IgnoreRagdoll: (r: unknown, time?: unknown, eQa?: unknown, eQh?: unknown) => unknown;
-    /**
-     * @param bN   
-     * @param xx   
-     * @param yy   
-     * @param _boD   
-     * @param _ben   
-     * @param limb_id   
-     * @param limb_damage_multiplier (default=1)   
-     * @param eTB (default=true)   
-     * @param fG (default=0)   
-     * @param fE (default=0)   
-     * @param eSP (default=null)   
-     * @param bqj (default=false)   
-     */
-    DealDamage: (bN: unknown, xx: unknown, yy: unknown, _boD: unknown, _ben: unknown, limb_id: unknown, limb_damage_multiplier?: unknown, eTB?: unknown, fG?: unknown, fE?: unknown, eSP?: unknown, bqj?: unknown) => unknown;
-    MultiplyHealth: (m: unknown) => unknown;
-    alpha: unknown;
-    readonly is_being_removed: boolean;
-    hea: number;
-    hmax: number;
-    dying_level: unknown;
-    team: pb2Team;
-    /**
-     * @param x   
-     * @param dist (default=-123)   
-     */
-    SetDriverSeatsAndRadius: (x: unknown, dist?: unknown) => unknown;
-    /**
-     * @param x   
-     * @param eQr (default=false)   
-     */
-    SetSide: (x: unknown, eQr?: unknown) => unknown;
-    readonly box2d_bodies: b2Body[];
-    addEventListener: (event_type: unknown, params: unknown) => unknown;
-    removeEventListener: (event_type: unknown, params: unknown) => unknown;
-    GetLimb: (id: unknown) => unknown;
-    /** @param id (default=0)  */
-    GetMesh: (id?: number) => THREE.Mesh;
-};
-
-declare global {
-    interface pb2Entity extends pb2EntityBase<"pb2Entity"> {}
-    var pb2Entity: ClassIdentityProps<"pb2Entity"> & {
-        CreateEntity: (params: unknown) => unknown;
-        /** Type is unknown. One known value: 0 */
-        TYPE_UNKNOWN: unknown;
-        /** Type is unknown. One known value: 1 */
-        TYPE_SPOILER35: unknown;
-        /** Type is unknown. One known value: 2 */
-        TYPE_BARREL: unknown;
-        /** Type is unknown. One known value: 3 */
-        TYPE_BARREL_PART: unknown;
-        /** Type is unknown. One known value: 4 */
-        TYPE_CRATE: unknown;
-        /** Type is unknown. One known value: 5 */
-        TYPE_TURRET: unknown;
-        /** Type is unknown. One known value: 6 */
-        TYPE_SPOILER27: unknown;
-        /** Type is unknown. One known value: 7 */
-        TYPE_SPOILER29: unknown;
-        /** Type is unknown. One known value: 8 */
-        TYPE_MOTO: unknown;
-        /** Type is unknown. One known value: 9 */
-        TYPE_WALKER: unknown;
-        /** Type is unknown. One known value: 10 */
-        TYPE_SPOILER28: unknown;
-        /** Type is unknown. One known value: 11 */
-        TYPE_SPOILER30: unknown;
-        /** Type is unknown. One known value: 12 */
-        TYPE_SPOILER13: unknown;
-        /** Type is unknown. One known value: 13 */
-        TYPE_SPOILER14: unknown;
-        /** Type is unknown. One known value: 14 */
-        TYPE_SPOILER15: unknown;
-        /** Type is unknown. One known value: 15 */
-        TYPE_SPOILER16: unknown;
-        /** Type is unknown. One known value: 16 */
-        TYPE_SPOILER17: unknown;
-        /** Type is unknown. One known value: 17 */
-        TYPE_SPOILER19: unknown;
-        /** Type is unknown. One known value: 18 */
-        TYPE_SPOILER18: unknown;
-        /** Type is unknown. One known value: 19 */
-        TYPE_SPOILER20: unknown;
-        /** Type is unknown. One known value: 20 */
-        TYPE_SPOILER21: unknown;
-        /** Type is unknown. One known value: 21 */
-        TYPE_ANTIGRAVITY: unknown;
-        /** Type is unknown. One known value: 22 */
-        TYPE_SPOILER33: unknown;
-        /** Type is unknown. One known value: 23 */
-        TYPE_CORVETTE: unknown;
-        /** Type is unknown. One known value: 24 */
-        TYPE_FLOATING_ICE: unknown;
-        /** Type is unknown. One known value: 25 */
-        TYPE_SPOILER34: unknown;
-        /** Type is unknown. One known value: ["pb2Entity.TYPE_UNKNOWN","pb2Entity.TYPE_SPOILER35","pb2Entity.TYPE_BARREL","pb2Entity.TYPE_BARREL_PART","pb2Entity.TYPE_CRATE","pb2Entity.TYPE_TURRET","pb2Entity.TYPE_SPOILER27","pb2Entity.TYPE_SPOILER29","pb2Entity.TYPE_MOTO","pb2Entity.TYPE_WALKER","pb2Entity.TYPE_SPOILER28","pb2Entity.TYPE_SPOILER30","pb2Entity.TYPE_SPOILER13","pb2Entity.TYPE_SPOILER14","pb2Entity.TYPE_SPOILER15","pb2Entity.TYPE_SPOILER16","pb2Entity.TYPE_SPOILER17","pb2Entity.TYPE_SPOILER19","pb2Entity.TYPE_SPOILER18","pb2Entity.TYPE_SPOILER20","pb2Entity.TYPE_SPOILER21","pb2Entity.TYPE_ANTIGRAVITY","pb2Entity.TYPE_SPOILER33","pb2Entity.TYPE_CORVETTE","pb2Entity.TYPE_FLOATING_ICE","pb2Entity.TYPE_SPOILER34"] */
-        ALL_TYPES: unknown;
-        /** Type is unknown. One known value: 0 */
-        MATERIAL_METAL: unknown;
-        /** Type is unknown. One known value: 1 */
-        MATERIAL_GLASS: unknown;
-        /** Type is unknown. One known value: 2 */
-        MATERIAL_WOOD: unknown;
-        /** Type is unknown. One known value: 3 */
-        MATERIAL_BLOOD: unknown;
-        /** Type is unknown. One known value: 4 */
-        MATERIAL_MAGAZINE_PISTOL: unknown;
-        /** Type is unknown. One known value: 5 */
-        MATERIAL_MAGAZINE_PISTOL3: unknown;
-        /** Type is unknown. One known value: 6 */
-        MATERIAL_MAGAZINE_RIFLE: unknown;
-        /** Type is unknown. One known value: 7 */
-        MATERIAL_MAGAZINE_GENERIC_METAL: unknown;
-        /** Type is unknown. One known value: 8 */
-        MATERIAL_RUBBER: unknown;
-        /** Type is unknown. One known value: 9 */
-        MATERIAL_METAL_USURP: unknown;
-        /** Type is unknown. One known value: 10 */
-        MATERIAL_METAL_USURP_BOSS_LEG: unknown;
-        /** Type is unknown. One known value: 11 */
-        MATERIAL_CONCRETE: unknown;
-        /** Type is unknown. One known value: 12 */
-        MATERIAL_METAL_SPOILER33: unknown;
-        /** Type is unknown. One known value: 13 */
-        MATERIAL_MAGAZINE_CANISTER: unknown;
-        /** Type is unknown. One known value: 14 */
-        MATERIAL_CRAB_SHELL: unknown;
-        /** Type is unknown. One known value: 15 */
-        MATERIAL_ICE: unknown;
-        /** Type is unknown. One known value: 16 */
-        MATERIAL_ROCK: unknown;
-        /** Type is unknown. One known value: 17 */
-        MATERIAL_METAL_MOTO: unknown;
-        /** Type is unknown. One known value: [] */
-        entities: unknown;
-        /**
-         * @param yJ   
-         * @param x   
-         * @param y   
-         * @param _width   
-         * @param _height   
-         * @param eQz (default=null)   
-         * @param lw (default=null)   
-         * @param eQA (default=null)   
-         */
-        CountShapesInRect: (yJ: unknown, x: unknown, y: unknown, _width: unknown, _height: unknown, eQz?: unknown, lw?: unknown, eQA?: unknown) => unknown;
-    }
-}
-
-declare global {
-    /** this is an entity that is not currently available in the game. throws an error when constructed */
-    interface fU extends pb2EntityBase<"fU"> {}
     
 }
 
 declare global {
     interface pb2AIModule extends ClassIdentityProps<"pb2AIModule"> {
-        readonly skill: unknown;
-        readonly controller: unknown;
-        readonly allow_trace_shots: unknown;
-        readonly allow_hit_reporting: unknown;
-        readonly bot_decided_hunt_threat: unknown;
-        bot_decided_teammate_heal: unknown;
-        bot_decided_teammate_follow: unknown;
+        readonly skill: number;
+        readonly controller: TODO;
+        readonly allow_trace_shots: boolean;
+        readonly allow_hit_reporting: boolean;
+        readonly bot_decided_hunt_threat: TODO;
+        bot_decided_teammate_heal: TODO;
+        bot_decided_teammate_follow: TODO;
         /**
          * @param x   
          * @param y   
          * @param mode (default=pb2AIModule.GOTO_MODE_OVERRIDE_PREVIOUSLY_SCHEDULED)   
          */
-        GoTo: (x: unknown, y: unknown, mode?: unknown) => unknown;
-        hunt_attacker: unknown;
-        hunt_seen_threats: unknown;
-        hunt_random_known_threats_range: unknown;
-        heal_teammates: unknown;
-        hear_range: unknown;
+        GoTo: (x: number, y: number, mode?: TODO) => TODO;
+        hunt_attacker: boolean;
+        hunt_seen_threats: boolean;
+        hunt_random_known_threats_range: number;
+        heal_teammates: boolean;
+        hear_range: number;
     }
     var pb2AIModule: ClassIdentityProps<"pb2AIModule"> & {
         /** Type is unknown. One known value: null */
-        YQ: unknown;
+        YQ: TODO;
         /** Type is unknown. One known value: 0 */
-        BEHAVIOR_IDLE: unknown;
+        BEHAVIOR_IDLE: TODO;
         /** Type is unknown. One known value: 1 */
-        BEHAVIOR_LOOK_AROUND: unknown;
+        BEHAVIOR_LOOK_AROUND: TODO;
         /** Type is unknown. One known value: 2 */
-        BEHAVIOR_INVESTIGATE: unknown;
+        BEHAVIOR_INVESTIGATE: TODO;
         /** Type is unknown. One known value: 3 */
-        BEHAVIOR_MPBOT: unknown;
+        BEHAVIOR_MPBOT: TODO;
         /** Type is unknown. One known value: 0 */
-        COMBAT_LEVEL_NO_COMBAT: unknown;
+        COMBAT_LEVEL_NO_COMBAT: TODO;
         /** Type is unknown. One known value: 1 */
-        COMBAT_LEVEL_ONLY_IF_ENEMY_IS_VISIBLE: unknown;
+        COMBAT_LEVEL_ONLY_IF_ENEMY_IS_VISIBLE: TODO;
         /** Type is unknown. One known value: 2 */
-        COMBAT_LEVEL_BOTH_ENEMIES_AND_TRACESHOTS: unknown;
+        COMBAT_LEVEL_BOTH_ENEMIES_AND_TRACESHOTS: TODO;
         /** Type is unknown. One known value: 0 */
-        TASK_TYPE_BASIC_GOTO: unknown;
+        TASK_TYPE_BASIC_GOTO: TODO;
         /** Type is unknown. One known value: 1 */
-        TASK_TYPE_OXYGEN_RUSH: unknown;
+        TASK_TYPE_OXYGEN_RUSH: TODO;
         /** Type is unknown. One known value: 2 */
-        TASK_TYPE_THREAT_HUNT: unknown;
+        TASK_TYPE_THREAT_HUNT: TODO;
         /** Type is unknown. One known value: 3 */
-        TASK_TYPE_TEAMMATE_HEAL: unknown;
+        TASK_TYPE_TEAMMATE_HEAL: TODO;
         /** Type is unknown. One known value: 4 */
-        TASK_TYPE_TEAMMATE_FOLLOW: unknown;
+        TASK_TYPE_TEAMMATE_FOLLOW: TODO;
         /** Type is unknown. One known value: 0 */
-        GOTO_MODE_OVERRIDE_PREVIOUSLY_SCHEDULED: unknown;
+        GOTO_MODE_OVERRIDE_PREVIOUSLY_SCHEDULED: TODO;
         /** Type is unknown. One known value: 1 */
-        GOTO_MODE_EXECUTE_AFTER_PREVIOUSLY_SCHEDULED: unknown;
+        GOTO_MODE_EXECUTE_AFTER_PREVIOUSLY_SCHEDULED: TODO;
         /** Type is unknown. One known value: 2 */
-        GOTO_MODE_DELAY_PREVIOUSLY_SCHEDULED: unknown;
+        GOTO_MODE_DELAY_PREVIOUSLY_SCHEDULED: TODO;
         /** Type is unknown. One known value: 9999 */
-        NO_SLOT: unknown;
+        NO_SLOT: TODO;
         /** Type is unknown. One known value: -1 */
-        FIRST_WEAPON_SLOT: unknown;
+        FIRST_WEAPON_SLOT: TODO;
         /** Type is unknown. One known value: 0 */
-        SEQUENCE_BEHAVIOR_SERIOUS: unknown;
+        SEQUENCE_BEHAVIOR_SERIOUS: TODO;
         /** Type is unknown. One known value: 1 */
-        SEQUENCE_BEHAVIOR_SILLY: unknown;
+        SEQUENCE_BEHAVIOR_SILLY: TODO;
         /** Type is unknown. One known value: 2 */
-        SEQUENCE_BEHAVIOR_MAD: unknown;
+        SEQUENCE_BEHAVIOR_MAD: TODO;
         /** Type is unknown. One known value: 0 */
-        WAYPOINT_TYPE_UNDEFINED: unknown;
+        WAYPOINT_TYPE_UNDEFINED: TODO;
         /** Type is unknown. One known value: 1 */
-        WAYPOINT_TYPE_FLOOR: unknown;
+        WAYPOINT_TYPE_FLOOR: TODO;
         /** Type is unknown. One known value: 2 */
-        WAYPOINT_TYPE_WALL: unknown;
+        WAYPOINT_TYPE_WALL: TODO;
         /** Type is unknown. One known value: 3 */
-        WAYPOINT_TYPE_WATER: unknown;
+        WAYPOINT_TYPE_WATER: TODO;
         /** Type is unknown. One known value: 4 */
-        WAYPOINT_TYPE_SLIDING_FLOOR: unknown;
+        WAYPOINT_TYPE_SLIDING_FLOOR: TODO;
         /** Type is unknown. One known value: 0 */
-        REACH_TACTIC_UNREACHABLE: unknown;
+        REACH_TACTIC_UNREACHABLE: TODO;
         /** Type is unknown. One known value: 1 */
-        REACH_TACTIC_WALK: unknown;
+        REACH_TACTIC_WALK: TODO;
         /** Type is unknown. One known value: 2 */
-        REACH_TACTIC_CROUCH: unknown;
+        REACH_TACTIC_CROUCH: TODO;
         /** Type is unknown. One known value: 3 */
-        REACH_TACTIC_JUMP: unknown;
+        REACH_TACTIC_JUMP: TODO;
         /** Type is unknown. One known value: 4 */
-        REACH_TACTIC_SWORDJUMP: unknown;
+        REACH_TACTIC_SWORDJUMP: TODO;
         /** Type is unknown. One known value: 5 */
-        REACH_TACTIC_SELFBOOST: unknown;
+        REACH_TACTIC_SELFBOOST: TODO;
         /** Type is unknown. One known value: 6 */
-        REACH_TACTIC_FALL: unknown;
+        REACH_TACTIC_FALL: TODO;
         /** Type is unknown. One known value: 7 */
-        REACH_TACTIC_WALLJUMP_START: unknown;
+        REACH_TACTIC_WALLJUMP_START: TODO;
         /** Type is unknown. One known value: 8 */
-        REACH_TACTIC_WALLJUMP_START_SWORDS: unknown;
+        REACH_TACTIC_WALLJUMP_START_SWORDS: TODO;
         /** Type is unknown. One known value: 9 */
-        REACH_TACTIC_WALLJUMP_LOOP: unknown;
+        REACH_TACTIC_WALLJUMP_LOOP: TODO;
         /** Type is unknown. One known value: 10 */
-        REACH_TACTIC_WALLJUMP_END: unknown;
+        REACH_TACTIC_WALLJUMP_END: TODO;
         /** Type is unknown. One known value: 11 */
-        REACH_TACTIC_SWIM: unknown;
+        REACH_TACTIC_SWIM: TODO;
         /** Type is unknown. One known value: 12 */
-        REACH_TACTIC_SWIM_JUMP: unknown;
+        REACH_TACTIC_SWIM_JUMP: TODO;
         /** Type is unknown. One known value: 13 */
-        REACH_TACTIC_SWIM_SELFBOOST: unknown;
+        REACH_TACTIC_SWIM_SELFBOOST: TODO;
         /** Type is unknown. One known value: 14 */
-        REACH_TACTIC_HINT: unknown;
+        REACH_TACTIC_HINT: TODO;
         /** Type is unknown. One known value: 15 */
-        REACH_TACTIC_CLEARING_PATH: unknown;
+        REACH_TACTIC_CLEARING_PATH: TODO;
         /** Type is unknown. One known value: 16 */
-        REACH_TACTIC_SELF_HEALING: unknown;
+        REACH_TACTIC_SELF_HEALING: TODO;
         /** Type is unknown. One known value: ["unreachable","walk","crouch","jump","sword jump","self-boost","fall","walljump start","walljump start swords","walljump loop","walljump end","swim","swim jump","swim self-boost jump","hint-assisted","clearing movables in path","self-healing"] */
-        REACH_TACTIC_NAMES: unknown;
+        REACH_TACTIC_NAMES: TODO;
         /** Type is unknown. One known value: [0,1,4,20,24,28,12,10,14,4,10,3,20,28,40,0,0] */
-        REACH_TACTIC_PRICES: unknown;
+        REACH_TACTIC_PRICES: TODO;
         /** Type is unknown. One known value: [1,1,1,4,20,35,4,20,40,40,4,2,6,35,20,0,0] */
-        REACH_TACTIC_THREAT_PRICES: unknown;
+        REACH_TACTIC_THREAT_PRICES: TODO;
         /** Type is unknown. One known value: 1 */
-        COEF_MULT_GLOBAL: unknown;
+        COEF_MULT_GLOBAL: TODO;
         /** Type is unknown. One known value: -1 */
-        FIRE_COEF: unknown;
+        FIRE_COEF: TODO;
         /** Type is unknown. One known value: -1 */
-        TOXIC_GAS_COEF: unknown;
+        TOXIC_GAS_COEF: TODO;
         /** Type is unknown. One known value: -1 */
-        LASER_MINE_COEF: unknown;
+        LASER_MINE_COEF: TODO;
         /** Type is unknown. One known value: -1 */
-        PROX_MINE_COEF: unknown;
+        PROX_MINE_COEF: TODO;
         /** Type is unknown. One known value: 0.25 */
-        TIME_WARP_COEF: unknown;
+        TIME_WARP_COEF: TODO;
         /** Type is unknown. One known value: 0.5 */
-        SHIELDED_COEF: unknown;
+        SHIELDED_COEF: TODO;
         /** Type is unknown. One known value: 1000 */
-        VISITED_HINT_LINE_COST: unknown;
+        VISITED_HINT_LINE_COST: TODO;
         /** Type is unknown. One known value: 1 */
-        MOVABLE_ON_A_LINE_COST_PER_HITPOINT: unknown;
+        MOVABLE_ON_A_LINE_COST_PER_HITPOINT: TODO;
         /** Type is unknown. One known value: 50 */
-        MOVABLE_ON_A_LINE_COST_PER_MOVABLE: unknown;
+        MOVABLE_ON_A_LINE_COST_PER_MOVABLE: TODO;
         /** Type is unknown. One known value: 10 */
-        FAIL_WAY_LINE_COST_PER_FAILURE: unknown;
+        FAIL_WAY_LINE_COST_PER_FAILURE: TODO;
         /** Type is unknown. One known value: 0 */
-        BULLET_COLLISION_LOGIC_PENETRATE: unknown;
+        BULLET_COLLISION_LOGIC_PENETRATE: TODO;
         /** Type is unknown. One known value: 1 */
-        BULLET_COLLISION_LOGIC_EXPLODE: unknown;
+        BULLET_COLLISION_LOGIC_EXPLODE: TODO;
         /** Type is unknown. One known value: 2 */
-        BULLET_COLLISION_LOGIC_MIRROR: unknown;
+        BULLET_COLLISION_LOGIC_MIRROR: TODO;
         /** Type is unknown. One known value: 3 */
-        BULLET_COLLISION_LOGIC_GRENADE: unknown;
+        BULLET_COLLISION_LOGIC_GRENADE: TODO;
         /** Type is unknown. One known value: 4 */
-        BULLET_COLLISION_LOGIC_DRAIN_LIGHT: unknown;
+        BULLET_COLLISION_LOGIC_DRAIN_LIGHT: TODO;
         /** Type is unknown. One known value: 5 */
-        BULLET_COLLISION_LOGIC_CHRONO_BEAM: unknown;
+        BULLET_COLLISION_LOGIC_CHRONO_BEAM: TODO;
         /** Type is unknown. One known value: 0 */
-        FILTER_ANY: unknown;
+        FILTER_ANY: TODO;
         /** Type is unknown. One known value: 1 */
-        FILTER_FLOOR: unknown;
+        FILTER_FLOOR: TODO;
         /** Type is unknown. One known value: 2 */
-        FILTER_WATER: unknown;
+        FILTER_WATER: TODO;
         /** Type is unknown. One known value: 3 */
-        FILTER_FLOOR_AND_WATER: unknown;
+        FILTER_FLOOR_AND_WATER: TODO;
         /** Type is unknown. One known value: 4 */
-        FILTER_ANY_ANYWHERE: unknown;
+        FILTER_ANY_ANYWHERE: TODO;
         /** Type is unknown. One known value: 5 */
-        FILTER_ANY_ANYWHERE_PING_RANGE: unknown;
+        FILTER_ANY_ANYWHERE_PING_RANGE: TODO;
         /** Type is unknown. One known value: -1 */
-        BEST_ATTACK_NOATOM: unknown;
+        BEST_ATTACK_NOATOM: TODO;
         /** Type is unknown. One known value: -2 */
-        BEST_ATTACK_BULLET: unknown;
+        BEST_ATTACK_BULLET: TODO;
         /** Type is unknown. One known value: -3 */
-        BEST_ATTACK_ENTITY: unknown;
+        BEST_ATTACK_ENTITY: TODO;
         /** Type is unknown. One known value: -4 */
-        BEST_ATTACK_SHAPE: unknown;
+        BEST_ATTACK_SHAPE: TODO;
         /** Type is unknown. One known value: 0 */
-        HINT_ACTION_USE_SWITCH: unknown;
+        HINT_ACTION_USE_SWITCH: TODO;
         /** Type is unknown. One known value: 1 */
-        HINT_ACTION_JUST_WAIT: unknown;
+        HINT_ACTION_JUST_WAIT: TODO;
         /** Type is unknown. One known value: 2 */
-        HINT_ACTION_GO_TO: unknown;
+        HINT_ACTION_GO_TO: TODO;
         /** Type is unknown. One known value: 3 */
-        HINT_ACTION_ATTACK_OBJECT: unknown;
+        HINT_ACTION_ATTACK_OBJECT: TODO;
         /** Type is unknown. One known value: 4 */
-        HINT_ACTION_SHOOT_AT_POINT: unknown;
+        HINT_ACTION_SHOOT_AT_POINT: TODO;
         /** Type is unknown. One known value: -1 */
-        GUN_MODE_CURRENT: unknown;
+        GUN_MODE_CURRENT: TODO;
         /** Type is unknown. One known value: ["pb2AIModule.YQ","pb2AIModule.BEHAVIOR_IDLE","pb2AIModule.BEHAVIOR_LOOK_AROUND","pb2AIModule.BEHAVIOR_INVESTIGATE","pb2AIModule.BEHAVIOR_MPBOT","pb2AIModule.COMBAT_LEVEL_NO_COMBAT","pb2AIModule.COMBAT_LEVEL_ONLY_IF_ENEMY_IS_VISIBLE","pb2AIModule.COMBAT_LEVEL_BOTH_ENEMIES_AND_TRACESHOTS","pb2AIModule.TASK_TYPE_BASIC_GOTO","pb2AIModule.TASK_TYPE_OXYGEN_RUSH","pb2AIModule.TASK_TYPE_THREAT_HUNT","pb2AIModule.TASK_TYPE_TEAMMATE_HEAL","pb2AIModule.TASK_TYPE_TEAMMATE_FOLLOW","pb2AIModule.GOTO_MODE_OVERRIDE_PREVIOUSLY_SCHEDULED","pb2AIModule.GOTO_MODE_EXECUTE_AFTER_PREVIOUSLY_SCHEDULED","pb2AIModule.GOTO_MODE_DELAY_PREVIOUSLY_SCHEDULED","pb2AIModule.NO_SLOT","pb2AIModule.FIRST_WEAPON_SLOT","pb2AIModule.SEQUENCE_BEHAVIOR_SERIOUS","pb2AIModule.SEQUENCE_BEHAVIOR_SILLY","pb2AIModule.SEQUENCE_BEHAVIOR_MAD","pb2AIModule.WAYPOINT_TYPE_UNDEFINED","pb2AIModule.WAYPOINT_TYPE_FLOOR","pb2AIModule.WAYPOINT_TYPE_WALL","pb2AIModule.WAYPOINT_TYPE_WATER","pb2AIModule.WAYPOINT_TYPE_SLIDING_FLOOR","pb2AIModule.REACH_TACTIC_UNREACHABLE","pb2AIModule.REACH_TACTIC_WALK","pb2AIModule.REACH_TACTIC_CROUCH","pb2AIModule.REACH_TACTIC_JUMP","pb2AIModule.REACH_TACTIC_SWORDJUMP","pb2AIModule.REACH_TACTIC_SELFBOOST","pb2AIModule.REACH_TACTIC_FALL","pb2AIModule.REACH_TACTIC_WALLJUMP_START","pb2AIModule.REACH_TACTIC_WALLJUMP_START_SWORDS","pb2AIModule.REACH_TACTIC_WALLJUMP_LOOP","pb2AIModule.REACH_TACTIC_WALLJUMP_END","pb2AIModule.REACH_TACTIC_SWIM","pb2AIModule.REACH_TACTIC_SWIM_JUMP","pb2AIModule.REACH_TACTIC_SWIM_SELFBOOST","pb2AIModule.REACH_TACTIC_HINT","pb2AIModule.REACH_TACTIC_CLEARING_PATH","pb2AIModule.REACH_TACTIC_SELF_HEALING","pb2AIModule.REACH_TACTIC_NAMES","pb2AIModule.REACH_TACTIC_PRICES","pb2AIModule.REACH_TACTIC_THREAT_PRICES","pb2AIModule.COEF_MULT_GLOBAL","pb2AIModule.FIRE_COEF","pb2AIModule.TOXIC_GAS_COEF","pb2AIModule.LASER_MINE_COEF","pb2AIModule.PROX_MINE_COEF","pb2AIModule.TIME_WARP_COEF","pb2AIModule.SHIELDED_COEF","pb2AIModule.VISITED_HINT_LINE_COST","pb2AIModule.MOVABLE_ON_A_LINE_COST_PER_HITPOINT","pb2AIModule.MOVABLE_ON_A_LINE_COST_PER_MOVABLE","pb2AIModule.FAIL_WAY_LINE_COST_PER_FAILURE","pb2AIModule.BULLET_COLLISION_LOGIC_PENETRATE","pb2AIModule.BULLET_COLLISION_LOGIC_EXPLODE","pb2AIModule.BULLET_COLLISION_LOGIC_MIRROR","pb2AIModule.BULLET_COLLISION_LOGIC_GRENADE","pb2AIModule.BULLET_COLLISION_LOGIC_DRAIN_LIGHT","pb2AIModule.BULLET_COLLISION_LOGIC_CHRONO_BEAM","pb2AIModule.FILTER_ANY","pb2AIModule.FILTER_FLOOR","pb2AIModule.FILTER_WATER","pb2AIModule.FILTER_FLOOR_AND_WATER","pb2AIModule.FILTER_ANY_ANYWHERE","pb2AIModule.FILTER_ANY_ANYWHERE_PING_RANGE","pb2AIModule.BEST_ATTACK_NOATOM","pb2AIModule.BEST_ATTACK_BULLET","pb2AIModule.BEST_ATTACK_ENTITY","pb2AIModule.BEST_ATTACK_SHAPE","pb2AIModule.HINT_ACTION_USE_SWITCH","pb2AIModule.HINT_ACTION_JUST_WAIT","pb2AIModule.HINT_ACTION_GO_TO","pb2AIModule.HINT_ACTION_ATTACK_OBJECT","pb2AIModule.HINT_ACTION_SHOOT_AT_POINT","pb2AIModule.GUN_MODE_CURRENT"] */
-        ALL_TYPES: unknown;
-        CreateAI: (params: unknown) => unknown;
-        DebugReachTactic: (from: unknown, to: unknown) => unknown;
+        ALL_TYPES: TODO;
+        CreateAI: (params: TODO) => pb2AIModule;
+        DebugReachTactic: (from: TODO, to: TODO) => TODO;
     }
 }
 
 declare global {
     interface pb2AIPathFindingHint extends ClassIdentityProps<"pb2AIPathFindingHint"> {
-        enabled: unknown;
-        remove: () => unknown;
-        action_to_proceed: unknown;
-        action_target: unknown;
+        enabled: boolean;
+        remove: () => TODO;
+        action_to_proceed: TODO;
+        action_target: TODO;
     }
     var pb2AIPathFindingHint: ClassIdentityProps<"pb2AIPathFindingHint"> & {
-        Create: (params: unknown) => unknown;
+        Create: (params: TODO) => pb2AIPathFindingHint;
     }
 }
 
 declare global {
     interface pb2AIThreat extends ClassIdentityProps<"pb2AIThreat"> {
-        readonly knowledge_owner_team: unknown;
-        readonly knowledge_about: unknown;
-        ThreatEliminated: () => unknown;
+        readonly knowledge_owner_team: TODO;
+        readonly knowledge_about: TODO;
+        ThreatEliminated: () => TODO;
     }
     var pb2AIThreat: ClassIdentityProps<"pb2AIThreat"> & {
         /**
@@ -1153,102 +1015,102 @@ declare global {
          * @param rk null or pb2AIWayPoint instance  
          * @param dHo (default=false) no throw  
          */
-        NewThreat: (_dHj: pb2Team, _dHk: pb2Ragdoll, rk: null | unknown, dHo?: boolean) => pb2AIThreat;
+        NewThreat: (_dHj: pb2Team, _dHk: pb2Ragdoll, rk: null | TODO, dHo?: boolean) => pb2AIThreat;
     }
 }
 
 declare global {
     var pb2ArmsAction: ClassIdentityProps<"pb2ArmsAction"> & {
         /** Type is unknown. One known value: 0 */
-        ARMS_NONE: unknown;
+        ARMS_NONE: TODO;
         /** Type is unknown. One known value: 1 */
-        ARMS_PRIMARY: unknown;
+        ARMS_PRIMARY: TODO;
         /** Type is unknown. One known value: 2 */
-        ARMS_SECONDARY: unknown;
+        ARMS_SECONDARY: TODO;
         /** Type is unknown. One known value: 3 */
-        ARMS_BOTH: unknown;
+        ARMS_BOTH: TODO;
         /** Type is unknown. One known value: 0 */
-        LEGS_NONE: unknown;
+        LEGS_NONE: TODO;
         /** Type is unknown. One known value: 1 */
-        LEGS_BOTH: unknown;
+        LEGS_BOTH: TODO;
         /** Type is unknown. One known value: 0 */
-        ACTION_TYPE_RELOAD_WEAPONS: unknown;
+        ACTION_TYPE_RELOAD_WEAPONS: TODO;
         /** Type is unknown. One known value: 1 */
-        ACTION_TYPE_THROW_GRENADE_HE: unknown;
+        ACTION_TYPE_THROW_GRENADE_HE: TODO;
         /** Type is unknown. One known value: 2 */
-        ACTION_TYPE_THROW_GRENADE_PORT: unknown;
+        ACTION_TYPE_THROW_GRENADE_PORT: TODO;
         /** Type is unknown. One known value: 3 */
-        ACTION_TYPE_THROW_GRENADE_SHIELD: unknown;
+        ACTION_TYPE_THROW_GRENADE_SHIELD: TODO;
         /** Type is unknown. One known value: 4 */
-        ACTION_TYPE_THROW_GRENADE_TIME: unknown;
+        ACTION_TYPE_THROW_GRENADE_TIME: TODO;
         /** Type is unknown. One known value: 5 */
-        ACTION_TYPE_THROW_GRENADE_SMOKE: unknown;
+        ACTION_TYPE_THROW_GRENADE_SMOKE: TODO;
         /** Type is unknown. One known value: 6 */
-        ACTION_TYPE_THROW_GRENADE_FLASH: unknown;
+        ACTION_TYPE_THROW_GRENADE_FLASH: TODO;
         /** Type is unknown. One known value: 7 */
-        ACTION_TYPE_THROW_GRENADE_TOXIC_GAS: unknown;
+        ACTION_TYPE_THROW_GRENADE_TOXIC_GAS: TODO;
         /** Type is unknown. One known value: 8 */
-        ACTION_TYPE_THROW_GRENADE_EXPLOSION_MINE: unknown;
+        ACTION_TYPE_THROW_GRENADE_EXPLOSION_MINE: TODO;
         /** Type is unknown. One known value: 9 */
-        ACTION_TYPE_THROW_GRENADE_LASER_MINE: unknown;
+        ACTION_TYPE_THROW_GRENADE_LASER_MINE: TODO;
         /** Type is unknown. One known value: 10 */
-        ACTION_TYPE_THROW_GRENADE_SCANNER_CAMERA: unknown;
+        ACTION_TYPE_THROW_GRENADE_SCANNER_CAMERA: TODO;
         /** Type is unknown. One known value: 11 */
-        ACTION_TYPE_THROW_GRENADE_VIRUS: unknown;
+        ACTION_TYPE_THROW_GRENADE_VIRUS: TODO;
         /** Type is unknown. One known value: 12 */
-        ACTION_TYPE_THROW_GRENADE_SNOWBALL: unknown;
+        ACTION_TYPE_THROW_GRENADE_SNOWBALL: TODO;
         /** Type is unknown. One known value: 13 */
-        ACTION_TYPE_THROW_GRENADE_HEALER: unknown;
+        ACTION_TYPE_THROW_GRENADE_HEALER: TODO;
         /** Type is unknown. One known value: 14 */
-        ACTION_TYPE_THROW_GRENADE_GLOW: unknown;
+        ACTION_TYPE_THROW_GRENADE_GLOW: TODO;
         /** Type is unknown. One known value: 15 */
-        ACTION_TYPE_THROW_GRENADE_FIRE: unknown;
+        ACTION_TYPE_THROW_GRENADE_FIRE: TODO;
         /** Type is unknown. One known value: 16 */
-        ACTION_TYPE_THROW_GRENADE_TURRET: unknown;
+        ACTION_TYPE_THROW_GRENADE_TURRET: TODO;
         /** Type is unknown. One known value: 17 */
-        ACTION_TYPE_THROW_GRENADE_TURRET2: unknown;
+        ACTION_TYPE_THROW_GRENADE_TURRET2: TODO;
         /** Type is unknown. One known value: 18 */
-        ACTION_TYPE_THROW_GRENADE_COLD_NADE: unknown;
+        ACTION_TYPE_THROW_GRENADE_COLD_NADE: TODO;
         /** Type is unknown. One known value: 19 */
-        ACTION_TYPE_THROW_GRENADE_DRONE_TURRET: unknown;
+        ACTION_TYPE_THROW_GRENADE_DRONE_TURRET: TODO;
         /** Type is unknown. One known value: 20 */
-        ACTION_TYPE_THROW_GRENADE_DRONE_TURRET2: unknown;
+        ACTION_TYPE_THROW_GRENADE_DRONE_TURRET2: TODO;
         /** Type is unknown. One known value: 1 */
-        GRENADE_FIRST: unknown;
+        GRENADE_FIRST: TODO;
         /** Type is unknown. One known value: 20 */
-        GRENADE_LAST: unknown;
+        GRENADE_LAST: TODO;
         /** Type is unknown. One known value: 21 */
-        ACTION_TYPE_DRAG_RIGIDBODY: unknown;
+        ACTION_TYPE_DRAG_RIGIDBODY: TODO;
         /** Type is unknown. One known value: 22 */
-        ACTION_TYPE_GRAPPLING_HOOK: unknown;
+        ACTION_TYPE_GRAPPLING_HOOK: TODO;
         /** Type is unknown. One known value: 23 */
-        ACTION_TYPE_USE: unknown;
+        ACTION_TYPE_USE: TODO;
         /** Type is unknown. One known value: 24 */
-        ACTION_TYPE_GESTURE_POINT_AT: unknown;
+        ACTION_TYPE_GESTURE_POINT_AT: TODO;
         /** Type is unknown. One known value: 25 */
-        ACTION_TYPE_GESTURE_LISTEN_RADIO: unknown;
+        ACTION_TYPE_GESTURE_LISTEN_RADIO: TODO;
         /** Type is unknown. One known value: 26 */
-        ACTION_TYPE_GESTURE_WEAPON_ON_SHOULDER: unknown;
+        ACTION_TYPE_GESTURE_WEAPON_ON_SHOULDER: TODO;
         /** Type is unknown. One known value: 27 */
-        ACTION_TYPE_GESTURE_WEAPON_DOWN: unknown;
+        ACTION_TYPE_GESTURE_WEAPON_DOWN: TODO;
         /** Type is unknown. One known value: 28 */
-        ACTION_TYPE_GESTURE_HAPPY: unknown;
+        ACTION_TYPE_GESTURE_HAPPY: TODO;
         /** Type is unknown. One known value: 29 */
-        ACTION_TYPE_KICK: unknown;
+        ACTION_TYPE_KICK: TODO;
         /** Type is unknown. One known value: 30 */
-        ACTION_TYPE_WALLJUMP_FRONT: unknown;
+        ACTION_TYPE_WALLJUMP_FRONT: TODO;
         /** Type is unknown. One known value: 31 */
-        ACTION_TYPE_WALLJUMP_BACK: unknown;
+        ACTION_TYPE_WALLJUMP_BACK: TODO;
         /** Type is unknown. One known value: 32 */
-        ACTION_TYPE_SWORDS_ACTIVATION: unknown;
+        ACTION_TYPE_SWORDS_ACTIVATION: TODO;
         /** Type is unknown. One known value: 24 */
-        GESTURE_FIRST: unknown;
+        GESTURE_FIRST: TODO;
         /** Type is unknown. One known value: 28 */
-        GESTURE_LAST: unknown;
+        GESTURE_LAST: TODO;
         /** Type is unknown. One known value: ["pb2ArmsAction.ARMS_NONE","pb2ArmsAction.ARMS_PRIMARY","pb2ArmsAction.ARMS_SECONDARY","pb2ArmsAction.ARMS_BOTH","pb2ArmsAction.LEGS_NONE","pb2ArmsAction.LEGS_BOTH","pb2ArmsAction.ACTION_TYPE_RELOAD_WEAPONS","pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_HE","pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_PORT","pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_SHIELD","pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_TIME","pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_SMOKE","pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_FLASH","pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_TOXIC_GAS","pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_EXPLOSION_MINE","pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_LASER_MINE","pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_SCANNER_CAMERA","pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_VIRUS","pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_SNOWBALL","pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_HEALER","pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_GLOW","pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_FIRE","pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_TURRET","pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_TURRET2","pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_COLD_NADE","pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_DRONE_TURRET","pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_DRONE_TURRET2","pb2ArmsAction.GRENADE_FIRST","pb2ArmsAction.GRENADE_LAST","pb2ArmsAction.ACTION_TYPE_DRAG_RIGIDBODY","pb2ArmsAction.ACTION_TYPE_GRAPPLING_HOOK","pb2ArmsAction.ACTION_TYPE_USE","pb2ArmsAction.ACTION_TYPE_GESTURE_POINT_AT","pb2ArmsAction.ACTION_TYPE_GESTURE_LISTEN_RADIO","pb2ArmsAction.ACTION_TYPE_GESTURE_WEAPON_ON_SHOULDER","pb2ArmsAction.ACTION_TYPE_GESTURE_WEAPON_DOWN","pb2ArmsAction.ACTION_TYPE_GESTURE_HAPPY","pb2ArmsAction.ACTION_TYPE_KICK","pb2ArmsAction.ACTION_TYPE_WALLJUMP_FRONT","pb2ArmsAction.ACTION_TYPE_WALLJUMP_BACK","pb2ArmsAction.ACTION_TYPE_SWORDS_ACTIVATION","pb2ArmsAction.GESTURE_FIRST","pb2ArmsAction.GESTURE_LAST"] */
-        ALL_TYPES: unknown;
+        ALL_TYPES: TODO;
         /** Type is unknown. One known value: ["Grenade C-00n","Teleport Grenade v03 CS-PortNade","Portable Shield v07 CS-Quarium","Portable TimeWarp C-00w","Smoke Nade CS-Dust","Flashbang Nade CS-Flash","Toxic Nade CS-Napkin","Proximity Mine C-00t","Laser Mine CS-Trap","Scanner CS-Stalk","Attack Drone CS-Virus","Snowball","Heal Drone CS-HealVirus","Portable Light CS-GlowFam","Combustion Shell CS-Slash","Sentry Turret DR-Facet","Portable Turret CS-Denier","Freezing Nade CS-Cryo","Scout Drone C-02d","Harasser Drone-CS"] */
-        grenade_titles: unknown;
+        grenade_titles: TODO;
     }
 }
 
@@ -1256,19 +1118,19 @@ declare global {
     /** the class is actually called hT but it's renamed here for obvious reasons */
     interface pb2Atom extends ClassIdentityProps<"hT"> {
         /** Type is unknown. One known value: 103 */
-        readonly classid: unknown;
-        x: unknown;
-        y: unknown;
-        tox: unknown;
-        toy: unknown;
-        readonly rad: unknown;
-        readonly of: unknown;
-        Teleport: (ax: unknown, ay: unknown) => unknown;
+        readonly classid: TODO;
+        x: number;
+        y: number;
+        tox: number;
+        toy: number;
+        readonly rad: number;
+        readonly of: pb2Ragdoll | null;
+        Teleport: (ax: number, ay: number) => TODO;
         GetBody: () => b2Body;
         GetPosition: () => b2Vec2;
-        DealDamage: (args: unknown) => unknown;
-        health_damage_multiplier: unknown;
-        limb_damage_multiplier: unknown;
+        DealDamage: (args: TODO) => TODO;
+        health_damage_multiplier: number;
+        limb_damage_multiplier: number;
     }
     
 }
@@ -1299,164 +1161,164 @@ declare global {
 declare global {
     interface pb2Bullet extends ClassIdentityProps<"pb2Bullet"> {
         /** Type is unknown. One known value: 4 */
-        readonly classid: unknown;
-        readonly x: unknown;
-        readonly y: unknown;
-        readonly owner_ragdoll: unknown;
-        readonly owner_gun: unknown;
-        readonly initial_grenade_type: unknown;
-        readonly is_punch: unknown;
-        readonly is_sword: unknown;
-        readonly is_bite: unknown;
-        readonly is_railgun: unknown;
-        readonly is_rocket: unknown;
-        readonly is_plasma: unknown;
-        readonly is_grenade: unknown;
-        readonly is_radioactive: unknown;
-        readonly is_beam: unknown;
-        readonly is_blaster: unknown;
-        readonly is_healgun: unknown;
-        readonly is_cloud: unknown;
-        readonly is_lightning: unknown;
-        readonly is_blinding: unknown;
-        readonly rocket_direct_damage_mode: unknown;
-        readonly is_wall_sticking: unknown;
-        readonly is_nail: unknown;
-        Teleport: (dx: unknown, dy: unknown) => unknown;
-        readonly box2d_body: unknown;
+        readonly classid: TODO;
+        readonly x: number;
+        readonly y: number;
+        readonly owner_ragdoll: TODO;
+        readonly owner_gun: TODO;
+        readonly initial_grenade_type: TODO;
+        readonly is_punch: boolean;
+        readonly is_sword: boolean;
+        readonly is_bite: boolean;
+        readonly is_railgun: boolean;
+        readonly is_rocket: boolean;
+        readonly is_plasma: boolean;
+        readonly is_grenade: boolean;
+        readonly is_radioactive: boolean;
+        readonly is_beam: boolean;
+        readonly is_blaster: boolean;
+        readonly is_healgun: boolean;
+        readonly is_cloud: boolean;
+        readonly is_lightning: boolean;
+        readonly is_blinding: boolean;
+        readonly rocket_direct_damage_mode: TODO;
+        readonly is_wall_sticking: boolean;
+        readonly is_nail: boolean;
+        Teleport: (dx: number, dy: number) => TODO;
+        readonly box2d_body: b2Body;
         /** @param dlv (default=false)  */
-        remove: (dlv?: unknown) => unknown;
-        readonly is_being_removed: unknown;
-        bullet_hp: unknown;
-        readonly is_thrown_by: unknown;
+        remove: (dlv?: TODO) => TODO;
+        readonly is_being_removed: boolean;
+        bullet_hp: number;
+        readonly is_thrown_by: TODO;
         /** @param id (default=0)  */
         GetMesh: (id?: 0 | 1 | 2) => THREE.Mesh | null;
     }
     var pb2Bullet: ClassIdentityProps<"pb2Bullet"> & {
         /** Type is unknown. One known value: false */
-        bullets_damage_guns: unknown;
+        bullets_damage_guns: TODO;
         /** Type is unknown. One known value: 1 */
-        explosive_direct_based_multiplier: unknown;
+        explosive_direct_based_multiplier: TODO;
         /** Type is unknown. One known value: 1.26 */
-        held_ragdoll_damage_sword_kick_punch_mult: unknown;
+        held_ragdoll_damage_sword_kick_punch_mult: TODO;
         /** Type is unknown. One known value: 0.66 */
-        knock_gun_owner_intensity: unknown;
+        knock_gun_owner_intensity: TODO;
         /** Type is unknown. One known value: 0.66 */
-        knock_sword_owner_intensity: unknown;
+        knock_sword_owner_intensity: TODO;
         /** Type is unknown. One known value: 1.1 */
-        grenade_density: unknown;
+        grenade_density: TODO;
         /** Type is unknown. One known value: 1.142857142857143 */
-        normal_grenade_mesh_scale: unknown;
+        normal_grenade_mesh_scale: TODO;
         /** Type is unknown. One known value: 6 */
-        radius_grenade: unknown;
+        radius_grenade: TODO;
         /** Type is unknown. One known value: 1 */
-        radius_bullet: unknown;
+        radius_bullet: TODO;
         /** Type is unknown. One known value: 0 */
-        radius_beam: unknown;
+        radius_beam: TODO;
         /** Type is unknown. One known value: 5 */
-        radius_sword: unknown;
+        radius_sword: TODO;
         /** Type is unknown. One known value: 30 */
-        radius_sword_crosshit: unknown;
+        radius_sword_crosshit: TODO;
         /** Type is unknown. One known value: 20 */
-        radius_sword_protection: unknown;
+        radius_sword_protection: TODO;
         /** Type is unknown. One known value: 20 */
-        radius_sword_bullet_reflection: unknown;
+        radius_sword_bullet_reflection: TODO;
         /** Type is unknown. One known value: 10 */
-        radius_cloud: unknown;
+        radius_cloud: TODO;
         /** Type is unknown. One known value: 7 */
-        beam_max_life_time: unknown;
+        beam_max_life_time: TODO;
         /** Type is unknown. One known value: 5 */
-        time_before_selfhit: unknown;
+        time_before_selfhit: TODO;
         /** Type is unknown. One known value: 85 */
-        dist_before_selfhit: unknown;
+        dist_before_selfhit: TODO;
         /** Type is unknown. One known value: 0.24 */
-        player_push_power: unknown;
+        player_push_power: TODO;
         /** Type is unknown. One known value: 0.18 */
-        ragdoll_push_power: unknown;
+        ragdoll_push_power: TODO;
         /** Type is unknown. One known value: 0.5 */
-        ragdoll_push_power_explosion: unknown;
+        ragdoll_push_power_explosion: TODO;
         /** Type is unknown. One known value: 0.5 */
-        entity_push_power: unknown;
+        entity_push_power: TODO;
         /** Type is unknown. One known value: 1.3888888888888888 */
-        entity_push_power_explosion: unknown;
+        entity_push_power_explosion: TODO;
         /** Type is unknown. One known value: 2.5 */
-        bullet_target_push_multiplayer: unknown;
+        bullet_target_push_multiplayer: TODO;
         /** Type is unknown. One known value: 2.5 */
-        bullet_self_push_multiplayer: unknown;
+        bullet_self_push_multiplayer: TODO;
         /** Type is unknown. One known value: 18 */
-        beam_hit_spark_multiplier: unknown;
+        beam_hit_spark_multiplier: TODO;
         /** Type is unknown. One known value: 0.333 */
-        bullet_gravity_multiplayer: unknown;
+        bullet_gravity_multiplayer: TODO;
         /** Type is unknown. One known value: 0.02 */
-        water_push_power: unknown;
+        water_push_power: TODO;
         /** Type is unknown. One known value: 0.4 */
-        water_push_power_directed: unknown;
+        water_push_power_directed: TODO;
         /** Type is unknown. One known value: 0.05 */
-        particle_push_power: unknown;
+        particle_push_power: TODO;
         /** Type is unknown. One known value: 0.25 */
-        ricochet_power_remain_bullet: unknown;
+        ricochet_power_remain_bullet: TODO;
         /** Type is unknown. One known value: 0.25 */
-        ricochet_power_remain_beam: unknown;
+        ricochet_power_remain_beam: TODO;
         /** Type is unknown. One known value: 0.35 */
-        ricochet_power_remain_rail: unknown;
+        ricochet_power_remain_rail: TODO;
         /** Type is unknown. One known value: 0.03 */
-        friction_distance_multiplier: unknown;
+        friction_distance_multiplier: TODO;
         /** Type is unknown. One known value: 0.99 */
-        friction_air: unknown;
+        friction_air: TODO;
         /** Type is unknown. One known value: 0.9 */
-        friction_water: unknown;
+        friction_water: TODO;
         /** Type is unknown. One known value: 0.7 */
-        friction_wall: unknown;
+        friction_wall: TODO;
         /** Type is unknown. One known value: 0.75 */
-        friction_for_beam: unknown;
+        friction_for_beam: TODO;
         /** Type is unknown. One known value: 0.93 */
-        friction_for_cloud_air: unknown;
+        friction_for_cloud_air: TODO;
         /** Type is unknown. One known value: 0.4 */
-        friction_for_cloud_water: unknown;
+        friction_for_cloud_water: TODO;
         /** Type is unknown. One known value: 0.1 */
-        min_damaging_ammount: unknown;
+        min_damaging_ammount: TODO;
         /** Type is unknown. One known value: 0.05 */
-        min_damaging_ammount_nails: unknown;
+        min_damaging_ammount_nails: TODO;
         /** Type is unknown. One known value: 0.25 */
-        min_damaging_ammount_AI: unknown;
+        min_damaging_ammount_AI: TODO;
         /** Type is unknown. One known value: 0.01 */
-        min_damaging_ammount_clouds: unknown;
+        min_damaging_ammount_clouds: TODO;
         /** Type is unknown. One known value: 0.25 */
-        min_damaging_ammount_in_walls: unknown;
+        min_damaging_ammount_in_walls: TODO;
         /** Type is unknown. One known value: 0.66 */
-        held_gun_knock_multiplier: unknown;
+        held_gun_knock_multiplier: TODO;
         /** Type is unknown. One known value: 0.01 */
-        max_damaging_constant_beam_damage: unknown;
+        max_damaging_constant_beam_damage: TODO;
         /** Type is unknown. One known value: 50 */
-        blip_time: unknown;
+        blip_time: TODO;
         /** Type is unknown. One known value: 90 */
-        max_rocket_fuel: unknown;
+        max_rocket_fuel: TODO;
         /** Type is unknown. One known value: 0.1 */
-        bullet_min_hp: unknown;
+        bullet_min_hp: TODO;
         /** Type is unknown. One known value: 1 */
-        hp_default_bullet: unknown;
+        hp_default_bullet: TODO;
         /** Type is unknown. One known value: 0.65 */
-        hp_railgun: unknown;
+        hp_railgun: TODO;
         /** Type is unknown. One known value: 1 */
-        hp_raygun: unknown;
+        hp_raygun: TODO;
         /** Type is unknown. One known value: 1 */
-        hp_sword: unknown;
+        hp_sword: TODO;
         /** Type is unknown. One known value: 0.75 */
-        hp_rocket: unknown;
+        hp_rocket: TODO;
         /** Type is unknown. One known value: 0.45 */
-        hp_plasma: unknown;
+        hp_plasma: TODO;
         /** Type is unknown. One known value: 1 */
-        hp_plasma_radioactive: unknown;
+        hp_plasma_radioactive: TODO;
         /** Type is unknown. One known value: 2 */
-        hp_beam: unknown;
+        hp_beam: TODO;
         /** Type is unknown. One known value: 1 */
-        hp_grenade: unknown;
+        hp_grenade: TODO;
         /** Type is unknown. One known value: 1.8 */
-        hp_nail: unknown;
+        hp_nail: TODO;
         /** Type is unknown. One known value: 240 */
-        default_bullet_speed: unknown;
+        default_bullet_speed: TODO;
         /** Type is unknown. One known value: 30 */
-        default_bullet_life: unknown;
+        default_bullet_life: TODO;
         /**
          * @param x   
          * @param y   
@@ -1465,63 +1327,59 @@ declare global {
          * @param owner_ragdoll (default=null)   
          * @param PF (default=false)   
          */
-        CreateGadget: (x: unknown, y: unknown, _type: unknown, cfF?: unknown, owner_ragdoll?: unknown, PF?: unknown) => unknown;
-        /** Type is unknown. One known value: [] */
-        bullets: unknown;
+        CreateGadget: (x: number, y: number, _type: TODO, cfF?: TODO, owner_ragdoll?: TODO, PF?: TODO) => TODO;
+        bullets: pb2Bullet[];
     }
 }
 
 declare global {
     var pb2BulletDisposer: ClassIdentityProps<"pb2BulletDisposer"> & {
-        AllowDispose: (b: unknown) => unknown;
-        /** Type is unknown. One known value: 200 */
-        normal_time_to_live: unknown;
-        /** Type is unknown. One known value: [] */
-        disposers: unknown;
+        AllowDispose: (b: TODO) => TODO;
+        normal_time_to_live: number;
+        disposers: TODO[];
     }
 }
 
 declare global {
     var pb2ByteShifter: ClassIdentityProps<"pb2ByteShifter"> & {
-        /** Type is unknown. One known value: 6.944444444444445 */
-        send_repeat_delay_for_server: unknown;
+        send_repeat_delay_for_server: number;
     }
 }
 
 declare global {
     interface pb2Character extends ClassIdentityProps<"pb2Character"> {
         /** Type is unknown. One known value: 1 */
-        readonly classid: unknown;
+        readonly classid: TODO;
         readonly x: number;
         readonly y: number;
-        act_x: unknown;
-        act_y: unknown;
-        act_fall: unknown;
-        look_x: unknown;
-        look_y: unknown;
-        act_fire: unknown;
-        act_fire2: unknown;
-        auto_fire: unknown;
-        auto_fire2: unknown;
-        act_single_jump: unknown;
-        act_single_fire: unknown;
-        act_single_fire2: unknown;
-        act_single_fall: unknown;
-        act_grab: unknown;
-        act_kick: unknown;
-        act_reload: unknown;
-        act_sprint: unknown;
-        readonly can_be_revived: unknown;
-        MakeUnrevivable: () => unknown;
-        readonly tox: unknown;
-        readonly toy: unknown;
-        readonly ang: unknown;
+        act_x: TODO;
+        act_y: TODO;
+        act_fall: TODO;
+        look_x: number;
+        look_y: number;
+        act_fire: TODO;
+        act_fire2: TODO;
+        auto_fire: TODO;
+        auto_fire2: TODO;
+        act_single_jump: TODO;
+        act_single_fire: TODO;
+        act_single_fire2: TODO;
+        act_single_fall: TODO;
+        act_grab: TODO;
+        act_kick: TODO;
+        act_reload: TODO;
+        act_sprint: TODO;
+        readonly can_be_revived: boolean;
+        MakeUnrevivable: () => TODO;
+        readonly tox: number;
+        readonly toy: number;
+        readonly ang: TODO;
         hea: number;
         hmax: number;
-        start_hea: unknown;
+        start_hea: TODO;
         readonly ragdoll: pb2Ragdoll | null;
-        MoveOn: (nx: unknown, ny: unknown, sx: unknown, sy: unknown) => unknown;
-        DealCharacterDamage: (beh: unknown, beg: unknown, bef: unknown, bed: unknown, beo: unknown) => unknown;
+        MoveOn: (nx: number, ny: number, sx: number, sy: number) => TODO;
+        DealCharacterDamage: (beh: number, beg: TODO, bef: TODO, bed: TODO, beo: TODO) => TODO;
         /**
          * @param bN damage amount  
          * @param cqQ (default=true)   
@@ -1532,492 +1390,486 @@ declare global {
          * @param cqP (default=false)   
          */
         SubstractHealth: (bN: number, cqQ?: boolean, beo?: boolean, fG?: number, fE?: number, gv?: boolean, cqP?: boolean) => boolean;
-        AddGrenades: (cay: unknown, count: unknown) => unknown;
-        SetGrenades: (cay: unknown, count: unknown) => unknown;
-        GetGrenades: (cay: unknown) => unknown;
-        remove: () => unknown;
-        addEventListener: (event_type: unknown, params: unknown) => unknown;
-        removeEventListener: (event_type: unknown, params: unknown) => unknown;
-        removeAllListeners: () => unknown;
-        removeListenersByType: (event_type: unknown) => unknown;
-        readonly controller: unknown;
-        readonly hand_holder: unknown;
-        readonly curwea_slot: unknown;
-        readonly curwea_slot_animation: unknown;
-        curwea_backup_slot: unknown;
-        readonly phys_sit: unknown;
+        AddGrenades: (cay: TODO, count: TODO) => TODO;
+        SetGrenades: (cay: TODO, count: TODO) => TODO;
+        GetGrenades: (cay: TODO) => TODO;
+        remove: () => TODO;
+        addEventListener: (event_type: TODO, params: TODO) => TODO;
+        removeEventListener: (event_type: TODO, params: TODO) => TODO;
+        removeAllListeners: () => TODO;
+        removeListenersByType: (event_type: TODO) => TODO;
+        readonly controller: TODO;
+        readonly hand_holder: TODO;
+        readonly curwea_slot: TODO;
+        readonly curwea_slot_animation: TODO;
+        curwea_backup_slot: TODO;
+        readonly phys_sit: TODO;
         /**
          * @param slot   
          * @param caI (default=true)   
          * @param override_backup_slot_and_dont_ignore_entity_or_freezing_rules (default=true)   
          */
-        ChangeGunIfPossible: (slot: unknown, caI?: unknown, override_backup_slot_and_dont_ignore_entity_or_freezing_rules?: unknown) => unknown;
-        ReloadGunsIfPossible: () => unknown;
-        ChangeGunToBackupIfPossible: () => unknown;
-        DoGesture: (caD: unknown) => unknown;
-        UseAction: () => unknown;
+        ChangeGunIfPossible: (slot: TODO, caI?: TODO, override_backup_slot_and_dont_ignore_entity_or_freezing_rules?: TODO) => TODO;
+        ReloadGunsIfPossible: () => TODO;
+        ChangeGunToBackupIfPossible: () => TODO;
+        DoGesture: (caD: TODO) => TODO;
+        UseAction: () => TODO;
         /**
          * @param _x   
          * @param _y   
          * @param Vk (default=false)   
          */
-        addImpulse: (_x: unknown, _y: unknown, Vk?: unknown) => unknown;
-        AddVel: (_x: unknown, _y: unknown) => unknown;
-        SetVel: (_x: unknown, _y: unknown) => unknown;
-        DimLights: () => unknown;
-        UndimLights: () => unknown;
+        addImpulse: (_x: number, _y: number, Vk?: TODO) => TODO;
+        AddVel: (_x: number, _y: number) => TODO;
+        SetVel: (_x: number, _y: number) => TODO;
+        DimLights: () => TODO;
+        UndimLights: () => TODO;
         /** @param underwater (default=undefined)  */
-        PlayDeathSound: (underwater?: unknown) => unknown;
+        PlayDeathSound: (underwater?: TODO) => TODO;
         /**
          * @param bps (default=false)   
          * @param gv (default=false)   
          */
-        Kill: (bps?: unknown, gv?: unknown) => unknown;
-        aim_spread: unknown;
-        BodyIsPartOfPlayer: (bodyB: unknown, cpD: unknown) => unknown;
-        PickWeapon: (cqN: unknown) => unknown;
+        Kill: (bps?: TODO, gv?: TODO) => TODO;
+        aim_spread: TODO;
+        BodyIsPartOfPlayer: (bodyB: TODO, cpD: TODO) => TODO;
+        PickWeapon: (cqN: TODO) => TODO;
         DropWeapon: (cqN: pb2Gun) => void;
-        DropGunIfPossible: () => unknown;
+        DropGunIfPossible: () => TODO;
         /** @param v (default=0)  */
-        SetAllGrenadesCount: (v?: unknown) => unknown;
-        GetWeaponGlow: () => unknown;
-        WeaponIsBeingChanged: () => unknown;
-        CanShootNow: () => unknown;
+        SetAllGrenadesCount: (v?: TODO) => TODO;
+        GetWeaponGlow: () => TODO;
+        WeaponIsBeingChanged: () => TODO;
+        CanShootNow: () => TODO;
         /**
          * @param slot   
          * @param primary (default=true)   
          */
-        GetWeaponAtSlot: (slot: unknown, primary?: unknown) => unknown;
-        GetCurrentAnimationWeapon: (primary: unknown) => unknown;
-        HasAnyWeapon: () => unknown;
-        ChangeGunToNonSwords: () => unknown;
-        GetNonSwordsSlot: () => unknown;
-        GetRandomNonSwordsSlot: () => unknown;
-        GetFirstHealGunSlot: () => unknown;
+        GetWeaponAtSlot: (slot: TODO, primary?: TODO) => TODO;
+        GetCurrentAnimationWeapon: (primary: TODO) => TODO;
+        HasAnyWeapon: () => TODO;
+        ChangeGunToNonSwords: () => TODO;
+        GetNonSwordsSlot: () => TODO;
+        GetRandomNonSwordsSlot: () => TODO;
+        GetFirstHealGunSlot: () => TODO;
         GetBody: (i: 0 | 1) => b2Body;
-        stability: unknown;
-        DoKick: () => unknown;
-        StartGrapplingHookIfPossible: () => unknown;
+        stability: number;
+        DoKick: () => TODO;
+        StartGrapplingHookIfPossible: () => TODO;
         /** @param cay (default=-1)  */
-        ThrowGrenadeIfPossible: (cay?: unknown) => unknown;
-        GetHeldBody: () => unknown;
-        forceUnHandHold: (id: unknown) => void;
+        ThrowGrenadeIfPossible: (cay?: TODO) => TODO;
+        GetHeldBody: () => TODO;
+        forceUnHandHold: (id: TODO) => void;
     }
     var pb2Character: ClassIdentityProps<"pb2Character"> & {
-        CreateCharacter: (params: unknown) => unknown;
+        CreateCharacter: (params: TODO) => pb2Character;
         /** Type is unknown. One known value: 0 */
-        DROP_NEVER: unknown;
+        DROP_NEVER: TODO;
         /** Type is unknown. One known value: 1 */
-        DROP_WHEN_INTENDED_ONLY: unknown;
+        DROP_WHEN_INTENDED_ONLY: TODO;
         /** Type is unknown. One known value: 2 */
-        DROP_WHEN_CAN_NOT_BE_REVIVED: unknown;
+        DROP_WHEN_CAN_NOT_BE_REVIVED: TODO;
         /** Type is unknown. One known value: 3 */
-        DROP_ALWAYS: unknown;
+        DROP_ALWAYS: TODO;
         characters: pb2Character[];
-        /** Type is unknown. One known value: 10 */
-        player_half_width: unknown;
-        /** Type is unknown. One known value: 20 */
-        player_width: unknown;
-        /** Type is unknown. One known value: 70 */
-        player_height: unknown;
-        /** Type is unknown. One known value: 32 */
-        player_step_size: unknown;
-        /** Type is unknown. One known value: 14 */
-        player_sitmax: unknown;
+        player_half_width: number;
+        player_width: number;
+        player_height: number;
+        player_step_size: number;
+        player_sitmax: number;
     }
 }
 
 declare global {
     var pb2ClassID: ClassIdentityProps<"pb2ClassID"> & {
         /** Type is unknown. One known value: 0 */
-        OTHER: unknown;
+        OTHER: TODO;
         /** Type is unknown. One known value: 1 */
-        CHARACTER: unknown;
+        CHARACTER: TODO;
         /** Type is unknown. One known value: 2 */
-        ENTITY: unknown;
+        ENTITY: TODO;
         /** Type is unknown. One known value: 3 */
-        RAGDOLL: unknown;
+        RAGDOLL: TODO;
         /** Type is unknown. One known value: 4 */
-        BULLET: unknown;
+        BULLET: TODO;
         /** Type is unknown. One known value: 5 */
-        GUN: unknown;
+        GUN: TODO;
         /** Type is unknown. One known value: 6 */
-        SHAPE: unknown;
+        SHAPE: TODO;
         /** Type is unknown. One known value: 7 */
-        TEAM: unknown;
+        TEAM: TODO;
         /** Type is unknown. One known value: 8 */
-        FLOATING_TEXT: unknown;
+        FLOATING_TEXT: TODO;
         /** Type is unknown. One known value: 9 */
-        COLLISION_IGNORE: unknown;
+        COLLISION_IGNORE: TODO;
         /** Type is unknown. One known value: 10 */
-        PHYS3D: unknown;
+        PHYS3D: TODO;
         /** Type is unknown. One known value: 11 */
-        LASER_SIGHT: unknown;
+        LASER_SIGHT: TODO;
         /** Type is unknown. One known value: 12 */
-        BEAM_BULLET_TRAIL: unknown;
+        BEAM_BULLET_TRAIL: TODO;
         /** Type is unknown. One known value: 13 */
-        CONTROLLER: unknown;
+        CONTROLLER: TODO;
         /** Type is unknown. One known value: 14 */
-        DATA_CONNECTION: unknown;
+        DATA_CONNECTION: TODO;
         /** Type is unknown. One known value: 15 */
-        HAND_HOLDER: unknown;
+        HAND_HOLDER: TODO;
         /** Type is unknown. One known value: 16 */
-        WATER_CLASS: unknown;
+        WATER_CLASS: TODO;
         /** Type is unknown. One known value: 17 */
-        FIRE: unknown;
+        FIRE: TODO;
         /** Type is unknown. One known value: 18 */
-        FIRE_TYPE: unknown;
+        FIRE_TYPE: TODO;
         /** Type is unknown. One known value: 19 */
-        FROZEN_SPOT: unknown;
+        FROZEN_SPOT: TODO;
         /** Type is unknown. One known value: 20 */
-        EXPLOSION: unknown;
+        EXPLOSION: TODO;
         /** Type is unknown. One known value: 21 */
-        SHIELD: unknown;
+        SHIELD: TODO;
         /** Type is unknown. One known value: 22 */
-        TIME_WARP_ZONE: unknown;
+        TIME_WARP_ZONE: TODO;
         /** Type is unknown. One known value: 23 */
-        ROPE: unknown;
+        ROPE: TODO;
         /** Type is unknown. One known value: 24 */
-        TEMP_HURT_FORCE: unknown;
+        TEMP_HURT_FORCE: TODO;
         /** Type is unknown. One known value: 25 */
-        RADIOACTIVE_CLOUD: unknown;
+        RADIOACTIVE_CLOUD: TODO;
         /** Type is unknown. One known value: 26 */
-        MERGED_SOUND_ADD_SOURCE_CALL: unknown;
+        MERGED_SOUND_ADD_SOURCE_CALL: TODO;
         /** Type is unknown. One known value: 27 */
-        REPLAY_DATA: unknown;
+        REPLAY_DATA: TODO;
         /** Type is unknown. One known value: 28 */
-        SOUND: unknown;
+        SOUND: TODO;
         /** Type is unknown. One known value: 29 */
-        HERO_INFO: unknown;
+        HERO_INFO: TODO;
         /** Type is unknown. One known value: 30 */
-        HERO_INFO_BAR: unknown;
+        HERO_INFO_BAR: TODO;
         /** Type is unknown. One known value: 31 */
-        AI_MODULE: unknown;
+        AI_MODULE: TODO;
         /** Type is unknown. One known value: 32 */
-        DECORATION: unknown;
+        DECORATION: TODO;
         /** Type is unknown. One known value: 33 */
-        WINDOW_HINT: unknown;
+        WINDOW_HINT: TODO;
         /** Type is unknown. One known value: 34 */
-        SWITCH: unknown;
+        SWITCH: TODO;
         /** Type is unknown. One known value: 35 */
-        LIGHT: unknown;
+        LIGHT: TODO;
         /** Type is unknown. One known value: 100 */
-        WINDOW: unknown;
+        WINDOW: TODO;
         /** Type is unknown. One known value: 101 */
-        REGION: unknown;
+        REGION: TODO;
         /** Type is unknown. One known value: 102 */
-        VOID: unknown;
+        VOID: TODO;
         /** Type is unknown. One known value: 103 */
-        ATOM: unknown;
+        ATOM: TODO;
     }
 }
 
 declare global {
     var pb2Cloth: ClassIdentityProps<"pb2Cloth"> & {
         /** Type is unknown. One known value: 1 */
-        TYPE_SCARF: unknown;
+        TYPE_SCARF: TODO;
         /** Type is unknown. One known value: 2 */
-        TYPE_CAPE: unknown;
+        TYPE_CAPE: TODO;
         /** Type is unknown. One known value: 3 */
-        TYPE_TAIL_FOX: unknown;
+        TYPE_TAIL_FOX: TODO;
         /** Type is unknown. One known value: 4 */
-        TYPE_TAIL_CAT: unknown;
+        TYPE_TAIL_CAT: TODO;
         /** Type is unknown. One known value: 5 */
-        TYPE_TAIL_DRAGON: unknown;
+        TYPE_TAIL_DRAGON: TODO;
         /** Type is unknown. One known value: 6 */
-        TYPE_TAIL_DEMONIC: unknown;
+        TYPE_TAIL_DEMONIC: TODO;
         /** Type is unknown. One known value: 7 */
-        TYPE_HAT_MAGE: unknown;
+        TYPE_HAT_MAGE: TODO;
         /** Type is unknown. One known value: 8 */
-        TYPE_HAT_SANTA: unknown;
+        TYPE_HAT_SANTA: TODO;
         /** Type is unknown. One known value: 9 */
-        TYPE_HAT_MAGICIAN: unknown;
+        TYPE_HAT_MAGICIAN: TODO;
         /** Type is unknown. One known value: 10 */
-        TYPE_WINGS: unknown;
+        TYPE_WINGS: TODO;
         /** Type is unknown. One known value: 11 */
-        TYPE_NIMBUS: unknown;
+        TYPE_NIMBUS: TODO;
         /** Type is unknown. One known value: 12 */
-        TYPE_BEARD: unknown;
+        TYPE_BEARD: TODO;
         /** Type is unknown. One known value: 13 */
-        TYPE_HAIR_REGULAR: unknown;
+        TYPE_HAIR_REGULAR: TODO;
         /** Type is unknown. One known value: 14 */
-        TYPE_HAIR_PONYTAIL: unknown;
+        TYPE_HAIR_PONYTAIL: TODO;
         /** Type is unknown. One known value: 15 */
-        TYPE_SKIRT: unknown;
+        TYPE_SKIRT: TODO;
         /** Type is unknown. One known value: 16 */
-        TYPE_PARACHUTE: unknown;
+        TYPE_PARACHUTE: TODO;
         /** Type is unknown. One known value: 17 */
-        TYPE_MINIGUN_BELT: unknown;
+        TYPE_MINIGUN_BELT: TODO;
         /** Type is unknown. One known value: 18 */
-        TYPE_ENTITY_CABLES: unknown;
+        TYPE_ENTITY_CABLES: TODO;
         /** Type is unknown. One known value: 19 */
-        TYPE_WEAPON_FUEL_CABLE: unknown;
+        TYPE_WEAPON_FUEL_CABLE: TODO;
         /** Type is unknown. One known value: 20 */
-        TYPE_FLOATING_DRONE: unknown;
+        TYPE_FLOATING_DRONE: TODO;
     }
 }
 
 declare global {
     interface pb2Color extends ClassIdentityProps<"pb2Color"> {
-        r: unknown;
-        g: unknown;
-        b: unknown;
-        clone: () => unknown;
-        /** Type is unknown. One known value: 0 */
-        _uint: unknown;
-        multiply: (num: unknown) => unknown;
-        average: () => unknown;
-        toColorTransform: () => unknown;
-        /** @param enC (default=1)  */
-        random: (enC?: unknown) => unknown;
-        multUpToMax: (max: unknown) => unknown;
-        setRGB: (r: unknown, g: unknown, b: unknown) => unknown;
-        isEqual: (c: unknown) => unknown;
+        r: number;
+        g: number;
+        b: number;
+        clone: () => pb2Color;
+        _uint: number;
+        multiply: (num: number) => pb2Color;
+        /** sets every color channel value to their average */
+        average: () => pb2Color;
+        toColorTransform: () => ColorTransform;
+        /** @param enC (default=1) proportion (in range 0-1) */
+        random: (enC?: number) => pb2Color;
+        multUpToMax: (max: number) => pb2Color;
+        setRGB: (r: number, g: number, b: number) => pb2Color;
+        isEqual: (c: pb2Color) => boolean;
     }
     var pb2Color: {
         /** @param u (default=0xffffff)  */
-        new (u?: unknown): pb2Color;
+        new (u?: number): pb2Color;
 
     }
 }
 
 declare global {
     interface pb2ColoredText extends ClassIdentityProps<"pb2ColoredText"> {
-        text: unknown;
-        colors: unknown;
-        CapitalRedColors: () => unknown;
-        RandomColors: () => unknown;
-        WhiteColors: () => unknown;
+        text: TODO;
+        colors: TODO;
+        CapitalRedColors: () => TODO;
+        RandomColors: () => TODO;
+        WhiteColors: () => TODO;
         /**
          * @param nickname_tagged   
          * @param main_color (default=undefined)   
          */
-        FromTagged: (nickname_tagged: unknown, main_color?: unknown) => unknown;
-        GetTagged: () => unknown;
+        FromTagged: (nickname_tagged: TODO, main_color?: TODO) => TODO;
+        GetTagged: () => TODO;
     }
     var pb2ColoredText: {
         /** @param txt (default='')  */
-        new (txt?: unknown): pb2ColoredText;
+        new (txt?: TODO): pb2ColoredText;
 
     }
 }
 
 declare global {
     interface pb2Controller extends ClassIdentityProps<"pb2Controller"> {
-        readonly character: unknown;
-        readonly player_connection: unknown;
-        act_x: unknown;
-        act_y: unknown;
+        readonly character: TODO;
+        readonly player_connection: TODO;
+        act_x: TODO;
+        act_y: TODO;
         look_x: number;
         look_y: number;
-        act_fall: unknown;
-        act_fire: unknown;
-        act_fire2: unknown;
-        act_grab: unknown;
-        act_sprint: unknown;
-        readonly _is_typing: unknown;
-        readonly _is_in_menu: unknown;
-        remove: () => unknown;
-        readonly zoom: unknown;
+        act_fall: TODO;
+        act_fire: TODO;
+        act_fire2: TODO;
+        act_grab: TODO;
+        act_sprint: TODO;
+        readonly _is_typing: TODO;
+        readonly _is_in_menu: TODO;
+        remove: () => TODO;
+        readonly zoom: TODO;
         /**
          * @param c   
          * @param cGz (default=false)   
          */
-        CopyStateFrom: (c: unknown, cGz?: unknown) => unknown;
+        CopyStateFrom: (c: TODO, cGz?: TODO) => TODO;
         /**
          * @param to   
          * @param param (default=0.9)   
          * @param func (default=pb2_mp.FUNCTION_INVERSEMORPH)   
          */
-        StartZoomMorph: (to: unknown, param?: unknown, func?: unknown) => unknown;
-        StopZoomMorph: () => unknown;
+        StartZoomMorph: (to: TODO, param?: TODO, func?: TODO) => TODO;
+        StopZoomMorph: () => TODO;
         /**
          * @param to_x   
          * @param to_y   
          * @param param (default=0.9)   
          * @param func (default=pb2_mp.FUNCTION_MORPH)   
          */
-        StartPositionMorph: (to_x: unknown, to_y: unknown, param?: unknown, func?: unknown) => unknown;
-        StopPositionMorph: () => unknown;
-        readonly camera_position_forced: unknown;
-        readonly camera_position_target_x: unknown;
-        readonly camera_position_target_y: unknown;
-        readonly zoom_changing: unknown;
-        readonly target_zoom: unknown;
+        StartPositionMorph: (to_x: number, to_y: number, param?: TODO, func?: TODO) => TODO;
+        StopPositionMorph: () => TODO;
+        readonly camera_position_forced: TODO;
+        readonly camera_position_target_x: TODO;
+        readonly camera_position_target_y: TODO;
+        readonly zoom_changing: TODO;
+        readonly target_zoom: TODO;
         /** @param stable (default=false)  */
-        ScreenMinX: (stable?: unknown) => unknown;
+        ScreenMinX: (stable?: TODO) => TODO;
         /** @param stable (default=false)  */
-        ScreenMaxX: (stable?: unknown) => unknown;
+        ScreenMaxX: (stable?: TODO) => TODO;
         /** @param stable (default=false)  */
-        ScreenMinY: (stable?: unknown) => unknown;
+        ScreenMinY: (stable?: TODO) => TODO;
         /** @param stable (default=false)  */
-        ScreenMaxY: (stable?: unknown) => unknown;
-        ai: unknown;
-        allow_damage_report_flash: unknown;
-        color_mult: unknown;
-        color_add: unknown;
-        readonly UpdateScreenColor: unknown;
-        damage_report_flash_current: unknown;
-        player_controllable: unknown;
-        readonly damage_dealt_players_tot: unknown;
-        readonly damage_dealt_entities_tot: unknown;
-        readonly eliminations_players_tot: unknown;
-        readonly eliminations_entities_tot: unknown;
+        ScreenMaxY: (stable?: TODO) => TODO;
+        ai: TODO;
+        allow_damage_report_flash: TODO;
+        color_mult: TODO;
+        color_add: TODO;
+        readonly UpdateScreenColor: TODO;
+        damage_report_flash_current: TODO;
+        player_controllable: TODO;
+        readonly damage_dealt_players_tot: TODO;
+        readonly damage_dealt_entities_tot: TODO;
+        readonly eliminations_players_tot: TODO;
+        readonly eliminations_entities_tot: TODO;
     }
     var pb2Controller: ClassIdentityProps<"pb2Controller"> & {
         /** Type is unknown. One known value: 1.2 */
-        default_zoom_on_foot: unknown;
+        default_zoom_on_foot: TODO;
         /** Type is unknown. One known value: 0.8 */
-        default_zoom_driving: unknown;
+        default_zoom_driving: TODO;
         /** Type is unknown. One known value: 0.9 */
-        vehicle_in_out_param: unknown;
+        vehicle_in_out_param: TODO;
         /** Type is unknown. One known value: 3 */
-        vehicle_in_out_func: unknown;
-        CreateController: (params: unknown) => unknown;
-        /** Type is unknown. One known value: [] */
-        controllers: unknown;
+        vehicle_in_out_func: TODO;
+        CreateController: (params: TODO) => pb2Controller;
+        controllers: pb2Controller[];
     }
 }
 
 declare global {
     interface pb2Decoration extends ClassIdentityProps<"pb2Decoration"> {
         /** Type is unknown. One known value: 32 */
-        readonly classid: unknown;
-        remove: () => unknown;
-        GetColor: () => unknown;
-        GetColorGlow: () => unknown;
-        SetColor: (c: unknown) => unknown;
-        SetColorGlow: (c: unknown) => unknown;
-        blending: unknown;
-        shading: unknown;
-        alpha: unknown;
-        opacity: unknown;
-        glowing_intensity: unknown;
-        readonly source: unknown;
-        readonly model_source: unknown;
-        readonly source_glow: unknown;
-        relative_to_mesh: unknown;
-        hide_relative_to_mesh: unknown;
-        inherit_effects: unknown;
-        visible: unknown;
-        readonly is_being_removed: unknown;
-        readonly position: unknown;
-        x: unknown;
-        y: unknown;
-        z: unknown;
-        readonly rotation: unknown;
-        readonly scale: unknown;
+        readonly classid: TODO;
+        remove: () => TODO;
+        GetColor: () => TODO;
+        GetColorGlow: () => TODO;
+        SetColor: (c: TODO) => TODO;
+        SetColorGlow: (c: TODO) => TODO;
+        blending: TODO;
+        shading: TODO;
+        alpha: TODO;
+        opacity: TODO;
+        glowing_intensity: TODO;
+        readonly source: TODO;
+        readonly model_source: TODO;
+        readonly source_glow: TODO;
+        relative_to_mesh: TODO;
+        hide_relative_to_mesh: TODO;
+        inherit_effects: TODO;
+        visible: TODO;
+        readonly is_being_removed: boolean;
+        readonly position: TODO;
+        x: number;
+        y: number;
+        z: number;
+        readonly rotation: TODO;
+        readonly scale: TODO;
         /** Type is unknown. One known value: null */
-        readonly offset: unknown;
-        SetPersonalVisibilityFor: (TK: unknown, value: unknown) => unknown;
-        ResetPersonalVisibilityRules: () => unknown;
-        default_visibility: unknown;
-        PlayAnimation: (animation_id: unknown) => unknown;
-        PauseAnimation: () => unknown;
-        ResumeAnimation: () => unknown;
-        animation_info: unknown;
-        UpdateAnimationUVs: () => unknown;
-        allow_sync: unknown;
+        readonly offset: TODO;
+        SetPersonalVisibilityFor: (TK: TODO, value: TODO) => TODO;
+        ResetPersonalVisibilityRules: () => TODO;
+        default_visibility: TODO;
+        PlayAnimation: (animation_id: TODO) => TODO;
+        PauseAnimation: () => TODO;
+        ResumeAnimation: () => TODO;
+        animation_info: TODO;
+        UpdateAnimationUVs: () => TODO;
+        allow_sync: TODO;
     }
     var pb2Decoration: ClassIdentityProps<"pb2Decoration"> & {
-        CreateDecoration: (params: unknown) => unknown;
-        PreloadUserData: (user_data_uid: unknown) => unknown;
+        CreateDecoration: (params: TODO) => pb2Decoration;
+        PreloadUserData: (user_data_uid: TODO) => TODO;
         /** Type is unknown. One known value: 0 */
-        LAYER_WORLD: unknown;
+        LAYER_WORLD: TODO;
         /** Type is unknown. One known value: 1 */
-        LAYER_WORLD_HUD: unknown;
+        LAYER_WORLD_HUD: TODO;
         /** Type is unknown. One known value: 2 */
-        LAYER_SCREEN_HUD: unknown;
+        LAYER_SCREEN_HUD: TODO;
         /** Type is unknown. One known value: 0 */
-        BLENDING_NORMAL: unknown;
+        BLENDING_NORMAL: TODO;
         /** Type is unknown. One known value: 1 */
-        BLENDING_ADDITIVE: unknown;
+        BLENDING_ADDITIVE: TODO;
         /** Type is unknown. One known value: 2 */
-        BLENDING_MULTIPLY: unknown;
+        BLENDING_MULTIPLY: TODO;
         /** Type is unknown. One known value: 0 */
-        SHADING_INITIAL: unknown;
+        SHADING_INITIAL: TODO;
         /** Type is unknown. One known value: 1 */
-        SHADING_DIMMED: unknown;
+        SHADING_DIMMED: TODO;
         /** Type is unknown. One known value: 2 */
-        SHADING_GLOWING: unknown;
+        SHADING_GLOWING: TODO;
         /** Type is unknown. One known value: 0 */
-        ATTACHMENT_DISABLED: unknown;
+        ATTACHMENT_DISABLED: TODO;
         /** Type is unknown. One known value: 1 */
-        ATTACHMENT_NTH_MESH_OF_OBJECT: unknown;
+        ATTACHMENT_NTH_MESH_OF_OBJECT: TODO;
         /** Type is unknown. One known value: 2 */
-        ATTACHMENT_EXPRESSION: unknown;
+        ATTACHMENT_EXPRESSION: TODO;
         /** Type is unknown. One known value: 0 */
-        RENDER_METHOD_TRANSPARENT: unknown;
+        RENDER_METHOD_TRANSPARENT: TODO;
         /** Type is unknown. One known value: 1 */
-        RENDER_METHOD_TRANSPARENT_BACKGROUND: unknown;
+        RENDER_METHOD_TRANSPARENT_BACKGROUND: TODO;
         /** Type is unknown. One known value: 2 */
-        RENDER_METHOD_TRANSPARENT_FOREGROUND: unknown;
+        RENDER_METHOD_TRANSPARENT_FOREGROUND: TODO;
         /** Type is unknown. One known value: 3 */
-        RENDER_METHOD_OPAQUE: unknown;
+        RENDER_METHOD_OPAQUE: TODO;
         /** Type is unknown. One known value: 4 */
-        RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY: unknown;
+        RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY: TODO;
         /** Type is unknown. One known value: 5 */
-        RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY_BACKGROUND: unknown;
+        RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY_BACKGROUND: TODO;
         /** Type is unknown. One known value: 6 */
-        RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY_FOREGROUND: unknown;
+        RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY_FOREGROUND: TODO;
         /** Type is unknown. One known value: ["pb2Decoration.RENDER_METHOD_TRANSPARENT","pb2Decoration.RENDER_METHOD_TRANSPARENT_BACKGROUND","pb2Decoration.RENDER_METHOD_TRANSPARENT_FOREGROUND","pb2Decoration.RENDER_METHOD_OPAQUE","pb2Decoration.RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY","pb2Decoration.RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY_BACKGROUND","pb2Decoration.RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY_FOREGROUND"] */
-        ALL_RENDER_METHODS: unknown;
+        ALL_RENDER_METHODS: TODO;
     }
 }
 
 declare global {
     interface pb2Disposer extends ClassIdentityProps<"pb2Disposer"> {
-        time_to_live: unknown;
-        readonly Pause: unknown;
-        readonly Resume: unknown;
-        readonly paused: unknown;
+        time_to_live: number;
+        readonly Pause: TODO;
+        readonly Resume: TODO;
+        readonly paused: TODO;
     }
     var pb2Disposer: ClassIdentityProps<"pb2Disposer"> & {
-        GetDisposer: (obj: unknown) => unknown;
+        GetDisposer: (obj: TODO) => TODO;
     }
 }
 
 declare global {
     interface pb2EditorObject extends ClassIdentityProps<"pb2EditorObject"> {
-        readonly attributes: unknown;
-        readonly children: unknown;
-        Recreate: (params: unknown) => unknown;
-        GetDeepCopy: () => unknown;
-        SetUnsetDefaultAttributes: () => unknown;
-        push: (obj: unknown) => unknown;
-        unshift: (obj: unknown) => unknown;
-        RemoveChild: (rem: unknown) => unknown;
+        readonly attributes: TODO;
+        readonly children: TODO;
+        Recreate: (params: TODO) => TODO;
+        GetDeepCopy: () => TODO;
+        SetUnsetDefaultAttributes: () => TODO;
+        push: (obj: TODO) => TODO;
+        unshift: (obj: TODO) => TODO;
+        RemoveChild: (rem: TODO) => TODO;
         /**
          * @param where   
          * @param selected (default=null)   
          */
-        ListChildren: (where: unknown, selected?: unknown) => unknown;
+        ListChildren: (where: TODO, selected?: TODO) => TODO;
         /**
          * @param exA (default='Accessory ')   
          * @param exq (default='name')   
          */
-        GetUniqueName: (exA?: unknown, exq?: unknown) => unknown;
+        GetUniqueName: (exA?: TODO, exq?: TODO) => TODO;
         /**
          * @param class_name   
          * @param exi (default='*')   
          * @param exq (default='id')   
          */
-        FindChild: (class_name: unknown, exi?: unknown, exq?: unknown) => unknown;
+        FindChild: (class_name: TODO, exi?: TODO, exq?: TODO) => TODO;
         /**
          * @param class_name   
          * @param lW (default=false)   
          */
-        FindAllChildren: (class_name: unknown, lW?: unknown) => unknown;
-        DragPoints: (wx: unknown, wy: unknown) => unknown;
-        fromString: (xml_str: unknown) => unknown;
+        FindAllChildren: (class_name: TODO, lW?: TODO) => TODO;
+        DragPoints: (wx: TODO, wy: TODO) => TODO;
+        fromString: (xml_str: TODO) => TODO;
         /**
          * @param bdI   
          * @param exn (default=false)   
          */
-        fromXMLNode: (bdI: unknown, exn?: unknown) => unknown;
+        fromXMLNode: (bdI: TODO, exn?: TODO) => TODO;
     }
     var pb2EditorObject: {
-        new (params: unknown): pb2EditorObject;
+        new (params: TODO): pb2EditorObject;
         /** bugged, the returned value shows up as "Error" */
         GetModificationWorldCopy: () => pb2EditorObject | "Error";
     }
@@ -2028,28 +1880,206 @@ declare global {
     var pb2EngineDatabase: pb2EditorObject;
 }
 
+type pb2EntityBase<ClassName extends string> = ClassIdentityProps<ClassName> & {
+    /** Type is unknown. One known value: 2 */
+    readonly classid: TODO;
+    readonly x: number;
+    readonly y: number;
+    readonly tox: number;
+    readonly toy: number;
+    InstallGun: (_tQ: TODO) => TODO;
+    DropGun: () => TODO;
+    remove: () => TODO;
+    /**
+     * @param r   
+     * @param eQf (default=-1)   
+     */
+    AddRagdoll: (r: TODO, eQf?: TODO) => TODO;
+    /**
+     * @param r   
+     * @param hv (default=false)   
+     */
+    ExcludeRagdoll: (r: TODO, hv?: TODO) => TODO;
+    /**
+     * @param r   
+     * @param time (default=-100)   
+     * @param eQa (default=false)   
+     * @param eQh (default=null)   
+     */
+    IgnoreRagdoll: (r: TODO, time?: TODO, eQa?: TODO, eQh?: TODO) => TODO;
+    /**
+     * @param bN   
+     * @param xx   
+     * @param yy   
+     * @param _boD   
+     * @param _ben   
+     * @param limb_id   
+     * @param limb_damage_multiplier (default=1)   
+     * @param eTB (default=true)   
+     * @param fG (default=0)   
+     * @param fE (default=0)   
+     * @param eSP (default=null)   
+     * @param bqj (default=false)   
+     */
+    DealDamage: (bN: TODO, xx: TODO, yy: TODO, _boD: TODO, _ben: TODO, limb_id: TODO, limb_damage_multiplier?: TODO, eTB?: TODO, fG?: TODO, fE?: TODO, eSP?: TODO, bqj?: TODO) => TODO;
+    MultiplyHealth: (m: TODO) => TODO;
+    alpha: TODO;
+    readonly is_being_removed: boolean;
+    hea: number;
+    hmax: number;
+    dying_level: TODO;
+    team: pb2Team;
+    /**
+     * @param x   
+     * @param dist (default=-123)   
+     */
+    SetDriverSeatsAndRadius: (x: number, dist?: number) => TODO;
+    /**
+     * @param x   
+     * @param eQr (default=false)   
+     */
+    SetSide: (x: TODO, eQr?: TODO) => TODO;
+    readonly box2d_bodies: b2Body[];
+    addEventListener: (event_type: TODO, params: TODO) => TODO;
+    removeEventListener: (event_type: TODO, params: TODO) => TODO;
+    GetLimb: (id: TODO) => TODO;
+    /** @param id (default=0)  */
+    GetMesh: (id?: number) => THREE.Mesh;
+};
+
+declare global {
+    interface pb2Entity extends pb2EntityBase<"pb2Entity"> {}
+    var pb2Entity: ClassIdentityProps<"pb2Entity"> & {
+        /** return type may be different based on the parameters passed in */
+        CreateEntity: (params: TODO) => pb2Entity;
+        /** Type is unknown. One known value: 0 */
+        TYPE_UNKNOWN: TODO;
+        /** Type is unknown. One known value: 1 */
+        TYPE_SPOILER35: TODO;
+        /** Type is unknown. One known value: 2 */
+        TYPE_BARREL: TODO;
+        /** Type is unknown. One known value: 3 */
+        TYPE_BARREL_PART: TODO;
+        /** Type is unknown. One known value: 4 */
+        TYPE_CRATE: TODO;
+        /** Type is unknown. One known value: 5 */
+        TYPE_TURRET: TODO;
+        /** Type is unknown. One known value: 6 */
+        TYPE_SPOILER27: TODO;
+        /** Type is unknown. One known value: 7 */
+        TYPE_SPOILER29: TODO;
+        /** Type is unknown. One known value: 8 */
+        TYPE_MOTO: TODO;
+        /** Type is unknown. One known value: 9 */
+        TYPE_WALKER: TODO;
+        /** Type is unknown. One known value: 10 */
+        TYPE_SPOILER28: TODO;
+        /** Type is unknown. One known value: 11 */
+        TYPE_SPOILER30: TODO;
+        /** Type is unknown. One known value: 12 */
+        TYPE_SPOILER13: TODO;
+        /** Type is unknown. One known value: 13 */
+        TYPE_SPOILER14: TODO;
+        /** Type is unknown. One known value: 14 */
+        TYPE_SPOILER15: TODO;
+        /** Type is unknown. One known value: 15 */
+        TYPE_SPOILER16: TODO;
+        /** Type is unknown. One known value: 16 */
+        TYPE_SPOILER17: TODO;
+        /** Type is unknown. One known value: 17 */
+        TYPE_SPOILER19: TODO;
+        /** Type is unknown. One known value: 18 */
+        TYPE_SPOILER18: TODO;
+        /** Type is unknown. One known value: 19 */
+        TYPE_SPOILER20: TODO;
+        /** Type is unknown. One known value: 20 */
+        TYPE_SPOILER21: TODO;
+        /** Type is unknown. One known value: 21 */
+        TYPE_ANTIGRAVITY: TODO;
+        /** Type is unknown. One known value: 22 */
+        TYPE_SPOILER33: TODO;
+        /** Type is unknown. One known value: 23 */
+        TYPE_CORVETTE: TODO;
+        /** Type is unknown. One known value: 24 */
+        TYPE_FLOATING_ICE: TODO;
+        /** Type is unknown. One known value: 25 */
+        TYPE_SPOILER34: TODO;
+        /** Type is unknown. One known value: ["pb2Entity.TYPE_UNKNOWN","pb2Entity.TYPE_SPOILER35","pb2Entity.TYPE_BARREL","pb2Entity.TYPE_BARREL_PART","pb2Entity.TYPE_CRATE","pb2Entity.TYPE_TURRET","pb2Entity.TYPE_SPOILER27","pb2Entity.TYPE_SPOILER29","pb2Entity.TYPE_MOTO","pb2Entity.TYPE_WALKER","pb2Entity.TYPE_SPOILER28","pb2Entity.TYPE_SPOILER30","pb2Entity.TYPE_SPOILER13","pb2Entity.TYPE_SPOILER14","pb2Entity.TYPE_SPOILER15","pb2Entity.TYPE_SPOILER16","pb2Entity.TYPE_SPOILER17","pb2Entity.TYPE_SPOILER19","pb2Entity.TYPE_SPOILER18","pb2Entity.TYPE_SPOILER20","pb2Entity.TYPE_SPOILER21","pb2Entity.TYPE_ANTIGRAVITY","pb2Entity.TYPE_SPOILER33","pb2Entity.TYPE_CORVETTE","pb2Entity.TYPE_FLOATING_ICE","pb2Entity.TYPE_SPOILER34"] */
+        ALL_TYPES: TODO;
+        /** Type is unknown. One known value: 0 */
+        MATERIAL_METAL: TODO;
+        /** Type is unknown. One known value: 1 */
+        MATERIAL_GLASS: TODO;
+        /** Type is unknown. One known value: 2 */
+        MATERIAL_WOOD: TODO;
+        /** Type is unknown. One known value: 3 */
+        MATERIAL_BLOOD: TODO;
+        /** Type is unknown. One known value: 4 */
+        MATERIAL_MAGAZINE_PISTOL: TODO;
+        /** Type is unknown. One known value: 5 */
+        MATERIAL_MAGAZINE_PISTOL3: TODO;
+        /** Type is unknown. One known value: 6 */
+        MATERIAL_MAGAZINE_RIFLE: TODO;
+        /** Type is unknown. One known value: 7 */
+        MATERIAL_MAGAZINE_GENERIC_METAL: TODO;
+        /** Type is unknown. One known value: 8 */
+        MATERIAL_RUBBER: TODO;
+        /** Type is unknown. One known value: 9 */
+        MATERIAL_METAL_USURP: TODO;
+        /** Type is unknown. One known value: 10 */
+        MATERIAL_METAL_USURP_BOSS_LEG: TODO;
+        /** Type is unknown. One known value: 11 */
+        MATERIAL_CONCRETE: TODO;
+        /** Type is unknown. One known value: 12 */
+        MATERIAL_METAL_SPOILER33: TODO;
+        /** Type is unknown. One known value: 13 */
+        MATERIAL_MAGAZINE_CANISTER: TODO;
+        /** Type is unknown. One known value: 14 */
+        MATERIAL_CRAB_SHELL: TODO;
+        /** Type is unknown. One known value: 15 */
+        MATERIAL_ICE: TODO;
+        /** Type is unknown. One known value: 16 */
+        MATERIAL_ROCK: TODO;
+        /** Type is unknown. One known value: 17 */
+        MATERIAL_METAL_MOTO: TODO;
+        /** Type is unknown. One known value: [] */
+        entities: TODO;
+        /**
+         * @param yJ   
+         * @param x   
+         * @param y   
+         * @param _width   
+         * @param _height   
+         * @param eQz (default=null)   
+         * @param lw (default=null)   
+         * @param eQA (default=null)   
+         */
+        CountShapesInRect: (yJ: TODO, x: number, y: number, _width: number, _height: number, eQz?: TODO, lw?: TODO, eQA?: TODO) => TODO;
+    }
+}
+
 declare global {
     interface pb2EntityAntigravity extends pb2EntityBase<"pb2EntityAntigravity"> {
         // Detach is only accessible when this.oh (type b2Joint sometimes) !== undefined, which is true only on pb2EntityAntigravity and pb2EntityTurret
         // failed to be included in generation (depends on value of this.oh which doesn't have a proper value on the fake instances)
-        Detach(...args: unknown[]): unknown;
-        range: unknown;
-        strength: unknown;
-        mass_cap_scale: unknown;
-        cooldown_duration_scale: unknown;
-        can_be_damaged: unknown;
-        lights_intensity: unknown;
-        light_current: unknown;
-        light_next_update_in: unknown;
-        malfunction_timer: unknown;
+        Detach(...args: TODO[]): TODO;
+        range: number;
+        strength: number;
+        mass_cap_scale: number;
+        cooldown_duration_scale: number;
+        can_be_damaged: boolean;
+        lights_intensity: TODO;
+        light_current: TODO;
+        light_next_update_in: TODO;
+        malfunction_timer: TODO;
     }
     var pb2EntityAntigravity: ClassIdentityProps<"pb2EntityAntigravity"> & {
         /** Type is unknown. One known value: 1 */
-        STYLE_ID_FORCE: unknown;
+        STYLE_ID_FORCE: TODO;
         /** Type is unknown. One known value: 2 */
-        STYLE_ID_IMPACT_PREVENTION: unknown;
+        STYLE_ID_IMPACT_PREVENTION: TODO;
         /** Type is unknown. One known value: 3 */
-        STYLE_ID_KINETIC_PUSHER: unknown;
+        STYLE_ID_KINETIC_PUSHER: TODO;
     }
 }
 
@@ -2057,21 +2087,21 @@ declare global {
     interface pb2EntityBarrel extends pb2EntityBase<"pb2EntityBarrel"> {}
     var pb2EntityBarrel: ClassIdentityProps<"pb2EntityBarrel"> & {
         /** Type is unknown. One known value: 1 */
-        STYLE_ID_YELLOW: unknown;
+        STYLE_ID_YELLOW: TODO;
         /** Type is unknown. One known value: 2 */
-        STYLE_ID_BLUE: unknown;
+        STYLE_ID_BLUE: TODO;
         /** Type is unknown. One known value: 3 */
-        STYLE_ID_RED: unknown;
+        STYLE_ID_RED: TODO;
         /** Type is unknown. One known value: 4 */
-        STYLE_ID_EMPTY: unknown;
+        STYLE_ID_EMPTY: TODO;
         /** Type is unknown. One known value: 5 */
-        STYLE_ID_TOXIC_GAS: unknown;
+        STYLE_ID_TOXIC_GAS: TODO;
         /** Type is unknown. One known value: 6 */
-        STYLE_ID_RED_PBFTTP: unknown;
+        STYLE_ID_RED_PBFTTP: TODO;
         /** Type is unknown. One known value: 7 */
-        STYLE_ID_FREEZING: unknown;
+        STYLE_ID_FREEZING: TODO;
         /** Type is unknown. One known value: 8 */
-        STYLE_ID_RADIOACTIVE: unknown;
+        STYLE_ID_RADIOACTIVE: TODO;
     }
 }
 
@@ -2095,9 +2125,9 @@ declare global {
     interface pb2EntityFloatingIce extends pb2EntityBase<"pb2EntityFloatingIce"> {}
     var pb2EntityFloatingIce: ClassIdentityProps<"pb2EntityFloatingIce"> & {
         /** Type is unknown. One known value: 1 */
-        STYLE_ID_ICE: unknown;
+        STYLE_ID_ICE: TODO;
         /** Type is unknown. One known value: 2 */
-        STYLE_ID_ROCK: unknown;
+        STYLE_ID_ROCK: TODO;
     }
 }
 
@@ -2105,29 +2135,35 @@ declare global {
     interface pb2EntityMoto extends pb2EntityBase<"pb2EntityMoto"> {}
     var pb2EntityMoto: ClassIdentityProps<"pb2EntityMoto"> & {
         /** Type is unknown. One known value: 1 */
-        STYLE_ID_MOTO: unknown;
+        STYLE_ID_MOTO: TODO;
         /** Type is unknown. One known value: 2 */
-        STYLE_ID_MOBILE_CS: unknown;
+        STYLE_ID_MOBILE_CS: TODO;
         /** Type is unknown. One known value: 3 */
-        STYLE_ID_MOBILE_C9: unknown;
+        STYLE_ID_MOBILE_C9: TODO;
     }
+}
+
+declare global {
+    /** this is an entity that is not currently available in the game. throws an error when constructed */
+    interface pb2EntitySpoiler extends pb2EntityBase<"fU"> {}
+    
 }
 
 declare global {
     interface pb2EntityTurret extends pb2EntityBase<"pb2EntityTurret"> {
         // Detach is only accessible when this.oh (type b2Joint sometimes) !== undefined, which is true only on pb2EntityAntigravity and pb2EntityTurret
         // failed to be included in generation (depends on value of this.oh which doesn't have a proper value on the fake instances)
-        Detach(...args: unknown[]): unknown;
+        Detach(...args: TODO[]): TODO;
     }
     var pb2EntityTurret: ClassIdentityProps<"pb2EntityTurret"> & {
         /** Type is unknown. One known value: 1 */
-        STYLE_ID_FACET: unknown;
+        STYLE_ID_FACET: TODO;
         /** Type is unknown. One known value: 2 */
-        STYLE_ID_DENIER: unknown;
+        STYLE_ID_DENIER: TODO;
         /** Type is unknown. One known value: 3 */
-        STYLE_ID_SCOUT_DRONE: unknown;
+        STYLE_ID_SCOUT_DRONE: TODO;
         /** Type is unknown. One known value: 4 */
-        STYLE_ID_HARASSER_DRONE: unknown;
+        STYLE_ID_HARASSER_DRONE: TODO;
     }
 }
 
@@ -2197,63 +2233,62 @@ type ExplosionParams = {
 declare global {
     interface pb2Explosion extends ClassIdentityProps<"pb2Explosion"> {
         /** Type is unknown. One known value: 20 */
-        readonly classid: unknown;
+        readonly classid: TODO;
         readonly x: number;
         readonly y: number;
         readonly source_bullet: pb2Bullet | pb2Explosion["owner_ragdoll"];
         readonly owner_ragdoll: pb2Ragdoll | null;
         readonly is_smoke: boolean;
-        readonly radius: unknown;
+        readonly radius: number;
     }
     var pb2Explosion: ClassIdentityProps<"pb2Explosion"> & {
-        MakeExplosion: (params: unknown) => pb2Explosion | undefined;
+        MakeExplosion: (params: TODO) => pb2Explosion;
         /** Type is unknown. One known value: 0 */
-        EXPLOSION_NONE: unknown;
+        EXPLOSION_NONE: TODO;
         /** Type is unknown. One known value: 1 */
-        EXPLOSION_BASIC: unknown;
+        EXPLOSION_BASIC: TODO;
         /** Type is unknown. One known value: 2 */
-        EXPLOSION_RADIOACTIVE: unknown;
+        EXPLOSION_RADIOACTIVE: TODO;
         /** Type is unknown. One known value: 3 */
-        EXPLOSION_PLASMA: unknown;
+        EXPLOSION_PLASMA: TODO;
         /** Type is unknown. One known value: 4 */
-        EXPLOSION_COINTOSS: unknown;
+        EXPLOSION_COINTOSS: TODO;
         /** Type is unknown. One known value: 5 */
-        EXPLOSION_RL2: unknown;
+        EXPLOSION_RL2: TODO;
         /** Type is unknown. One known value: 6 */
-        EXPLOSION_RL3: unknown;
+        EXPLOSION_RL3: TODO;
         /** Type is unknown. One known value: 7 */
-        EXPLOSION_DODGE: unknown;
+        EXPLOSION_DODGE: TODO;
         /** Type is unknown. One known value: 8 */
-        EXPLOSION_TROUBLE_HAWK: unknown;
+        EXPLOSION_TROUBLE_HAWK: TODO;
         /** Type is unknown. One known value: 9 */
-        EXPLOSION_HOUND_WALKER_PROJECTILE: unknown;
+        EXPLOSION_HOUND_WALKER_PROJECTILE: TODO;
         /** Type is unknown. One known value: 10 */
-        EXPLOSION_STORM_GUN: unknown;
+        EXPLOSION_STORM_GUN: TODO;
         /** Type is unknown. One known value: 11 */
-        EXPLOSION_SPOILER9: unknown;
+        EXPLOSION_SPOILER9: TODO;
         /** Type is unknown. One known value: 12 */
-        EXPLOSION_SPOILER10: unknown;
+        EXPLOSION_SPOILER10: TODO;
         /** Type is unknown. One known value: 13 */
-        EXPLOSION_SPOILER9_BOSS: unknown;
+        EXPLOSION_SPOILER9_BOSS: TODO;
         /** Type is unknown. One known value: 14 */
-        EXPLOSION_FIRE: unknown;
+        EXPLOSION_FIRE: TODO;
         /** Type is unknown. One known value: 15 */
-        EXPLOSION_CORVETTE_RL: unknown;
+        EXPLOSION_CORVETTE_RL: TODO;
         /** Type is unknown. One known value: 16 */
-        EXPLOSION_CORVETTE_RL2: unknown;
+        EXPLOSION_CORVETTE_RL2: TODO;
         /** Type is unknown. One known value: 17 */
-        EXPLOSION_CAR: unknown;
+        EXPLOSION_CAR: TODO;
         /** Type is unknown. One known value: 18 */
-        EXPLOSION_SPOILER35: unknown;
+        EXPLOSION_SPOILER35: TODO;
         /** Type is unknown. One known value: 19 */
-        EXPLOSION_HOUND_WALKER: unknown;
+        EXPLOSION_HOUND_WALKER: TODO;
         /** Type is unknown. One known value: 20 */
-        EXPLOSION_SPOILER12: unknown;
+        EXPLOSION_SPOILER12: TODO;
         /** Type is unknown. One known value: 21 */
-        EXPLOSION_SD_DRAIN_RIFLE: unknown;
+        EXPLOSION_SD_DRAIN_RIFLE: TODO;
         /** Type is unknown. One known value: ["pb2Explosion.EXPLOSION_NONE","pb2Explosion.EXPLOSION_BASIC","pb2Explosion.EXPLOSION_RADIOACTIVE","pb2Explosion.EXPLOSION_PLASMA","pb2Explosion.EXPLOSION_COINTOSS","pb2Explosion.EXPLOSION_RL2","pb2Explosion.EXPLOSION_RL3","pb2Explosion.EXPLOSION_DODGE","pb2Explosion.EXPLOSION_TROUBLE_HAWK","pb2Explosion.EXPLOSION_HOUND_WALKER_PROJECTILE","pb2Explosion.EXPLOSION_STORM_GUN","pb2Explosion.EXPLOSION_SPOILER9","pb2Explosion.EXPLOSION_SPOILER10","pb2Explosion.EXPLOSION_SPOILER9_BOSS","pb2Explosion.EXPLOSION_FIRE","pb2Explosion.EXPLOSION_CORVETTE_RL","pb2Explosion.EXPLOSION_CORVETTE_RL2","pb2Explosion.EXPLOSION_CAR","pb2Explosion.EXPLOSION_SPOILER35","pb2Explosion.EXPLOSION_HOUND_WALKER","pb2Explosion.EXPLOSION_SPOILER12","pb2Explosion.EXPLOSION_SD_DRAIN_RIFLE"] */
-        ALL_TYPES: unknown;
-        /** Type is unknown. One known value: [] */
+        ALL_TYPES: TODO;
         explosions: pb2Explosion[];
     }
 }
@@ -2261,14 +2296,13 @@ declare global {
 declare global {
     interface pb2Fire extends ClassIdentityProps<"pb2Fire"> {
         /** Type is unknown. One known value: 17 */
-        readonly classid: unknown;
-        UpdateAndGetWorldPoint: () => unknown;
-        readonly size: unknown;
-        remove: () => unknown;
+        readonly classid: TODO;
+        UpdateAndGetWorldPoint: () => TODO;
+        readonly size: TODO;
+        remove: () => TODO;
     }
     var pb2Fire: ClassIdentityProps<"pb2Fire"> & {
-        /** Type is unknown. One known value: [] */
-        fires: unknown;
+        fires: pb2Fire[];
     }
 }
 
@@ -2276,215 +2310,170 @@ declare global {
     /** the class is actually called Ki but it's renamed here for obvious reasons */
     interface pb2FireType extends ClassIdentityProps<"Ki"> {
         /** Type is unknown. One known value: 18 */
-        readonly classid: unknown;
-        readonly is_permanent: unknown;
-        readonly is_being_removed: unknown;
-        readonly damage_scale: unknown;
-        readonly pitch: unknown;
+        readonly classid: TODO;
+        readonly is_permanent: boolean;
+        readonly is_being_removed: boolean;
+        readonly damage_scale: number;
+        readonly pitch: TODO;
     }
     
 }
 
 declare global {
     var pb2FloatingText: ClassIdentityProps<"pb2FloatingText"> & {
-        GetNewHash: () => unknown;
+        GetNewHash: () => number;
     }
 }
 
 declare global {
     var pb2FoliageClass: ClassIdentityProps<"pb2FoliageClass"> & {
         /** Type is unknown. One known value: 0 */
-        TEMPLATE_NONE: unknown;
+        TEMPLATE_NONE: TODO;
         /** Type is unknown. One known value: 1 */
-        TEMPLATE_EARTH: unknown;
+        TEMPLATE_EARTH: TODO;
         /** Type is unknown. One known value: ["pb2FoliageClass.TEMPLATE_NONE","pb2FoliageClass.TEMPLATE_EARTH"] */
-        ALL_TEMPLATE_TYPES: unknown;
+        ALL_TEMPLATE_TYPES: TODO;
     }
 }
 
 declare global {
     var pb2GameWorld: ClassIdentityProps<"pb2GameWorld"> & {
         controller: pb2Controller | null;
-        /** Type is unknown. One known value: null */
-        spectated_ragdoll: unknown;
+        spectated_ragdoll: pb2Ragdoll | null;
         /** Not known if this is always of type pb2Controller */
         personal_virtual_controller: pb2Controller;
-        /** Type is unknown. One known value: true */
-        isHost: unknown;
-        /** Type is unknown. One known value: 454 */
-        user_uid: unknown;
-        /** Type is unknown. One known value: "jeje" */
-        nickname_tagged: unknown;
+        isHost: boolean;
+        user_uid: number;
+        nickname_tagged: string;
         settings: {
             graphics: {
                 /** Type is unknown. One known value: 2 */
-                build_3d_environment: unknown;
+                build_3d_environment: TODO;
                 /** Type is unknown. One known value: 50 */
-                water_reflections: unknown;
+                water_reflections: TODO;
                 /** Type is unknown. One known value: 2 */
-                spawn_3d_debris: unknown;
+                spawn_3d_debris: TODO;
                 /** Type is unknown. One known value: 1 */
-                ui_scale: unknown;
+                ui_scale: TODO;
             }
             gameplay: {
                 /** Type is unknown. One known value: 3 */
-                gore_and_violence: unknown;
+                gore_and_violence: TODO;
                 /** Type is unknown. One known value: 1 */
-                show_damage_numbers: unknown;
+                show_damage_numbers: TODO;
                 /** Type is unknown. One known value: 2 */
-                replay_my_deaths: unknown;
+                replay_my_deaths: TODO;
                 /** Type is unknown. One known value: 3 */
-                camera: unknown;
+                camera: TODO;
             }
             input: {
                 /** Type is unknown. One known value: 0.125 */
-                screen_cursor_follow_speed: unknown;
+                screen_cursor_follow_speed: TODO;
                 /** Type is unknown. One known value: 0.75 */
-                screen_character_follow_softness: unknown;
+                screen_character_follow_softness: TODO;
             }
             network: {
                 /** Type is unknown. One known value: 61 */
-                world_state_receive_rate: unknown;
+                world_state_receive_rate: TODO;
             }
             __limits_obj: {
                 /** Type is unknown. One known value: undefined */
-                graphics: unknown;
+                graphics: TODO;
                 /** Type is unknown. One known value: undefined */
-                gameplay: unknown;
+                gameplay: TODO;
                 /** Type is unknown. One known value: undefined */
-                input: unknown;
+                input: TODO;
                 /** Type is unknown. One known value: undefined */
-                network: unknown;
+                network: TODO;
             }
         }
-        GetPing: () => unknown;
-        ClearAllKeyActionsAndStates: () => unknown;
+        GetPing: () => TODO;
+        ClearAllKeyActionsAndStates: () => TODO;
         /** @param mode (default=1)  */
-        DebugTraceAnyPressedKeys: (mode?: unknown) => unknown;
+        DebugTraceAnyPressedKeys: (mode?: TODO) => TODO;
         /**
          * @param location_keycode_pair   
          * @param onKeyDown (default=null)   
          * @param onKeyUp (default=null)   
          */
-        SetKeyActions: (location_keycode_pair: unknown, onKeyDown?: unknown, onKeyUp?: unknown) => unknown;
-        GetKeyState: (location_keycode_pair: unknown) => unknown;
-        PauseTrustedControlsTemporarily: () => unknown;
-        FinalizeWorld: () => unknown;
-        FinalizeNewMovables: () => unknown;
+        SetKeyActions: (location_keycode_pair: TODO, onKeyDown?: TODO, onKeyUp?: TODO) => TODO;
+        GetKeyState: (location_keycode_pair: TODO) => TODO;
+        PauseTrustedControlsTemporarily: () => TODO;
+        FinalizeWorld: () => TODO;
+        FinalizeNewMovables: () => TODO;
         /** @param v (default=true)  */
-        EnableSimplePlayerAssignmentLogic: (v?: unknown) => unknown;
+        EnableSimplePlayerAssignmentLogic: (v?: TODO) => TODO;
         /**
          * @param params   
          * @param mode (default='modules')   
          */
-        DownloadModules: (params: unknown, mode?: unknown) => unknown;
-        DownloadTextures: (params: unknown) => unknown;
-        DownloadSounds: (params: unknown) => unknown;
-        DownloadModels: (params: unknown) => unknown;
+        DownloadModules: (params: TODO, mode?: TODO) => TODO;
+        DownloadTextures: (params: TODO) => TODO;
+        DownloadSounds: (params: TODO) => TODO;
+        DownloadModels: (params: TODO) => TODO;
         /** @param dVG (default=true)  */
-        GetAllModules: (dVG?: unknown) => unknown;
-        GetInitialModules: () => unknown;
+        GetAllModules: (dVG?: TODO) => TODO;
+        GetInitialModules: () => TODO;
         /**
          * @param params   
          * @param type (default=undefined)   
          */
-        CreateBoxShape: (params: unknown, type?: unknown) => unknown;
-        /** Type is unknown. One known value: 14542847 */
-        sun_color: unknown;
-        /** Type is unknown. One known value: 14542847 */
-        sky_color: unknown;
-        /** Type is unknown. One known value: 16777215 */
-        default_lamp_color: unknown;
-        /** Type is unknown. One known value: 0.025 */
-        sun_intensity: unknown;
-        /** Type is unknown. One known value: 0.6 */
-        sky_intensity: unknown;
-        /** Type is unknown. One known value: 1 */
-        light_power_multiplier: unknown;
-        /** Type is unknown. One known value: undefined */
-        fog_intensity: unknown;
-        /** Type is unknown. One known value: false */
-        foreground_snow: unknown;
-        /** Type is unknown. One known value: false */
-        background_snow: unknown;
-        /** Type is unknown. One known value: false */
-        snowing: unknown;
-        /** Type is unknown. One known value: false */
-        raining: unknown;
-        /** Type is unknown. One known value: 0.8981455553302768 */
-        wind_amplitude: unknown;
-        /** Type is unknown. One known value: 0.6478880830141565 */
-        wind_random_part: unknown;
-        /** Type is unknown. One known value: 157627 */
-        background_terrain_random_seed: unknown;
-        /** Type is unknown. One known value: 42916 */
-        foreground_terrain_random_seed: unknown;
-        /** Type is unknown. One known value: 21520 */
-        foreground_platform_random_seed: unknown;
-        /** Type is unknown. One known value: 34732 */
-        foliage_random_seed: unknown;
-        /** Type is unknown. One known value: 1 */
-        foliage_shadow_multiplier: unknown;
-        /** Type is unknown. One known value: 1000 */
-        foliage_maximum_animation_distance: unknown;
-        /** Type is unknown. One known value: 150 */
-        sun_shade_x: unknown;
-        /** Type is unknown. One known value: 3000 */
-        sun_shade_y: unknown;
-        /** Type is unknown. One known value: true */
-        terrain_enabled: unknown;
-        /** Type is unknown. One known value: 0.75 */
-        terrain_solve_random_factor: unknown;
-        /** Type is unknown. One known value: 0.05 */
-        terrain_sky_ground_contrast: unknown;
-        /** Type is unknown. One known value: 0.025 */
-        terrain_extra_sky_ground_contrast: unknown;
-        /** Type is unknown. One known value: 4000 */
-        terrain_fractal_cube_size: unknown;
-        /** Type is unknown. One known value: 16 */
-        terrain_level_influence_factor: unknown;
-        /** Type is unknown. One known value: 2000 */
-        terrain_extra_space_x: unknown;
-        /** Type is unknown. One known value: 500 */
-        terrain_extra_space_y: unknown;
-        /** Type is unknown. One known value: true */
-        terrain_force_low_level_terrain: unknown;
-        /** Type is unknown. One known value: 150 */
-        terrain_phys_scale: unknown;
-        /** Type is unknown. One known value: 40 */
-        terrain_size_z: unknown;
-        /** Type is unknown. One known value: undefined */
-        terrain_start_z: unknown;
-        /** Type is unknown. One known value: 0.166 */
-        terrain_post_tesselation_grass_noise: unknown;
-        /** Type is unknown. One known value: 0 */
-        terrain_y_offset: unknown;
-        /** Type is unknown. One known value: true */
-        terrain_remove_floating_islands: unknown;
-        /** Type is unknown. One known value: 24 */
-        terrain_uv_relax_iterations: unknown;
+        CreateBoxShape: (params: TODO, type?: TODO) => TODO;
+        sun_color: number;
+        sky_color: number;
+        default_lamp_color: number;
+        sun_intensity: number;
+        sky_intensity: number;
+        light_power_multiplier: number;
+        fog_intensity: number;
+        foreground_snow: boolean;
+        background_snow: boolean;
+        snowing: boolean;
+        raining: boolean;
+        wind_amplitude: number;
+        wind_random_part: number;
+        background_terrain_random_seed: number;
+        foreground_terrain_random_seed: number;
+        foreground_platform_random_seed: number;
+        foliage_random_seed: number;
+        foliage_shadow_multiplier: number;
+        foliage_maximum_animation_distance: number;
+        sun_shade_x: number;
+        sun_shade_y: number;
+        terrain_enabled: boolean;
+        terrain_solve_random_factor: number;
+        terrain_sky_ground_contrast: number;
+        terrain_extra_sky_ground_contrast: number;
+        terrain_fractal_cube_size: number;
+        terrain_level_influence_factor: number;
+        terrain_extra_space_x: number;
+        terrain_extra_space_y: number;
+        terrain_force_low_level_terrain: boolean;
+        terrain_phys_scale: number;
+        terrain_size_z: number;
+        terrain_start_z: number | undefined;
+        terrain_post_tesselation_grass_noise: number;
+        terrain_y_offset: number;
+        terrain_remove_floating_islands: boolean;
+        terrain_uv_relax_iterations: number;
         /**
          * @param controller   
          * @param soft (default=true)   
          */
-        SetToController: (controller: unknown, soft?: unknown) => unknown;
-        SetToSpectateRagdoll: (ragdoll: unknown) => unknown;
-        SetToFreeCamera: () => unknown;
-        SetDisconnectActionDescriptionStructure: () => unknown;
-        IsHostSpectating: () => unknown;
-        IsWatchingReplay: () => unknown;
-        StartPointOfViewReplay: () => unknown;
-        SetReplayTimeScale: () => unknown;
-        CancelPointOfViewReplay: () => unknown;
-        /** Type is unknown. One known value: true */
-        connected: unknown;
-        Disconnect: () => unknown;
-        /** Type is unknown. One known value: true */
-        hud_visible: unknown;
-        /** Type is unknown. One known value: true */
-        hud_show_character_info: unknown;
-        /** Type is unknown. One known value: [] */
-        hud_custom_bars: unknown;
+        SetToController: (controller: TODO, soft?: TODO) => TODO;
+        SetToSpectateRagdoll: (ragdoll: TODO) => TODO;
+        SetToFreeCamera: () => TODO;
+        SetDisconnectActionDescriptionStructure: () => TODO;
+        IsHostSpectating: () => TODO;
+        IsWatchingReplay: () => TODO;
+        StartPointOfViewReplay: () => TODO;
+        SetReplayTimeScale: () => TODO;
+        CancelPointOfViewReplay: () => TODO;
+        connected: boolean;
+        Disconnect: () => TODO;
+        hud_visible: boolean;
+        hud_show_character_info: boolean;
+        hud_custom_bars: TODO[];
         /**
          * @param text   
          * @param user_uid (default=-2)   
@@ -2492,28 +2481,28 @@ declare global {
          * @param auto_channel_id (default=-1)   
          * @param message_counter (default=-1)   
          */
-        ShowChatMessage: (text: unknown, user_uid?: unknown, channel_id?: unknown, auto_channel_id?: unknown, message_counter?: unknown) => unknown;
-        ShakeScreen: (amount: unknown, from_gun: unknown, ignore_when_speculative_player_enabled: unknown) => unknown;
+        ShowChatMessage: (text: string, user_uid?: TODO, channel_id?: TODO, auto_channel_id?: TODO, message_counter?: TODO) => TODO;
+        ShakeScreen: (amount: number, from_gun: TODO, ignore_when_speculative_player_enabled: TODO) => TODO;
         /** @param amount (default=75)  */
-        FlashScreen: (amount?: unknown) => unknown;
-        GetBounds: () => unknown;
+        FlashScreen: (amount?: number) => TODO;
+        GetBounds: () => TODO;
     }
 }
 
 declare global {
     interface pb2GameplayEffects extends ClassIdentityProps<"pb2GameplayEffects"> {
-        CreateEffect: (params: unknown) => unknown;
-        GetCharacterLogicSpeed: () => unknown;
-        GetWeaponLogicSpeed: () => unknown;
-        GetBulletModifier: (v: unknown, bfz: unknown) => unknown;
-        GetInvisible: () => unknown;
-        readonly ragdoll: unknown;
+        CreateEffect: (params: TODO) => TODO;
+        GetCharacterLogicSpeed: () => TODO;
+        GetWeaponLogicSpeed: () => TODO;
+        GetBulletModifier: (v: TODO, bfz: TODO) => TODO;
+        GetInvisible: () => TODO;
+        readonly ragdoll: TODO;
     }
     interface bsW extends ClassIdentityProps<"bsW"> {
-        time_to_live: unknown;
-        readonly ragdoll: unknown;
-        remove: () => unknown;
-        readonly cloak_intensity: unknown;
+        time_to_live: TODO;
+        readonly ragdoll: TODO;
+        remove: () => TODO;
+        readonly cloak_intensity: TODO;
     }
     var pb2GameplayEffects: ClassIdentityProps<"pb2GameplayEffects"> & {
         types: {
@@ -2540,22 +2529,22 @@ declare global {
 declare global {
     interface pb2Gun extends ClassIdentityProps<"pb2Gun"> {
         /** Type is unknown. One known value: 5 */
-        readonly classid: unknown;
-        x: unknown;
-        y: unknown;
-        readonly tox: unknown;
-        readonly toy: unknown;
+        readonly classid: TODO;
+        x: number;
+        y: number;
+        readonly tox: number;
+        readonly toy: number;
         readonly owner: pb2Character | null;
         readonly owner_entity: pb2Entity | null;
-        readonly gun_type: unknown;
-        readonly gun_type_string: unknown;
-        barrel_spin: unknown;
-        heat: unknown;
-        main_cooldown: unknown;
+        readonly gun_type: TODO;
+        readonly gun_type_string: TODO;
+        barrel_spin: TODO;
+        heat: TODO;
+        main_cooldown: TODO;
         readonly side: 1 | -1;
         Flip: () => void;
-        Hide: () => unknown;
-        Show: () => unknown;
+        Hide: () => TODO;
+        Show: () => TODO;
         /**
          * @param a   
          * @param an   
@@ -2565,16 +2554,16 @@ declare global {
          * @param Xx (default=false)   
          * @param GSPEED (default=Xv)   
          */
-        MoveTo: (a: unknown, an: unknown, offset: unknown, Xv: unknown, dRg: unknown, Xx?: unknown, GSPEED?: unknown) => unknown;
-        GetPhysSpread: (ang: unknown) => unknown;
-        DetachClip: () => unknown;
-        AttachClip: () => unknown;
+        MoveTo: (a: TODO, an: TODO, offset: TODO, Xv: TODO, dRg: TODO, Xx?: TODO, GSPEED?: TODO) => TODO;
+        GetPhysSpread: (ang: TODO) => TODO;
+        DetachClip: () => TODO;
+        AttachClip: () => TODO;
         /**
          * @param dQI (default=false)   
          * @param dQB (default=false)   
          */
-        CanShoot: (dQI?: unknown, dQB?: unknown) => unknown;
-        CanShootUI: () => unknown;
+        CanShoot: (dQI?: TODO, dQB?: TODO) => TODO;
+        CanShootUI: () => TODO;
         /**
          * @param ragdoll   
          * @param dQG   
@@ -2586,269 +2575,257 @@ declare global {
          * @param dQQ (default=null)   
          * @param Yq (default=0)   
          */
-        Fire: (ragdoll: unknown, dQG: unknown, dQN: unknown, GSPEED: unknown, final: unknown, dQO?: unknown, dQP?: unknown, dQQ?: unknown, Yq?: unknown) => unknown;
-        CarryStart: () => unknown;
-        activate: () => unknown;
-        deactivate: () => unknown;
+        Fire: (ragdoll: TODO, dQG: TODO, dQN: TODO, GSPEED: TODO, final: TODO, dQO?: TODO, dQP?: TODO, dQQ?: TODO, Yq?: TODO) => TODO;
+        CarryStart: () => TODO;
+        activate: () => TODO;
+        deactivate: () => TODO;
         /** @param dPA (default=null)  */
-        CarryEnd: (dPA?: unknown) => unknown;
-        remove: () => unknown;
+        CarryEnd: (dPA?: TODO) => TODO;
+        remove: () => TODO;
         readonly is_being_removed: boolean;
         readonly box2d_body: b2Body;
-        main_reload_length: unknown;
-        readonly is_active: unknown;
+        main_reload_length: TODO;
+        readonly is_active: TODO;
         readonly is_being_carried: boolean;
-        readonly attachment_atom: unknown;
-        readonly clip_out: unknown;
-        readonly muzzle_alpha: unknown;
-        readonly scale: unknown;
-        readonly ammo_style: unknown;
-        readonly ammo_style2: unknown;
-        addEventListener: (event_type: unknown, params: unknown) => unknown;
-        removeEventListener: (event_type: unknown, params: unknown) => unknown;
-        readonly is_thrown_by: unknown;
+        readonly attachment_atom: TODO;
+        readonly clip_out: TODO;
+        readonly muzzle_alpha: TODO;
+        readonly scale: TODO;
+        readonly ammo_style: TODO;
+        readonly ammo_style2: TODO;
+        addEventListener: (event_type: TODO, params: TODO) => TODO;
+        removeEventListener: (event_type: TODO, params: TODO) => TODO;
+        readonly is_thrown_by: TODO;
         /** @param id (default=0)  */
-        GetMesh: (id?: number) => unknown;
+        GetMesh: (id?: number) => TODO;
     }
     var pb2Gun: ClassIdentityProps<"pb2Gun"> & {
-        CreateGun: (params: unknown) => unknown;
-        /** Type is unknown. One known value: [] */
-        guns: unknown;
-        /** Type is unknown. One known value: [] */
-        pickable_guns: unknown;
+        CreateGun: (params: TODO) => pb2Gun;
+        guns: pb2Gun[];
+        pickable_guns: TODO[];
     }
 }
 
 declare global {
     interface pb2GunClass extends ClassIdentityProps<"pb2GunClass"> {
-        inventory_slot: unknown;
-        title: unknown;
-        forcars: unknown;
-        cost: unknown;
-        costupg: unknown;
-        two_at_a_time: unknown;
-        stat_count: unknown;
-        spawn_distance: unknown;
-        stat_spread: unknown;
-        stat_bullets: unknown;
-        stat_cursor: unknown;
-        projectile_speed: unknown;
-        projectile_luminescent: unknown;
-        fire_duration: unknown;
-        fire_type: unknown;
-        auto_fire_if_unready: unknown;
-        disabled_laser: unknown;
-        mass_mult: unknown;
-        secondary_mode_toggle: unknown;
-        is_grenade: unknown;
-        is_lightning: unknown;
-        is_rocket: unknown;
-        rocket_direct_damage_mode: unknown;
-        projectile_base_color: unknown;
-        is_railgun: unknown;
-        is_heavy: unknown;
-        is_healgun: unknown;
-        is_repairgun: unknown;
-        is_capturehealgun: unknown;
-        is_radioactive: unknown;
-        is_cloud: unknown;
-        is_snowball: unknown;
-        is_beam: unknown;
-        is_blaster: unknown;
-        is_plasma: unknown;
-        is_nail: unknown;
-        is_raygun: unknown;
-        is_wall_sticking: unknown;
-        rocket_damage: unknown;
-        xpos1: unknown;
-        xpos2: unknown;
-        attachment: unknown;
-        zpos: unknown;
-        zpos2: unknown;
-        len1: unknown;
-        len2: unknown;
-        size1: unknown;
-        size2: unknown;
-        recoil_factor: unknown;
-        chaotic_recoil: unknown;
-        constant_beam_damage: unknown;
-        speed_to_damage_multiplier: unknown;
-        explosion_knock_multiplier: unknown;
-        explosion_hp_damage_multiplier: unknown;
-        max_life_time: unknown;
-        max_life_time_rand: unknown;
-        ammo_bullet_price: unknown;
-        grenade_density: unknown;
-        readonly model_name: unknown;
-        reload_length: unknown;
-        GetProjectileMovieClip: () => unknown;
-        SetProjectileMovieClip: (v: unknown) => unknown;
-        GetStuckProjectileMovieClip: () => unknown;
-        SetStuckProjectileMovieClip: (v: unknown) => unknown;
-        readonly weapon_modes: unknown;
-        SetSoundInfo: (category: unknown, KP: unknown) => unknown;
-        GetSoundInfo: (category: unknown) => unknown;
-        detonates_on_entity_collisions: unknown;
-        detonates_on_organic_entities_only: unknown;
-        ricochet_speed_condition: unknown;
-        ricochet_speed_decay_multiplier: unknown;
-        magazine_reload_duration_multiplier: unknown;
-        stat_power: unknown;
-        muzzle_flash_scale_mult: unknown;
+        inventory_slot: TODO;
+        title: TODO;
+        forcars: TODO;
+        cost: TODO;
+        costupg: TODO;
+        two_at_a_time: TODO;
+        stat_count: TODO;
+        spawn_distance: TODO;
+        stat_spread: TODO;
+        stat_bullets: TODO;
+        stat_cursor: TODO;
+        projectile_speed: number;
+        projectile_luminescent: TODO;
+        fire_duration: TODO;
+        fire_type: TODO;
+        auto_fire_if_unready: TODO;
+        disabled_laser: TODO;
+        mass_mult: number;
+        secondary_mode_toggle: TODO;
+        is_grenade: boolean;
+        is_lightning: boolean;
+        is_rocket: boolean;
+        rocket_direct_damage_mode: TODO;
+        projectile_base_color: TODO;
+        is_railgun: boolean;
+        is_heavy: boolean;
+        is_healgun: boolean;
+        is_repairgun: boolean;
+        is_capturehealgun: boolean;
+        is_radioactive: boolean;
+        is_cloud: boolean;
+        is_snowball: boolean;
+        is_beam: boolean;
+        is_blaster: boolean;
+        is_plasma: boolean;
+        is_nail: boolean;
+        is_raygun: boolean;
+        is_wall_sticking: boolean;
+        rocket_damage: TODO;
+        xpos1: TODO;
+        xpos2: TODO;
+        attachment: TODO;
+        zpos: TODO;
+        zpos2: TODO;
+        len1: TODO;
+        len2: TODO;
+        size1: TODO;
+        size2: TODO;
+        recoil_factor: number;
+        chaotic_recoil: TODO;
+        constant_beam_damage: number;
+        speed_to_damage_multiplier: number;
+        explosion_knock_multiplier: number;
+        explosion_hp_damage_multiplier: number;
+        max_life_time: number;
+        max_life_time_rand: TODO;
+        ammo_bullet_price: TODO;
+        grenade_density: TODO;
+        readonly model_name: TODO;
+        reload_length: number;
+        GetProjectileMovieClip: () => TODO;
+        SetProjectileMovieClip: (v: TODO) => TODO;
+        GetStuckProjectileMovieClip: () => TODO;
+        SetStuckProjectileMovieClip: (v: TODO) => TODO;
+        readonly weapon_modes: TODO;
+        SetSoundInfo: (category: TODO, KP: TODO) => TODO;
+        GetSoundInfo: (category: TODO) => TODO;
+        detonates_on_entity_collisions: boolean;
+        detonates_on_organic_entities_only: boolean;
+        ricochet_speed_condition: TODO;
+        ricochet_speed_decay_multiplier: number;
+        magazine_reload_duration_multiplier: number;
+        stat_power: TODO;
+        muzzle_flash_scale_mult: number;
     }
     var pb2GunClass: ClassIdentityProps<"pb2GunClass"> & {
         /** Type is unknown. One known value: ["gun_pistol","gun_pistol2","gun_rifle","gun_rayrifle","gun_real_rifle","gun_arifle","gun_arifle2","gun_shotgun","gun_raygun","gun_minigun","gun_real_shotgun","gun_railgun","gun_railgun2","gun_sniper","gun_rl","gun_apistol","gun_plasmagun","gun_apistol2","gun_gl","gun_bng","gun_defibrillator","gun_vgun","gun_oicw"] */
-        non_spoiler_weapons: unknown;
+        non_spoiler_weapons: TODO;
         /** Type is unknown. One known value: ["gun_rifle","gun_anti_rifle","gun_pistol","gun_pistol2","gun_rayrifle","gun_arifle2","gun_arifle","gun_real_rifle","gun_shotgun","gun_raygun","gun_minigun","gun_real_shotgun","gun_railgun","gun_shadowstep_railgun","gun_railgun2","gun_sniper","gun_rl","gun_trouble","gun_shaft","gun_rl2","gun_plasmagun","gun_apistol","gun_apistol2","gun_gl","gun_bng","gun_disintegrator","gun_explosiveminigun","gun_firebug","gun_drainlight","gun_drainlight_mg","gun_sniper2","gun_defibrillator","gun_eratrigger","gun_repairgun","gun_dodge","gun_oicw","gun_vgun","gun_nailgun","gun_freezer","gun_pistol3","gun_farheal","gun_flappygun","gun_flame","gun_rl3","gun_vehgun","gun_bng2","gun_chrono","gun_vehcannon","gun_vehcannon2","gun_scout_drone","gun_harasser_drone","gun_cs_vehgun","gun_vehminigun","gun_fttp_vehgun","gun_drain_sniper_rifle"] */
-        registered_weapons: unknown;
-        GetGunClassByString: (str: unknown) => unknown;
-        CachedGunClasses: {
-
-        }
-        CreateCustomGunClass: (bjW: unknown, exC: unknown) => unknown;
+        registered_weapons: TODO;
+        GetGunClassByString: (str: string) => pb2GunClass;
+        CachedGunClasses: {[k: string]: pb2GunClass}
+        CreateCustomGunClass: (bjW: TODO, exC: TODO) => pb2GunClass;
     }
 }
 
 declare global {
     var pb2GunDefinitions: ClassIdentityProps<"pb2GunDefinitions"> & {
-        GetDefinitionFor: (s: unknown) => unknown;
+        GetDefinitionFor: (s: TODO) => TODO;
     }
 }
 
 declare global {
     var pb2GunDisposer: ClassIdentityProps<"pb2GunDisposer"> & {
-        AllowDispose: (g: unknown) => unknown;
-        /** Type is unknown. One known value: 200 */
-        normal_time_to_live: unknown;
+        AllowDispose: (g: TODO) => TODO;
+        normal_time_to_live: number;
         /** Type is unknown. One known value: [] */
-        disposers: unknown;
+        disposers: TODO;
     }
 }
 
 declare global {
     interface pb2HeroInfoBar extends ClassIdentityProps<"pb2HeroInfoBar"> {
         /** Type is unknown. One known value: 30 */
-        readonly classid: unknown;
-        title: unknown;
-        value: unknown;
-        value_max: unknown;
-        value_handicap: unknown;
-        color: unknown;
-        color_border: unknown;
-        color_delta: unknown;
-        color_handicap: unknown;
-        color_title: unknown;
+        readonly classid: TODO;
+        title: TODO;
+        value: TODO;
+        value_max: TODO;
+        value_handicap: TODO;
+        color: TODO;
+        color_border: TODO;
+        color_delta: TODO;
+        color_handicap: TODO;
+        color_title: TODO;
     }
     var pb2HeroInfoBar: {
-        new (params: unknown): pb2HeroInfoBar;
+        new (params: TODO): pb2HeroInfoBar;
         /** Type is unknown. One known value: 4 */
-        TYPE_SERVER_VAR: unknown;
+        TYPE_SERVER_VAR: TODO;
         /** Type is unknown. One known value: 0 */
-        TYPE_SPACER: unknown;
+        TYPE_SPACER: TODO;
     }
 }
 
 declare global {
     interface pb2HighRangeColor extends ClassIdentityProps<"pb2HighRangeColor"> {
-        r: unknown;
-        g: unknown;
-        b: unknown;
-        clone: () => unknown;
-        addRGB: (_r: unknown, _g: unknown, _b: unknown) => unknown;
+        r: number;
+        g: number;
+        b: number;
+        clone: () => pb2HighRangeColor;
+        addRGB: (_r: number, _g: number, _b: number) => TODO;
         /** @param u (default=0xffffff)  */
-        from_uint: (u?: unknown) => unknown;
-        /** Type is unknown. One known value: 0 */
-        _uint: unknown;
-        limit: () => unknown;
-        multiply: (num: unknown) => unknown;
-        multiplyColor: (c: unknown) => unknown;
-        add: (num: unknown) => unknown;
-        addColor: (c: unknown) => unknown;
-        average: () => unknown;
-        GetAverageValue: () => unknown;
-        rand: () => unknown;
-        setRGB: (_r: unknown, _g: unknown, _b: unknown) => unknown;
+        from_uint: (u?: number) => TODO;
+        _uint: number;
+        limit: () => TODO;
+        multiply: (num: number) => TODO;
+        multiplyColor: (c: TODO) => TODO;
+        add: (num: number) => TODO;
+        addColor: (c: TODO) => TODO;
+        average: () => TODO;
+        GetAverageValue: () => TODO;
+        rand: () => TODO;
+        setRGB: (_r: number, _g: number, _b: number) => TODO;
     }
     var pb2HighRangeColor: {
         /** @param u (default=0xffffff)  */
-        new (u?: unknown): pb2HighRangeColor;
+        new (u?: number): pb2HighRangeColor;
 
     }
 }
 
 declare global {
     interface pb2Light extends ClassIdentityProps<"pb2Light"> {
-        x: unknown;
-        y: unknown;
-        z: unknown;
-        readonly is_static: unknown;
-        color: unknown;
-        color_high_range: unknown;
-        power: unknown;
-        scale: unknown;
-        readonly flare: unknown;
-        remove: () => unknown;
-        /** Type is unknown. One known value: true */
-        readonly is_being_removed: unknown;
-        SetPosition: (x: unknown, y: unknown, z: unknown) => unknown;
-        UpdateMeshFlareColorAndScale: () => unknown;
-        angular_range_from: unknown;
-        angular_range_length: unknown;
-        attachment: unknown;
-        attachment_limb_id: unknown;
-        attachment_position: unknown;
-        attachment_rotation: unknown;
+        x: number;
+        y: number;
+        z: number;
+        readonly is_static: boolean;
+        color: TODO;
+        color_high_range: TODO;
+        power: number;
+        scale: number;
+        readonly flare: boolean;
+        remove: () => TODO;
+        readonly is_being_removed: boolean;
+        SetPosition: (x: number, y: number, z: number) => TODO;
+        UpdateMeshFlareColorAndScale: () => TODO;
+        angular_range_from: TODO;
+        angular_range_length: TODO;
+        attachment: TODO;
+        attachment_limb_id: TODO;
+        attachment_position: TODO;
+        attachment_rotation: TODO;
     }
     var pb2Light: ClassIdentityProps<"pb2Light"> & {
-        /** Type is unknown. One known value: [] */
-        lights_dynamic: unknown;
-        /** Type is unknown. One known value: [] */
-        lights: unknown;
-        CreateLight: (params: unknown) => unknown;
+        lights_dynamic: TODO[];
+        lights: pb2Light[];
+        CreateLight: (params: TODO) => pb2Light;
     }
 }
 
 declare global {
     var pb2Math: {
-        SegmentBBoxIntersection: (x: unknown, y: unknown, tox: unknown, toy: unknown, minx: unknown, miny: unknown, maxx: unknown, maxy: unknown) => unknown;
-        GetProjectionOnSegment: (p: unknown, v: unknown, w: unknown) => unknown;
-        GetProjectionOnSegmentTo: (p: unknown, v: unknown, w: unknown, ret: unknown) => unknown;
-        Dist2D: (x1: unknown, y1: unknown, x2: unknown, y2: unknown) => unknown;
-        Dist3D: (x1: unknown, y1: unknown, z1: unknown, x2: unknown, y2: unknown, z2: unknown) => unknown;
-        Dist2D_Vector: (tox: unknown, toy: unknown) => unknown;
-        inDist2D: (x1: unknown, y1: unknown, x2: unknown, y2: unknown, rad: unknown) => unknown;
+        SegmentBBoxIntersection: (x: number, y: number, tox: number, toy: number, minx: number, miny: number, maxx: number, maxy: number) => TODO;
+        GetProjectionOnSegment: (p: TODO, v: TODO, w: TODO) => TODO;
+        GetProjectionOnSegmentTo: (p: TODO, v: TODO, w: TODO, ret: TODO) => TODO;
+        Dist2D: (x1: number, y1: number, x2: number, y2: number) => number;
+        Dist3D: (x1: number, y1: number, z1: number, x2: number, y2: number, z2: number) => number;
+        Dist2D_Vector: (tox: number, toy: number) => number;
+        inDist2D: (x1: number, y1: number, x2: number, y2: number, rad: number) => TODO;
     }
 }
 
 declare global {
     var pb2Multiplayer: ClassIdentityProps<"pb2Multiplayer"> & {
-        /** Type is unknown. One known value: false */
-        enabled: unknown;
+        enabled: boolean;
         /** Type is unknown. One known value: -1 */
-        match_uid: unknown;
-        /** Type is unknown. One known value: -1 */
-        match_host_user_uid: unknown;
+        match_uid: TODO;
+        match_host_user_uid: number;
         /** Type is unknown. One known value: "???" */
-        match_instance_key: unknown;
-        /** Type is unknown. One known value: -1 */
-        initiator_user_uid: unknown;
-        SetMatchProperty: (property: unknown, value: unknown) => unknown;
-        GetMatchInfoObject: () => unknown;
-        AddMatchTag: (tag: unknown) => unknown;
-        GetAllPlayerConnectionsAndSelf: () => unknown;
+        match_instance_key: TODO;
+        initiator_user_uid: number;
+        SetMatchProperty: (property: TODO, value: TODO) => TODO;
+        GetMatchInfoObject: () => TODO;
+        AddMatchTag: (tag: TODO) => TODO;
+        GetAllPlayerConnectionsAndSelf: () => TODO;
     }
 }
 
 declare global {
     var pb2OverheadHUD: ClassIdentityProps<"pb2OverheadHUD"> & {
         /** Type is unknown. One known value: 0 */
-        OVERHEAD_VISIBILITY_HIDDEN: unknown;
+        OVERHEAD_VISIBILITY_HIDDEN: TODO;
         /** Type is unknown. One known value: 1 */
-        OVERHEAD_VISIBILITY_TEAMMATES_ONLY: unknown;
+        OVERHEAD_VISIBILITY_TEAMMATES_ONLY: TODO;
         /** Type is unknown. One known value: 2 */
-        OVERHEAD_VISIBILITY_EVERYONE: unknown;
+        OVERHEAD_VISIBILITY_EVERYONE: TODO;
         /** Type is unknown. One known value: ["pb2OverheadHUD.OVERHEAD_VISIBILITY_HIDDEN","pb2OverheadHUD.OVERHEAD_VISIBILITY_TEAMMATES_ONLY","pb2OverheadHUD.OVERHEAD_VISIBILITY_EVERYONE"] */
-        ALL_TYPES: unknown;
+        ALL_TYPES: TODO;
     }
 }
 
@@ -2858,21 +2835,21 @@ declare global {
          * @param params   
          * @param fbl (default=false)   
          */
-        CreateParticleSystem: (params: unknown, fbl?: unknown) => unknown;
+        CreateParticleSystem: (params: TODO, fbl?: TODO) => TODO;
         /** Type is unknown. One known value: 0 */
-        TYPE_TELEPORT: unknown;
+        TYPE_TELEPORT: TODO;
         /** Type is unknown. One known value: 1 */
-        TYPE_TACTICAL_PING: unknown;
+        TYPE_TACTICAL_PING: TODO;
     }
 }
 
 declare global {
     interface pb2PendingJoinRequest extends ClassIdentityProps<"pb2PendingJoinRequest"> {
-        readonly user_uid: unknown;
-        readonly connection_uid: unknown;
-        readonly response_sent: unknown;
-        accept: () => unknown;
-        reject: (message: unknown) => unknown;
+        readonly user_uid: number;
+        readonly connection_uid: TODO;
+        readonly response_sent: TODO;
+        accept: () => TODO;
+        reject: (message: TODO) => TODO;
         /**
          * @param new_match_uid   
          * @param new_match_instance_key   
@@ -2880,48 +2857,48 @@ declare global {
          * @param new_match_password (default='')   
          * @param message (default='')   
          */
-        redirect: (new_match_uid: unknown, new_match_instance_key: unknown, new_match_host_user_uid: unknown, new_match_password?: unknown, message?: unknown) => unknown;
-        readonly nickname_tagged: unknown;
-        readonly skin_info: unknown;
+        redirect: (new_match_uid: TODO, new_match_instance_key: TODO, new_match_host_user_uid: TODO, new_match_password?: TODO, message?: TODO) => TODO;
+        readonly nickname_tagged: TODO;
+        readonly skin_info: TODO;
     }
     
 }
 
 declare global {
     interface pb2PlayerConnection extends ClassIdentityProps<"pb2PlayerConnection"> {
-        readonly controller: unknown;
-        readonly GetPing: unknown;
-        readonly spectated_ragdoll: unknown;
-        readonly personal_virtual_controller: unknown;
-        readonly isHost: unknown;
-        readonly StartPointOfViewReplay: unknown;
-        readonly IsWatchingReplay: unknown;
-        readonly CancelPointOfViewReplay: unknown;
-        readonly SetReplayTimeScale: unknown;
-        readonly GetReplayTimeScale: unknown;
-        readonly user_uid: unknown;
-        readonly connection_uid: unknown;
-        readonly SetDisconnectActionDescriptionStructure: unknown;
-        readonly Disconnect: unknown;
-        readonly SetToController: unknown;
-        readonly SetToSpectateRagdoll: unknown;
-        readonly nickname_tagged: unknown;
-        readonly skin_info: unknown;
-        controls_trusted: unknown;
-        hud_visible: unknown;
-        hud_show_character_info: unknown;
-        hud_custom_bars: unknown;
-        readonly settings: unknown;
-        readonly ShowChatMessage: unknown;
-        readonly ShakeScreen: unknown;
-        readonly FlashScreen: unknown;
-        readonly SetToFreeCamera: unknown;
-        readonly is_being_removed: unknown;
-        readonly PauseTrustedControlsTemporarily: unknown;
-        readonly SetKeyActions: unknown;
-        readonly ClearAllKeyActionsAndStates: unknown;
-        readonly GetKeyState: unknown;
-        readonly DebugTraceAnyPressedKeys: unknown;
+        readonly controller: TODO;
+        readonly GetPing: TODO;
+        readonly spectated_ragdoll: TODO;
+        readonly personal_virtual_controller: TODO;
+        readonly isHost: TODO;
+        readonly StartPointOfViewReplay: TODO;
+        readonly IsWatchingReplay: TODO;
+        readonly CancelPointOfViewReplay: TODO;
+        readonly SetReplayTimeScale: TODO;
+        readonly GetReplayTimeScale: TODO;
+        readonly user_uid: TODO;
+        readonly connection_uid: TODO;
+        readonly SetDisconnectActionDescriptionStructure: TODO;
+        readonly Disconnect: TODO;
+        readonly SetToController: TODO;
+        readonly SetToSpectateRagdoll: TODO;
+        readonly nickname_tagged: TODO;
+        readonly skin_info: TODO;
+        controls_trusted: TODO;
+        hud_visible: TODO;
+        hud_show_character_info: TODO;
+        hud_custom_bars: TODO;
+        readonly settings: TODO;
+        readonly ShowChatMessage: TODO;
+        readonly ShakeScreen: TODO;
+        readonly FlashScreen: TODO;
+        readonly SetToFreeCamera: TODO;
+        readonly is_being_removed: TODO;
+        readonly PauseTrustedControlsTemporarily: TODO;
+        readonly SetKeyActions: TODO;
+        readonly ClearAllKeyActionsAndStates: TODO;
+        readonly GetKeyState: TODO;
+        readonly DebugTraceAnyPressedKeys: TODO;
     }
     
 }
@@ -2929,71 +2906,70 @@ declare global {
 declare global {
     interface pb2RadioactiveCloud extends ClassIdentityProps<"pb2RadioactiveCloud"> {
         /** Type is unknown. One known value: 25 */
-        readonly classid: unknown;
-        readonly x: unknown;
-        readonly y: unknown;
-        readonly radius: unknown;
+        readonly classid: TODO;
+        readonly x: number;
+        readonly y: number;
+        readonly radius: number;
     }
     var pb2RadioactiveCloud: ClassIdentityProps<"pb2RadioactiveCloud"> & {
-        /** Type is unknown. One known value: [] */
-        clouds: unknown;
+        clouds: pb2RadioactiveCloud[];
     }
 }
 
 declare global {
     interface pb2Ragdoll extends ClassIdentityProps<"pb2Ragdoll"> {
         /** Type is unknown. One known value: 3 */
-        readonly classid: unknown;
-        readonly x: unknown;
-        readonly y: unknown;
-        readonly tox: unknown;
-        readonly toy: unknown;
-        dimmed: unknown;
+        readonly classid: TODO;
+        readonly x: number;
+        readonly y: number;
+        readonly tox: number;
+        readonly toy: number;
+        dimmed: TODO;
         readonly owner_character: pb2Character | null;
         /**
          * @param eVZ   
          * @param beh   
          * @param eWu (default=eVZ.GetPosition()   
          */
-        DealLimbDamage: (eVZ: unknown, beh: unknown, eWu?: unknown) => unknown;
-        HealGunApplied: (self: unknown) => unknown;
-        CaptureHealGunApplied: (by: unknown) => unknown;
-        SetName: (eUZ: unknown) => unknown;
-        GetName: () => unknown;
+        DealLimbDamage: (eVZ: TODO, beh: TODO, eWu?: TODO) => TODO;
+        HealGunApplied: (self: TODO) => TODO;
+        CaptureHealGunApplied: (by: TODO) => TODO;
+        SetName: (eUZ: TODO) => TODO;
+        GetName: () => TODO;
         /**
          * @param fj   
          * @param eFv (default=-1)   
          */
-        MeltDown: (fj: unknown, eFv?: unknown) => unknown;
-        ExpireAllHintObjects: () => unknown;
-        readonly side: unknown;
-        Flip: () => unknown;
-        remove: () => unknown;
-        readonly is_being_removed: unknown;
-        SetVision: (ID: unknown) => unknown;
-        GetVision: () => unknown;
-        GetBlindness: () => unknown;
-        SetBlindness: (v: unknown) => unknown;
-        GetDeafness: () => unknown;
-        SetDeafness: (v: unknown) => unknown;
-        hp_head: unknown;
-        hp_body: unknown;
-        hp_arms: unknown;
-        hp_legs: unknown;
-        GetAtomsTotal: () => unknown;
-        readonly gameplay_effects: unknown;
-        ClearBulletHoles: () => unknown;
-        UsesGrapplingHook: () => unknown;
-        readonly active_grappling_hook: unknown;
-        DetachFromRope: (collapse: unknown) => unknown;
-        hud_custom_bars: unknown;
-        readonly enforce_skin_limitations: unknown;
-        readonly use_skin_properties: unknown;
-        readonly team: unknown;
-        SetBoostStyle: (v: unknown) => unknown;
-        SetSwordsStyle: (v: unknown) => unknown;
-        readonly style_boost: unknown;
-        GetSwordsStyleID: () => unknown;
+        MeltDown: (fj: TODO, eFv?: TODO) => TODO;
+        ExpireAllHintObjects: () => TODO;
+        readonly side: TODO;
+        Flip: () => TODO;
+        remove: () => TODO;
+        readonly is_being_removed: boolean;
+        SetVision: (ID: TODO) => TODO;
+        GetVision: () => TODO;
+        GetBlindness: () => TODO;
+        SetBlindness: (v: TODO) => TODO;
+        GetDeafness: () => TODO;
+        SetDeafness: (v: TODO) => TODO;
+        hp_head: number;
+        hp_body: number;
+        hp_arms: number;
+        hp_legs: number;
+        GetAtomsTotal: () => TODO;
+        readonly gameplay_effects: TODO;
+        ClearBulletHoles: () => TODO;
+        UsesGrapplingHook: () => TODO;
+        readonly active_grappling_hook: TODO;
+        DetachFromRope: (collapse: TODO) => TODO;
+        hud_custom_bars: TODO;
+        readonly enforce_skin_limitations: TODO;
+        readonly use_skin_properties: TODO;
+        readonly team: TODO;
+        SetBoostStyle: (v: TODO) => TODO;
+        SetSwordsStyle: (v: TODO) => TODO;
+        readonly style_boost: TODO;
+        GetSwordsStyleID: () => TODO;
         /**
          * @param dx   
          * @param dy   
@@ -3003,110 +2979,108 @@ declare global {
          * @param beF (default=false)   
          * @param ben (default=null)   
          */
-        Teleport: (dx: unknown, dy: unknown, dJP?: unknown, dJQ?: unknown, beD?: unknown, beF?: unknown, ben?: unknown) => unknown;
+        Teleport: (dx: number, dy: number, dJP?: TODO, dJQ?: TODO, beD?: TODO, beF?: TODO, ben?: TODO) => TODO;
         /**
          * @param sound_name   
          * @param eVL (default=false)   
          * @param cAr (default=false)   
          */
-        Speak: (sound_name: unknown, eVL?: unknown, cAr?: unknown) => unknown;
-        damage_projectiles: unknown;
-        damage_explosions: unknown;
-        damage_impacts: unknown;
-        damage_radiation: unknown;
-        damage_liquids: unknown;
-        mobility: unknown;
-        readonly scale: unknown;
-        readonly voice_preset_pitch: unknown;
-        voice_pitch: unknown;
-        readonly normalize_all_voice_lines_volume: unknown;
-        readonly normalize_custom_voice_lines_volume: unknown;
+        Speak: (sound_name: TODO, eVL?: TODO, cAr?: TODO) => TODO;
+        damage_projectiles: TODO;
+        damage_explosions: TODO;
+        damage_impacts: TODO;
+        damage_radiation: TODO;
+        damage_liquids: TODO;
+        mobility: TODO;
+        readonly scale: TODO;
+        readonly voice_preset_pitch: TODO;
+        voice_pitch: TODO;
+        readonly normalize_all_voice_lines_volume: TODO;
+        readonly normalize_custom_voice_lines_volume: TODO;
         /** id is one of the atom id static consts defined on pb2Ragdoll */
         GetAtom: (id: number) => pb2Atom | null;
         /** @param id (default=0)  */
-        GetMesh: (id?: number) => unknown;
+        GetMesh: (id?: number) => TODO;
     }
     var pb2Ragdoll: ClassIdentityProps<"pb2Ragdoll"> & {
-        CreateRagdoll: (params: unknown) => unknown;
-        CreateRagdollComplete: (p: unknown) => unknown;
+        CreateRagdoll: (params: TODO) => pb2Ragdoll;
+        CreateRagdollComplete: (p: TODO) => pb2Ragdoll;
         /** Type is unknown. One known value: 0 */
-        b_pelvis: unknown;
+        b_pelvis: TODO;
         /** Type is unknown. One known value: 1 */
-        b_leg1: unknown;
+        b_leg1: TODO;
         /** Type is unknown. One known value: 2 */
-        b_leg2: unknown;
+        b_leg2: TODO;
         /** Type is unknown. One known value: 3 */
-        b_arm1: unknown;
+        b_arm1: TODO;
         /** Type is unknown. One known value: 4 */
-        b_arm2: unknown;
+        b_arm2: TODO;
         /** Type is unknown. One known value: 5 */
-        b_body: unknown;
+        b_body: TODO;
         /** Type is unknown. One known value: 6 */
-        b_head_start: unknown;
+        b_head_start: TODO;
         /** Type is unknown. One known value: 7 */
-        b_head_end: unknown;
+        b_head_end: TODO;
         /** Type is unknown. One known value: 8 */
-        b_body_brk1: unknown;
+        b_body_brk1: TODO;
         /** Type is unknown. One known value: 9 */
-        b_body_brk2: unknown;
+        b_body_brk2: TODO;
         /** Type is unknown. One known value: [true,true,false,false,true,true,true,true,true,true,true,true,true,false,false,false,false,false,false,false,false,true] */
-        mc_body_top_pattern: unknown;
+        mc_body_top_pattern: TODO;
         /** Type is unknown. One known value: 0 */
-        mc_head: unknown;
+        mc_head: TODO;
         /** Type is unknown. One known value: 1 */
-        mc_head_broken: unknown;
+        mc_head_broken: TODO;
         /** Type is unknown. One known value: 2 */
-        mc_pelvis: unknown;
+        mc_pelvis: TODO;
         /** Type is unknown. One known value: 3 */
-        mc_pelvis_broken: unknown;
+        mc_pelvis_broken: TODO;
         /** Type is unknown. One known value: 4 */
-        mc_body: unknown;
+        mc_body: TODO;
         /** Type is unknown. One known value: 5 */
-        mc_arm1a: unknown;
+        mc_arm1a: TODO;
         /** Type is unknown. One known value: 6 */
-        mc_arm1b: unknown;
+        mc_arm1b: TODO;
         /** Type is unknown. One known value: 7 */
-        mc_arm1b_broken: unknown;
+        mc_arm1b_broken: TODO;
         /** Type is unknown. One known value: 8 */
-        mc_arm1b_sword: unknown;
+        mc_arm1b_sword: TODO;
         /** Type is unknown. One known value: 9 */
-        mc_arm2a: unknown;
+        mc_arm2a: TODO;
         /** Type is unknown. One known value: 10 */
-        mc_arm2b: unknown;
+        mc_arm2b: TODO;
         /** Type is unknown. One known value: 11 */
-        mc_arm2b_broken: unknown;
+        mc_arm2b_broken: TODO;
         /** Type is unknown. One known value: 12 */
-        mc_arm2b_sword: unknown;
+        mc_arm2b_sword: TODO;
         /** Type is unknown. One known value: 13 */
-        mc_leg1a: unknown;
+        mc_leg1a: TODO;
         /** Type is unknown. One known value: 14 */
-        mc_leg1b: unknown;
+        mc_leg1b: TODO;
         /** Type is unknown. One known value: 15 */
-        mc_leg1c: unknown;
+        mc_leg1c: TODO;
         /** Type is unknown. One known value: 16 */
-        mc_leg1b_broken: unknown;
+        mc_leg1b_broken: TODO;
         /** Type is unknown. One known value: 17 */
-        mc_leg2a: unknown;
+        mc_leg2a: TODO;
         /** Type is unknown. One known value: 18 */
-        mc_leg2b: unknown;
+        mc_leg2b: TODO;
         /** Type is unknown. One known value: 19 */
-        mc_leg2c: unknown;
+        mc_leg2c: TODO;
         /** Type is unknown. One known value: 20 */
-        mc_leg2b_broken: unknown;
+        mc_leg2b_broken: TODO;
         /** Type is unknown. One known value: 21 */
-        mc_body_broken: unknown;
-        /** Type is unknown. One known value: [] */
-        ragdolls: unknown;
+        mc_body_broken: TODO;
+        ragdolls: pb2Ragdoll[];
     }
 }
 
 declare global {
     var pb2RagdollDisposer: ClassIdentityProps<"pb2RagdollDisposer"> & {
-        AllowDispose: (r: unknown) => unknown;
-        /** Type is unknown. One known value: 200 */
-        normal_time_to_live: unknown;
+        AllowDispose: (r: TODO) => TODO;
+        normal_time_to_live: number;
         /** Type is unknown. One known value: [] */
-        disposers: unknown;
+        disposers: TODO;
     }
 }
 
@@ -3114,44 +3088,43 @@ declare global {
     interface pb2Region extends ClassIdentityProps<"pb2Region"> {
         readonly x: number;
         readonly y: number;
-        readonly w: unknown;
-        readonly h: unknown;
+        readonly w: number;
+        readonly h: number;
         /** Type is unknown. One known value: 101 */
-        readonly classid: unknown;
+        readonly classid: TODO;
         /** @param recursive (default=true)  */
-        remove: (recursive?: unknown) => unknown;
-        attached_to: unknown;
-        readonly p: unknown;
-        readonly box2d_body: unknown;
+        remove: (recursive?: TODO) => TODO;
+        attached_to: TODO;
+        readonly p: TODO;
+        readonly box2d_body: b2Body;
         readonly minx: number;
         readonly miny: number;
         readonly maxx: number;
         readonly maxy: number;
-        readonly corner: unknown;
-        readonly is_quad: unknown;
+        readonly corner: TODO;
+        readonly is_quad: TODO;
         /** Type is unknown. One known value: 5 */
-        readonly type: unknown;
-        readonly _childs: unknown;
+        readonly type: TODO;
+        readonly _childs: TODO;
         AddPosition: (x: number, y: number) => void;
-        SetPosition: (x: unknown, y: unknown) => unknown;
+        SetPosition: (x: number, y: number) => TODO;
         /**
          * @param w (default=undefined)   
          * @param h (default=undefined)   
          */
-        SetSize: (w?: unknown, h?: unknown) => unknown;
+        SetSize: (w?: number, h?: number) => TODO;
         /**
          * @param x   
          * @param y   
          * @param w (default=undefined)   
          * @param h (default=undefined)   
          */
-        SetPositionAndSize: (x: unknown, y: unknown, w?: unknown, h?: unknown) => unknown;
-        CopyPositionAndSizeFrom: (cP: unknown) => unknown;
-        readonly collected_entities_counter: unknown;
+        SetPositionAndSize: (x: number, y: number, w?: number, h?: number) => TODO;
+        CopyPositionAndSizeFrom: (cP: TODO) => TODO;
+        readonly collected_entities_counter: TODO;
     }
     var pb2Region: ClassIdentityProps<"pb2Region"> & {
-        /** Type is unknown. One known value: [] */
-        regions: unknown;
+        regions: pb2Region[];
     }
 }
 
@@ -3159,32 +3132,32 @@ declare global {
     /** the class is actually called lo but it's renamed here for obvious reasons */
     interface pb2Rope extends ClassIdentityProps<"lo"> {
         /** Type is unknown. One known value: 23 */
-        readonly classid: unknown;
-        readonly ragdoll: unknown;
-        readonly is_collapsing: unknown;
-        readonly held_ragdoll: unknown;
-        readonly remote_body: unknown;
+        readonly classid: TODO;
+        readonly ragdoll: TODO;
+        readonly is_collapsing: boolean;
+        readonly held_ragdoll: TODO;
+        readonly remote_body: TODO;
     }
     
 }
 
 declare global {
     interface pb2Shape extends ClassIdentityProps<"pb2Shape"> {
-        readonly x: unknown;
-        readonly y: unknown;
-        readonly w: unknown;
-        readonly h: unknown;
+        readonly x: number;
+        readonly y: number;
+        readonly w: number;
+        readonly h: number;
         /** Type is unknown. One known value: 6 */
-        readonly classid: unknown;
-        SetSpeed: (v: unknown) => unknown;
+        readonly classid: TODO;
+        SetSpeed: (v: number) => TODO;
         /**
          * @param x   
          * @param y   
          * @param yg (default=null)   
          */
-        StartMove: (x: unknown, y: unknown, yg?: unknown) => unknown;
+        StartMove: (x: number, y: number, yg?: TODO) => TODO;
         /** @param recursive (default=true)  */
-        remove: (recursive?: unknown) => unknown;
+        remove: (recursive?: TODO) => TODO;
         /**
          * @param bN   
          * @param pos (default=null)   
@@ -3194,53 +3167,53 @@ declare global {
          * @param fE (default=0)   
          * @param lA (default=null)   
          */
-        DealDamage: (bN: unknown, pos?: unknown, bhS?: unknown, Ai?: unknown, fG?: unknown, fE?: unknown, lA?: unknown) => unknown;
-        attached_to: unknown;
-        readonly p: unknown;
-        readonly normal: unknown;
-        readonly hea: unknown;
-        readonly box2d_body: unknown;
-        readonly minx: unknown;
-        readonly miny: unknown;
-        readonly maxx: unknown;
-        readonly maxy: unknown;
-        readonly corner: unknown;
-        readonly is_quad: unknown;
-        readonly type: unknown;
-        readonly frozen_spots: unknown;
-        readonly _childs: unknown;
-        SingleTracePoint: (x: unknown, y: unknown) => unknown;
-        readonly see_through: unknown;
-        SetAIBreakingAllowed: (v: unknown) => unknown;
-        SetHitpointsIfPossible: (v: unknown) => unknown;
+        DealDamage: (bN: TODO, pos?: TODO, bhS?: TODO, Ai?: TODO, fG?: TODO, fE?: TODO, lA?: TODO) => TODO;
+        attached_to: TODO;
+        readonly p: TODO;
+        readonly normal: TODO;
+        readonly hea: TODO;
+        readonly box2d_body: b2Body;
+        readonly minx: number;
+        readonly miny: number;
+        readonly maxx: number;
+        readonly maxy: number;
+        readonly corner: TODO;
+        readonly is_quad: TODO;
+        readonly type: TODO;
+        readonly frozen_spots: TODO;
+        readonly _childs: TODO;
+        SingleTracePoint: (x: number, y: number) => TODO;
+        readonly see_through: TODO;
+        SetAIBreakingAllowed: (v: boolean) => void;
+        SetHitpointsIfPossible: (v: number) => TODO;
         /** @param id (default=0)  */
-        GetMesh: (id?: 0) => unknown;
+        GetMesh: (id?: 0) => TODO;
     }
     var pb2Shape: ClassIdentityProps<"pb2Shape"> & {
         /** Type is unknown. One known value: 0 */
-        WALL: unknown;
+        WALL: TODO;
         /** Type is unknown. One known value: 2 */
-        MOVABLE: unknown;
+        MOVABLE: TODO;
         /** Type is unknown. One known value: 1 */
-        BACKGROUND: unknown;
+        BACKGROUND: TODO;
         /** Type is unknown. One known value: 4 */
-        WATER: unknown;
+        WATER: TODO;
         /** Type is unknown. One known value: 3 */
-        CORNER_LEFT_BOTTOM: unknown;
+        CORNER_LEFT_BOTTOM: TODO;
         /** Type is unknown. One known value: 1 */
-        CORNER_LEFT_TOP: unknown;
+        CORNER_LEFT_TOP: TODO;
         /** Type is unknown. One known value: 2 */
-        CORNER_RIGHT_TOP: unknown;
+        CORNER_RIGHT_TOP: TODO;
         /** Type is unknown. One known value: 4 */
-        CORNER_RIGHT_BOTTOM: unknown;
+        CORNER_RIGHT_BOTTOM: TODO;
         /** Type is unknown. One known value: 3 */
-        RIGID: unknown;
+        RIGID: TODO;
         /** Type is unknown. One known value: 5 */
-        REGION: unknown;
+        REGION: TODO;
         /** Type is unknown. One known value: 0 */
-        CORNER_NONE: unknown;
+        CORNER_NONE: TODO;
         /** Type is unknown. One known value: ["pb2Shape.WALL","pb2Shape.BACKGROUND","pb2Shape.MOVABLE","pb2Shape.RIGID","pb2Shape.WATER","pb2Shape.REGION","pb2Shape.CORNER_NONE","pb2Shape.CORNER_LEFT_TOP","pb2Shape.CORNER_RIGHT_TOP","pb2Shape.CORNER_LEFT_BOTTOM","pb2Shape.CORNER_RIGHT_BOTTOM"] */
-        ALL_TYPES: unknown;
+        ALL_TYPES: TODO;
         world_shapes: pb2Shape[];
         world_shapes_walls: (pb2Shape & {type: typeof pb2Shape.WALL })[];
         world_shapes_bgs: (pb2Shape & {type: typeof pb2Shape.BACKGROUND })[];
@@ -3253,8 +3226,8 @@ declare global {
          * @param y   
          * @param eLd (default=null)   
          */
-        SnowCanReach: (x: unknown, y: unknown, eLd?: unknown) => unknown;
-        CountShapesInRect: (yJ: unknown, x: unknown, y: unknown, _width: unknown, _height: unknown, world_shapes_collide: unknown) => unknown;
+        SnowCanReach: (x: number, y: number, eLd?: TODO) => boolean;
+        CountShapesInRect: (yJ: TODO, x: number, y: number, _width: number, _height: number, world_shapes_collide: TODO) => number;
         /**
          * @param x   
          * @param y   
@@ -3263,32 +3236,32 @@ declare global {
          * @param where   
          * @param QI (default=true)   
          */
-        isRayTraceable: (x: unknown, y: unknown, tox: unknown, toy: unknown, where: unknown, QI?: unknown) => unknown;
-        isLineTraceable: (x: unknown, y: unknown, tox: unknown, toy: unknown, where: unknown) => unknown;
-        GetShapeAtPoint: (x: unknown, y: unknown) => unknown;
-        RaycastResult: (x: unknown, y: unknown, tox: unknown, toy: unknown, where: unknown) => unknown;
+        isRayTraceable: (x: number, y: number, tox: number, toy: number, where: TODO, QI?: TODO) => boolean;
+        isLineTraceable: (x: number, y: number, tox: number, toy: number, where: TODO) => boolean;
+        GetShapeAtPoint: (x: number, y: number) => TODO;
+        RaycastResult: (x: number, y: number, tox: number, toy: number, where: TODO) => TODO;
         /**
          * @param x   
          * @param y   
          * @param eLv (default=true)   
          */
-        isWaterAtPoint: (x: unknown, y: unknown, eLv?: unknown) => unknown;
+        isWaterAtPoint: (x: number, y: number, eLv?: TODO) => boolean;
         /**
          * @param x   
          * @param y   
          * @param where (default=null)   
          * @param QI (default=true)   
          */
-        isShapesAtPoint: (x: unknown, y: unknown, where?: unknown, QI?: unknown) => unknown;
+        isShapesAtPoint: (x: number, y: number, where?: TODO, QI?: TODO) => boolean;
     }
 }
 
 declare global {
     interface pb2ShieldZone extends ClassIdentityProps<"pb2ShieldZone"> {
         /** Type is unknown. One known value: 21 */
-        readonly classid: unknown;
-        readonly x: unknown;
-        readonly y: unknown;
+        readonly classid: TODO;
+        readonly x: number;
+        readonly y: number;
         /**
          * @param bN   
          * @param xx   
@@ -3296,83 +3269,81 @@ declare global {
          * @param _boD   
          * @param Ox (default=null)   
          */
-        DealDamage: (bN: unknown, xx: unknown, yy: unknown, _boD: unknown, Ox?: unknown) => unknown;
-        Heal: (bN: unknown) => unknown;
-        MoveTo: (xx: unknown, yy: unknown) => unknown;
+        DealDamage: (bN: TODO, xx: TODO, yy: TODO, _boD: TODO, Ox?: TODO) => TODO;
+        Heal: (bN: TODO) => TODO;
+        MoveTo: (xx: number, yy: number) => TODO;
         /** @param gv (default=false)  */
-        Destroy: (gv?: unknown) => unknown;
-        remove: () => unknown;
+        Destroy: (gv?: TODO) => TODO;
+        remove: () => TODO;
     }
     var pb2ShieldZone: ClassIdentityProps<"pb2ShieldZone"> & {
         /** Type is unknown. One known value: 0 */
-        SOUND_PRESET_ID_SILENT: unknown;
+        SOUND_PRESET_ID_SILENT: TODO;
         /** Type is unknown. One known value: 1 */
-        SOUND_PRESET_ID_SHIELD_GRENADE: unknown;
+        SOUND_PRESET_ID_SHIELD_GRENADE: TODO;
         /** Type is unknown. One known value: 2 */
-        SOUND_PRESET_ID_SPOILER26_SHIELD: unknown;
+        SOUND_PRESET_ID_SPOILER26_SHIELD: TODO;
         /** Type is unknown. One known value: ["pb2ShieldZone.SOUND_PRESET_ID_SILENT","pb2ShieldZone.SOUND_PRESET_ID_SHIELD_GRENADE","pb2ShieldZone.SOUND_PRESET_ID_SPOILER26_SHIELD"] */
-        ALL_SOUND_PRESET_IDS: unknown;
-        /** Type is unknown. One known value: [] */
-        shields: unknown;
+        ALL_SOUND_PRESET_IDS: TODO;
+        shields: pb2ShieldZone[];
     }
 }
 
 declare global {
     var pb2SkinEditor: ClassIdentityProps<"pb2SkinEditor"> & {
-        SpawnDefaultSkin: (frame: unknown) => unknown;
+        SpawnDefaultSkin: (frame: TODO) => TODO;
         /**
          * @param user_data_uid   
          * @param cWI (default=1)   
          */
-        SpawnUserDataSkin: (user_data_uid: unknown, cWI?: unknown) => unknown;
-        ScheduleCustomSkinUpdate: (skin: unknown) => unknown;
+        SpawnUserDataSkin: (user_data_uid: TODO, cWI?: TODO) => TODO;
+        ScheduleCustomSkinUpdate: (skin: TODO) => TODO;
         /**
          * @param skin   
          * @param new_value (default=true)   
          */
-        AllowSkinDispose: (skin: unknown, new_value?: unknown) => unknown;
+        AllowSkinDispose: (skin: TODO, new_value?: TODO) => TODO;
         /**
          * @param dc   
          * @param cWI (default=1)   
          */
-        SpawnTemporaryPreferredUserSkin: (dc: unknown, cWI?: unknown) => unknown;
-        OpenSkinEditor: (user_data_uid: unknown, user_data_title: unknown) => unknown;
+        SpawnTemporaryPreferredUserSkin: (dc: TODO, cWI?: TODO) => TODO;
+        OpenSkinEditor: (user_data_uid: TODO, user_data_title: TODO) => TODO;
     }
 }
 
 declare global {
     var pb2Sound: ClassIdentityProps<"pb2Sound"> & {
-        StopAllSounds: () => unknown;
+        StopAllSounds: () => TODO;
         /** Type is unknown. One known value: 0 */
-        PRIORITY_FLOOD: unknown;
+        PRIORITY_FLOOD: TODO;
         /** Type is unknown. One known value: 1 */
-        PRIORITY_FLOOD_TICKS: unknown;
+        PRIORITY_FLOOD_TICKS: TODO;
         /** Type is unknown. One known value: 2 */
-        PRIORITY_NORMAL: unknown;
+        PRIORITY_NORMAL: TODO;
         /** Type is unknown. One known value: 3 */
-        PRIORITY_GAMEPLAY: unknown;
+        PRIORITY_GAMEPLAY: TODO;
         /** Type is unknown. One known value: 4 */
-        PRIORITY_GAMEPLAY_SPEECH: unknown;
+        PRIORITY_GAMEPLAY_SPEECH: TODO;
         /** Type is unknown. One known value: 5 */
-        PRIORITY_GAMEPLAY_PINGS: unknown;
+        PRIORITY_GAMEPLAY_PINGS: TODO;
         /** Type is unknown. One known value: 6 */
-        PRIORITY_GAMEPLAY_MERGED_SOUNDS: unknown;
+        PRIORITY_GAMEPLAY_MERGED_SOUNDS: TODO;
         /** Type is unknown. One known value: 7 */
-        PRIORITY_UI: unknown;
+        PRIORITY_UI: TODO;
         /** Type is unknown. One known value: 8 */
-        PRIORITY_ATMOSHPERICS: unknown;
+        PRIORITY_ATMOSHPERICS: TODO;
         /** Type is unknown. One known value: 9 */
-        PRIORITY_MUSIC: unknown;
+        PRIORITY_MUSIC: TODO;
         /** Type is unknown. One known value: ["pb2Sound.PRIORITY_FLOOD","pb2Sound.PRIORITY_FLOOD_TICKS","pb2Sound.PRIORITY_NORMAL","pb2Sound.PRIORITY_GAMEPLAY","pb2Sound.PRIORITY_GAMEPLAY_SPEECH","pb2Sound.PRIORITY_GAMEPLAY_PINGS","pb2Sound.PRIORITY_GAMEPLAY_MERGED_SOUNDS","pb2Sound.PRIORITY_UI","pb2Sound.PRIORITY_ATMOSHPERICS","pb2Sound.PRIORITY_MUSIC"] */
-        ALL_TYPES: unknown;
-        PlayCustomSound: (params: unknown) => unknown;
+        ALL_TYPES: TODO;
+        PlayCustomSound: (params: TODO) => ep;
     }
 }
 
 declare global {
     var pb2StartDetails: {
-        /** Type is unknown. One known value: true */
-        testing_in_level_editor: unknown;
+        testing_in_level_editor: boolean;
     }
 }
 
@@ -3383,21 +3354,21 @@ declare global {
          * @param then (default=null)   
          * @param onerror (default=null)   
          */
-        GetCreationProperty: (dVZ: unknown, then?: unknown, onerror?: unknown) => unknown;
+        GetCreationProperty: (dVZ: TODO, then?: TODO, onerror?: TODO) => TODO;
         /**
          * @param dVZ   
          * @param value   
          * @param then (default=null)   
          * @param onerror (default=null)   
          */
-        SetCreationProperty: (dVZ: unknown, value: unknown, then?: unknown, onerror?: unknown) => unknown;
+        SetCreationProperty: (dVZ: TODO, value: TODO, then?: TODO, onerror?: TODO) => TODO;
         /**
          * @param dVZ   
          * @param user_uid   
          * @param then (default=null)   
          * @param onerror (default=null)   
          */
-        GetPlayerProperty: (dVZ: unknown, user_uid: unknown, then?: unknown, onerror?: unknown) => unknown;
+        GetPlayerProperty: (dVZ: TODO, user_uid: TODO, then?: TODO, onerror?: TODO) => TODO;
         /**
          * @param dVZ   
          * @param user_uid   
@@ -3405,321 +3376,302 @@ declare global {
          * @param then (default=null)   
          * @param onerror (default=null)   
          */
-        SetPlayerProperty: (dVZ: unknown, user_uid: unknown, value: unknown, then?: unknown, onerror?: unknown) => unknown;
-        ClearPropertyNameToUIDCache: () => unknown;
+        SetPlayerProperty: (dVZ: TODO, user_uid: TODO, value: TODO, then?: TODO, onerror?: TODO) => TODO;
+        ClearPropertyNameToUIDCache: () => TODO;
     }
 }
 
 declare global {
     interface pb2StyleAmmo extends ClassIdentityProps<"pb2StyleAmmo"> {
-        readonly style_id: unknown;
-        readonly owner_gun: unknown;
-        rounds_total: unknown;
-        infinite_ammo: unknown;
-        magazine_capacity: unknown;
-        rounds_in_magazine: unknown;
-        burst_shots: unknown;
-        burst_timeout: unknown;
-        regen_time: unknown;
-        regen_timeout: unknown;
-        reload_speed: unknown;
-        waste_remain_part: unknown;
-        recharge_speed: unknown;
-        min_charge: unknown;
-        charge_speed: unknown;
-        zero_energy_value: unknown;
-        energy: unknown;
-        speed_up_factor: unknown;
-        speed_up_max: unknown;
-        charge_to_distance: unknown;
-        readonly last_error_reason: unknown;
+        readonly style_id: TODO;
+        readonly owner_gun: TODO;
+        rounds_total: TODO;
+        infinite_ammo: TODO;
+        magazine_capacity: TODO;
+        rounds_in_magazine: TODO;
+        burst_shots: TODO;
+        burst_timeout: TODO;
+        regen_time: TODO;
+        regen_timeout: TODO;
+        reload_speed: TODO;
+        waste_remain_part: TODO;
+        recharge_speed: TODO;
+        min_charge: TODO;
+        charge_speed: TODO;
+        zero_energy_value: TODO;
+        energy: TODO;
+        speed_up_factor: TODO;
+        speed_up_max: TODO;
+        charge_to_distance: TODO;
+        readonly last_error_reason: TODO;
     }
     
 }
 
 declare global {
     interface pb2StyleBoost extends ClassIdentityProps<"pb2StyleBoost"> {
-        readonly ragdoll: unknown;
-        readonly style_id: unknown;
-        readonly noping_out_boost: unknown;
-        readonly noping_out_current_boost: unknown;
-        readonly noping_out_boost_ignition: unknown;
-        boost: unknown;
-        readonly activated: unknown;
-        max_fuel: unknown;
-        fuel: unknown;
-        readonly raycast_less_activation_allowed_timer: unknown;
-        readonly reactivation_anti_flood_timer: unknown;
-        readonly denied_repeat_cooldown: unknown;
-        doublejumps_left: unknown;
-        doublejumps_max: unknown;
-        readonly current_boost: unknown;
+        readonly ragdoll: TODO;
+        readonly style_id: TODO;
+        readonly noping_out_boost: TODO;
+        readonly noping_out_current_boost: TODO;
+        readonly noping_out_boost_ignition: TODO;
+        boost: TODO;
+        readonly activated: TODO;
+        max_fuel: TODO;
+        fuel: TODO;
+        readonly raycast_less_activation_allowed_timer: TODO;
+        readonly reactivation_anti_flood_timer: TODO;
+        readonly denied_repeat_cooldown: TODO;
+        doublejumps_left: number;
+        doublejumps_max: number;
+        readonly current_boost: TODO;
     }
     var pb2StyleBoost: ClassIdentityProps<"pb2StyleBoost"> & {
         /** Type is unknown. One known value: 0 */
-        NONE: unknown;
+        NONE: TODO;
         /** Type is unknown. One known value: 1 */
-        SELFBOOST: unknown;
+        SELFBOOST: TODO;
         /** Type is unknown. One known value: 2 */
-        JETPACK: unknown;
+        JETPACK: TODO;
         /** Type is unknown. One known value: 3 */
-        DOUBLEJUMP: unknown;
+        DOUBLEJUMP: TODO;
         /** Type is unknown. One known value: ["pb2StyleBoost.NONE","pb2StyleBoost.SELFBOOST","pb2StyleBoost.JETPACK","pb2StyleBoost.DOUBLEJUMP"] */
-        ALL_TYPES: unknown;
-        /** Type is unknown. One known value: 20 */
-        noping_out_boost_max: unknown;
-        /** Type is unknown. One known value: 1 */
-        noping_out_boost_regen_speed: unknown;
-        /** Type is unknown. One known value: 0.1 */
-        noping_out_boost_regen_speed_midair: unknown;
-        /** Type is unknown. One known value: 1 */
-        noping_out_current_boost_max: unknown;
-        /** Type is unknown. One known value: 66 */
-        noping_out_boost_strength: unknown;
-        /** Type is unknown. One known value: 6 */
-        jetpack_loop_loudness: unknown;
-        /** Type is unknown. One known value: 30 */
-        jetpack_auto_jetpack_on_double_jump_duration: unknown;
-        /** Type is unknown. One known value: 2000 */
-        jetpack_max_fuel_for_new_ragdolls: unknown;
-        /** Type is unknown. One known value: 0.45 */
-        selfboost_decay_speed: unknown;
-        /** Type is unknown. One known value: 275 */
-        selfboost_strength: unknown;
-        /** Type is unknown. One known value: 1.5 */
-        doublejump_maximum_charge_for_new_ragdolls: unknown;
-        /** Type is unknown. One known value: 0.3 */
-        doublejump_restore_speed: unknown;
-        /** Type is unknown. One known value: 160 */
-        doublejump_strength: unknown;
-        /** Type is unknown. One known value: 0.1 */
-        doublejump_single_boost_duration_decay: unknown;
+        ALL_TYPES: TODO;
+        noping_out_boost_max: number;
+        noping_out_boost_regen_speed: number;
+        noping_out_boost_regen_speed_midair: number;
+        noping_out_current_boost_max: number;
+        noping_out_boost_strength: number;
+        jetpack_loop_loudness: number;
+        jetpack_auto_jetpack_on_double_jump_duration: number;
+        jetpack_max_fuel_for_new_ragdolls: number;
+        selfboost_decay_speed: number;
+        selfboost_strength: number;
+        doublejump_maximum_charge_for_new_ragdolls: number;
+        doublejump_restore_speed: number;
+        doublejump_strength: number;
+        doublejump_single_boost_duration_decay: number;
     }
 }
 
 declare global {
     var pb2StyleGrapplingHook: ClassIdentityProps<"pb2StyleGrapplingHook"> & {
         /** Type is unknown. One known value: 0 */
-        STYLE_NOTHING: unknown;
+        STYLE_NOTHING: TODO;
         /** Type is unknown. One known value: 1 */
-        STYLE_EVERYTHING: unknown;
+        STYLE_EVERYTHING: TODO;
         /** Type is unknown. One known value: 2 */
-        STYLE_WALLS_ONLY: unknown;
+        STYLE_WALLS_ONLY: TODO;
         /** Type is unknown. One known value: 3 */
-        STYLE_ENTITIES_ONLY: unknown;
+        STYLE_ENTITIES_ONLY: TODO;
         /** Type is unknown. One known value: 4 */
-        STYLE_SIMPLE_ROPE: unknown;
+        STYLE_SIMPLE_ROPE: TODO;
         /** Type is unknown. One known value: 5 */
-        STYLE_RIGID_BODY_MANIPULATING: unknown;
+        STYLE_RIGID_BODY_MANIPULATING: TODO;
         /** Type is unknown. One known value: 7 */
-        STYLE_FEEDBACKLESS_RIGID_BODY_MANIPULATING: unknown;
+        STYLE_FEEDBACKLESS_RIGID_BODY_MANIPULATING: TODO;
         /** Type is unknown. One known value: 8 */
-        STYLE_KINETIC_MODULE: unknown;
+        STYLE_KINETIC_MODULE: TODO;
         /** Type is unknown. One known value: ["pb2StyleGrapplingHook.STYLE_NOTHING","pb2StyleGrapplingHook.STYLE_EVERYTHING","pb2StyleGrapplingHook.STYLE_WALLS_ONLY","pb2StyleGrapplingHook.STYLE_ENTITIES_ONLY","pb2StyleGrapplingHook.STYLE_SIMPLE_ROPE","pb2StyleGrapplingHook.STYLE_RIGID_BODY_MANIPULATING","pb2StyleGrapplingHook.STYLE_FEEDBACKLESS_RIGID_BODY_MANIPULATING","pb2StyleGrapplingHook.STYLE_KINETIC_MODULE"] */
-        ALL_TYPES: unknown;
+        ALL_TYPES: TODO;
     }
 }
 
 declare global {
     var pb2StyleRegen: ClassIdentityProps<"pb2StyleRegen"> & {
         /** Type is unknown. One known value: 0 */
-        style_none: unknown;
+        style_none: TODO;
         /** Type is unknown. One known value: 2 */
-        style_delayed_speedup: unknown;
+        style_delayed_speedup: TODO;
         /** Type is unknown. One known value: ["pb2StyleRegen.style_none","pb2StyleRegen.style_delayed_speedup"] */
-        ALL_TYPES: unknown;
+        ALL_TYPES: TODO;
     }
 }
 
 declare global {
     var pb2StyleSwords: ClassIdentityProps<"pb2StyleSwords"> & {
         /** Type is unknown. One known value: 0 */
-        NONE: unknown;
+        NONE: TODO;
         /** Type is unknown. One known value: 1 */
-        BASIC: unknown;
+        BASIC: TODO;
         /** Type is unknown. One known value: 2 */
-        LARGE: unknown;
+        LARGE: TODO;
         /** Type is unknown. One known value: 3 */
-        COMPACT: unknown;
+        COMPACT: TODO;
         /** Type is unknown. One known value: 4 */
-        CLIMBER: unknown;
+        CLIMBER: TODO;
         /** Type is unknown. One known value: 5 */
-        STANCE: unknown;
+        STANCE: TODO;
         /** Type is unknown. One known value: 6 */
-        RISING_ARC: unknown;
+        RISING_ARC: TODO;
         /** Type is unknown. One known value: 7 */
-        BYTE_NAIL: unknown;
+        BYTE_NAIL: TODO;
         /** Type is unknown. One known value: 8 */
-        ARCHWAY: unknown;
+        ARCHWAY: TODO;
         /** Type is unknown. One known value: 9 */
-        TRIPLET: unknown;
+        TRIPLET: TODO;
         /** Type is unknown. One known value: 10 */
-        ARROW: unknown;
+        ARROW: TODO;
         /** Type is unknown. One known value: 11 */
-        FALCON: unknown;
+        FALCON: TODO;
         /** Type is unknown. One known value: 12 */
-        EDGE: unknown;
+        EDGE: TODO;
         /** Type is unknown. One known value: 13 */
-        STORM: unknown;
+        STORM: TODO;
         /** Type is unknown. One known value: 14 */
-        PLEXUS: unknown;
+        PLEXUS: TODO;
         /** Type is unknown. One known value: 15 */
-        MYTHIC: unknown;
+        MYTHIC: TODO;
         /** Type is unknown. One known value: 16 */
-        CLAW: unknown;
+        CLAW: TODO;
         /** Type is unknown. One known value: 17 */
-        STICK: unknown;
+        STICK: TODO;
         /** Type is unknown. One known value: 18 */
-        WING_KNIFE: unknown;
+        WING_KNIFE: TODO;
         /** Type is unknown. One known value: 19 */
-        KNIFE: unknown;
+        KNIFE: TODO;
         /** Type is unknown. One known value: ["pb2StyleSwords.NONE","pb2StyleSwords.BASIC","pb2StyleSwords.LARGE","pb2StyleSwords.COMPACT","pb2StyleSwords.CLIMBER","pb2StyleSwords.STANCE","pb2StyleSwords.RISING_ARC","pb2StyleSwords.BYTE_NAIL","pb2StyleSwords.ARCHWAY","pb2StyleSwords.TRIPLET","pb2StyleSwords.ARROW","pb2StyleSwords.FALCON","pb2StyleSwords.EDGE","pb2StyleSwords.STORM","pb2StyleSwords.PLEXUS","pb2StyleSwords.MYTHIC","pb2StyleSwords.CLAW","pb2StyleSwords.STICK","pb2StyleSwords.WING_KNIFE","pb2StyleSwords.KNIFE"] */
-        ALL_TYPES: unknown;
+        ALL_TYPES: TODO;
         /** Type is unknown. One known value: ["None","Basic","Large","Compact","Climber","Stance","Rising-Arc","Byte-Nail","Archway","Triplet","Arrow","Falcon","Edge","Storm","Plexus","Mythic","Claw","Stick","Wing-Knife","Knife"] */
-        id_to_name: unknown;
+        id_to_name: TODO;
     }
 }
 
 declare global {
     interface pb2SurfaceType extends ClassIdentityProps<"pb2SurfaceType"> {
-        is_soft: unknown;
-        recommended_slices_per_density: unknown;
+        is_soft: TODO;
+        recommended_slices_per_density: TODO;
     }
     var pb2SurfaceType: ClassIdentityProps<"pb2SurfaceType"> & {
         /** Type is unknown. One known value: 0 */
-        TYPE_SIMPLE_WALL: unknown;
+        TYPE_SIMPLE_WALL: TODO;
         /** Type is unknown. One known value: 1 */
-        TYPE_SIMPLE_BACKGROUND: unknown;
+        TYPE_SIMPLE_BACKGROUND: TODO;
         /** Type is unknown. One known value: 2 */
-        TYPE_PLATFORM_WALL: unknown;
+        TYPE_PLATFORM_WALL: TODO;
         /** Type is unknown. One known value: 3 */
-        TYPE_PB2PLATFORM_WALL: unknown;
+        TYPE_PB2PLATFORM_WALL: TODO;
         /** Type is unknown. One known value: 4 */
-        TYPE_STAR_DEFENDING_CUBE: unknown;
+        TYPE_STAR_DEFENDING_CUBE: TODO;
         /** Type is unknown. One known value: 5 */
-        TYPE_3D_MODEL: unknown;
+        TYPE_3D_MODEL: TODO;
         /** Type is unknown. One known value: 0 */
-        APPEARANCE_NORMAL: unknown;
+        APPEARANCE_NORMAL: TODO;
         /** Type is unknown. One known value: 1 */
-        APPEARANCE_FULL_BRIGHT: unknown;
+        APPEARANCE_FULL_BRIGHT: TODO;
         /** Type is unknown. One known value: 2 */
-        APPEARANCE_ADDITIVE: unknown;
+        APPEARANCE_ADDITIVE: TODO;
         /** Type is unknown. One known value: 3 */
-        APPEARANCE_FULL_BRIGHT_NO_GLOW: unknown;
+        APPEARANCE_FULL_BRIGHT_NO_GLOW: TODO;
         /** Type is unknown. One known value: 4 */
-        APPEARANCE_NORMAL_NO_LIGHT_BLOCKING: unknown;
+        APPEARANCE_NORMAL_NO_LIGHT_BLOCKING: TODO;
         /** Type is unknown. One known value: 0 */
-        SHADER_GAMEPLAY: unknown;
+        SHADER_GAMEPLAY: TODO;
         /** Type is unknown. One known value: 1 */
-        SHADER_ENVIRONMENT: unknown;
+        SHADER_ENVIRONMENT: TODO;
         /** Type is unknown. One known value: 0 */
-        TERRAIN_LAYER_GROUND: unknown;
+        TERRAIN_LAYER_GROUND: TODO;
         /** Type is unknown. One known value: 1 */
-        TERRAIN_LAYER_GRASS: unknown;
+        TERRAIN_LAYER_GRASS: TODO;
         /** Type is unknown. One known value: 2 */
-        TERRAIN_LAYER_SAND: unknown;
+        TERRAIN_LAYER_SAND: TODO;
         /** Type is unknown. One known value: 3 */
-        TERRAIN_LAYER_CLIFF: unknown;
+        TERRAIN_LAYER_CLIFF: TODO;
         /** Type is unknown. One known value: 4 */
-        TERRAIN_LAYER_SNOW: unknown;
+        TERRAIN_LAYER_SNOW: TODO;
         /** Type is unknown. One known value: ["pb2SurfaceType.TYPE_SIMPLE_WALL","pb2SurfaceType.TYPE_SIMPLE_BACKGROUND","pb2SurfaceType.TYPE_PLATFORM_WALL","pb2SurfaceType.TYPE_PB2PLATFORM_WALL","pb2SurfaceType.TYPE_STAR_DEFENDING_CUBE","pb2SurfaceType.TYPE_3D_MODEL","pb2SurfaceType.APPEARANCE_NORMAL","pb2SurfaceType.APPEARANCE_FULL_BRIGHT","pb2SurfaceType.APPEARANCE_ADDITIVE","pb2SurfaceType.APPEARANCE_FULL_BRIGHT_NO_GLOW","pb2SurfaceType.APPEARANCE_NORMAL_NO_LIGHT_BLOCKING","pb2SurfaceType.SHADER_GAMEPLAY","pb2SurfaceType.SHADER_ENVIRONMENT","pb2SurfaceType.TERRAIN_LAYER_GROUND","pb2SurfaceType.TERRAIN_LAYER_GRASS","pb2SurfaceType.TERRAIN_LAYER_SAND","pb2SurfaceType.TERRAIN_LAYER_CLIFF","pb2SurfaceType.TERRAIN_LAYER_SNOW"] */
-        ALL_TYPES: unknown;
+        ALL_TYPES: TODO;
         /**
          * @param params   
          * @param slot (default=-1)   
          */
-        CreateSurfaceType: (params: unknown, slot?: unknown) => unknown;
-        SpawnPB2SurfaceTypeParams: (ffS: unknown, is_wall: unknown) => unknown;
+        CreateSurfaceType: (params: TODO, slot?: TODO) => pb2SurfaceType;
+        SpawnPB2SurfaceTypeParams: (ffS: TODO, is_wall: TODO) => TODO;
     }
 }
 
 declare global {
     interface pb2Team extends ClassIdentityProps<"pb2Team"> {
         /** Type is unknown. One known value: 7 */
-        readonly classid: unknown;
-        readonly ai_in_team: unknown;
-        allow_private_communication: unknown;
-        friendly_damage_multiplier: unknown;
-        friendly_fire: unknown;
-        hud_color: unknown;
-        hud_color_for_enemies: unknown;
-        normal_damage_to_dead_teammates: unknown;
-        readonly teammates_collide: unknown;
-        title: unknown;
-        remove: () => unknown;
+        readonly classid: TODO;
+        readonly ai_in_team: TODO;
+        allow_private_communication: boolean;
+        friendly_damage_multiplier: number;
+        friendly_fire: TODO;
+        hud_color: TODO;
+        hud_color_for_enemies: TODO;
+        normal_damage_to_dead_teammates: TODO;
+        readonly teammates_collide: boolean;
+        title: TODO;
+        remove: () => TODO;
     }
     var pb2Team: ClassIdentityProps<"pb2Team"> & {
-        CreateTeam: (params: unknown) => unknown;
-        /** Type is unknown. One known value: [] */
-        teams: unknown;
+        CreateTeam: (params: TODO) => pb2Team;
+        teams: pb2Team[];
     }
 }
 
 declare global {
     interface pb2TextChannel extends ClassIdentityProps<"pb2TextChannel"> {
-        InvitePlayerConnection: (dc: unknown) => unknown;
-        UninvitePlayerConnection: (dc: unknown) => unknown;
-        remove: () => unknown;
-        readonly title: unknown;
-        readonly color: unknown;
-        readonly show_tag: unknown;
-        readonly sync_with_main_server: unknown;
-        readonly auto_channel_id: unknown;
-        readonly channel_id: unknown;
-        readonly is_being_removed: unknown;
-        readonly synced: unknown;
-        readonly syncing: unknown;
-        GetInvitedDataConnections: () => unknown;
+        InvitePlayerConnection: (dc: TODO) => TODO;
+        UninvitePlayerConnection: (dc: TODO) => TODO;
+        remove: () => TODO;
+        readonly title: TODO;
+        readonly color: TODO;
+        readonly show_tag: TODO;
+        readonly sync_with_main_server: TODO;
+        readonly auto_channel_id: TODO;
+        readonly channel_id: TODO;
+        readonly is_being_removed: TODO;
+        readonly synced: TODO;
+        readonly syncing: TODO;
+        GetInvitedDataConnections: () => TODO;
     }
     var pb2TextChannel: ClassIdentityProps<"pb2TextChannel"> & {
-        CreateTextChannel: (params: unknown) => unknown;
+        CreateTextChannel: (params: TODO) => pb2TextChannel;
     }
 }
 
 declare global {
     interface pb2Texture extends ClassIdentityProps<"pb2Texture"> {
-        readonly internal: unknown;
-        readonly url: unknown;
+        readonly internal: TODO;
+        readonly url: TODO;
     }
     var pb2Texture: ClassIdentityProps<"pb2Texture"> & {
-        GetTextureByName: (name: unknown) => unknown;
+        GetTextureByName: (name: TODO) => pb2Texture;
     }
 }
 
 declare global {
     var pb2TextureDecal: ClassIdentityProps<"pb2TextureDecal"> & {
-        /** Type is unknown. One known value: 0.999 */
-        decal_decay_remain: unknown;
-        RemoveAllDecalsAndParticles: () => unknown;
+        decal_decay_remain: number;
+        RemoveAllDecalsAndParticles: () => TODO;
     }
 }
 
 declare global {
     interface pb2TimeWarpZone extends ClassIdentityProps<"pb2TimeWarpZone"> {
         /** Type is unknown. One known value: 22 */
-        readonly classid: unknown;
-        readonly x: unknown;
-        readonly y: unknown;
-        MoveTo: (xx: unknown, yy: unknown) => unknown;
-        SetTargetSpeed: (v: unknown) => unknown;
-        readonly target_speed: unknown;
-        decay_speed: unknown;
-        remove: () => unknown;
+        readonly classid: TODO;
+        readonly x: number;
+        readonly y: number;
+        MoveTo: (xx: number, yy: number) => TODO;
+        SetTargetSpeed: (v: number) => TODO;
+        readonly target_speed: number;
+        decay_speed: number;
+        remove: () => TODO;
     }
     var pb2TimeWarpZone: ClassIdentityProps<"pb2TimeWarpZone"> & {
-        /** Type is unknown. One known value: 150 */
-        base_range: unknown;
-        /** Type is unknown. One known value: 50 */
-        blur_range: unknown;
-        /** Type is unknown. One known value: 0.35 */
-        target_speed: unknown;
+        base_range: number;
+        blur_range: number;
+        target_speed: number;
         /** Type is unknown. One known value: 0 */
-        TEXTURE_NONE: unknown;
+        TEXTURE_NONE: TODO;
         /** Type is unknown. One known value: 1 */
-        TEXTURE_TIME_NADE_BLACKOUT: unknown;
+        TEXTURE_TIME_NADE_BLACKOUT: TODO;
         /** Type is unknown. One known value: 2 */
-        TEXTURE_GRADIENT: unknown;
-        CreateWarpZone: (params: unknown) => unknown;
+        TEXTURE_GRADIENT: TODO;
+        CreateWarpZone: (params: TODO) => pb2TimeWarpZone;
         /**
          * @param x   
          * @param y   
@@ -3727,31 +3679,30 @@ declare global {
          * @param beL (default=null)   
          * @param efv (default=false)   
          */
-        GetSpeedAtPoint: (x: unknown, y: unknown, eft?: unknown, beL?: unknown, efv?: unknown) => unknown;
+        GetSpeedAtPoint: (x: number, y: number, eft?: TODO, beL?: TODO, efv?: TODO) => number;
         /**
          * @param body   
          * @param eft (default=null)   
          */
-        TimeWarpFunction: (body: unknown, eft?: unknown) => unknown;
-        IsBodyChronoFrozen: (body: unknown) => unknown;
-        /** Type is unknown. One known value: [] */
-        zones: unknown;
+        TimeWarpFunction: (body: TODO, eft?: TODO) => TODO;
+        IsBodyChronoFrozen: (body: TODO) => boolean;
+        zones: pb2TimeWarpZone[];
     }
 }
 
 declare global {
     interface pb2Timer extends ClassIdentityProps<"pb2Timer"> {
-        calls_left: unknown;
-        current_cycle_time_left: unknown;
-        SetCalls: (v: unknown) => unknown;
-        SetTimeUntilNextCycle: (v: unknown) => unknown;
-        SetDefaultCycleDuration: (v: unknown) => unknown;
-        ResetCurrentCycle: () => unknown;
-        enabled: unknown;
-        Start: () => unknown;
-        Stop: () => unknown;
-        position_container: unknown;
-        readonly type: unknown;
+        calls_left: number;
+        current_cycle_time_left: number;
+        SetCalls: (v: number) => TODO;
+        SetTimeUntilNextCycle: (v: number) => TODO;
+        SetDefaultCycleDuration: (v: number) => TODO;
+        ResetCurrentCycle: () => TODO;
+        enabled: boolean;
+        Start: () => TODO;
+        Stop: () => TODO;
+        position_container: TODO;
+        readonly type: TODO;
     }
     var pb2Timer: ClassIdentityProps<"pb2Timer"> & {
         /**
@@ -3760,89 +3711,85 @@ declare global {
          * @param _type (default=0)   
          * @param bql (default=null)   
          */
-        CreateTimer: (func: unknown, tim: unknown, _type?: unknown, bql?: unknown) => unknown;
+        CreateTimer: (func: TODO, tim: TODO, _type?: TODO, bql?: TODO) => pb2Timer;
         /** Type is unknown. One known value: 0 */
-        TYPE_GAME_TIMESCALE: unknown;
+        TYPE_GAME_TIMESCALE: TODO;
         /** Type is unknown. One known value: 1 */
-        TYPE_GAME_TIMESCALE_WARPED: unknown;
+        TYPE_GAME_TIMESCALE_WARPED: TODO;
         /** Type is unknown. One known value: 2 */
-        TYPE_REAL_WORLD_TIMESCALE: unknown;
+        TYPE_REAL_WORLD_TIMESCALE: TODO;
         /** Type is unknown. One known value: 3 */
-        TYPE_FULL_FRAME_TICKS: unknown;
-        /** Type is unknown. One known value: [] */
-        timers_active_game: unknown;
-        /** Type is unknown. One known value: [] */
-        timers_active_world: unknown;
+        TYPE_FULL_FRAME_TICKS: TODO;
+        timers_active_game: pb2Timer[];
+        timers_active_world: pb2Timer[];
     }
 }
 
 declare global {
     interface pb2UsableSwitch extends ClassIdentityProps<"pb2UsableSwitch"> {
         /** Type is unknown. One known value: 34 */
-        readonly classid: unknown;
-        readonly x: unknown;
-        readonly y: unknown;
-        usable_glow_intensity: unknown;
-        is_usable: unknown;
+        readonly classid: TODO;
+        readonly x: number;
+        readonly y: number;
+        usable_glow_intensity: TODO;
+        is_usable: boolean;
         /** @param Ox (default=null)  */
-        Use: (Ox?: unknown) => unknown;
-        remove: () => unknown;
-        readonly model_frame: unknown;
-        SetPosition: (x2: unknown, y2: unknown) => unknown;
-        /** Type is unknown. One known value: false */
-        readonly is_being_removed: unknown;
+        Use: (Ox?: TODO) => TODO;
+        remove: () => TODO;
+        readonly model_frame: TODO;
+        SetPosition: (x2: number, y2: number) => TODO;
+        readonly is_being_removed: boolean;
     }
     var pb2UsableSwitch: ClassIdentityProps<"pb2UsableSwitch"> & {
-        CreateSwitch: (params: unknown) => unknown;
-        /** Type is unknown. One known value: [] */
-        switches: unknown;
+        CreateSwitch: (params: TODO) => pb2UsableSwitch;
+        switches: pb2UsableSwitch[];
     }
 }
 
 declare global {
     var pb2Vision: ClassIdentityProps<"pb2Vision"> & {
         /** Type is unknown. One known value: 1 */
-        VISION_EVERYTHING: unknown;
+        VISION_EVERYTHING: TODO;
         /** Type is unknown. One known value: 2 */
-        VISION_SCREEN_BOX: unknown;
+        VISION_SCREEN_BOX: TODO;
         /** Type is unknown. One known value: 3 */
-        VISION_RADIAL_TRACE: unknown;
+        VISION_RADIAL_TRACE: TODO;
         /** Type is unknown. One known value: 4 */
-        VISION_DIRECTED_TRACE: unknown;
+        VISION_DIRECTED_TRACE: TODO;
         /** Type is unknown. One known value: ["pb2Vision.VISION_EVERYTHING","pb2Vision.VISION_SCREEN_BOX","pb2Vision.VISION_RADIAL_TRACE","pb2Vision.VISION_DIRECTED_TRACE"] */
-        ALL_TYPES: unknown;
+        ALL_TYPES: TODO;
     }
 }
 
 declare global {
     var pb2Void: ClassIdentityProps<"pb2Void"> & {
         /** Type is unknown. One known value: 102 */
-        readonly classid: unknown;
+        readonly classid: TODO;
     }
 }
 
 declare global {
     interface pb2WaterClass extends ClassIdentityProps<"pb2WaterClass"> {
-        readonly shapes: unknown;
+        readonly shapes: TODO;
     }
     var pb2WaterClass: ClassIdentityProps<"pb2WaterClass"> & {
         /** Type is unknown. One known value: 0 */
-        TYPE_WATER: unknown;
+        TYPE_WATER: TODO;
         /** Type is unknown. One known value: 1 */
-        TYPE_TOXIC: unknown;
+        TYPE_TOXIC: TODO;
         /** Type is unknown. One known value: 2 */
-        TYPE_CORROSIVE: unknown;
+        TYPE_CORROSIVE: TODO;
         /** Type is unknown. One known value: 3 */
-        TYPE_LAVA: unknown;
+        TYPE_LAVA: TODO;
         /** Type is unknown. One known value: 4 */
-        TYPE_FREEZING: unknown;
+        TYPE_FREEZING: TODO;
         /** Type is unknown. One known value: 5 */
-        TYPE_ZERO_GRAVITY: unknown;
+        TYPE_ZERO_GRAVITY: TODO;
         /** Type is unknown. One known value: 6 */
-        TYPE_ZERO_GRAVITY_NO_MUFFLE: unknown;
+        TYPE_ZERO_GRAVITY_NO_MUFFLE: TODO;
         /** Type is unknown. One known value: ["pb2WaterClass.TYPE_WATER","pb2WaterClass.TYPE_TOXIC","pb2WaterClass.TYPE_CORROSIVE","pb2WaterClass.TYPE_LAVA","pb2WaterClass.TYPE_FREEZING","pb2WaterClass.TYPE_ZERO_GRAVITY","pb2WaterClass.TYPE_ZERO_GRAVITY_NO_MUFFLE"] */
-        ALL_TYPES: unknown;
-        DeclareWaterClass: (params: unknown) => unknown;
+        ALL_TYPES: TODO;
+        DeclareWaterClass: (params: TODO) => pb2WaterClass;
     }
 }
 
@@ -3853,91 +3800,92 @@ type pb2WindowBase<ClassName extends string> = ClassIdentityProps<ClassName> & {
     y2: number;
     w: number;
     h: number;
-    tooltip: unknown;
-    readonly type: unknown;
+    tooltip: TODO;
+    readonly type: TODO;
     /**
      * @param cWC   
      * @param cWE (default=true)   
      * @param Hi (default=true)   
      */
-    SetVisibilityFor: (cWC: unknown, cWE?: unknown, Hi?: unknown) => unknown;
-    SendChanges: () => unknown;
-    visible: unknown;
-    requires_ctrl_key: unknown;
-    ignore_mouse_events: unknown;
-    click_animation: unknown;
+    SetVisibilityFor: (cWC: TODO, cWE?: TODO, Hi?: TODO) => TODO;
+    SendChanges: () => TODO;
+    visible: TODO;
+    requires_ctrl_key: TODO;
+    ignore_mouse_events: TODO;
+    click_animation: TODO;
     /**
      * @param txt   
      * @param size (default=12)   
      * @param cMI (default=false)   
      * @param nu (default=false)   
      */
-    SetText: (txt: unknown, size?: unknown, cMI?: unknown, nu?: unknown) => unknown;
+    SetText: (txt: TODO, size?: TODO, cMI?: TODO, nu?: TODO) => TODO;
     /** @param c (default=null)  */
-    remove: (c?: unknown) => unknown;
-    readonly parent: unknown;
-    readonly childs: unknown;
-    GetTypeSpecificStructure: () => unknown;
-    SetTypeSpecificStructure: (Ap: unknown) => unknown;
+    remove: (c?: TODO) => TODO;
+    readonly parent: TODO;
+    readonly childs: TODO;
+    GetTypeSpecificStructure: () => TODO;
+    SetTypeSpecificStructure: (Ap: TODO) => TODO;
     readonly is_being_removed: boolean;
 };
 
 declare global {
     interface pb2Window extends pb2WindowBase<"pb2Window"> {}
     var pb2Window: ClassIdentityProps<"pb2Window"> & {
-        CreateWindow: (params: unknown) => unknown;
+        /** return type may be different based on the parameters passed in */
+        CreateWindow: (params: TODO) => pb2Window;
         /** Type is unknown. One known value: 0 */
-        DIALOGBOX: unknown;
+        DIALOGBOX: TODO;
         /** Type is unknown. One known value: 1 */
-        BUTTON: unknown;
+        BUTTON: TODO;
         /** Type is unknown. One known value: 2 */
-        SCREEN_BLOCKING_BOX: unknown;
+        SCREEN_BLOCKING_BOX: TODO;
         /** Type is unknown. One known value: 3 */
-        SCROLL_LIST: unknown;
+        SCROLL_LIST: TODO;
         /** Type is unknown. One known value: 4 */
-        SCROLLBAR_PAD: unknown;
+        SCROLLBAR_PAD: TODO;
         /** Type is unknown. One known value: 5 */
-        SCROLLBAR_CARET: unknown;
+        SCROLLBAR_CARET: TODO;
         /** Type is unknown. One known value: 6 */
-        CAPTION_IMPORTANT: unknown;
+        CAPTION_IMPORTANT: TODO;
         /** Type is unknown. One known value: 7 */
-        CAPTION: unknown;
+        CAPTION: TODO;
         /** Type is unknown. One known value: 8 */
-        PARAM_PANEL: unknown;
+        PARAM_PANEL: TODO;
         /** Type is unknown. One known value: 9 */
-        DRAG_PARENT: unknown;
+        DRAG_PARENT: TODO;
         /** Type is unknown. One known value: 10 */
-        COLOR_PICKER: unknown;
+        COLOR_PICKER: TODO;
         /** Type is unknown. One known value: 11 */
-        COLOR_PALETTE: unknown;
+        COLOR_PALETTE: TODO;
         /** Type is unknown. One known value: 12 */
-        CONTAINER: unknown;
+        CONTAINER: TODO;
         /** Type is unknown. One known value: 13 */
-        HUD_RECT: unknown;
+        HUD_RECT: TODO;
         /** Type is unknown. One known value: 14 */
-        SAYBOX: unknown;
+        SAYBOX: TODO;
         /** Type is unknown. One known value: 15 */
-        ICON_BUTTON: unknown;
+        ICON_BUTTON: TODO;
         /** Type is unknown. One known value: 16 */
-        PROGRESS_BAR_SEGMENT: unknown;
+        PROGRESS_BAR_SEGMENT: TODO;
         /** Type is unknown. One known value: 17 */
-        STRETCH_PARENT: unknown;
+        STRETCH_PARENT: TODO;
         /** Type is unknown. One known value: 18 */
-        LEADERBOARD: unknown;
+        LEADERBOARD: TODO;
         /** Type is unknown. One known value: 19 */
-        LEADERBOARD_PLAYERS_LIST: unknown;
+        LEADERBOARD_PLAYERS_LIST: TODO;
         /** Type is unknown. One known value: 20 */
-        CAPTION_CENTERED: unknown;
+        CAPTION_CENTERED: TODO;
         /** Type is unknown. One known value: 21 */
-        PERFORMANCE_GRAPH: unknown;
+        PERFORMANCE_GRAPH: TODO;
         /** Type is unknown. One known value: 22 */
-        CLOCK: unknown;
+        CLOCK: TODO;
         /** Type is unknown. One known value: 23 */
-        BUTTON_HOLO: unknown;
+        BUTTON_HOLO: TODO;
         /** Type is unknown. One known value: 24 */
-        HUD_RECT_SOLID: unknown;
+        HUD_RECT_SOLID: TODO;
         /** Type is unknown. One known value: ["freeedit","wall","movable","region","pusher","bg","water","compound_character","entity","decoration","gun","usable_switch","lamp","barrel","trigger","timer","info","song","image","scale","surface","group","group_expanded","group_item","group_last","team","area","point","vector","circle","fire","window","set","text","bleeding","frozen","water_class","execute","bullet","usercode","comment","code","instance","boolean","camera","bar","nothing","group_non_item","ragdoll","character","controller","ai_preset","skin","skin_userdata","group_tool","surface_old","crate","lamp_dynamic","visible_1","visible_0","locked_0","locked_1","timer_inline","module","animated_point","cross","sound","sound_preloader","movable_sounds_preset","ai_hint","blue_question","window_hint","var","transform_selection","disabled_0","disabled_1","model_preloader","model"] */
-        icons16_names: unknown;
+        icons16_names: TODO;
         /** maps name (one of pb2Window.icon16_names) to id */
         icons16_names_to_id: {[k: string]: number};
     }
@@ -3945,83 +3893,71 @@ declare global {
 
 declare global {
     interface pb2WindowHint extends ClassIdentityProps<"pb2WindowHint"> {
-        readonly x: unknown;
-        readonly y: unknown;
-        readonly text: unknown;
-        readonly text_decorated: unknown;
-        readonly type: unknown;
-        readonly container: unknown;
-        readonly attachment_ragdoll: unknown;
-        readonly time_current: unknown;
-        readonly time_to_live: unknown;
+        readonly x: number;
+        readonly y: number;
+        readonly text: TODO;
+        readonly text_decorated: TODO;
+        readonly type: TODO;
+        readonly container: TODO;
+        readonly attachment_ragdoll: TODO;
+        readonly time_current: number;
+        readonly time_to_live: number;
         /**
          * @param s   
          * @param cYr (default=false)   
          */
-        SetText: (s: unknown, cYr?: unknown) => unknown;
-        SetColor: (color: unknown) => unknown;
-        Expire: () => unknown;
-        readonly appearance_duration: unknown;
-        readonly main_color: unknown;
-        GetOptions: () => unknown;
+        SetText: (s: TODO, cYr?: TODO) => TODO;
+        SetColor: (color: TODO) => TODO;
+        Expire: () => TODO;
+        readonly appearance_duration: TODO;
+        readonly main_color: TODO;
+        GetOptions: () => TODO;
         /**
          * @param options   
          * @param cYr (default=false)   
          */
-        SetOptions: (options: unknown, cYr?: unknown) => unknown;
-        readonly my_vote_id: unknown;
-        readonly votes: unknown;
-        sync_to_spectators: unknown;
+        SetOptions: (options: TODO, cYr?: TODO) => TODO;
+        readonly my_vote_id: TODO;
+        readonly votes: TODO;
+        sync_to_spectators: TODO;
     }
     var pb2WindowHint: ClassIdentityProps<"pb2WindowHint"> & {
-        CreateWindowHint: (params: unknown) => unknown;
+        CreateWindowHint: (params: TODO) => pb2WindowHint;
         /** Type is unknown. One known value: 0 */
-        CONTAINER_TOP: unknown;
+        CONTAINER_TOP: TODO;
         /** Type is unknown. One known value: 1 */
-        CONTAINER_BOTTOM: unknown;
+        CONTAINER_BOTTOM: TODO;
         /** Type is unknown. One known value: 2 */
-        CONTAINER_FLOATING_IN_WORLD: unknown;
+        CONTAINER_FLOATING_IN_WORLD: TODO;
         /** Type is unknown. One known value: 0 */
-        TYPE_WARNING: unknown;
+        TYPE_WARNING: TODO;
         /** Type is unknown. One known value: 1 */
-        TYPE_RESPONSE_OPTIONS: unknown;
+        TYPE_RESPONSE_OPTIONS: TODO;
         /** Type is unknown. One known value: 2 */
-        TYPE_SUBTITLE: unknown;
+        TYPE_SUBTITLE: TODO;
         /** Type is unknown. One known value: 3 */
-        TYPE_HINT: unknown;
+        TYPE_HINT: TODO;
         /** Type is unknown. One known value: 4 */
-        TYPE_HEALTHBAR: unknown;
+        TYPE_HEALTHBAR: TODO;
         COLOR_RED: {
-            /** Type is unknown. One known value: 1 */
-            r: unknown;
-            /** Type is unknown. One known value: 0.2 */
-            g: unknown;
-            /** Type is unknown. One known value: 0.2 */
-            b: unknown;
+            r: number;
+            g: number;
+            b: number;
         }
         COLOR_YELLOW: {
-            /** Type is unknown. One known value: 1 */
-            r: unknown;
-            /** Type is unknown. One known value: 1 */
-            g: unknown;
-            /** Type is unknown. One known value: 0.4666666666666667 */
-            b: unknown;
+            r: number;
+            g: number;
+            b: number;
         }
         COLOR_GREEN: {
-            /** Type is unknown. One known value: 0.4 */
-            r: unknown;
-            /** Type is unknown. One known value: 1 */
-            g: unknown;
-            /** Type is unknown. One known value: 0.4 */
-            b: unknown;
+            r: number;
+            g: number;
+            b: number;
         }
         COLOR_WHITE: {
-            /** Type is unknown. One known value: 1 */
-            r: unknown;
-            /** Type is unknown. One known value: 1 */
-            g: unknown;
-            /** Type is unknown. One known value: 1 */
-            b: unknown;
+            r: number;
+            g: number;
+            b: number;
         }
     }
 }
@@ -4029,76 +3965,74 @@ declare global {
 declare global {
     // failed to be included in generation (extractor didn't search for pb2Window subclasses)
     interface pb2WindowIconButton extends pb2WindowBase<"pb2WindowIconButton"> {
-        icon: unknown;
+        icon: TODO;
     }
 }
 
 declare global {
     // failed to be included in generation (extractor didn't search for pb2Window subclasses)
     interface pb2WindowLeaderboard extends pb2WindowBase<"pb2WindowLeaderboard"> {
-        round_time: unknown;
-        round_time_max: unknown;
-        players_max: unknown;
-        fields: unknown;
-        players: unknown;
-        teams: unknown;
-        my_player_id: unknown;
-        my_spectated_id: unknown;
-        graphs: unknown;
+        round_time: number;
+        round_time_max: number;
+        players_max: number;
+        fields: TODO;
+        players: TODO;
+        teams: TODO;
+        my_player_id: TODO;
+        my_spectated_id: TODO;
+        graphs: TODO;
     }
     var pb2WindowLeaderboard: ClassIdentityProps<"pb2WindowLeaderboard"> & {
         /** Type is unknown. One known value: 0 */
-        ICON_ID_REPORT: unknown;
+        ICON_ID_REPORT: TODO;
         /** Type is unknown. One known value: 1 */
-        ICON_ID_SPECTATE: unknown;
+        ICON_ID_SPECTATE: TODO;
         /** Type is unknown. One known value: 2 */
-        ICON_ID_KICK: unknown;
+        ICON_ID_KICK: TODO;
         /** Type is unknown. One known value: 3 */
-        ICON_ID_PROMOTE: unknown;
+        ICON_ID_PROMOTE: TODO;
         /** Type is unknown. One known value: 4 */
-        ICON_ID_DEMOTE: unknown;
+        ICON_ID_DEMOTE: TODO;
         /** Type is unknown. One known value: 5 */
-        ICON_ID_ELIMINATE: unknown;
+        ICON_ID_ELIMINATE: TODO;
         /** Type is unknown. One known value: 6 */
-        ICON_ID_COIN: unknown;
+        ICON_ID_COIN: TODO;
         /** Type is unknown. One known value: 0 */
-        FIELD_TYPE_NUMERIC: unknown;
+        FIELD_TYPE_NUMERIC: TODO;
         /** Type is unknown. One known value: 1 */
-        FIELD_TYPE_NUMERIC_ELIMINATIONS: unknown;
+        FIELD_TYPE_NUMERIC_ELIMINATIONS: TODO;
         /** Type is unknown. One known value: 2 */
-        FIELD_TYPE_NUMERIC_DEATHS: unknown;
+        FIELD_TYPE_NUMERIC_DEATHS: TODO;
         /** Type is unknown. One known value: 3 */
-        FIELD_TYPE_NUMERIC_SCORE: unknown;
+        FIELD_TYPE_NUMERIC_SCORE: TODO;
         /** Type is unknown. One known value: 4 */
-        FIELD_TYPE_TEXT_NICKNAME: unknown;
+        FIELD_TYPE_TEXT_NICKNAME: TODO;
         /** Type is unknown. One known value: 5 */
-        FIELD_TYPE_TEXT: unknown;
+        FIELD_TYPE_TEXT: TODO;
         /** Type is unknown. One known value: 6 */
-        FIELD_TYPE_TEXT_CENTERED: unknown;
+        FIELD_TYPE_TEXT_CENTERED: TODO;
         /** Type is unknown. One known value: 7 */
-        FIELD_TYPE_BUTTON: unknown;
+        FIELD_TYPE_BUTTON: TODO;
         /** Type is unknown. One known value: 0 */
-        FIELD_WIDTH_AUTO: unknown;
+        FIELD_WIDTH_AUTO: TODO;
         /** Type is unknown. One known value: -1 */
-        FIELD_TEAM_ID_SPECTATORS: unknown;
+        FIELD_TEAM_ID_SPECTATORS: TODO;
         /** Type is unknown. One known value: ["pb2WindowLeaderboard.ICON_ID_REPORT","pb2WindowLeaderboard.ICON_ID_SPECTATE","pb2WindowLeaderboard.ICON_ID_KICK","pb2WindowLeaderboard.ICON_ID_PROMOTE","pb2WindowLeaderboard.ICON_ID_DEMOTE","pb2WindowLeaderboard.ICON_ID_ELIMINATE","pb2WindowLeaderboard.ICON_ID_COIN","pb2WindowLeaderboard.FIELD_TYPE_NUMERIC","pb2WindowLeaderboard.FIELD_TYPE_NUMERIC_ELIMINATIONS","pb2WindowLeaderboard.FIELD_TYPE_NUMERIC_DEATHS","pb2WindowLeaderboard.FIELD_TYPE_NUMERIC_SCORE","pb2WindowLeaderboard.FIELD_TYPE_TEXT_NICKNAME","pb2WindowLeaderboard.FIELD_TYPE_TEXT","pb2WindowLeaderboard.FIELD_TYPE_TEXT_CENTERED","pb2WindowLeaderboard.FIELD_TYPE_BUTTON","pb2WindowLeaderboard.FIELD_WIDTH_AUTO","pb2WindowLeaderboard.FIELD_TEAM_ID_SPECTATORS"] */
-        ALL_TYPES: unknown;
+        ALL_TYPES: TODO;
     }
 }
 
 declare global {
     var pb2_mp: ClassIdentityProps<"pb2_mp"> & {
         /** Type is unknown. One known value: 0 */
-        GAME_FPS: unknown;
+        GAME_FPS: TODO;
         /** Type is unknown. One known value: 1 */
-        FUNCTION_LINEAR: unknown;
+        FUNCTION_LINEAR: TODO;
         /** Type is unknown. One known value: 2 */
-        FUNCTION_MORPH: unknown;
+        FUNCTION_MORPH: TODO;
         /** Type is unknown. One known value: 3 */
-        FUNCTION_INVERSEMORPH: unknown;
-        /** Type is unknown. One known value: 960 */
-        ui_offset_x: unknown;
-        /** Type is unknown. One known value: 540 */
-        ui_offset_y: unknown;
+        FUNCTION_INVERSEMORPH: TODO;
+        ui_offset_x: number;
+        ui_offset_y: number;
     }
 }
