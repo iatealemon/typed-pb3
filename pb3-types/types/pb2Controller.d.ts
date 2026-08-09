@@ -73,7 +73,17 @@ declare global {
         vehicle_in_out_param: TODO;
         /** Type is unknown. One known value: 3 */
         vehicle_in_out_func: TODO;
-        CreateController: (params: TODO) => pb2Controller;
+        /**
+         * @param params Object containing parameters
+         * @param params.character (default=null) The character's `controller` property will automatically be set to this controller.
+         * @param params.player_controllable (default=false)
+         * @param params.ai_preset (default=undefined)
+         */
+        CreateController: (params: {
+            character?: pb2Character | null,
+            player_controllable?: boolean,
+            ai_preset?: AIPreset | null
+        }) => pb2Controller;
         controllers: pb2Controller[];
     }
 }

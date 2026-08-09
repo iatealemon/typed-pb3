@@ -118,7 +118,57 @@ declare global {
         forceUnHandHold: (id: TODO) => void;
     }
     var pb2Character: ClassIdentityProps<"pb2Character"> & {
-        CreateCharacter: (params: TODO) => pb2Character;
+        /**
+         * @param params Object containing parameters
+         * @param params.ragdoll Must be defined or an error is thrown. The ragdoll's `owner_character` property will automatically be set to this character.
+         * @param params.controller (default=null)
+         * @param params.x (default=params.ragdoll.x)
+         * @param params.y (default=params.ragdoll.y)
+         * @param params.tox (default=0)
+         * @param params.toy (default=0)
+         * @param params.hmax (default=pb2Character.bXF)
+         * @param params.hea (default=this.hmax)
+         * @param params.start_hea (default=this.hmax)
+         * @param params.hmax_damage_multiplier (default=pb2Character.hmax_damage_multiplier)
+         * @param params.side If unspecified, the character will spawn looking at the world origin
+         * @param params.stability (default=1)
+         * @param params.block_instant_midair_jump (default=false)
+         * @param params.drop_guns_on_death (default=pb2Character.DROP_ALWAYS)
+         * @param params.drop_grenades_on_death (default=pb2Character.DROP_WHEN_INTENDED_ONLY)
+         * @param params.can_be_revived (default=undefined) Can be left unspecified, but the value will be `undefined` (falsy) rather than a boolean value.
+         * @param params.Gd (default=false) If true, body part hp values on the ragdoll will not be set
+         * @param params.regen_module (default=pb2StyleRegen.style_delayed_speedup)
+         * @param params.onDeath Optional function or trigger that gets added as an "OBJECT_DIED" event listener on the character
+         * @param params.onAbility Optional function or trigger that gets added as a "CHARACTER_ABILITY" event listener on the character
+         */
+        CreateCharacter: (params: {
+            // roughly ordered by importance and category
+            ragdoll: pb2Ragdoll,
+            controller?: pb2Controller | null,
+            x?: number,
+            y?: number,
+            tox?: number,
+            toy?: number,
+            hmax?: number,
+            hea?: number,
+            start_hea?: number,
+            hmax_damage_multiplier?: number,
+            side?: number,
+            stability?: number,
+            block_instant_midair_jump?: boolean,
+            drop_guns_on_death?: TODO,
+            drop_grenades_on_death?: TODO,
+            can_be_revived?: boolean,
+            Gd?: boolean,
+            regen_module?: TODO | null,
+            onDeath?: (
+                died: pb2Character, 
+                killers: pb2Ragdoll[], // entities don't count
+                damage_dealt: number[], 
+                using: (pb2Gun | pb2Bullet)[]
+            ) => void,
+            onAbility?: (user: pb2Character) => void,
+        }) => pb2Character; // technically can return null but it seems like an edge case
         /** Type is unknown. One known value: 0 */
         DROP_NEVER: TODO;
         /** Type is unknown. One known value: 1 */
