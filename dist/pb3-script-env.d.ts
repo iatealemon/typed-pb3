@@ -1462,7 +1462,57 @@ declare global {
         forceUnHandHold: (id: TODO) => void;
     }
     var pb2Character: ClassIdentityProps<"pb2Character"> & {
-        CreateCharacter: (params: TODO) => pb2Character;
+        /**
+         * @param params Object containing parameters
+         * @param params.ragdoll Must be defined or an error is thrown. The ragdoll's `owner_character` property will automatically be set to this character.
+         * @param params.controller (default=null)
+         * @param params.x (default=params.ragdoll.x)
+         * @param params.y (default=params.ragdoll.y)
+         * @param params.tox (default=0)
+         * @param params.toy (default=0)
+         * @param params.hmax (default=pb2Character.bXF)
+         * @param params.hea (default=this.hmax)
+         * @param params.start_hea (default=this.hmax)
+         * @param params.hmax_damage_multiplier (default=pb2Character.hmax_damage_multiplier)
+         * @param params.side If unspecified, the character will spawn looking at the world origin
+         * @param params.stability (default=1)
+         * @param params.block_instant_midair_jump (default=false)
+         * @param params.drop_guns_on_death (default=pb2Character.DROP_ALWAYS)
+         * @param params.drop_grenades_on_death (default=pb2Character.DROP_WHEN_INTENDED_ONLY)
+         * @param params.can_be_revived (default=undefined) Can be left unspecified, but the value will be `undefined` (falsy) rather than a boolean value.
+         * @param params.Gd (default=false) If true, body part hp values on the ragdoll will not be set
+         * @param params.regen_module (default=pb2StyleRegen.style_delayed_speedup)
+         * @param params.onDeath Optional function or trigger that gets added as an "OBJECT_DIED" event listener on the character
+         * @param params.onAbility Optional function or trigger that gets added as a "CHARACTER_ABILITY" event listener on the character
+         */
+        CreateCharacter: (params: {
+            // roughly ordered by importance and category
+            ragdoll: pb2Ragdoll,
+            controller?: pb2Controller | null,
+            x?: number,
+            y?: number,
+            tox?: number,
+            toy?: number,
+            hmax?: number,
+            hea?: number,
+            start_hea?: number,
+            hmax_damage_multiplier?: number,
+            side?: number,
+            stability?: number,
+            block_instant_midair_jump?: boolean,
+            drop_guns_on_death?: TODO,
+            drop_grenades_on_death?: TODO,
+            can_be_revived?: boolean,
+            Gd?: boolean,
+            regen_module?: TODO | null,
+            onDeath?: (
+                died: pb2Character, 
+                killers: pb2Ragdoll[], // entities don't count
+                damage_dealt: number[], 
+                using: (pb2Gun | pb2Bullet)[]
+            ) => void,
+            onAbility?: (user: pb2Character) => void,
+        }) => pb2Character; // technically can return null but it seems like an edge case
         /** Type is unknown. One known value: 0 */
         DROP_NEVER: TODO;
         /** Type is unknown. One known value: 1 */
@@ -1639,7 +1689,16 @@ declare global {
         text: TODO;
         colors: TODO;
         CapitalRedColors: () => TODO;
-        RandomColors: () => TODO;
+        /**
+         * Bugged. Tries to set every color to `new pb2HighRangeColor().random(1)` but `random` doesn't exist on pb2HighRangeColor.  
+         * 
+         * Working alternative:
+         * ```js
+         * for (let i = 0; i < coloredText.text.length; i++)
+         *     coloredText.colors[i] = new pb2HighRangeColor(Math.random() * Math.pow(16, 6));
+         * ```
+         */
+        RandomColors: () => pb2ColoredText;
         WhiteColors: () => TODO;
         /**
          * @param nickname_tagged   
@@ -1726,7 +1785,17 @@ declare global {
         vehicle_in_out_param: TODO;
         /** Type is unknown. One known value: 3 */
         vehicle_in_out_func: TODO;
-        CreateController: (params: TODO) => pb2Controller;
+        /**
+         * @param params Object containing parameters
+         * @param params.character (default=null) The character's `controller` property will automatically be set to this controller.
+         * @param params.player_controllable (default=false)
+         * @param params.ai_preset (default=undefined)
+         */
+        CreateController: (params: {
+            character?: pb2Character | null,
+            player_controllable?: boolean,
+            ai_preset?: AIPreset | null
+        }) => pb2Controller;
         controllers: pb2Controller[];
     }
 }
@@ -2713,18 +2782,44 @@ declare global {
     interface pb2HeroInfoBar extends ClassIdentityProps<"pb2HeroInfoBar"> {
         /** Type is unknown. One known value: 30 */
         readonly classid: TODO;
-        title: TODO;
-        value: TODO;
-        value_max: TODO;
-        value_handicap: TODO;
-        color: TODO;
-        color_border: TODO;
-        color_delta: TODO;
-        color_handicap: TODO;
-        color_title: TODO;
+        title: string;
+        value: number;
+        value_max: number;
+        value_handicap: number;
+        color: pb2HighRangeColor;
+        color_border: pb2HighRangeColor;
+        color_delta: pb2HighRangeColor | null;
+        color_handicap: pb2HighRangeColor | null;
+        color_title: pb2HighRangeColor;
     }
     var pb2HeroInfoBar: {
-        new (params: TODO): pb2HeroInfoBar;
+        /**
+         * @param params Object containing parameters
+         * @param params.type (default=pb2HeroInfoBar.TYPE_SERVER_VAR)
+         * @param params.order (default=1)
+         * @param params.title (default="")
+         * @param params.value (default=0)
+         * @param params.value_max (default=100)
+         * @param params.value_handicap (default=0)
+         * @param params.color (default=new pb2HighRangeColor(0xd81a1a))
+         * @param params.color_border (default=new pb2HighRangeColor(0xff4747))
+         * @param params.color_delta (default=null)
+         * @param params.color_handicap (default=null)
+         * @param params.color_title (default=new pb2HighRangeColor(0xff4747))
+         */
+        new (params: {
+            type?: TODO,
+            order?: number,
+            title?: string,
+            value?: number,
+            value_max?: number,
+            value_handicap?: number,
+            color?: pb2HighRangeColor,
+            color_border?: pb2HighRangeColor,
+            color_delta?: pb2HighRangeColor,
+            color_handicap?: pb2HighRangeColor,
+            color_title?: pb2HighRangeColor,
+        }): pb2HeroInfoBar;
         /** Type is unknown. One known value: 4 */
         TYPE_SERVER_VAR: TODO;
         /** Type is unknown. One known value: 0 */
@@ -2916,6 +3011,57 @@ declare global {
     }
 }
 
+type pb2StyleBoostBase<ClassName extends string> = ClassIdentityProps<ClassName> & {
+    readonly activated: TODO;
+    boost: TODO;
+    readonly current_boost: TODO;
+    readonly denied_repeat_cooldown: TODO;
+    doublejumps_left: number;
+    doublejumps_max: number;
+    fuel: TODO;
+    max_fuel: TODO;
+    readonly noping_out_boost: TODO;
+    readonly noping_out_boost_ignition: TODO;
+    readonly noping_out_current_boost: TODO;
+    readonly ragdoll: TODO;
+    readonly raycast_less_activation_allowed_timer: TODO;
+    readonly reactivation_anti_flood_timer: TODO;
+    readonly style_id: TODO;
+}
+
+declare global {
+    interface pb2StyleBoost extends pb2StyleBoostBase<"pb2StyleBoost"> {} // pb2StyleBoost.NONE
+    interface pb2StyleBoostSelfboost extends pb2StyleBoostBase<"fnR"> {} // pb2StyleBoost.SELFBOOST
+    interface pb2StyleBoostJetpack extends pb2StyleBoostBase<"fnC"> {} // pb2StyleBoost.JETPACK
+    interface pb2StyleBoostDoublejump extends pb2StyleBoostBase<"fnD"> {} // pb2StyleBoost.DOUBLEJUMP
+    var pb2StyleBoost: ClassIdentityProps<"pb2StyleBoost"> & {
+        /** Type is unknown. One known value: 0 */
+        NONE: TODO;
+        /** Type is unknown. One known value: 1 */
+        SELFBOOST: TODO;
+        /** Type is unknown. One known value: 2 */
+        JETPACK: TODO;
+        /** Type is unknown. One known value: 3 */
+        DOUBLEJUMP: TODO;
+        /** Type is unknown. One known value: ["pb2StyleBoost.NONE","pb2StyleBoost.SELFBOOST","pb2StyleBoost.JETPACK","pb2StyleBoost.DOUBLEJUMP"] */
+        ALL_TYPES: TODO;
+        noping_out_boost_max: number;
+        noping_out_boost_regen_speed: number;
+        noping_out_boost_regen_speed_midair: number;
+        noping_out_current_boost_max: number;
+        noping_out_boost_strength: number;
+        jetpack_loop_loudness: number;
+        jetpack_auto_jetpack_on_double_jump_duration: number;
+        jetpack_max_fuel_for_new_ragdolls: number;
+        selfboost_decay_speed: number;
+        selfboost_strength: number;
+        doublejump_maximum_charge_for_new_ragdolls: number;
+        doublejump_restore_speed: number;
+        doublejump_strength: number;
+        doublejump_single_boost_duration_decay: number;
+    }
+}
+
 declare global {
     interface pb2Ragdoll extends ClassIdentityProps<"pb2Ragdoll"> {
         /** Type is unknown. One known value: 3 */
@@ -2924,87 +3070,324 @@ declare global {
         readonly y: number;
         readonly tox: number;
         readonly toy: number;
-        dimmed: TODO;
+        dimmed: boolean;
         readonly owner_character: pb2Character | null;
         /**
-         * @param eVZ   
-         * @param beh   
-         * @param eWu (default=eVZ.GetPosition()   
+         * Damages a limb. This also reduces current hp of the character.
+         * @param atom Ragdoll atom  
+         * @param dmg Damage amount  
+         * @param eWu (default=atom.GetPosition())   
+         * @param beg (default=pb2Void.bh)   
+         * @param eWw (default=1) affects damage in some way  
+         * @param dir_x (default=0) Damage direction vector x  
+         * @param dir_y (default=0) Damage direction vector y  
+         * @param beo (default=true)   
+         * @param limb_damage_multiplier (default=1)   
+         * @param eWx (default=null)   
          */
-        DealLimbDamage: (eVZ: TODO, beh: TODO, eWu?: TODO) => TODO;
-        HealGunApplied: (self: TODO) => TODO;
-        CaptureHealGunApplied: (by: TODO) => TODO;
-        SetName: (eUZ: TODO) => TODO;
-        GetName: () => TODO;
+        DealLimbDamage: (atom: pb2Atom, dmg: number, eWu?: TODO, beg?: TODO, eWw?: TODO, dir_x?: number, dir_y?: number, beo?: TODO, limb_damage_multiplier?: number, eWx?: TODO) => number;
         /**
-         * @param fj   
-         * @param eFv (default=-1)   
+         * Apply defibrillator effect
+         * @param self If false, healing will be applied regardless of the character's dying state. 
+         * @returns Boolean telling if the player healed
          */
-        MeltDown: (fj: TODO, eFv?: TODO) => TODO;
-        ExpireAllHintObjects: () => TODO;
-        readonly side: TODO;
-        Flip: () => TODO;
+        HealGunApplied: (self: boolean) => boolean;
+        /**
+         * Apply capture defibrillator effect. Target will become a teammate of `by`  
+         * Used by gun class "gun_eratrigger" or any gun class with is_healgun and is_capturehealgun set to true.
+         * @param by 
+         */
+        CaptureHealGunApplied: (by: pb2Ragdoll) => void;
+        /**
+         * Sets the displayed name of the ragdoll.  
+         * Note that the team's `recolor_nicknames_on_overhead` property can cause colors to be displayed differently.
+         * @param name New name
+         */
+        SetName: (name: pb2ColoredText) => void;
+        /** Gets the displayed name of the ragdoll */
+        GetName: () => pb2ColoredText;
+        /**
+         * Destroys the ragdoll in an explosion of particles.  
+         * 
+         * The whole body will be destroyed if the ragdoll's hp_body is over 0 or `atom_id` is -1.  
+         * 
+         * `atom_id` may be specified to destroy only the lower or upper half of the body. 
+         * The half that atom `atom_id` belongs to will be destroyed.  
+         * For example:  
+         * pb2Ragdoll.b_pelvis -> destroy lower body  
+         * pb2Ragdoll.b_body -> destroy upper body
+         * @param color Particle color  
+         * @param atom_id (default=-1) Atom id that specifies which half of the body should be destroyed.  
+         */
+        MeltDown: (color: pb2Color, atom_id?: number) => void;
+        /**
+         * Starts removal of all floating text bubbles (pb2WindowHints) attached to the ragdoll.
+         */
+        ExpireAllHintObjects: () => void;
+        readonly side: -1 | 1;
+        /** Flips the ragdoll horizontally. Has no effect if the character is alive. */
+        Flip: () => void;
+        /** Removes the ragdoll and its owner_character if it exists. */
         remove: () => TODO;
         readonly is_being_removed: boolean;
-        SetVision: (ID: TODO) => TODO;
+        /**
+         * Sets the ragdoll's vision type.
+         * @param ID One of the vision types defined on pb2Vision, such as pb2Vision.VISION_SCREEN_BOX
+         */
+        SetVision: (ID: TODO) => void;
+        /** Gets the ragdoll's vision type. */
         GetVision: () => TODO;
-        GetBlindness: () => TODO;
-        SetBlindness: (v: TODO) => TODO;
-        GetDeafness: () => TODO;
-        SetDeafness: (v: TODO) => TODO;
+        /** Get blindness time/amount */
+        GetBlindness: () => number;
+        /**
+         * Set blindness time/amount. Prevents players and NPCs from seeing.
+         * @param v 
+         */
+        SetBlindness: (v: number) => void;
+        /** Get deafness time/amount */
+        GetDeafness: () => number;
+        /**
+         * Set deafness time/amount. Prevents players and NPCs from hearing.
+         * @param v 
+         */
+        SetDeafness: (v: number) => void;
         hp_head: number;
         hp_body: number;
         hp_arms: number;
         hp_legs: number;
-        GetAtomsTotal: () => TODO;
-        readonly gameplay_effects: TODO;
-        ClearBulletHoles: () => TODO;
-        UsesGrapplingHook: () => TODO;
-        readonly active_grappling_hook: TODO;
-        DetachFromRope: (collapse: TODO) => TODO;
-        hud_custom_bars: TODO;
-        readonly enforce_skin_limitations: TODO;
-        readonly use_skin_properties: TODO;
-        readonly team: TODO;
-        SetBoostStyle: (v: TODO) => TODO;
-        SetSwordsStyle: (v: TODO) => TODO;
-        readonly style_boost: TODO;
+        /** Gets the number of atoms in the ragdoll. Varies based on hp_body. */
+        GetAtomsTotal: () => number;
+        readonly gameplay_effects: pb2GameplayEffects;
+        /** Removes visible bullet holes from the ragdoll */
+        ClearBulletHoles: () => void;
+        /** Returns a boolean telling if the ragdoll is currently using a grappling hook */
+        UsesGrapplingHook: () => boolean;
+        readonly active_grappling_hook: pb2Rope | null;
+        /**
+         * Forces the ragdoll's grappling hook to detach
+         * @param collapse Pull in rope (true) or detach from both ends (false)
+         */
+        DetachFromRope: (collapse: boolean) => void;
+        /**
+         * Can be used to add custom bars.  
+         * Example:
+         * ```js
+         * ragdoll.hud_custom_bars.push(new pb2HeroInfoBar({title: "Energy"}))
+         * ```
+         */
+        hud_custom_bars: pb2HeroInfoBar[];
+        readonly enforce_skin_limitations: boolean;
+        readonly use_skin_properties: boolean;
+        readonly team: pb2Team;
+        /**
+         * Sets the ragdoll's boost style type.
+         * @param v One of the boost style types defined on pb2StyleBoost, such as pb2StyleBoost.SELFBOOST
+         */
+        SetBoostStyle: (v: TODO) => void;
+        /**
+         * Sets the ragdoll's swords style type.
+         * @param v One of the swords style types defined on pb2StyleSwords, such as pb2StyleSwords.BASIC
+         */
+        SetSwordsStyle: (v: TODO) => void;
+        readonly style_boost: pb2StyleBoostBase<string>;
+        /** Gets the ragdoll's sword style type. */
         GetSwordsStyleID: () => TODO;
         /**
-         * @param dx   
-         * @param dy   
-         * @param dJP (default=0)   
-         * @param dJQ (default=0)   
-         * @param beD (default=this.local_atoms[pb2Ragdoll.b_pelvis])   
-         * @param beF (default=false)   
-         * @param ben (default=null)   
+         * @param dx Difference in X  
+         * @param dy Difference in y  
+         * @param dtox (default=0) Added X speed  
+         * @param dtoy (default=0) Added Y speed  
+         * @param atom (default=this.local_atoms[pb2Ragdoll.b_pelvis]) Atom to teleport. If `hp_body <= 0` or `split` is true, only the half of the body that the atom belongs to will be teleported.   
+         * @param split (default=false) Force body halves to split and only teleport the half containing `atom`. Kills the character if not already dead. 
+         * @param color (default=null) Particle color, or null for teleport effect and sound  
          */
-        Teleport: (dx: number, dy: number, dJP?: TODO, dJQ?: TODO, beD?: TODO, beF?: TODO, ben?: TODO) => TODO;
+        Teleport: (dx: number, dy: number, dtox?: number, dtoy?: number, atom?: pb2Atom, split?: boolean, color?: ColorTransform | null) => void;
         /**
+         * Plays a sound at the ragdoll.  
+         * ```js
+         * // Play the ragdoll's death_underwater sound
+         * ragdoll.Speak("death_underwater") 
+         * // Play a sound from the library
+         * ragdoll.Speak("s_explode3") 
+         * ```
          * @param sound_name   
          * @param eVL (default=false)   
-         * @param cAr (default=false)   
+         * @param team_only (default=false) Only for own team  
          */
-        Speak: (sound_name: TODO, eVL?: TODO, cAr?: TODO) => TODO;
-        damage_projectiles: TODO;
-        damage_explosions: TODO;
-        damage_impacts: TODO;
-        damage_radiation: TODO;
-        damage_liquids: TODO;
-        mobility: TODO;
-        readonly scale: TODO;
-        readonly voice_preset_pitch: TODO;
-        voice_pitch: TODO;
-        readonly normalize_all_voice_lines_volume: TODO;
-        readonly normalize_custom_voice_lines_volume: TODO;
-        /** id is one of the atom id static consts defined on pb2Ragdoll */
-        GetAtom: (id: number) => pb2Atom | null;
-        /** @param id (default=0)  */
-        GetMesh: (id?: number) => TODO;
+        Speak: (sound_name: string, eVL?: boolean, team_only?: boolean) => void;
+        damage_projectiles: number;
+        damage_explosions: number;
+        damage_impacts: number;
+        damage_radiation: number;
+        damage_liquids: number;
+        mobility: number;
+        readonly scale: number;
+        readonly voice_preset_pitch: number;
+        voice_pitch: undefined | null;
+        readonly normalize_all_voice_lines_volume: boolean;
+        readonly normalize_custom_voice_lines_volume: boolean;
+        /**
+         * Gets the ragdoll's atom (i.e. body part) with the specified ID. 
+         * @param id One of the atom IDs defined on pb2Ragdoll, such as pb2Ragdoll.b_pelvis
+         */
+        GetAtom: (id: number) => pb2Atom;
+        /**
+         * Gets the ragdoll's mesh with the specified ID. 
+         * @param id (default=0) One of the mesh IDs defined on pb2Ragdoll, such as pb2Ragdoll.mc_arm1b_sword  
+         */
+        GetMesh: (id?: number) => THREE.Mesh;
     }
     var pb2Ragdoll: ClassIdentityProps<"pb2Ragdoll"> & {
-        CreateRagdoll: (params: TODO) => pb2Ragdoll;
-        CreateRagdollComplete: (p: TODO) => pb2Ragdoll;
+        /**
+         * Creates a new ragdoll. The ragdoll will be lifeless if params.owner_character is unspecified, pass in a pb2Character
+         * or use CreateRagdollComplete to create a ragdoll with an accompanying pb2Character and pb2Controller.  
+         * @param params Object containing parameters  
+         * @param params.team Required.  
+         * @param params.skin Required. Skin editor object created using pb2SkinEditor functions  
+         * @param params.owner_character (default=null)  
+         * @param params.x (default=0)  
+         * @param params.y (default=0)  
+         * @param params.tox (default=0)  
+         * @param params.toy (default=0)  
+         * @param params.rotation (default=0)  
+         * @param params.side (default=1)  
+         * @param params.scale (default=1)  
+         * @param params.name (default=null) Can be a pb2ColoredText or a string optionally containing color tags like "[#00FFFF]John[/] Doe"  
+         * @param params.style_swords (default=pb2StyleSwords.NONE)  
+         * @param params.style_grappling_hook (default=pb2StyleGrapplingHook.STYLE_NOTHING)  
+         * @param params.style_boost (default=pb2StyleBoost.NONE)  
+         * @param params.vision (default=pb2Vision.VISION_RADIAL_TRACE)  
+         * @param params.can_breathe_in_water (default=false)  
+         * @param params.can_breathe_in_toxic_clouds (default=false)  
+         * @param params.enforce_skin_limitations (default=false)  
+         * @param params.use_skin_properties (default=false)  
+         * @param params.sword_projectile_reflection (default=false)  
+         * @param params.normalize_all_voice_lines_volume (default=false)  
+         * @param params.normalize_custom_voice_lines_volume (default=false)  
+         * @param params.voice_pitch (default=undefined) If undefined, pitch will be based on the ragdoll scale and voice preset pitch  
+         * @param params.driver_of (default=null)  
+         */
+        CreateRagdoll: (params: {
+            // roughly ordered by importance and category
+            team: pb2Team,
+            skin: pb2EditorObject,
+            owner_character?: pb2Character | null
+            x?: number,
+            y?: number,
+            tox?: number,
+            toy?: number,
+            rotation?: number,
+            side?: -1 | 1,
+            scale?: number,
+            name?: pb2ColoredText | string,
+            style_swords?: TODO,
+            style_grappling_hook?: TODO,
+            style_boost?: TODO,
+            vision?: TODO,
+            can_breathe_in_water?: boolean,
+            can_breathe_in_toxic_clouds?: boolean,
+            enforce_skin_limitations?: boolean,
+            use_skin_properties?: boolean,
+            sword_projectile_reflection?: boolean,
+            normalize_all_voice_lines_volume?: boolean,
+            normalize_custom_voice_lines_volume?: boolean,
+            voice_pitch?: number | undefined,
+            driver_of?: pb2EntityBase<string> | null,
+        }) => pb2Ragdoll; // technically this can also return null but it seems that only happens in an edge case, so maybe null should be omitted for convenience?
+        /**
+         * Same as CreateRagdoll, but a pb2Character and pb2Controller are also created.
+         * @param p Object containing parameters
+         * @param params.team Required.  
+         * @param params.skin Required. Skin editor object created using pb2SkinEditor functions  
+         * @param params.x (default=0)  
+         * @param params.y (default=0)  
+         * @param params.tox (default=0)  
+         * @param params.toy (default=0)  
+         * @param params.rotation (default=0)  
+         * @param params.side (default=1)  
+         * @param params.scale (default=1)  
+         * @param params.name (default=null) Can be a pb2ColoredText or a string optionally containing color tags like "[#00FFFF]John[/] Doe"  
+         * @param params.style_swords (default=pb2StyleSwords.NONE)  
+         * @param params.style_grappling_hook (default=pb2StyleGrapplingHook.STYLE_NOTHING)  
+         * @param params.style_boost (default=pb2StyleBoost.NONE)  
+         * @param params.vision (default=pb2Vision.VISION_RADIAL_TRACE)  
+         * @param params.can_breathe_in_water (default=false)  
+         * @param params.can_breathe_in_toxic_clouds (default=false)  
+         * @param params.enforce_skin_limitations (default=false)  
+         * @param params.use_skin_properties (default=false)  
+         * @param params.sword_projectile_reflection (default=false)  
+         * @param params.normalize_all_voice_lines_volume (default=false)  
+         * @param params.normalize_custom_voice_lines_volume (default=false)  
+         * @param params.voice_pitch (default=undefined) If undefined, pitch will be based on the ragdoll scale and voice preset pitch  
+         * @param params.driver_of (default=null)  
+         * 
+         * @param params.hmax (default=pb2Character.bXF)
+         * @param params.hea (default=this.hmax)
+         * @param params.start_hea (default=this.hmax)
+         * @param params.hmax_damage_multiplier (default=pb2Character.hmax_damage_multiplier)
+         * @param params.stability (default=1)
+         * @param params.block_instant_midair_jump (default=false)
+         * @param params.drop_guns_on_death (default=pb2Character.DROP_ALWAYS)
+         * @param params.drop_grenades_on_death (default=pb2Character.DROP_WHEN_INTENDED_ONLY)
+         * @param params.can_be_revived (default=undefined) Can be left unspecified, but the value will be `undefined` (falsy) rather than a boolean value.
+         * @param params.Gd (default=false) If true, body part hp values on the ragdoll will not be set
+         * @param params.regen_module (default=pb2StyleRegen.style_delayed_speedup)
+         * @param params.onDeath Optional function or trigger that gets added as an "OBJECT_DIED" event listener on the character
+         * @param params.onAbility Optional function or trigger that gets added as a "CHARACTER_ABILITY" event listener on the character
+         * 
+         * @param params.player_controllable (default=false)
+         * @param params.ai_preset (default=undefined)
+         */
+        CreateRagdollComplete: (p: {
+            // ragdoll
+            team: pb2Team,
+            skin: pb2EditorObject,
+            x?: number,
+            y?: number,
+            tox?: number,
+            toy?: number,
+            rotation?: number,
+            side?: -1 | 1,
+            scale?: number,
+            name?: pb2ColoredText | string,
+            style_swords?: TODO,
+            style_grappling_hook?: TODO,
+            style_boost?: TODO,
+            vision?: TODO,
+            can_breathe_in_water?: boolean,
+            can_breathe_in_toxic_clouds?: boolean,
+            enforce_skin_limitations?: boolean,
+            use_skin_properties?: boolean,
+            sword_projectile_reflection?: boolean,
+            normalize_all_voice_lines_volume?: boolean,
+            normalize_custom_voice_lines_volume?: boolean,
+            voice_pitch?: number | undefined,
+            driver_of?: pb2EntityBase<string> | null,
+
+            // character
+            hmax?: number,
+            hea?: number,
+            start_hea?: number,
+            hmax_damage_multiplier?: number,
+            stability?: number,
+            block_instant_midair_jump?: boolean,
+            drop_guns_on_death?: TODO,
+            drop_grenades_on_death?: TODO,
+            can_be_revived?: boolean,
+            Gd?: boolean,
+            regen_module?: TODO | null,
+            onDeath?: (
+                died: pb2Character, 
+                killers: pb2Ragdoll[], // entities don't count
+                damage_dealt: number[], 
+                using: (pb2Gun | pb2Bullet)[]
+            ) => void,
+            onAbility?: (user: pb2Character) => void,
+
+            // controller
+            player_controllable?: boolean,
+            ai_preset?: AIPreset | null
+        }) => pb2Ragdoll;
         /** Type is unknown. One known value: 0 */
         b_pelvis: TODO;
         /** Type is unknown. One known value: 1 */
@@ -3342,7 +3725,7 @@ declare global {
 }
 
 declare global {
-    var pb2StartDetails: {
+    var pb2StartDetails: null | {
         testing_in_level_editor: boolean;
     }
 }
@@ -3406,52 +3789,6 @@ declare global {
         readonly last_error_reason: TODO;
     }
     
-}
-
-declare global {
-    interface pb2StyleBoost extends ClassIdentityProps<"pb2StyleBoost"> {
-        readonly ragdoll: TODO;
-        readonly style_id: TODO;
-        readonly noping_out_boost: TODO;
-        readonly noping_out_current_boost: TODO;
-        readonly noping_out_boost_ignition: TODO;
-        boost: TODO;
-        readonly activated: TODO;
-        max_fuel: TODO;
-        fuel: TODO;
-        readonly raycast_less_activation_allowed_timer: TODO;
-        readonly reactivation_anti_flood_timer: TODO;
-        readonly denied_repeat_cooldown: TODO;
-        doublejumps_left: number;
-        doublejumps_max: number;
-        readonly current_boost: TODO;
-    }
-    var pb2StyleBoost: ClassIdentityProps<"pb2StyleBoost"> & {
-        /** Type is unknown. One known value: 0 */
-        NONE: TODO;
-        /** Type is unknown. One known value: 1 */
-        SELFBOOST: TODO;
-        /** Type is unknown. One known value: 2 */
-        JETPACK: TODO;
-        /** Type is unknown. One known value: 3 */
-        DOUBLEJUMP: TODO;
-        /** Type is unknown. One known value: ["pb2StyleBoost.NONE","pb2StyleBoost.SELFBOOST","pb2StyleBoost.JETPACK","pb2StyleBoost.DOUBLEJUMP"] */
-        ALL_TYPES: TODO;
-        noping_out_boost_max: number;
-        noping_out_boost_regen_speed: number;
-        noping_out_boost_regen_speed_midair: number;
-        noping_out_current_boost_max: number;
-        noping_out_boost_strength: number;
-        jetpack_loop_loudness: number;
-        jetpack_auto_jetpack_on_double_jump_duration: number;
-        jetpack_max_fuel_for_new_ragdolls: number;
-        selfboost_decay_speed: number;
-        selfboost_strength: number;
-        doublejump_maximum_charge_for_new_ragdolls: number;
-        doublejump_restore_speed: number;
-        doublejump_strength: number;
-        doublejump_single_boost_duration_decay: number;
-    }
 }
 
 declare global {
