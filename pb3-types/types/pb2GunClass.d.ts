@@ -86,6 +86,6 @@ declare global {
         registered_weapons: TODO;
         GetGunClassByString: (str: string) => pb2GunClass;
         CachedGunClasses: {[k: string]: pb2GunClass}
-        CreateCustomGunClass: (bjW: TODO, exC: TODO) => pb2GunClass;
+        CreateCustomGunClass: (bjW: TODO, exC: TODO) => void;
     }
 }
