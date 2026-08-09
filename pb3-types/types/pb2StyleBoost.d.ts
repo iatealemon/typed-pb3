@@ -2,24 +2,29 @@ export { };
 
 import type { ClassIdentityProps, TODO } from "./internal/helper";
 
+export type pb2StyleBoostBase<ClassName extends string> = ClassIdentityProps<ClassName> & {
+    readonly activated: TODO;
+    boost: TODO;
+    readonly current_boost: TODO;
+    readonly denied_repeat_cooldown: TODO;
+    doublejumps_left: number;
+    doublejumps_max: number;
+    fuel: TODO;
+    max_fuel: TODO;
+    readonly noping_out_boost: TODO;
+    readonly noping_out_boost_ignition: TODO;
+    readonly noping_out_current_boost: TODO;
+    readonly ragdoll: TODO;
+    readonly raycast_less_activation_allowed_timer: TODO;
+    readonly reactivation_anti_flood_timer: TODO;
+    readonly style_id: TODO;
+}
+
 declare global {
-    interface pb2StyleBoost extends ClassIdentityProps<"pb2StyleBoost"> {
-        readonly ragdoll: TODO;
-        readonly style_id: TODO;
-        readonly noping_out_boost: TODO;
-        readonly noping_out_current_boost: TODO;
-        readonly noping_out_boost_ignition: TODO;
-        boost: TODO;
-        readonly activated: TODO;
-        max_fuel: TODO;
-        fuel: TODO;
-        readonly raycast_less_activation_allowed_timer: TODO;
-        readonly reactivation_anti_flood_timer: TODO;
-        readonly denied_repeat_cooldown: TODO;
-        doublejumps_left: number;
-        doublejumps_max: number;
-        readonly current_boost: TODO;
-    }
+    interface pb2StyleBoost extends pb2StyleBoostBase<"pb2StyleBoost"> {} // pb2StyleBoost.NONE
+    interface pb2StyleBoostSelfboost extends pb2StyleBoostBase<"fnR"> {} // pb2StyleBoost.SELFBOOST
+    interface pb2StyleBoostJetpack extends pb2StyleBoostBase<"fnC"> {} // pb2StyleBoost.JETPACK
+    interface pb2StyleBoostDoublejump extends pb2StyleBoostBase<"fnD"> {} // pb2StyleBoost.DOUBLEJUMP
     var pb2StyleBoost: ClassIdentityProps<"pb2StyleBoost"> & {
         /** Type is unknown. One known value: 0 */
         NONE: TODO;

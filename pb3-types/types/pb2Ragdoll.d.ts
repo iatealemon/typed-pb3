@@ -1,6 +1,7 @@
 export { };
 
 import type { ClassIdentityProps, TODO } from "./internal/helper";
+import type { pb2StyleBoostBase } from "./pb2StyleBoost";
 
 declare global {
     interface pb2Ragdoll extends ClassIdentityProps<"pb2Ragdoll"> {
@@ -10,7 +11,7 @@ declare global {
         readonly y: number;
         readonly tox: number;
         readonly toy: number;
-        dimmed: TODO;
+        dimmed: boolean;
         readonly owner_character: pb2Character | null;
         /**
          * @param eVZ   
@@ -28,7 +29,7 @@ declare global {
          */
         MeltDown: (fj: TODO, eFv?: TODO) => TODO;
         ExpireAllHintObjects: () => TODO;
-        readonly side: TODO;
+        readonly side: -1 | 1;
         Flip: () => TODO;
         remove: () => TODO;
         readonly is_being_removed: boolean;
@@ -43,18 +44,18 @@ declare global {
         hp_arms: number;
         hp_legs: number;
         GetAtomsTotal: () => TODO;
-        readonly gameplay_effects: TODO;
+        readonly gameplay_effects: pb2GameplayEffects;
         ClearBulletHoles: () => TODO;
         UsesGrapplingHook: () => TODO;
-        readonly active_grappling_hook: TODO;
+        readonly active_grappling_hook: null | TODO;
         DetachFromRope: (collapse: TODO) => TODO;
-        hud_custom_bars: TODO;
-        readonly enforce_skin_limitations: TODO;
-        readonly use_skin_properties: TODO;
-        readonly team: TODO;
+        hud_custom_bars: TODO[];
+        readonly enforce_skin_limitations: boolean;
+        readonly use_skin_properties: boolean;
+        readonly team: pb2Team;
         SetBoostStyle: (v: TODO) => TODO;
         SetSwordsStyle: (v: TODO) => TODO;
-        readonly style_boost: TODO;
+        readonly style_boost: pb2StyleBoostBase<string>;
         GetSwordsStyleID: () => TODO;
         /**
          * @param dx   
@@ -72,17 +73,17 @@ declare global {
          * @param cAr (default=false)   
          */
         Speak: (sound_name: TODO, eVL?: TODO, cAr?: TODO) => TODO;
-        damage_projectiles: TODO;
-        damage_explosions: TODO;
-        damage_impacts: TODO;
-        damage_radiation: TODO;
-        damage_liquids: TODO;
-        mobility: TODO;
-        readonly scale: TODO;
-        readonly voice_preset_pitch: TODO;
-        voice_pitch: TODO;
-        readonly normalize_all_voice_lines_volume: TODO;
-        readonly normalize_custom_voice_lines_volume: TODO;
+        damage_projectiles: number;
+        damage_explosions: number;
+        damage_impacts: number;
+        damage_radiation: number;
+        damage_liquids: number;
+        mobility: number;
+        readonly scale: number;
+        readonly voice_preset_pitch: number;
+        voice_pitch: TODO | undefined;
+        readonly normalize_all_voice_lines_volume: boolean;
+        readonly normalize_custom_voice_lines_volume: boolean;
         /** id is one of the atom id static consts defined on pb2Ragdoll */
         GetAtom: (id: number) => pb2Atom | null;
         /** @param id (default=0)  */
