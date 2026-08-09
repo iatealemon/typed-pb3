@@ -102,16 +102,17 @@ declare global {
         readonly gameplay_effects: pb2GameplayEffects;
         /** Removes visible bullet holes from the ragdoll */
         ClearBulletHoles: () => void;
-        /** Returns a boolean telling if the ragdoll currently using a grappling hook */
+        /** Returns a boolean telling if the ragdoll is currently using a grappling hook */
         UsesGrapplingHook: () => boolean;
         readonly active_grappling_hook: pb2Rope | null;
         /**
          * Forces the ragdoll's grappling hook to detach
-         * @param collapse pull in rope (true) or detach from both ends (false)
+         * @param collapse Pull in rope (true) or detach from both ends (false)
          */
         DetachFromRope: (collapse: boolean) => void;
         /**
-         * Can be used to add custom bars. For example:
+         * Can be used to add custom bars.  
+         * Example:
          * ```js
          * ragdoll.hud_custom_bars.push(new pb2HeroInfoBar({title: "Energy"}))
          * ```
