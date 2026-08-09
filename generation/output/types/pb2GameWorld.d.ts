@@ -112,17 +112,17 @@ declare global {
         snowing: TODO;
         /** Type is unknown. One known value: false */
         raining: TODO;
-        /** Type is unknown. One known value: 0.8981455553302768 */
+        /** Type is unknown. One known value: 1.4364187211725885 */
         wind_amplitude: TODO;
-        /** Type is unknown. One known value: 0.6478880830141565 */
+        /** Type is unknown. One known value: 0.018334438454257418 */
         wind_random_part: TODO;
-        /** Type is unknown. One known value: 157627 */
+        /** Type is unknown. One known value: 161899 */
         background_terrain_random_seed: TODO;
-        /** Type is unknown. One known value: 42916 */
+        /** Type is unknown. One known value: 89057 */
         foreground_terrain_random_seed: TODO;
-        /** Type is unknown. One known value: 21520 */
+        /** Type is unknown. One known value: 157647 */
         foreground_platform_random_seed: TODO;
-        /** Type is unknown. One known value: 34732 */
+        /** Type is unknown. One known value: 36047 */
         foliage_random_seed: TODO;
         /** Type is unknown. One known value: 1 */
         foliage_shadow_multiplier: TODO;

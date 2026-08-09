@@ -15,9 +15,16 @@ declare global {
         /**
          * @param eVZ   
          * @param beh   
-         * @param eWu (default=eVZ.GetPosition()   
+         * @param eWu (default=eVZ.GetPosition())   
+         * @param beg (default=pb2Void.bh)   
+         * @param eWw (default=1)   
+         * @param bef (default=0)   
+         * @param bed (default=0)   
+         * @param beo (default=true)   
+         * @param limb_damage_multiplier (default=1)   
+         * @param eWx (default=null)   
          */
-        DealLimbDamage: (eVZ: TODO, beh: TODO, eWu?: TODO) => TODO;
+        DealLimbDamage: (eVZ: TODO, beh: TODO, eWu?: TODO, beg?: TODO, eWw?: TODO, bef?: TODO, bed?: TODO, beo?: TODO, limb_damage_multiplier?: TODO, eWx?: TODO) => TODO;
         HealGunApplied: (self: TODO) => TODO;
         CaptureHealGunApplied: (by: TODO) => TODO;
         SetName: (eUZ: TODO) => TODO;

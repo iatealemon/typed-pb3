@@ -187,13 +187,13 @@ function testReadonly(parent, key) {
 
 function extractFunctionParameters(fn) {
     const str = fn.toString();
-    let open = str.indexOf("(");
-    let close = str.indexOf(")", open);
+    const open = str.indexOf("(");
     const arrow = str.indexOf("=>");
     // the params text is between the first parentheses, unless they aren't found 
     // or come after "=>", in which case the params text is everything before "=>"
     if (open === -1 || (arrow !== -1 && open > arrow))
         return str.slice(0, arrow).trim();
+    const close = str.match(/\)\s*(?:\=\>)?\s*\{/)?.index ?? str.indexOf(")", open);
     return str.slice(open + 1, close).trim();
 }
 

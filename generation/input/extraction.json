@@ -4154,11 +4154,11 @@
             },
             "pb2GameWorld.controller.look_x": {
                 "type": "literal",
-                "value": "577.2143327377202"
+                "value": "574.0213721681465"
             },
             "pb2GameWorld.controller.look_y": {
                 "type": "literal",
-                "value": "-40.228242830717555"
+                "value": "-136.18537892482718"
             },
             "pb2GameWorld.controller.act_fall": {
                 "type": "literal",
@@ -4599,11 +4599,11 @@
             },
             "pb2GameWorld.personal_virtual_controller.look_x": {
                 "type": "literal",
-                "value": "577.2143327377202"
+                "value": "574.0213721681465"
             },
             "pb2GameWorld.personal_virtual_controller.look_y": {
                 "type": "literal",
-                "value": "-40.228242830717555"
+                "value": "-136.18537892482718"
             },
             "pb2GameWorld.personal_virtual_controller.act_fall": {
                 "type": "literal",
@@ -5252,27 +5252,27 @@
             },
             "pb2GameWorld.wind_amplitude": {
                 "type": "literal",
-                "value": "0.8981455553302768"
+                "value": "1.4364187211725885"
             },
             "pb2GameWorld.wind_random_part": {
                 "type": "literal",
-                "value": "0.6478880830141565"
+                "value": "0.018334438454257418"
             },
             "pb2GameWorld.background_terrain_random_seed": {
                 "type": "literal",
-                "value": "157627"
+                "value": "161899"
             },
             "pb2GameWorld.foreground_terrain_random_seed": {
                 "type": "literal",
-                "value": "42916"
+                "value": "89057"
             },
             "pb2GameWorld.foreground_platform_random_seed": {
                 "type": "literal",
-                "value": "21520"
+                "value": "157647"
             },
             "pb2GameWorld.foliage_random_seed": {
                 "type": "literal",
-                "value": "34732"
+                "value": "36047"
             },
             "pb2GameWorld.foliage_shadow_multiplier": {
                 "type": "literal",
@@ -13143,7 +13143,7 @@
             },
             "pb2Ragdoll.prototype.DealLimbDamage": {
                 "type": "function",
-                "params": "eVZ,\nbeh,\neWu=eVZ.GetPosition("
+                "params": "eVZ,\nbeh,\neWu=eVZ.GetPosition(),\nbeg=pb2Void.bh,\neWw=1,\nbef=0,\nbed=0,\nbeo=true,\nlimb_damage_multiplier=1,\neWx=null"
             },
             "pb2Ragdoll.prototype.DealLimbDamage.prototype": {
                 "type": "object"
