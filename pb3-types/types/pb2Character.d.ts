@@ -8,23 +8,158 @@ declare global {
         readonly classid: TODO;
         readonly x: number;
         readonly y: number;
-        act_x: TODO;
-        act_y: TODO;
-        act_fall: TODO;
+        /**
+         * The character's horizontal movement intention.  
+         * 
+         * -1: Trying to move left  
+         * 0: Not trying to move horizontally  
+         * 1: Trying to move right  
+         * 
+         * In players these values correspond to which horizontal movement keys are currently held. The value is 0 if both are held.
+         */
+        act_x: -1 | 0 | 1;
+        /**
+         * The character's vertical movement intention.  
+         * 
+         * -1: Trying to move up  
+         * 0: Not trying to move vertically  
+         * 1: Trying to move down  
+         * 
+         * In players these values correspond to which vertical movement keys are currently held. The value is 0 if both are held.
+         */
+        act_y: -1 | 0 | 1;
+        /**
+         * The character's fall / ragdoll mode intention.  
+         * 
+         * 0: Trying to stand  
+         * 1: Trying to fall / ragdoll  
+         */
+        act_fall: 0 | 1;
+        /** Cursor x position */
         look_x: number;
+        /** Cursor y position */
         look_y: number;
-        act_fire: TODO;
-        act_fire2: TODO;
-        auto_fire: TODO;
-        auto_fire2: TODO;
-        act_single_jump: TODO;
-        act_single_fire: TODO;
-        act_single_fire2: TODO;
-        act_single_fall: TODO;
-        act_grab: TODO;
-        act_kick: TODO;
-        act_reload: TODO;
-        act_sprint: TODO;
+        /**
+         * The character's primary shoot intention.  
+         * 
+         * 0: Not trying to use primary attack  
+         * 1: Trying to use primary attack  
+         * 
+         * In players these values correspond to the state of the primary attack button (LMB).  
+         * 
+         * Setting this to 1 to force primary attack can work but is unreliable, see `auto_fire` instead.
+         */
+        act_fire: 0 | 1;
+        /**
+         * The character's secondary shoot intention.  
+         * 
+         * 0: Not trying to use secondary attack  
+         * 1: Trying to use secondary attack  
+         * 
+         * In players these values correspond to the state of the secondary attack button (RMB).
+         * 
+         * Setting this to 1 to force secondary attack can work but is unreliable, see `auto_fire2` instead.
+         */
+        act_fire2: 0 | 1;
+        /**
+         * Setting this to true will make the character use primary attack with their held weapon.  
+         * The weapon is only fired once. To auto-fire repeatedly, `auto_fire` needs to be set to true constantly or after every shot.  
+         * If the held weapon is not ready to fire, it will be fired once it is.  
+         * If the held weapon is switched, the weapon will not be fired.  
+         */
+        auto_fire: boolean;
+        /**
+         * Setting this to true will make the character use secondary attack with their held weapon.  
+         * The weapon is only fired once. To auto-fire repeatedly, `auto_fire2` needs to be set to true constantly or after every shot.  
+         * If the held weapon is not ready to fire, it will be fired once it is.  
+         * If the held weapon is switched, the weapon will not be fired.  
+         */
+        auto_fire2: boolean;
+        /**
+         * Equals true for one frame when the jump button (W / Space) is pressed down. Will always be false on NPC characters.  
+         * Example:
+         * ```js
+         * addEventListener("ENTER_FRAME", function() {
+         *     if (ragdoll.owner_character.act_single_jump) {
+         *         pb2GameWorld.ShowChatMessage(`${ragdoll.GetName().text} pressed jump`);
+         *     }
+         * });
+         * ```
+         */
+        act_single_jump: boolean;
+        /**
+         * Equals true for one frame when the primary attack button (LMB) is pressed down. Will always be false on NPC characters.  
+         * Example:
+         * ```js
+         * addEventListener("ENTER_FRAME", function() {
+         *     if (ragdoll.owner_character.act_single_fire) {
+         *         pb2GameWorld.ShowChatMessage(`${ragdoll.GetName().text} pressed the primary attack button`);
+         *     }
+         * });
+         * ```
+         */
+        act_single_fire: boolean;
+        // didn't actually check if act_single_fire2 and act_single_fall are always false on NPCs but it's not an unreasonable assumption and it's hard to test
+        /**
+         * Equals true for one frame when the secondary attack button (RMB) is pressed down. Will always be false on NPC characters.  
+         * Example:
+         * ```js
+         * addEventListener("ENTER_FRAME", function() {
+         *     if (ragdoll.owner_character.act_single_fire2) {
+         *         pb2GameWorld.ShowChatMessage(`${ragdoll.GetName().text} pressed the secondary attack button`);
+         *     }
+         * });
+         * ```
+         */
+        act_single_fire2: boolean;
+        /**
+         * Equals true for one frame when the fall / ragdoll mode button (X) is pressed down. Will always be false on NPC characters.  
+         * Example:
+         * ```js
+         * addEventListener("ENTER_FRAME", function() {
+         *     if (ragdoll.owner_character.act_single_fall) {
+         *         pb2GameWorld.ShowChatMessage(`${ragdoll.GetName().text} pressed the fall / ragdoll mode button`);
+         *     }
+         * });
+         * ```
+         */
+        act_single_fall: boolean;
+        /**
+         * The character's grab intention.  
+         * 
+         * 0: Not trying to grab  
+         * 1: Trying to grab  
+         * 
+         * These values correspond to the state of the grab object button 
+         */
+        act_grab: 0 | 1;
+        /**
+         * The character's kick intention.  
+         * 
+         * 0: Not trying to kick  
+         * 1: Trying to kick  
+         * 
+         * These values correspond to the state of the kick button (C) 
+         */
+        act_kick: 0 | 1;
+        /**
+         * The character's reload intention. Will always be 0 on NPC characters.  
+         * 
+         * 0: Not trying to reload  
+         * 1: Trying to reload  
+         * 
+         * These values correspond to the state of the reload button (R) 
+         */
+        act_reload: 0 | 1;
+        /**
+         * The character's sprint intention.  
+         * 
+         * 0: Not trying to sprint  
+         * 1: Trying to sprint  
+         * 
+         * These values correspond to the state of the sprint button (Left shift) 
+         */
+        act_sprint: 0 | 1;
         readonly can_be_revived: boolean;
         MakeUnrevivable: () => TODO;
         readonly tox: number;
