@@ -164,11 +164,16 @@ declare global {
         MakeUnrevivable: () => TODO;
         readonly tox: number;
         readonly toy: number;
-        readonly ang: TODO;
+        /**
+         * Character to cursor angle in radians.  
+         * Ranges from 0 to -2*PI.  
+         * Has the value 0 when looking downwards and decreases counter-clockwise.
+         */
+        readonly ang: number;
         hea: number;
         hmax: number;
-        start_hea: TODO;
-        readonly ragdoll: pb2Ragdoll | null;
+        start_hea: number;
+        readonly ragdoll: pb2Ragdoll;
         MoveOn: (nx: number, ny: number, sx: number, sy: number) => TODO;
         DealCharacterDamage: (beh: number, beg: TODO, bef: TODO, bed: TODO, beo: TODO) => TODO;
         /**
@@ -189,12 +194,24 @@ declare global {
         removeEventListener: (event_type: TODO, params: TODO) => TODO;
         removeAllListeners: () => TODO;
         removeListenersByType: (event_type: TODO) => TODO;
-        readonly controller: TODO;
-        readonly hand_holder: TODO;
-        readonly curwea_slot: TODO;
-        readonly curwea_slot_animation: TODO;
-        curwea_backup_slot: TODO;
-        readonly phys_sit: TODO;
+        readonly controller: pb2Controller | null;
+        /** Gives an error if accessed while the character is holding onto a ledge. */
+        readonly hand_holder: null;
+        /** Slot of the held weapon. */
+        readonly curwea_slot: number;
+        /**
+         * Slot of the weapon that is physically held by the character.  
+         * In other words, it's the slot of the held weapon but updated only after the previous weapon's put-away animation has finished
+         */
+        readonly curwea_slot_animation: number;
+        /** The slot that the character would switch to upon pressing Q. Typically the slot of the previously held weapon. */
+        curwea_backup_slot: number;
+        /**
+         * Proportion between crouching (1) and standing (0).  
+         * Changes when in the process of standing up or crouching down.  
+         * This value changes to 1 also if the character has low stability.  
+         */
+        readonly phys_sit: number;
         /**
          * @param slot   
          * @param caI (default=true)   
@@ -222,7 +239,12 @@ declare global {
          * @param gv (default=false)   
          */
         Kill: (bps?: TODO, gv?: TODO) => TODO;
-        aim_spread: TODO;
+        /**
+         * Value between 0-1 representing aim inaccuracy after continued firing.  
+         * Decreases when shooting. Decreases more when firing weapons with high recoil.  
+         * Always regenerating towards 1.
+         */
+        aim_spread: number;
         BodyIsPartOfPlayer: (bodyB: TODO, cpD: TODO) => TODO;
         PickWeapon: (cqN: TODO) => TODO;
         DropWeapon: (cqN: pb2Gun) => void;
