@@ -18,16 +18,16 @@ declare global {
          * Damages a limb. This also reduces current hp of the character.
          * @param atom Ragdoll atom  
          * @param dmg Damage amount  
-         * @param eWu (default=atom.GetPosition())   
-         * @param beg (default=pb2Void.bh)   
-         * @param eWw (default=1) affects damage in some way  
-         * @param dir_x (default=0) Damage direction vector x  
-         * @param dir_y (default=0) Damage direction vector y  
-         * @param beo (default=true)   
-         * @param limb_damage_multiplier (default=1)   
-         * @param eWx (default=null)   
+         * @param dmg_pos (default=atom.GetPosition()) Gives position to damage number text.  
+         * @param id (default=pb2Void.bh) Damage source ID. Affects how damage direction indicators are merged. pb2FloatingText.GetNewHash() gives a unique ID.  
+         * @param softness (default=1) Affects body part damage multipliers. At 1, all body parts take the same damage. Over 1: limbs > body > head. Below 1: head > body > limbs.  
+         * @param dir_x (default=0) Damage direction vector X  
+         * @param dir_y (default=0) Damage direction vector Y  
+         * @param gradual_handicap (default=true) If true, maximum health handicap will be applied over time (with ease-out)  
+         * @param limb_damage_multiplier (default=1) Multiplier for the damage done to the limb alone (separate from the damage done to the character)  
+         * @param damager (default=null) If provided, OBJECT_DAMAGED event listeners will be executed and the damager will be available in the OBJECT_DIED event listener.  
          */
-        DealLimbDamage: (atom: pb2Atom, dmg: number, eWu?: TODO, beg?: TODO, eWw?: TODO, dir_x?: number, dir_y?: number, beo?: TODO, limb_damage_multiplier?: number, eWx?: TODO) => number;
+        DealLimbDamage: (atom: pb2Atom, dmg: number, dmg_pos?: b2Vec2, id?: number, softness?: number, dir_x?: number, dir_y?: number, gradual_handicap?: boolean, limb_damage_multiplier?: number, damager?: TODO) => number;
         /**
          * Apply defibrillator effect
          * @param self If false, healing will be applied regardless of the character's dying state. 
