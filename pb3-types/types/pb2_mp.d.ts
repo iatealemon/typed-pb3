@@ -4,8 +4,7 @@ import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     var pb2_mp: ClassIdentityProps<"pb2_mp"> & {
-        /** Type is unknown. One known value: 0 */
-        GAME_FPS: TODO;
+        GAME_FPS: number;
         /** Type is unknown. One known value: 1 */
         FUNCTION_LINEAR: TODO;
         /** Type is unknown. One known value: 2 */

@@ -4,8 +4,8 @@ import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     interface pb2AIThreat extends ClassIdentityProps<"pb2AIThreat"> {
-        readonly knowledge_owner_team: TODO;
-        readonly knowledge_about: TODO;
+        readonly knowledge_owner_team: pb2Team;
+        readonly knowledge_about: pb2Ragdoll;
         ThreatEliminated: () => TODO;
     }
     var pb2AIThreat: ClassIdentityProps<"pb2AIThreat"> & {

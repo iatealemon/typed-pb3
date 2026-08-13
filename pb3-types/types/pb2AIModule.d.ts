@@ -5,12 +5,12 @@ import type { ClassIdentityProps, TODO } from "./internal/helper";
 declare global {
     interface pb2AIModule extends ClassIdentityProps<"pb2AIModule"> {
         readonly skill: number;
-        readonly controller: TODO;
+        readonly controller: pb2Controller | null;
         readonly allow_trace_shots: boolean;
         readonly allow_hit_reporting: boolean;
-        readonly bot_decided_hunt_threat: TODO;
-        bot_decided_teammate_heal: TODO;
-        bot_decided_teammate_follow: TODO;
+        readonly bot_decided_hunt_threat: pb2AIThreat | null;
+        bot_decided_teammate_heal: pb2Ragdoll | null;
+        bot_decided_teammate_follow: pb2Ragdoll | null;
         /**
          * @param x   
          * @param y   
@@ -184,7 +184,44 @@ declare global {
         GUN_MODE_CURRENT: TODO;
         /** Type is unknown. One known value: ["pb2AIModule.YQ","pb2AIModule.BEHAVIOR_IDLE","pb2AIModule.BEHAVIOR_LOOK_AROUND","pb2AIModule.BEHAVIOR_INVESTIGATE","pb2AIModule.BEHAVIOR_MPBOT","pb2AIModule.COMBAT_LEVEL_NO_COMBAT","pb2AIModule.COMBAT_LEVEL_ONLY_IF_ENEMY_IS_VISIBLE","pb2AIModule.COMBAT_LEVEL_BOTH_ENEMIES_AND_TRACESHOTS","pb2AIModule.TASK_TYPE_BASIC_GOTO","pb2AIModule.TASK_TYPE_OXYGEN_RUSH","pb2AIModule.TASK_TYPE_THREAT_HUNT","pb2AIModule.TASK_TYPE_TEAMMATE_HEAL","pb2AIModule.TASK_TYPE_TEAMMATE_FOLLOW","pb2AIModule.GOTO_MODE_OVERRIDE_PREVIOUSLY_SCHEDULED","pb2AIModule.GOTO_MODE_EXECUTE_AFTER_PREVIOUSLY_SCHEDULED","pb2AIModule.GOTO_MODE_DELAY_PREVIOUSLY_SCHEDULED","pb2AIModule.NO_SLOT","pb2AIModule.FIRST_WEAPON_SLOT","pb2AIModule.SEQUENCE_BEHAVIOR_SERIOUS","pb2AIModule.SEQUENCE_BEHAVIOR_SILLY","pb2AIModule.SEQUENCE_BEHAVIOR_MAD","pb2AIModule.WAYPOINT_TYPE_UNDEFINED","pb2AIModule.WAYPOINT_TYPE_FLOOR","pb2AIModule.WAYPOINT_TYPE_WALL","pb2AIModule.WAYPOINT_TYPE_WATER","pb2AIModule.WAYPOINT_TYPE_SLIDING_FLOOR","pb2AIModule.REACH_TACTIC_UNREACHABLE","pb2AIModule.REACH_TACTIC_WALK","pb2AIModule.REACH_TACTIC_CROUCH","pb2AIModule.REACH_TACTIC_JUMP","pb2AIModule.REACH_TACTIC_SWORDJUMP","pb2AIModule.REACH_TACTIC_SELFBOOST","pb2AIModule.REACH_TACTIC_FALL","pb2AIModule.REACH_TACTIC_WALLJUMP_START","pb2AIModule.REACH_TACTIC_WALLJUMP_START_SWORDS","pb2AIModule.REACH_TACTIC_WALLJUMP_LOOP","pb2AIModule.REACH_TACTIC_WALLJUMP_END","pb2AIModule.REACH_TACTIC_SWIM","pb2AIModule.REACH_TACTIC_SWIM_JUMP","pb2AIModule.REACH_TACTIC_SWIM_SELFBOOST","pb2AIModule.REACH_TACTIC_HINT","pb2AIModule.REACH_TACTIC_CLEARING_PATH","pb2AIModule.REACH_TACTIC_SELF_HEALING","pb2AIModule.REACH_TACTIC_NAMES","pb2AIModule.REACH_TACTIC_PRICES","pb2AIModule.REACH_TACTIC_THREAT_PRICES","pb2AIModule.COEF_MULT_GLOBAL","pb2AIModule.FIRE_COEF","pb2AIModule.TOXIC_GAS_COEF","pb2AIModule.LASER_MINE_COEF","pb2AIModule.PROX_MINE_COEF","pb2AIModule.TIME_WARP_COEF","pb2AIModule.SHIELDED_COEF","pb2AIModule.VISITED_HINT_LINE_COST","pb2AIModule.MOVABLE_ON_A_LINE_COST_PER_HITPOINT","pb2AIModule.MOVABLE_ON_A_LINE_COST_PER_MOVABLE","pb2AIModule.FAIL_WAY_LINE_COST_PER_FAILURE","pb2AIModule.BULLET_COLLISION_LOGIC_PENETRATE","pb2AIModule.BULLET_COLLISION_LOGIC_EXPLODE","pb2AIModule.BULLET_COLLISION_LOGIC_MIRROR","pb2AIModule.BULLET_COLLISION_LOGIC_GRENADE","pb2AIModule.BULLET_COLLISION_LOGIC_DRAIN_LIGHT","pb2AIModule.BULLET_COLLISION_LOGIC_CHRONO_BEAM","pb2AIModule.FILTER_ANY","pb2AIModule.FILTER_FLOOR","pb2AIModule.FILTER_WATER","pb2AIModule.FILTER_FLOOR_AND_WATER","pb2AIModule.FILTER_ANY_ANYWHERE","pb2AIModule.FILTER_ANY_ANYWHERE_PING_RANGE","pb2AIModule.BEST_ATTACK_NOATOM","pb2AIModule.BEST_ATTACK_BULLET","pb2AIModule.BEST_ATTACK_ENTITY","pb2AIModule.BEST_ATTACK_SHAPE","pb2AIModule.HINT_ACTION_USE_SWITCH","pb2AIModule.HINT_ACTION_JUST_WAIT","pb2AIModule.HINT_ACTION_GO_TO","pb2AIModule.HINT_ACTION_ATTACK_OBJECT","pb2AIModule.HINT_ACTION_SHOOT_AT_POINT","pb2AIModule.GUN_MODE_CURRENT"] */
         ALL_TYPES: TODO;
-        CreateAI: (params: TODO) => pb2AIModule;
+        /**
+         * Creates a new AI module.
+         * @param params Object containing parameters
+         * @param params.factor_for_team_damage_paths_avoidance (default=1)
+         * @param params.rejection_point_for_team_damage_paths (default=Infinity)
+         * @param params.allow_trace_shots (default=true)
+         * @param params.allow_hit_reporting (default=true)
+         * @param params.allow_ricochet_shots (default=true)
+         * @param params.allow_penetrating_shots (default=true)
+         * @param params.allow_revenge_teamkilling (default=true)
+         * @param params.hunt_attacker (default=true)
+         * @param params.hunt_seen_threats (default=true)
+         * @param params.hunt_random_known_threats_range (default=Infinity)
+         * @param params.heal_teammates (default=true)
+         * @param params.hear_range (default=600)
+         * @param params.skill (default=0)
+         * @param params.behavior (default=pb2AIModule.BEHAVIOR_IDLE)
+         * @param params.sequence_behavior (default randomly selected) One of the pb2AIModule.SEQUENCE_BEHAVIOR_* values
+         * @param params.cim (default=0.15)
+         */
+        CreateAI: (params: {
+            factor_for_team_damage_paths_avoidance?: number,
+            rejection_point_for_team_damage_paths?: number,
+            allow_trace_shots?: boolean,
+            allow_hit_reporting?: boolean,
+            allow_ricochet_shots?: boolean,
+            allow_penetrating_shots?: boolean,
+            allow_revenge_teamkilling?: boolean,
+            hunt_attacker?: boolean,
+            hunt_seen_threats?: boolean,
+            hunt_random_known_threats_range?: number,
+            heal_teammates?: boolean,
+            hear_range?: number,
+            skill?: number,
+            behavior?: TODO,
+            sequence_behavior?: TODO,
+            cim?: number,
+        }) => pb2AIModule;
         DebugReachTactic: (from: TODO, to: TODO) => TODO;
     }
 }

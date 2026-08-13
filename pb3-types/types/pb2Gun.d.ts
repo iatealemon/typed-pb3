@@ -12,11 +12,11 @@ declare global {
         readonly toy: number;
         readonly owner: pb2Character | null;
         readonly owner_entity: pb2Entity | null;
-        readonly gun_type: TODO;
-        readonly gun_type_string: TODO;
-        barrel_spin: TODO;
-        heat: TODO;
-        main_cooldown: TODO;
+        readonly gun_type: pb2GunClass;
+        readonly gun_type_string: string;
+        barrel_spin: number; // starts at 0. used in guns that need to spin up before firing (for example 'gun_anti_rifle')
+        heat: number; // value that increases when firing. how high it increases depends on the gun
+        main_cooldown: number; // time before it's possible to shoot again
         readonly side: 1 | -1;
         Flip: () => void;
         Hide: () => TODO;
@@ -59,25 +59,25 @@ declare global {
         CarryEnd: (dPA?: TODO) => TODO;
         remove: () => TODO;
         readonly is_being_removed: boolean;
-        readonly box2d_body: b2Body;
-        main_reload_length: TODO;
-        readonly is_active: TODO;
+        readonly box2d_body: b2Body | null; // set to null when disposed
+        main_reload_length: number;
+        readonly is_active: boolean; // when held by a character
         readonly is_being_carried: boolean;
-        readonly attachment_atom: TODO;
-        readonly clip_out: TODO;
-        readonly muzzle_alpha: TODO;
-        readonly scale: TODO;
-        readonly ammo_style: TODO;
-        readonly ammo_style2: TODO;
+        readonly attachment_atom: pb2Atom | null;
+        readonly clip_out: boolean; // when reloadable gun needs to be reloaded
+        readonly muzzle_alpha: number; // muzzle flash alpha
+        readonly scale: number;
+        readonly ammo_style: pb2StyleAmmo | null;
+        readonly ammo_style2: pb2StyleAmmo | null;
         addEventListener: (event_type: TODO, params: TODO) => TODO;
         removeEventListener: (event_type: TODO, params: TODO) => TODO;
-        readonly is_thrown_by: TODO;
+        readonly is_thrown_by: pb2Ragdoll | null; // gets set to ragdoll when thrown, gets reset to null when picked up
         /** @param id (default=0)  */
         GetMesh: (id?: number) => TODO;
     }
     var pb2Gun: ClassIdentityProps<"pb2Gun"> & {
         CreateGun: (params: TODO) => pb2Gun;
         guns: pb2Gun[];
-        pickable_guns: TODO[];
+        pickable_guns: pb2Gun[]; // guns that have no owner
     }
 }
