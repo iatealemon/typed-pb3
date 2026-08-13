@@ -2,6 +2,17 @@ export { };
 
 import type { ClassIdentityProps, TODO } from "./internal/helper";
 
+export type Object3DBase<ClassName extends string> = ClassIdentityProps<ClassName> & {
+    readonly parent: TODO;
+    lookAt: (vector: TODO) => TODO;
+    readonly position: THREE.Vector3;
+    readonly rotation: TODO;
+    readonly scale: TODO;
+    readonly matrix: TODO;
+    readonly matrixWorld: TODO;
+    visible: boolean;
+};
+
 declare global {
     namespace THREE {
         interface Vector3 extends ClassIdentityProps<"Vector3"> {
@@ -152,12 +163,16 @@ declare global {
             invert: () => TODO;
             eoQ: (v: TODO) => TODO;
             bNj: (v: TODO) => TODO;
+            // failed to be included in generation
+            /** Length is 16 */
+            elements: number[]
         }
         interface Euler extends ClassIdentityProps<"Euler"> {
+            // _x _y _z _order omitted intentionally (seems like they're not intended for direct use)
             x: number;
             y: number;
             z: number;
-            order: TODO;
+            order: number;
             isEuler: boolean;
             set: (x: number, y: number, z: number, order: TODO) => TODO;
             clone: () => TODO;
@@ -173,27 +188,11 @@ declare global {
             onChange: (callback: TODO) => TODO;
             onChangeCallback: () => TODO;
         }
-        interface Object3D extends ClassIdentityProps<"Object3D"> {
-            readonly parent: TODO;
-            lookAt: (vector: TODO) => TODO;
-            readonly position: Vector3;
-            readonly rotation: TODO;
-            readonly scale: TODO;
-            readonly matrix: TODO;
-            readonly matrixWorld: TODO;
-            visible: boolean;
-        }
+        interface Object3D extends Object3DBase<"Object3D"> {}
+
         // failed to be included in generation (extractor didn't search for Object3D subclasses, intentionally)
-        interface Mesh extends ClassIdentityProps<"Mesh"> {
-            readonly parent: TODO;
-            lookAt: (vector: TODO) => TODO;
-            readonly position: Vector3;
-            readonly rotation: TODO;
-            readonly scale: TODO;
-            readonly matrix: TODO;
-            readonly matrixWorld: TODO;
-            visible: boolean;
-        }
+        interface Mesh extends Object3DBase<"Mesh"> {}
+        interface Scene extends Object3DBase<"Scene"> {}
 
     }
     var THREE: {

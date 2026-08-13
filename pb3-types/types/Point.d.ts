@@ -39,6 +39,9 @@ declare global {
         GetAngle: () => TODO;
         IsValid: () => TODO;
         MoveToUntilDistanceIs: (to: TODO, di: TODO) => TODO;
+        // failed to be included in generation
+        x: number;
+        y: number;
     }
     var Point: {
         new (params: TODO): Point;
