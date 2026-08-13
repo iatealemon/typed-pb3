@@ -301,12 +301,26 @@ declare global {
         GetAngle: () => TODO;
         IsValid: () => TODO;
         MoveToUntilDistanceIs: (to: TODO, di: TODO) => TODO;
+        // failed to be included in generation
+        x: number;
+        y: number;
     }
     var Point: {
         new (params: TODO): Point;
 
     }
 }
+
+type Object3DBase<ClassName extends string> = ClassIdentityProps<ClassName> & {
+    readonly parent: TODO;
+    lookAt: (vector: TODO) => TODO;
+    readonly position: THREE.Vector3;
+    readonly rotation: TODO;
+    readonly scale: TODO;
+    readonly matrix: TODO;
+    readonly matrixWorld: TODO;
+    visible: boolean;
+};
 
 declare global {
     namespace THREE {
@@ -458,12 +472,16 @@ declare global {
             invert: () => TODO;
             eoQ: (v: TODO) => TODO;
             bNj: (v: TODO) => TODO;
+            // failed to be included in generation
+            /** Length is 16 */
+            elements: number[]
         }
         interface Euler extends ClassIdentityProps<"Euler"> {
+            // _x _y _z _order omitted intentionally (seems like they're not intended for direct use)
             x: number;
             y: number;
             z: number;
-            order: TODO;
+            order: number;
             isEuler: boolean;
             set: (x: number, y: number, z: number, order: TODO) => TODO;
             clone: () => TODO;
@@ -479,27 +497,11 @@ declare global {
             onChange: (callback: TODO) => TODO;
             onChangeCallback: () => TODO;
         }
-        interface Object3D extends ClassIdentityProps<"Object3D"> {
-            readonly parent: TODO;
-            lookAt: (vector: TODO) => TODO;
-            readonly position: Vector3;
-            readonly rotation: TODO;
-            readonly scale: TODO;
-            readonly matrix: TODO;
-            readonly matrixWorld: TODO;
-            visible: boolean;
-        }
+        interface Object3D extends Object3DBase<"Object3D"> {}
+
         // failed to be included in generation (extractor didn't search for Object3D subclasses, intentionally)
-        interface Mesh extends ClassIdentityProps<"Mesh"> {
-            readonly parent: TODO;
-            lookAt: (vector: TODO) => TODO;
-            readonly position: Vector3;
-            readonly rotation: TODO;
-            readonly scale: TODO;
-            readonly matrix: TODO;
-            readonly matrixWorld: TODO;
-            visible: boolean;
-        }
+        interface Mesh extends Object3DBase<"Mesh"> {}
+        interface Scene extends Object3DBase<"Scene"> {}
 
     }
     var THREE: {
@@ -556,6 +558,11 @@ declare global {
         GetAngle: () => TODO;
         IsValid: () => TODO;
         MoveToUntilDistanceIs: (to: TODO, di: TODO) => TODO;
+        // failed to be included in generation
+        x: number;
+        y: number;
+        dx: number;
+        dy: number;
     }
     var Vector: {
         new (params: TODO): Vector;
@@ -797,8 +804,7 @@ declare global {
         pitch: number;
         stop: () => TODO;
         readonly isPlaying: boolean;
-        /** Type is unknown. One known value: "" */
-        readonly sound_name: TODO;
+        readonly sound_name: string;
     }
     
 }
@@ -806,12 +812,12 @@ declare global {
 declare global {
     interface pb2AIModule extends ClassIdentityProps<"pb2AIModule"> {
         readonly skill: number;
-        readonly controller: TODO;
+        readonly controller: pb2Controller | null;
         readonly allow_trace_shots: boolean;
         readonly allow_hit_reporting: boolean;
-        readonly bot_decided_hunt_threat: TODO;
-        bot_decided_teammate_heal: TODO;
-        bot_decided_teammate_follow: TODO;
+        readonly bot_decided_hunt_threat: pb2AIThreat | null;
+        bot_decided_teammate_heal: pb2Ragdoll | null;
+        bot_decided_teammate_follow: pb2Ragdoll | null;
         /**
          * @param x   
          * @param y   
@@ -985,8 +991,223 @@ declare global {
         GUN_MODE_CURRENT: TODO;
         /** Type is unknown. One known value: ["pb2AIModule.YQ","pb2AIModule.BEHAVIOR_IDLE","pb2AIModule.BEHAVIOR_LOOK_AROUND","pb2AIModule.BEHAVIOR_INVESTIGATE","pb2AIModule.BEHAVIOR_MPBOT","pb2AIModule.COMBAT_LEVEL_NO_COMBAT","pb2AIModule.COMBAT_LEVEL_ONLY_IF_ENEMY_IS_VISIBLE","pb2AIModule.COMBAT_LEVEL_BOTH_ENEMIES_AND_TRACESHOTS","pb2AIModule.TASK_TYPE_BASIC_GOTO","pb2AIModule.TASK_TYPE_OXYGEN_RUSH","pb2AIModule.TASK_TYPE_THREAT_HUNT","pb2AIModule.TASK_TYPE_TEAMMATE_HEAL","pb2AIModule.TASK_TYPE_TEAMMATE_FOLLOW","pb2AIModule.GOTO_MODE_OVERRIDE_PREVIOUSLY_SCHEDULED","pb2AIModule.GOTO_MODE_EXECUTE_AFTER_PREVIOUSLY_SCHEDULED","pb2AIModule.GOTO_MODE_DELAY_PREVIOUSLY_SCHEDULED","pb2AIModule.NO_SLOT","pb2AIModule.FIRST_WEAPON_SLOT","pb2AIModule.SEQUENCE_BEHAVIOR_SERIOUS","pb2AIModule.SEQUENCE_BEHAVIOR_SILLY","pb2AIModule.SEQUENCE_BEHAVIOR_MAD","pb2AIModule.WAYPOINT_TYPE_UNDEFINED","pb2AIModule.WAYPOINT_TYPE_FLOOR","pb2AIModule.WAYPOINT_TYPE_WALL","pb2AIModule.WAYPOINT_TYPE_WATER","pb2AIModule.WAYPOINT_TYPE_SLIDING_FLOOR","pb2AIModule.REACH_TACTIC_UNREACHABLE","pb2AIModule.REACH_TACTIC_WALK","pb2AIModule.REACH_TACTIC_CROUCH","pb2AIModule.REACH_TACTIC_JUMP","pb2AIModule.REACH_TACTIC_SWORDJUMP","pb2AIModule.REACH_TACTIC_SELFBOOST","pb2AIModule.REACH_TACTIC_FALL","pb2AIModule.REACH_TACTIC_WALLJUMP_START","pb2AIModule.REACH_TACTIC_WALLJUMP_START_SWORDS","pb2AIModule.REACH_TACTIC_WALLJUMP_LOOP","pb2AIModule.REACH_TACTIC_WALLJUMP_END","pb2AIModule.REACH_TACTIC_SWIM","pb2AIModule.REACH_TACTIC_SWIM_JUMP","pb2AIModule.REACH_TACTIC_SWIM_SELFBOOST","pb2AIModule.REACH_TACTIC_HINT","pb2AIModule.REACH_TACTIC_CLEARING_PATH","pb2AIModule.REACH_TACTIC_SELF_HEALING","pb2AIModule.REACH_TACTIC_NAMES","pb2AIModule.REACH_TACTIC_PRICES","pb2AIModule.REACH_TACTIC_THREAT_PRICES","pb2AIModule.COEF_MULT_GLOBAL","pb2AIModule.FIRE_COEF","pb2AIModule.TOXIC_GAS_COEF","pb2AIModule.LASER_MINE_COEF","pb2AIModule.PROX_MINE_COEF","pb2AIModule.TIME_WARP_COEF","pb2AIModule.SHIELDED_COEF","pb2AIModule.VISITED_HINT_LINE_COST","pb2AIModule.MOVABLE_ON_A_LINE_COST_PER_HITPOINT","pb2AIModule.MOVABLE_ON_A_LINE_COST_PER_MOVABLE","pb2AIModule.FAIL_WAY_LINE_COST_PER_FAILURE","pb2AIModule.BULLET_COLLISION_LOGIC_PENETRATE","pb2AIModule.BULLET_COLLISION_LOGIC_EXPLODE","pb2AIModule.BULLET_COLLISION_LOGIC_MIRROR","pb2AIModule.BULLET_COLLISION_LOGIC_GRENADE","pb2AIModule.BULLET_COLLISION_LOGIC_DRAIN_LIGHT","pb2AIModule.BULLET_COLLISION_LOGIC_CHRONO_BEAM","pb2AIModule.FILTER_ANY","pb2AIModule.FILTER_FLOOR","pb2AIModule.FILTER_WATER","pb2AIModule.FILTER_FLOOR_AND_WATER","pb2AIModule.FILTER_ANY_ANYWHERE","pb2AIModule.FILTER_ANY_ANYWHERE_PING_RANGE","pb2AIModule.BEST_ATTACK_NOATOM","pb2AIModule.BEST_ATTACK_BULLET","pb2AIModule.BEST_ATTACK_ENTITY","pb2AIModule.BEST_ATTACK_SHAPE","pb2AIModule.HINT_ACTION_USE_SWITCH","pb2AIModule.HINT_ACTION_JUST_WAIT","pb2AIModule.HINT_ACTION_GO_TO","pb2AIModule.HINT_ACTION_ATTACK_OBJECT","pb2AIModule.HINT_ACTION_SHOOT_AT_POINT","pb2AIModule.GUN_MODE_CURRENT"] */
         ALL_TYPES: TODO;
-        CreateAI: (params: TODO) => pb2AIModule;
+        /**
+         * Creates a new AI module.
+         * @param params Object containing parameters
+         * @param params.factor_for_team_damage_paths_avoidance (default=1)
+         * @param params.rejection_point_for_team_damage_paths (default=Infinity)
+         * @param params.allow_trace_shots (default=true)
+         * @param params.allow_hit_reporting (default=true)
+         * @param params.allow_ricochet_shots (default=true)
+         * @param params.allow_penetrating_shots (default=true)
+         * @param params.allow_revenge_teamkilling (default=true)
+         * @param params.hunt_attacker (default=true)
+         * @param params.hunt_seen_threats (default=true)
+         * @param params.hunt_random_known_threats_range (default=Infinity)
+         * @param params.heal_teammates (default=true)
+         * @param params.hear_range (default=600)
+         * @param params.skill (default=0)
+         * @param params.behavior (default=pb2AIModule.BEHAVIOR_IDLE)
+         * @param params.sequence_behavior (default randomly selected) One of the pb2AIModule.SEQUENCE_BEHAVIOR_* values
+         * @param params.cim (default=0.15)
+         */
+        CreateAI: (params: {
+            factor_for_team_damage_paths_avoidance?: number,
+            rejection_point_for_team_damage_paths?: number,
+            allow_trace_shots?: boolean,
+            allow_hit_reporting?: boolean,
+            allow_ricochet_shots?: boolean,
+            allow_penetrating_shots?: boolean,
+            allow_revenge_teamkilling?: boolean,
+            hunt_attacker?: boolean,
+            hunt_seen_threats?: boolean,
+            hunt_random_known_threats_range?: number,
+            heal_teammates?: boolean,
+            hear_range?: number,
+            skill?: number,
+            behavior?: TODO,
+            sequence_behavior?: TODO,
+            cim?: number,
+        }) => pb2AIModule;
         DebugReachTactic: (from: TODO, to: TODO) => TODO;
+    }
+}
+
+type pb2EntityBase<ClassName extends string> = ClassIdentityProps<ClassName> & {
+    /** Type is unknown. One known value: 2 */
+    readonly classid: TODO;
+    readonly x: number;
+    readonly y: number;
+    readonly tox: number;
+    readonly toy: number;
+    InstallGun: (_tQ: TODO) => TODO;
+    DropGun: () => TODO;
+    remove: () => TODO;
+    /**
+     * @param r   
+     * @param eQf (default=-1)   
+     */
+    AddRagdoll: (r: TODO, eQf?: TODO) => TODO;
+    /**
+     * @param r   
+     * @param hv (default=false)   
+     */
+    ExcludeRagdoll: (r: TODO, hv?: TODO) => TODO;
+    /**
+     * @param r   
+     * @param time (default=-100)   
+     * @param eQa (default=false)   
+     * @param eQh (default=null)   
+     */
+    IgnoreRagdoll: (r: TODO, time?: TODO, eQa?: TODO, eQh?: TODO) => TODO;
+    /**
+     * @param bN   
+     * @param xx   
+     * @param yy   
+     * @param _boD   
+     * @param _ben   
+     * @param limb_id   
+     * @param limb_damage_multiplier (default=1)   
+     * @param eTB (default=true)   
+     * @param fG (default=0)   
+     * @param fE (default=0)   
+     * @param eSP (default=null)   
+     * @param bqj (default=false)   
+     */
+    DealDamage: (bN: TODO, xx: TODO, yy: TODO, _boD: TODO, _ben: TODO, limb_id: TODO, limb_damage_multiplier?: TODO, eTB?: TODO, fG?: TODO, fE?: TODO, eSP?: TODO, bqj?: TODO) => TODO;
+    MultiplyHealth: (m: TODO) => TODO;
+    alpha: TODO;
+    readonly is_being_removed: boolean;
+    hea: number;
+    hmax: number;
+    dying_level: TODO;
+    team: pb2Team;
+    /**
+     * @param x   
+     * @param dist (default=-123)   
+     */
+    SetDriverSeatsAndRadius: (x: number, dist?: number) => TODO;
+    /**
+     * @param x   
+     * @param eQr (default=false)   
+     */
+    SetSide: (x: TODO, eQr?: TODO) => TODO;
+    readonly box2d_bodies: b2Body[];
+    addEventListener: (event_type: TODO, params: TODO) => TODO;
+    removeEventListener: (event_type: TODO, params: TODO) => TODO;
+    GetLimb: (id: TODO) => TODO;
+    /** @param id (default=0)  */
+    GetMesh: (id?: number) => THREE.Mesh;
+};
+
+declare global {
+    interface pb2Entity extends pb2EntityBase<"pb2Entity"> {}
+    var pb2Entity: ClassIdentityProps<"pb2Entity"> & {
+        /** return type may be different based on the parameters passed in */
+        CreateEntity: (params: TODO) => pb2Entity;
+        /** Type is unknown. One known value: 0 */
+        TYPE_UNKNOWN: TODO;
+        /** Type is unknown. One known value: 1 */
+        TYPE_SPOILER35: TODO;
+        /** Type is unknown. One known value: 2 */
+        TYPE_BARREL: TODO;
+        /** Type is unknown. One known value: 3 */
+        TYPE_BARREL_PART: TODO;
+        /** Type is unknown. One known value: 4 */
+        TYPE_CRATE: TODO;
+        /** Type is unknown. One known value: 5 */
+        TYPE_TURRET: TODO;
+        /** Type is unknown. One known value: 6 */
+        TYPE_SPOILER27: TODO;
+        /** Type is unknown. One known value: 7 */
+        TYPE_SPOILER29: TODO;
+        /** Type is unknown. One known value: 8 */
+        TYPE_MOTO: TODO;
+        /** Type is unknown. One known value: 9 */
+        TYPE_WALKER: TODO;
+        /** Type is unknown. One known value: 10 */
+        TYPE_SPOILER28: TODO;
+        /** Type is unknown. One known value: 11 */
+        TYPE_SPOILER30: TODO;
+        /** Type is unknown. One known value: 12 */
+        TYPE_SPOILER13: TODO;
+        /** Type is unknown. One known value: 13 */
+        TYPE_SPOILER14: TODO;
+        /** Type is unknown. One known value: 14 */
+        TYPE_SPOILER15: TODO;
+        /** Type is unknown. One known value: 15 */
+        TYPE_SPOILER16: TODO;
+        /** Type is unknown. One known value: 16 */
+        TYPE_SPOILER17: TODO;
+        /** Type is unknown. One known value: 17 */
+        TYPE_SPOILER19: TODO;
+        /** Type is unknown. One known value: 18 */
+        TYPE_SPOILER18: TODO;
+        /** Type is unknown. One known value: 19 */
+        TYPE_SPOILER20: TODO;
+        /** Type is unknown. One known value: 20 */
+        TYPE_SPOILER21: TODO;
+        /** Type is unknown. One known value: 21 */
+        TYPE_ANTIGRAVITY: TODO;
+        /** Type is unknown. One known value: 22 */
+        TYPE_SPOILER33: TODO;
+        /** Type is unknown. One known value: 23 */
+        TYPE_CORVETTE: TODO;
+        /** Type is unknown. One known value: 24 */
+        TYPE_FLOATING_ICE: TODO;
+        /** Type is unknown. One known value: 25 */
+        TYPE_SPOILER34: TODO;
+        /** Type is unknown. One known value: ["pb2Entity.TYPE_UNKNOWN","pb2Entity.TYPE_SPOILER35","pb2Entity.TYPE_BARREL","pb2Entity.TYPE_BARREL_PART","pb2Entity.TYPE_CRATE","pb2Entity.TYPE_TURRET","pb2Entity.TYPE_SPOILER27","pb2Entity.TYPE_SPOILER29","pb2Entity.TYPE_MOTO","pb2Entity.TYPE_WALKER","pb2Entity.TYPE_SPOILER28","pb2Entity.TYPE_SPOILER30","pb2Entity.TYPE_SPOILER13","pb2Entity.TYPE_SPOILER14","pb2Entity.TYPE_SPOILER15","pb2Entity.TYPE_SPOILER16","pb2Entity.TYPE_SPOILER17","pb2Entity.TYPE_SPOILER19","pb2Entity.TYPE_SPOILER18","pb2Entity.TYPE_SPOILER20","pb2Entity.TYPE_SPOILER21","pb2Entity.TYPE_ANTIGRAVITY","pb2Entity.TYPE_SPOILER33","pb2Entity.TYPE_CORVETTE","pb2Entity.TYPE_FLOATING_ICE","pb2Entity.TYPE_SPOILER34"] */
+        ALL_TYPES: TODO;
+        /** Type is unknown. One known value: 0 */
+        MATERIAL_METAL: TODO;
+        /** Type is unknown. One known value: 1 */
+        MATERIAL_GLASS: TODO;
+        /** Type is unknown. One known value: 2 */
+        MATERIAL_WOOD: TODO;
+        /** Type is unknown. One known value: 3 */
+        MATERIAL_BLOOD: TODO;
+        /** Type is unknown. One known value: 4 */
+        MATERIAL_MAGAZINE_PISTOL: TODO;
+        /** Type is unknown. One known value: 5 */
+        MATERIAL_MAGAZINE_PISTOL3: TODO;
+        /** Type is unknown. One known value: 6 */
+        MATERIAL_MAGAZINE_RIFLE: TODO;
+        /** Type is unknown. One known value: 7 */
+        MATERIAL_MAGAZINE_GENERIC_METAL: TODO;
+        /** Type is unknown. One known value: 8 */
+        MATERIAL_RUBBER: TODO;
+        /** Type is unknown. One known value: 9 */
+        MATERIAL_METAL_USURP: TODO;
+        /** Type is unknown. One known value: 10 */
+        MATERIAL_METAL_USURP_BOSS_LEG: TODO;
+        /** Type is unknown. One known value: 11 */
+        MATERIAL_CONCRETE: TODO;
+        /** Type is unknown. One known value: 12 */
+        MATERIAL_METAL_SPOILER33: TODO;
+        /** Type is unknown. One known value: 13 */
+        MATERIAL_MAGAZINE_CANISTER: TODO;
+        /** Type is unknown. One known value: 14 */
+        MATERIAL_CRAB_SHELL: TODO;
+        /** Type is unknown. One known value: 15 */
+        MATERIAL_ICE: TODO;
+        /** Type is unknown. One known value: 16 */
+        MATERIAL_ROCK: TODO;
+        /** Type is unknown. One known value: 17 */
+        MATERIAL_METAL_MOTO: TODO;
+        /** Type is unknown. One known value: [] */
+        entities: TODO;
+        /**
+         * @param yJ   
+         * @param x   
+         * @param y   
+         * @param _width   
+         * @param _height   
+         * @param eQz (default=null)   
+         * @param lw (default=null)   
+         * @param eQA (default=null)   
+         */
+        CountShapesInRect: (yJ: TODO, x: number, y: number, _width: number, _height: number, eQz?: TODO, lw?: TODO, eQA?: TODO) => TODO;
     }
 }
 
@@ -994,18 +1215,48 @@ declare global {
     interface pb2AIPathFindingHint extends ClassIdentityProps<"pb2AIPathFindingHint"> {
         enabled: boolean;
         remove: () => TODO;
-        action_to_proceed: TODO;
-        action_target: TODO;
+        action_to_proceed: TODO; // One of the pb2AIModule.HINT_ACTION_* values
+        /**
+         * This has a different set of intended values for each different `action_to_proceed`  
+         * All accept null.  
+         * pb2AIModule.HINT_ACTION_USE_SWITCH: pb2UsableSwitch  
+         * pb2AIModule.HINT_ACTION_JUST_WAIT: none  
+         * pb2AIModule.HINT_ACTION_GO_TO: Point | pb2UsableSwitch | pb2Entity | pb2Ragdoll | pb2Gun  
+         * pb2AIModule.HINT_ACTION_ATTACK_OBJECT: pb2Entity | pb2Ragdoll  
+         * pb2AIModule.HINT_ACTION_SHOOT_AT_POINT: Point | pb2UsableSwitch | pb2Entity | pb2Ragdoll | pb2Gun  
+         */
+        action_target: null | pb2UsableSwitch | Point | pb2EntityBase<string> | pb2Ragdoll | pb2Gun;
     }
     var pb2AIPathFindingHint: ClassIdentityProps<"pb2AIPathFindingHint"> & {
-        Create: (params: TODO) => pb2AIPathFindingHint;
+        /**
+         * Creates a new AI pathfinding hint.
+         * @param params Object containing parameters
+         * @param params.a Point A
+         * @param params.a.x X of point A
+         * @param params.a.y Y of point A
+         * @param params.b Point B
+         * @param params.b.x X of point B
+         * @param params.b.y Y of point B
+         * @param params.enabled (default=true)
+         * @param params.action_to_proceed (default=pb2AIModule.HINT_ACTION_USE_SWITCH)
+         * @param params.both_ways (default=false)
+         * @returns 
+         */
+        Create: (params: {
+            a: {x: number, y: number},
+            b: {x: number, y: number},
+            enabled?: boolean,
+            action_to_proceed?: TODO,
+            action_target?: null,
+            both_ways?: boolean,
+        }) => pb2AIPathFindingHint;
     }
 }
 
 declare global {
     interface pb2AIThreat extends ClassIdentityProps<"pb2AIThreat"> {
-        readonly knowledge_owner_team: TODO;
-        readonly knowledge_about: TODO;
+        readonly knowledge_owner_team: pb2Team;
+        readonly knowledge_about: pb2Ragdoll;
         ThreatEliminated: () => TODO;
     }
     var pb2AIThreat: ClassIdentityProps<"pb2AIThreat"> & {
@@ -1164,9 +1415,9 @@ declare global {
         readonly classid: TODO;
         readonly x: number;
         readonly y: number;
-        readonly owner_ragdoll: TODO;
-        readonly owner_gun: TODO;
-        readonly initial_grenade_type: TODO;
+        readonly owner_ragdoll: pb2Ragdoll | null;
+        readonly owner_gun: pb2Gun | null; // null for grenades
+        readonly initial_grenade_type: -1 | TODO; // -1 or one of the grenade types
         readonly is_punch: boolean;
         readonly is_sword: boolean;
         readonly is_bite: boolean;
@@ -1181,144 +1432,82 @@ declare global {
         readonly is_cloud: boolean;
         readonly is_lightning: boolean;
         readonly is_blinding: boolean;
-        readonly rocket_direct_damage_mode: TODO;
+        readonly rocket_direct_damage_mode: boolean;
         readonly is_wall_sticking: boolean;
         readonly is_nail: boolean;
         Teleport: (dx: number, dy: number) => TODO;
-        readonly box2d_body: b2Body;
+        readonly box2d_body: b2Body | null; // null after removed
         /** @param dlv (default=false)  */
         remove: (dlv?: TODO) => TODO;
         readonly is_being_removed: boolean;
         bullet_hp: number;
-        readonly is_thrown_by: TODO;
+        readonly is_thrown_by: pb2Ragdoll | null; // != null for grenades
         /** @param id (default=0)  */
         GetMesh: (id?: 0 | 1 | 2) => THREE.Mesh | null;
     }
     var pb2Bullet: ClassIdentityProps<"pb2Bullet"> & {
-        /** Type is unknown. One known value: false */
-        bullets_damage_guns: TODO;
-        /** Type is unknown. One known value: 1 */
-        explosive_direct_based_multiplier: TODO;
-        /** Type is unknown. One known value: 1.26 */
-        held_ragdoll_damage_sword_kick_punch_mult: TODO;
-        /** Type is unknown. One known value: 0.66 */
-        knock_gun_owner_intensity: TODO;
-        /** Type is unknown. One known value: 0.66 */
-        knock_sword_owner_intensity: TODO;
-        /** Type is unknown. One known value: 1.1 */
-        grenade_density: TODO;
-        /** Type is unknown. One known value: 1.142857142857143 */
-        normal_grenade_mesh_scale: TODO;
-        /** Type is unknown. One known value: 6 */
-        radius_grenade: TODO;
-        /** Type is unknown. One known value: 1 */
-        radius_bullet: TODO;
-        /** Type is unknown. One known value: 0 */
-        radius_beam: TODO;
-        /** Type is unknown. One known value: 5 */
-        radius_sword: TODO;
-        /** Type is unknown. One known value: 30 */
-        radius_sword_crosshit: TODO;
-        /** Type is unknown. One known value: 20 */
-        radius_sword_protection: TODO;
-        /** Type is unknown. One known value: 20 */
-        radius_sword_bullet_reflection: TODO;
-        /** Type is unknown. One known value: 10 */
-        radius_cloud: TODO;
-        /** Type is unknown. One known value: 7 */
-        beam_max_life_time: TODO;
-        /** Type is unknown. One known value: 5 */
-        time_before_selfhit: TODO;
-        /** Type is unknown. One known value: 85 */
-        dist_before_selfhit: TODO;
-        /** Type is unknown. One known value: 0.24 */
-        player_push_power: TODO;
-        /** Type is unknown. One known value: 0.18 */
-        ragdoll_push_power: TODO;
-        /** Type is unknown. One known value: 0.5 */
-        ragdoll_push_power_explosion: TODO;
-        /** Type is unknown. One known value: 0.5 */
-        entity_push_power: TODO;
-        /** Type is unknown. One known value: 1.3888888888888888 */
-        entity_push_power_explosion: TODO;
-        /** Type is unknown. One known value: 2.5 */
-        bullet_target_push_multiplayer: TODO;
-        /** Type is unknown. One known value: 2.5 */
-        bullet_self_push_multiplayer: TODO;
-        /** Type is unknown. One known value: 18 */
-        beam_hit_spark_multiplier: TODO;
-        /** Type is unknown. One known value: 0.333 */
-        bullet_gravity_multiplayer: TODO;
-        /** Type is unknown. One known value: 0.02 */
-        water_push_power: TODO;
-        /** Type is unknown. One known value: 0.4 */
-        water_push_power_directed: TODO;
-        /** Type is unknown. One known value: 0.05 */
-        particle_push_power: TODO;
-        /** Type is unknown. One known value: 0.25 */
-        ricochet_power_remain_bullet: TODO;
-        /** Type is unknown. One known value: 0.25 */
-        ricochet_power_remain_beam: TODO;
-        /** Type is unknown. One known value: 0.35 */
-        ricochet_power_remain_rail: TODO;
-        /** Type is unknown. One known value: 0.03 */
-        friction_distance_multiplier: TODO;
-        /** Type is unknown. One known value: 0.99 */
-        friction_air: TODO;
-        /** Type is unknown. One known value: 0.9 */
-        friction_water: TODO;
-        /** Type is unknown. One known value: 0.7 */
-        friction_wall: TODO;
-        /** Type is unknown. One known value: 0.75 */
-        friction_for_beam: TODO;
-        /** Type is unknown. One known value: 0.93 */
-        friction_for_cloud_air: TODO;
-        /** Type is unknown. One known value: 0.4 */
-        friction_for_cloud_water: TODO;
-        /** Type is unknown. One known value: 0.1 */
-        min_damaging_ammount: TODO;
-        /** Type is unknown. One known value: 0.05 */
-        min_damaging_ammount_nails: TODO;
-        /** Type is unknown. One known value: 0.25 */
-        min_damaging_ammount_AI: TODO;
-        /** Type is unknown. One known value: 0.01 */
-        min_damaging_ammount_clouds: TODO;
-        /** Type is unknown. One known value: 0.25 */
-        min_damaging_ammount_in_walls: TODO;
-        /** Type is unknown. One known value: 0.66 */
-        held_gun_knock_multiplier: TODO;
-        /** Type is unknown. One known value: 0.01 */
-        max_damaging_constant_beam_damage: TODO;
-        /** Type is unknown. One known value: 50 */
-        blip_time: TODO;
-        /** Type is unknown. One known value: 90 */
-        max_rocket_fuel: TODO;
-        /** Type is unknown. One known value: 0.1 */
-        bullet_min_hp: TODO;
-        /** Type is unknown. One known value: 1 */
-        hp_default_bullet: TODO;
-        /** Type is unknown. One known value: 0.65 */
-        hp_railgun: TODO;
-        /** Type is unknown. One known value: 1 */
-        hp_raygun: TODO;
-        /** Type is unknown. One known value: 1 */
-        hp_sword: TODO;
-        /** Type is unknown. One known value: 0.75 */
-        hp_rocket: TODO;
-        /** Type is unknown. One known value: 0.45 */
-        hp_plasma: TODO;
-        /** Type is unknown. One known value: 1 */
-        hp_plasma_radioactive: TODO;
-        /** Type is unknown. One known value: 2 */
-        hp_beam: TODO;
-        /** Type is unknown. One known value: 1 */
-        hp_grenade: TODO;
-        /** Type is unknown. One known value: 1.8 */
-        hp_nail: TODO;
-        /** Type is unknown. One known value: 240 */
-        default_bullet_speed: TODO;
-        /** Type is unknown. One known value: 30 */
-        default_bullet_life: TODO;
+        bullets_damage_guns: boolean;
+        explosive_direct_based_multiplier: number;
+        held_ragdoll_damage_sword_kick_punch_mult: number;
+        knock_gun_owner_intensity: number;
+        knock_sword_owner_intensity: number;
+        grenade_density: number;
+        normal_grenade_mesh_scale: number;
+        radius_grenade: number;
+        radius_bullet: number;
+        radius_beam: number;
+        radius_sword: number;
+        radius_sword_crosshit: number;
+        radius_sword_protection: number;
+        radius_sword_bullet_reflection: number;
+        radius_cloud: number;
+        beam_max_life_time: number;
+        time_before_selfhit: number;
+        dist_before_selfhit: number;
+        player_push_power: number;
+        ragdoll_push_power: number;
+        ragdoll_push_power_explosion: number;
+        entity_push_power: number;
+        entity_push_power_explosion: number;
+        bullet_target_push_multiplayer: number;
+        bullet_self_push_multiplayer: number;
+        beam_hit_spark_multiplier: number;
+        bullet_gravity_multiplayer: number;
+        water_push_power: number;
+        water_push_power_directed: number;
+        particle_push_power: number;
+        ricochet_power_remain_bullet: number;
+        ricochet_power_remain_beam: number;
+        ricochet_power_remain_rail: number;
+        friction_distance_multiplier: number;
+        friction_air: number;
+        friction_water: number;
+        friction_wall: number;
+        friction_for_beam: number;
+        friction_for_cloud_air: number;
+        friction_for_cloud_water: number;
+        min_damaging_ammount: number;
+        min_damaging_ammount_nails: number;
+        min_damaging_ammount_AI: number;
+        min_damaging_ammount_clouds: number;
+        min_damaging_ammount_in_walls: number;
+        held_gun_knock_multiplier: number;
+        max_damaging_constant_beam_damage: number;
+        blip_time: number;
+        max_rocket_fuel: number;
+        bullet_min_hp: number;
+        hp_default_bullet: number;
+        hp_railgun: number;
+        hp_raygun: number;
+        hp_sword: number;
+        hp_rocket: number;
+        hp_plasma: number;
+        hp_plasma_radioactive: number;
+        hp_beam: number;
+        hp_grenade: number;
+        hp_nail: number;
+        default_bullet_speed: number;
+        default_bullet_life: number;
         /**
          * @param x   
          * @param y   
@@ -2258,184 +2447,6 @@ declare global {
     var pb2EngineDatabase: pb2EditorObject;
 }
 
-type pb2EntityBase<ClassName extends string> = ClassIdentityProps<ClassName> & {
-    /** Type is unknown. One known value: 2 */
-    readonly classid: TODO;
-    readonly x: number;
-    readonly y: number;
-    readonly tox: number;
-    readonly toy: number;
-    InstallGun: (_tQ: TODO) => TODO;
-    DropGun: () => TODO;
-    remove: () => TODO;
-    /**
-     * @param r   
-     * @param eQf (default=-1)   
-     */
-    AddRagdoll: (r: TODO, eQf?: TODO) => TODO;
-    /**
-     * @param r   
-     * @param hv (default=false)   
-     */
-    ExcludeRagdoll: (r: TODO, hv?: TODO) => TODO;
-    /**
-     * @param r   
-     * @param time (default=-100)   
-     * @param eQa (default=false)   
-     * @param eQh (default=null)   
-     */
-    IgnoreRagdoll: (r: TODO, time?: TODO, eQa?: TODO, eQh?: TODO) => TODO;
-    /**
-     * @param bN   
-     * @param xx   
-     * @param yy   
-     * @param _boD   
-     * @param _ben   
-     * @param limb_id   
-     * @param limb_damage_multiplier (default=1)   
-     * @param eTB (default=true)   
-     * @param fG (default=0)   
-     * @param fE (default=0)   
-     * @param eSP (default=null)   
-     * @param bqj (default=false)   
-     */
-    DealDamage: (bN: TODO, xx: TODO, yy: TODO, _boD: TODO, _ben: TODO, limb_id: TODO, limb_damage_multiplier?: TODO, eTB?: TODO, fG?: TODO, fE?: TODO, eSP?: TODO, bqj?: TODO) => TODO;
-    MultiplyHealth: (m: TODO) => TODO;
-    alpha: TODO;
-    readonly is_being_removed: boolean;
-    hea: number;
-    hmax: number;
-    dying_level: TODO;
-    team: pb2Team;
-    /**
-     * @param x   
-     * @param dist (default=-123)   
-     */
-    SetDriverSeatsAndRadius: (x: number, dist?: number) => TODO;
-    /**
-     * @param x   
-     * @param eQr (default=false)   
-     */
-    SetSide: (x: TODO, eQr?: TODO) => TODO;
-    readonly box2d_bodies: b2Body[];
-    addEventListener: (event_type: TODO, params: TODO) => TODO;
-    removeEventListener: (event_type: TODO, params: TODO) => TODO;
-    GetLimb: (id: TODO) => TODO;
-    /** @param id (default=0)  */
-    GetMesh: (id?: number) => THREE.Mesh;
-};
-
-declare global {
-    interface pb2Entity extends pb2EntityBase<"pb2Entity"> {}
-    var pb2Entity: ClassIdentityProps<"pb2Entity"> & {
-        /** return type may be different based on the parameters passed in */
-        CreateEntity: (params: TODO) => pb2Entity;
-        /** Type is unknown. One known value: 0 */
-        TYPE_UNKNOWN: TODO;
-        /** Type is unknown. One known value: 1 */
-        TYPE_SPOILER35: TODO;
-        /** Type is unknown. One known value: 2 */
-        TYPE_BARREL: TODO;
-        /** Type is unknown. One known value: 3 */
-        TYPE_BARREL_PART: TODO;
-        /** Type is unknown. One known value: 4 */
-        TYPE_CRATE: TODO;
-        /** Type is unknown. One known value: 5 */
-        TYPE_TURRET: TODO;
-        /** Type is unknown. One known value: 6 */
-        TYPE_SPOILER27: TODO;
-        /** Type is unknown. One known value: 7 */
-        TYPE_SPOILER29: TODO;
-        /** Type is unknown. One known value: 8 */
-        TYPE_MOTO: TODO;
-        /** Type is unknown. One known value: 9 */
-        TYPE_WALKER: TODO;
-        /** Type is unknown. One known value: 10 */
-        TYPE_SPOILER28: TODO;
-        /** Type is unknown. One known value: 11 */
-        TYPE_SPOILER30: TODO;
-        /** Type is unknown. One known value: 12 */
-        TYPE_SPOILER13: TODO;
-        /** Type is unknown. One known value: 13 */
-        TYPE_SPOILER14: TODO;
-        /** Type is unknown. One known value: 14 */
-        TYPE_SPOILER15: TODO;
-        /** Type is unknown. One known value: 15 */
-        TYPE_SPOILER16: TODO;
-        /** Type is unknown. One known value: 16 */
-        TYPE_SPOILER17: TODO;
-        /** Type is unknown. One known value: 17 */
-        TYPE_SPOILER19: TODO;
-        /** Type is unknown. One known value: 18 */
-        TYPE_SPOILER18: TODO;
-        /** Type is unknown. One known value: 19 */
-        TYPE_SPOILER20: TODO;
-        /** Type is unknown. One known value: 20 */
-        TYPE_SPOILER21: TODO;
-        /** Type is unknown. One known value: 21 */
-        TYPE_ANTIGRAVITY: TODO;
-        /** Type is unknown. One known value: 22 */
-        TYPE_SPOILER33: TODO;
-        /** Type is unknown. One known value: 23 */
-        TYPE_CORVETTE: TODO;
-        /** Type is unknown. One known value: 24 */
-        TYPE_FLOATING_ICE: TODO;
-        /** Type is unknown. One known value: 25 */
-        TYPE_SPOILER34: TODO;
-        /** Type is unknown. One known value: ["pb2Entity.TYPE_UNKNOWN","pb2Entity.TYPE_SPOILER35","pb2Entity.TYPE_BARREL","pb2Entity.TYPE_BARREL_PART","pb2Entity.TYPE_CRATE","pb2Entity.TYPE_TURRET","pb2Entity.TYPE_SPOILER27","pb2Entity.TYPE_SPOILER29","pb2Entity.TYPE_MOTO","pb2Entity.TYPE_WALKER","pb2Entity.TYPE_SPOILER28","pb2Entity.TYPE_SPOILER30","pb2Entity.TYPE_SPOILER13","pb2Entity.TYPE_SPOILER14","pb2Entity.TYPE_SPOILER15","pb2Entity.TYPE_SPOILER16","pb2Entity.TYPE_SPOILER17","pb2Entity.TYPE_SPOILER19","pb2Entity.TYPE_SPOILER18","pb2Entity.TYPE_SPOILER20","pb2Entity.TYPE_SPOILER21","pb2Entity.TYPE_ANTIGRAVITY","pb2Entity.TYPE_SPOILER33","pb2Entity.TYPE_CORVETTE","pb2Entity.TYPE_FLOATING_ICE","pb2Entity.TYPE_SPOILER34"] */
-        ALL_TYPES: TODO;
-        /** Type is unknown. One known value: 0 */
-        MATERIAL_METAL: TODO;
-        /** Type is unknown. One known value: 1 */
-        MATERIAL_GLASS: TODO;
-        /** Type is unknown. One known value: 2 */
-        MATERIAL_WOOD: TODO;
-        /** Type is unknown. One known value: 3 */
-        MATERIAL_BLOOD: TODO;
-        /** Type is unknown. One known value: 4 */
-        MATERIAL_MAGAZINE_PISTOL: TODO;
-        /** Type is unknown. One known value: 5 */
-        MATERIAL_MAGAZINE_PISTOL3: TODO;
-        /** Type is unknown. One known value: 6 */
-        MATERIAL_MAGAZINE_RIFLE: TODO;
-        /** Type is unknown. One known value: 7 */
-        MATERIAL_MAGAZINE_GENERIC_METAL: TODO;
-        /** Type is unknown. One known value: 8 */
-        MATERIAL_RUBBER: TODO;
-        /** Type is unknown. One known value: 9 */
-        MATERIAL_METAL_USURP: TODO;
-        /** Type is unknown. One known value: 10 */
-        MATERIAL_METAL_USURP_BOSS_LEG: TODO;
-        /** Type is unknown. One known value: 11 */
-        MATERIAL_CONCRETE: TODO;
-        /** Type is unknown. One known value: 12 */
-        MATERIAL_METAL_SPOILER33: TODO;
-        /** Type is unknown. One known value: 13 */
-        MATERIAL_MAGAZINE_CANISTER: TODO;
-        /** Type is unknown. One known value: 14 */
-        MATERIAL_CRAB_SHELL: TODO;
-        /** Type is unknown. One known value: 15 */
-        MATERIAL_ICE: TODO;
-        /** Type is unknown. One known value: 16 */
-        MATERIAL_ROCK: TODO;
-        /** Type is unknown. One known value: 17 */
-        MATERIAL_METAL_MOTO: TODO;
-        /** Type is unknown. One known value: [] */
-        entities: TODO;
-        /**
-         * @param yJ   
-         * @param x   
-         * @param y   
-         * @param _width   
-         * @param _height   
-         * @param eQz (default=null)   
-         * @param lw (default=null)   
-         * @param eQA (default=null)   
-         */
-        CountShapesInRect: (yJ: TODO, x: number, y: number, _width: number, _height: number, eQz?: TODO, lw?: TODO, eQA?: TODO) => TODO;
-    }
-}
-
 declare global {
     interface pb2EntityAntigravity extends pb2EntityBase<"pb2EntityAntigravity"> {
         // Detach is only accessible when this.oh (type b2Joint sometimes) !== undefined, which is true only on pb2EntityAntigravity and pb2EntityTurret
@@ -2914,11 +2925,11 @@ declare global {
         readonly toy: number;
         readonly owner: pb2Character | null;
         readonly owner_entity: pb2Entity | null;
-        readonly gun_type: TODO;
-        readonly gun_type_string: TODO;
-        barrel_spin: TODO;
-        heat: TODO;
-        main_cooldown: TODO;
+        readonly gun_type: pb2GunClass;
+        readonly gun_type_string: string;
+        barrel_spin: number; // starts at 0. used in guns that need to spin up before firing (for example 'gun_anti_rifle')
+        heat: number; // value that increases when firing. how high it increases depends on the gun
+        main_cooldown: number; // time before it's possible to shoot again
         readonly side: 1 | -1;
         Flip: () => void;
         Hide: () => TODO;
@@ -2961,55 +2972,55 @@ declare global {
         CarryEnd: (dPA?: TODO) => TODO;
         remove: () => TODO;
         readonly is_being_removed: boolean;
-        readonly box2d_body: b2Body;
-        main_reload_length: TODO;
-        readonly is_active: TODO;
+        readonly box2d_body: b2Body | null; // set to null when disposed
+        main_reload_length: number;
+        readonly is_active: boolean; // when held by a character
         readonly is_being_carried: boolean;
-        readonly attachment_atom: TODO;
-        readonly clip_out: TODO;
-        readonly muzzle_alpha: TODO;
-        readonly scale: TODO;
-        readonly ammo_style: TODO;
-        readonly ammo_style2: TODO;
+        readonly attachment_atom: pb2Atom | null;
+        readonly clip_out: boolean; // when reloadable gun needs to be reloaded
+        readonly muzzle_alpha: number; // muzzle flash alpha
+        readonly scale: number;
+        readonly ammo_style: pb2StyleAmmo | null;
+        readonly ammo_style2: pb2StyleAmmo | null;
         addEventListener: (event_type: TODO, params: TODO) => TODO;
         removeEventListener: (event_type: TODO, params: TODO) => TODO;
-        readonly is_thrown_by: TODO;
+        readonly is_thrown_by: pb2Ragdoll | null; // gets set to ragdoll when thrown, gets reset to null when picked up
         /** @param id (default=0)  */
         GetMesh: (id?: number) => TODO;
     }
     var pb2Gun: ClassIdentityProps<"pb2Gun"> & {
         CreateGun: (params: TODO) => pb2Gun;
         guns: pb2Gun[];
-        pickable_guns: TODO[];
+        pickable_guns: pb2Gun[]; // guns that have no owner
     }
 }
 
 declare global {
     interface pb2GunClass extends ClassIdentityProps<"pb2GunClass"> {
-        inventory_slot: TODO;
-        title: TODO;
-        forcars: TODO;
-        cost: TODO;
-        costupg: TODO;
-        two_at_a_time: TODO;
-        stat_count: TODO;
-        spawn_distance: TODO;
-        stat_spread: TODO;
-        stat_bullets: TODO;
-        stat_cursor: TODO;
-        projectile_speed: number;
-        projectile_luminescent: TODO;
-        fire_duration: TODO;
-        fire_type: TODO;
-        auto_fire_if_unready: TODO;
-        disabled_laser: TODO;
+        inventory_slot: number;
+        title: string; // user facing gun name
+        forcars: boolean;
+        cost: number;
+        costupg: number;
+        two_at_a_time: boolean; // can be dual wielded?
+        stat_count: number;
+        spawn_distance: number;
+        stat_spread: number;
+        stat_bullets: number;
+        stat_cursor: number; // integer from 0 to 6. changes cursor
+        projectile_speed: number; // bullet speed. affects recoil
+        projectile_luminescent: number;
+        fire_duration: number;
+        fire_type: pb2FireType;
+        auto_fire_if_unready: boolean;
+        disabled_laser: boolean;
         mass_mult: number;
-        secondary_mode_toggle: TODO;
+        secondary_mode_toggle: boolean;
         is_grenade: boolean;
         is_lightning: boolean;
         is_rocket: boolean;
-        rocket_direct_damage_mode: TODO;
-        projectile_base_color: TODO;
+        rocket_direct_damage_mode: boolean;
+        projectile_base_color: pb2Color;
         is_railgun: boolean;
         is_heavy: boolean;
         is_healgun: boolean;
@@ -3024,48 +3035,48 @@ declare global {
         is_nail: boolean;
         is_raygun: boolean;
         is_wall_sticking: boolean;
-        rocket_damage: TODO;
-        xpos1: TODO;
-        xpos2: TODO;
-        attachment: TODO;
-        zpos: TODO;
-        zpos2: TODO;
-        len1: TODO;
-        len2: TODO;
-        size1: TODO;
-        size2: TODO;
+        rocket_damage: number;
+        xpos1: number;
+        xpos2: number;
+        attachment: number;
+        zpos: number;
+        zpos2: number;
+        len1: number;
+        len2: number;
+        size1: number;
+        size2: number;
         recoil_factor: number;
-        chaotic_recoil: TODO;
+        chaotic_recoil: number;
         constant_beam_damage: number;
         speed_to_damage_multiplier: number;
         explosion_knock_multiplier: number;
         explosion_hp_damage_multiplier: number;
         max_life_time: number;
-        max_life_time_rand: TODO;
-        ammo_bullet_price: TODO;
-        grenade_density: TODO;
-        readonly model_name: TODO;
+        max_life_time_rand: number;
+        ammo_bullet_price: number; // how many ammo is consumed per shot
+        grenade_density: number;
+        readonly model_name: string;
         reload_length: number;
         GetProjectileMovieClip: () => TODO;
         SetProjectileMovieClip: (v: TODO) => TODO;
         GetStuckProjectileMovieClip: () => TODO;
         SetStuckProjectileMovieClip: (v: TODO) => TODO;
-        readonly weapon_modes: TODO;
+        readonly weapon_modes: pb2GunClass[]; // array of gun classes for each fire mode. weapon_modes[0] === this
         SetSoundInfo: (category: TODO, KP: TODO) => TODO;
         GetSoundInfo: (category: TODO) => TODO;
         detonates_on_entity_collisions: boolean;
         detonates_on_organic_entities_only: boolean;
-        ricochet_speed_condition: TODO;
+        ricochet_speed_condition: number;
         ricochet_speed_decay_multiplier: number;
         magazine_reload_duration_multiplier: number;
-        stat_power: TODO;
+        stat_power: number;
         muzzle_flash_scale_mult: number;
     }
     var pb2GunClass: ClassIdentityProps<"pb2GunClass"> & {
-        /** Type is unknown. One known value: ["gun_pistol","gun_pistol2","gun_rifle","gun_rayrifle","gun_real_rifle","gun_arifle","gun_arifle2","gun_shotgun","gun_raygun","gun_minigun","gun_real_shotgun","gun_railgun","gun_railgun2","gun_sniper","gun_rl","gun_apistol","gun_plasmagun","gun_apistol2","gun_gl","gun_bng","gun_defibrillator","gun_vgun","gun_oicw"] */
-        non_spoiler_weapons: TODO;
-        /** Type is unknown. One known value: ["gun_rifle","gun_anti_rifle","gun_pistol","gun_pistol2","gun_rayrifle","gun_arifle2","gun_arifle","gun_real_rifle","gun_shotgun","gun_raygun","gun_minigun","gun_real_shotgun","gun_railgun","gun_shadowstep_railgun","gun_railgun2","gun_sniper","gun_rl","gun_trouble","gun_shaft","gun_rl2","gun_plasmagun","gun_apistol","gun_apistol2","gun_gl","gun_bng","gun_disintegrator","gun_explosiveminigun","gun_firebug","gun_drainlight","gun_drainlight_mg","gun_sniper2","gun_defibrillator","gun_eratrigger","gun_repairgun","gun_dodge","gun_oicw","gun_vgun","gun_nailgun","gun_freezer","gun_pistol3","gun_farheal","gun_flappygun","gun_flame","gun_rl3","gun_vehgun","gun_bng2","gun_chrono","gun_vehcannon","gun_vehcannon2","gun_scout_drone","gun_harasser_drone","gun_cs_vehgun","gun_vehminigun","gun_fttp_vehgun","gun_drain_sniper_rifle"] */
-        registered_weapons: TODO;
+        /** Array of gun IDs */
+        non_spoiler_weapons: string[];
+        /** Array of gun IDs */
+        registered_weapons: string[];
         GetGunClassByString: (str: string) => pb2GunClass;
         CachedGunClasses: {[k: string]: pb2GunClass}
         CreateCustomGunClass: (bjW: TODO, exC: TODO) => void;
@@ -4670,8 +4681,7 @@ declare global {
 
 declare global {
     var pb2_mp: ClassIdentityProps<"pb2_mp"> & {
-        /** Type is unknown. One known value: 0 */
-        GAME_FPS: TODO;
+        GAME_FPS: number;
         /** Type is unknown. One known value: 1 */
         FUNCTION_LINEAR: TODO;
         /** Type is unknown. One known value: 2 */
