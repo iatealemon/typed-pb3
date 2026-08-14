@@ -39,6 +39,10 @@ declare global {
         GetAngle: () => TODO;
         IsValid: () => TODO;
         MoveToUntilDistanceIs: (to: TODO, di: TODO) => TODO;
+        // failed to be included in generation
+        r: number;
+        x: number;
+        y: number;
     }
     var Circle: {
         new (params: TODO): Circle;
