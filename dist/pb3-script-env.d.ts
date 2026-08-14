@@ -63,9 +63,24 @@ declare global {
         GetAngle: () => TODO;
         IsValid: () => TODO;
         MoveToUntilDistanceIs: (to: TODO, di: TODO) => TODO;
+        // failed to be included in generation
+        r: number;
+        x: number;
+        y: number;
     }
+    // class Circle extends Point
     var Circle: {
-        new (params: TODO): Circle;
+        /**
+         * @param params Object containing parameters  
+         * @param params.x (default=0) Y position  
+         * @param params.y (default=0) X position  
+         * @param params.r (default=0) Radius  
+         */
+        new (params: {
+            x?: number,
+            y?: number,
+            r?: number,
+        }): Circle;
 
     }
 }
@@ -305,8 +320,17 @@ declare global {
         x: number;
         y: number;
     }
+    // class Point extends b2Vec2
     var Point: {
-        new (params: TODO): Point;
+        /**
+         * @param params Object containing parameters  
+         * @param params.x (default=0) Y position  
+         * @param params.y (default=0) X position  
+         */
+        new (params: {
+            x?: number,
+            y?: number,
+        }): Point;
 
     }
 }
@@ -564,8 +588,21 @@ declare global {
         dx: number;
         dy: number;
     }
+    // class Vector extends Point
     var Vector: {
-        new (params: TODO): Vector;
+        /**
+         * @param params Object containing parameters  
+         * @param params.x (default=0) Y position  
+         * @param params.y (default=0) X position  
+         * @param params.dx (default=0) Vector X component  
+         * @param params.dy (default=0) Vector Y component  
+         */
+        new (params: {
+            x?: number,
+            y?: number,
+            dx?: number,
+            dy?: number,
+        }): Vector;
 
     }
 }
@@ -2184,9 +2221,11 @@ declare global {
 
 declare global {
     interface pb2ColoredText extends ClassIdentityProps<"pb2ColoredText"> {
-        text: TODO;
-        colors: TODO;
-        CapitalRedColors: () => TODO;
+        text: string;
+        /** Color for every character in `text` */
+        colors: pb2HighRangeColor[];
+        /** Sets the color of all capital characters to red and others to white. Throws an error if `colors` is non-empty. */
+        CapitalRedColors: () => pb2ColoredText;
         /**
          * Bugged. Tries to set every color to `new pb2HighRangeColor().random(1)` but `random` doesn't exist on pb2HighRangeColor.  
          * 
@@ -2197,38 +2236,54 @@ declare global {
          * ```
          */
         RandomColors: () => pb2ColoredText;
-        WhiteColors: () => TODO;
+        /** Sets text to white. Throws an error if `colors` is non-empty. */
+        WhiteColors: () => pb2ColoredText;
         /**
-         * @param nickname_tagged   
-         * @param main_color (default=undefined)   
+         * @param nickname_tagged A string containing color tags like "[#00FFFF]John[/] Doe"  
+         * @param main_color (default=0xffffff) Color to use for text parts that aren't tagged  
          */
-        FromTagged: (nickname_tagged: TODO, main_color?: TODO) => TODO;
-        GetTagged: () => TODO;
+        FromTagged: (nickname_tagged: string, main_color?: number) => pb2ColoredText;
+        /**
+         * Returns string containing color tags like "[#00FFFF]John[/] Doe" that represents the current text and colors.  
+         * 
+         * This function caches the result which can cause problems if the colors or text are modified after the cached result is set.
+         */
+        GetTagged: () => string;
     }
     var pb2ColoredText: {
-        /** @param txt (default='')  */
-        new (txt?: TODO): pb2ColoredText;
+        /**
+         * Creates a new pb2ColoredText with the specified text. The colors have to be defined next for the text to be visible.  
+         * 
+         * Examples of correct usage:
+         * ```js
+         * new pb2ColoredText("Fully white").WhiteColors();
+         * new pb2ColoredText("CapitalRedColors").CapitalRedColors();
+         * new pb2ColoredText().FromTagged("[#00FFFF]John[/] Doe");
+         * ```
+         * @param txt (default='')  
+         */
+        new (txt?: string): pb2ColoredText;
 
     }
 }
 
 declare global {
     interface pb2Controller extends ClassIdentityProps<"pb2Controller"> {
-        readonly character: TODO;
-        readonly player_connection: TODO;
-        act_x: TODO;
-        act_y: TODO;
+        readonly character: pb2Character | null;
+        readonly player_connection: TODO | null;
+        act_x: number;
+        act_y: number;
         look_x: number;
         look_y: number;
-        act_fall: TODO;
-        act_fire: TODO;
-        act_fire2: TODO;
-        act_grab: TODO;
-        act_sprint: TODO;
-        readonly _is_typing: TODO;
-        readonly _is_in_menu: TODO;
+        act_fall: number;
+        act_fire: number;
+        act_fire2: number;
+        act_grab: number;
+        act_sprint: number;
+        readonly _is_typing: undefined;
+        readonly _is_in_menu: undefined;
         remove: () => TODO;
-        readonly zoom: TODO;
+        readonly zoom: number;
         /**
          * @param c   
          * @param cGz (default=false)   
@@ -2249,11 +2304,11 @@ declare global {
          */
         StartPositionMorph: (to_x: number, to_y: number, param?: TODO, func?: TODO) => TODO;
         StopPositionMorph: () => TODO;
-        readonly camera_position_forced: TODO;
-        readonly camera_position_target_x: TODO;
-        readonly camera_position_target_y: TODO;
-        readonly zoom_changing: TODO;
-        readonly target_zoom: TODO;
+        readonly camera_position_forced: boolean;
+        readonly camera_position_target_x: number;
+        readonly camera_position_target_y: number;
+        readonly zoom_changing: boolean;
+        readonly target_zoom: number;
         /** @param stable (default=false)  */
         ScreenMinX: (stable?: TODO) => TODO;
         /** @param stable (default=false)  */
@@ -2262,25 +2317,22 @@ declare global {
         ScreenMinY: (stable?: TODO) => TODO;
         /** @param stable (default=false)  */
         ScreenMaxY: (stable?: TODO) => TODO;
-        ai: TODO;
-        allow_damage_report_flash: TODO;
-        color_mult: TODO;
-        color_add: TODO;
-        readonly UpdateScreenColor: TODO;
-        damage_report_flash_current: TODO;
-        player_controllable: TODO;
-        readonly damage_dealt_players_tot: TODO;
-        readonly damage_dealt_entities_tot: TODO;
-        readonly eliminations_players_tot: TODO;
-        readonly eliminations_entities_tot: TODO;
+        ai: pb2AIModule | null;
+        allow_damage_report_flash: boolean;
+        color_mult: pb2HighRangeColor;
+        color_add: pb2HighRangeColor;
+        readonly UpdateScreenColor: undefined;
+        damage_report_flash_current: number;
+        player_controllable: boolean;
+        readonly damage_dealt_players_tot: number;
+        readonly damage_dealt_entities_tot: number;
+        readonly eliminations_players_tot: number;
+        readonly eliminations_entities_tot: number;
     }
     var pb2Controller: ClassIdentityProps<"pb2Controller"> & {
-        /** Type is unknown. One known value: 1.2 */
-        default_zoom_on_foot: TODO;
-        /** Type is unknown. One known value: 0.8 */
-        default_zoom_driving: TODO;
-        /** Type is unknown. One known value: 0.9 */
-        vehicle_in_out_param: TODO;
+        default_zoom_on_foot: number;
+        default_zoom_driving: number;
+        vehicle_in_out_param: number;
         /** Type is unknown. One known value: 3 */
         vehicle_in_out_func: TODO;
         /**
@@ -2307,39 +2359,155 @@ declare global {
         GetColorGlow: () => TODO;
         SetColor: (c: TODO) => TODO;
         SetColorGlow: (c: TODO) => TODO;
+        /** One of the pb2Decoration.BLENDING_* values */
         blending: TODO;
+        /** One of the pb2Decoration.SHADING_INITIAL* values */
         shading: TODO;
-        alpha: TODO;
-        opacity: TODO;
-        glowing_intensity: TODO;
-        readonly source: TODO;
-        readonly model_source: TODO;
-        readonly source_glow: TODO;
-        relative_to_mesh: TODO;
-        hide_relative_to_mesh: TODO;
-        inherit_effects: TODO;
-        visible: TODO;
+        alpha: number;
+        opacity: number;
+        glowing_intensity: number | undefined;
+        readonly source: string;
+        readonly model_source: string | null;
+        readonly source_glow: string | null;
+        relative_to_mesh: THREE.Mesh | null;
+        hide_relative_to_mesh: boolean;
+        inherit_effects: boolean;
+        visible: boolean;
         readonly is_being_removed: boolean;
-        readonly position: TODO;
+        readonly position: THREE.Vector3;
         x: number;
         y: number;
         z: number;
-        readonly rotation: TODO;
-        readonly scale: TODO;
-        /** Type is unknown. One known value: null */
-        readonly offset: TODO;
+        readonly rotation: THREE.Euler;
+        readonly scale: THREE.Vector3;
+        readonly offset: THREE.Vector3 | null;
         SetPersonalVisibilityFor: (TK: TODO, value: TODO) => TODO;
         ResetPersonalVisibilityRules: () => TODO;
-        default_visibility: TODO;
+        default_visibility: boolean;
         PlayAnimation: (animation_id: TODO) => TODO;
         PauseAnimation: () => TODO;
         ResumeAnimation: () => TODO;
-        animation_info: TODO;
+        animation_info: {
+            frame: TODO,
+            isPlaying: boolean,
+            isRelativeToWorld: boolean,
+            frameProgress: number,
+            speed: number,
+            animation_id: number,
+            animations: {
+                firstFrame: number,
+                framesTotal: number,
+                relativeSpeed: number,
+                looped: boolean,
+                report_animation_end: boolean,
+            }[],
+        } | null;
         UpdateAnimationUVs: () => TODO;
-        allow_sync: TODO;
+        allow_sync: boolean;
     }
     var pb2Decoration: ClassIdentityProps<"pb2Decoration"> & {
-        CreateDecoration: (params: TODO) => pb2Decoration;
+        /**
+         * Creates a new decoration.  
+         * @param params Object containing parameters
+         * @param params.source Required. Image source ID string.  
+         * @param params.model_source (default=null)  
+         * @param params.source_glow (default=null)  
+         * @param params.layer (default=pb2Decoration.LAYER_WORLD)  
+         * @param params.offsetX (default=0)  
+         * @param params.offsetY (default=0)  
+         * @param params.offsetZ (default=0)  
+         * @param params.frameWidth (default=undefined)  
+         * @param params.frameHeight (default=undefined)  
+         * @param params.frameOffsetX (default=0)  
+         * @param params.frameOffsetY (default=0)  
+         * @param params.pixelated (default=false)  
+         * @param params.mipmaps (default=true)  
+         * @param params.animation_info (default=null)  
+         * @param params.use_offset (default=false)  
+         * @param params.relative_to_mesh (default=null)  
+         * @param params.render_method (default=pb2Decoration.RENDER_METHOD_TRANSPARENT)  
+         * @param params.x (default=0)  
+         * @param params.y (default=0)  
+         * @param params.z (default=0)  
+         * @param params.rotationX (default=0)  
+         * @param params.rotationY (default=0)  
+         * @param params.rotationZ (default=0)  
+         * @param params.rotation (default=0) Serves same purpose as `rotationZ`  
+         * @param params.scale (default=1)  
+         * @param params.scaleX (default=scale)  
+         * @param params.scaleY (default=scale)  
+         * @param params.scaleZ (default=scale)  
+         * @param params.blending (default=pb2Decoration.BLENDING_NORMAL)  
+         * @param params.shading (default=pb2Decoration.SHADING_INITIAL)  
+         * @param params.color_mult (default=new pb2HighRangeColor(0xffffff))  
+         * @param params.color_mult_glow (default=new pb2HighRangeColor(0xffffff))  
+         * @param params.inherit_effects (default=true)  
+         * @param params.hide_relative_to_mesh (default=false)  
+         * @param params.visible (default=true)  
+         * @param params.opacity (default=1) If this is defined, `alpha` must not be defined  
+         * @param params.alpha (default=opacity) If this is defined, `opacity` must not be defined  
+         * @param params.glowing_intensity (default=undefined)  
+         * @param params.default_visibility (default=true)  
+         * @param params.is_static (default=false)  
+         * @param params.inverse_filter (default=[])  
+         */
+        CreateDecoration: (params: {
+            source: string,
+            model_source?: string | null,
+            source_glow?: string | null,
+            layer?: TODO,
+            offsetX?: number,
+            offsetY?: number,
+            offsetZ?: number,
+            frameWidth?: number,
+            frameHeight?: number,
+            frameOffsetX?: number,
+            frameOffsetY?: number,
+            pixelated?: boolean,
+            mipmaps?: boolean,
+            animation_info?: {
+                frame: TODO,
+                isPlaying: boolean,
+                isRelativeToWorld: boolean,
+                frameProgress: number,
+                speed: number,
+                animation_id: number,
+                animations: {
+                    firstFrame: number,
+                    framesTotal: number,
+                    relativeSpeed: number,
+                    looped: boolean,
+                    report_animation_end: boolean,
+                }[],
+            } | null,
+            use_offset?: boolean,
+            relative_to_mesh?: THREE.Mesh | null,
+            render_method?: TODO,
+            x?: number,
+            y?: number,
+            z?: number,
+            rotationX?: number,
+            rotationY?: number,
+            rotationZ?: number,
+            rotation?: number,
+            scale?: number,
+            scaleX?: number,
+            scaleY?: number,
+            scaleZ?: number,
+            blending?: TODO,
+            shading?: TODO,
+            color_mult?: pb2HighRangeColor,
+            color_mult_glow?: pb2HighRangeColor,
+            inherit_effects?: boolean,
+            hide_relative_to_mesh?: boolean,
+            visible?: boolean,
+            alpha?: number,
+            opacity?: number,
+            glowing_intensity?: number
+            default_visibility?: boolean,
+            is_static?: boolean,
+            inverse_filter?: (pb2PlayerConnection | pb2Ragdoll/* | typeof pb2GameWorld*/)[],
+        }) => pb2Decoration;
         PreloadUserData: (user_data_uid: TODO) => TODO;
         /** Type is unknown. One known value: 0 */
         LAYER_WORLD: TODO;
@@ -4251,15 +4419,15 @@ declare global {
     interface pb2Team extends ClassIdentityProps<"pb2Team"> {
         /** Type is unknown. One known value: 7 */
         readonly classid: TODO;
-        readonly ai_in_team: TODO;
+        readonly ai_in_team: boolean;
         allow_private_communication: boolean;
         friendly_damage_multiplier: number;
-        friendly_fire: TODO;
-        hud_color: TODO;
-        hud_color_for_enemies: TODO;
-        normal_damage_to_dead_teammates: TODO;
+        friendly_fire: boolean;
+        hud_color: pb2HighRangeColor;
+        hud_color_for_enemies: pb2HighRangeColor | null;
+        normal_damage_to_dead_teammates: boolean;
         readonly teammates_collide: boolean;
-        title: TODO;
+        title: string;
         remove: () => TODO;
     }
     var pb2Team: ClassIdentityProps<"pb2Team"> & {
