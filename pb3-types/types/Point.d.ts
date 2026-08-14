@@ -43,8 +43,17 @@ declare global {
         x: number;
         y: number;
     }
+    // class Point extends b2Vec2
     var Point: {
-        new (params: TODO): Point;
+        /**
+         * @param params Object containing parameters  
+         * @param params.x (default=0) Y position  
+         * @param params.y (default=0) X position  
+         */
+        new (params: {
+            x?: number,
+            y?: number,
+        }): Point;
 
     }
 }

@@ -6,15 +6,15 @@ declare global {
     interface pb2Team extends ClassIdentityProps<"pb2Team"> {
         /** Type is unknown. One known value: 7 */
         readonly classid: TODO;
-        readonly ai_in_team: TODO;
+        readonly ai_in_team: boolean;
         allow_private_communication: boolean;
         friendly_damage_multiplier: number;
-        friendly_fire: TODO;
-        hud_color: TODO;
-        hud_color_for_enemies: TODO;
-        normal_damage_to_dead_teammates: TODO;
+        friendly_fire: boolean;
+        hud_color: pb2HighRangeColor;
+        hud_color_for_enemies: pb2HighRangeColor | null;
+        normal_damage_to_dead_teammates: boolean;
         readonly teammates_collide: boolean;
-        title: TODO;
+        title: string;
         remove: () => TODO;
     }
     var pb2Team: ClassIdentityProps<"pb2Team"> & {

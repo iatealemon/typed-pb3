@@ -44,8 +44,19 @@ declare global {
         x: number;
         y: number;
     }
+    // class Circle extends Point
     var Circle: {
-        new (params: TODO): Circle;
+        /**
+         * @param params Object containing parameters  
+         * @param params.x (default=0) Y position  
+         * @param params.y (default=0) X position  
+         * @param params.r (default=0) Radius  
+         */
+        new (params: {
+            x?: number,
+            y?: number,
+            r?: number,
+        }): Circle;
 
     }
 }

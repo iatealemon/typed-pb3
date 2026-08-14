@@ -45,8 +45,21 @@ declare global {
         dx: number;
         dy: number;
     }
+    // class Vector extends Point
     var Vector: {
-        new (params: TODO): Vector;
+        /**
+         * @param params Object containing parameters  
+         * @param params.x (default=0) Y position  
+         * @param params.y (default=0) X position  
+         * @param params.dx (default=0) Vector X component  
+         * @param params.dy (default=0) Vector Y component  
+         */
+        new (params: {
+            x?: number,
+            y?: number,
+            dx?: number,
+            dy?: number,
+        }): Vector;
 
     }
 }
