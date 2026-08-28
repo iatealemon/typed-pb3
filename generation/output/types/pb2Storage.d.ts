@@ -33,5 +33,12 @@ declare global {
          */
         SetPlayerProperty: (dVZ: TODO, user_uid: TODO, value: TODO, then?: TODO, onerror?: TODO) => TODO;
         ClearPropertyNameToUIDCache: () => TODO;
+        /**
+         * @param folder_uid   
+         * @param keeper_user_uid (default=-1)   
+         * @param then (default=null)   
+         * @param onerror (default=null)   
+         */
+        GetFolderContents: (folder_uid: TODO, keeper_user_uid?: TODO, then?: TODO, onerror?: TODO) => TODO;
     }
 }

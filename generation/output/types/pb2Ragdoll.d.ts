@@ -51,7 +51,8 @@ declare global {
         hp_legs: TODO;
         GetAtomsTotal: () => TODO;
         readonly gameplay_effects: TODO;
-        ClearBulletHoles: () => TODO;
+        /** @param eCA (default=false)  */
+        ClearBulletHoles: (eCA?: TODO) => TODO;
         UsesGrapplingHook: () => TODO;
         readonly active_grappling_hook: TODO;
         DetachFromRope: (collapse: TODO) => TODO;

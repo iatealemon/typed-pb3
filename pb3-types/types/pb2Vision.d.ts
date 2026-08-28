@@ -3,6 +3,14 @@ export { };
 import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
+    interface pb2Vision extends ClassIdentityProps<"pb2Vision"> {
+        readonly type: TODO;
+        readonly ragdoll: TODO;
+        ai_x_limit: TODO;
+        ai_y_limit: TODO;
+        readonly deafness_timer: TODO;
+        readonly blindndess_timer: TODO;
+    }
     var pb2Vision: ClassIdentityProps<"pb2Vision"> & {
         /** Type is unknown. One known value: 1 */
         VISION_EVERYTHING: TODO;

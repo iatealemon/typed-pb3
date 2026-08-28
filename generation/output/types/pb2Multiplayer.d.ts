@@ -17,6 +17,7 @@ declare global {
         SetMatchProperty: (property: TODO, value: TODO) => TODO;
         GetMatchInfoObject: () => TODO;
         AddMatchTag: (tag: TODO) => TODO;
+        RemoveMatchTag: (tag: TODO) => TODO;
         GetAllPlayerConnectionsAndSelf: () => TODO;
     }
 }

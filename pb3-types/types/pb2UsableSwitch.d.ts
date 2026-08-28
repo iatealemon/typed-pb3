@@ -10,8 +10,8 @@ declare global {
         readonly y: number;
         usable_glow_intensity: TODO;
         is_usable: boolean;
-        /** @param Ox (default=null)  */
-        Use: (Ox?: TODO) => TODO;
+        /** @param initiator_ragdoll (default=null)  */
+        Use: (initiator_ragdoll?: TODO) => TODO;
         remove: () => TODO;
         readonly model_frame: TODO;
         SetPosition: (x2: number, y2: number) => TODO;

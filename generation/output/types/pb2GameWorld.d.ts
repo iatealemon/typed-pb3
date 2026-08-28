@@ -30,7 +30,7 @@ declare global {
             gameplay: {
                 /** Type is unknown. One known value: 3 */
                 gore_and_violence: TODO;
-                /** Type is unknown. One known value: 1 */
+                /** Type is unknown. One known value: 3 */
                 show_damage_numbers: TODO;
                 /** Type is unknown. One known value: 2 */
                 replay_my_deaths: TODO;
@@ -112,17 +112,29 @@ declare global {
         snowing: TODO;
         /** Type is unknown. One known value: false */
         raining: TODO;
-        /** Type is unknown. One known value: 1.4364187211725885 */
+        /** Type is unknown. One known value: 1 */
+        brightness: TODO;
+        /** Type is unknown. One known value: false */
+        prefer_high_quality_reflections: TODO;
+        /** Type is unknown. One known value: 1 */
+        fake_shadow_opacity: TODO;
+        /** Type is unknown. One known value: false */
+        camera_collisions: TODO;
+        /** Type is unknown. One known value: true */
+        generate_shadowmap: TODO;
+        /** Type is unknown. One known value: 0 */
+        camera_projection_mode: TODO;
+        /** Type is unknown. One known value: 1.8411256473441928 */
         wind_amplitude: TODO;
-        /** Type is unknown. One known value: 0.018334438454257418 */
+        /** Type is unknown. One known value: 0.36022299889386167 */
         wind_random_part: TODO;
-        /** Type is unknown. One known value: 161899 */
+        /** Type is unknown. One known value: 204795 */
         background_terrain_random_seed: TODO;
-        /** Type is unknown. One known value: 89057 */
+        /** Type is unknown. One known value: 230803 */
         foreground_terrain_random_seed: TODO;
-        /** Type is unknown. One known value: 157647 */
+        /** Type is unknown. One known value: 194879 */
         foreground_platform_random_seed: TODO;
-        /** Type is unknown. One known value: 36047 */
+        /** Type is unknown. One known value: 126776 */
         foliage_random_seed: TODO;
         /** Type is unknown. One known value: 1 */
         foliage_shadow_multiplier: TODO;
@@ -180,6 +192,14 @@ declare global {
         /** Type is unknown. One known value: true */
         connected: TODO;
         Disconnect: () => TODO;
+        /** @param dGa (default=false)  */
+        RestartMap: (dGa?: TODO) => TODO;
+        GetStartupDetails: () => TODO;
+        /**
+         * @param bIP   
+         * @param dGa (default=false)   
+         */
+        ChangeMap: (bIP: TODO, dGa?: TODO) => TODO;
         /** Type is unknown. One known value: true */
         hud_visible: TODO;
         /** Type is unknown. One known value: true */

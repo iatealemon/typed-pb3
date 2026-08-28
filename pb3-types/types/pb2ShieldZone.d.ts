@@ -13,16 +13,25 @@ declare global {
          * @param xx   
          * @param yy   
          * @param _boD   
-         * @param Ox (default=null)   
+         * @param initiator_ragdoll (default=null)   
          */
-        DealDamage: (bN: TODO, xx: TODO, yy: TODO, _boD: TODO, Ox?: TODO) => TODO;
+        DealDamage: (bN: TODO, xx: TODO, yy: TODO, _boD: TODO, initiator_ragdoll?: TODO) => TODO;
         Heal: (bN: TODO) => TODO;
         MoveTo: (xx: number, yy: number) => TODO;
         /** @param gv (default=false)  */
         Destroy: (gv?: TODO) => TODO;
+        readonly radius: number;
+        readonly attachment_box2d_body: TODO;
+        readonly connected_bullet: TODO;
+        readonly hea: number;
+        readonly hmax: number;
         remove: () => TODO;
     }
     var pb2ShieldZone: ClassIdentityProps<"pb2ShieldZone"> & {
+        base_range: number;
+        default_hitpoints: number;
+        /** Type is unknown. One known value: null */
+        CreateShieldZone: TODO;
         /** Type is unknown. One known value: 0 */
         SOUND_PRESET_ID_SILENT: TODO;
         /** Type is unknown. One known value: 1 */

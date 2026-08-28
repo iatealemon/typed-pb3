@@ -65,11 +65,19 @@ declare global {
         readonly box2d_bodies: TODO;
         addEventListener: (event_type: TODO, params: TODO) => TODO;
         removeEventListener: (event_type: TODO, params: TODO) => TODO;
+        overhealth_hp_allowed: TODO;
+        readonly vision: TODO;
+        max_attack_range: TODO;
+        max_gun_turn_speed: TODO;
         GetLimb: (id: TODO) => TODO;
         /** @param id (default=0)  */
         GetMesh: (id?: TODO) => TODO;
     }
     var pb2EntityTurret: ClassIdentityProps<"pb2EntityTurret"> & {
+        /** Type is unknown. One known value: 40 */
+        max_concentration: TODO;
+        /** Type is unknown. One known value: 20 */
+        enough_concentration: TODO;
         /** Type is unknown. One known value: 1 */
         STYLE_ID_FACET: TODO;
         /** Type is unknown. One known value: 2 */

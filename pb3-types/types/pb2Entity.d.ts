@@ -64,6 +64,10 @@ export type pb2EntityBase<ClassName extends string> = ClassIdentityProps<ClassNa
     readonly box2d_bodies: b2Body[];
     addEventListener: (event_type: TODO, params: TODO) => TODO;
     removeEventListener: (event_type: TODO, params: TODO) => TODO;
+    overhealth_hp_allowed: TODO;
+    readonly vision: TODO;
+    max_attack_range: TODO;
+    max_gun_turn_speed: TODO;
     GetLimb: (id: TODO) => TODO;
     /** @param id (default=0)  */
     GetMesh: (id?: number) => THREE.Mesh;

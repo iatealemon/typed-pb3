@@ -10,6 +10,8 @@ declare global {
         Detach(...args: TODO[]): TODO;
     }
     var pb2EntityTurret: ClassIdentityProps<"pb2EntityTurret"> & {
+        max_concentration: number;
+        enough_concentration: number;
         /** Type is unknown. One known value: 1 */
         STYLE_ID_FACET: TODO;
         /** Type is unknown. One known value: 2 */

@@ -11,6 +11,10 @@ declare global {
         FUNCTION_MORPH: TODO;
         /** Type is unknown. One known value: 3 */
         FUNCTION_INVERSEMORPH: TODO;
+        /** Type is unknown. One known value: 4 */
+        FUNCTION_RUBBER_BAND: TODO;
+        /** Type is unknown. One known value: 5 */
+        FUNCTION_EASE_IN_OUT: TODO;
         ui_offset_x: number;
         ui_offset_y: number;
     }

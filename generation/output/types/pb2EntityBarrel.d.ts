@@ -65,6 +65,10 @@ declare global {
         readonly box2d_bodies: TODO;
         addEventListener: (event_type: TODO, params: TODO) => TODO;
         removeEventListener: (event_type: TODO, params: TODO) => TODO;
+        overhealth_hp_allowed: TODO;
+        readonly vision: TODO;
+        max_attack_range: TODO;
+        max_gun_turn_speed: TODO;
         GetLimb: (id: TODO) => TODO;
         /** @param id (default=0)  */
         GetMesh: (id?: TODO) => TODO;

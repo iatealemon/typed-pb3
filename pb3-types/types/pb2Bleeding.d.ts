@@ -1,6 +1,6 @@
 export { };
 
-import type { ClassIdentityProps } from "./internal/helper";
+import type { ClassIdentityProps, TODO } from "./internal/helper";
 
 declare global {
     var pb2Bleeding: ClassIdentityProps<"pb2Bleeding"> & {
@@ -12,6 +12,7 @@ declare global {
          * @param dXG bleeding character / entity. not sure if type is correct
          * @param is_glowing 
          * @param dXr owner ragdoll / entity ? (if bU() === true (maybe means frozen) then no particles). not sure if type is correct
+         * @param type (default=pb2Bleeding.TYPE_BLOOD)  
          */
         BleedAt: (
             mesh: THREE.Mesh, 
@@ -20,7 +21,14 @@ declare global {
             lD: ColorTransform, 
             dXG: pb2Character | pb2Entity, 
             is_glowing: boolean, 
-            dXr: pb2Ragdoll | pb2Entity
+            dXr: pb2Ragdoll | pb2Entity,
+            type?: TODO
         ) => void;
+        /** Type is unknown. One known value: 0 */
+        TYPE_BLOOD: TODO;
+        /** Type is unknown. One known value: 1 */
+        TYPE_WATER: TODO;
+        /** Type is unknown. One known value: ["pb2Bleeding.TYPE_BLOOD","pb2Bleeding.TYPE_WATER"] */
+        ALL_TYPES: TODO;
     }
 }

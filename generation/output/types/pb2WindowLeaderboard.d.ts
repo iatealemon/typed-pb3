@@ -34,11 +34,17 @@ declare global {
         FIELD_TYPE_TEXT_CENTERED: TODO;
         /** Type is unknown. One known value: 7 */
         FIELD_TYPE_BUTTON: TODO;
+        /** Type is unknown. One known value: 8 */
+        FIELD_TYPE_CONTEXT_MENU_BUTTON: TODO;
+        /** Type is unknown. One known value: 9 */
+        FIELD_TYPE_CONTEXT_MENU_CAPTION: TODO;
+        /** Type is unknown. One known value: 10 */
+        FIELD_TYPE_CONTEXT_MENU_CAPTION_IMPORTANT: TODO;
         /** Type is unknown. One known value: 0 */
         FIELD_WIDTH_AUTO: TODO;
         /** Type is unknown. One known value: -1 */
         FIELD_TEAM_ID_SPECTATORS: TODO;
-        /** Type is unknown. One known value: ["pb2WindowLeaderboard.ICON_ID_REPORT","pb2WindowLeaderboard.ICON_ID_SPECTATE","pb2WindowLeaderboard.ICON_ID_KICK","pb2WindowLeaderboard.ICON_ID_PROMOTE","pb2WindowLeaderboard.ICON_ID_DEMOTE","pb2WindowLeaderboard.ICON_ID_ELIMINATE","pb2WindowLeaderboard.ICON_ID_COIN","pb2WindowLeaderboard.FIELD_TYPE_NUMERIC","pb2WindowLeaderboard.FIELD_TYPE_NUMERIC_ELIMINATIONS","pb2WindowLeaderboard.FIELD_TYPE_NUMERIC_DEATHS","pb2WindowLeaderboard.FIELD_TYPE_NUMERIC_SCORE","pb2WindowLeaderboard.FIELD_TYPE_TEXT_NICKNAME","pb2WindowLeaderboard.FIELD_TYPE_TEXT","pb2WindowLeaderboard.FIELD_TYPE_TEXT_CENTERED","pb2WindowLeaderboard.FIELD_TYPE_BUTTON","pb2WindowLeaderboard.FIELD_WIDTH_AUTO","pb2WindowLeaderboard.FIELD_TEAM_ID_SPECTATORS"] */
+        /** Type is unknown. One known value: ["pb2WindowLeaderboard.ICON_ID_REPORT","pb2WindowLeaderboard.ICON_ID_SPECTATE","pb2WindowLeaderboard.ICON_ID_KICK","pb2WindowLeaderboard.ICON_ID_PROMOTE","pb2WindowLeaderboard.ICON_ID_DEMOTE","pb2WindowLeaderboard.ICON_ID_ELIMINATE","pb2WindowLeaderboard.ICON_ID_COIN","pb2WindowLeaderboard.FIELD_TYPE_NUMERIC","pb2WindowLeaderboard.FIELD_TYPE_NUMERIC_ELIMINATIONS","pb2WindowLeaderboard.FIELD_TYPE_NUMERIC_DEATHS","pb2WindowLeaderboard.FIELD_TYPE_NUMERIC_SCORE","pb2WindowLeaderboard.FIELD_TYPE_TEXT_NICKNAME","pb2WindowLeaderboard.FIELD_TYPE_TEXT","pb2WindowLeaderboard.FIELD_TYPE_TEXT_CENTERED","pb2WindowLeaderboard.FIELD_TYPE_BUTTON","pb2WindowLeaderboard.FIELD_TYPE_CONTEXT_MENU_BUTTON","pb2WindowLeaderboard.FIELD_TYPE_CONTEXT_MENU_CAPTION","pb2WindowLeaderboard.FIELD_TYPE_CONTEXT_MENU_CAPTION_IMPORTANT","pb2WindowLeaderboard.FIELD_WIDTH_AUTO","pb2WindowLeaderboard.FIELD_TEAM_ID_SPECTATORS"] */
         ALL_TYPES: TODO;
     }
 }

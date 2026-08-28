@@ -13,5 +13,7 @@ declare global {
         TYPE_TELEPORT: TODO;
         /** Type is unknown. One known value: 1 */
         TYPE_TACTICAL_PING: TODO;
+        /** Type is unknown. One known value: 2 */
+        TYPE_WATER_SPLASH: TODO;
     }
 }

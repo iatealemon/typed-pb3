@@ -96,6 +96,13 @@ declare global {
         background_snow: boolean;
         snowing: boolean;
         raining: boolean;
+        brightness: number;
+        prefer_high_quality_reflections: boolean;
+        fake_shadow_opacity: number;
+        camera_collisions: boolean;
+        generate_shadowmap: boolean;
+        /** Type is unknown. One known value: 0 */
+        camera_projection_mode: TODO;
         wind_amplitude: number;
         wind_random_part: number;
         background_terrain_random_seed: number;
@@ -137,6 +144,14 @@ declare global {
         CancelPointOfViewReplay: () => TODO;
         connected: boolean;
         Disconnect: () => TODO;
+        /** @param dGa (default=false)  */
+        RestartMap: (dGa?: TODO) => TODO;
+        GetStartupDetails: () => TODO;
+        /**
+         * @param bIP   
+         * @param dGa (default=false)   
+         */
+        ChangeMap: (bIP: TODO, dGa?: TODO) => TODO;
         hud_visible: boolean;
         hud_show_character_info: boolean;
         hud_custom_bars: TODO[];

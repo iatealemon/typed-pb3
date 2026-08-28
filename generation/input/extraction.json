@@ -888,6 +888,12 @@
                 "background_snow": {},
                 "snowing": {},
                 "raining": {},
+                "brightness": {},
+                "prefer_high_quality_reflections": {},
+                "fake_shadow_opacity": {},
+                "camera_collisions": {},
+                "generate_shadowmap": {},
+                "camera_projection_mode": {},
                 "wind_amplitude": {},
                 "wind_random_part": {},
                 "background_terrain_random_seed": {},
@@ -945,6 +951,15 @@
                 "Disconnect": {
                     "prototype": {}
                 },
+                "RestartMap": {
+                    "prototype": {}
+                },
+                "GetStartupDetails": {
+                    "prototype": {}
+                },
+                "ChangeMap": {
+                    "prototype": {}
+                },
                 "hud_visible": {},
                 "hud_show_character_info": {},
                 "hud_custom_bars": {},
@@ -961,6 +976,47 @@
                     "prototype": {}
                 }
             },
+            "pb2GrenadeFunctions": {
+                "_class": {},
+                "turret_placement_range": {},
+                "shield_grenade_duration": {},
+                "time_grenade_duration": {},
+                "mine_grenade_duration": {},
+                "laser_grenade_duration": {},
+                "camera_grenade_duration": {},
+                "glow_grenade_duration": {},
+                "mine_seek_radius": {},
+                "camera_seek_radius": {},
+                "flashbang_max_dist": {},
+                "icicle_cold_given": {},
+                "cold_cloud_cold_given": {},
+                "cold_explosion_cold_given": {},
+                "cointoss_explosion_color": {},
+                "turret_half_width": {},
+                "turret_half_height": {},
+                "turret2_half_width": {},
+                "turret2_half_height": {}
+            },
+            "pb2EntityTurret": {
+                "_class": {},
+                "max_concentration": {},
+                "enough_concentration": {},
+                "STYLE_ID_FACET": {},
+                "STYLE_ID_DENIER": {},
+                "STYLE_ID_SCOUT_DRONE": {},
+                "STYLE_ID_HARASSER_DRONE": {}
+            },
+            "pb2ShieldZone": {
+                "_class": {},
+                "base_range": {},
+                "default_hitpoints": {},
+                "CreateShieldZone": {},
+                "SOUND_PRESET_ID_SILENT": {},
+                "SOUND_PRESET_ID_SHIELD_GRENADE": {},
+                "SOUND_PRESET_ID_SPOILER26_SHIELD": {},
+                "ALL_SOUND_PRESET_IDS": {},
+                "shields": {}
+            },
             "pb2Multiplayer": {
                 "_class": {},
                 "enabled": {},
@@ -975,6 +1031,9 @@
                     "prototype": {}
                 },
                 "AddMatchTag": {
+                    "prototype": {}
+                },
+                "RemoveMatchTag": {
                     "prototype": {}
                 },
                 "GetAllPlayerConnectionsAndSelf": {
@@ -998,6 +1057,8 @@
                 "FUNCTION_LINEAR": {},
                 "FUNCTION_MORPH": {},
                 "FUNCTION_INVERSEMORPH": {},
+                "FUNCTION_RUBBER_BAND": {},
+                "FUNCTION_EASE_IN_OUT": {},
                 "ui_offset_x": {},
                 "ui_offset_y": {}
             },
@@ -1035,6 +1096,7 @@
                 "EXPLOSION_HOUND_WALKER": {},
                 "EXPLOSION_SPOILER12": {},
                 "EXPLOSION_SD_DRAIN_RIFLE": {},
+                "EXPLOSION_CORVETTE_EXPLOSION": {},
                 "ALL_TYPES": {},
                 "explosions": {}
             },
@@ -1048,7 +1110,10 @@
                 "_class": {},
                 "BleedAt": {
                     "prototype": {}
-                }
+                },
+                "TYPE_BLOOD": {},
+                "TYPE_WATER": {},
+                "ALL_TYPES": {}
             },
             "pb2Sound": {
                 "_class": {},
@@ -1106,6 +1171,9 @@
                     "prototype": {}
                 },
                 "ClearPropertyNameToUIDCache": {
+                    "prototype": {}
+                },
+                "GetFolderContents": {
                     "prototype": {}
                 }
             },
@@ -1194,13 +1262,6 @@
                 "STYLE_ID_RED_PBFTTP": {},
                 "STYLE_ID_FREEZING": {},
                 "STYLE_ID_RADIOACTIVE": {}
-            },
-            "pb2EntityTurret": {
-                "_class": {},
-                "STYLE_ID_FACET": {},
-                "STYLE_ID_DENIER": {},
-                "STYLE_ID_SCOUT_DRONE": {},
-                "STYLE_ID_HARASSER_DRONE": {}
             },
             "pb2EntityMoto": {
                 "_class": {},
@@ -1438,14 +1499,6 @@
                     "prototype": {}
                 }
             },
-            "pb2ShieldZone": {
-                "_class": {},
-                "SOUND_PRESET_ID_SILENT": {},
-                "SOUND_PRESET_ID_SHIELD_GRENADE": {},
-                "SOUND_PRESET_ID_SPOILER26_SHIELD": {},
-                "ALL_SOUND_PRESET_IDS": {},
-                "shields": {}
-            },
             "pb2Cloth": {
                 "_class": {},
                 "TYPE_SCARF": {},
@@ -1568,6 +1621,9 @@
                 "FIELD_TYPE_TEXT": {},
                 "FIELD_TYPE_TEXT_CENTERED": {},
                 "FIELD_TYPE_BUTTON": {},
+                "FIELD_TYPE_CONTEXT_MENU_BUTTON": {},
+                "FIELD_TYPE_CONTEXT_MENU_CAPTION": {},
+                "FIELD_TYPE_CONTEXT_MENU_CAPTION_IMPORTANT": {},
                 "FIELD_WIDTH_AUTO": {},
                 "FIELD_TEAM_ID_SPECTATORS": {},
                 "ALL_TYPES": {}
@@ -2006,7 +2062,8 @@
                     "prototype": {}
                 },
                 "TYPE_TELEPORT": {},
-                "TYPE_TACTICAL_PING": {}
+                "TYPE_TACTICAL_PING": {},
+                "TYPE_WATER_SPLASH": {}
             },
             "pb2Window": {
                 "_class": {},
@@ -4154,11 +4211,11 @@
             },
             "pb2GameWorld.controller.look_x": {
                 "type": "literal",
-                "value": "574.0213721681465"
+                "value": "578.0160216053416"
             },
             "pb2GameWorld.controller.look_y": {
                 "type": "literal",
-                "value": "-136.18537892482718"
+                "value": "183.64491462424468"
             },
             "pb2GameWorld.controller.act_fall": {
                 "type": "literal",
@@ -4599,11 +4656,11 @@
             },
             "pb2GameWorld.personal_virtual_controller.look_x": {
                 "type": "literal",
-                "value": "574.0213721681465"
+                "value": "578.0160216053416"
             },
             "pb2GameWorld.personal_virtual_controller.look_y": {
                 "type": "literal",
-                "value": "-136.18537892482718"
+                "value": "183.64491462424468"
             },
             "pb2GameWorld.personal_virtual_controller.act_fall": {
                 "type": "literal",
@@ -5047,7 +5104,7 @@
             },
             "pb2GameWorld.settings.gameplay.show_damage_numbers": {
                 "type": "literal",
-                "value": "1"
+                "value": "3"
             },
             "pb2GameWorld.settings.gameplay.replay_my_deaths": {
                 "type": "literal",
@@ -5250,29 +5307,53 @@
                 "type": "literal",
                 "value": "false"
             },
+            "pb2GameWorld.brightness": {
+                "type": "literal",
+                "value": "1"
+            },
+            "pb2GameWorld.prefer_high_quality_reflections": {
+                "type": "literal",
+                "value": "false"
+            },
+            "pb2GameWorld.fake_shadow_opacity": {
+                "type": "literal",
+                "value": "1"
+            },
+            "pb2GameWorld.camera_collisions": {
+                "type": "literal",
+                "value": "false"
+            },
+            "pb2GameWorld.generate_shadowmap": {
+                "type": "literal",
+                "value": "true"
+            },
+            "pb2GameWorld.camera_projection_mode": {
+                "type": "literal",
+                "value": "0"
+            },
             "pb2GameWorld.wind_amplitude": {
                 "type": "literal",
-                "value": "1.4364187211725885"
+                "value": "1.8411256473441928"
             },
             "pb2GameWorld.wind_random_part": {
                 "type": "literal",
-                "value": "0.018334438454257418"
+                "value": "0.36022299889386167"
             },
             "pb2GameWorld.background_terrain_random_seed": {
                 "type": "literal",
-                "value": "161899"
+                "value": "204795"
             },
             "pb2GameWorld.foreground_terrain_random_seed": {
                 "type": "literal",
-                "value": "89057"
+                "value": "230803"
             },
             "pb2GameWorld.foreground_platform_random_seed": {
                 "type": "literal",
-                "value": "157647"
+                "value": "194879"
             },
             "pb2GameWorld.foliage_random_seed": {
                 "type": "literal",
-                "value": "36047"
+                "value": "126776"
             },
             "pb2GameWorld.foliage_shadow_multiplier": {
                 "type": "literal",
@@ -5428,6 +5509,27 @@
             "pb2GameWorld.Disconnect.prototype": {
                 "type": "object"
             },
+            "pb2GameWorld.RestartMap": {
+                "type": "function",
+                "params": "dGa=false"
+            },
+            "pb2GameWorld.RestartMap.prototype": {
+                "type": "object"
+            },
+            "pb2GameWorld.GetStartupDetails": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2GameWorld.GetStartupDetails.prototype": {
+                "type": "object"
+            },
+            "pb2GameWorld.ChangeMap": {
+                "type": "function",
+                "params": "bIP,dGa=false"
+            },
+            "pb2GameWorld.ChangeMap.prototype": {
+                "type": "object"
+            },
             "pb2GameWorld.hud_visible": {
                 "type": "literal",
                 "value": "true"
@@ -5467,6 +5569,176 @@
             },
             "pb2GameWorld.GetBounds.prototype": {
                 "type": "object"
+            },
+            "pb2GrenadeFunctions": {
+                "type": "object"
+            },
+            "pb2GrenadeFunctions.toString": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2GrenadeFunctions.toString.prototype": {
+                "type": "object"
+            },
+            "pb2GrenadeFunctions._class": {
+                "type": "literal",
+                "value": "\"pb2GrenadeFunctions\""
+            },
+            "pb2GrenadeFunctions.turret_placement_range": {
+                "type": "literal",
+                "value": "80"
+            },
+            "pb2GrenadeFunctions.shield_grenade_duration": {
+                "type": "literal",
+                "value": "2700"
+            },
+            "pb2GrenadeFunctions.time_grenade_duration": {
+                "type": "literal",
+                "value": "315"
+            },
+            "pb2GrenadeFunctions.mine_grenade_duration": {
+                "type": "literal",
+                "value": "1800"
+            },
+            "pb2GrenadeFunctions.laser_grenade_duration": {
+                "type": "literal",
+                "value": "1800"
+            },
+            "pb2GrenadeFunctions.camera_grenade_duration": {
+                "type": "literal",
+                "value": "4500"
+            },
+            "pb2GrenadeFunctions.glow_grenade_duration": {
+                "type": "literal",
+                "value": "1800"
+            },
+            "pb2GrenadeFunctions.mine_seek_radius": {
+                "type": "literal",
+                "value": "70"
+            },
+            "pb2GrenadeFunctions.camera_seek_radius": {
+                "type": "literal",
+                "value": "1000"
+            },
+            "pb2GrenadeFunctions.flashbang_max_dist": {
+                "type": "literal",
+                "value": "800"
+            },
+            "pb2GrenadeFunctions.icicle_cold_given": {
+                "type": "literal",
+                "value": "60"
+            },
+            "pb2GrenadeFunctions.cold_cloud_cold_given": {
+                "type": "literal",
+                "value": "4"
+            },
+            "pb2GrenadeFunctions.cold_explosion_cold_given": {
+                "type": "literal",
+                "value": "120"
+            },
+            "pb2GrenadeFunctions.cointoss_explosion_color": {
+                "type": "literal",
+                "value": "11193599"
+            },
+            "pb2GrenadeFunctions.turret_half_width": {
+                "type": "literal",
+                "value": "23.5"
+            },
+            "pb2GrenadeFunctions.turret_half_height": {
+                "type": "literal",
+                "value": "13.5"
+            },
+            "pb2GrenadeFunctions.turret2_half_width": {
+                "type": "literal",
+                "value": "23.5"
+            },
+            "pb2GrenadeFunctions.turret2_half_height": {
+                "type": "literal",
+                "value": "21.15"
+            },
+            "pb2EntityTurret": {
+                "type": "object"
+            },
+            "pb2EntityTurret.toString": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntityTurret.toString.prototype": {
+                "type": "object"
+            },
+            "pb2EntityTurret._class": {
+                "type": "literal",
+                "value": "\"pb2EntityTurret\""
+            },
+            "pb2EntityTurret.max_concentration": {
+                "type": "literal",
+                "value": "40"
+            },
+            "pb2EntityTurret.enough_concentration": {
+                "type": "literal",
+                "value": "20"
+            },
+            "pb2EntityTurret.STYLE_ID_FACET": {
+                "type": "literal",
+                "value": "1"
+            },
+            "pb2EntityTurret.STYLE_ID_DENIER": {
+                "type": "literal",
+                "value": "2"
+            },
+            "pb2EntityTurret.STYLE_ID_SCOUT_DRONE": {
+                "type": "literal",
+                "value": "3"
+            },
+            "pb2EntityTurret.STYLE_ID_HARASSER_DRONE": {
+                "type": "literal",
+                "value": "4"
+            },
+            "pb2ShieldZone": {
+                "type": "object"
+            },
+            "pb2ShieldZone.toString": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2ShieldZone.toString.prototype": {
+                "type": "object"
+            },
+            "pb2ShieldZone._class": {
+                "type": "literal",
+                "value": "\"pb2ShieldZone\""
+            },
+            "pb2ShieldZone.base_range": {
+                "type": "literal",
+                "value": "150"
+            },
+            "pb2ShieldZone.default_hitpoints": {
+                "type": "literal",
+                "value": "1000"
+            },
+            "pb2ShieldZone.CreateShieldZone": {
+                "type": "literal",
+                "value": "null"
+            },
+            "pb2ShieldZone.SOUND_PRESET_ID_SILENT": {
+                "type": "literal",
+                "value": "0"
+            },
+            "pb2ShieldZone.SOUND_PRESET_ID_SHIELD_GRENADE": {
+                "type": "literal",
+                "value": "1"
+            },
+            "pb2ShieldZone.SOUND_PRESET_ID_SPOILER26_SHIELD": {
+                "type": "literal",
+                "value": "2"
+            },
+            "pb2ShieldZone.ALL_SOUND_PRESET_IDS": {
+                "type": "literal",
+                "value": "[\"pb2ShieldZone.SOUND_PRESET_ID_SILENT\",\"pb2ShieldZone.SOUND_PRESET_ID_SHIELD_GRENADE\",\"pb2ShieldZone.SOUND_PRESET_ID_SPOILER26_SHIELD\"]"
+            },
+            "pb2ShieldZone.shields": {
+                "type": "literal",
+                "value": "[]"
             },
             "pb2Multiplayer": {
                 "type": "object"
@@ -5521,6 +5793,13 @@
                 "params": "tag"
             },
             "pb2Multiplayer.AddMatchTag.prototype": {
+                "type": "object"
+            },
+            "pb2Multiplayer.RemoveMatchTag": {
+                "type": "function",
+                "params": "tag"
+            },
+            "pb2Multiplayer.RemoveMatchTag.prototype": {
                 "type": "object"
             },
             "pb2Multiplayer.GetAllPlayerConnectionsAndSelf": {
@@ -5600,6 +5879,14 @@
             "pb2_mp.FUNCTION_INVERSEMORPH": {
                 "type": "literal",
                 "value": "3"
+            },
+            "pb2_mp.FUNCTION_RUBBER_BAND": {
+                "type": "literal",
+                "value": "4"
+            },
+            "pb2_mp.FUNCTION_EASE_IN_OUT": {
+                "type": "literal",
+                "value": "5"
             },
             "pb2_mp.ui_offset_x": {
                 "type": "literal",
@@ -5743,9 +6030,13 @@
                 "type": "literal",
                 "value": "21"
             },
+            "pb2Explosion.EXPLOSION_CORVETTE_EXPLOSION": {
+                "type": "literal",
+                "value": "22"
+            },
             "pb2Explosion.ALL_TYPES": {
                 "type": "literal",
-                "value": "[\"pb2Explosion.EXPLOSION_NONE\",\"pb2Explosion.EXPLOSION_BASIC\",\"pb2Explosion.EXPLOSION_RADIOACTIVE\",\"pb2Explosion.EXPLOSION_PLASMA\",\"pb2Explosion.EXPLOSION_COINTOSS\",\"pb2Explosion.EXPLOSION_RL2\",\"pb2Explosion.EXPLOSION_RL3\",\"pb2Explosion.EXPLOSION_DODGE\",\"pb2Explosion.EXPLOSION_TROUBLE_HAWK\",\"pb2Explosion.EXPLOSION_HOUND_WALKER_PROJECTILE\",\"pb2Explosion.EXPLOSION_STORM_GUN\",\"pb2Explosion.EXPLOSION_SPOILER9\",\"pb2Explosion.EXPLOSION_SPOILER10\",\"pb2Explosion.EXPLOSION_SPOILER9_BOSS\",\"pb2Explosion.EXPLOSION_FIRE\",\"pb2Explosion.EXPLOSION_CORVETTE_RL\",\"pb2Explosion.EXPLOSION_CORVETTE_RL2\",\"pb2Explosion.EXPLOSION_CAR\",\"pb2Explosion.EXPLOSION_SPOILER35\",\"pb2Explosion.EXPLOSION_HOUND_WALKER\",\"pb2Explosion.EXPLOSION_SPOILER12\",\"pb2Explosion.EXPLOSION_SD_DRAIN_RIFLE\"]"
+                "value": "[\"pb2Explosion.EXPLOSION_NONE\",\"pb2Explosion.EXPLOSION_BASIC\",\"pb2Explosion.EXPLOSION_RADIOACTIVE\",\"pb2Explosion.EXPLOSION_PLASMA\",\"pb2Explosion.EXPLOSION_COINTOSS\",\"pb2Explosion.EXPLOSION_RL2\",\"pb2Explosion.EXPLOSION_RL3\",\"pb2Explosion.EXPLOSION_DODGE\",\"pb2Explosion.EXPLOSION_TROUBLE_HAWK\",\"pb2Explosion.EXPLOSION_HOUND_WALKER_PROJECTILE\",\"pb2Explosion.EXPLOSION_STORM_GUN\",\"pb2Explosion.EXPLOSION_SPOILER9\",\"pb2Explosion.EXPLOSION_SPOILER10\",\"pb2Explosion.EXPLOSION_SPOILER9_BOSS\",\"pb2Explosion.EXPLOSION_FIRE\",\"pb2Explosion.EXPLOSION_CORVETTE_RL\",\"pb2Explosion.EXPLOSION_CORVETTE_RL2\",\"pb2Explosion.EXPLOSION_CAR\",\"pb2Explosion.EXPLOSION_SPOILER35\",\"pb2Explosion.EXPLOSION_HOUND_WALKER\",\"pb2Explosion.EXPLOSION_SPOILER12\",\"pb2Explosion.EXPLOSION_SD_DRAIN_RIFLE\",\"pb2Explosion.EXPLOSION_CORVETTE_EXPLOSION\"]"
             },
             "pb2Explosion.explosions": {
                 "type": "literal",
@@ -5788,10 +6079,22 @@
             },
             "pb2Bleeding.BleedAt": {
                 "type": "function",
-                "params": "mesh,dXy,duration,lD,dXG,is_glowing,dXr"
+                "params": "mesh,dXy,duration,lD,dXG,is_glowing,dXr,type=pb2Bleeding.TYPE_BLOOD"
             },
             "pb2Bleeding.BleedAt.prototype": {
                 "type": "object"
+            },
+            "pb2Bleeding.TYPE_BLOOD": {
+                "type": "literal",
+                "value": "0"
+            },
+            "pb2Bleeding.TYPE_WATER": {
+                "type": "literal",
+                "value": "1"
+            },
+            "pb2Bleeding.ALL_TYPES": {
+                "type": "literal",
+                "value": "[\"pb2Bleeding.TYPE_BLOOD\",\"pb2Bleeding.TYPE_WATER\"]"
             },
             "pb2Sound": {
                 "type": "object"
@@ -5971,6 +6274,13 @@
                 "params": ""
             },
             "pb2Storage.ClearPropertyNameToUIDCache.prototype": {
+                "type": "object"
+            },
+            "pb2Storage.GetFolderContents": {
+                "type": "function",
+                "params": "folder_uid,keeper_user_uid=-1,then=null,onerror=null"
+            },
+            "pb2Storage.GetFolderContents.prototype": {
                 "type": "object"
             },
             "pb2GameplayEffects": {
@@ -6317,36 +6627,6 @@
             "pb2EntityBarrel.STYLE_ID_RADIOACTIVE": {
                 "type": "literal",
                 "value": "8"
-            },
-            "pb2EntityTurret": {
-                "type": "object"
-            },
-            "pb2EntityTurret.toString": {
-                "type": "function",
-                "params": ""
-            },
-            "pb2EntityTurret.toString.prototype": {
-                "type": "object"
-            },
-            "pb2EntityTurret._class": {
-                "type": "literal",
-                "value": "\"pb2EntityTurret\""
-            },
-            "pb2EntityTurret.STYLE_ID_FACET": {
-                "type": "literal",
-                "value": "1"
-            },
-            "pb2EntityTurret.STYLE_ID_DENIER": {
-                "type": "literal",
-                "value": "2"
-            },
-            "pb2EntityTurret.STYLE_ID_SCOUT_DRONE": {
-                "type": "literal",
-                "value": "3"
-            },
-            "pb2EntityTurret.STYLE_ID_HARASSER_DRONE": {
-                "type": "literal",
-                "value": "4"
             },
             "pb2EntityMoto": {
                 "type": "object"
@@ -7299,40 +7579,6 @@
             "pb2WaterClass.DeclareWaterClass.prototype": {
                 "type": "object"
             },
-            "pb2ShieldZone": {
-                "type": "object"
-            },
-            "pb2ShieldZone.toString": {
-                "type": "function",
-                "params": ""
-            },
-            "pb2ShieldZone.toString.prototype": {
-                "type": "object"
-            },
-            "pb2ShieldZone._class": {
-                "type": "literal",
-                "value": "\"pb2ShieldZone\""
-            },
-            "pb2ShieldZone.SOUND_PRESET_ID_SILENT": {
-                "type": "literal",
-                "value": "0"
-            },
-            "pb2ShieldZone.SOUND_PRESET_ID_SHIELD_GRENADE": {
-                "type": "literal",
-                "value": "1"
-            },
-            "pb2ShieldZone.SOUND_PRESET_ID_SPOILER26_SHIELD": {
-                "type": "literal",
-                "value": "2"
-            },
-            "pb2ShieldZone.ALL_SOUND_PRESET_IDS": {
-                "type": "literal",
-                "value": "[\"pb2ShieldZone.SOUND_PRESET_ID_SILENT\",\"pb2ShieldZone.SOUND_PRESET_ID_SHIELD_GRENADE\",\"pb2ShieldZone.SOUND_PRESET_ID_SPOILER26_SHIELD\"]"
-            },
-            "pb2ShieldZone.shields": {
-                "type": "literal",
-                "value": "[]"
-            },
             "pb2Cloth": {
                 "type": "object"
             },
@@ -7825,6 +8071,18 @@
                 "type": "literal",
                 "value": "7"
             },
+            "pb2WindowLeaderboard.FIELD_TYPE_CONTEXT_MENU_BUTTON": {
+                "type": "literal",
+                "value": "8"
+            },
+            "pb2WindowLeaderboard.FIELD_TYPE_CONTEXT_MENU_CAPTION": {
+                "type": "literal",
+                "value": "9"
+            },
+            "pb2WindowLeaderboard.FIELD_TYPE_CONTEXT_MENU_CAPTION_IMPORTANT": {
+                "type": "literal",
+                "value": "10"
+            },
             "pb2WindowLeaderboard.FIELD_WIDTH_AUTO": {
                 "type": "literal",
                 "value": "0"
@@ -7835,7 +8093,7 @@
             },
             "pb2WindowLeaderboard.ALL_TYPES": {
                 "type": "literal",
-                "value": "[\"pb2WindowLeaderboard.ICON_ID_REPORT\",\"pb2WindowLeaderboard.ICON_ID_SPECTATE\",\"pb2WindowLeaderboard.ICON_ID_KICK\",\"pb2WindowLeaderboard.ICON_ID_PROMOTE\",\"pb2WindowLeaderboard.ICON_ID_DEMOTE\",\"pb2WindowLeaderboard.ICON_ID_ELIMINATE\",\"pb2WindowLeaderboard.ICON_ID_COIN\",\"pb2WindowLeaderboard.FIELD_TYPE_NUMERIC\",\"pb2WindowLeaderboard.FIELD_TYPE_NUMERIC_ELIMINATIONS\",\"pb2WindowLeaderboard.FIELD_TYPE_NUMERIC_DEATHS\",\"pb2WindowLeaderboard.FIELD_TYPE_NUMERIC_SCORE\",\"pb2WindowLeaderboard.FIELD_TYPE_TEXT_NICKNAME\",\"pb2WindowLeaderboard.FIELD_TYPE_TEXT\",\"pb2WindowLeaderboard.FIELD_TYPE_TEXT_CENTERED\",\"pb2WindowLeaderboard.FIELD_TYPE_BUTTON\",\"pb2WindowLeaderboard.FIELD_WIDTH_AUTO\",\"pb2WindowLeaderboard.FIELD_TEAM_ID_SPECTATORS\"]"
+                "value": "[\"pb2WindowLeaderboard.ICON_ID_REPORT\",\"pb2WindowLeaderboard.ICON_ID_SPECTATE\",\"pb2WindowLeaderboard.ICON_ID_KICK\",\"pb2WindowLeaderboard.ICON_ID_PROMOTE\",\"pb2WindowLeaderboard.ICON_ID_DEMOTE\",\"pb2WindowLeaderboard.ICON_ID_ELIMINATE\",\"pb2WindowLeaderboard.ICON_ID_COIN\",\"pb2WindowLeaderboard.FIELD_TYPE_NUMERIC\",\"pb2WindowLeaderboard.FIELD_TYPE_NUMERIC_ELIMINATIONS\",\"pb2WindowLeaderboard.FIELD_TYPE_NUMERIC_DEATHS\",\"pb2WindowLeaderboard.FIELD_TYPE_NUMERIC_SCORE\",\"pb2WindowLeaderboard.FIELD_TYPE_TEXT_NICKNAME\",\"pb2WindowLeaderboard.FIELD_TYPE_TEXT\",\"pb2WindowLeaderboard.FIELD_TYPE_TEXT_CENTERED\",\"pb2WindowLeaderboard.FIELD_TYPE_BUTTON\",\"pb2WindowLeaderboard.FIELD_TYPE_CONTEXT_MENU_BUTTON\",\"pb2WindowLeaderboard.FIELD_TYPE_CONTEXT_MENU_CAPTION\",\"pb2WindowLeaderboard.FIELD_TYPE_CONTEXT_MENU_CAPTION_IMPORTANT\",\"pb2WindowLeaderboard.FIELD_WIDTH_AUTO\",\"pb2WindowLeaderboard.FIELD_TEAM_ID_SPECTATORS\"]"
             },
             "pb2OverheadHUD": {
                 "type": "object"
@@ -9103,7 +9361,7 @@
             },
             "pb2ByteShifter.send_repeat_delay_for_server": {
                 "type": "literal",
-                "value": "6.944444444444445"
+                "value": "16.39344262295082"
             },
             "pb2GunDefinitions": {
                 "type": "object"
@@ -9349,6 +9607,10 @@
             "pb2ParticleSystems.TYPE_TACTICAL_PING": {
                 "type": "literal",
                 "value": "1"
+            },
+            "pb2ParticleSystems.TYPE_WATER_SPLASH": {
+                "type": "literal",
+                "value": "2"
             },
             "pb2Window": {
                 "type": "object"
@@ -10014,6 +10276,11 @@
                 "Destroy": {
                     "prototype": {}
                 },
+                "radius": {},
+                "attachment_box2d_body": {},
+                "connected_bullet": {},
+                "hea": {},
+                "hmax": {},
                 "remove": {}
             },
             "pb2TimeWarpZone.prototype": {
@@ -10310,6 +10577,10 @@
                 "removeEventListener": {
                     "prototype": {}
                 },
+                "overhealth_hp_allowed": {},
+                "vision": {},
+                "max_attack_range": {},
+                "max_gun_turn_speed": {},
                 "GetLimb": {},
                 "GetMesh": {}
             },
@@ -11175,6 +11446,15 @@
                 "Pause": {},
                 "Resume": {},
                 "paused": {}
+            },
+            "pb2Vision.prototype": {
+                "_class": {},
+                "type": {},
+                "ragdoll": {},
+                "ai_x_limit": {},
+                "ai_y_limit": {},
+                "deafness_timer": {},
+                "blindndess_timer": {}
             },
             "ep.prototype": {
                 "_class": {},
@@ -12281,6 +12561,10 @@
                 "removeEventListener": {
                     "prototype": {}
                 },
+                "overhealth_hp_allowed": {},
+                "vision": {},
+                "max_attack_range": {},
+                "max_gun_turn_speed": {},
                 "GetLimb": {},
                 "GetMesh": {}
             },
@@ -12334,6 +12618,10 @@
                 "removeEventListener": {
                     "prototype": {}
                 },
+                "overhealth_hp_allowed": {},
+                "vision": {},
+                "max_attack_range": {},
+                "max_gun_turn_speed": {},
                 "GetLimb": {},
                 "GetMesh": {}
             },
@@ -12387,6 +12675,10 @@
                 "removeEventListener": {
                     "prototype": {}
                 },
+                "overhealth_hp_allowed": {},
+                "vision": {},
+                "max_attack_range": {},
+                "max_gun_turn_speed": {},
                 "GetLimb": {},
                 "GetMesh": {}
             },
@@ -12440,6 +12732,10 @@
                 "removeEventListener": {
                     "prototype": {}
                 },
+                "overhealth_hp_allowed": {},
+                "vision": {},
+                "max_attack_range": {},
+                "max_gun_turn_speed": {},
                 "GetLimb": {},
                 "GetMesh": {}
             },
@@ -12493,6 +12789,10 @@
                 "removeEventListener": {
                     "prototype": {}
                 },
+                "overhealth_hp_allowed": {},
+                "vision": {},
+                "max_attack_range": {},
+                "max_gun_turn_speed": {},
                 "GetLimb": {},
                 "GetMesh": {}
             },
@@ -12546,6 +12846,10 @@
                 "removeEventListener": {
                     "prototype": {}
                 },
+                "overhealth_hp_allowed": {},
+                "vision": {},
+                "max_attack_range": {},
+                "max_gun_turn_speed": {},
                 "GetLimb": {},
                 "GetMesh": {}
             },
@@ -12599,6 +12903,10 @@
                 "removeEventListener": {
                     "prototype": {}
                 },
+                "overhealth_hp_allowed": {},
+                "vision": {},
+                "max_attack_range": {},
+                "max_gun_turn_speed": {},
                 "GetLimb": {},
                 "GetMesh": {}
             },
@@ -12652,6 +12960,10 @@
                 "removeEventListener": {
                     "prototype": {}
                 },
+                "overhealth_hp_allowed": {},
+                "vision": {},
+                "max_attack_range": {},
+                "max_gun_turn_speed": {},
                 "range": {},
                 "strength": {},
                 "mass_cap_scale": {},
@@ -12714,6 +13026,10 @@
                 "removeEventListener": {
                     "prototype": {}
                 },
+                "overhealth_hp_allowed": {},
+                "vision": {},
+                "max_attack_range": {},
+                "max_gun_turn_speed": {},
                 "GetLimb": {},
                 "GetMesh": {}
             },
@@ -12767,6 +13083,10 @@
                 "removeEventListener": {
                     "prototype": {}
                 },
+                "overhealth_hp_allowed": {},
+                "vision": {},
+                "max_attack_range": {},
+                "max_gun_turn_speed": {},
                 "GetLimb": {},
                 "GetMesh": {}
             }
@@ -13286,7 +13606,7 @@
             },
             "pb2Ragdoll.prototype.ClearBulletHoles": {
                 "type": "function",
-                "params": ""
+                "params": "eCA=false"
             },
             "pb2Ragdoll.prototype.ClearBulletHoles.prototype": {
                 "type": "object"
@@ -13537,7 +13857,7 @@
             },
             "pb2ShieldZone.prototype.DealDamage": {
                 "type": "function",
-                "params": "bN,xx,yy,_boD,Ox=null"
+                "params": "bN,xx,yy,_boD,initiator_ragdoll=null"
             },
             "pb2ShieldZone.prototype.DealDamage.prototype": {
                 "type": "object"
@@ -13562,6 +13882,31 @@
             },
             "pb2ShieldZone.prototype.Destroy.prototype": {
                 "type": "object"
+            },
+            "pb2ShieldZone.prototype.radius": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2ShieldZone.prototype.attachment_box2d_body": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2ShieldZone.prototype.connected_bullet": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2ShieldZone.prototype.hea": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2ShieldZone.prototype.hmax": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
             },
             "pb2ShieldZone.prototype.remove": {
                 "type": "function",
@@ -14581,6 +14926,23 @@
             },
             "pb2Entity.prototype.removeEventListener.prototype": {
                 "type": "object"
+            },
+            "pb2Entity.prototype.overhealth_hp_allowed": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2Entity.prototype.vision": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2Entity.prototype.max_attack_range": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2Entity.prototype.max_gun_turn_speed": {
+                "type": "literal",
+                "value": "undefined"
             },
             "pb2Entity.prototype.GetLimb": {
                 "type": "function",
@@ -16114,7 +16476,7 @@
             },
             "pb2UsableSwitch.prototype.Use": {
                 "type": "function",
-                "params": "Ox=null"
+                "params": "initiator_ragdoll=null"
             },
             "pb2UsableSwitch.prototype.Use.prototype": {
                 "type": "object"
@@ -17491,6 +17853,48 @@
                 "value": "undefined"
             },
             "pb2Disposer.prototype.paused": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2Vision.prototype": {
+                "type": "object"
+            },
+            "pb2Vision.prototype.toString": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2Vision.prototype.toString.prototype": {
+                "type": "object"
+            },
+            "pb2Vision.prototype._class": {
+                "type": "literal",
+                "value": "\"pb2Vision\""
+            },
+            "pb2Vision.prototype.type": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2Vision.prototype.ragdoll": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2Vision.prototype.ai_x_limit": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2Vision.prototype.ai_y_limit": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2Vision.prototype.deafness_timer": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2Vision.prototype.blindndess_timer": {
                 "type": "literal",
                 "readonly": true,
                 "value": "undefined"
@@ -20281,6 +20685,23 @@
             "fU.prototype.removeEventListener.prototype": {
                 "type": "object"
             },
+            "fU.prototype.overhealth_hp_allowed": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "fU.prototype.vision": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "fU.prototype.max_attack_range": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "fU.prototype.max_gun_turn_speed": {
+                "type": "literal",
+                "value": "undefined"
+            },
             "fU.prototype.GetLimb": {
                 "type": "function",
                 "params": "id"
@@ -20441,6 +20862,23 @@
             },
             "pb2EntityBarrel.prototype.removeEventListener.prototype": {
                 "type": "object"
+            },
+            "pb2EntityBarrel.prototype.overhealth_hp_allowed": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2EntityBarrel.prototype.vision": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2EntityBarrel.prototype.max_attack_range": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2EntityBarrel.prototype.max_gun_turn_speed": {
+                "type": "literal",
+                "value": "undefined"
             },
             "pb2EntityBarrel.prototype.GetLimb": {
                 "type": "function",
@@ -20603,6 +21041,23 @@
             "LZ.prototype.removeEventListener.prototype": {
                 "type": "object"
             },
+            "LZ.prototype.overhealth_hp_allowed": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "LZ.prototype.vision": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "LZ.prototype.max_attack_range": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "LZ.prototype.max_gun_turn_speed": {
+                "type": "literal",
+                "value": "undefined"
+            },
             "LZ.prototype.GetLimb": {
                 "type": "function",
                 "params": "id"
@@ -20763,6 +21218,23 @@
             },
             "pb2EntityCrate.prototype.removeEventListener.prototype": {
                 "type": "object"
+            },
+            "pb2EntityCrate.prototype.overhealth_hp_allowed": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2EntityCrate.prototype.vision": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2EntityCrate.prototype.max_attack_range": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2EntityCrate.prototype.max_gun_turn_speed": {
+                "type": "literal",
+                "value": "undefined"
             },
             "pb2EntityCrate.prototype.GetLimb": {
                 "type": "function",
@@ -20925,6 +21397,23 @@
             "pb2EntityTurret.prototype.removeEventListener.prototype": {
                 "type": "object"
             },
+            "pb2EntityTurret.prototype.overhealth_hp_allowed": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2EntityTurret.prototype.vision": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2EntityTurret.prototype.max_attack_range": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2EntityTurret.prototype.max_gun_turn_speed": {
+                "type": "literal",
+                "value": "undefined"
+            },
             "pb2EntityTurret.prototype.GetLimb": {
                 "type": "function",
                 "params": "id"
@@ -21085,6 +21574,23 @@
             },
             "pb2EntityMoto.prototype.removeEventListener.prototype": {
                 "type": "object"
+            },
+            "pb2EntityMoto.prototype.overhealth_hp_allowed": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2EntityMoto.prototype.vision": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2EntityMoto.prototype.max_attack_range": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2EntityMoto.prototype.max_gun_turn_speed": {
+                "type": "literal",
+                "value": "undefined"
             },
             "pb2EntityMoto.prototype.GetLimb": {
                 "type": "function",
@@ -21247,6 +21753,23 @@
             "pb2EntityWalker.prototype.removeEventListener.prototype": {
                 "type": "object"
             },
+            "pb2EntityWalker.prototype.overhealth_hp_allowed": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2EntityWalker.prototype.vision": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2EntityWalker.prototype.max_attack_range": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2EntityWalker.prototype.max_gun_turn_speed": {
+                "type": "literal",
+                "value": "undefined"
+            },
             "pb2EntityWalker.prototype.GetLimb": {
                 "type": "function",
                 "params": "id"
@@ -21407,6 +21930,23 @@
             },
             "pb2EntityAntigravity.prototype.removeEventListener.prototype": {
                 "type": "object"
+            },
+            "pb2EntityAntigravity.prototype.overhealth_hp_allowed": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2EntityAntigravity.prototype.vision": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2EntityAntigravity.prototype.max_attack_range": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2EntityAntigravity.prototype.max_gun_turn_speed": {
+                "type": "literal",
+                "value": "undefined"
             },
             "pb2EntityAntigravity.prototype.range": {
                 "type": "literal",
@@ -21605,6 +22145,23 @@
             "pb2EntityCorvette.prototype.removeEventListener.prototype": {
                 "type": "object"
             },
+            "pb2EntityCorvette.prototype.overhealth_hp_allowed": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2EntityCorvette.prototype.vision": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2EntityCorvette.prototype.max_attack_range": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2EntityCorvette.prototype.max_gun_turn_speed": {
+                "type": "literal",
+                "value": "undefined"
+            },
             "pb2EntityCorvette.prototype.GetLimb": {
                 "type": "function",
                 "params": "id"
@@ -21765,6 +22322,23 @@
             },
             "pb2EntityFloatingIce.prototype.removeEventListener.prototype": {
                 "type": "object"
+            },
+            "pb2EntityFloatingIce.prototype.overhealth_hp_allowed": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2EntityFloatingIce.prototype.vision": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2EntityFloatingIce.prototype.max_attack_range": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2EntityFloatingIce.prototype.max_gun_turn_speed": {
+                "type": "literal",
+                "value": "undefined"
             },
             "pb2EntityFloatingIce.prototype.GetLimb": {
                 "type": "function",

@@ -100,8 +100,11 @@ declare global {
         /** Gets the number of atoms in the ragdoll. Varies based on hp_body. */
         GetAtomsTotal: () => number;
         readonly gameplay_effects: pb2GameplayEffects;
-        /** Removes visible bullet holes from the ragdoll */
-        ClearBulletHoles: () => void;
+        /**
+         * Removes visible bullet holes from the ragdoll
+         * @param eCA (default=false)  
+         */
+        ClearBulletHoles: (eCA?: boolean) => void;
         /** Returns a boolean telling if the ragdoll is currently using a grappling hook */
         UsesGrapplingHook: () => boolean;
         readonly active_grappling_hook: pb2Rope | null;
