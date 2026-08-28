@@ -1132,6 +1132,10 @@ type pb2EntityBase<ClassName extends string> = ClassIdentityProps<ClassName> & {
     readonly box2d_bodies: b2Body[];
     addEventListener: (event_type: TODO, params: TODO) => TODO;
     removeEventListener: (event_type: TODO, params: TODO) => TODO;
+    overhealth_hp_allowed: TODO;
+    readonly vision: TODO;
+    max_attack_range: TODO;
+    max_gun_turn_speed: TODO;
     GetLimb: (id: TODO) => TODO;
     /** @param id (default=0)  */
     GetMesh: (id?: number) => THREE.Mesh;
@@ -1433,6 +1437,7 @@ declare global {
          * @param dXG bleeding character / entity. not sure if type is correct
          * @param is_glowing 
          * @param dXr owner ragdoll / entity ? (if bU() === true (maybe means frozen) then no particles). not sure if type is correct
+         * @param type (default=pb2Bleeding.TYPE_BLOOD)  
          */
         BleedAt: (
             mesh: THREE.Mesh, 
@@ -1441,8 +1446,15 @@ declare global {
             lD: ColorTransform, 
             dXG: pb2Character | pb2Entity, 
             is_glowing: boolean, 
-            dXr: pb2Ragdoll | pb2Entity
+            dXr: pb2Ragdoll | pb2Entity,
+            type?: TODO
         ) => void;
+        /** Type is unknown. One known value: 0 */
+        TYPE_BLOOD: TODO;
+        /** Type is unknown. One known value: 1 */
+        TYPE_WATER: TODO;
+        /** Type is unknown. One known value: ["pb2Bleeding.TYPE_BLOOD","pb2Bleeding.TYPE_WATER"] */
+        ALL_TYPES: TODO;
     }
 }
 
@@ -2713,6 +2725,8 @@ declare global {
         Detach(...args: TODO[]): TODO;
     }
     var pb2EntityTurret: ClassIdentityProps<"pb2EntityTurret"> & {
+        max_concentration: number;
+        enough_concentration: number;
         /** Type is unknown. One known value: 1 */
         STYLE_ID_FACET: TODO;
         /** Type is unknown. One known value: 2 */
@@ -2844,7 +2858,9 @@ declare global {
         EXPLOSION_SPOILER12: TODO;
         /** Type is unknown. One known value: 21 */
         EXPLOSION_SD_DRAIN_RIFLE: TODO;
-        /** Type is unknown. One known value: ["pb2Explosion.EXPLOSION_NONE","pb2Explosion.EXPLOSION_BASIC","pb2Explosion.EXPLOSION_RADIOACTIVE","pb2Explosion.EXPLOSION_PLASMA","pb2Explosion.EXPLOSION_COINTOSS","pb2Explosion.EXPLOSION_RL2","pb2Explosion.EXPLOSION_RL3","pb2Explosion.EXPLOSION_DODGE","pb2Explosion.EXPLOSION_TROUBLE_HAWK","pb2Explosion.EXPLOSION_HOUND_WALKER_PROJECTILE","pb2Explosion.EXPLOSION_STORM_GUN","pb2Explosion.EXPLOSION_SPOILER9","pb2Explosion.EXPLOSION_SPOILER10","pb2Explosion.EXPLOSION_SPOILER9_BOSS","pb2Explosion.EXPLOSION_FIRE","pb2Explosion.EXPLOSION_CORVETTE_RL","pb2Explosion.EXPLOSION_CORVETTE_RL2","pb2Explosion.EXPLOSION_CAR","pb2Explosion.EXPLOSION_SPOILER35","pb2Explosion.EXPLOSION_HOUND_WALKER","pb2Explosion.EXPLOSION_SPOILER12","pb2Explosion.EXPLOSION_SD_DRAIN_RIFLE"] */
+        /** Type is unknown. One known value: 22 */
+        EXPLOSION_CORVETTE_EXPLOSION: TODO;
+        /** Type is unknown. One known value: ["pb2Explosion.EXPLOSION_NONE","pb2Explosion.EXPLOSION_BASIC","pb2Explosion.EXPLOSION_RADIOACTIVE","pb2Explosion.EXPLOSION_PLASMA","pb2Explosion.EXPLOSION_COINTOSS","pb2Explosion.EXPLOSION_RL2","pb2Explosion.EXPLOSION_RL3","pb2Explosion.EXPLOSION_DODGE","pb2Explosion.EXPLOSION_TROUBLE_HAWK","pb2Explosion.EXPLOSION_HOUND_WALKER_PROJECTILE","pb2Explosion.EXPLOSION_STORM_GUN","pb2Explosion.EXPLOSION_SPOILER9","pb2Explosion.EXPLOSION_SPOILER10","pb2Explosion.EXPLOSION_SPOILER9_BOSS","pb2Explosion.EXPLOSION_FIRE","pb2Explosion.EXPLOSION_CORVETTE_RL","pb2Explosion.EXPLOSION_CORVETTE_RL2","pb2Explosion.EXPLOSION_CAR","pb2Explosion.EXPLOSION_SPOILER35","pb2Explosion.EXPLOSION_HOUND_WALKER","pb2Explosion.EXPLOSION_SPOILER12","pb2Explosion.EXPLOSION_SD_DRAIN_RIFLE","pb2Explosion.EXPLOSION_CORVETTE_EXPLOSION"] */
         ALL_TYPES: TODO;
         explosions: pb2Explosion[];
     }
@@ -2987,6 +3003,13 @@ declare global {
         background_snow: boolean;
         snowing: boolean;
         raining: boolean;
+        brightness: number;
+        prefer_high_quality_reflections: boolean;
+        fake_shadow_opacity: number;
+        camera_collisions: boolean;
+        generate_shadowmap: boolean;
+        /** Type is unknown. One known value: 0 */
+        camera_projection_mode: TODO;
         wind_amplitude: number;
         wind_random_part: number;
         background_terrain_random_seed: number;
@@ -3028,6 +3051,14 @@ declare global {
         CancelPointOfViewReplay: () => TODO;
         connected: boolean;
         Disconnect: () => TODO;
+        /** @param dGa (default=false)  */
+        RestartMap: (dGa?: TODO) => TODO;
+        GetStartupDetails: () => TODO;
+        /**
+         * @param bIP   
+         * @param dGa (default=false)   
+         */
+        ChangeMap: (bIP: TODO, dGa?: TODO) => TODO;
         hud_visible: boolean;
         hud_show_character_info: boolean;
         hud_custom_bars: TODO[];
@@ -3080,6 +3111,29 @@ declare global {
             }
         }
 
+    }
+}
+
+declare global {
+    var pb2GrenadeFunctions: ClassIdentityProps<"pb2GrenadeFunctions"> & {
+        turret_placement_range: number;
+        shield_grenade_duration: number;
+        time_grenade_duration: number;
+        mine_grenade_duration: number;
+        laser_grenade_duration: number;
+        camera_grenade_duration: number;
+        glow_grenade_duration: number;
+        mine_seek_radius: number;
+        camera_seek_radius: number;
+        flashbang_max_dist: number;
+        icicle_cold_given: number;
+        cold_cloud_cold_given: number;
+        cold_explosion_cold_given: number;
+        cointoss_explosion_color: number;
+        turret_half_width: number;
+        turret_half_height: number;
+        turret2_half_width: number;
+        turret2_half_height: number;
     }
 }
 
@@ -3395,6 +3449,7 @@ declare global {
         SetMatchProperty: (property: TODO, value: TODO) => TODO;
         GetMatchInfoObject: () => TODO;
         AddMatchTag: (tag: TODO) => TODO;
+        RemoveMatchTag: (tag: TODO) => TODO;
         GetAllPlayerConnectionsAndSelf: () => TODO;
     }
 }
@@ -3423,6 +3478,8 @@ declare global {
         TYPE_TELEPORT: TODO;
         /** Type is unknown. One known value: 1 */
         TYPE_TACTICAL_PING: TODO;
+        /** Type is unknown. One known value: 2 */
+        TYPE_WATER_SPLASH: TODO;
     }
 }
 
@@ -3646,8 +3703,11 @@ declare global {
         /** Gets the number of atoms in the ragdoll. Varies based on hp_body. */
         GetAtomsTotal: () => number;
         readonly gameplay_effects: pb2GameplayEffects;
-        /** Removes visible bullet holes from the ragdoll */
-        ClearBulletHoles: () => void;
+        /**
+         * Removes visible bullet holes from the ragdoll
+         * @param eCA (default=false)  
+         */
+        ClearBulletHoles: (eCA?: boolean) => void;
         /** Returns a boolean telling if the ragdoll is currently using a grappling hook */
         UsesGrapplingHook: () => boolean;
         readonly active_grappling_hook: pb2Rope | null;
@@ -4138,16 +4198,25 @@ declare global {
          * @param xx   
          * @param yy   
          * @param _boD   
-         * @param Ox (default=null)   
+         * @param initiator_ragdoll (default=null)   
          */
-        DealDamage: (bN: TODO, xx: TODO, yy: TODO, _boD: TODO, Ox?: TODO) => TODO;
+        DealDamage: (bN: TODO, xx: TODO, yy: TODO, _boD: TODO, initiator_ragdoll?: TODO) => TODO;
         Heal: (bN: TODO) => TODO;
         MoveTo: (xx: number, yy: number) => TODO;
         /** @param gv (default=false)  */
         Destroy: (gv?: TODO) => TODO;
+        readonly radius: number;
+        readonly attachment_box2d_body: TODO;
+        readonly connected_bullet: TODO;
+        readonly hea: number;
+        readonly hmax: number;
         remove: () => TODO;
     }
     var pb2ShieldZone: ClassIdentityProps<"pb2ShieldZone"> & {
+        base_range: number;
+        default_hitpoints: number;
+        /** Type is unknown. One known value: null */
+        CreateShieldZone: TODO;
         /** Type is unknown. One known value: 0 */
         SOUND_PRESET_ID_SILENT: TODO;
         /** Type is unknown. One known value: 1 */
@@ -4249,6 +4318,13 @@ declare global {
          */
         SetPlayerProperty: (dVZ: TODO, user_uid: TODO, value: TODO, then?: TODO, onerror?: TODO) => TODO;
         ClearPropertyNameToUIDCache: () => TODO;
+        /**
+         * @param folder_uid   
+         * @param keeper_user_uid (default=-1)   
+         * @param then (default=null)   
+         * @param onerror (default=null)   
+         */
+        GetFolderContents: (folder_uid: TODO, keeper_user_uid?: TODO, then?: TODO, onerror?: TODO) => TODO;
     }
 }
 
@@ -4558,8 +4634,8 @@ declare global {
         readonly y: number;
         usable_glow_intensity: TODO;
         is_usable: boolean;
-        /** @param Ox (default=null)  */
-        Use: (Ox?: TODO) => TODO;
+        /** @param initiator_ragdoll (default=null)  */
+        Use: (initiator_ragdoll?: TODO) => TODO;
         remove: () => TODO;
         readonly model_frame: TODO;
         SetPosition: (x2: number, y2: number) => TODO;
@@ -4572,6 +4648,14 @@ declare global {
 }
 
 declare global {
+    interface pb2Vision extends ClassIdentityProps<"pb2Vision"> {
+        readonly type: TODO;
+        readonly ragdoll: TODO;
+        ai_x_limit: TODO;
+        ai_y_limit: TODO;
+        readonly deafness_timer: TODO;
+        readonly blindndess_timer: TODO;
+    }
     var pb2Vision: ClassIdentityProps<"pb2Vision"> & {
         /** Type is unknown. One known value: 1 */
         VISION_EVERYTHING: TODO;
@@ -4838,11 +4922,17 @@ declare global {
         FIELD_TYPE_TEXT_CENTERED: TODO;
         /** Type is unknown. One known value: 7 */
         FIELD_TYPE_BUTTON: TODO;
+        /** Type is unknown. One known value: 8 */
+        FIELD_TYPE_CONTEXT_MENU_BUTTON: TODO;
+        /** Type is unknown. One known value: 9 */
+        FIELD_TYPE_CONTEXT_MENU_CAPTION: TODO;
+        /** Type is unknown. One known value: 10 */
+        FIELD_TYPE_CONTEXT_MENU_CAPTION_IMPORTANT: TODO;
         /** Type is unknown. One known value: 0 */
         FIELD_WIDTH_AUTO: TODO;
         /** Type is unknown. One known value: -1 */
         FIELD_TEAM_ID_SPECTATORS: TODO;
-        /** Type is unknown. One known value: ["pb2WindowLeaderboard.ICON_ID_REPORT","pb2WindowLeaderboard.ICON_ID_SPECTATE","pb2WindowLeaderboard.ICON_ID_KICK","pb2WindowLeaderboard.ICON_ID_PROMOTE","pb2WindowLeaderboard.ICON_ID_DEMOTE","pb2WindowLeaderboard.ICON_ID_ELIMINATE","pb2WindowLeaderboard.ICON_ID_COIN","pb2WindowLeaderboard.FIELD_TYPE_NUMERIC","pb2WindowLeaderboard.FIELD_TYPE_NUMERIC_ELIMINATIONS","pb2WindowLeaderboard.FIELD_TYPE_NUMERIC_DEATHS","pb2WindowLeaderboard.FIELD_TYPE_NUMERIC_SCORE","pb2WindowLeaderboard.FIELD_TYPE_TEXT_NICKNAME","pb2WindowLeaderboard.FIELD_TYPE_TEXT","pb2WindowLeaderboard.FIELD_TYPE_TEXT_CENTERED","pb2WindowLeaderboard.FIELD_TYPE_BUTTON","pb2WindowLeaderboard.FIELD_WIDTH_AUTO","pb2WindowLeaderboard.FIELD_TEAM_ID_SPECTATORS"] */
+        /** Type is unknown. One known value: ["pb2WindowLeaderboard.ICON_ID_REPORT","pb2WindowLeaderboard.ICON_ID_SPECTATE","pb2WindowLeaderboard.ICON_ID_KICK","pb2WindowLeaderboard.ICON_ID_PROMOTE","pb2WindowLeaderboard.ICON_ID_DEMOTE","pb2WindowLeaderboard.ICON_ID_ELIMINATE","pb2WindowLeaderboard.ICON_ID_COIN","pb2WindowLeaderboard.FIELD_TYPE_NUMERIC","pb2WindowLeaderboard.FIELD_TYPE_NUMERIC_ELIMINATIONS","pb2WindowLeaderboard.FIELD_TYPE_NUMERIC_DEATHS","pb2WindowLeaderboard.FIELD_TYPE_NUMERIC_SCORE","pb2WindowLeaderboard.FIELD_TYPE_TEXT_NICKNAME","pb2WindowLeaderboard.FIELD_TYPE_TEXT","pb2WindowLeaderboard.FIELD_TYPE_TEXT_CENTERED","pb2WindowLeaderboard.FIELD_TYPE_BUTTON","pb2WindowLeaderboard.FIELD_TYPE_CONTEXT_MENU_BUTTON","pb2WindowLeaderboard.FIELD_TYPE_CONTEXT_MENU_CAPTION","pb2WindowLeaderboard.FIELD_TYPE_CONTEXT_MENU_CAPTION_IMPORTANT","pb2WindowLeaderboard.FIELD_WIDTH_AUTO","pb2WindowLeaderboard.FIELD_TEAM_ID_SPECTATORS"] */
         ALL_TYPES: TODO;
     }
 }
@@ -4856,6 +4946,10 @@ declare global {
         FUNCTION_MORPH: TODO;
         /** Type is unknown. One known value: 3 */
         FUNCTION_INVERSEMORPH: TODO;
+        /** Type is unknown. One known value: 4 */
+        FUNCTION_RUBBER_BAND: TODO;
+        /** Type is unknown. One known value: 5 */
+        FUNCTION_EASE_IN_OUT: TODO;
         ui_offset_x: number;
         ui_offset_y: number;
     }
