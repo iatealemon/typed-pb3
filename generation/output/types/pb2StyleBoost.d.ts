@@ -59,5 +59,7 @@ declare global {
         doublejump_strength: TODO;
         /** Type is unknown. One known value: 0.1 */
         doublejump_single_boost_duration_decay: TODO;
+        /** Type is unknown. One known value: 1 */
+        kick_slide_boost_force_mult: TODO;
     }
 }

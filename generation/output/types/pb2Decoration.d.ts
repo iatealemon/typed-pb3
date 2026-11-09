@@ -50,6 +50,8 @@ declare global {
         /** Type is unknown. One known value: 1 */
         LAYER_WORLD_HUD: TODO;
         /** Type is unknown. One known value: 2 */
+        LAYER_WORLD_CAMERA: TODO;
+        /** Type is unknown. One known value: 3 */
         LAYER_SCREEN_HUD: TODO;
         /** Type is unknown. One known value: 0 */
         BLENDING_NORMAL: TODO;
@@ -76,14 +78,16 @@ declare global {
         /** Type is unknown. One known value: 2 */
         RENDER_METHOD_TRANSPARENT_FOREGROUND: TODO;
         /** Type is unknown. One known value: 3 */
-        RENDER_METHOD_OPAQUE: TODO;
+        RENDER_METHOD_TRANSPARENT_SKY: TODO;
         /** Type is unknown. One known value: 4 */
-        RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY: TODO;
+        RENDER_METHOD_OPAQUE: TODO;
         /** Type is unknown. One known value: 5 */
-        RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY_BACKGROUND: TODO;
+        RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY: TODO;
         /** Type is unknown. One known value: 6 */
+        RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY_BACKGROUND: TODO;
+        /** Type is unknown. One known value: 7 */
         RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY_FOREGROUND: TODO;
-        /** Type is unknown. One known value: ["pb2Decoration.RENDER_METHOD_TRANSPARENT","pb2Decoration.RENDER_METHOD_TRANSPARENT_BACKGROUND","pb2Decoration.RENDER_METHOD_TRANSPARENT_FOREGROUND","pb2Decoration.RENDER_METHOD_OPAQUE","pb2Decoration.RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY","pb2Decoration.RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY_BACKGROUND","pb2Decoration.RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY_FOREGROUND"] */
+        /** Type is unknown. One known value: ["pb2Decoration.RENDER_METHOD_TRANSPARENT","pb2Decoration.RENDER_METHOD_TRANSPARENT_BACKGROUND","pb2Decoration.RENDER_METHOD_TRANSPARENT_FOREGROUND","pb2Decoration.RENDER_METHOD_TRANSPARENT_SKY","pb2Decoration.RENDER_METHOD_OPAQUE","pb2Decoration.RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY","pb2Decoration.RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY_BACKGROUND","pb2Decoration.RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY_FOREGROUND"] */
         ALL_RENDER_METHODS: TODO;
     }
 }

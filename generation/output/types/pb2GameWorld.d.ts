@@ -30,7 +30,7 @@ declare global {
             gameplay: {
                 /** Type is unknown. One known value: 3 */
                 gore_and_violence: TODO;
-                /** Type is unknown. One known value: 3 */
+                /** Type is unknown. One known value: 1 */
                 show_damage_numbers: TODO;
                 /** Type is unknown. One known value: 2 */
                 replay_my_deaths: TODO;
@@ -69,7 +69,20 @@ declare global {
          */
         SetKeyActions: (location_keycode_pair: TODO, onKeyDown?: TODO, onKeyUp?: TODO) => TODO;
         GetKeyState: (location_keycode_pair: TODO) => TODO;
+        ResetNicknameCache: () => TODO;
+        /**
+         * @param dc2   
+         * @param lW (default=true)   
+         */
+        CanReceiveVoiceChatFrom: (dc2: TODO, lW?: TODO) => TODO;
         PauseTrustedControlsTemporarily: () => TODO;
+        /**
+         * @param fAs   
+         * @param fAr (default=false)   
+         */
+        GetInputKeyName: (fAs: TODO, fAr?: TODO) => TODO;
+        /** Type is unknown. One known value: false */
+        finalize_expected: TODO;
         FinalizeWorld: () => TODO;
         FinalizeNewMovables: () => TODO;
         /** @param v (default=true)  */
@@ -102,7 +115,7 @@ declare global {
         sky_intensity: TODO;
         /** Type is unknown. One known value: 1 */
         light_power_multiplier: TODO;
-        /** Type is unknown. One known value: undefined */
+        /** Type is unknown. One known value: 0 */
         fog_intensity: TODO;
         /** Type is unknown. One known value: false */
         foreground_snow: TODO;
@@ -124,17 +137,17 @@ declare global {
         generate_shadowmap: TODO;
         /** Type is unknown. One known value: 0 */
         camera_projection_mode: TODO;
-        /** Type is unknown. One known value: 1.8411256473441928 */
+        /** Type is unknown. One known value: -1 */
         wind_amplitude: TODO;
-        /** Type is unknown. One known value: 0.36022299889386167 */
+        /** Type is unknown. One known value: 0.75 */
         wind_random_part: TODO;
-        /** Type is unknown. One known value: 204795 */
+        /** Type is unknown. One known value: 12 */
         background_terrain_random_seed: TODO;
-        /** Type is unknown. One known value: 230803 */
+        /** Type is unknown. One known value: 23 */
         foreground_terrain_random_seed: TODO;
-        /** Type is unknown. One known value: 194879 */
+        /** Type is unknown. One known value: 34 */
         foreground_platform_random_seed: TODO;
-        /** Type is unknown. One known value: 126776 */
+        /** Type is unknown. One known value: 56 */
         foliage_random_seed: TODO;
         /** Type is unknown. One known value: 1 */
         foliage_shadow_multiplier: TODO;
@@ -166,8 +179,6 @@ declare global {
         terrain_phys_scale: TODO;
         /** Type is unknown. One known value: 40 */
         terrain_size_z: TODO;
-        /** Type is unknown. One known value: undefined */
-        terrain_start_z: TODO;
         /** Type is unknown. One known value: 0.166 */
         terrain_post_tesselation_grass_noise: TODO;
         /** Type is unknown. One known value: 0 */
@@ -176,6 +187,26 @@ declare global {
         terrain_remove_floating_islands: TODO;
         /** Type is unknown. One known value: 24 */
         terrain_uv_relax_iterations: TODO;
+        /** Type is unknown. One known value: 1 */
+        ragdoll_impact_scale: TODO;
+        /** Type is unknown. One known value: 1 */
+        ragdoll_impact_tolerance: TODO;
+        /** Type is unknown. One known value: 1 */
+        ragdoll_impact_stability_damage_mult: TODO;
+        /** Type is unknown. One known value: 0 */
+        background_image_filter: TODO;
+        /** Type is unknown. One known value: 16777215 */
+        background_image_color0: TODO;
+        /** Type is unknown. One known value: 2910194 */
+        background_image_color1: TODO;
+        /** Type is unknown. One known value: 6475764 */
+        background_image_color2: TODO;
+        /** Type is unknown. One known value: 6475764 */
+        background_image_color3: TODO;
+        /** Type is unknown. One known value: null */
+        background_image_texture: TODO;
+        /** Type is unknown. One known value: true */
+        background_image_recolor: TODO;
         /**
          * @param controller   
          * @param soft (default=true)   
@@ -192,14 +223,26 @@ declare global {
         /** Type is unknown. One known value: true */
         connected: TODO;
         Disconnect: () => TODO;
-        /** @param dGa (default=false)  */
-        RestartMap: (dGa?: TODO) => TODO;
+        /**
+         * @param dGa (default=false)   
+         * @param XO (default='Server is restarting Map... [timer]')   
+         * @param yr (default='Restarting')   
+         */
+        RestartMap: (dGa?: TODO, XO?: TODO, yr?: TODO) => TODO;
         GetStartupDetails: () => TODO;
         /**
          * @param bIP   
          * @param dGa (default=false)   
+         * @param XO (default='Server is moving onto a next Map... [timer]')   
+         * @param yr (default='Moving onto a next Map')   
          */
-        ChangeMap: (bIP: TODO, dGa?: TODO) => TODO;
+        ChangeMap: (bIP: TODO, dGa?: TODO, XO?: TODO, yr?: TODO) => TODO;
+        /** Type is unknown. One known value: 1 */
+        wall_impact_scale: TODO;
+        /** Type is unknown. One known value: 1 */
+        wall_impact_tolerance: TODO;
+        /** Type is unknown. One known value: true */
+        fire_damages: TODO;
         /** Type is unknown. One known value: true */
         hud_visible: TODO;
         /** Type is unknown. One known value: true */
@@ -218,5 +261,9 @@ declare global {
         /** @param amount (default=75)  */
         FlashScreen: (amount?: TODO) => TODO;
         GetBounds: () => TODO;
+        /** Type is unknown. One known value: 40 */
+        x: TODO;
+        /** Type is unknown. One known value: 0 */
+        y: TODO;
     }
 }

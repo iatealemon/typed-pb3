@@ -35,6 +35,8 @@ declare global {
         readonly is_being_removed: TODO;
         bullet_hp: TODO;
         readonly is_thrown_by: TODO;
+        addEventListener: (event_type: TODO, params: TODO) => TODO;
+        removeEventListener: (event_type: TODO, params: TODO) => TODO;
         /** @param id (default=0)  */
         GetMesh: (id?: TODO) => TODO;
     }

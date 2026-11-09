@@ -121,5 +121,13 @@ declare global {
          * @param QI (default=true)   
          */
         isShapesAtPoint: (x: TODO, y: TODO, where?: TODO, QI?: TODO) => TODO;
+        /**
+         * @param x   
+         * @param y   
+         * @param tox   
+         * @param toy   
+         * @param where (default=null)   
+         */
+        GetPenetrationDistance: (x: TODO, y: TODO, tox: TODO, toy: TODO, where?: TODO) => TODO;
     }
 }

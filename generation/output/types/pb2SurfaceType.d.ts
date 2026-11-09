@@ -6,6 +6,9 @@ declare global {
     interface pb2SurfaceType extends ClassIdentityProps<"pb2SurfaceType"> {
         is_soft: TODO;
         recommended_slices_per_density: TODO;
+        readonly render_method: TODO;
+        readonly transparent: TODO;
+        impact_scale: TODO;
     }
     var pb2SurfaceType: ClassIdentityProps<"pb2SurfaceType"> & {
         /** Type is unknown. One known value: 0 */

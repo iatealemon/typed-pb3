@@ -36,6 +36,7 @@ declare global {
         readonly ragdoll: TODO;
         MoveOn: (nx: TODO, ny: TODO, sx: TODO, sy: TODO) => TODO;
         DealCharacterDamage: (beh: TODO, beg: TODO, bef: TODO, bed: TODO, beo: TODO) => TODO;
+        SubstractHealth: (...args: TODO[]) => TODO;
         /**
          * @param bN   
          * @param cqQ (default=true)   
@@ -45,7 +46,7 @@ declare global {
          * @param gv (default=false)   
          * @param cqP (default=false)   
          */
-        SubstractHealth: (bN: TODO, cqQ?: TODO, beo?: TODO, fG?: TODO, fE?: TODO, gv?: TODO, cqP?: TODO) => TODO;
+        SubtractHealth: (bN: TODO, cqQ?: TODO, beo?: TODO, fG?: TODO, fE?: TODO, gv?: TODO, cqP?: TODO) => TODO;
         AddGrenades: (cay: TODO, count: TODO) => TODO;
         SetGrenades: (cay: TODO, count: TODO) => TODO;
         GetGrenades: (cay: TODO) => TODO;
@@ -115,7 +116,12 @@ declare global {
         /** @param cay (default=-1)  */
         ThrowGrenadeIfPossible: (cay?: TODO) => TODO;
         GetHeldBody: () => TODO;
-        forceUnHandHold: (id: TODO) => TODO;
+        ApplyClientSideSyncForce: (_x: TODO, _y: TODO, GSPEED: TODO) => TODO;
+        GetCurrentArmsActionType: () => TODO;
+        /** @param force (default=false)  */
+        CancelCurrentArmsAction: (force?: TODO) => TODO;
+        dying: TODO;
+        forceUnHandHold: () => TODO;
     }
     var pb2Character: ClassIdentityProps<"pb2Character"> & {
         CreateCharacter: (params: TODO) => TODO;

@@ -49,6 +49,8 @@ declare global {
         hp_body: TODO;
         hp_arms: TODO;
         hp_legs: TODO;
+        hp_chest: TODO;
+        hp_pelvis: TODO;
         GetAtomsTotal: () => TODO;
         readonly gameplay_effects: TODO;
         /** @param eCA (default=false)  */
@@ -91,6 +93,8 @@ declare global {
         voice_pitch: TODO;
         readonly normalize_all_voice_lines_volume: TODO;
         readonly normalize_custom_voice_lines_volume: TODO;
+        SetSkin: (eTU: TODO) => TODO;
+        GetSkin: () => TODO;
         GetAtom: (id: TODO) => TODO;
         /** @param id (default=0)  */
         GetMesh: (id?: TODO) => TODO;

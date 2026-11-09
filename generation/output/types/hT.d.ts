@@ -18,6 +18,7 @@ declare global {
         DealDamage: (args: TODO) => TODO;
         health_damage_multiplier: TODO;
         limb_damage_multiplier: TODO;
+        ApplyClientSideSyncForce: (_x: TODO, _y: TODO, GSPEED: TODO) => TODO;
     }
     
 }

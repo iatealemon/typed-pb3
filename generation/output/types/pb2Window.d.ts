@@ -90,7 +90,7 @@ declare global {
         BUTTON_HOLO: TODO;
         /** Type is unknown. One known value: 24 */
         HUD_RECT_SOLID: TODO;
-        /** Type is unknown. One known value: ["freeedit","wall","movable","region","pusher","bg","water","compound_character","entity","decoration","gun","usable_switch","lamp","barrel","trigger","timer","info","song","image","scale","surface","group","group_expanded","group_item","group_last","team","area","point","vector","circle","fire","window","set","text","bleeding","frozen","water_class","execute","bullet","usercode","comment","code","instance","boolean","camera","bar","nothing","group_non_item","ragdoll","character","controller","ai_preset","skin","skin_userdata","group_tool","surface_old","crate","lamp_dynamic","visible_1","visible_0","locked_0","locked_1","timer_inline","module","animated_point","cross","sound","sound_preloader","movable_sounds_preset","ai_hint","blue_question","window_hint","var","transform_selection","disabled_0","disabled_1","model_preloader","model"] */
+        /** Type is unknown. One known value: ["freeedit","wall","movable","region","pusher","bg","water","compound_character","entity","decoration","gun","usable_switch","lamp","barrel","trigger","timer","info","song","image","scale","surface","group","group_expanded","group_item","group_last","team","area","point","vector","circle","fire","window","set","text","bleeding","frozen","water_class","execute","bullet","usercode","comment","code","instance","boolean","camera","bar","nothing","group_non_item","ragdoll","character","controller","ai_preset","skin","skin_userdata","group_tool","surface_old","crate","lamp_dynamic","visible_1","visible_0","locked_0","locked_1","timer_inline","module","animated_point","cross","sound","sound_preloader","movable_sounds_preset","ai_hint","blue_question","window_hint","var","transform_selection","disabled_0","disabled_1","model_preloader","model","spawner","2cubes","key","chest","teleport","device","device2","exit","in","out","joint","hook","explosion","minigame","armor","ammo","turret","radiation","bubble","spikes","medikit","box","button","coin","tower","aircraft","cake","h","symmetry","refresh","shiny_blue","target","respawn_area","pusherjion","damagerea","damagegion","capsule_r","capsule_g","capsule_b","crystal_r","crystal_g","crystal_b","crystal_w","virus_r","virus_g","virus_b","drone_r","drone_g","drone_b","beacon","defender_r","defender_k","defender_b","compound_character_player","code_bg","code_fg","code_fg_darker"] */
         icons16_names: TODO;
         icons16_names_to_id: {
             /** Type is unknown. One known value: 0 */
@@ -249,6 +249,120 @@ declare global {
             model_preloader: TODO;
             /** Type is unknown. One known value: 77 */
             model: TODO;
+            /** Type is unknown. One known value: 78 */
+            spawner: TODO;
+            /** Type is unknown. One known value: 79 */
+            "2cubes": TODO;
+            /** Type is unknown. One known value: 80 */
+            key: TODO;
+            /** Type is unknown. One known value: 81 */
+            chest: TODO;
+            /** Type is unknown. One known value: 82 */
+            teleport: TODO;
+            /** Type is unknown. One known value: 83 */
+            device: TODO;
+            /** Type is unknown. One known value: 84 */
+            device2: TODO;
+            /** Type is unknown. One known value: 85 */
+            exit: TODO;
+            /** Type is unknown. One known value: 86 */
+            in: TODO;
+            /** Type is unknown. One known value: 87 */
+            out: TODO;
+            /** Type is unknown. One known value: 88 */
+            joint: TODO;
+            /** Type is unknown. One known value: 89 */
+            hook: TODO;
+            /** Type is unknown. One known value: 90 */
+            explosion: TODO;
+            /** Type is unknown. One known value: 91 */
+            minigame: TODO;
+            /** Type is unknown. One known value: 92 */
+            armor: TODO;
+            /** Type is unknown. One known value: 93 */
+            ammo: TODO;
+            /** Type is unknown. One known value: 94 */
+            turret: TODO;
+            /** Type is unknown. One known value: 95 */
+            radiation: TODO;
+            /** Type is unknown. One known value: 96 */
+            bubble: TODO;
+            /** Type is unknown. One known value: 97 */
+            spikes: TODO;
+            /** Type is unknown. One known value: 98 */
+            medikit: TODO;
+            /** Type is unknown. One known value: 99 */
+            box: TODO;
+            /** Type is unknown. One known value: 100 */
+            button: TODO;
+            /** Type is unknown. One known value: 101 */
+            coin: TODO;
+            /** Type is unknown. One known value: 102 */
+            tower: TODO;
+            /** Type is unknown. One known value: 103 */
+            aircraft: TODO;
+            /** Type is unknown. One known value: 104 */
+            cake: TODO;
+            /** Type is unknown. One known value: 105 */
+            h: TODO;
+            /** Type is unknown. One known value: 106 */
+            symmetry: TODO;
+            /** Type is unknown. One known value: 107 */
+            refresh: TODO;
+            /** Type is unknown. One known value: 108 */
+            shiny_blue: TODO;
+            /** Type is unknown. One known value: 109 */
+            target: TODO;
+            /** Type is unknown. One known value: 110 */
+            respawn_area: TODO;
+            /** Type is unknown. One known value: 111 */
+            pusherjion: TODO;
+            /** Type is unknown. One known value: 112 */
+            damagerea: TODO;
+            /** Type is unknown. One known value: 113 */
+            damagegion: TODO;
+            /** Type is unknown. One known value: 114 */
+            capsule_r: TODO;
+            /** Type is unknown. One known value: 115 */
+            capsule_g: TODO;
+            /** Type is unknown. One known value: 116 */
+            capsule_b: TODO;
+            /** Type is unknown. One known value: 117 */
+            crystal_r: TODO;
+            /** Type is unknown. One known value: 118 */
+            crystal_g: TODO;
+            /** Type is unknown. One known value: 119 */
+            crystal_b: TODO;
+            /** Type is unknown. One known value: 120 */
+            crystal_w: TODO;
+            /** Type is unknown. One known value: 121 */
+            virus_r: TODO;
+            /** Type is unknown. One known value: 122 */
+            virus_g: TODO;
+            /** Type is unknown. One known value: 123 */
+            virus_b: TODO;
+            /** Type is unknown. One known value: 124 */
+            drone_r: TODO;
+            /** Type is unknown. One known value: 125 */
+            drone_g: TODO;
+            /** Type is unknown. One known value: 126 */
+            drone_b: TODO;
+            /** Type is unknown. One known value: 127 */
+            beacon: TODO;
+            /** Type is unknown. One known value: 128 */
+            defender_r: TODO;
+            /** Type is unknown. One known value: 129 */
+            defender_k: TODO;
+            /** Type is unknown. One known value: 130 */
+            defender_b: TODO;
+            /** Type is unknown. One known value: 131 */
+            compound_character_player: TODO;
+            /** Type is unknown. One known value: 132 */
+            code_bg: TODO;
+            /** Type is unknown. One known value: 133 */
+            code_fg: TODO;
+            /** Type is unknown. One known value: 134 */
+            code_fg_darker: TODO;
         }
     }
 }

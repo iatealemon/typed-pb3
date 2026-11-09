@@ -30,6 +30,7 @@
             "_pb2T": {},
             "_pb2TU": {},
             "_pb2ClientSideTrigger": {},
+            "_pb2CM": {},
             "Math": {
                 "abs": {},
                 "acos": {},
@@ -47,6 +48,7 @@
                 "cosh": {},
                 "exp": {},
                 "floor": {},
+                "f16round": {},
                 "fround": {},
                 "hypot": {},
                 "imul": {},
@@ -63,6 +65,7 @@
                 "sin": {},
                 "sinh": {},
                 "sqrt": {},
+                "sumPrecise": {},
                 "tan": {},
                 "tanh": {},
                 "trunc": {},
@@ -74,12 +77,13 @@
                 "PI": {},
                 "SQRT1_2": {},
                 "SQRT2": {},
-                "f16round": {},
-                "sumPrecise": {},
                 "POSITIVE_INFINITY": {},
                 "NEGATIVE_INFINITY": {},
                 "randomIntegerWithin": {},
-                "randomWithin": {}
+                "randomWithin": {},
+                "seededRandom": {
+                    "seed": {}
+                }
             },
             "String": {
                 "prototype": {
@@ -496,6 +500,9 @@
                 },
                 "isShapesAtPoint": {
                     "prototype": {}
+                },
+                "GetPenetrationDistance": {
+                    "prototype": {}
                 }
             },
             "pb2GameWorld": {
@@ -647,7 +654,12 @@
                     "damage_dealt_players_tot": {},
                     "damage_dealt_entities_tot": {},
                     "eliminations_players_tot": {},
-                    "eliminations_entities_tot": {}
+                    "eliminations_entities_tot": {},
+                    "tactical_ping_allowed": {},
+                    "tactical_ping_allowed_when_dead": {},
+                    "AddImpulse": {
+                        "prototype": {}
+                    }
                 },
                 "spectated_ragdoll": {},
                 "personal_virtual_controller": {
@@ -797,7 +809,12 @@
                     "damage_dealt_players_tot": {},
                     "damage_dealt_entities_tot": {},
                     "eliminations_players_tot": {},
-                    "eliminations_entities_tot": {}
+                    "eliminations_entities_tot": {},
+                    "tactical_ping_allowed": {},
+                    "tactical_ping_allowed_when_dead": {},
+                    "AddImpulse": {
+                        "prototype": {}
+                    }
                 },
                 "isHost": {},
                 "user_uid": {},
@@ -844,9 +861,19 @@
                 "GetKeyState": {
                     "prototype": {}
                 },
+                "ResetNicknameCache": {
+                    "prototype": {}
+                },
+                "CanReceiveVoiceChatFrom": {
+                    "prototype": {}
+                },
                 "PauseTrustedControlsTemporarily": {
                     "prototype": {}
                 },
+                "GetInputKeyName": {
+                    "prototype": {}
+                },
+                "finalize_expected": {},
                 "FinalizeWorld": {
                     "prototype": {}
                 },
@@ -915,11 +942,20 @@
                 "terrain_force_low_level_terrain": {},
                 "terrain_phys_scale": {},
                 "terrain_size_z": {},
-                "terrain_start_z": {},
                 "terrain_post_tesselation_grass_noise": {},
                 "terrain_y_offset": {},
                 "terrain_remove_floating_islands": {},
                 "terrain_uv_relax_iterations": {},
+                "ragdoll_impact_scale": {},
+                "ragdoll_impact_tolerance": {},
+                "ragdoll_impact_stability_damage_mult": {},
+                "background_image_filter": {},
+                "background_image_color0": {},
+                "background_image_color1": {},
+                "background_image_color2": {},
+                "background_image_color3": {},
+                "background_image_texture": {},
+                "background_image_recolor": {},
                 "SetToController": {
                     "prototype": {}
                 },
@@ -960,6 +996,9 @@
                 "ChangeMap": {
                     "prototype": {}
                 },
+                "wall_impact_scale": {},
+                "wall_impact_tolerance": {},
+                "fire_damages": {},
                 "hud_visible": {},
                 "hud_show_character_info": {},
                 "hud_custom_bars": {},
@@ -974,7 +1013,9 @@
                 },
                 "GetBounds": {
                     "prototype": {}
-                }
+                },
+                "x": {},
+                "y": {}
             },
             "pb2GrenadeFunctions": {
                 "_class": {},
@@ -1010,7 +1051,9 @@
                 "_class": {},
                 "base_range": {},
                 "default_hitpoints": {},
-                "CreateShieldZone": {},
+                "CreateShieldZone": {
+                    "prototype": {}
+                },
                 "SOUND_PRESET_ID_SILENT": {},
                 "SOUND_PRESET_ID_SHIELD_GRENADE": {},
                 "SOUND_PRESET_ID_SPOILER26_SHIELD": {},
@@ -1069,6 +1112,21 @@
                     "prototype": {}
                 }
             },
+            "pb2Model3D": {
+                "_class": {},
+                "CreateModel": {
+                    "prototype": {}
+                },
+                "IsModelExists": {
+                    "prototype": {}
+                },
+                "GetModel": {
+                    "prototype": {}
+                },
+                "SetModel": {
+                    "prototype": {}
+                }
+            },
             "pb2Explosion": {
                 "_class": {},
                 "MakeExplosion": {
@@ -1092,11 +1150,12 @@
                 "EXPLOSION_CORVETTE_RL": {},
                 "EXPLOSION_CORVETTE_RL2": {},
                 "EXPLOSION_CAR": {},
-                "EXPLOSION_SPOILER35": {},
+                "EXPLOSION_SPOILER37": {},
                 "EXPLOSION_HOUND_WALKER": {},
                 "EXPLOSION_SPOILER12": {},
                 "EXPLOSION_SD_DRAIN_RIFLE": {},
                 "EXPLOSION_CORVETTE_EXPLOSION": {},
+                "EXPLOSION_TROUBLE_ALT": {},
                 "ALL_TYPES": {},
                 "explosions": {}
             },
@@ -1203,7 +1262,7 @@
                     "prototype": {}
                 },
                 "TYPE_UNKNOWN": {},
-                "TYPE_SPOILER35": {},
+                "TYPE_SPOILER37": {},
                 "TYPE_BARREL": {},
                 "TYPE_BARREL_PART": {},
                 "TYPE_CRATE": {},
@@ -1227,7 +1286,8 @@
                 "TYPE_SPOILER33": {},
                 "TYPE_CORVETTE": {},
                 "TYPE_FLOATING_ICE": {},
-                "TYPE_SPOILER34": {},
+                "TYPE_SPOILER35": {},
+                "TYPE_SEAT": {},
                 "ALL_TYPES": {},
                 "MATERIAL_METAL": {},
                 "MATERIAL_GLASS": {},
@@ -1280,6 +1340,46 @@
                 "STYLE_ID_ICE": {},
                 "STYLE_ID_ROCK": {}
             },
+            "pb2EntitySeat": {
+                "_class": {},
+                "STYLE_ID_SINGLE_SIDE": {},
+                "STYLE_ID_DOUBLE_SIDE": {},
+                "STYLE_ID_SINGLE_SIDE_FLAT": {},
+                "STYLE_ID_DOUBLE_SIDE_FLAT": {}
+            },
+            "pb2Region": {
+                "_class": {},
+                "CALLBACK_CONDITION_PER_RIGID_BODY": {},
+                "CALLBACK_CONDITION_PER_OBJECT": {},
+                "CALLBACK_CONDITION_SPECIFIC_OBJECT_ONLY": {},
+                "CALLBACK_CONDITION_SPECIFIC_TEAM_ONLY": {},
+                "CALLBACK_CONDITION_SPECIFIC_ENTITY_TYPE": {},
+                "CALLBACK_CONDITION_SPECIFIC_GUN_TYPE": {},
+                "ALL_CALLBACK_CONDITION_TYPES": {},
+                "regions": {}
+            },
+            "pb2GunClass": {
+                "_class": {},
+                "SHELL_TYPE_AUTO": {},
+                "SHELL_TYPE_NONE": {},
+                "SHELL_TYPE_SCIFI_SINGLE": {},
+                "SHELL_TYPE_SCIFI_SHOTGUN_SINGLE": {},
+                "SHELL_TYPE_SCIFI_SHOTGUN_DOUBLE": {},
+                "SHELL_TYPE_REAL_SINGLE": {},
+                "SHELL_TYPE_REAL_SHOTGUN_SINGLE": {},
+                "SHELL_TYPE_BIG_CALIBER": {},
+                "SHELL_TYPE_REAL_SHOTGUN_DOUBLE": {},
+                "ALL_SHELL_TYPES": {},
+                "non_spoiler_weapons": {},
+                "registered_weapons": {},
+                "GetGunClassByString": {
+                    "prototype": {}
+                },
+                "CachedGunClasses": {},
+                "CreateCustomGunClass": {
+                    "prototype": {}
+                }
+            },
             "pb2StyleBoost": {
                 "_class": {},
                 "NONE": {},
@@ -1300,7 +1400,8 @@
                 "doublejump_maximum_charge_for_new_ragdolls": {},
                 "doublejump_restore_speed": {},
                 "doublejump_strength": {},
-                "doublejump_single_boost_duration_decay": {}
+                "doublejump_single_boost_duration_decay": {},
+                "kick_slide_boost_force_mult": {}
             },
             "pb2AIModule": {
                 "_class": {},
@@ -1432,7 +1533,8 @@
                 "WINDOW": {},
                 "REGION": {},
                 "VOID": {},
-                "ATOM": {}
+                "ATOM": {},
+                "SHAPE_TO_OBJECT3D_PROXY": {}
             },
             "pb2Vision": {
                 "_class": {},
@@ -1530,6 +1632,7 @@
                 "ARMS_BOTH": {},
                 "LEGS_NONE": {},
                 "LEGS_BOTH": {},
+                "ACTION_TYPE_NONE": {},
                 "ACTION_TYPE_RELOAD_WEAPONS": {},
                 "ACTION_TYPE_THROW_GRENADE_HE": {},
                 "ACTION_TYPE_THROW_GRENADE_PORT": {},
@@ -1602,6 +1705,7 @@
                 "_class": {},
                 "TEMPLATE_NONE": {},
                 "TEMPLATE_EARTH": {},
+                "TEMPLATE_GRASS_ONLY": {},
                 "ALL_TEMPLATE_TYPES": {}
             },
             "pb2WindowLeaderboard": {
@@ -1708,8 +1812,20 @@
                 "TYPE_GAME_TIMESCALE_WARPED": {},
                 "TYPE_REAL_WORLD_TIMESCALE": {},
                 "TYPE_FULL_FRAME_TICKS": {},
+                "SKIP_MODE_UNSKIPPABLE": {},
+                "SKIP_MODE_SPACE_KEY": {},
+                "SKIP_MODE_FIRE_KEY": {},
+                "SKIP_MODE_ANY_KEY": {},
+                "SKIP_MODE_SPACE_KEY_HOLDING": {},
+                "SKIP_MODE_STANDARD_SKIP_KEY": {},
                 "timers_active_game": {},
                 "timers_active_world": {}
+            },
+            "pb2Environment": {
+                "_class": {},
+                "BACKGROUND_IMAGE_FILTER_NONE": {},
+                "BACKGROUND_IMAGE_FILTER_COLOR_MULT": {},
+                "BACKGROUND_IMAGE_FILTER_GRADIENT_MULT": {}
             },
             "pb2Team": {
                 "_class": {},
@@ -1800,6 +1916,7 @@
                 },
                 "LAYER_WORLD": {},
                 "LAYER_WORLD_HUD": {},
+                "LAYER_WORLD_CAMERA": {},
                 "LAYER_SCREEN_HUD": {},
                 "BLENDING_NORMAL": {},
                 "BLENDING_ADDITIVE": {},
@@ -1813,6 +1930,7 @@
                 "RENDER_METHOD_TRANSPARENT": {},
                 "RENDER_METHOD_TRANSPARENT_BACKGROUND": {},
                 "RENDER_METHOD_TRANSPARENT_FOREGROUND": {},
+                "RENDER_METHOD_TRANSPARENT_SKY": {},
                 "RENDER_METHOD_OPAQUE": {},
                 "RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY": {},
                 "RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY_BACKGROUND": {},
@@ -1995,29 +2113,16 @@
                     "prototype": {}
                 }
             },
-            "pb2GunClass": {
-                "_class": {},
-                "non_spoiler_weapons": {},
-                "registered_weapons": {},
-                "GetGunClassByString": {
-                    "prototype": {}
-                },
-                "CachedGunClasses": {},
-                "CreateCustomGunClass": {
-                    "prototype": {}
-                }
-            },
             "pb2Fire": {
                 "_class": {},
                 "fires": {}
             },
             "pb2RadioactiveCloud": {
                 "_class": {},
-                "clouds": {}
-            },
-            "pb2Region": {
-                "_class": {},
-                "regions": {}
+                "clouds": {},
+                "CreateRadioactiveCloud": {
+                    "prototype": {}
+                }
             },
             "pb2Light": {
                 "_class": {},
@@ -2053,6 +2158,9 @@
                     "prototype": {}
                 },
                 "inDist2D": {
+                    "prototype": {}
+                },
+                "inDist2DBoolean": {
                     "prototype": {}
                 }
             },
@@ -2174,7 +2282,64 @@
                     "disabled_0": {},
                     "disabled_1": {},
                     "model_preloader": {},
-                    "model": {}
+                    "model": {},
+                    "spawner": {},
+                    "2cubes": {},
+                    "key": {},
+                    "chest": {},
+                    "teleport": {},
+                    "device": {},
+                    "device2": {},
+                    "exit": {},
+                    "in": {},
+                    "out": {},
+                    "joint": {},
+                    "hook": {},
+                    "explosion": {},
+                    "minigame": {},
+                    "armor": {},
+                    "ammo": {},
+                    "turret": {},
+                    "radiation": {},
+                    "bubble": {},
+                    "spikes": {},
+                    "medikit": {},
+                    "box": {},
+                    "button": {},
+                    "coin": {},
+                    "tower": {},
+                    "aircraft": {},
+                    "cake": {},
+                    "h": {},
+                    "symmetry": {},
+                    "refresh": {},
+                    "shiny_blue": {},
+                    "target": {},
+                    "respawn_area": {},
+                    "pusherjion": {},
+                    "damagerea": {},
+                    "damagegion": {},
+                    "capsule_r": {},
+                    "capsule_g": {},
+                    "capsule_b": {},
+                    "crystal_r": {},
+                    "crystal_g": {},
+                    "crystal_b": {},
+                    "crystal_w": {},
+                    "virus_r": {},
+                    "virus_g": {},
+                    "virus_b": {},
+                    "drone_r": {},
+                    "drone_g": {},
+                    "drone_b": {},
+                    "beacon": {},
+                    "defender_r": {},
+                    "defender_k": {},
+                    "defender_b": {},
+                    "compound_character_player": {},
+                    "code_bg": {},
+                    "code_fg": {},
+                    "code_fg_darker": {}
                 }
             }
         },
@@ -2277,7 +2442,11 @@
             },
             "_pb2ClientSideTrigger": {
                 "type": "function",
-                "params": "f"
+                "params": "f,execute_on_server_side=true"
+            },
+            "_pb2CM": {
+                "type": "function",
+                "params": "method,method_name=undefined,source_creation_uid=undefined"
             },
             "Math": {
                 "type": "object"
@@ -2362,6 +2531,11 @@
                 "params": "",
                 "nativeCode": true
             },
+            "Math.f16round": {
+                "type": "function",
+                "params": "",
+                "nativeCode": true
+            },
             "Math.fround": {
                 "type": "function",
                 "params": "",
@@ -2442,6 +2616,11 @@
                 "params": "",
                 "nativeCode": true
             },
+            "Math.sumPrecise": {
+                "type": "function",
+                "params": "",
+                "nativeCode": true
+            },
             "Math.tan": {
                 "type": "function",
                 "params": "",
@@ -2489,16 +2668,6 @@
                 "type": "literal",
                 "value": "1.4142135623730951"
             },
-            "Math.f16round": {
-                "type": "function",
-                "params": "",
-                "nativeCode": true
-            },
-            "Math.sumPrecise": {
-                "type": "function",
-                "params": "",
-                "nativeCode": true
-            },
             "Math.POSITIVE_INFINITY": {
                 "type": "literal",
                 "value": "no known value"
@@ -2514,6 +2683,14 @@
             "Math.randomWithin": {
                 "type": "function",
                 "params": "a,b"
+            },
+            "Math.seededRandom": {
+                "type": "function",
+                "params": ""
+            },
+            "Math.seededRandom.seed": {
+                "type": "literal",
+                "value": "11022"
             },
             "String": {
                 "type": "class",
@@ -4161,6 +4338,13 @@
             "pb2Shape.isShapesAtPoint.prototype": {
                 "type": "object"
             },
+            "pb2Shape.GetPenetrationDistance": {
+                "type": "function",
+                "params": "x,y,tox,toy,where=null"
+            },
+            "pb2Shape.GetPenetrationDistance.prototype": {
+                "type": "object"
+            },
             "pb2GameWorld": {
                 "type": "object"
             },
@@ -4211,11 +4395,11 @@
             },
             "pb2GameWorld.controller.look_x": {
                 "type": "literal",
-                "value": "578.0160216053416"
+                "value": "578.2558935916277"
             },
             "pb2GameWorld.controller.look_y": {
                 "type": "literal",
-                "value": "183.64491462424468"
+                "value": "-16.58081415316495"
             },
             "pb2GameWorld.controller.act_fall": {
                 "type": "literal",
@@ -4616,6 +4800,21 @@
                 "readonly": true,
                 "value": "0"
             },
+            "pb2GameWorld.controller.tactical_ping_allowed": {
+                "type": "literal",
+                "value": "true"
+            },
+            "pb2GameWorld.controller.tactical_ping_allowed_when_dead": {
+                "type": "literal",
+                "value": "false"
+            },
+            "pb2GameWorld.controller.AddImpulse": {
+                "type": "function",
+                "params": "x,y"
+            },
+            "pb2GameWorld.controller.AddImpulse.prototype": {
+                "type": "object"
+            },
             "pb2GameWorld.spectated_ragdoll": {
                 "type": "literal",
                 "value": "null"
@@ -4656,11 +4855,11 @@
             },
             "pb2GameWorld.personal_virtual_controller.look_x": {
                 "type": "literal",
-                "value": "578.0160216053416"
+                "value": "578.2558935916277"
             },
             "pb2GameWorld.personal_virtual_controller.look_y": {
                 "type": "literal",
-                "value": "183.64491462424468"
+                "value": "-16.58081415316495"
             },
             "pb2GameWorld.personal_virtual_controller.act_fall": {
                 "type": "literal",
@@ -5061,6 +5260,21 @@
                 "readonly": true,
                 "value": "0"
             },
+            "pb2GameWorld.personal_virtual_controller.tactical_ping_allowed": {
+                "type": "literal",
+                "value": "true"
+            },
+            "pb2GameWorld.personal_virtual_controller.tactical_ping_allowed_when_dead": {
+                "type": "literal",
+                "value": "false"
+            },
+            "pb2GameWorld.personal_virtual_controller.AddImpulse": {
+                "type": "function",
+                "params": "x,y"
+            },
+            "pb2GameWorld.personal_virtual_controller.AddImpulse.prototype": {
+                "type": "object"
+            },
             "pb2GameWorld.isHost": {
                 "type": "literal",
                 "value": "true"
@@ -5104,7 +5318,7 @@
             },
             "pb2GameWorld.settings.gameplay.show_damage_numbers": {
                 "type": "literal",
-                "value": "3"
+                "value": "1"
             },
             "pb2GameWorld.settings.gameplay.replay_my_deaths": {
                 "type": "literal",
@@ -5186,12 +5400,37 @@
             "pb2GameWorld.GetKeyState.prototype": {
                 "type": "object"
             },
+            "pb2GameWorld.ResetNicknameCache": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2GameWorld.ResetNicknameCache.prototype": {
+                "type": "object"
+            },
+            "pb2GameWorld.CanReceiveVoiceChatFrom": {
+                "type": "function",
+                "params": "dc2,lW=true"
+            },
+            "pb2GameWorld.CanReceiveVoiceChatFrom.prototype": {
+                "type": "object"
+            },
             "pb2GameWorld.PauseTrustedControlsTemporarily": {
                 "type": "function",
                 "params": ""
             },
             "pb2GameWorld.PauseTrustedControlsTemporarily.prototype": {
                 "type": "object"
+            },
+            "pb2GameWorld.GetInputKeyName": {
+                "type": "function",
+                "params": "fAs,fAr=false"
+            },
+            "pb2GameWorld.GetInputKeyName.prototype": {
+                "type": "object"
+            },
+            "pb2GameWorld.finalize_expected": {
+                "type": "literal",
+                "value": "false"
             },
             "pb2GameWorld.FinalizeWorld": {
                 "type": "function",
@@ -5289,7 +5528,7 @@
             },
             "pb2GameWorld.fog_intensity": {
                 "type": "literal",
-                "value": "undefined"
+                "value": "0"
             },
             "pb2GameWorld.foreground_snow": {
                 "type": "literal",
@@ -5333,27 +5572,27 @@
             },
             "pb2GameWorld.wind_amplitude": {
                 "type": "literal",
-                "value": "1.8411256473441928"
+                "value": "-1"
             },
             "pb2GameWorld.wind_random_part": {
                 "type": "literal",
-                "value": "0.36022299889386167"
+                "value": "0.75"
             },
             "pb2GameWorld.background_terrain_random_seed": {
                 "type": "literal",
-                "value": "204795"
+                "value": "12"
             },
             "pb2GameWorld.foreground_terrain_random_seed": {
                 "type": "literal",
-                "value": "230803"
+                "value": "23"
             },
             "pb2GameWorld.foreground_platform_random_seed": {
                 "type": "literal",
-                "value": "194879"
+                "value": "34"
             },
             "pb2GameWorld.foliage_random_seed": {
                 "type": "literal",
-                "value": "126776"
+                "value": "56"
             },
             "pb2GameWorld.foliage_shadow_multiplier": {
                 "type": "literal",
@@ -5415,10 +5654,6 @@
                 "type": "literal",
                 "value": "40"
             },
-            "pb2GameWorld.terrain_start_z": {
-                "type": "literal",
-                "value": "undefined"
-            },
             "pb2GameWorld.terrain_post_tesselation_grass_noise": {
                 "type": "literal",
                 "value": "0.166"
@@ -5434,6 +5669,46 @@
             "pb2GameWorld.terrain_uv_relax_iterations": {
                 "type": "literal",
                 "value": "24"
+            },
+            "pb2GameWorld.ragdoll_impact_scale": {
+                "type": "literal",
+                "value": "1"
+            },
+            "pb2GameWorld.ragdoll_impact_tolerance": {
+                "type": "literal",
+                "value": "1"
+            },
+            "pb2GameWorld.ragdoll_impact_stability_damage_mult": {
+                "type": "literal",
+                "value": "1"
+            },
+            "pb2GameWorld.background_image_filter": {
+                "type": "literal",
+                "value": "0"
+            },
+            "pb2GameWorld.background_image_color0": {
+                "type": "literal",
+                "value": "16777215"
+            },
+            "pb2GameWorld.background_image_color1": {
+                "type": "literal",
+                "value": "2910194"
+            },
+            "pb2GameWorld.background_image_color2": {
+                "type": "literal",
+                "value": "6475764"
+            },
+            "pb2GameWorld.background_image_color3": {
+                "type": "literal",
+                "value": "6475764"
+            },
+            "pb2GameWorld.background_image_texture": {
+                "type": "literal",
+                "value": "null"
+            },
+            "pb2GameWorld.background_image_recolor": {
+                "type": "literal",
+                "value": "true"
             },
             "pb2GameWorld.SetToController": {
                 "type": "function",
@@ -5511,7 +5786,7 @@
             },
             "pb2GameWorld.RestartMap": {
                 "type": "function",
-                "params": "dGa=false"
+                "params": "dGa=false,XO='Server is restarting Map... [timer]',yr='Restarting'"
             },
             "pb2GameWorld.RestartMap.prototype": {
                 "type": "object"
@@ -5525,10 +5800,22 @@
             },
             "pb2GameWorld.ChangeMap": {
                 "type": "function",
-                "params": "bIP,dGa=false"
+                "params": "bIP,dGa=false,XO='Server is moving onto a next Map... [timer]',yr='Moving onto a next Map'"
             },
             "pb2GameWorld.ChangeMap.prototype": {
                 "type": "object"
+            },
+            "pb2GameWorld.wall_impact_scale": {
+                "type": "literal",
+                "value": "1"
+            },
+            "pb2GameWorld.wall_impact_tolerance": {
+                "type": "literal",
+                "value": "1"
+            },
+            "pb2GameWorld.fire_damages": {
+                "type": "literal",
+                "value": "true"
             },
             "pb2GameWorld.hud_visible": {
                 "type": "literal",
@@ -5569,6 +5856,14 @@
             },
             "pb2GameWorld.GetBounds.prototype": {
                 "type": "object"
+            },
+            "pb2GameWorld.x": {
+                "type": "literal",
+                "value": "40"
+            },
+            "pb2GameWorld.y": {
+                "type": "literal",
+                "value": "0"
             },
             "pb2GrenadeFunctions": {
                 "type": "object"
@@ -5717,8 +6012,11 @@
                 "value": "1000"
             },
             "pb2ShieldZone.CreateShieldZone": {
-                "type": "literal",
-                "value": "null"
+                "type": "function",
+                "params": "params"
+            },
+            "pb2ShieldZone.CreateShieldZone.prototype": {
+                "type": "object"
             },
             "pb2ShieldZone.SOUND_PRESET_ID_SILENT": {
                 "type": "literal",
@@ -5921,6 +6219,48 @@
             "pb2TextureDecal.RemoveAllDecalsAndParticles.prototype": {
                 "type": "object"
             },
+            "pb2Model3D": {
+                "type": "object"
+            },
+            "pb2Model3D.toString": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2Model3D.toString.prototype": {
+                "type": "object"
+            },
+            "pb2Model3D._class": {
+                "type": "literal",
+                "value": "\"pb2Model3D\""
+            },
+            "pb2Model3D.CreateModel": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2Model3D.CreateModel.prototype": {
+                "type": "object"
+            },
+            "pb2Model3D.IsModelExists": {
+                "type": "function",
+                "params": "id"
+            },
+            "pb2Model3D.IsModelExists.prototype": {
+                "type": "object"
+            },
+            "pb2Model3D.GetModel": {
+                "type": "function",
+                "params": "id"
+            },
+            "pb2Model3D.GetModel.prototype": {
+                "type": "object"
+            },
+            "pb2Model3D.SetModel": {
+                "type": "function",
+                "params": "id,cHy"
+            },
+            "pb2Model3D.SetModel.prototype": {
+                "type": "object"
+            },
             "pb2Explosion": {
                 "type": "object"
             },
@@ -6014,7 +6354,7 @@
                 "type": "literal",
                 "value": "17"
             },
-            "pb2Explosion.EXPLOSION_SPOILER35": {
+            "pb2Explosion.EXPLOSION_SPOILER37": {
                 "type": "literal",
                 "value": "18"
             },
@@ -6034,9 +6374,13 @@
                 "type": "literal",
                 "value": "22"
             },
+            "pb2Explosion.EXPLOSION_TROUBLE_ALT": {
+                "type": "literal",
+                "value": "33"
+            },
             "pb2Explosion.ALL_TYPES": {
                 "type": "literal",
-                "value": "[\"pb2Explosion.EXPLOSION_NONE\",\"pb2Explosion.EXPLOSION_BASIC\",\"pb2Explosion.EXPLOSION_RADIOACTIVE\",\"pb2Explosion.EXPLOSION_PLASMA\",\"pb2Explosion.EXPLOSION_COINTOSS\",\"pb2Explosion.EXPLOSION_RL2\",\"pb2Explosion.EXPLOSION_RL3\",\"pb2Explosion.EXPLOSION_DODGE\",\"pb2Explosion.EXPLOSION_TROUBLE_HAWK\",\"pb2Explosion.EXPLOSION_HOUND_WALKER_PROJECTILE\",\"pb2Explosion.EXPLOSION_STORM_GUN\",\"pb2Explosion.EXPLOSION_SPOILER9\",\"pb2Explosion.EXPLOSION_SPOILER10\",\"pb2Explosion.EXPLOSION_SPOILER9_BOSS\",\"pb2Explosion.EXPLOSION_FIRE\",\"pb2Explosion.EXPLOSION_CORVETTE_RL\",\"pb2Explosion.EXPLOSION_CORVETTE_RL2\",\"pb2Explosion.EXPLOSION_CAR\",\"pb2Explosion.EXPLOSION_SPOILER35\",\"pb2Explosion.EXPLOSION_HOUND_WALKER\",\"pb2Explosion.EXPLOSION_SPOILER12\",\"pb2Explosion.EXPLOSION_SD_DRAIN_RIFLE\",\"pb2Explosion.EXPLOSION_CORVETTE_EXPLOSION\"]"
+                "value": "[\"pb2Explosion.EXPLOSION_NONE\",\"pb2Explosion.EXPLOSION_BASIC\",\"pb2Explosion.EXPLOSION_RADIOACTIVE\",\"pb2Explosion.EXPLOSION_PLASMA\",\"pb2Explosion.EXPLOSION_COINTOSS\",\"pb2Explosion.EXPLOSION_RL2\",\"pb2Explosion.EXPLOSION_RL3\",\"pb2Explosion.EXPLOSION_DODGE\",\"pb2Explosion.EXPLOSION_TROUBLE_HAWK\",\"pb2Explosion.EXPLOSION_HOUND_WALKER_PROJECTILE\",\"pb2Explosion.EXPLOSION_STORM_GUN\",\"pb2Explosion.EXPLOSION_SPOILER9\",\"pb2Explosion.EXPLOSION_SPOILER10\",\"pb2Explosion.EXPLOSION_SPOILER9_BOSS\",\"pb2Explosion.EXPLOSION_FIRE\",\"pb2Explosion.EXPLOSION_CORVETTE_RL\",\"pb2Explosion.EXPLOSION_CORVETTE_RL2\",\"pb2Explosion.EXPLOSION_CAR\",\"pb2Explosion.EXPLOSION_SPOILER37\",\"pb2Explosion.EXPLOSION_HOUND_WALKER\",\"pb2Explosion.EXPLOSION_SPOILER12\",\"pb2Explosion.EXPLOSION_SD_DRAIN_RIFLE\",\"pb2Explosion.EXPLOSION_CORVETTE_EXPLOSION\",\"pb2Explosion.EXPLOSION_TROUBLE_ALT\"]"
             },
             "pb2Explosion.explosions": {
                 "type": "literal",
@@ -6395,7 +6739,7 @@
                 "type": "literal",
                 "value": "0"
             },
-            "pb2Entity.TYPE_SPOILER35": {
+            "pb2Entity.TYPE_SPOILER37": {
                 "type": "literal",
                 "value": "1"
             },
@@ -6491,13 +6835,17 @@
                 "type": "literal",
                 "value": "24"
             },
-            "pb2Entity.TYPE_SPOILER34": {
+            "pb2Entity.TYPE_SPOILER35": {
                 "type": "literal",
                 "value": "25"
             },
+            "pb2Entity.TYPE_SEAT": {
+                "type": "literal",
+                "value": "26"
+            },
             "pb2Entity.ALL_TYPES": {
                 "type": "literal",
-                "value": "[\"pb2Entity.TYPE_UNKNOWN\",\"pb2Entity.TYPE_SPOILER35\",\"pb2Entity.TYPE_BARREL\",\"pb2Entity.TYPE_BARREL_PART\",\"pb2Entity.TYPE_CRATE\",\"pb2Entity.TYPE_TURRET\",\"pb2Entity.TYPE_SPOILER27\",\"pb2Entity.TYPE_SPOILER29\",\"pb2Entity.TYPE_MOTO\",\"pb2Entity.TYPE_WALKER\",\"pb2Entity.TYPE_SPOILER28\",\"pb2Entity.TYPE_SPOILER30\",\"pb2Entity.TYPE_SPOILER13\",\"pb2Entity.TYPE_SPOILER14\",\"pb2Entity.TYPE_SPOILER15\",\"pb2Entity.TYPE_SPOILER16\",\"pb2Entity.TYPE_SPOILER17\",\"pb2Entity.TYPE_SPOILER19\",\"pb2Entity.TYPE_SPOILER18\",\"pb2Entity.TYPE_SPOILER20\",\"pb2Entity.TYPE_SPOILER21\",\"pb2Entity.TYPE_ANTIGRAVITY\",\"pb2Entity.TYPE_SPOILER33\",\"pb2Entity.TYPE_CORVETTE\",\"pb2Entity.TYPE_FLOATING_ICE\",\"pb2Entity.TYPE_SPOILER34\"]"
+                "value": "[\"pb2Entity.TYPE_UNKNOWN\",\"pb2Entity.TYPE_SPOILER37\",\"pb2Entity.TYPE_BARREL\",\"pb2Entity.TYPE_BARREL_PART\",\"pb2Entity.TYPE_CRATE\",\"pb2Entity.TYPE_TURRET\",\"pb2Entity.TYPE_SPOILER27\",\"pb2Entity.TYPE_SPOILER29\",\"pb2Entity.TYPE_MOTO\",\"pb2Entity.TYPE_WALKER\",\"pb2Entity.TYPE_SPOILER28\",\"pb2Entity.TYPE_SPOILER30\",\"pb2Entity.TYPE_SPOILER13\",\"pb2Entity.TYPE_SPOILER14\",\"pb2Entity.TYPE_SPOILER15\",\"pb2Entity.TYPE_SPOILER16\",\"pb2Entity.TYPE_SPOILER17\",\"pb2Entity.TYPE_SPOILER19\",\"pb2Entity.TYPE_SPOILER18\",\"pb2Entity.TYPE_SPOILER20\",\"pb2Entity.TYPE_SPOILER21\",\"pb2Entity.TYPE_ANTIGRAVITY\",\"pb2Entity.TYPE_SPOILER33\",\"pb2Entity.TYPE_CORVETTE\",\"pb2Entity.TYPE_FLOATING_ICE\",\"pb2Entity.TYPE_SPOILER35\",\"pb2Entity.TYPE_SEAT\"]"
             },
             "pb2Entity.MATERIAL_METAL": {
                 "type": "literal",
@@ -6702,6 +7050,161 @@
                 "type": "literal",
                 "value": "2"
             },
+            "pb2EntitySeat": {
+                "type": "object"
+            },
+            "pb2EntitySeat.toString": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntitySeat.toString.prototype": {
+                "type": "object"
+            },
+            "pb2EntitySeat._class": {
+                "type": "literal",
+                "value": "\"pb2EntitySeat\""
+            },
+            "pb2EntitySeat.STYLE_ID_SINGLE_SIDE": {
+                "type": "literal",
+                "value": "1"
+            },
+            "pb2EntitySeat.STYLE_ID_DOUBLE_SIDE": {
+                "type": "literal",
+                "value": "2"
+            },
+            "pb2EntitySeat.STYLE_ID_SINGLE_SIDE_FLAT": {
+                "type": "literal",
+                "value": "3"
+            },
+            "pb2EntitySeat.STYLE_ID_DOUBLE_SIDE_FLAT": {
+                "type": "literal",
+                "value": "4"
+            },
+            "pb2Region": {
+                "type": "object"
+            },
+            "pb2Region.toString": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2Region.toString.prototype": {
+                "type": "object"
+            },
+            "pb2Region._class": {
+                "type": "literal",
+                "value": "\"pb2Region\""
+            },
+            "pb2Region.CALLBACK_CONDITION_PER_RIGID_BODY": {
+                "type": "literal",
+                "value": "0"
+            },
+            "pb2Region.CALLBACK_CONDITION_PER_OBJECT": {
+                "type": "literal",
+                "value": "1"
+            },
+            "pb2Region.CALLBACK_CONDITION_SPECIFIC_OBJECT_ONLY": {
+                "type": "literal",
+                "value": "2"
+            },
+            "pb2Region.CALLBACK_CONDITION_SPECIFIC_TEAM_ONLY": {
+                "type": "literal",
+                "value": "3"
+            },
+            "pb2Region.CALLBACK_CONDITION_SPECIFIC_ENTITY_TYPE": {
+                "type": "literal",
+                "value": "4"
+            },
+            "pb2Region.CALLBACK_CONDITION_SPECIFIC_GUN_TYPE": {
+                "type": "literal",
+                "value": "5"
+            },
+            "pb2Region.ALL_CALLBACK_CONDITION_TYPES": {
+                "type": "literal",
+                "value": "[\"pb2Region.CALLBACK_CONDITION_PER_RIGID_BODY\",\"pb2Region.CALLBACK_CONDITION_PER_OBJECT\",\"pb2Region.CALLBACK_CONDITION_SPECIFIC_OBJECT_ONLY\",\"pb2Region.CALLBACK_CONDITION_SPECIFIC_TEAM_ONLY\",\"pb2Region.CALLBACK_CONDITION_SPECIFIC_ENTITY_TYPE\",\"pb2Region.CALLBACK_CONDITION_SPECIFIC_GUN_TYPE\"]"
+            },
+            "pb2Region.regions": {
+                "type": "literal",
+                "value": "[]"
+            },
+            "pb2GunClass": {
+                "type": "object"
+            },
+            "pb2GunClass.toString": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2GunClass.toString.prototype": {
+                "type": "object"
+            },
+            "pb2GunClass._class": {
+                "type": "literal",
+                "value": "\"pb2GunClass\""
+            },
+            "pb2GunClass.SHELL_TYPE_AUTO": {
+                "type": "literal",
+                "value": "-1"
+            },
+            "pb2GunClass.SHELL_TYPE_NONE": {
+                "type": "literal",
+                "value": "0"
+            },
+            "pb2GunClass.SHELL_TYPE_SCIFI_SINGLE": {
+                "type": "literal",
+                "value": "1"
+            },
+            "pb2GunClass.SHELL_TYPE_SCIFI_SHOTGUN_SINGLE": {
+                "type": "literal",
+                "value": "2"
+            },
+            "pb2GunClass.SHELL_TYPE_SCIFI_SHOTGUN_DOUBLE": {
+                "type": "literal",
+                "value": "3"
+            },
+            "pb2GunClass.SHELL_TYPE_REAL_SINGLE": {
+                "type": "literal",
+                "value": "4"
+            },
+            "pb2GunClass.SHELL_TYPE_REAL_SHOTGUN_SINGLE": {
+                "type": "literal",
+                "value": "5"
+            },
+            "pb2GunClass.SHELL_TYPE_BIG_CALIBER": {
+                "type": "literal",
+                "value": "6"
+            },
+            "pb2GunClass.SHELL_TYPE_REAL_SHOTGUN_DOUBLE": {
+                "type": "literal",
+                "value": "7"
+            },
+            "pb2GunClass.ALL_SHELL_TYPES": {
+                "type": "literal",
+                "value": "[\"pb2GunClass.SHELL_TYPE_AUTO\",\"pb2GunClass.SHELL_TYPE_NONE\",\"pb2GunClass.SHELL_TYPE_SCIFI_SINGLE\",\"pb2GunClass.SHELL_TYPE_SCIFI_SHOTGUN_SINGLE\",\"pb2GunClass.SHELL_TYPE_SCIFI_SHOTGUN_DOUBLE\",\"pb2GunClass.SHELL_TYPE_REAL_SINGLE\",\"pb2GunClass.SHELL_TYPE_REAL_SHOTGUN_SINGLE\",\"pb2GunClass.SHELL_TYPE_BIG_CALIBER\",\"pb2GunClass.SHELL_TYPE_REAL_SHOTGUN_DOUBLE\"]"
+            },
+            "pb2GunClass.non_spoiler_weapons": {
+                "type": "literal",
+                "value": "[\"gun_pistol\",\"gun_pistol2\",\"gun_rifle\",\"gun_rayrifle\",\"gun_real_rifle\",\"gun_arifle\",\"gun_arifle2\",\"gun_shotgun\",\"gun_raygun\",\"gun_minigun\",\"gun_real_shotgun\",\"gun_railgun\",\"gun_railgun2\",\"gun_sniper\",\"gun_rl\",\"gun_apistol\",\"gun_plasmagun\",\"gun_apistol2\",\"gun_gl\",\"gun_bng\",\"gun_defibrillator\",\"gun_vgun\",\"gun_oicw\"]"
+            },
+            "pb2GunClass.registered_weapons": {
+                "type": "literal",
+                "value": "[\"gun_rifle\",\"gun_anti_rifle\",\"gun_pistol\",\"gun_pistol2\",\"gun_rayrifle\",\"gun_arifle2\",\"gun_arifle\",\"gun_real_rifle\",\"gun_shotgun\",\"gun_raygun\",\"gun_minigun\",\"gun_real_shotgun\",\"gun_railgun\",\"gun_shadowstep_railgun\",\"gun_railgun2\",\"gun_sniper\",\"gun_rl\",\"gun_trouble\",\"gun_shaft\",\"gun_rl2\",\"gun_plasmagun\",\"gun_apistol\",\"gun_apistol2\",\"gun_gl\",\"gun_bng\",\"gun_disintegrator\",\"gun_explosiveminigun\",\"gun_firebug\",\"gun_drainlight\",\"gun_drainlight_mg\",\"gun_sniper2\",\"gun_defibrillator\",\"gun_eratrigger\",\"gun_repairgun\",\"gun_dodge\",\"gun_oicw\",\"gun_vgun\",\"gun_nailgun\",\"gun_freezer\",\"gun_pistol3\",\"gun_farheal\",\"gun_flappygun\",\"gun_flame\",\"gun_rl3\",\"gun_vehgun\",\"gun_bng2\",\"gun_chrono\",\"gun_vehcannon\",\"gun_vehcannon2\",\"gun_scout_drone\",\"gun_harasser_drone\",\"gun_cs_vehgun\",\"gun_vehminigun\",\"gun_fttp_vehgun\",\"gun_drain_sniper_rifle\"]"
+            },
+            "pb2GunClass.GetGunClassByString": {
+                "type": "function",
+                "params": "str"
+            },
+            "pb2GunClass.GetGunClassByString.prototype": {
+                "type": "object"
+            },
+            "pb2GunClass.CachedGunClasses": {
+                "type": "object"
+            },
+            "pb2GunClass.CreateCustomGunClass": {
+                "type": "function",
+                "params": "identificator,exC"
+            },
+            "pb2GunClass.CreateCustomGunClass.prototype": {
+                "type": "object"
+            },
             "pb2StyleBoost": {
                 "type": "object"
             },
@@ -6791,6 +7294,10 @@
             "pb2StyleBoost.doublejump_single_boost_duration_decay": {
                 "type": "literal",
                 "value": "0.1"
+            },
+            "pb2StyleBoost.kick_slide_boost_force_mult": {
+                "type": "literal",
+                "value": "1"
             },
             "pb2AIModule": {
                 "type": "object"
@@ -7314,6 +7821,10 @@
                 "type": "literal",
                 "value": "103"
             },
+            "pb2ClassID.SHAPE_TO_OBJECT3D_PROXY": {
+                "type": "literal",
+                "value": "104"
+            },
             "pb2Vision": {
                 "type": "object"
             },
@@ -7711,6 +8222,10 @@
                 "type": "literal",
                 "value": "1"
             },
+            "pb2ArmsAction.ACTION_TYPE_NONE": {
+                "type": "literal",
+                "value": "-1"
+            },
             "pb2ArmsAction.ACTION_TYPE_RELOAD_WEAPONS": {
                 "type": "literal",
                 "value": "0"
@@ -7861,7 +8376,7 @@
             },
             "pb2ArmsAction.ALL_TYPES": {
                 "type": "literal",
-                "value": "[\"pb2ArmsAction.ARMS_NONE\",\"pb2ArmsAction.ARMS_PRIMARY\",\"pb2ArmsAction.ARMS_SECONDARY\",\"pb2ArmsAction.ARMS_BOTH\",\"pb2ArmsAction.LEGS_NONE\",\"pb2ArmsAction.LEGS_BOTH\",\"pb2ArmsAction.ACTION_TYPE_RELOAD_WEAPONS\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_HE\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_PORT\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_SHIELD\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_TIME\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_SMOKE\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_FLASH\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_TOXIC_GAS\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_EXPLOSION_MINE\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_LASER_MINE\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_SCANNER_CAMERA\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_VIRUS\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_SNOWBALL\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_HEALER\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_GLOW\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_FIRE\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_TURRET\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_TURRET2\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_COLD_NADE\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_DRONE_TURRET\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_DRONE_TURRET2\",\"pb2ArmsAction.GRENADE_FIRST\",\"pb2ArmsAction.GRENADE_LAST\",\"pb2ArmsAction.ACTION_TYPE_DRAG_RIGIDBODY\",\"pb2ArmsAction.ACTION_TYPE_GRAPPLING_HOOK\",\"pb2ArmsAction.ACTION_TYPE_USE\",\"pb2ArmsAction.ACTION_TYPE_GESTURE_POINT_AT\",\"pb2ArmsAction.ACTION_TYPE_GESTURE_LISTEN_RADIO\",\"pb2ArmsAction.ACTION_TYPE_GESTURE_WEAPON_ON_SHOULDER\",\"pb2ArmsAction.ACTION_TYPE_GESTURE_WEAPON_DOWN\",\"pb2ArmsAction.ACTION_TYPE_GESTURE_HAPPY\",\"pb2ArmsAction.ACTION_TYPE_KICK\",\"pb2ArmsAction.ACTION_TYPE_WALLJUMP_FRONT\",\"pb2ArmsAction.ACTION_TYPE_WALLJUMP_BACK\",\"pb2ArmsAction.ACTION_TYPE_SWORDS_ACTIVATION\",\"pb2ArmsAction.GESTURE_FIRST\",\"pb2ArmsAction.GESTURE_LAST\"]"
+                "value": "[\"pb2ArmsAction.ARMS_NONE\",\"pb2ArmsAction.ARMS_PRIMARY\",\"pb2ArmsAction.ARMS_SECONDARY\",\"pb2ArmsAction.ARMS_BOTH\",\"pb2ArmsAction.LEGS_NONE\",\"pb2ArmsAction.LEGS_BOTH\",\"pb2ArmsAction.ACTION_TYPE_NONE\",\"pb2ArmsAction.ACTION_TYPE_RELOAD_WEAPONS\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_HE\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_PORT\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_SHIELD\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_TIME\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_SMOKE\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_FLASH\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_TOXIC_GAS\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_EXPLOSION_MINE\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_LASER_MINE\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_SCANNER_CAMERA\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_VIRUS\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_SNOWBALL\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_HEALER\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_GLOW\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_FIRE\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_TURRET\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_TURRET2\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_COLD_NADE\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_DRONE_TURRET\",\"pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_DRONE_TURRET2\",\"pb2ArmsAction.GRENADE_FIRST\",\"pb2ArmsAction.GRENADE_LAST\",\"pb2ArmsAction.ACTION_TYPE_DRAG_RIGIDBODY\",\"pb2ArmsAction.ACTION_TYPE_GRAPPLING_HOOK\",\"pb2ArmsAction.ACTION_TYPE_USE\",\"pb2ArmsAction.ACTION_TYPE_GESTURE_POINT_AT\",\"pb2ArmsAction.ACTION_TYPE_GESTURE_LISTEN_RADIO\",\"pb2ArmsAction.ACTION_TYPE_GESTURE_WEAPON_ON_SHOULDER\",\"pb2ArmsAction.ACTION_TYPE_GESTURE_WEAPON_DOWN\",\"pb2ArmsAction.ACTION_TYPE_GESTURE_HAPPY\",\"pb2ArmsAction.ACTION_TYPE_KICK\",\"pb2ArmsAction.ACTION_TYPE_WALLJUMP_FRONT\",\"pb2ArmsAction.ACTION_TYPE_WALLJUMP_BACK\",\"pb2ArmsAction.ACTION_TYPE_SWORDS_ACTIVATION\",\"pb2ArmsAction.GESTURE_FIRST\",\"pb2ArmsAction.GESTURE_LAST\"]"
             },
             "pb2ArmsAction.grenade_titles": {
                 "type": "literal",
@@ -7993,9 +8508,13 @@
                 "type": "literal",
                 "value": "1"
             },
+            "pb2FoliageClass.TEMPLATE_GRASS_ONLY": {
+                "type": "literal",
+                "value": "2"
+            },
             "pb2FoliageClass.ALL_TEMPLATE_TYPES": {
                 "type": "literal",
-                "value": "[\"pb2FoliageClass.TEMPLATE_NONE\",\"pb2FoliageClass.TEMPLATE_EARTH\"]"
+                "value": "[\"pb2FoliageClass.TEMPLATE_NONE\",\"pb2FoliageClass.TEMPLATE_EARTH\",\"pb2FoliageClass.TEMPLATE_GRASS_ONLY\"]"
             },
             "pb2WindowLeaderboard": {
                 "type": "object"
@@ -8158,7 +8677,7 @@
             },
             "pb2EngineDatabase.Recreate": {
                 "type": "function",
-                "params": "params"
+                "params": "params={}"
             },
             "pb2EngineDatabase.Recreate.prototype": {
                 "type": "object"
@@ -8341,6 +8860,30 @@
                 "type": "literal",
                 "value": "3"
             },
+            "pb2Timer.SKIP_MODE_UNSKIPPABLE": {
+                "type": "literal",
+                "value": "0"
+            },
+            "pb2Timer.SKIP_MODE_SPACE_KEY": {
+                "type": "literal",
+                "value": "2"
+            },
+            "pb2Timer.SKIP_MODE_FIRE_KEY": {
+                "type": "literal",
+                "value": "3"
+            },
+            "pb2Timer.SKIP_MODE_ANY_KEY": {
+                "type": "literal",
+                "value": "4"
+            },
+            "pb2Timer.SKIP_MODE_SPACE_KEY_HOLDING": {
+                "type": "literal",
+                "value": "5"
+            },
+            "pb2Timer.SKIP_MODE_STANDARD_SKIP_KEY": {
+                "type": "literal",
+                "value": "2"
+            },
             "pb2Timer.timers_active_game": {
                 "type": "literal",
                 "value": "[]"
@@ -8348,6 +8891,32 @@
             "pb2Timer.timers_active_world": {
                 "type": "literal",
                 "value": "[]"
+            },
+            "pb2Environment": {
+                "type": "object"
+            },
+            "pb2Environment.toString": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2Environment.toString.prototype": {
+                "type": "object"
+            },
+            "pb2Environment._class": {
+                "type": "literal",
+                "value": "\"pb2Environment\""
+            },
+            "pb2Environment.BACKGROUND_IMAGE_FILTER_NONE": {
+                "type": "literal",
+                "value": "0"
+            },
+            "pb2Environment.BACKGROUND_IMAGE_FILTER_COLOR_MULT": {
+                "type": "literal",
+                "value": "1"
+            },
+            "pb2Environment.BACKGROUND_IMAGE_FILTER_GRADIENT_MULT": {
+                "type": "literal",
+                "value": "2"
             },
             "pb2Team": {
                 "type": "object"
@@ -8681,9 +9250,13 @@
                 "type": "literal",
                 "value": "1"
             },
-            "pb2Decoration.LAYER_SCREEN_HUD": {
+            "pb2Decoration.LAYER_WORLD_CAMERA": {
                 "type": "literal",
                 "value": "2"
+            },
+            "pb2Decoration.LAYER_SCREEN_HUD": {
+                "type": "literal",
+                "value": "3"
             },
             "pb2Decoration.BLENDING_NORMAL": {
                 "type": "literal",
@@ -8733,25 +9306,29 @@
                 "type": "literal",
                 "value": "2"
             },
-            "pb2Decoration.RENDER_METHOD_OPAQUE": {
+            "pb2Decoration.RENDER_METHOD_TRANSPARENT_SKY": {
                 "type": "literal",
                 "value": "3"
             },
-            "pb2Decoration.RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY": {
+            "pb2Decoration.RENDER_METHOD_OPAQUE": {
                 "type": "literal",
                 "value": "4"
             },
-            "pb2Decoration.RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY_BACKGROUND": {
+            "pb2Decoration.RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY": {
                 "type": "literal",
                 "value": "5"
             },
-            "pb2Decoration.RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY_FOREGROUND": {
+            "pb2Decoration.RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY_BACKGROUND": {
                 "type": "literal",
                 "value": "6"
             },
+            "pb2Decoration.RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY_FOREGROUND": {
+                "type": "literal",
+                "value": "7"
+            },
             "pb2Decoration.ALL_RENDER_METHODS": {
                 "type": "literal",
-                "value": "[\"pb2Decoration.RENDER_METHOD_TRANSPARENT\",\"pb2Decoration.RENDER_METHOD_TRANSPARENT_BACKGROUND\",\"pb2Decoration.RENDER_METHOD_TRANSPARENT_FOREGROUND\",\"pb2Decoration.RENDER_METHOD_OPAQUE\",\"pb2Decoration.RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY\",\"pb2Decoration.RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY_BACKGROUND\",\"pb2Decoration.RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY_FOREGROUND\"]"
+                "value": "[\"pb2Decoration.RENDER_METHOD_TRANSPARENT\",\"pb2Decoration.RENDER_METHOD_TRANSPARENT_BACKGROUND\",\"pb2Decoration.RENDER_METHOD_TRANSPARENT_FOREGROUND\",\"pb2Decoration.RENDER_METHOD_TRANSPARENT_SKY\",\"pb2Decoration.RENDER_METHOD_OPAQUE\",\"pb2Decoration.RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY\",\"pb2Decoration.RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY_BACKGROUND\",\"pb2Decoration.RENDER_METHOD_OPAQUE_WITH_BINARY_TRANSPARENCY_FOREGROUND\"]"
             },
             "pb2WindowHint": {
                 "type": "object"
@@ -9067,7 +9644,7 @@
             },
             "pb2AIThreat.NewThreat": {
                 "type": "function",
-                "params": "_dHj,_dHk,rk,dHo=false"
+                "params": "_dHj,_dHk,rk=null,dHo=false"
             },
             "pb2AIThreat.NewThreat.prototype": {
                 "type": "object"
@@ -9384,45 +9961,6 @@
             "pb2GunDefinitions.GetDefinitionFor.prototype": {
                 "type": "object"
             },
-            "pb2GunClass": {
-                "type": "object"
-            },
-            "pb2GunClass.toString": {
-                "type": "function",
-                "params": ""
-            },
-            "pb2GunClass.toString.prototype": {
-                "type": "object"
-            },
-            "pb2GunClass._class": {
-                "type": "literal",
-                "value": "\"pb2GunClass\""
-            },
-            "pb2GunClass.non_spoiler_weapons": {
-                "type": "literal",
-                "value": "[\"gun_pistol\",\"gun_pistol2\",\"gun_rifle\",\"gun_rayrifle\",\"gun_real_rifle\",\"gun_arifle\",\"gun_arifle2\",\"gun_shotgun\",\"gun_raygun\",\"gun_minigun\",\"gun_real_shotgun\",\"gun_railgun\",\"gun_railgun2\",\"gun_sniper\",\"gun_rl\",\"gun_apistol\",\"gun_plasmagun\",\"gun_apistol2\",\"gun_gl\",\"gun_bng\",\"gun_defibrillator\",\"gun_vgun\",\"gun_oicw\"]"
-            },
-            "pb2GunClass.registered_weapons": {
-                "type": "literal",
-                "value": "[\"gun_rifle\",\"gun_anti_rifle\",\"gun_pistol\",\"gun_pistol2\",\"gun_rayrifle\",\"gun_arifle2\",\"gun_arifle\",\"gun_real_rifle\",\"gun_shotgun\",\"gun_raygun\",\"gun_minigun\",\"gun_real_shotgun\",\"gun_railgun\",\"gun_shadowstep_railgun\",\"gun_railgun2\",\"gun_sniper\",\"gun_rl\",\"gun_trouble\",\"gun_shaft\",\"gun_rl2\",\"gun_plasmagun\",\"gun_apistol\",\"gun_apistol2\",\"gun_gl\",\"gun_bng\",\"gun_disintegrator\",\"gun_explosiveminigun\",\"gun_firebug\",\"gun_drainlight\",\"gun_drainlight_mg\",\"gun_sniper2\",\"gun_defibrillator\",\"gun_eratrigger\",\"gun_repairgun\",\"gun_dodge\",\"gun_oicw\",\"gun_vgun\",\"gun_nailgun\",\"gun_freezer\",\"gun_pistol3\",\"gun_farheal\",\"gun_flappygun\",\"gun_flame\",\"gun_rl3\",\"gun_vehgun\",\"gun_bng2\",\"gun_chrono\",\"gun_vehcannon\",\"gun_vehcannon2\",\"gun_scout_drone\",\"gun_harasser_drone\",\"gun_cs_vehgun\",\"gun_vehminigun\",\"gun_fttp_vehgun\",\"gun_drain_sniper_rifle\"]"
-            },
-            "pb2GunClass.GetGunClassByString": {
-                "type": "function",
-                "params": "str"
-            },
-            "pb2GunClass.GetGunClassByString.prototype": {
-                "type": "object"
-            },
-            "pb2GunClass.CachedGunClasses": {
-                "type": "object"
-            },
-            "pb2GunClass.CreateCustomGunClass": {
-                "type": "function",
-                "params": "bjW,exC"
-            },
-            "pb2GunClass.CreateCustomGunClass.prototype": {
-                "type": "object"
-            },
             "pb2Fire": {
                 "type": "object"
             },
@@ -9459,23 +9997,12 @@
                 "type": "literal",
                 "value": "[]"
             },
-            "pb2Region": {
-                "type": "object"
-            },
-            "pb2Region.toString": {
+            "pb2RadioactiveCloud.CreateRadioactiveCloud": {
                 "type": "function",
-                "params": ""
+                "params": "params"
             },
-            "pb2Region.toString.prototype": {
+            "pb2RadioactiveCloud.CreateRadioactiveCloud.prototype": {
                 "type": "object"
-            },
-            "pb2Region._class": {
-                "type": "literal",
-                "value": "\"pb2Region\""
-            },
-            "pb2Region.regions": {
-                "type": "literal",
-                "value": "[]"
             },
             "pb2Light": {
                 "type": "object"
@@ -9577,6 +10104,13 @@
                 "params": "x1,y1,x2,y2,rad"
             },
             "pb2Math.inDist2D.prototype": {
+                "type": "object"
+            },
+            "pb2Math.inDist2DBoolean": {
+                "type": "function",
+                "params": "x1,y1,x2,y2,rad"
+            },
+            "pb2Math.inDist2DBoolean.prototype": {
                 "type": "object"
             },
             "pb2ParticleSystems": {
@@ -9735,7 +10269,7 @@
             },
             "pb2Window.icons16_names": {
                 "type": "literal",
-                "value": "[\"freeedit\",\"wall\",\"movable\",\"region\",\"pusher\",\"bg\",\"water\",\"compound_character\",\"entity\",\"decoration\",\"gun\",\"usable_switch\",\"lamp\",\"barrel\",\"trigger\",\"timer\",\"info\",\"song\",\"image\",\"scale\",\"surface\",\"group\",\"group_expanded\",\"group_item\",\"group_last\",\"team\",\"area\",\"point\",\"vector\",\"circle\",\"fire\",\"window\",\"set\",\"text\",\"bleeding\",\"frozen\",\"water_class\",\"execute\",\"bullet\",\"usercode\",\"comment\",\"code\",\"instance\",\"boolean\",\"camera\",\"bar\",\"nothing\",\"group_non_item\",\"ragdoll\",\"character\",\"controller\",\"ai_preset\",\"skin\",\"skin_userdata\",\"group_tool\",\"surface_old\",\"crate\",\"lamp_dynamic\",\"visible_1\",\"visible_0\",\"locked_0\",\"locked_1\",\"timer_inline\",\"module\",\"animated_point\",\"cross\",\"sound\",\"sound_preloader\",\"movable_sounds_preset\",\"ai_hint\",\"blue_question\",\"window_hint\",\"var\",\"transform_selection\",\"disabled_0\",\"disabled_1\",\"model_preloader\",\"model\"]"
+                "value": "[\"freeedit\",\"wall\",\"movable\",\"region\",\"pusher\",\"bg\",\"water\",\"compound_character\",\"entity\",\"decoration\",\"gun\",\"usable_switch\",\"lamp\",\"barrel\",\"trigger\",\"timer\",\"info\",\"song\",\"image\",\"scale\",\"surface\",\"group\",\"group_expanded\",\"group_item\",\"group_last\",\"team\",\"area\",\"point\",\"vector\",\"circle\",\"fire\",\"window\",\"set\",\"text\",\"bleeding\",\"frozen\",\"water_class\",\"execute\",\"bullet\",\"usercode\",\"comment\",\"code\",\"instance\",\"boolean\",\"camera\",\"bar\",\"nothing\",\"group_non_item\",\"ragdoll\",\"character\",\"controller\",\"ai_preset\",\"skin\",\"skin_userdata\",\"group_tool\",\"surface_old\",\"crate\",\"lamp_dynamic\",\"visible_1\",\"visible_0\",\"locked_0\",\"locked_1\",\"timer_inline\",\"module\",\"animated_point\",\"cross\",\"sound\",\"sound_preloader\",\"movable_sounds_preset\",\"ai_hint\",\"blue_question\",\"window_hint\",\"var\",\"transform_selection\",\"disabled_0\",\"disabled_1\",\"model_preloader\",\"model\",\"spawner\",\"2cubes\",\"key\",\"chest\",\"teleport\",\"device\",\"device2\",\"exit\",\"in\",\"out\",\"joint\",\"hook\",\"explosion\",\"minigame\",\"armor\",\"ammo\",\"turret\",\"radiation\",\"bubble\",\"spikes\",\"medikit\",\"box\",\"button\",\"coin\",\"tower\",\"aircraft\",\"cake\",\"h\",\"symmetry\",\"refresh\",\"shiny_blue\",\"target\",\"respawn_area\",\"pusherjion\",\"damagerea\",\"damagegion\",\"capsule_r\",\"capsule_g\",\"capsule_b\",\"crystal_r\",\"crystal_g\",\"crystal_b\",\"crystal_w\",\"virus_r\",\"virus_g\",\"virus_b\",\"drone_r\",\"drone_g\",\"drone_b\",\"beacon\",\"defender_r\",\"defender_k\",\"defender_b\",\"compound_character_player\",\"code_bg\",\"code_fg\",\"code_fg_darker\"]"
             },
             "pb2Window.icons16_names_to_id": {
                 "type": "object"
@@ -10051,6 +10585,234 @@
             "pb2Window.icons16_names_to_id.model": {
                 "type": "literal",
                 "value": "77"
+            },
+            "pb2Window.icons16_names_to_id.spawner": {
+                "type": "literal",
+                "value": "78"
+            },
+            "pb2Window.icons16_names_to_id.2cubes": {
+                "type": "literal",
+                "value": "79"
+            },
+            "pb2Window.icons16_names_to_id.key": {
+                "type": "literal",
+                "value": "80"
+            },
+            "pb2Window.icons16_names_to_id.chest": {
+                "type": "literal",
+                "value": "81"
+            },
+            "pb2Window.icons16_names_to_id.teleport": {
+                "type": "literal",
+                "value": "82"
+            },
+            "pb2Window.icons16_names_to_id.device": {
+                "type": "literal",
+                "value": "83"
+            },
+            "pb2Window.icons16_names_to_id.device2": {
+                "type": "literal",
+                "value": "84"
+            },
+            "pb2Window.icons16_names_to_id.exit": {
+                "type": "literal",
+                "value": "85"
+            },
+            "pb2Window.icons16_names_to_id.in": {
+                "type": "literal",
+                "value": "86"
+            },
+            "pb2Window.icons16_names_to_id.out": {
+                "type": "literal",
+                "value": "87"
+            },
+            "pb2Window.icons16_names_to_id.joint": {
+                "type": "literal",
+                "value": "88"
+            },
+            "pb2Window.icons16_names_to_id.hook": {
+                "type": "literal",
+                "value": "89"
+            },
+            "pb2Window.icons16_names_to_id.explosion": {
+                "type": "literal",
+                "value": "90"
+            },
+            "pb2Window.icons16_names_to_id.minigame": {
+                "type": "literal",
+                "value": "91"
+            },
+            "pb2Window.icons16_names_to_id.armor": {
+                "type": "literal",
+                "value": "92"
+            },
+            "pb2Window.icons16_names_to_id.ammo": {
+                "type": "literal",
+                "value": "93"
+            },
+            "pb2Window.icons16_names_to_id.turret": {
+                "type": "literal",
+                "value": "94"
+            },
+            "pb2Window.icons16_names_to_id.radiation": {
+                "type": "literal",
+                "value": "95"
+            },
+            "pb2Window.icons16_names_to_id.bubble": {
+                "type": "literal",
+                "value": "96"
+            },
+            "pb2Window.icons16_names_to_id.spikes": {
+                "type": "literal",
+                "value": "97"
+            },
+            "pb2Window.icons16_names_to_id.medikit": {
+                "type": "literal",
+                "value": "98"
+            },
+            "pb2Window.icons16_names_to_id.box": {
+                "type": "literal",
+                "value": "99"
+            },
+            "pb2Window.icons16_names_to_id.button": {
+                "type": "literal",
+                "value": "100"
+            },
+            "pb2Window.icons16_names_to_id.coin": {
+                "type": "literal",
+                "value": "101"
+            },
+            "pb2Window.icons16_names_to_id.tower": {
+                "type": "literal",
+                "value": "102"
+            },
+            "pb2Window.icons16_names_to_id.aircraft": {
+                "type": "literal",
+                "value": "103"
+            },
+            "pb2Window.icons16_names_to_id.cake": {
+                "type": "literal",
+                "value": "104"
+            },
+            "pb2Window.icons16_names_to_id.h": {
+                "type": "literal",
+                "value": "105"
+            },
+            "pb2Window.icons16_names_to_id.symmetry": {
+                "type": "literal",
+                "value": "106"
+            },
+            "pb2Window.icons16_names_to_id.refresh": {
+                "type": "literal",
+                "value": "107"
+            },
+            "pb2Window.icons16_names_to_id.shiny_blue": {
+                "type": "literal",
+                "value": "108"
+            },
+            "pb2Window.icons16_names_to_id.target": {
+                "type": "literal",
+                "value": "109"
+            },
+            "pb2Window.icons16_names_to_id.respawn_area": {
+                "type": "literal",
+                "value": "110"
+            },
+            "pb2Window.icons16_names_to_id.pusherjion": {
+                "type": "literal",
+                "value": "111"
+            },
+            "pb2Window.icons16_names_to_id.damagerea": {
+                "type": "literal",
+                "value": "112"
+            },
+            "pb2Window.icons16_names_to_id.damagegion": {
+                "type": "literal",
+                "value": "113"
+            },
+            "pb2Window.icons16_names_to_id.capsule_r": {
+                "type": "literal",
+                "value": "114"
+            },
+            "pb2Window.icons16_names_to_id.capsule_g": {
+                "type": "literal",
+                "value": "115"
+            },
+            "pb2Window.icons16_names_to_id.capsule_b": {
+                "type": "literal",
+                "value": "116"
+            },
+            "pb2Window.icons16_names_to_id.crystal_r": {
+                "type": "literal",
+                "value": "117"
+            },
+            "pb2Window.icons16_names_to_id.crystal_g": {
+                "type": "literal",
+                "value": "118"
+            },
+            "pb2Window.icons16_names_to_id.crystal_b": {
+                "type": "literal",
+                "value": "119"
+            },
+            "pb2Window.icons16_names_to_id.crystal_w": {
+                "type": "literal",
+                "value": "120"
+            },
+            "pb2Window.icons16_names_to_id.virus_r": {
+                "type": "literal",
+                "value": "121"
+            },
+            "pb2Window.icons16_names_to_id.virus_g": {
+                "type": "literal",
+                "value": "122"
+            },
+            "pb2Window.icons16_names_to_id.virus_b": {
+                "type": "literal",
+                "value": "123"
+            },
+            "pb2Window.icons16_names_to_id.drone_r": {
+                "type": "literal",
+                "value": "124"
+            },
+            "pb2Window.icons16_names_to_id.drone_g": {
+                "type": "literal",
+                "value": "125"
+            },
+            "pb2Window.icons16_names_to_id.drone_b": {
+                "type": "literal",
+                "value": "126"
+            },
+            "pb2Window.icons16_names_to_id.beacon": {
+                "type": "literal",
+                "value": "127"
+            },
+            "pb2Window.icons16_names_to_id.defender_r": {
+                "type": "literal",
+                "value": "128"
+            },
+            "pb2Window.icons16_names_to_id.defender_k": {
+                "type": "literal",
+                "value": "129"
+            },
+            "pb2Window.icons16_names_to_id.defender_b": {
+                "type": "literal",
+                "value": "130"
+            },
+            "pb2Window.icons16_names_to_id.compound_character_player": {
+                "type": "literal",
+                "value": "131"
+            },
+            "pb2Window.icons16_names_to_id.code_bg": {
+                "type": "literal",
+                "value": "132"
+            },
+            "pb2Window.icons16_names_to_id.code_fg": {
+                "type": "literal",
+                "value": "133"
+            },
+            "pb2Window.icons16_names_to_id.code_fg_darker": {
+                "type": "literal",
+                "value": "134"
             }
         }
     },
@@ -10187,6 +10949,8 @@
                 "hp_body": {},
                 "hp_arms": {},
                 "hp_legs": {},
+                "hp_chest": {},
+                "hp_pelvis": {},
                 "GetAtomsTotal": {
                     "prototype": {}
                 },
@@ -10232,6 +10996,12 @@
                 "voice_pitch": {},
                 "normalize_all_voice_lines_volume": {},
                 "normalize_custom_voice_lines_volume": {},
+                "SetSkin": {
+                    "prototype": {}
+                },
+                "GetSkin": {
+                    "prototype": {}
+                },
                 "GetAtom": {},
                 "GetMesh": {}
             },
@@ -10257,7 +11027,10 @@
                     "prototype": {}
                 },
                 "health_damage_multiplier": {},
-                "limb_damage_multiplier": {}
+                "limb_damage_multiplier": {},
+                "ApplyClientSideSyncForce": {
+                    "prototype": {}
+                }
             },
             "pb2ShieldZone.prototype": {
                 "_class": {},
@@ -10386,6 +11159,9 @@
                     "prototype": {}
                 },
                 "is_thrown_by": {},
+                "SupportsTwoAtATime": {
+                    "prototype": {}
+                },
                 "GetMesh": {}
             },
             "pb2GunClass.prototype": {
@@ -10475,7 +11251,22 @@
                 "ricochet_speed_decay_multiplier": {},
                 "magazine_reload_duration_multiplier": {},
                 "stat_power": {},
-                "muzzle_flash_scale_mult": {}
+                "muzzle_flash_scale_mult": {},
+                "ammo_style": {},
+                "ammo_style2": {},
+                "partial_reload_steps": {},
+                "manual_reload": {},
+                "force_reload_on_last_shot": {},
+                "manual_reload_or_cancel": {},
+                "minigun_spin_factor": {},
+                "reset_spin_factor_on_shot": {},
+                "always_grow_spin_factor_when_active": {},
+                "overheat_damage_after": {},
+                "heat_per_shot_mult": {},
+                "sound_explosion_id": {},
+                "shell_type": {},
+                "magazine_behind_gun": {},
+                "use_shotgun_offset_pattern": {}
             },
             "pb2StyleAmmo.prototype": {
                 "_class": {},
@@ -10525,7 +11316,14 @@
                     "prototype": {}
                 },
                 "position_container": {},
-                "type": {}
+                "type": {},
+                "Skip": {
+                    "prototype": {}
+                },
+                "skip_mode": {},
+                "SetSkipMode": {
+                    "prototype": {}
+                }
             },
             "pb2Entity.prototype": {
                 "_class": {},
@@ -10581,6 +11379,27 @@
                 "vision": {},
                 "max_attack_range": {},
                 "max_gun_turn_speed": {},
+                "SetAntigravityMode": {
+                    "prototype": {}
+                },
+                "MultiplyMass": {
+                    "prototype": {}
+                },
+                "GetResponsibleDriver": {
+                    "prototype": {}
+                },
+                "GetDriverSlotsTotal": {
+                    "prototype": {}
+                },
+                "GetDriverAtSlot": {
+                    "prototype": {}
+                },
+                "DriversAreEnemiesOfTheTeam": {
+                    "prototype": {}
+                },
+                "GetDriverOrOwnTeam": {
+                    "prototype": {}
+                },
                 "GetLimb": {},
                 "GetMesh": {}
             },
@@ -10624,6 +11443,9 @@
                     "prototype": {}
                 },
                 "SubstractHealth": {
+                    "prototype": {}
+                },
+                "SubtractHealth": {
                     "prototype": {}
                 },
                 "AddGrenades": {
@@ -10754,6 +11576,16 @@
                 "GetHeldBody": {
                     "prototype": {}
                 },
+                "ApplyClientSideSyncForce": {
+                    "prototype": {}
+                },
+                "GetCurrentArmsActionType": {
+                    "prototype": {}
+                },
+                "CancelCurrentArmsAction": {
+                    "prototype": {}
+                },
+                "dying": {},
                 "forceUnHandHold": {}
             },
             "pb2Controller.prototype": {
@@ -10817,7 +11649,12 @@
                 "damage_dealt_players_tot": {},
                 "damage_dealt_entities_tot": {},
                 "eliminations_players_tot": {},
-                "eliminations_entities_tot": {}
+                "eliminations_entities_tot": {},
+                "tactical_ping_allowed": {},
+                "tactical_ping_allowed_when_dead": {},
+                "AddImpulse": {
+                    "prototype": {}
+                }
             },
             "pb2Shape.prototype": {
                 "_class": {},
@@ -10899,6 +11736,12 @@
                 "is_being_removed": {},
                 "bullet_hp": {},
                 "is_thrown_by": {},
+                "addEventListener": {
+                    "prototype": {}
+                },
+                "removeEventListener": {
+                    "prototype": {}
+                },
                 "GetMesh": {}
             },
             "pb2WaterClass.prototype": {
@@ -10913,7 +11756,10 @@
             "pb2SurfaceType.prototype": {
                 "_class": {},
                 "is_soft": {},
-                "recommended_slices_per_density": {}
+                "recommended_slices_per_density": {},
+                "render_method": {},
+                "transparent": {},
+                "impact_scale": {}
             },
             "b2Body.prototype": {
                 "_class": {},
@@ -10933,6 +11779,9 @@
                     "prototype": {}
                 },
                 "AddPos": {
+                    "prototype": {}
+                },
+                "AddVel": {
                     "prototype": {}
                 },
                 "SetVel": {
@@ -11050,6 +11899,41 @@
                     "prototype": {}
                 }
             },
+            "b2Fixture.prototype": {
+                "_class": {},
+                "GetBody": {
+                    "prototype": {}
+                },
+                "IsSensor": {
+                    "prototype": {}
+                },
+                "GetNext": {
+                    "prototype": {}
+                },
+                "GetDensity": {
+                    "prototype": {}
+                },
+                "SetDensity": {
+                    "prototype": {}
+                },
+                "GetFriction": {
+                    "prototype": {}
+                },
+                "SetFriction": {
+                    "prototype": {}
+                },
+                "GetRestitution": {
+                    "prototype": {}
+                },
+                "SetRestitution": {
+                    "prototype": {}
+                }
+            },
+            "beJ.prototype": {
+                "_class": {},
+                "x": {},
+                "y": {}
+            },
             "pb2Team.prototype": {
                 "_class": {},
                 "classid": {},
@@ -11119,7 +12003,9 @@
                 "SetKeyActions": {},
                 "ClearAllKeyActionsAndStates": {},
                 "GetKeyState": {},
-                "DebugTraceAnyPressedKeys": {}
+                "DebugTraceAnyPressedKeys": {},
+                "ResetNicknameCache": {},
+                "CanReceiveVoiceChatFrom": {}
             },
             "pb2PendingJoinRequest.prototype": {
                 "_class": {},
@@ -11236,6 +12122,12 @@
                 "matrix": {},
                 "matrixWorld": {},
                 "visible": {}
+            },
+            "bRK.prototype": {
+                "_class": {},
+                "GetEvolved": {
+                    "prototype": {}
+                }
             },
             "pb2TextChannel.prototype": {
                 "_class": {},
@@ -11361,7 +12253,15 @@
                 "CopyPositionAndSizeFrom": {
                     "prototype": {}
                 },
-                "collected_entities_counter": {}
+                "GetBodiesCount": {
+                    "prototype": {}
+                },
+                "GetObjectsCount": {
+                    "prototype": {}
+                },
+                "GetAliveObjectsCount": {
+                    "prototype": {}
+                }
             },
             "pb2AIPathFindingHint.prototype": {
                 "_class": {},
@@ -11392,6 +12292,9 @@
                 "Expire": {
                     "prototype": {}
                 },
+                "remove": {
+                    "prototype": {}
+                },
                 "appearance_duration": {},
                 "main_color": {},
                 "GetOptions": {
@@ -11402,7 +12305,14 @@
                 },
                 "my_vote_id": {},
                 "votes": {},
-                "sync_to_spectators": {}
+                "sync_to_spectators": {},
+                "default_visibility": {},
+                "SetPersonalVisibilityFor": {
+                    "prototype": {}
+                },
+                "ResetPersonalVisibilityRules": {
+                    "prototype": {}
+                }
             },
             "pb2GameplayEffects.prototype": {
                 "_class": {},
@@ -11465,6 +12375,41 @@
                 },
                 "isPlaying": {},
                 "sound_name": {}
+            },
+            "pb2Model3D.prototype": {
+                "_class": {},
+                "vertices": {},
+                "normals": {},
+                "uvs": {},
+                "uvs2": {},
+                "indices": {},
+                "FlipYZ": {
+                    "prototype": {}
+                },
+                "SetEmptyVectors": {
+                    "prototype": {}
+                },
+                "CopyContent": {
+                    "prototype": {}
+                },
+                "AddPos": {
+                    "prototype": {}
+                },
+                "FlipPolygons": {
+                    "prototype": {}
+                },
+                "AddModelContents": {
+                    "prototype": {}
+                },
+                "BuildSphere": {
+                    "prototype": {}
+                },
+                "ExtractIsolatedGeometries": {
+                    "prototype": {}
+                },
+                "GetBounds": {
+                    "prototype": {}
+                }
             },
             "b2Vec2.prototype": {
                 "_class": {},
@@ -12511,7 +13456,7 @@
                     "prototype": {}
                 }
             },
-            "fU.prototype": {
+            "pb2EntitySpoiler.prototype": {
                 "_class": {},
                 "classid": {},
                 "x": {},
@@ -12565,6 +13510,27 @@
                 "vision": {},
                 "max_attack_range": {},
                 "max_gun_turn_speed": {},
+                "SetAntigravityMode": {
+                    "prototype": {}
+                },
+                "MultiplyMass": {
+                    "prototype": {}
+                },
+                "GetResponsibleDriver": {
+                    "prototype": {}
+                },
+                "GetDriverSlotsTotal": {
+                    "prototype": {}
+                },
+                "GetDriverAtSlot": {
+                    "prototype": {}
+                },
+                "DriversAreEnemiesOfTheTeam": {
+                    "prototype": {}
+                },
+                "GetDriverOrOwnTeam": {
+                    "prototype": {}
+                },
                 "GetLimb": {},
                 "GetMesh": {}
             },
@@ -12622,6 +13588,27 @@
                 "vision": {},
                 "max_attack_range": {},
                 "max_gun_turn_speed": {},
+                "SetAntigravityMode": {
+                    "prototype": {}
+                },
+                "MultiplyMass": {
+                    "prototype": {}
+                },
+                "GetResponsibleDriver": {
+                    "prototype": {}
+                },
+                "GetDriverSlotsTotal": {
+                    "prototype": {}
+                },
+                "GetDriverAtSlot": {
+                    "prototype": {}
+                },
+                "DriversAreEnemiesOfTheTeam": {
+                    "prototype": {}
+                },
+                "GetDriverOrOwnTeam": {
+                    "prototype": {}
+                },
                 "GetLimb": {},
                 "GetMesh": {}
             },
@@ -12679,6 +13666,27 @@
                 "vision": {},
                 "max_attack_range": {},
                 "max_gun_turn_speed": {},
+                "SetAntigravityMode": {
+                    "prototype": {}
+                },
+                "MultiplyMass": {
+                    "prototype": {}
+                },
+                "GetResponsibleDriver": {
+                    "prototype": {}
+                },
+                "GetDriverSlotsTotal": {
+                    "prototype": {}
+                },
+                "GetDriverAtSlot": {
+                    "prototype": {}
+                },
+                "DriversAreEnemiesOfTheTeam": {
+                    "prototype": {}
+                },
+                "GetDriverOrOwnTeam": {
+                    "prototype": {}
+                },
                 "GetLimb": {},
                 "GetMesh": {}
             },
@@ -12736,6 +13744,27 @@
                 "vision": {},
                 "max_attack_range": {},
                 "max_gun_turn_speed": {},
+                "SetAntigravityMode": {
+                    "prototype": {}
+                },
+                "MultiplyMass": {
+                    "prototype": {}
+                },
+                "GetResponsibleDriver": {
+                    "prototype": {}
+                },
+                "GetDriverSlotsTotal": {
+                    "prototype": {}
+                },
+                "GetDriverAtSlot": {
+                    "prototype": {}
+                },
+                "DriversAreEnemiesOfTheTeam": {
+                    "prototype": {}
+                },
+                "GetDriverOrOwnTeam": {
+                    "prototype": {}
+                },
                 "GetLimb": {},
                 "GetMesh": {}
             },
@@ -12793,6 +13822,27 @@
                 "vision": {},
                 "max_attack_range": {},
                 "max_gun_turn_speed": {},
+                "SetAntigravityMode": {
+                    "prototype": {}
+                },
+                "MultiplyMass": {
+                    "prototype": {}
+                },
+                "GetResponsibleDriver": {
+                    "prototype": {}
+                },
+                "GetDriverSlotsTotal": {
+                    "prototype": {}
+                },
+                "GetDriverAtSlot": {
+                    "prototype": {}
+                },
+                "DriversAreEnemiesOfTheTeam": {
+                    "prototype": {}
+                },
+                "GetDriverOrOwnTeam": {
+                    "prototype": {}
+                },
                 "GetLimb": {},
                 "GetMesh": {}
             },
@@ -12850,6 +13900,27 @@
                 "vision": {},
                 "max_attack_range": {},
                 "max_gun_turn_speed": {},
+                "SetAntigravityMode": {
+                    "prototype": {}
+                },
+                "MultiplyMass": {
+                    "prototype": {}
+                },
+                "GetResponsibleDriver": {
+                    "prototype": {}
+                },
+                "GetDriverSlotsTotal": {
+                    "prototype": {}
+                },
+                "GetDriverAtSlot": {
+                    "prototype": {}
+                },
+                "DriversAreEnemiesOfTheTeam": {
+                    "prototype": {}
+                },
+                "GetDriverOrOwnTeam": {
+                    "prototype": {}
+                },
                 "GetLimb": {},
                 "GetMesh": {}
             },
@@ -12907,6 +13978,27 @@
                 "vision": {},
                 "max_attack_range": {},
                 "max_gun_turn_speed": {},
+                "SetAntigravityMode": {
+                    "prototype": {}
+                },
+                "MultiplyMass": {
+                    "prototype": {}
+                },
+                "GetResponsibleDriver": {
+                    "prototype": {}
+                },
+                "GetDriverSlotsTotal": {
+                    "prototype": {}
+                },
+                "GetDriverAtSlot": {
+                    "prototype": {}
+                },
+                "DriversAreEnemiesOfTheTeam": {
+                    "prototype": {}
+                },
+                "GetDriverOrOwnTeam": {
+                    "prototype": {}
+                },
                 "GetLimb": {},
                 "GetMesh": {}
             },
@@ -12964,6 +14056,27 @@
                 "vision": {},
                 "max_attack_range": {},
                 "max_gun_turn_speed": {},
+                "SetAntigravityMode": {
+                    "prototype": {}
+                },
+                "MultiplyMass": {
+                    "prototype": {}
+                },
+                "GetResponsibleDriver": {
+                    "prototype": {}
+                },
+                "GetDriverSlotsTotal": {
+                    "prototype": {}
+                },
+                "GetDriverAtSlot": {
+                    "prototype": {}
+                },
+                "DriversAreEnemiesOfTheTeam": {
+                    "prototype": {}
+                },
+                "GetDriverOrOwnTeam": {
+                    "prototype": {}
+                },
                 "range": {},
                 "strength": {},
                 "mass_cap_scale": {},
@@ -13030,6 +14143,27 @@
                 "vision": {},
                 "max_attack_range": {},
                 "max_gun_turn_speed": {},
+                "SetAntigravityMode": {
+                    "prototype": {}
+                },
+                "MultiplyMass": {
+                    "prototype": {}
+                },
+                "GetResponsibleDriver": {
+                    "prototype": {}
+                },
+                "GetDriverSlotsTotal": {
+                    "prototype": {}
+                },
+                "GetDriverAtSlot": {
+                    "prototype": {}
+                },
+                "DriversAreEnemiesOfTheTeam": {
+                    "prototype": {}
+                },
+                "GetDriverOrOwnTeam": {
+                    "prototype": {}
+                },
                 "GetLimb": {},
                 "GetMesh": {}
             },
@@ -13087,6 +14221,105 @@
                 "vision": {},
                 "max_attack_range": {},
                 "max_gun_turn_speed": {},
+                "SetAntigravityMode": {
+                    "prototype": {}
+                },
+                "MultiplyMass": {
+                    "prototype": {}
+                },
+                "GetResponsibleDriver": {
+                    "prototype": {}
+                },
+                "GetDriverSlotsTotal": {
+                    "prototype": {}
+                },
+                "GetDriverAtSlot": {
+                    "prototype": {}
+                },
+                "DriversAreEnemiesOfTheTeam": {
+                    "prototype": {}
+                },
+                "GetDriverOrOwnTeam": {
+                    "prototype": {}
+                },
+                "GetLimb": {},
+                "GetMesh": {}
+            },
+            "pb2EntitySeat.prototype": {
+                "_class": {},
+                "classid": {},
+                "x": {},
+                "y": {},
+                "tox": {},
+                "toy": {},
+                "InstallGun": {
+                    "prototype": {}
+                },
+                "DropGun": {
+                    "prototype": {}
+                },
+                "remove": {
+                    "prototype": {}
+                },
+                "AddRagdoll": {
+                    "prototype": {}
+                },
+                "ExcludeRagdoll": {
+                    "prototype": {}
+                },
+                "IgnoreRagdoll": {
+                    "prototype": {}
+                },
+                "DealDamage": {
+                    "prototype": {}
+                },
+                "MultiplyHealth": {
+                    "prototype": {}
+                },
+                "alpha": {},
+                "is_being_removed": {},
+                "hea": {},
+                "hmax": {},
+                "dying_level": {},
+                "team": {},
+                "SetDriverSeatsAndRadius": {
+                    "prototype": {}
+                },
+                "SetSide": {
+                    "prototype": {}
+                },
+                "box2d_bodies": {},
+                "addEventListener": {
+                    "prototype": {}
+                },
+                "removeEventListener": {
+                    "prototype": {}
+                },
+                "overhealth_hp_allowed": {},
+                "vision": {},
+                "max_attack_range": {},
+                "max_gun_turn_speed": {},
+                "SetAntigravityMode": {
+                    "prototype": {}
+                },
+                "MultiplyMass": {
+                    "prototype": {}
+                },
+                "GetResponsibleDriver": {
+                    "prototype": {}
+                },
+                "GetDriverSlotsTotal": {
+                    "prototype": {}
+                },
+                "GetDriverAtSlot": {
+                    "prototype": {}
+                },
+                "DriversAreEnemiesOfTheTeam": {
+                    "prototype": {}
+                },
+                "GetDriverOrOwnTeam": {
+                    "prototype": {}
+                },
                 "GetLimb": {},
                 "GetMesh": {}
             }
@@ -13592,6 +14825,14 @@
                 "type": "literal",
                 "value": "undefined"
             },
+            "pb2Ragdoll.prototype.hp_chest": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2Ragdoll.prototype.hp_pelvis": {
+                "type": "literal",
+                "value": "undefined"
+            },
             "pb2Ragdoll.prototype.GetAtomsTotal": {
                 "type": "function",
                 "params": ""
@@ -13737,6 +14978,20 @@
                 "readonly": true,
                 "value": "undefined"
             },
+            "pb2Ragdoll.prototype.SetSkin": {
+                "type": "function",
+                "params": "eTU"
+            },
+            "pb2Ragdoll.prototype.SetSkin.prototype": {
+                "type": "object"
+            },
+            "pb2Ragdoll.prototype.GetSkin": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2Ragdoll.prototype.GetSkin.prototype": {
+                "type": "object"
+            },
             "pb2Ragdoll.prototype.GetAtom": {
                 "type": "function",
                 "params": "id"
@@ -13826,6 +15081,13 @@
                 "type": "literal",
                 "value": "no known value"
             },
+            "hT.prototype.ApplyClientSideSyncForce": {
+                "type": "function",
+                "params": "_x,_y,GSPEED"
+            },
+            "hT.prototype.ApplyClientSideSyncForce.prototype": {
+                "type": "object"
+            },
             "pb2ShieldZone.prototype": {
                 "type": "object"
             },
@@ -13871,7 +15133,7 @@
             },
             "pb2ShieldZone.prototype.MoveTo": {
                 "type": "function",
-                "params": "xx,yy"
+                "params": "xx,yy,eZP=true"
             },
             "pb2ShieldZone.prototype.MoveTo.prototype": {
                 "type": "object"
@@ -14262,6 +15524,13 @@
                 "readonly": true,
                 "value": "undefined"
             },
+            "pb2Gun.prototype.SupportsTwoAtATime": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2Gun.prototype.SupportsTwoAtATime.prototype": {
+                "type": "object"
+            },
             "pb2Gun.prototype.GetMesh": {
                 "type": "function",
                 "params": "id=0"
@@ -14596,6 +15865,66 @@
                 "type": "literal",
                 "value": "undefined"
             },
+            "pb2GunClass.prototype.ammo_style": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2GunClass.prototype.ammo_style2": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2GunClass.prototype.partial_reload_steps": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2GunClass.prototype.manual_reload": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2GunClass.prototype.force_reload_on_last_shot": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2GunClass.prototype.manual_reload_or_cancel": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2GunClass.prototype.minigun_spin_factor": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2GunClass.prototype.reset_spin_factor_on_shot": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2GunClass.prototype.always_grow_spin_factor_when_active": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2GunClass.prototype.overheat_damage_after": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2GunClass.prototype.heat_per_shot_mult": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2GunClass.prototype.sound_explosion_id": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2GunClass.prototype.shell_type": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2GunClass.prototype.magazine_behind_gun": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2GunClass.prototype.use_shotgun_offset_pattern": {
+                "type": "literal",
+                "value": "undefined"
+            },
             "pb2StyleAmmo.prototype": {
                 "type": "object"
             },
@@ -14774,6 +16103,25 @@
                 "readonly": true,
                 "value": "undefined"
             },
+            "pb2Timer.prototype.Skip": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2Timer.prototype.Skip.prototype": {
+                "type": "object"
+            },
+            "pb2Timer.prototype.skip_mode": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2Timer.prototype.SetSkipMode": {
+                "type": "function",
+                "params": "condition"
+            },
+            "pb2Timer.prototype.SetSkipMode.prototype": {
+                "type": "object"
+            },
             "pb2Entity.prototype": {
                 "type": "object"
             },
@@ -14843,7 +16191,7 @@
             },
             "pb2Entity.prototype.ExcludeRagdoll": {
                 "type": "function",
-                "params": "r,hv=false"
+                "params": "r,by_own_will=false"
             },
             "pb2Entity.prototype.ExcludeRagdoll.prototype": {
                 "type": "object"
@@ -14943,6 +16291,55 @@
             "pb2Entity.prototype.max_gun_turn_speed": {
                 "type": "literal",
                 "value": "undefined"
+            },
+            "pb2Entity.prototype.SetAntigravityMode": {
+                "type": "function",
+                "params": "eXS,eXD=1"
+            },
+            "pb2Entity.prototype.SetAntigravityMode.prototype": {
+                "type": "object"
+            },
+            "pb2Entity.prototype.MultiplyMass": {
+                "type": "function",
+                "params": "x"
+            },
+            "pb2Entity.prototype.MultiplyMass.prototype": {
+                "type": "object"
+            },
+            "pb2Entity.prototype.GetResponsibleDriver": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2Entity.prototype.GetResponsibleDriver.prototype": {
+                "type": "object"
+            },
+            "pb2Entity.prototype.GetDriverSlotsTotal": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2Entity.prototype.GetDriverSlotsTotal.prototype": {
+                "type": "object"
+            },
+            "pb2Entity.prototype.GetDriverAtSlot": {
+                "type": "function",
+                "params": "i"
+            },
+            "pb2Entity.prototype.GetDriverAtSlot.prototype": {
+                "type": "object"
+            },
+            "pb2Entity.prototype.DriversAreEnemiesOfTheTeam": {
+                "type": "function",
+                "params": "team"
+            },
+            "pb2Entity.prototype.DriversAreEnemiesOfTheTeam.prototype": {
+                "type": "object"
+            },
+            "pb2Entity.prototype.GetDriverOrOwnTeam": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2Entity.prototype.GetDriverOrOwnTeam.prototype": {
+                "type": "object"
             },
             "pb2Entity.prototype.GetLimb": {
                 "type": "function",
@@ -15109,9 +16506,16 @@
             },
             "pb2Character.prototype.SubstractHealth": {
                 "type": "function",
-                "params": "bN,cqQ=true,beo=false,fG=0,fE=0,gv=false,cqP=false"
+                "params": "...args"
             },
             "pb2Character.prototype.SubstractHealth.prototype": {
+                "type": "object"
+            },
+            "pb2Character.prototype.SubtractHealth": {
+                "type": "function",
+                "params": "bN,cqQ=true,beo=false,fG=0,fE=0,gv=false,cqP=false"
+            },
+            "pb2Character.prototype.SubtractHealth.prototype": {
                 "type": "object"
             },
             "pb2Character.prototype.AddGrenades": {
@@ -15431,9 +16835,34 @@
             "pb2Character.prototype.GetHeldBody.prototype": {
                 "type": "object"
             },
+            "pb2Character.prototype.ApplyClientSideSyncForce": {
+                "type": "function",
+                "params": "_x,_y,GSPEED"
+            },
+            "pb2Character.prototype.ApplyClientSideSyncForce.prototype": {
+                "type": "object"
+            },
+            "pb2Character.prototype.GetCurrentArmsActionType": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2Character.prototype.GetCurrentArmsActionType.prototype": {
+                "type": "object"
+            },
+            "pb2Character.prototype.CancelCurrentArmsAction": {
+                "type": "function",
+                "params": "force=false"
+            },
+            "pb2Character.prototype.CancelCurrentArmsAction.prototype": {
+                "type": "object"
+            },
+            "pb2Character.prototype.dying": {
+                "type": "literal",
+                "value": "undefined"
+            },
             "pb2Character.prototype.forceUnHandHold": {
                 "type": "function",
-                "params": "id"
+                "params": ""
             },
             "pb2Controller.prototype": {
                 "type": "object"
@@ -15653,6 +17082,21 @@
                 "type": "literal",
                 "readonly": true,
                 "value": "undefined"
+            },
+            "pb2Controller.prototype.tactical_ping_allowed": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2Controller.prototype.tactical_ping_allowed_when_dead": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2Controller.prototype.AddImpulse": {
+                "type": "function",
+                "params": "x,y"
+            },
+            "pb2Controller.prototype.AddImpulse.prototype": {
+                "type": "object"
             },
             "pb2Shape.prototype": {
                 "type": "object"
@@ -15982,6 +17426,20 @@
                 "readonly": true,
                 "value": "undefined"
             },
+            "pb2Bullet.prototype.addEventListener": {
+                "type": "function",
+                "params": "event_type,params"
+            },
+            "pb2Bullet.prototype.addEventListener.prototype": {
+                "type": "object"
+            },
+            "pb2Bullet.prototype.removeEventListener": {
+                "type": "function",
+                "params": "event_type,params"
+            },
+            "pb2Bullet.prototype.removeEventListener.prototype": {
+                "type": "object"
+            },
             "pb2Bullet.prototype.GetMesh": {
                 "type": "function",
                 "params": "id=0"
@@ -16051,6 +17509,20 @@
                 "type": "literal",
                 "value": "undefined"
             },
+            "pb2SurfaceType.prototype.render_method": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2SurfaceType.prototype.transparent": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2SurfaceType.prototype.impact_scale": {
+                "type": "literal",
+                "value": "undefined"
+            },
             "b2Body.prototype": {
                 "type": "object"
             },
@@ -16105,6 +17577,13 @@
                 "params": "x, y"
             },
             "b2Body.prototype.AddPos.prototype": {
+                "type": "object"
+            },
+            "b2Body.prototype.AddVel": {
+                "type": "function",
+                "params": "x, y"
+            },
+            "b2Body.prototype.AddVel.prototype": {
                 "type": "object"
             },
             "b2Body.prototype.SetVel": {
@@ -16373,6 +17852,107 @@
             "b2Body.prototype.GetUserData.prototype": {
                 "type": "object"
             },
+            "b2Fixture.prototype": {
+                "type": "object"
+            },
+            "b2Fixture.prototype.toString": {
+                "type": "function",
+                "params": ""
+            },
+            "b2Fixture.prototype.toString.prototype": {
+                "type": "object"
+            },
+            "b2Fixture.prototype._class": {
+                "type": "literal",
+                "value": "\"b2Fixture\""
+            },
+            "b2Fixture.prototype.GetBody": {
+                "type": "function",
+                "params": ""
+            },
+            "b2Fixture.prototype.GetBody.prototype": {
+                "type": "object"
+            },
+            "b2Fixture.prototype.IsSensor": {
+                "type": "function",
+                "params": ""
+            },
+            "b2Fixture.prototype.IsSensor.prototype": {
+                "type": "object"
+            },
+            "b2Fixture.prototype.GetNext": {
+                "type": "function",
+                "params": ""
+            },
+            "b2Fixture.prototype.GetNext.prototype": {
+                "type": "object"
+            },
+            "b2Fixture.prototype.GetDensity": {
+                "type": "function",
+                "params": ""
+            },
+            "b2Fixture.prototype.GetDensity.prototype": {
+                "type": "object"
+            },
+            "b2Fixture.prototype.SetDensity": {
+                "type": "function",
+                "params": "density"
+            },
+            "b2Fixture.prototype.SetDensity.prototype": {
+                "type": "object"
+            },
+            "b2Fixture.prototype.GetFriction": {
+                "type": "function",
+                "params": ""
+            },
+            "b2Fixture.prototype.GetFriction.prototype": {
+                "type": "object"
+            },
+            "b2Fixture.prototype.SetFriction": {
+                "type": "function",
+                "params": "friction"
+            },
+            "b2Fixture.prototype.SetFriction.prototype": {
+                "type": "object"
+            },
+            "b2Fixture.prototype.GetRestitution": {
+                "type": "function",
+                "params": ""
+            },
+            "b2Fixture.prototype.GetRestitution.prototype": {
+                "type": "object"
+            },
+            "b2Fixture.prototype.SetRestitution": {
+                "type": "function",
+                "params": "restitution"
+            },
+            "b2Fixture.prototype.SetRestitution.prototype": {
+                "type": "object"
+            },
+            "beJ.prototype": {
+                "type": "object"
+            },
+            "beJ.prototype.toString": {
+                "type": "function",
+                "params": ""
+            },
+            "beJ.prototype.toString.prototype": {
+                "type": "object"
+            },
+            "beJ.prototype._class": {
+                "type": "literal",
+                "value": "\"beJ\""
+            },
+            "beJ.prototype.x": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "beJ.prototype.y": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
             "pb2Team.prototype": {
                 "type": "object"
             },
@@ -16503,7 +18083,7 @@
             "pb2UsableSwitch.prototype.is_being_removed": {
                 "type": "literal",
                 "readonly": true,
-                "value": "false"
+                "value": "undefined"
             },
             "pb2PlayerConnection.prototype": {
                 "type": "object"
@@ -16676,6 +18256,16 @@
                 "value": "undefined"
             },
             "pb2PlayerConnection.prototype.DebugTraceAnyPressedKeys": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2PlayerConnection.prototype.ResetNicknameCache": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2PlayerConnection.prototype.CanReceiveVoiceChatFrom": {
                 "type": "literal",
                 "readonly": true,
                 "value": "undefined"
@@ -17095,6 +18685,27 @@
             "THREE.Object3D.prototype.visible": {
                 "type": "literal",
                 "value": "undefined"
+            },
+            "bRK.prototype": {
+                "type": "object"
+            },
+            "bRK.prototype.toString": {
+                "type": "function",
+                "params": ""
+            },
+            "bRK.prototype.toString.prototype": {
+                "type": "object"
+            },
+            "bRK.prototype._class": {
+                "type": "literal",
+                "value": "\"bRK\""
+            },
+            "bRK.prototype.GetEvolved": {
+                "type": "function",
+                "params": ""
+            },
+            "bRK.prototype.GetEvolved.prototype": {
+                "type": "object"
             },
             "pb2TextChannel.prototype": {
                 "type": "object"
@@ -17540,10 +19151,26 @@
             "pb2Region.prototype.CopyPositionAndSizeFrom.prototype": {
                 "type": "object"
             },
-            "pb2Region.prototype.collected_entities_counter": {
-                "type": "literal",
-                "readonly": true,
-                "value": "undefined"
+            "pb2Region.prototype.GetBodiesCount": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2Region.prototype.GetBodiesCount.prototype": {
+                "type": "object"
+            },
+            "pb2Region.prototype.GetObjectsCount": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2Region.prototype.GetObjectsCount.prototype": {
+                "type": "object"
+            },
+            "pb2Region.prototype.GetAliveObjectsCount": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2Region.prototype.GetAliveObjectsCount.prototype": {
+                "type": "object"
             },
             "pb2AIPathFindingHint.prototype": {
                 "type": "object"
@@ -17658,6 +19285,13 @@
             "pb2WindowHint.prototype.Expire.prototype": {
                 "type": "object"
             },
+            "pb2WindowHint.prototype.remove": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2WindowHint.prototype.remove.prototype": {
+                "type": "object"
+            },
             "pb2WindowHint.prototype.appearance_duration": {
                 "type": "literal",
                 "readonly": true,
@@ -17695,6 +19329,24 @@
             "pb2WindowHint.prototype.sync_to_spectators": {
                 "type": "literal",
                 "value": "undefined"
+            },
+            "pb2WindowHint.prototype.default_visibility": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2WindowHint.prototype.SetPersonalVisibilityFor": {
+                "type": "function",
+                "params": "TK,value"
+            },
+            "pb2WindowHint.prototype.SetPersonalVisibilityFor.prototype": {
+                "type": "object"
+            },
+            "pb2WindowHint.prototype.ResetPersonalVisibilityRules": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2WindowHint.prototype.ResetPersonalVisibilityRules.prototype": {
+                "type": "object"
             },
             "pb2GameplayEffects.prototype": {
                 "type": "object"
@@ -17937,6 +19589,108 @@
                 "type": "literal",
                 "readonly": true,
                 "value": "\"\""
+            },
+            "pb2Model3D.prototype": {
+                "type": "object"
+            },
+            "pb2Model3D.prototype.toString": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2Model3D.prototype.toString.prototype": {
+                "type": "object"
+            },
+            "pb2Model3D.prototype._class": {
+                "type": "literal",
+                "value": "\"pb2Model3D\""
+            },
+            "pb2Model3D.prototype.vertices": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2Model3D.prototype.normals": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2Model3D.prototype.uvs": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2Model3D.prototype.uvs2": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2Model3D.prototype.indices": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2Model3D.prototype.FlipYZ": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2Model3D.prototype.FlipYZ.prototype": {
+                "type": "object"
+            },
+            "pb2Model3D.prototype.SetEmptyVectors": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2Model3D.prototype.SetEmptyVectors.prototype": {
+                "type": "object"
+            },
+            "pb2Model3D.prototype.CopyContent": {
+                "type": "function",
+                "params": "source"
+            },
+            "pb2Model3D.prototype.CopyContent.prototype": {
+                "type": "object"
+            },
+            "pb2Model3D.prototype.AddPos": {
+                "type": "function",
+                "params": "x,y,z"
+            },
+            "pb2Model3D.prototype.AddPos.prototype": {
+                "type": "object"
+            },
+            "pb2Model3D.prototype.FlipPolygons": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2Model3D.prototype.FlipPolygons.prototype": {
+                "type": "object"
+            },
+            "pb2Model3D.prototype.AddModelContents": {
+                "type": "function",
+                "params": "cHy,eyg=true,eyh=true"
+            },
+            "pb2Model3D.prototype.AddModelContents.prototype": {
+                "type": "object"
+            },
+            "pb2Model3D.prototype.BuildSphere": {
+                "type": "function",
+                "params": "_radius,_ewl=64,_ewm=24,_ewn=true"
+            },
+            "pb2Model3D.prototype.BuildSphere.prototype": {
+                "type": "object"
+            },
+            "pb2Model3D.prototype.ExtractIsolatedGeometries": {
+                "type": "function",
+                "params": "params"
+            },
+            "pb2Model3D.prototype.ExtractIsolatedGeometries.prototype": {
+                "type": "object"
+            },
+            "pb2Model3D.prototype.GetBounds": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2Model3D.prototype.GetBounds.prototype": {
+                "type": "object"
             },
             "b2Vec2.prototype": {
                 "type": "object"
@@ -20443,7 +22197,7 @@
             },
             "pb2EditorObject.prototype.Recreate": {
                 "type": "function",
-                "params": "params"
+                "params": "params={}"
             },
             "pb2EditorObject.prototype.Recreate.prototype": {
                 "type": "object"
@@ -20532,181 +22286,230 @@
             "pb2EditorObject.prototype.fromXMLNode.prototype": {
                 "type": "object"
             },
-            "fU.prototype": {
+            "pb2EntitySpoiler.prototype": {
                 "type": "object"
             },
-            "fU.prototype.toString": {
+            "pb2EntitySpoiler.prototype.toString": {
                 "type": "function",
                 "params": ""
             },
-            "fU.prototype.toString.prototype": {
+            "pb2EntitySpoiler.prototype.toString.prototype": {
                 "type": "object"
             },
-            "fU.prototype._class": {
+            "pb2EntitySpoiler.prototype._class": {
                 "type": "literal",
-                "value": "\"fU\""
+                "value": "\"pb2EntitySpoiler\""
             },
-            "fU.prototype.classid": {
+            "pb2EntitySpoiler.prototype.classid": {
                 "type": "literal",
                 "readonly": true,
                 "value": "2"
             },
-            "fU.prototype.x": {
+            "pb2EntitySpoiler.prototype.x": {
                 "type": "literal",
                 "readonly": true,
                 "value": "no known value"
             },
-            "fU.prototype.y": {
+            "pb2EntitySpoiler.prototype.y": {
                 "type": "literal",
                 "readonly": true,
                 "value": "no known value"
             },
-            "fU.prototype.tox": {
+            "pb2EntitySpoiler.prototype.tox": {
                 "type": "literal",
                 "readonly": true,
                 "value": "undefined"
             },
-            "fU.prototype.toy": {
+            "pb2EntitySpoiler.prototype.toy": {
                 "type": "literal",
                 "readonly": true,
                 "value": "undefined"
             },
-            "fU.prototype.InstallGun": {
+            "pb2EntitySpoiler.prototype.InstallGun": {
                 "type": "function",
                 "params": "_tQ"
             },
-            "fU.prototype.InstallGun.prototype": {
+            "pb2EntitySpoiler.prototype.InstallGun.prototype": {
                 "type": "object"
             },
-            "fU.prototype.DropGun": {
+            "pb2EntitySpoiler.prototype.DropGun": {
                 "type": "function",
                 "params": ""
             },
-            "fU.prototype.DropGun.prototype": {
+            "pb2EntitySpoiler.prototype.DropGun.prototype": {
                 "type": "object"
             },
-            "fU.prototype.remove": {
+            "pb2EntitySpoiler.prototype.remove": {
                 "type": "function",
                 "params": ""
             },
-            "fU.prototype.remove.prototype": {
+            "pb2EntitySpoiler.prototype.remove.prototype": {
                 "type": "object"
             },
-            "fU.prototype.AddRagdoll": {
+            "pb2EntitySpoiler.prototype.AddRagdoll": {
                 "type": "function",
                 "params": "r,eQf=-1"
             },
-            "fU.prototype.AddRagdoll.prototype": {
+            "pb2EntitySpoiler.prototype.AddRagdoll.prototype": {
                 "type": "object"
             },
-            "fU.prototype.ExcludeRagdoll": {
+            "pb2EntitySpoiler.prototype.ExcludeRagdoll": {
                 "type": "function",
-                "params": "r,hv=false"
+                "params": "r,by_own_will=false"
             },
-            "fU.prototype.ExcludeRagdoll.prototype": {
+            "pb2EntitySpoiler.prototype.ExcludeRagdoll.prototype": {
                 "type": "object"
             },
-            "fU.prototype.IgnoreRagdoll": {
+            "pb2EntitySpoiler.prototype.IgnoreRagdoll": {
                 "type": "function",
                 "params": "r,time=-100,eQa=false,eQh=null"
             },
-            "fU.prototype.IgnoreRagdoll.prototype": {
+            "pb2EntitySpoiler.prototype.IgnoreRagdoll.prototype": {
                 "type": "object"
             },
-            "fU.prototype.DealDamage": {
+            "pb2EntitySpoiler.prototype.DealDamage": {
                 "type": "function",
                 "params": "bN,xx,yy,\n_boD,_ben,limb_id,\nlimb_damage_multiplier=1,eTB=true,\nfG=0,fE=0,\neSP=null,\nbqj=false"
             },
-            "fU.prototype.DealDamage.prototype": {
+            "pb2EntitySpoiler.prototype.DealDamage.prototype": {
                 "type": "object"
             },
-            "fU.prototype.MultiplyHealth": {
+            "pb2EntitySpoiler.prototype.MultiplyHealth": {
                 "type": "function",
                 "params": "m"
             },
-            "fU.prototype.MultiplyHealth.prototype": {
+            "pb2EntitySpoiler.prototype.MultiplyHealth.prototype": {
                 "type": "object"
             },
-            "fU.prototype.alpha": {
+            "pb2EntitySpoiler.prototype.alpha": {
                 "type": "literal",
                 "value": "undefined"
             },
-            "fU.prototype.is_being_removed": {
+            "pb2EntitySpoiler.prototype.is_being_removed": {
                 "type": "literal",
                 "readonly": true,
                 "value": "undefined"
             },
-            "fU.prototype.hea": {
+            "pb2EntitySpoiler.prototype.hea": {
                 "type": "literal",
                 "value": "undefined"
             },
-            "fU.prototype.hmax": {
+            "pb2EntitySpoiler.prototype.hmax": {
                 "type": "literal",
                 "value": "undefined"
             },
-            "fU.prototype.dying_level": {
+            "pb2EntitySpoiler.prototype.dying_level": {
                 "type": "literal",
                 "value": "undefined"
             },
-            "fU.prototype.team": {
+            "pb2EntitySpoiler.prototype.team": {
                 "type": "literal",
                 "value": "undefined"
             },
-            "fU.prototype.SetDriverSeatsAndRadius": {
+            "pb2EntitySpoiler.prototype.SetDriverSeatsAndRadius": {
                 "type": "function",
                 "params": "x,dist=-123"
             },
-            "fU.prototype.SetDriverSeatsAndRadius.prototype": {
+            "pb2EntitySpoiler.prototype.SetDriverSeatsAndRadius.prototype": {
                 "type": "object"
             },
-            "fU.prototype.SetSide": {
+            "pb2EntitySpoiler.prototype.SetSide": {
                 "type": "function",
                 "params": "x,eQr=false"
             },
-            "fU.prototype.SetSide.prototype": {
+            "pb2EntitySpoiler.prototype.SetSide.prototype": {
                 "type": "object"
             },
-            "fU.prototype.box2d_bodies": {
+            "pb2EntitySpoiler.prototype.box2d_bodies": {
                 "type": "literal",
                 "readonly": true,
                 "value": "undefined"
             },
-            "fU.prototype.addEventListener": {
+            "pb2EntitySpoiler.prototype.addEventListener": {
                 "type": "function",
                 "params": "event_type,params"
             },
-            "fU.prototype.addEventListener.prototype": {
+            "pb2EntitySpoiler.prototype.addEventListener.prototype": {
                 "type": "object"
             },
-            "fU.prototype.removeEventListener": {
+            "pb2EntitySpoiler.prototype.removeEventListener": {
                 "type": "function",
                 "params": "event_type,params"
             },
-            "fU.prototype.removeEventListener.prototype": {
+            "pb2EntitySpoiler.prototype.removeEventListener.prototype": {
                 "type": "object"
             },
-            "fU.prototype.overhealth_hp_allowed": {
+            "pb2EntitySpoiler.prototype.overhealth_hp_allowed": {
                 "type": "literal",
                 "value": "undefined"
             },
-            "fU.prototype.vision": {
+            "pb2EntitySpoiler.prototype.vision": {
                 "type": "literal",
                 "readonly": true,
                 "value": "undefined"
             },
-            "fU.prototype.max_attack_range": {
+            "pb2EntitySpoiler.prototype.max_attack_range": {
                 "type": "literal",
                 "value": "undefined"
             },
-            "fU.prototype.max_gun_turn_speed": {
+            "pb2EntitySpoiler.prototype.max_gun_turn_speed": {
                 "type": "literal",
                 "value": "undefined"
             },
-            "fU.prototype.GetLimb": {
+            "pb2EntitySpoiler.prototype.SetAntigravityMode": {
+                "type": "function",
+                "params": "eXS,eXD=1"
+            },
+            "pb2EntitySpoiler.prototype.SetAntigravityMode.prototype": {
+                "type": "object"
+            },
+            "pb2EntitySpoiler.prototype.MultiplyMass": {
+                "type": "function",
+                "params": "x"
+            },
+            "pb2EntitySpoiler.prototype.MultiplyMass.prototype": {
+                "type": "object"
+            },
+            "pb2EntitySpoiler.prototype.GetResponsibleDriver": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntitySpoiler.prototype.GetResponsibleDriver.prototype": {
+                "type": "object"
+            },
+            "pb2EntitySpoiler.prototype.GetDriverSlotsTotal": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntitySpoiler.prototype.GetDriverSlotsTotal.prototype": {
+                "type": "object"
+            },
+            "pb2EntitySpoiler.prototype.GetDriverAtSlot": {
+                "type": "function",
+                "params": "i"
+            },
+            "pb2EntitySpoiler.prototype.GetDriverAtSlot.prototype": {
+                "type": "object"
+            },
+            "pb2EntitySpoiler.prototype.DriversAreEnemiesOfTheTeam": {
+                "type": "function",
+                "params": "team"
+            },
+            "pb2EntitySpoiler.prototype.DriversAreEnemiesOfTheTeam.prototype": {
+                "type": "object"
+            },
+            "pb2EntitySpoiler.prototype.GetDriverOrOwnTeam": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntitySpoiler.prototype.GetDriverOrOwnTeam.prototype": {
+                "type": "object"
+            },
+            "pb2EntitySpoiler.prototype.GetLimb": {
                 "type": "function",
                 "params": "id"
             },
-            "fU.prototype.GetMesh": {
+            "pb2EntitySpoiler.prototype.GetMesh": {
                 "type": "function",
                 "params": "id=0"
             },
@@ -20779,7 +22582,7 @@
             },
             "pb2EntityBarrel.prototype.ExcludeRagdoll": {
                 "type": "function",
-                "params": "r,hv=false"
+                "params": "r,by_own_will=false"
             },
             "pb2EntityBarrel.prototype.ExcludeRagdoll.prototype": {
                 "type": "object"
@@ -20880,6 +22683,55 @@
                 "type": "literal",
                 "value": "undefined"
             },
+            "pb2EntityBarrel.prototype.SetAntigravityMode": {
+                "type": "function",
+                "params": "eXS,eXD=1"
+            },
+            "pb2EntityBarrel.prototype.SetAntigravityMode.prototype": {
+                "type": "object"
+            },
+            "pb2EntityBarrel.prototype.MultiplyMass": {
+                "type": "function",
+                "params": "x"
+            },
+            "pb2EntityBarrel.prototype.MultiplyMass.prototype": {
+                "type": "object"
+            },
+            "pb2EntityBarrel.prototype.GetResponsibleDriver": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntityBarrel.prototype.GetResponsibleDriver.prototype": {
+                "type": "object"
+            },
+            "pb2EntityBarrel.prototype.GetDriverSlotsTotal": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntityBarrel.prototype.GetDriverSlotsTotal.prototype": {
+                "type": "object"
+            },
+            "pb2EntityBarrel.prototype.GetDriverAtSlot": {
+                "type": "function",
+                "params": "i"
+            },
+            "pb2EntityBarrel.prototype.GetDriverAtSlot.prototype": {
+                "type": "object"
+            },
+            "pb2EntityBarrel.prototype.DriversAreEnemiesOfTheTeam": {
+                "type": "function",
+                "params": "team"
+            },
+            "pb2EntityBarrel.prototype.DriversAreEnemiesOfTheTeam.prototype": {
+                "type": "object"
+            },
+            "pb2EntityBarrel.prototype.GetDriverOrOwnTeam": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntityBarrel.prototype.GetDriverOrOwnTeam.prototype": {
+                "type": "object"
+            },
             "pb2EntityBarrel.prototype.GetLimb": {
                 "type": "function",
                 "params": "id"
@@ -20957,7 +22809,7 @@
             },
             "LZ.prototype.ExcludeRagdoll": {
                 "type": "function",
-                "params": "r,hv=false"
+                "params": "r,by_own_will=false"
             },
             "LZ.prototype.ExcludeRagdoll.prototype": {
                 "type": "object"
@@ -21058,6 +22910,55 @@
                 "type": "literal",
                 "value": "undefined"
             },
+            "LZ.prototype.SetAntigravityMode": {
+                "type": "function",
+                "params": "eXS,eXD=1"
+            },
+            "LZ.prototype.SetAntigravityMode.prototype": {
+                "type": "object"
+            },
+            "LZ.prototype.MultiplyMass": {
+                "type": "function",
+                "params": "x"
+            },
+            "LZ.prototype.MultiplyMass.prototype": {
+                "type": "object"
+            },
+            "LZ.prototype.GetResponsibleDriver": {
+                "type": "function",
+                "params": ""
+            },
+            "LZ.prototype.GetResponsibleDriver.prototype": {
+                "type": "object"
+            },
+            "LZ.prototype.GetDriverSlotsTotal": {
+                "type": "function",
+                "params": ""
+            },
+            "LZ.prototype.GetDriverSlotsTotal.prototype": {
+                "type": "object"
+            },
+            "LZ.prototype.GetDriverAtSlot": {
+                "type": "function",
+                "params": "i"
+            },
+            "LZ.prototype.GetDriverAtSlot.prototype": {
+                "type": "object"
+            },
+            "LZ.prototype.DriversAreEnemiesOfTheTeam": {
+                "type": "function",
+                "params": "team"
+            },
+            "LZ.prototype.DriversAreEnemiesOfTheTeam.prototype": {
+                "type": "object"
+            },
+            "LZ.prototype.GetDriverOrOwnTeam": {
+                "type": "function",
+                "params": ""
+            },
+            "LZ.prototype.GetDriverOrOwnTeam.prototype": {
+                "type": "object"
+            },
             "LZ.prototype.GetLimb": {
                 "type": "function",
                 "params": "id"
@@ -21135,7 +23036,7 @@
             },
             "pb2EntityCrate.prototype.ExcludeRagdoll": {
                 "type": "function",
-                "params": "r,hv=false"
+                "params": "r,by_own_will=false"
             },
             "pb2EntityCrate.prototype.ExcludeRagdoll.prototype": {
                 "type": "object"
@@ -21236,6 +23137,55 @@
                 "type": "literal",
                 "value": "undefined"
             },
+            "pb2EntityCrate.prototype.SetAntigravityMode": {
+                "type": "function",
+                "params": "eXS,eXD=1"
+            },
+            "pb2EntityCrate.prototype.SetAntigravityMode.prototype": {
+                "type": "object"
+            },
+            "pb2EntityCrate.prototype.MultiplyMass": {
+                "type": "function",
+                "params": "x"
+            },
+            "pb2EntityCrate.prototype.MultiplyMass.prototype": {
+                "type": "object"
+            },
+            "pb2EntityCrate.prototype.GetResponsibleDriver": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntityCrate.prototype.GetResponsibleDriver.prototype": {
+                "type": "object"
+            },
+            "pb2EntityCrate.prototype.GetDriverSlotsTotal": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntityCrate.prototype.GetDriverSlotsTotal.prototype": {
+                "type": "object"
+            },
+            "pb2EntityCrate.prototype.GetDriverAtSlot": {
+                "type": "function",
+                "params": "i"
+            },
+            "pb2EntityCrate.prototype.GetDriverAtSlot.prototype": {
+                "type": "object"
+            },
+            "pb2EntityCrate.prototype.DriversAreEnemiesOfTheTeam": {
+                "type": "function",
+                "params": "team"
+            },
+            "pb2EntityCrate.prototype.DriversAreEnemiesOfTheTeam.prototype": {
+                "type": "object"
+            },
+            "pb2EntityCrate.prototype.GetDriverOrOwnTeam": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntityCrate.prototype.GetDriverOrOwnTeam.prototype": {
+                "type": "object"
+            },
             "pb2EntityCrate.prototype.GetLimb": {
                 "type": "function",
                 "params": "id"
@@ -21313,7 +23263,7 @@
             },
             "pb2EntityTurret.prototype.ExcludeRagdoll": {
                 "type": "function",
-                "params": "r,hv=false"
+                "params": "r,by_own_will=false"
             },
             "pb2EntityTurret.prototype.ExcludeRagdoll.prototype": {
                 "type": "object"
@@ -21414,6 +23364,55 @@
                 "type": "literal",
                 "value": "undefined"
             },
+            "pb2EntityTurret.prototype.SetAntigravityMode": {
+                "type": "function",
+                "params": "eXS,eXD=1"
+            },
+            "pb2EntityTurret.prototype.SetAntigravityMode.prototype": {
+                "type": "object"
+            },
+            "pb2EntityTurret.prototype.MultiplyMass": {
+                "type": "function",
+                "params": "x"
+            },
+            "pb2EntityTurret.prototype.MultiplyMass.prototype": {
+                "type": "object"
+            },
+            "pb2EntityTurret.prototype.GetResponsibleDriver": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntityTurret.prototype.GetResponsibleDriver.prototype": {
+                "type": "object"
+            },
+            "pb2EntityTurret.prototype.GetDriverSlotsTotal": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntityTurret.prototype.GetDriverSlotsTotal.prototype": {
+                "type": "object"
+            },
+            "pb2EntityTurret.prototype.GetDriverAtSlot": {
+                "type": "function",
+                "params": "i"
+            },
+            "pb2EntityTurret.prototype.GetDriverAtSlot.prototype": {
+                "type": "object"
+            },
+            "pb2EntityTurret.prototype.DriversAreEnemiesOfTheTeam": {
+                "type": "function",
+                "params": "team"
+            },
+            "pb2EntityTurret.prototype.DriversAreEnemiesOfTheTeam.prototype": {
+                "type": "object"
+            },
+            "pb2EntityTurret.prototype.GetDriverOrOwnTeam": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntityTurret.prototype.GetDriverOrOwnTeam.prototype": {
+                "type": "object"
+            },
             "pb2EntityTurret.prototype.GetLimb": {
                 "type": "function",
                 "params": "id"
@@ -21491,7 +23490,7 @@
             },
             "pb2EntityMoto.prototype.ExcludeRagdoll": {
                 "type": "function",
-                "params": "r,hv=false"
+                "params": "r,by_own_will=false"
             },
             "pb2EntityMoto.prototype.ExcludeRagdoll.prototype": {
                 "type": "object"
@@ -21592,6 +23591,55 @@
                 "type": "literal",
                 "value": "undefined"
             },
+            "pb2EntityMoto.prototype.SetAntigravityMode": {
+                "type": "function",
+                "params": "eXS,eXD=1"
+            },
+            "pb2EntityMoto.prototype.SetAntigravityMode.prototype": {
+                "type": "object"
+            },
+            "pb2EntityMoto.prototype.MultiplyMass": {
+                "type": "function",
+                "params": "x"
+            },
+            "pb2EntityMoto.prototype.MultiplyMass.prototype": {
+                "type": "object"
+            },
+            "pb2EntityMoto.prototype.GetResponsibleDriver": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntityMoto.prototype.GetResponsibleDriver.prototype": {
+                "type": "object"
+            },
+            "pb2EntityMoto.prototype.GetDriverSlotsTotal": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntityMoto.prototype.GetDriverSlotsTotal.prototype": {
+                "type": "object"
+            },
+            "pb2EntityMoto.prototype.GetDriverAtSlot": {
+                "type": "function",
+                "params": "i"
+            },
+            "pb2EntityMoto.prototype.GetDriverAtSlot.prototype": {
+                "type": "object"
+            },
+            "pb2EntityMoto.prototype.DriversAreEnemiesOfTheTeam": {
+                "type": "function",
+                "params": "team"
+            },
+            "pb2EntityMoto.prototype.DriversAreEnemiesOfTheTeam.prototype": {
+                "type": "object"
+            },
+            "pb2EntityMoto.prototype.GetDriverOrOwnTeam": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntityMoto.prototype.GetDriverOrOwnTeam.prototype": {
+                "type": "object"
+            },
             "pb2EntityMoto.prototype.GetLimb": {
                 "type": "function",
                 "params": "id"
@@ -21669,7 +23717,7 @@
             },
             "pb2EntityWalker.prototype.ExcludeRagdoll": {
                 "type": "function",
-                "params": "r,hv=false"
+                "params": "r,by_own_will=false"
             },
             "pb2EntityWalker.prototype.ExcludeRagdoll.prototype": {
                 "type": "object"
@@ -21770,6 +23818,55 @@
                 "type": "literal",
                 "value": "undefined"
             },
+            "pb2EntityWalker.prototype.SetAntigravityMode": {
+                "type": "function",
+                "params": "eXS,eXD=1"
+            },
+            "pb2EntityWalker.prototype.SetAntigravityMode.prototype": {
+                "type": "object"
+            },
+            "pb2EntityWalker.prototype.MultiplyMass": {
+                "type": "function",
+                "params": "x"
+            },
+            "pb2EntityWalker.prototype.MultiplyMass.prototype": {
+                "type": "object"
+            },
+            "pb2EntityWalker.prototype.GetResponsibleDriver": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntityWalker.prototype.GetResponsibleDriver.prototype": {
+                "type": "object"
+            },
+            "pb2EntityWalker.prototype.GetDriverSlotsTotal": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntityWalker.prototype.GetDriverSlotsTotal.prototype": {
+                "type": "object"
+            },
+            "pb2EntityWalker.prototype.GetDriverAtSlot": {
+                "type": "function",
+                "params": "i"
+            },
+            "pb2EntityWalker.prototype.GetDriverAtSlot.prototype": {
+                "type": "object"
+            },
+            "pb2EntityWalker.prototype.DriversAreEnemiesOfTheTeam": {
+                "type": "function",
+                "params": "team"
+            },
+            "pb2EntityWalker.prototype.DriversAreEnemiesOfTheTeam.prototype": {
+                "type": "object"
+            },
+            "pb2EntityWalker.prototype.GetDriverOrOwnTeam": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntityWalker.prototype.GetDriverOrOwnTeam.prototype": {
+                "type": "object"
+            },
             "pb2EntityWalker.prototype.GetLimb": {
                 "type": "function",
                 "params": "id"
@@ -21847,7 +23944,7 @@
             },
             "pb2EntityAntigravity.prototype.ExcludeRagdoll": {
                 "type": "function",
-                "params": "r,hv=false"
+                "params": "r,by_own_will=false"
             },
             "pb2EntityAntigravity.prototype.ExcludeRagdoll.prototype": {
                 "type": "object"
@@ -21947,6 +24044,55 @@
             "pb2EntityAntigravity.prototype.max_gun_turn_speed": {
                 "type": "literal",
                 "value": "undefined"
+            },
+            "pb2EntityAntigravity.prototype.SetAntigravityMode": {
+                "type": "function",
+                "params": "eXS,eXD=1"
+            },
+            "pb2EntityAntigravity.prototype.SetAntigravityMode.prototype": {
+                "type": "object"
+            },
+            "pb2EntityAntigravity.prototype.MultiplyMass": {
+                "type": "function",
+                "params": "x"
+            },
+            "pb2EntityAntigravity.prototype.MultiplyMass.prototype": {
+                "type": "object"
+            },
+            "pb2EntityAntigravity.prototype.GetResponsibleDriver": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntityAntigravity.prototype.GetResponsibleDriver.prototype": {
+                "type": "object"
+            },
+            "pb2EntityAntigravity.prototype.GetDriverSlotsTotal": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntityAntigravity.prototype.GetDriverSlotsTotal.prototype": {
+                "type": "object"
+            },
+            "pb2EntityAntigravity.prototype.GetDriverAtSlot": {
+                "type": "function",
+                "params": "i"
+            },
+            "pb2EntityAntigravity.prototype.GetDriverAtSlot.prototype": {
+                "type": "object"
+            },
+            "pb2EntityAntigravity.prototype.DriversAreEnemiesOfTheTeam": {
+                "type": "function",
+                "params": "team"
+            },
+            "pb2EntityAntigravity.prototype.DriversAreEnemiesOfTheTeam.prototype": {
+                "type": "object"
+            },
+            "pb2EntityAntigravity.prototype.GetDriverOrOwnTeam": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntityAntigravity.prototype.GetDriverOrOwnTeam.prototype": {
+                "type": "object"
             },
             "pb2EntityAntigravity.prototype.range": {
                 "type": "literal",
@@ -22061,7 +24207,7 @@
             },
             "pb2EntityCorvette.prototype.ExcludeRagdoll": {
                 "type": "function",
-                "params": "r,hv=false"
+                "params": "r,by_own_will=false"
             },
             "pb2EntityCorvette.prototype.ExcludeRagdoll.prototype": {
                 "type": "object"
@@ -22162,6 +24308,55 @@
                 "type": "literal",
                 "value": "undefined"
             },
+            "pb2EntityCorvette.prototype.SetAntigravityMode": {
+                "type": "function",
+                "params": "eXS,eXD=1"
+            },
+            "pb2EntityCorvette.prototype.SetAntigravityMode.prototype": {
+                "type": "object"
+            },
+            "pb2EntityCorvette.prototype.MultiplyMass": {
+                "type": "function",
+                "params": "x"
+            },
+            "pb2EntityCorvette.prototype.MultiplyMass.prototype": {
+                "type": "object"
+            },
+            "pb2EntityCorvette.prototype.GetResponsibleDriver": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntityCorvette.prototype.GetResponsibleDriver.prototype": {
+                "type": "object"
+            },
+            "pb2EntityCorvette.prototype.GetDriverSlotsTotal": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntityCorvette.prototype.GetDriverSlotsTotal.prototype": {
+                "type": "object"
+            },
+            "pb2EntityCorvette.prototype.GetDriverAtSlot": {
+                "type": "function",
+                "params": "i"
+            },
+            "pb2EntityCorvette.prototype.GetDriverAtSlot.prototype": {
+                "type": "object"
+            },
+            "pb2EntityCorvette.prototype.DriversAreEnemiesOfTheTeam": {
+                "type": "function",
+                "params": "team"
+            },
+            "pb2EntityCorvette.prototype.DriversAreEnemiesOfTheTeam.prototype": {
+                "type": "object"
+            },
+            "pb2EntityCorvette.prototype.GetDriverOrOwnTeam": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntityCorvette.prototype.GetDriverOrOwnTeam.prototype": {
+                "type": "object"
+            },
             "pb2EntityCorvette.prototype.GetLimb": {
                 "type": "function",
                 "params": "id"
@@ -22239,7 +24434,7 @@
             },
             "pb2EntityFloatingIce.prototype.ExcludeRagdoll": {
                 "type": "function",
-                "params": "r,hv=false"
+                "params": "r,by_own_will=false"
             },
             "pb2EntityFloatingIce.prototype.ExcludeRagdoll.prototype": {
                 "type": "object"
@@ -22340,11 +24535,287 @@
                 "type": "literal",
                 "value": "undefined"
             },
+            "pb2EntityFloatingIce.prototype.SetAntigravityMode": {
+                "type": "function",
+                "params": "eXS,eXD=1"
+            },
+            "pb2EntityFloatingIce.prototype.SetAntigravityMode.prototype": {
+                "type": "object"
+            },
+            "pb2EntityFloatingIce.prototype.MultiplyMass": {
+                "type": "function",
+                "params": "x"
+            },
+            "pb2EntityFloatingIce.prototype.MultiplyMass.prototype": {
+                "type": "object"
+            },
+            "pb2EntityFloatingIce.prototype.GetResponsibleDriver": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntityFloatingIce.prototype.GetResponsibleDriver.prototype": {
+                "type": "object"
+            },
+            "pb2EntityFloatingIce.prototype.GetDriverSlotsTotal": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntityFloatingIce.prototype.GetDriverSlotsTotal.prototype": {
+                "type": "object"
+            },
+            "pb2EntityFloatingIce.prototype.GetDriverAtSlot": {
+                "type": "function",
+                "params": "i"
+            },
+            "pb2EntityFloatingIce.prototype.GetDriverAtSlot.prototype": {
+                "type": "object"
+            },
+            "pb2EntityFloatingIce.prototype.DriversAreEnemiesOfTheTeam": {
+                "type": "function",
+                "params": "team"
+            },
+            "pb2EntityFloatingIce.prototype.DriversAreEnemiesOfTheTeam.prototype": {
+                "type": "object"
+            },
+            "pb2EntityFloatingIce.prototype.GetDriverOrOwnTeam": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntityFloatingIce.prototype.GetDriverOrOwnTeam.prototype": {
+                "type": "object"
+            },
             "pb2EntityFloatingIce.prototype.GetLimb": {
                 "type": "function",
                 "params": "id"
             },
             "pb2EntityFloatingIce.prototype.GetMesh": {
+                "type": "function",
+                "params": "id=0"
+            },
+            "pb2EntitySeat.prototype": {
+                "type": "object"
+            },
+            "pb2EntitySeat.prototype.toString": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntitySeat.prototype.toString.prototype": {
+                "type": "object"
+            },
+            "pb2EntitySeat.prototype._class": {
+                "type": "literal",
+                "value": "\"pb2EntitySeat\""
+            },
+            "pb2EntitySeat.prototype.classid": {
+                "type": "literal",
+                "readonly": true,
+                "value": "2"
+            },
+            "pb2EntitySeat.prototype.x": {
+                "type": "literal",
+                "readonly": true,
+                "value": "no known value"
+            },
+            "pb2EntitySeat.prototype.y": {
+                "type": "literal",
+                "readonly": true,
+                "value": "no known value"
+            },
+            "pb2EntitySeat.prototype.tox": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2EntitySeat.prototype.toy": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2EntitySeat.prototype.InstallGun": {
+                "type": "function",
+                "params": "_tQ"
+            },
+            "pb2EntitySeat.prototype.InstallGun.prototype": {
+                "type": "object"
+            },
+            "pb2EntitySeat.prototype.DropGun": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntitySeat.prototype.DropGun.prototype": {
+                "type": "object"
+            },
+            "pb2EntitySeat.prototype.remove": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntitySeat.prototype.remove.prototype": {
+                "type": "object"
+            },
+            "pb2EntitySeat.prototype.AddRagdoll": {
+                "type": "function",
+                "params": "r,eQf=-1"
+            },
+            "pb2EntitySeat.prototype.AddRagdoll.prototype": {
+                "type": "object"
+            },
+            "pb2EntitySeat.prototype.ExcludeRagdoll": {
+                "type": "function",
+                "params": "r,by_own_will=false"
+            },
+            "pb2EntitySeat.prototype.ExcludeRagdoll.prototype": {
+                "type": "object"
+            },
+            "pb2EntitySeat.prototype.IgnoreRagdoll": {
+                "type": "function",
+                "params": "r,time=-100,eQa=false,eQh=null"
+            },
+            "pb2EntitySeat.prototype.IgnoreRagdoll.prototype": {
+                "type": "object"
+            },
+            "pb2EntitySeat.prototype.DealDamage": {
+                "type": "function",
+                "params": "bN,xx,yy,\n_boD,_ben,limb_id,\nlimb_damage_multiplier=1,eTB=true,\nfG=0,fE=0,\neSP=null,\nbqj=false"
+            },
+            "pb2EntitySeat.prototype.DealDamage.prototype": {
+                "type": "object"
+            },
+            "pb2EntitySeat.prototype.MultiplyHealth": {
+                "type": "function",
+                "params": "m"
+            },
+            "pb2EntitySeat.prototype.MultiplyHealth.prototype": {
+                "type": "object"
+            },
+            "pb2EntitySeat.prototype.alpha": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2EntitySeat.prototype.is_being_removed": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2EntitySeat.prototype.hea": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2EntitySeat.prototype.hmax": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2EntitySeat.prototype.dying_level": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2EntitySeat.prototype.team": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2EntitySeat.prototype.SetDriverSeatsAndRadius": {
+                "type": "function",
+                "params": "x,dist=-123"
+            },
+            "pb2EntitySeat.prototype.SetDriverSeatsAndRadius.prototype": {
+                "type": "object"
+            },
+            "pb2EntitySeat.prototype.SetSide": {
+                "type": "function",
+                "params": "x,eQr=false"
+            },
+            "pb2EntitySeat.prototype.SetSide.prototype": {
+                "type": "object"
+            },
+            "pb2EntitySeat.prototype.box2d_bodies": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2EntitySeat.prototype.addEventListener": {
+                "type": "function",
+                "params": "event_type,params"
+            },
+            "pb2EntitySeat.prototype.addEventListener.prototype": {
+                "type": "object"
+            },
+            "pb2EntitySeat.prototype.removeEventListener": {
+                "type": "function",
+                "params": "event_type,params"
+            },
+            "pb2EntitySeat.prototype.removeEventListener.prototype": {
+                "type": "object"
+            },
+            "pb2EntitySeat.prototype.overhealth_hp_allowed": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2EntitySeat.prototype.vision": {
+                "type": "literal",
+                "readonly": true,
+                "value": "undefined"
+            },
+            "pb2EntitySeat.prototype.max_attack_range": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2EntitySeat.prototype.max_gun_turn_speed": {
+                "type": "literal",
+                "value": "undefined"
+            },
+            "pb2EntitySeat.prototype.SetAntigravityMode": {
+                "type": "function",
+                "params": "eXS,eXD=1"
+            },
+            "pb2EntitySeat.prototype.SetAntigravityMode.prototype": {
+                "type": "object"
+            },
+            "pb2EntitySeat.prototype.MultiplyMass": {
+                "type": "function",
+                "params": "x"
+            },
+            "pb2EntitySeat.prototype.MultiplyMass.prototype": {
+                "type": "object"
+            },
+            "pb2EntitySeat.prototype.GetResponsibleDriver": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntitySeat.prototype.GetResponsibleDriver.prototype": {
+                "type": "object"
+            },
+            "pb2EntitySeat.prototype.GetDriverSlotsTotal": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntitySeat.prototype.GetDriverSlotsTotal.prototype": {
+                "type": "object"
+            },
+            "pb2EntitySeat.prototype.GetDriverAtSlot": {
+                "type": "function",
+                "params": "i"
+            },
+            "pb2EntitySeat.prototype.GetDriverAtSlot.prototype": {
+                "type": "object"
+            },
+            "pb2EntitySeat.prototype.DriversAreEnemiesOfTheTeam": {
+                "type": "function",
+                "params": "team"
+            },
+            "pb2EntitySeat.prototype.DriversAreEnemiesOfTheTeam.prototype": {
+                "type": "object"
+            },
+            "pb2EntitySeat.prototype.GetDriverOrOwnTeam": {
+                "type": "function",
+                "params": ""
+            },
+            "pb2EntitySeat.prototype.GetDriverOrOwnTeam.prototype": {
+                "type": "object"
+            },
+            "pb2EntitySeat.prototype.GetLimb": {
+                "type": "function",
+                "params": "id"
+            },
+            "pb2EntitySeat.prototype.GetMesh": {
                 "type": "function",
                 "params": "id=0"
             }

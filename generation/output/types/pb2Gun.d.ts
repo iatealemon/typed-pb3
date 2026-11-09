@@ -72,6 +72,7 @@ declare global {
         addEventListener: (event_type: TODO, params: TODO) => TODO;
         removeEventListener: (event_type: TODO, params: TODO) => TODO;
         readonly is_thrown_by: TODO;
+        SupportsTwoAtATime: () => TODO;
         /** @param id (default=0)  */
         GetMesh: (id?: TODO) => TODO;
     }

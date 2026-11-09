@@ -15,6 +15,9 @@ declare global {
         Stop: () => TODO;
         position_container: TODO;
         readonly type: TODO;
+        Skip: () => TODO;
+        readonly skip_mode: TODO;
+        SetSkipMode: (condition: TODO) => TODO;
     }
     var pb2Timer: ClassIdentityProps<"pb2Timer"> & {
         /**
@@ -32,6 +35,18 @@ declare global {
         TYPE_REAL_WORLD_TIMESCALE: TODO;
         /** Type is unknown. One known value: 3 */
         TYPE_FULL_FRAME_TICKS: TODO;
+        /** Type is unknown. One known value: 0 */
+        SKIP_MODE_UNSKIPPABLE: TODO;
+        /** Type is unknown. One known value: 2 */
+        SKIP_MODE_SPACE_KEY: TODO;
+        /** Type is unknown. One known value: 3 */
+        SKIP_MODE_FIRE_KEY: TODO;
+        /** Type is unknown. One known value: 4 */
+        SKIP_MODE_ANY_KEY: TODO;
+        /** Type is unknown. One known value: 5 */
+        SKIP_MODE_SPACE_KEY_HOLDING: TODO;
+        /** Type is unknown. One known value: 2 */
+        SKIP_MODE_STANDARD_SKIP_KEY: TODO;
         /** Type is unknown. One known value: [] */
         timers_active_game: TODO;
         /** Type is unknown. One known value: [] */

@@ -12,9 +12,9 @@ declare global {
         /**
          * @param _dHj   
          * @param _dHk   
-         * @param rk   
+         * @param rk (default=null)   
          * @param dHo (default=false)   
          */
-        NewThreat: (_dHj: TODO, _dHk: TODO, rk: TODO, dHo?: TODO) => TODO;
+        NewThreat: (_dHj: TODO, _dHk: TODO, rk?: TODO, dHo?: TODO) => TODO;
     }
 }

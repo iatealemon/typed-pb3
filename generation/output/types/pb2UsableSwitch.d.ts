@@ -15,7 +15,6 @@ declare global {
         remove: () => TODO;
         readonly model_frame: TODO;
         SetPosition: (x2: TODO, y2: TODO) => TODO;
-        /** Type is unknown. One known value: false */
         readonly is_being_removed: TODO;
     }
     var pb2UsableSwitch: ClassIdentityProps<"pb2UsableSwitch"> & {

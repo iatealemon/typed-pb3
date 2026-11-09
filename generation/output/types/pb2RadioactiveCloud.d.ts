@@ -13,5 +13,6 @@ declare global {
     var pb2RadioactiveCloud: ClassIdentityProps<"pb2RadioactiveCloud"> & {
         /** Type is unknown. One known value: [] */
         clouds: TODO;
+        CreateRadioactiveCloud: (params: TODO) => TODO;
     }
 }

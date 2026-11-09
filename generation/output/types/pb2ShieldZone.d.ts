@@ -17,7 +17,12 @@ declare global {
          */
         DealDamage: (bN: TODO, xx: TODO, yy: TODO, _boD: TODO, initiator_ragdoll?: TODO) => TODO;
         Heal: (bN: TODO) => TODO;
-        MoveTo: (xx: TODO, yy: TODO) => TODO;
+        /**
+         * @param xx   
+         * @param yy   
+         * @param eZP (default=true)   
+         */
+        MoveTo: (xx: TODO, yy: TODO, eZP?: TODO) => TODO;
         /** @param gv (default=false)  */
         Destroy: (gv?: TODO) => TODO;
         readonly radius: TODO;
@@ -32,8 +37,7 @@ declare global {
         base_range: TODO;
         /** Type is unknown. One known value: 1000 */
         default_hitpoints: TODO;
-        /** Type is unknown. One known value: null */
-        CreateShieldZone: TODO;
+        CreateShieldZone: (params: TODO) => TODO;
         /** Type is unknown. One known value: 0 */
         SOUND_PRESET_ID_SILENT: TODO;
         /** Type is unknown. One known value: 1 */

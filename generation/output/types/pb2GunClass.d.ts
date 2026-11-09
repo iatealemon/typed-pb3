@@ -78,8 +78,43 @@ declare global {
         magazine_reload_duration_multiplier: TODO;
         stat_power: TODO;
         muzzle_flash_scale_mult: TODO;
+        ammo_style: TODO;
+        ammo_style2: TODO;
+        partial_reload_steps: TODO;
+        manual_reload: TODO;
+        force_reload_on_last_shot: TODO;
+        manual_reload_or_cancel: TODO;
+        minigun_spin_factor: TODO;
+        reset_spin_factor_on_shot: TODO;
+        always_grow_spin_factor_when_active: TODO;
+        overheat_damage_after: TODO;
+        heat_per_shot_mult: TODO;
+        sound_explosion_id: TODO;
+        shell_type: TODO;
+        magazine_behind_gun: TODO;
+        use_shotgun_offset_pattern: TODO;
     }
     var pb2GunClass: ClassIdentityProps<"pb2GunClass"> & {
+        /** Type is unknown. One known value: -1 */
+        SHELL_TYPE_AUTO: TODO;
+        /** Type is unknown. One known value: 0 */
+        SHELL_TYPE_NONE: TODO;
+        /** Type is unknown. One known value: 1 */
+        SHELL_TYPE_SCIFI_SINGLE: TODO;
+        /** Type is unknown. One known value: 2 */
+        SHELL_TYPE_SCIFI_SHOTGUN_SINGLE: TODO;
+        /** Type is unknown. One known value: 3 */
+        SHELL_TYPE_SCIFI_SHOTGUN_DOUBLE: TODO;
+        /** Type is unknown. One known value: 4 */
+        SHELL_TYPE_REAL_SINGLE: TODO;
+        /** Type is unknown. One known value: 5 */
+        SHELL_TYPE_REAL_SHOTGUN_SINGLE: TODO;
+        /** Type is unknown. One known value: 6 */
+        SHELL_TYPE_BIG_CALIBER: TODO;
+        /** Type is unknown. One known value: 7 */
+        SHELL_TYPE_REAL_SHOTGUN_DOUBLE: TODO;
+        /** Type is unknown. One known value: ["pb2GunClass.SHELL_TYPE_AUTO","pb2GunClass.SHELL_TYPE_NONE","pb2GunClass.SHELL_TYPE_SCIFI_SINGLE","pb2GunClass.SHELL_TYPE_SCIFI_SHOTGUN_SINGLE","pb2GunClass.SHELL_TYPE_SCIFI_SHOTGUN_DOUBLE","pb2GunClass.SHELL_TYPE_REAL_SINGLE","pb2GunClass.SHELL_TYPE_REAL_SHOTGUN_SINGLE","pb2GunClass.SHELL_TYPE_BIG_CALIBER","pb2GunClass.SHELL_TYPE_REAL_SHOTGUN_DOUBLE"] */
+        ALL_SHELL_TYPES: TODO;
         /** Type is unknown. One known value: ["gun_pistol","gun_pistol2","gun_rifle","gun_rayrifle","gun_real_rifle","gun_arifle","gun_arifle2","gun_shotgun","gun_raygun","gun_minigun","gun_real_shotgun","gun_railgun","gun_railgun2","gun_sniper","gun_rl","gun_apistol","gun_plasmagun","gun_apistol2","gun_gl","gun_bng","gun_defibrillator","gun_vgun","gun_oicw"] */
         non_spoiler_weapons: TODO;
         /** Type is unknown. One known value: ["gun_rifle","gun_anti_rifle","gun_pistol","gun_pistol2","gun_rayrifle","gun_arifle2","gun_arifle","gun_real_rifle","gun_shotgun","gun_raygun","gun_minigun","gun_real_shotgun","gun_railgun","gun_shadowstep_railgun","gun_railgun2","gun_sniper","gun_rl","gun_trouble","gun_shaft","gun_rl2","gun_plasmagun","gun_apistol","gun_apistol2","gun_gl","gun_bng","gun_disintegrator","gun_explosiveminigun","gun_firebug","gun_drainlight","gun_drainlight_mg","gun_sniper2","gun_defibrillator","gun_eratrigger","gun_repairgun","gun_dodge","gun_oicw","gun_vgun","gun_nailgun","gun_freezer","gun_pistol3","gun_farheal","gun_flappygun","gun_flame","gun_rl3","gun_vehgun","gun_bng2","gun_chrono","gun_vehcannon","gun_vehcannon2","gun_scout_drone","gun_harasser_drone","gun_cs_vehgun","gun_vehminigun","gun_fttp_vehgun","gun_drain_sniper_rifle"] */
@@ -88,6 +123,6 @@ declare global {
         CachedGunClasses: {
 
         }
-        CreateCustomGunClass: (bjW: TODO, exC: TODO) => TODO;
+        CreateCustomGunClass: (identificator: TODO, exC: TODO) => TODO;
     }
 }

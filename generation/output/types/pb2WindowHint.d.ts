@@ -20,6 +20,7 @@ declare global {
         SetText: (s: TODO, cYr?: TODO) => TODO;
         SetColor: (color: TODO) => TODO;
         Expire: () => TODO;
+        remove: () => TODO;
         readonly appearance_duration: TODO;
         readonly main_color: TODO;
         GetOptions: () => TODO;
@@ -31,6 +32,9 @@ declare global {
         readonly my_vote_id: TODO;
         readonly votes: TODO;
         sync_to_spectators: TODO;
+        default_visibility: TODO;
+        SetPersonalVisibilityFor: (TK: TODO, value: TODO) => TODO;
+        ResetPersonalVisibilityRules: () => TODO;
     }
     var pb2WindowHint: ClassIdentityProps<"pb2WindowHint"> & {
         CreateWindowHint: (params: TODO) => TODO;

@@ -63,6 +63,9 @@ declare global {
         readonly damage_dealt_entities_tot: TODO;
         readonly eliminations_players_tot: TODO;
         readonly eliminations_entities_tot: TODO;
+        tactical_ping_allowed: TODO;
+        tactical_ping_allowed_when_dead: TODO;
+        AddImpulse: (x: TODO, y: TODO) => TODO;
     }
     var pb2Controller: ClassIdentityProps<"pb2Controller"> & {
         /** Type is unknown. One known value: 1.2 */

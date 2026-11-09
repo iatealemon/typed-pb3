@@ -20,9 +20,9 @@ declare global {
         AddRagdoll: (r: TODO, eQf?: TODO) => TODO;
         /**
          * @param r   
-         * @param hv (default=false)   
+         * @param by_own_will (default=false)   
          */
-        ExcludeRagdoll: (r: TODO, hv?: TODO) => TODO;
+        ExcludeRagdoll: (r: TODO, by_own_will?: TODO) => TODO;
         /**
          * @param r   
          * @param time (default=-100)   
@@ -69,6 +69,17 @@ declare global {
         readonly vision: TODO;
         max_attack_range: TODO;
         max_gun_turn_speed: TODO;
+        /**
+         * @param eXS   
+         * @param eXD (default=1)   
+         */
+        SetAntigravityMode: (eXS: TODO, eXD?: TODO) => TODO;
+        MultiplyMass: (x: TODO) => TODO;
+        GetResponsibleDriver: () => TODO;
+        GetDriverSlotsTotal: () => TODO;
+        GetDriverAtSlot: (i: TODO) => TODO;
+        DriversAreEnemiesOfTheTeam: (team: TODO) => TODO;
+        GetDriverOrOwnTeam: () => TODO;
         range: TODO;
         strength: TODO;
         mass_cap_scale: TODO;
