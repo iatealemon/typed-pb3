@@ -445,6 +445,7 @@ function writePB3Types(sandboxData, outputDir, libAnalysis) {
 
         writeObjectLike(loc) {
             const modifier = this._getModifier(loc);
+            const name = this._getIdentifierName(loc);
             const isClass = (this.description[loc.path]?.type) === "class";
             let constructorPart = "";
             if (isClass) {
@@ -458,13 +459,13 @@ function writePB3Types(sandboxData, outputDir, libAnalysis) {
                 if (instanceName !== null) {
                     // this object is an instance of something, use the instance type instead of writing its structure
                     const doc = new JsDoc().doc(`Not known if this is always of type ${instanceName}`).build() + "\n";
-                    return `${doc}${modifier}${loc.name}: ${instanceName};`;
+                    return `${doc}${modifier}${name}: ${instanceName};`;
                 }
             }
             const { useTypes, memberKeys } = this._handleHelperTypes(loc);
             const helpersPart = useTypes.map(st => st += " & ");
             return (
-                `${modifier}${loc.name}: ${helpersPart}{\n` +
+                `${modifier}${name}: ${helpersPart}{\n` +
                 indentBlock(4, 
                     constructorPart +
                     this.writeMembers(loc, memberKeys.filter(k => k !== "prototype"))
@@ -517,8 +518,9 @@ function writePB3Types(sandboxData, outputDir, libAnalysis) {
             const params = parseParamList(this.description[loc.path]?.params ?? "");
             const doc = this.writeParamsDocs(params);
             const modifier = this._getModifier(loc);
+            const name = this._getIdentifierName(loc);
             const paramsSignature = this.writeParamsSignature(params);
-            return `${doc}${modifier}${loc.name}: (${paramsSignature}) => TODO;`;
+            return `${doc}${modifier}${name}: (${paramsSignature}) => TODO;`;
         }
 
         writeLiteral(loc) {
@@ -534,7 +536,13 @@ function writePB3Types(sandboxData, outputDir, libAnalysis) {
             }
 
             const modifier = this._getModifier(loc);
-            return `${doc}${modifier}${loc.name}: TODO;`;
+            const name = this._getIdentifierName(loc);
+            return `${doc}${modifier}${name}: TODO;`;
+        }
+
+        /** like loc.name but adds quotes around it if it's syntactically necessary */
+        _getIdentifierName(loc) {
+            return (loc.isRoot || isNaN(loc.name.charAt(0))) ? loc.name : `"${loc.name}"`
         }
 
         _getModifier(loc) {
