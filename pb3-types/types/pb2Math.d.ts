@@ -11,5 +11,6 @@ declare global {
         Dist3D: (x1: number, y1: number, z1: number, x2: number, y2: number, z2: number) => number;
         Dist2D_Vector: (tox: number, toy: number) => number;
         inDist2D: (x1: number, y1: number, x2: number, y2: number, rad: number) => TODO;
+        inDist2DBoolean: (x1: TODO, y1: TODO, x2: TODO, y2: TODO, rad: TODO) => TODO;
     }
 }

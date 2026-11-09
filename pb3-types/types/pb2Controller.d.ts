@@ -63,6 +63,9 @@ declare global {
         readonly damage_dealt_entities_tot: number;
         readonly eliminations_players_tot: number;
         readonly eliminations_entities_tot: number;
+        tactical_ping_allowed: TODO;
+        tactical_ping_allowed_when_dead: TODO;
+        AddImpulse: (x: TODO, y: TODO) => TODO;
     }
     var pb2Controller: ClassIdentityProps<"pb2Controller"> & {
         default_zoom_on_foot: number;

@@ -64,7 +64,20 @@ declare global {
          */
         SetKeyActions: (location_keycode_pair: TODO, onKeyDown?: TODO, onKeyUp?: TODO) => TODO;
         GetKeyState: (location_keycode_pair: TODO) => TODO;
+        ResetNicknameCache: () => TODO;
+        /**
+         * @param dc2   
+         * @param lW (default=true)   
+         */
+        CanReceiveVoiceChatFrom: (dc2: TODO, lW?: TODO) => TODO;
         PauseTrustedControlsTemporarily: () => TODO;
+        /**
+         * @param fAs   
+         * @param fAr (default=false)   
+         */
+        GetInputKeyName: (fAs: TODO, fAr?: TODO) => TODO;
+        /** Type is unknown. One known value: false */
+        finalize_expected: TODO;
         FinalizeWorld: () => TODO;
         FinalizeNewMovables: () => TODO;
         /** @param v (default=true)  */
@@ -124,11 +137,30 @@ declare global {
         terrain_force_low_level_terrain: boolean;
         terrain_phys_scale: number;
         terrain_size_z: number;
-        terrain_start_z: number | undefined;
         terrain_post_tesselation_grass_noise: number;
         terrain_y_offset: number;
         terrain_remove_floating_islands: boolean;
         terrain_uv_relax_iterations: number;
+        /** Type is unknown. One known value: 1 */
+        ragdoll_impact_scale: TODO;
+        /** Type is unknown. One known value: 1 */
+        ragdoll_impact_tolerance: TODO;
+        /** Type is unknown. One known value: 1 */
+        ragdoll_impact_stability_damage_mult: TODO;
+        /** Type is unknown. One known value: 0 */
+        background_image_filter: TODO;
+        /** Type is unknown. One known value: 16777215 */
+        background_image_color0: TODO;
+        /** Type is unknown. One known value: 2910194 */
+        background_image_color1: TODO;
+        /** Type is unknown. One known value: 6475764 */
+        background_image_color2: TODO;
+        /** Type is unknown. One known value: 6475764 */
+        background_image_color3: TODO;
+        /** Type is unknown. One known value: null */
+        background_image_texture: TODO;
+        /** Type is unknown. One known value: true */
+        background_image_recolor: TODO;
         /**
          * @param controller   
          * @param soft (default=true)   
@@ -144,14 +176,26 @@ declare global {
         CancelPointOfViewReplay: () => TODO;
         connected: boolean;
         Disconnect: () => TODO;
-        /** @param dGa (default=false)  */
-        RestartMap: (dGa?: TODO) => TODO;
+        /**
+         * @param dGa (default=false)   
+         * @param XO (default='Server is restarting Map... [timer]')   
+         * @param yr (default='Restarting')   
+         */
+        RestartMap: (dGa?: TODO, XO?: TODO, yr?: TODO) => TODO;
         GetStartupDetails: () => TODO;
         /**
          * @param bIP   
          * @param dGa (default=false)   
+         * @param XO (default='Server is moving onto a next Map... [timer]')   
+         * @param yr (default='Moving onto a next Map')   
          */
-        ChangeMap: (bIP: TODO, dGa?: TODO) => TODO;
+        ChangeMap: (bIP: TODO, dGa?: TODO, XO?: TODO, yr?: TODO) => TODO;
+        /** Type is unknown. One known value: 1 */
+        wall_impact_scale: TODO;
+        /** Type is unknown. One known value: 1 */
+        wall_impact_tolerance: TODO;
+        /** Type is unknown. One known value: true */
+        fire_damages: TODO;
         hud_visible: boolean;
         hud_show_character_info: boolean;
         hud_custom_bars: TODO[];
@@ -167,5 +211,7 @@ declare global {
         /** @param amount (default=75)  */
         FlashScreen: (amount?: number) => TODO;
         GetBounds: () => TODO;
+        x: number;
+        y: number;
     }
 }

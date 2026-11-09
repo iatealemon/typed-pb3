@@ -37,6 +37,8 @@ declare global {
         readonly ClearAllKeyActionsAndStates: TODO;
         readonly GetKeyState: TODO;
         readonly DebugTraceAnyPressedKeys: TODO;
+        readonly ResetNicknameCache: TODO;
+        readonly CanReceiveVoiceChatFrom: TODO;
     }
     
 }

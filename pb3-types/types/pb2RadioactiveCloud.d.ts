@@ -12,5 +12,6 @@ declare global {
     }
     var pb2RadioactiveCloud: ClassIdentityProps<"pb2RadioactiveCloud"> & {
         clouds: pb2RadioactiveCloud[];
+        CreateRadioactiveCloud: (params: TODO) => TODO;
     }
 }

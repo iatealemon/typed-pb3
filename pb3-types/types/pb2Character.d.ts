@@ -217,6 +217,8 @@ declare global {
          * @param gradual_handicap If true, maximum health handicap will be applied over time (with ease-out)  
          */
         DealCharacterDamage: (dmg: number, id: number, dir_x: number, dir_y: number, gradual_handicap: boolean) => void;
+        /** Deprecated alias for SubtractHealth. */
+        SubstractHealth: pb2Character["SubtractHealth"];
         /**
          * Subtracts health from the character. Similar to `DealCharacterDamage`, but has more options and doesn't show damage direction indicators.  
          * @param dmg Damage amount. Negative values will heal the character.  
@@ -227,7 +229,7 @@ declare global {
          * @param mute_hurt (default=false) Mute damage sound  
          * @param no_death_effect (default=false) If true, death sound and animation won't play.  
          */
-        SubstractHealth: (dmg: number, natural?: boolean, gradual_handicap?: boolean, dir_x?: number, dir_y?: number, mute_hurt?: boolean, no_death_effect?: boolean) => boolean;
+        SubtractHealth: (dmg: number, natural?: boolean, gradual_handicap?: boolean, dir_x?: number, dir_y?: number, mute_hurt?: boolean, no_death_effect?: boolean) => boolean;
         /**
          * Adds to the number of grenades or gadgets of a specific variety that the character has.
          * @param id One of the grenade type IDs defined on pb2ArmsAction, such as pb2ArmsAction.ACTION_TYPE_THROW_GRENADE_HE
@@ -428,6 +430,11 @@ declare global {
         ThrowGrenadeIfPossible: (id?: TODO) => boolean;
         /** Returns the b2Body that is currently grabbed or null if nothing is grabbed. */
         GetHeldBody: () => b2Body | null;
+        ApplyClientSideSyncForce: (_x: TODO, _y: TODO, GSPEED: TODO) => TODO;
+        GetCurrentArmsActionType: () => TODO;
+        /** @param force (default=false)  */
+        CancelCurrentArmsAction: (force?: TODO) => TODO;
+        dying: TODO;
         /** Forces the character to let go of any ledge. */
         forceUnHandHold: () => void;
     }

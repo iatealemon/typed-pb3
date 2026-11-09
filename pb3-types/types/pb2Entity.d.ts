@@ -19,9 +19,9 @@ export type pb2EntityBase<ClassName extends string> = ClassIdentityProps<ClassNa
     AddRagdoll: (r: TODO, eQf?: TODO) => TODO;
     /**
      * @param r   
-     * @param hv (default=false)   
+     * @param by_own_will (default=false)   
      */
-    ExcludeRagdoll: (r: TODO, hv?: TODO) => TODO;
+    ExcludeRagdoll: (r: TODO, by_own_will?: TODO) => TODO;
     /**
      * @param r   
      * @param time (default=-100)   
@@ -68,6 +68,17 @@ export type pb2EntityBase<ClassName extends string> = ClassIdentityProps<ClassNa
     readonly vision: TODO;
     max_attack_range: TODO;
     max_gun_turn_speed: TODO;
+    /**
+     * @param eXS   
+     * @param eXD (default=1)   
+     */
+    SetAntigravityMode: (eXS: TODO, eXD?: TODO) => TODO;
+    MultiplyMass: (x: TODO) => TODO;
+    GetResponsibleDriver: () => TODO;
+    GetDriverSlotsTotal: () => TODO;
+    GetDriverAtSlot: (i: TODO) => TODO;
+    DriversAreEnemiesOfTheTeam: (team: TODO) => TODO;
+    GetDriverOrOwnTeam: () => TODO;
     GetLimb: (id: TODO) => TODO;
     /** @param id (default=0)  */
     GetMesh: (id?: number) => THREE.Mesh;
@@ -81,7 +92,7 @@ declare global {
         /** Type is unknown. One known value: 0 */
         TYPE_UNKNOWN: TODO;
         /** Type is unknown. One known value: 1 */
-        TYPE_SPOILER35: TODO;
+        TYPE_SPOILER37: TODO;
         /** Type is unknown. One known value: 2 */
         TYPE_BARREL: TODO;
         /** Type is unknown. One known value: 3 */
@@ -129,8 +140,10 @@ declare global {
         /** Type is unknown. One known value: 24 */
         TYPE_FLOATING_ICE: TODO;
         /** Type is unknown. One known value: 25 */
-        TYPE_SPOILER34: TODO;
-        /** Type is unknown. One known value: ["pb2Entity.TYPE_UNKNOWN","pb2Entity.TYPE_SPOILER35","pb2Entity.TYPE_BARREL","pb2Entity.TYPE_BARREL_PART","pb2Entity.TYPE_CRATE","pb2Entity.TYPE_TURRET","pb2Entity.TYPE_SPOILER27","pb2Entity.TYPE_SPOILER29","pb2Entity.TYPE_MOTO","pb2Entity.TYPE_WALKER","pb2Entity.TYPE_SPOILER28","pb2Entity.TYPE_SPOILER30","pb2Entity.TYPE_SPOILER13","pb2Entity.TYPE_SPOILER14","pb2Entity.TYPE_SPOILER15","pb2Entity.TYPE_SPOILER16","pb2Entity.TYPE_SPOILER17","pb2Entity.TYPE_SPOILER19","pb2Entity.TYPE_SPOILER18","pb2Entity.TYPE_SPOILER20","pb2Entity.TYPE_SPOILER21","pb2Entity.TYPE_ANTIGRAVITY","pb2Entity.TYPE_SPOILER33","pb2Entity.TYPE_CORVETTE","pb2Entity.TYPE_FLOATING_ICE","pb2Entity.TYPE_SPOILER34"] */
+        TYPE_SPOILER35: TODO;
+        /** Type is unknown. One known value: 26 */
+        TYPE_SEAT: TODO;
+        /** Type is unknown. One known value: ["pb2Entity.TYPE_UNKNOWN","pb2Entity.TYPE_SPOILER37","pb2Entity.TYPE_BARREL","pb2Entity.TYPE_BARREL_PART","pb2Entity.TYPE_CRATE","pb2Entity.TYPE_TURRET","pb2Entity.TYPE_SPOILER27","pb2Entity.TYPE_SPOILER29","pb2Entity.TYPE_MOTO","pb2Entity.TYPE_WALKER","pb2Entity.TYPE_SPOILER28","pb2Entity.TYPE_SPOILER30","pb2Entity.TYPE_SPOILER13","pb2Entity.TYPE_SPOILER14","pb2Entity.TYPE_SPOILER15","pb2Entity.TYPE_SPOILER16","pb2Entity.TYPE_SPOILER17","pb2Entity.TYPE_SPOILER19","pb2Entity.TYPE_SPOILER18","pb2Entity.TYPE_SPOILER20","pb2Entity.TYPE_SPOILER21","pb2Entity.TYPE_ANTIGRAVITY","pb2Entity.TYPE_SPOILER33","pb2Entity.TYPE_CORVETTE","pb2Entity.TYPE_FLOATING_ICE","pb2Entity.TYPE_SPOILER35","pb2Entity.TYPE_SEAT"] */
         ALL_TYPES: TODO;
         /** Type is unknown. One known value: 0 */
         MATERIAL_METAL: TODO;

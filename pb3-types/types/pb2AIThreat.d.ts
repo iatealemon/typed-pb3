@@ -12,9 +12,9 @@ declare global {
         /**
          * @param _dHj hunter team  
          * @param _dHk enemy  
-         * @param rk null or pb2AIWayPoint instance  
+         * @param rk (default=null) null or pb2AIWayPoint instance  
          * @param dHo (default=false) no throw  
          */
-        NewThreat: (_dHj: pb2Team, _dHk: pb2Ragdoll, rk: null | TODO, dHo?: boolean) => pb2AIThreat;
+        NewThreat: (_dHj: pb2Team, _dHk: pb2Ragdoll, rk?: null | TODO, dHo?: boolean) => pb2AIThreat;
     }
 }

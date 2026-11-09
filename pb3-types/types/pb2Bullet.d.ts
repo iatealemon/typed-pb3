@@ -35,6 +35,8 @@ declare global {
         readonly is_being_removed: boolean;
         bullet_hp: number;
         readonly is_thrown_by: pb2Ragdoll | null; // != null for grenades
+        addEventListener: (event_type: TODO, params: TODO) => TODO;
+        removeEventListener: (event_type: TODO, params: TODO) => TODO;
         /** @param id (default=0)  */
         GetMesh: (id?: 0 | 1 | 2) => THREE.Mesh | null;
     }

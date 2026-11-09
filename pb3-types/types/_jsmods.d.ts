@@ -11,6 +11,7 @@ declare global {
         NEGATIVE_INFINITY: number;
         randomIntegerWithin: (a: number, b: number) => number;
         randomWithin: (a: number, b: number) => number;
+        seededRandom: () => TODO;
     }
     interface StringConstructor {
         eoX: (a: TODO, b: TODO) => TODO;

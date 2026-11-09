@@ -84,5 +84,7 @@ declare global {
         VOID: TODO;
         /** Type is unknown. One known value: 103 */
         ATOM: TODO;
+        /** Type is unknown. One known value: 104 */
+        SHAPE_TO_OBJECT3D_PROXY: TODO;
     }
 }

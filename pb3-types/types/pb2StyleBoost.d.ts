@@ -50,5 +50,6 @@ declare global {
         doublejump_restore_speed: number;
         doublejump_strength: number;
         doublejump_single_boost_duration_decay: number;
+        kick_slide_boost_force_mult: number;
     }
 }

@@ -97,6 +97,8 @@ declare global {
         hp_body: number;
         hp_arms: number;
         hp_legs: number;
+        hp_chest: number;
+        hp_pelvis: number;
         /** Gets the number of atoms in the ragdoll. Varies based on hp_body. */
         GetAtomsTotal: () => number;
         readonly gameplay_effects: pb2GameplayEffects;
@@ -171,6 +173,8 @@ declare global {
         voice_pitch: undefined | null;
         readonly normalize_all_voice_lines_volume: boolean;
         readonly normalize_custom_voice_lines_volume: boolean;
+        SetSkin: (eTU: TODO) => TODO;
+        GetSkin: () => TODO;
         /**
          * Gets the ragdoll's atom (i.e. body part) with the specified ID. 
          * @param id One of the atom IDs defined on pb2Ragdoll, such as pb2Ragdoll.b_pelvis

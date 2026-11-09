@@ -10,6 +10,7 @@ declare global {
         GetPosX: () => number;
         GetPosY: () => number;
         AddPos: (x: number, y: number) => void;
+        AddVel: (x: TODO, y: TODO) => TODO;
         SetVel: (x: number, y: number) => void;
         SetVelX: (x: number) => void;
         SetVelY: (y: number) => TODO;

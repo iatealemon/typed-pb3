@@ -6,7 +6,8 @@ declare global {
     interface pb2EditorObject extends ClassIdentityProps<"pb2EditorObject"> {
         readonly attributes: TODO;
         readonly children: TODO;
-        Recreate: (params: TODO) => TODO;
+        /** @param params (default={})  */
+        Recreate: (params?: TODO) => TODO;
         GetDeepCopy: () => TODO;
         SetUnsetDefaultAttributes: () => TODO;
         push: (obj: TODO) => TODO;

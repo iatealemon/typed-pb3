@@ -29,7 +29,17 @@ declare global {
     var _pb2T: (_coV: (...args: any[]) => any, _cpk?: TODO, _cpn?: TODO, _cpo?: TODO, _cpp?: TODO) => TODO;
     /** responsible for throwing error if a trigger is called before it's spawned */
     var _pb2TU: (t: string) => never;
-    var _pb2ClientSideTrigger: (f: TODO) => TODO;
+    /**
+     * @param f   
+     * @param execute_on_server_side (default=true)   
+     */
+    var _pb2ClientSideTrigger: (f: TODO, execute_on_server_side?: TODO) => TODO;
+    /**
+     * @param method   
+     * @param method_name (default=undefined)   
+     * @param source_creation_uid (default=undefined)   
+     */
+    var _pb2CM: (method: TODO, method_name?: TODO, source_creation_uid?: TODO) => TODO;
     /**
      * @param x   
      * @param y   

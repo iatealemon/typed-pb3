@@ -72,6 +72,7 @@ declare global {
         addEventListener: (event_type: TODO, params: TODO) => TODO;
         removeEventListener: (event_type: TODO, params: TODO) => TODO;
         readonly is_thrown_by: pb2Ragdoll | null; // gets set to ragdoll when thrown, gets reset to null when picked up
+        SupportsTwoAtATime: () => TODO;
         /** @param id (default=0)  */
         GetMesh: (id?: number) => TODO;
     }

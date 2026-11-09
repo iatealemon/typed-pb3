@@ -39,9 +39,25 @@ declare global {
          */
         SetPositionAndSize: (x: number, y: number, w?: number, h?: number) => TODO;
         CopyPositionAndSizeFrom: (cP: TODO) => TODO;
-        readonly collected_entities_counter: TODO;
+        GetBodiesCount: () => TODO;
+        GetObjectsCount: () => TODO;
+        GetAliveObjectsCount: () => TODO;
     }
     var pb2Region: ClassIdentityProps<"pb2Region"> & {
+        /** Type is unknown. One known value: 0 */
+        CALLBACK_CONDITION_PER_RIGID_BODY: TODO;
+        /** Type is unknown. One known value: 1 */
+        CALLBACK_CONDITION_PER_OBJECT: TODO;
+        /** Type is unknown. One known value: 2 */
+        CALLBACK_CONDITION_SPECIFIC_OBJECT_ONLY: TODO;
+        /** Type is unknown. One known value: 3 */
+        CALLBACK_CONDITION_SPECIFIC_TEAM_ONLY: TODO;
+        /** Type is unknown. One known value: 4 */
+        CALLBACK_CONDITION_SPECIFIC_ENTITY_TYPE: TODO;
+        /** Type is unknown. One known value: 5 */
+        CALLBACK_CONDITION_SPECIFIC_GUN_TYPE: TODO;
+        /** Type is unknown. One known value: ["pb2Region.CALLBACK_CONDITION_PER_RIGID_BODY","pb2Region.CALLBACK_CONDITION_PER_OBJECT","pb2Region.CALLBACK_CONDITION_SPECIFIC_OBJECT_ONLY","pb2Region.CALLBACK_CONDITION_SPECIFIC_TEAM_ONLY","pb2Region.CALLBACK_CONDITION_SPECIFIC_ENTITY_TYPE","pb2Region.CALLBACK_CONDITION_SPECIFIC_GUN_TYPE"] */
+        ALL_CALLBACK_CONDITION_TYPES: TODO;
         regions: pb2Region[];
     }
 }
